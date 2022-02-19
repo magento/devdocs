@@ -266,7 +266,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
 1. Validate that the service is up and running.
 
    ```bash
-   journalctl -u scheduler | grep "Next Version might update" | tail -1 && echo "Agent is successfully installed"
+   journalctl -u scheduler | grep "Application is going to update" | tail -1 && echo "Agent is successfully installed"
    ```
 
 #### Cron
@@ -345,9 +345,9 @@ If you configured the agent to run with cron instead, use the following instruct
    rm -rf swat-agent
    ```
 
-### Configuration reference
+### Override the configuration file
 
-The following table provides descriptions and recommended values for all properties in the agent `.env` configuration file:
+You can override the values that you specified in the configuration file during installation by using environment variables. This preserves backward compatibility with earlier versions of the agent. See the following table for recommended values:
 
 Property | Description |
 ---------|-------------|
@@ -362,8 +362,6 @@ Property | Description |
 `SWAT_AGENT_APPLICATION_DB_TABLE_PREFIX` | Table Prefix for your {{ site.data.var.ee }} installation (default value: `empty`)
 `SWAT_AGENT_APPLICATION_DB_REPLICATED` | Whether your {{ site.data.var.ee }} installation has a secondary database instance (usually `false`)
 `SWAT_AGENT_APPLICATION_CHECK_REGISTRY_PATH` | Temporary directory for the agent (usually `/usr/local/swat-agent/tmp`)
-`SWAT_AGENT_BACKEND_HOST` | Site Wide Analysis Backend Server and port (usually `check.swat.magento.com:443`)
-`SWAT_AGENT_LOGIN_BACKEND_HOST` | Site Wide Analysis Tool backend login server and port (usually `login.swat.magento.com:443`)
 `SWAT_AGENT_RUN_CHECKS_ON_START` | Collect data on the first run (usually `1`)
 `SWAT_AGENT_LOG_LEVEL` | Determines what events are logged based on severity  (usually `error`)
 `SWAT_AGENT_ENABLE_AUTO_UPGRADE` | Enables automatic upgrade (restart required after an upgrade; agent does not check for upgrades if the option is disabled; `true` or `false`)
