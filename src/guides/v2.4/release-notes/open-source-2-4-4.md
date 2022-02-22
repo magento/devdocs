@@ -65,7 +65,7 @@ Security improvements for this release improve compliance with the latest securi
 
 {{ site.data.var.ce }} 2.4.4 now supports PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Additional platform enhancements include:
 
-*  {{ site.data.var.ce }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ce }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ce }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch.
+*  {{ site.data.var.ce }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ce }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ce }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch. See [Switching to OpenSearch for Adobe Commerce on Cloud 2.4.4](https://support.magento.com/hc/en-us/articles/4419942355725-Switching-to-OpenSearch-for-Adobe-Commerce-on-Cloud-2-4-4)
 
 *  The `JQuery` library has been upgraded to version 3.6. The `jquery-ui` library has been upgraded to version 1.13.0. Several other JavaScript libraries have been updated to the latest versions.
 
@@ -76,6 +76,18 @@ Security improvements for this release improve compliance with the latest securi
 *  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
 
 *  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Three Laminas dependencies were removed from the codebase to reduce the number of dependencies.
+
+#### jQuery UI upgrade
+
+jQuery UI has been upgraded to the latest version (v1.13.0). The following v1.10.0 jQuery components have been removed:
+
+*  `ajaxOptions` and `cache` options for tabs. See [Tabs](https://jqueryui.com/changelog/1.10.0/#tabs).
+
+*  `.zIndex()`. jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
+
+*  Data fallbacks for widget names. You must use the full name for the `.data()` key.
+
+*  Hard coding of classes such as `ui-corner-all` in widgets.
 
 ### GraphQL
 
@@ -491,6 +503,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  The class `BundleDiscountPrice` in `magento2/app/code/Magento/Bundle/Pricing/Price/ConfiguredPrice.php` is now declared as expected. Previously, {{ site.data.var.ce }} threw this error: `Class Magento\Bundle\Pricing\Price\BundleDiscountPrice not found`. [GitHub-33334](https://github.com/magento/magento2/issues/33334)
 
+<!--- AC-1239-->
+
+*  Escaped CSV field values written by the AWS S3 adapter now match the data written by other file system adapters.
+
 ### GraphQL
 
 <!--- PWA-1938-->
@@ -666,6 +682,35 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- AC-1077-->
 
 *  You can now pass a `data` argument to a block instance constructor by `di.xml`.
+
+#### Library removals and deprecations
+
+*  The following libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality:
+
+   *  `es6-collections.js`   <!--- AC-18-->
+   *  `MutationObserver.js` <!--- AC-15-->
+   *  `Modernizr` <!--- AC-12-->
+   *  `FormData.js`
+
+*  Removed the unused `jquery.hoverIntent` JavaScript library. [GitHub-33732](https://github.com/magento/magento2/issues/33732) <!--- AC-97-->
+
+*  `lib/internal/Magento/Framework/Filter/Money.php` has been deprecated. It contains the `money_format()` function, which was removed in PHP 8.x. [GitHub-33870](https://github.com/magento/magento2/issues/33870)<!--- magento/magento2/pull/34366)-->
+
+*  Removed the deprecated, unsupported `grunt-autoprefixer` package. [GitHub-34037](https://github.com/magento/magento2/issues/34037) <!--- magento/magento2/pull/34032-->
+
+#### Library upgrades
+
+*  The following libraries have been upgraded to more recent versions:
+
+   *  `script.aculo.us` <!--- AC-363-->
+   *  `Chart.js`  <!--- AC-361-->
+   *  `moment.js` <!--- AC-11-->
+   *  `moment-timezone-with-data.js`   <!--- AC-10-->
+   *  `matchMedia.js` <!--- AC-8-->
+   *  `underscore.js`  <!--- AC-13-->
+   *  `PrototypeJS`  <!--- AC-17-->
+   *  `RequireJS`
+   *  `LessCSS`
 
 ### Logging
 

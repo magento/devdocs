@@ -66,7 +66,7 @@ Security improvements for this release improve compliance with the latest securi
 
 {{ site.data.var.ee }} 2.4.4 now supports PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Additional platform enhancements include:
 
-*  {{ site.data.var.ee }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ee }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ee }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch.
+*  {{ site.data.var.ee }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ee }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ee }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch. See [Switching to OpenSearch for Adobe Commerce on Cloud 2.4.4](https://support.magento.com/hc/en-us/articles/4419942355725-Switching-to-OpenSearch-for-Adobe-Commerce-on-Cloud-2-4-4)
 
 *  The `JQuery` library has been upgraded to version 3.6. The `jquery-ui` library has been upgraded to version 1.13.0. Several other JavaScript libraries have been updated to the latest versions.
 
@@ -78,6 +78,18 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Three Laminas dependencies were removed from the codebase to reduce the number of dependencies.
 
+#### jQuery UI upgrade
+
+jQuery UI has been upgraded to the latest version (v1.13.0). The following v1.10.0 jQuery components have been removed:
+
+*  `ajaxOptions` and `cache` options for tabs. See [Tabs](https://jqueryui.com/changelog/1.10.0/#tabs).
+
+*  `.zIndex()`. jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
+
+*  Data fallbacks for widget names. You must use the full name for the `.data()` key.
+
+*  Hard coding of classes such as `ui-corner-all` in widgets.
+
 ### Performance and scalability enhancements
 
 {{ site.data.var.ee }} performance enhancements boost high throughput order processing and message queue optimization. The asynchronous orders feature introduced in this release supports the creation of approximately 60,000 orders/hour. Earlier versions of {{ site.data.var.ee }} supported the processing of approximately 10,000 orders/hour, which presented a potential bottleneck for flash sales. The new multiple consumers feature supports scaling the number of message queue consumers on a single Cloud instance and increases the number of orders processed per hour.
@@ -86,9 +98,9 @@ Performance enhancements in this release:
 
 *  The AsyncOrder feature supports faster order placement than synchronous execution provides. When AsyncOrder is enabled, order placement is executed in the background while shoppers complete other tasks on the storefront.
 
-*  The new **Enable Inventory Check On Cart Load** configuration option (Admin > **Stores** > **Configuration** >  **Catalog** > **Inventory** > **Stock Options**) provides switchable inventory checks on quote load. It is enabled by default. When this option is disabled, {{ site.data.var.ee }} skips the inventory check as the quote loads, which speeds up checkout, especially for carts containing many items.
+*  The new **Enable Inventory Check On Cart Load** configuration option provides a switchable inventory check when loading a product in the cart. It is enabled by default. When you disable this option, {{ site.data.var.ee }} skips the inventory check as the quote loads, which speeds up checkout, especially for carts containing many items.
 
-*  The new `multiple_processes` configuration option supports running parallel consumers in multiple processes. To enable this feature, add `multiple_processes` to the `app/etc/env.php` file.
+*  The new `multiple_processes` configuration option supports running parallel consumers in multiple processes. Previously, `cron` ran a single consumer when needed. Launching multiple consumers to run processes in parallel can improve task execution speed. To enable this feature, add `multiple_processes` to the `app/etc/env.php` file.
 
 *  Cart operations for carts containing over 750 configurable products have been improved by increasing the memory limit set by `max_input_vars` in the `php.ini` file to support input variables volume.
 
@@ -126,7 +138,7 @@ This release includes these GraphQL enhancements:
 
 *  **Updated core GraphQL library**. The `webonyx` library, which enables core GraphQL to function, has been upgraded to version ^14.9. <!--- PWA-2137 2184 -->
 
-*  **Fixed translation issues in GraphQL with multi-site and multi-language stores**. The GraphQl resolver now returns translated strings based on store scope as expected. <!--- PWA-1946-->
+*  **Fixed translation issues in GraphQL with multi-site and multi-language stores**. The GraphQL resolver now returns translated strings based on store scope as expected. <!--- PWA-1946-->
 
 *  GraphQL now provides New Relic with descriptive transaction names, which can be helpful for debugging. [GitHub-30915](https://github.com/magento/magento2/issues/30915) <!--- PWA-1311-->
 
@@ -156,16 +168,15 @@ PWA Studio v.12.3.0 is compatible with {{ site.data.var.ee }} 2.4.4. It includes
 
 ### Accessibility updates
 
-This release brings enhanced conformance to standard accessibility guidelines. These enhancements improve the experience of users with limited vision or with limited language, cognitive, and learning abilities, and the performance of Screen Reader tools.
+This release brings increased conformance to standard accessibility guidelines. These enhancements improve the experience of users with limited vision or with limited language, cognitive, and learning abilities.  Screen Reader tools performance has also improved.
 
-Additions include tooltip triggers/links with text and accurate, task-focused, visible labels for inputs.
+Accessibility enhancements include:
 
-Feature updates include:
-
+*  Tooltip links with text and accurate, task-focused, visible labels for inputs
 *  Edit buttons now have unique text.
-*  Admin buttons now have accessible, descriptive purpose of the button in unique terms in adherence to AA standards
-*  Icon images that convey meaning to provide a textual alternative.
-*  Enhanced contrast in Admin buttons and form fields in user interface to a contrast ratio of at least 3:1 with adjacent colors.
+*  Admin buttons now have unique, accessible, and descriptive purpose in adherence to AA standards
+*  Icon images that convey meaning now provide a textual alternative.
+*  Enhanced contrast in Admin buttons and form fields to a contrast ratio of at least 3:1 with adjacent colors.
 
 ### Page Builder
 
@@ -634,6 +645,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  The class `BundleDiscountPrice` in `magento2/app/code/Magento/Bundle/Pricing/Price/ConfiguredPrice.php` is now declared as expected. Previously, {{ site.data.var.ee }} threw this error: `Class Magento\Bundle\Pricing\Price\BundleDiscountPrice not found`. [GitHub-33334](https://github.com/magento/magento2/issues/33334)
 
+<!--- AC-1239-->
+
+*  Escaped CSV field values written by the AWS S3 adapter now match the data written by other file system adapters.
+
 ### Gift cards
 
 <!--- MC-42327-->
@@ -832,99 +847,17 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Updated the root `composer.json` metapackage and  `composer.json` file for each module to PHP 8.1. [GitHub-34009](https://github.com/magento/magento2/issues/34009)
 
-<!--- AC-1650-->
-
-*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`.
-
 *  Third-party `jquery.tabs` library (latest version)
 
 *  NPM packages (latest version) [GitHub-33512](https://github.com/magento/magento2/issues/33512), [GitHub-33972](https://github.com/magento/magento2/issues/33972) <!--- magento/magento2/pull/33515 33998-->
 
 *  `jquery.cookie` third-party library (latest version) [GitHub-34427](https://github.com/magento/magento2/issues/34427) <!--- AC-101-->
 
-*  `aws-sdk-php`  [GitHub-34751](https://github.com/magento/magento2/issues/34751) <!--- AC-1924-->
-
-*  `magento/semver`  [GitHub-34538](https://github.com/magento/magento2/issues/34538) <!--- magento/magento-semver/pull/68-->
-
 #### Composer dependency updates
 
-The following dependencies have been updated for PHP 8.1 compatibility:
+*  All Composer dependencies were updated to the versions compatible with PHP 8.1.
 
-<!--- AC-1750 1751 1752-->
-
-*  `phpgt/dom` (most recent 2.x version) [GitHub-34633](https://github.com/magento/magento2/issues/34633)
-
-<!--- magento/magento2/pull/34788-->
-
-*  `elasticsearch/elasticsearch`  [GitHub-34533](https://github.com/magento/magento2/issues/34533)
-
-<!--- magento/magento2/pull/34555-->
-
-*  `phpstan/phpstan` (v1.x) [GitHub-34604](https://github.com/magento/magento2/issues/34604)
-
-<!--- magento/magento2/pull/34788-->
-
-*  `fgrosse/phpasn1` [GitHub-34591](https://github.com/magento/magento2/issues/34591)
-
-<!--- AC-1258-->
-
-*  `endroid/qr-code` [GitHub-34101](https://github.com/magento/magento2/issues/34101)
-
-<!--- AC-1304-->
-
-*  Updated dependency versions for `infra-tools` and MHCI to the latest compatible version in sync with the root `composer.json` file. [GitHub-34133](https://github.com/magento/magento2/issues/34133)
-
-<!--- magento/magento2/pull/33762-->
-
-*  `phpunit/phpunit` (v9.3.0). (Updating the `phpunit/phpunit` Composer dependency to the latest version has eliminated integration test errors.) [GitHub-33761](https://github.com/magento/magento2/issues/33761), [GitHub-33596](https://github.com/magento/magento2/issues/33596)
-
-<!--- AC-622-->
-
-*  `squizlabs/php_codesniffer` (v3.6.0) [GitHub-33832](https://github.com/magento/magento2/issues/33832)
-
-*  `ramsey/uuid` Composer dependency (v4.2.0) [GitHub-33832](https://github.com/magento/magento2/issues/33832)
-
-<!--- AC-301-->
-
-*  `phpseclib/phpseclib`  (v3.0.8) [GitHub-32864](https://github.com/magento/magento2/issues/32864)
-
-<!--- magento/magento2/pull/33363-->
-
-*  `phpseclib/mcrypt_compat`  (v2.0)  [GitHub-32865](https://github.com/magento/magento2/issues/32865)
-
-<!--- magento/magento2/pull/33605)-->
-
-*  `laminas/laminas-code` (v4.4.2) [GitHub-33509](https://github.com/magento/magento2/issues/33509), [GitHub-34543](https://github.com/magento/magento2/issues/34543)
-
-<!--- ENGCOM-8667-->
-
-*  `Less.js` (v3.13.1) [GitHub-32845](https://github.com/magento/magento2/issues/32845)
-
-<!--- magento/magento2/pull/33860-->
-
-*  `guzzlehttp/guzzle` (v7.3.0)  [GitHub-32869](https://github.com/magento/magento2/issues/32869)
-
-<!--- magento/magento2/pull/33871-->
-
-*  `jquery-validate` third-party library  [GitHub-33853](https://github.com/magento/magento2/issues/33853)
-
-<!--- magento/magento2/pull/34367)-->
-
-*  `laminas/laminas-server`, `laminas/laminas-view` [GitHub-34240](https://github.com/magento/magento2/issues/34240), [GitHub-34214](https://github.com/magento/magento2/issues/34214)
-
-<!--- magento/magento2/pull/34396)-->
-
-*  `pelago/emogrifier` (v6.x) [GitHub-34374](https://github.com/magento/magento2/issues/34374)
-
-<!--- AC-1521 1650-->
-
-*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`.
-
-<!--- AC-1366-->
-
-*  `laminas/laminas-math` [GitHub-34242](https://github.com/magento/magento2/issues/34242)
-
-[GitHub-34700](https://github.com/magento/magento2/issues/34700)
+*  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
 
 #### Library removals and deprecations
 
