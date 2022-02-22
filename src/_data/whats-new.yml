@@ -4,8 +4,84 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Feb 14 15:38:43 2022
+updated: Tue Feb 22 17:59:54 2022
 entries:
+- description: Added configuration options to the Site-Wide Analysis Tool [agent installation](https://devdocs.magento.com/tools/site-wide-analysis.html)
+    topic.
+  versions: 2.x
+  type: Major Update
+  date: February 19, 2022
+  link: https://github.com/magento/devdocs/pull/9367
+  merge_commit: 52be498831add99aaf3b8c2e87493abca135cdb9
+  contributor: yvoronoy
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+  - 'Progress: done'
+- description: Bumped the [supported version](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    of Elasticsearch for 2.4.5 from 7.16 to 7.17.
+  versions: 2.4.5
+  type: Technical
+  date: February 18, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2811
+  merge_commit: d400028929fc54945a0fd99d56bf8e2db1261162
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.5
+- description: Added release notes data to `src/_data/core-releases.json` and [Released
+    versions](https://devdocs.magento.com/release/released-versions.html).
+  versions: 2.x
+  type: Technical
+  date: February 16, 2022
+  link: https://github.com/magento/devdocs/pull/9358
+  merge_commit: 91c869e44c4af68768d1ad3f426da4dc6a28eeea
+  contributor: BarnyShergold
+  membership: false
+  labels:
+  - 2.x
+  - Technical
+  - 'Progress: done'
+- description: Bumped the [supported version](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    of Elasticsearch for 2.4.3 from 7.9 to 7.10.
+  versions: 2.4.3
+  type: Technical
+  date: February 15, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2801
+  merge_commit: 452e698395db18ac8857b602256d562e6f3d593e
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.3
+- description: Migrated the majority of the Product Recommendations documentation
+    from the developer guide to the [user guide](https://docs.magento.com/user-guide/recommendations/overview.html).
+  versions: 2.4.x
+  type: Major Update
+  date: February 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2692
+  merge_commit: 68183e1b5751b203699dfc06d57113b9e70a8c67
+  contributor: erikmarr
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: 'Cloud patch release 1.0.14: [Critical patch added to Magento Cloud
+    Patches](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v1014)
+    package.<br/>Corrected a reference to media disk space in the [Manage disk space
+    topic](https://devdocs.magento.com/cloud/project/manage-disk-space.html#check-dedicated-clusters).'
+  versions: 2.x
+  type: Major Update
+  date: February 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2798
+  merge_commit: '07951cb01160523116c458c1df274d4dca22eac2'
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
 - description: Updated the [public roadmap](https://devdocs.magento.com/release/roadmap.html)
     with the latest information.
   versions: 2.x
