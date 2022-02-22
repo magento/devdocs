@@ -40,12 +40,12 @@ You can connect using SSH in any of the following ways:
 
 ### SSH using Magento Cloud CLI {#magento-cli}
 
-Magento Cloud CLI commands can only be used in environments with the software installed. These environments include:
+The `magento-cloud` CLI commands can only be used in environments with the software installed. These environments include:
 
 *  Starter environments
 *  Pro Integration environments
 
-To SSH to an environment using the Magento Cloud command line:
+To SSH to an environment using the `magento-cloud` command line:
 
 1. Log in to the project:
 
@@ -94,7 +94,7 @@ ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
 
 ### SSH commands for Pro Staging and Production {#pro}
 
-You can not use the Magento Cloud CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.
+You can not use the `magento-cloud` CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.
 
 With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.
 
@@ -111,7 +111,7 @@ For example, to log in to the Staging environment, use the following command: `s
 
 ## sFTP to environments {#sftp}
 
-Typically, you want to use SSH for secure access to your environments and [migrate files]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
+Typically, you use SSH for secure access to your environments and [migrate files]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
 
 You need the following requirements to sFTP into cloud environments:
 
