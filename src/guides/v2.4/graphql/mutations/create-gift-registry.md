@@ -41,7 +41,7 @@ The following example creates a gift registry.
 mutation {
   createGiftRegistry(
     giftRegistry: {
-      giftRegistryTypeUid: "Mw=="
+      gift_registry_type_uid: "Mw=="
       event_name: "Bill and Julie's wedding"
       message: "Help us celebrate Bill and Julie's wedding, which will be held on May 1, 2021"
       privacy_settings: PRIVATE
@@ -206,8 +206,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `event_name` | String! | The name of the event
-`giftRegistryTypeUid` | ID! | The ID of the selected event type
-`giftRegistryUid` | ID | An optional gift registry ID. It can be generated on the client and then be used to send multiple gift-registry related mutations in a single request
+`gift_registry_type_uid` | ID! | The ID of the selected event type
 `message` | String! | A message describing the event
 `privacy_settings` | GiftRegistryPrivacySettings! | Indicates whether the registry is PRIVATE or PUBLIC
 `registrants` | [[AddGiftRegistryRegistrantInput!](#AddGiftRegistryRegistrantInput)]! | The list of people who receive notifications about the registry
