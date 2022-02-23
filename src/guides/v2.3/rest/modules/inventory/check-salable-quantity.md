@@ -10,6 +10,7 @@ Magento provides several endpoints that allow you to check whether a product fro
 ```http
 inventorySalesApiGetProductSalabilityV1
 inventorySalesApiIsProductSalableV1
+inventorySalesApiAreProductsSalableV1
 inventorySalesApiIsProductSalableForRequestedQtyV1
 inventorySalesApiStockResolverV1
 ```
@@ -19,19 +20,21 @@ inventorySalesApiStockResolverV1
 ```http
 GET /V1/inventory/get-product-salable-quantity/:sku/:stockId
 GET /V1/inventory/is-product-salable/:sku/:stockId
+GET /V1/inventory/are-products-salable/:skus[]/:stockId
 GET /V1/inventory/is-product-salable-for-requested-qty/:sku/:stockId/:requestedQty
 GET /V1/inventory/stock-resolver/:type/:code
 ```
 
 **Path parameters:**
 
-Name | Description | Type
---- | --- | ---
-`sku` | The SKU of the product | String
-`stock_id` | The ID of the stock the product is assigned to | Integer
-`requestedQty` | The requested quantity of products | Float
+Name | Description                                                                            | Type
+--- |----------------------------------------------------------------------------------------| ---
+`sku` | The SKU of the product                                                                 | String
+`skus` | An array with the SKU list of products                                                 | Array of Strings
+`stock_id` | The ID of the stock the product is assigned to                                         | Integer
+`requestedQty` | The requested quantity of products                                                     | Float
 `type` | The type of sales channel the stock is assigned to. For 2.3, this value must be `website`. | String
-`code` | The code of the sales channel (website) | String
+`code` | The code of the sales channel (website)                                                | String
 
 ## Check the available quantity of a salable product
 
@@ -69,6 +72,35 @@ None
 **Response:**
 
 `true` or `false`
+
+## Check whether products in the list are salable
+
+This call returns boolean values that indicate whether products provided in SKU parameter are salable from the specified stock.
+
+**Sample Usage:**
+
+`GET <host>/rest/<store_code>/V1/inventory/are-products-salable/?skus[0]=Prod1&skus[1]=Prod2&stockId=2`
+
+**Payload:**
+
+None
+
+**Response:**
+
+```json
+[
+  {
+    "sku": "Prod1",
+    "stock_id": 2,
+    "salable": true
+  },
+  {
+    "sku": "Prod2",
+    "stock_id": 2,
+    "salable": false
+  }
+]
+```
 
 ## Check whether a product is salable for a specified quantity
 
