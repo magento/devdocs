@@ -53,7 +53,7 @@ Your on-premises infrastructure must meet the following requirements before inst
 
 ### Commerce Services Connector
 
-The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/user-guide/system/saas.html) extension to be installed on your system and [configured]({{ site.user_guide_url }}/system/saas.html#createsaasenv) with API keys. To verify that the extension is installed, run the following command:
+The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/system/saas.html) extension to be installed on your system and [configured]({{ site.user_guide_url }}/system/saas.html#createsaasenv) with API keys. To verify that the extension is installed, run the following command:
 
 ```bash
 bin/magento module:status Magento_ServicesConnector
