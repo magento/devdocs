@@ -10,7 +10,7 @@ Each rule contains a short description and a usage example.
 
 ### alphanumeric
 
-Letters, numbers, spaces or underscores
+Check if the value contains only letters, numbers, spaces or underscores.
 
 #### Example
 
@@ -24,7 +24,7 @@ Letters, numbers, spaces or underscores
 
 ### credit-card-types
 
-A valid credit card number of a certain type(s), that can be specified as parameters
+A valid credit card number of a certain type(s), that can be specified as parameters.
 
 #### Example
 
@@ -36,11 +36,11 @@ A valid credit card number of a certain type(s), that can be specified as parame
 </form>
 ```
 
-Parameters could be: amex, mastercard, visa, dinersclub, enroute, discover, jcb, unknown, all.
+Possible values are: amex, mastercard, visa, dinersclub, enroute, discover, jcb, unknown, all.
 
 ### dateITA
 
-Date in Italy, **\d{1,2}\/\d{1,2}\/\d{4}** format, i.e. **4/4/24** or **24/12/21**
+Date in Italy, **\d{1,2}\/\d{1,2}\/\d{4}** format, i.e. **4/4/24** or **24/12/21**.
 
 #### Example
 
@@ -57,7 +57,7 @@ Date in Italy, **\d{1,2}\/\d{1,2}\/\d{4}** format, i.e. **4/4/24** or **24/12/21
 *  `1/1/2022` - true
 *  `12/10/2022` - true
 
-There is a sanity check, so dates like `99/12/2021` will be false.
+There is a sanity check, so dates such as `99/12/2021` will be false.
 
 ### dateNL
 
@@ -73,11 +73,11 @@ Date in Netherlands, **\d\d?[\.\/-]\d\d?[\.\/-]\d\d\d?\d?** format.
 </form>
 ```
 
-There is no sanity check so dates like `33-12-12` will be true.
+There is no sanity check so dates such as `33-12-12` will be true.
 
 ### datetime-validation
 
-It checks that the field is not empty
+Checks that the field is not empty.
 
 ### Example
 
@@ -91,7 +91,7 @@ It checks that the field is not empty
 
 ### email2
 
-It checks for a valid email address
+Checks for a valid email address.
 
 #### Example
 
@@ -105,7 +105,7 @@ It checks for a valid email address
 
 ### greater-than-equals-to
 
-It checks for a value of one field being greater than, or equal to, a value of another field
+Checks for a value of one field being greater than or equal to a value of another field
 
 #### Example
 
@@ -122,7 +122,7 @@ It does not check for both values to be numeric, so if `field-3` = 5 and `field-
 
 ### integer
 
-It checks for a field value to be an integer, positive or negative
+Checks for a field value to be an integer, positive or negative.
 
 #### Example
 
@@ -136,7 +136,7 @@ It checks for a field value to be an integer, positive or negative
 
 ### ipv4
 
-It checks for a valid IPv4 address
+Checks for a valid IPv4 address.
 
 #### Example
 
@@ -150,7 +150,7 @@ It checks for a valid IPv4 address
 
 ### ipv6
 
-It checks for a valid IPv6 address
+Checks for a valid IPv6 address.
 
 #### Example
 
@@ -164,7 +164,7 @@ It checks for a valid IPv6 address
 
 ### less-than-equals-to
 
-It checks for a value of one field being less than, or equal to, a value of another field
+Checks for a value of one field being less than or equal to a value of another field.
 
 #### Example
 
@@ -177,11 +177,11 @@ It checks for a value of one field being less than, or equal to, a value of anot
 </form>
 ```
 
-It does not check for both values to be numeric, so if `field-3` = 10 and `field-5` = '3a', it will silently accept it
+It does not check for both values to be numeric, so if `field-3` = 10 and `field-5` = '3a', it will silently accept it.
 
 ### letters-only
 
-It checks for Latin A-Z,a-z letters only
+Checks for Latin A-Z,a-z letters only.
 
 #### Example
 
@@ -195,7 +195,7 @@ It checks for Latin A-Z,a-z letters only
 
 ### letters-with-basic-punc
 
-It checks for Latin letters and punctuation only, regex being `a-z\-.,()'\"\s`
+Checks for Latin letters and punctuation only, the regex being `a-z\-.,()'\"\s`.
 
 ```html
 <form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
@@ -207,7 +207,7 @@ It checks for Latin letters and punctuation only, regex being `a-z\-.,()'\"\s`
 
 ### max-words
 
-It checks that there are no more than a predefined number of words. Maximum number of words should be set as a parameter.
+Checks that there are no more than a predefined number of words. Maximum number of words should be set as a parameter.
 
 #### Example
 
@@ -223,7 +223,7 @@ Here, it accepts no more than 4 words.
 
 ### min-words
 
-It checks that there are not less than a predefined number of words. Minimum number of words should be set as a parameter.
+Checks that there are not less than a predefined number of words. Minimum number of words should be set as a parameter.
 
 #### Example
 
@@ -239,7 +239,7 @@ Here, it accepts at least 4 words.
 
 ### mobileUK
 
-It checks for a valid UK mobile number
+Checks for a valid UK mobile number.
 
 #### Example
 
@@ -256,7 +256,7 @@ It checks for a valid UK mobile number
 
 ### no-marginal-whitespace
 
-It does not allow whitespaces at the start, or at the end, of an input text.
+Does not allow whitespaces at the start, or at the end, of an input text.
 
 #### Example
 
@@ -270,7 +270,7 @@ It does not allow whitespaces at the start, or at the end, of an input text.
 
 ### no-whitespace
 
-It does not allow whitespaces anywhere in an input text.
+Does not allow whitespaces anywhere in an input text.
 
 #### Example
 
@@ -284,7 +284,7 @@ It does not allow whitespaces anywhere in an input text.
 
 ### not-negative-amount
 
-It checks for a non-negative number
+Checks for a non-negative number.
 
 #### Example
 
@@ -305,7 +305,7 @@ There is a sanity check, so **0a** will result in a warning.
 
 ### password-not-equal-to-user-name
 
-It checks that a password is not the same as a predefined string.
+Checks that a password is not the same as a predefined string.
 
 #### Example
 
@@ -321,7 +321,7 @@ In the example above, if you enter `username@domain.com` you will get a warning.
 
 ### pattern
 
-It checks an input against a predefined regex pattern.
+Checks an input against a predefined regex pattern.
 
 #### Example
 
@@ -337,7 +337,7 @@ In the example above anything except lowercase letters will trigger a warning.
 
 ### phoneUK
 
-It checks for a valid UK phone number.
+Checks for a valid UK phone number.
 
 #### Example
 
@@ -351,7 +351,7 @@ It checks for a valid UK phone number.
 
 ### phoneUS
 
-It checks for a valid US phone number.
+Checks for a valid US phone number.
 
 #### Example
 
@@ -365,7 +365,7 @@ It checks for a valid US phone number.
 
 ### range-words
 
-It checks for a predefined number of words.
+Checks for a predefined number of words.
 
 #### Example
 
@@ -385,7 +385,7 @@ In the example above, only a 2, 3 or 4 word input string will not trigger a warn
 
 ### required-dropdown-attribute-entry
 
-It checks that all disabled input fields (with a `required-option` class) within a table tag are empty.
+Checks that all disabled input fields (with a `required-option` class) within a table tag are empty.
 
 #### Example
 
@@ -412,7 +412,7 @@ In the example above it will trigger a warning as `field-1` is not empty.
 
 ### required-entry
 
-It checks that a field is not empty.
+Checks that a field is not empty.
 
 #### Example
 
@@ -426,7 +426,7 @@ It checks that a field is not empty.
 
 ### required-file
 
-It checks for a file field to be populated.
+Checks for a file field to be populated.
 
 #### Example
 
@@ -440,7 +440,7 @@ It checks for a file field to be populated.
 
 ### required-if-all-sku-empty-and-file-not-loaded
 
-It makes the field required if specified fields and a specified file input are empty.
+Makes the field required if specified fields and a specified file input are empty.
 
 #### Example
 
@@ -458,7 +458,7 @@ In the example above, a warning is only displayed if all fields are empty.
 
 ### required-if-not-specified
 
-It makes a field required if the dependant field is filled.
+Makes a field required if the dependent field is filled.
 
 #### Example
 
@@ -475,7 +475,7 @@ If `field-5` is not empty, then `field-3` is not required.
 
 ### required-if-specified
 
-It makes a field required if the dependant field is filled.
+Makes a field required if the dependent field is filled.
 
 #### Example
 
@@ -492,7 +492,7 @@ If `field-5` is not empty, then `field-3` is required.
 
 ### required-number
 
-It requires a number to be entered.
+Requires a number to be entered.
 
 ```html
 <form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
@@ -506,7 +506,7 @@ Warning : This tag has bugs and will accept any non-empty input.
 
 ### required-number-if-specified
 
-It makes a field number required if the dependant field is filled.
+Makes a field number required if the dependent field is filled.
 
 #### Example
 
@@ -523,7 +523,7 @@ If `field-5` is not empty, then `field-3` is required, although any input will w
 
 ### required-text-swatch-entry
 
-It checks that all disabled input fields (with a `required-option` class) within a table tag to be empty.
+Checks that all disabled input fields (with a `required-option` class) within a table tag to be empty.
 
 #### Example
 
@@ -550,7 +550,7 @@ In the example above, it will trigger a warning as `field-1` is not empty.
 
 ### required-visual-swatch-entry
 
-It checks that all disabled input fields (with a `required-option` class) within a table tag are empty.
+Checks that all disabled input fields (with a `required-option` class) within a table tag are empty.
 
 #### Example
 
@@ -577,7 +577,7 @@ In the example above it will trigger a warning as `field-1` is not empty.
 
 ### stripped-min-length
 
-It checks that there are at least a predefined number of characters in the input.
+Checks that there are at least a predefined number of characters in the input.
 
 #### Example
 
@@ -593,7 +593,7 @@ In the example above, any input less than 4 characters will trigger a warning.
 
 ### time
 
-It checks for a valid time between 00:00 and 23:59:59.
+Checks for a valid time between 00:00 and 23:59:59.
 
 #### Example
 
@@ -607,7 +607,7 @@ It checks for a valid time between 00:00 and 23:59:59.
 
 ### time12h
 
-It checks for a valid time between 00:00 am and 12:00 pm. `12:01 pm` and `11:59 pm` values are also valid.
+Checks for a valid time between 00:00 am and 12:00 pm. `12:01 pm` and `11:59 pm` values are also valid.
 
 #### Example
 
@@ -623,7 +623,7 @@ Warning : The implementation has bugs, for example a valid time `00:31 am` trigg
 
 ### url2
 
-It checks for a valid URL link.
+Checks for a valid URL link.
 
 #### Example
 
@@ -640,7 +640,7 @@ It checks for a valid URL link.
 
 ### validate-admin-password
 
-It checks for a valid admin password, it has to be 7 or more characters long and it has to have letters and numbers only.
+Checks for a valid admin password. It must be 7 or more characters long and it has to have letters and numbers only.
 
 #### Example
 
@@ -657,7 +657,7 @@ It checks for a valid admin password, it has to be 7 or more characters long and
 
 ### validate-ajax-error
 
-It checks for an ajax error.
+Checks for an AJAX error.
 
 #### Example
 
@@ -671,7 +671,7 @@ It checks for an ajax error.
 
 ### validate-alpha
 
-It checks for letters (a-z or A-Z) only input.
+Checks for letters (a-z or A-Z) only.
 
 #### Example
 
@@ -688,7 +688,7 @@ It checks for letters (a-z or A-Z) only input.
 
 ### validate-alphanum
 
-It checks for letters (a-z or A-Z) or numbers (0-9) only input.
+Checks for letters (a-z or A-Z) or numbers (0-9) only.
 
 #### Example
 
@@ -702,7 +702,7 @@ It checks for letters (a-z or A-Z) or numbers (0-9) only input.
 
 ### validate-alphanum-with-spaces
 
-It checks for letters (a-z or A-Z) or numbers (0-9) or spaces only input.
+Checks for letters (a-z or A-Z) or numbers (0-9) or spaces only.
 
 #### Example
 
@@ -716,7 +716,7 @@ It checks for letters (a-z or A-Z) or numbers (0-9) or spaces only input.
 
 ### validate-cc-cvn
 
-It checks for a valid credit card identification number.
+Checks for a valid credit card identification number.
 
 #### Example
 
@@ -731,7 +731,7 @@ It checks for a valid credit card identification number.
 
 ### validate-cc-exp
 
-It checks for a valid credit card expiration month.
+Checks for a valid credit card expiration month.
 
 #### Example
 
@@ -751,7 +751,7 @@ It interprets input as a month number with year set in a predefined field. Sanit
 
 ### validate-cc-number
 
-It checks for a valid credit card number based on mod 10.
+Checks for a valid credit card number based on mod 10.
 
 #### Example
 
@@ -765,7 +765,7 @@ It checks for a valid credit card number based on mod 10.
 
 ### validate-cc-type
 
-It checks for a credit card number to match a predefined credit card type.
+Checks for a credit card number to match a predefined credit card type.
 
 #### Example
 
@@ -794,7 +794,7 @@ Field `field-5` holds a credit card type, possible values are:
 
 ### validate-cc-type-select
 
-It checks for a credit card type to match a predefined credit card number.
+Checks for a credit card type to match a predefined credit card number.
 
 #### Example
 
@@ -813,7 +813,7 @@ It checks for a credit card type to match a predefined credit card number.
 
 ### validate-cc-ukss
 
-It checks that the Switch/Solo/Maestro issue number and start date are filled.
+Checks that the Switch/Solo/Maestro issue number and start date are filled.
 
 #### Example
 
@@ -829,7 +829,7 @@ It does not do any sanity check except that a field is not empty.
 
 ### validate-clean-url
 
-It checks for a valid URL. Protocol type is not necessary.
+Checks for a valid URL. Protocol type is not necessary.
 
 #### Example
 
@@ -849,7 +849,7 @@ It checks for a valid URL. Protocol type is not necessary.
 
 ### validate-code
 
-It checks for an input that has only letters (a-z or A-Z), numbers (0-9) or underscore (\_), and the first character should be a letter.
+Checks for an input that has only letters (a-z or A-Z), numbers (0-9) or underscore (\_), and the first character should be a letter.
 
 #### Example
 
@@ -866,7 +866,7 @@ It checks for an input that has only letters (a-z or A-Z), numbers (0-9) or unde
 
 ### validate-cpassword
 
-It checks for a confirmation password to be the same as the password.
+Checks for a confirmation password to be the same as the password.
 
 #### Example
 
@@ -883,7 +883,7 @@ It is important to have `password` and `confirmation` IDs for the fields above.
 
 ### validate-css-length
 
-It checks for a valid CSS length (Ex: 100px, 77pt, 20em, .5ex or 50%).
+Checks for a valid CSS length (Ex: 100px, 77pt, 20em, .5ex or 50%).
 
 #### Example
 
@@ -897,7 +897,7 @@ It checks for a valid CSS length (Ex: 100px, 77pt, 20em, .5ex or 50%).
 
 ### validate-currency-dollar
 
-It checks for a valid US dollar amount, for example $100.
+Checks for a valid US dollar amount, for example $100.
 
 #### Example
 
@@ -915,7 +915,7 @@ It checks for a valid US dollar amount, for example $100.
 
 ### validate-customer-password
 
-It checks for a password to be greater or equal to a predefined number of characters and predefined number of character classes.  Classes of characters: Lowercase, Uppercase, Digits, Special Characters.
+Checks for a password to be greater or equal to a predefined number of characters and predefined number of character classes.  Classes of characters: Lowercase, Uppercase, Digits, Special Characters.
 
 #### Example
 
@@ -935,7 +935,7 @@ In the example above the password must be 10 or more characters long and have tw
 
 ### validate-data
 
-It checks for an input to have only letters (a-z or A-Z), numbers (0-9) or underscore (\_), and the first character should be a letter.
+Checks for an input to have only letters (a-z or A-Z), numbers (0-9) or underscore (\_), and the first character should be a letter.
 
 #### Example
 
@@ -949,7 +949,7 @@ It checks for an input to have only letters (a-z or A-Z), numbers (0-9) or under
 
 ### validate-date
 
-It checks for a valid date against a predefined format.
+Checks for a valid date against a predefined format.
 
 #### Example
 
@@ -969,7 +969,7 @@ In the example above:
 
 ### validate-date-au
 
-It checks for a valid date in the format: dd/mm/yyyy.
+Checks for a valid date in the format: dd/mm/yyyy.
 
 #### Example
 
@@ -983,7 +983,7 @@ It checks for a valid date in the format: dd/mm/yyyy.
 
 ### validate-date-range
 
-It checks for `From`-`To` date range.
+Checks for `From`-`To` date range.
 
 #### Example
 
@@ -998,7 +998,7 @@ It checks for `From`-`To` date range.
 
 ### validate-digits
 
-It checks for a digits only input.
+Checks for a digits only input.
 
 #### Example
 
@@ -1015,7 +1015,7 @@ It checks for a digits only input.
 
 ### validate-digits-range
 
-It checks for a digits only input within a specified range. There are two ways to specify a range. You can specify a negative number as a range limit.
+Checks for a digits only input within a specified range. There are two ways to specify a range. You can specify a negative number as a range limit.
 
 #### Example
 
@@ -1032,7 +1032,7 @@ In the example above, the first range is from `-10` to `-9` and the second range
 
 ### validate-email
 
-It checks for a valid email address.
+Checks for a valid email address.
 
 #### Example
 
@@ -1046,7 +1046,7 @@ It checks for a valid email address.
 
 ### validate-emails
 
-It checks for a valid email(s) separated (if several) by a comma, newline or a space.
+Checks for a valid email(s) separated (if several) by a comma, newline or a space.
 
 #### Example
 
@@ -1064,7 +1064,7 @@ It checks for a valid email(s) separated (if several) by a comma, newline or a s
 
 ### validate-emailSender
 
-It checks for a valid email address although no sanity check is performed, i.e. any input is valid. Regex is `^[\S ]+$`.
+Checks for a valid email address although no sanity check is performed, i.e. any input is valid. Regex is `^[\S ]+$`.
 
 #### Example
 
@@ -1078,7 +1078,7 @@ It checks for a valid email address although no sanity check is performed, i.e. 
 
 ### validate-fax
 
-It checks for a valid fax number.
+Checks for a valid fax number.
 
 #### Example
 
@@ -1096,7 +1096,7 @@ It checks for a valid fax number.
 
 ### validate-forbidden-extensions
 
-It checks that an input (comma separated file extensions) does not have an extension from a predefined list.
+Checks that an input (comma separated file extensions) does not have an extension from a predefined list.
 
 ### Example
 
@@ -1114,7 +1114,7 @@ It checks that an input (comma separated file extensions) does not have an exten
 
 ### validate-greater-than-zero
 
-It checks for a number greater than zero. There is a sanity check so `dfdf` input will trigger a warning.
+Checks for a number greater than zero. There is a sanity check so `dfdf` input will trigger a warning.
 
 #### Example
 
@@ -1133,7 +1133,7 @@ It checks for a number greater than zero. There is a sanity check so `dfdf` inpu
 
 ### validate-identifier
 
-It checks for a valid URL key.
+Checks for a valid URL key.
 
 #### Example
 
@@ -1151,7 +1151,7 @@ It checks for a valid URL key.
 
 ### validate-item-quantity
 
-It checks for a quantity number to be within `minAllowed` and `maxAllowed` and to be in `qtyIncremenets`.
+Checks for a quantity number to be within `minAllowed` and `maxAllowed` and to be in `qtyIncremenets`.
 
 #### Example
 
@@ -1170,7 +1170,7 @@ It checks for a quantity number to be within `minAllowed` and `maxAllowed` and t
 
 ### validate-length
 
-It checks for input length to be within specified limits.
+Checks for input length to be within specified limits.
 
 #### Example
 
@@ -1190,7 +1190,7 @@ In the example above:
 
 ### validate-new-password
 
-It checks for input to be 6 or more characters. Leading and trailing spaces will be ignored.
+Checks for input to be 6 or more characters. Leading and trailing spaces are ignored.
 
 #### Example
 
@@ -1204,7 +1204,7 @@ It checks for input to be 6 or more characters. Leading and trailing spaces will
 
 ### validate-no-empty
 
-It checks that an input is not empty.
+Checks that an input is not empty.
 
 #### Example
 
@@ -1218,7 +1218,7 @@ It checks that an input is not empty.
 
 ### validate-no-html-tags
 
-It checks that an input does not have HTML tags.
+Checks that an input does not have HTML tags.
 
 #### Example
 
@@ -1232,7 +1232,7 @@ It checks that an input does not have HTML tags.
 
 ### validate-no-utf8mb4-characters
 
-It checks that an input does not have characters that would require more than 3 bytes.
+Checks that an input does not have characters that would require more than 3 bytes.
 
 #### Example
 
@@ -1246,7 +1246,7 @@ It checks that an input does not have characters that would require more than 3 
 
 ### validate-not-negative-number
 
-It checks for non-negative number input.
+Checks for non-negative number input.
 
 #### Example
 
@@ -1260,7 +1260,7 @@ It checks for non-negative number input.
 
 ### validate-not-number-first
 
-It checks that an input does not start with a number.
+Checks that an input does not start with a number.
 
 #### Example
 
@@ -1274,7 +1274,7 @@ It checks that an input does not start with a number.
 
 ### validate-number
 
-It checks for a valid number.
+Checks for a valid number.
 
 #### Example
 
@@ -1288,7 +1288,7 @@ It checks for a valid number.
 
 ### validate-number-range
 
-It checks for a number to be within a specified range.
+Checks for a number to be within a specified range.
 
 #### Example
 
@@ -1320,7 +1320,7 @@ It is supposed to check for radio buttons selection but it always returns true. 
 
 ### validate-one-required-by-name
 
-It checks for a radio button selection.
+Checks for a radio button selection.
 
 #### Example
 
@@ -1338,7 +1338,7 @@ It checks for a radio button selection.
 
 ### validate-optional-datetime
 
-It validates an optional datetime field.
+Validates an optional datetime field.
 
 #### Example
 
@@ -1364,7 +1364,7 @@ It validates an optional datetime field.
 
 ### validate-password
 
-It checks for an input to be 6 or more characters long. Leading and trailing spaces will be ignored.
+Checks for an input to be 6 or more characters long. Leading and trailing spaces are ignored.
 
 #### Example
 
@@ -1380,7 +1380,7 @@ It checks for an input to be 6 or more characters long. Leading and trailing spa
 
 ### validate-per-page-value
 
-It checks for an input to be a specified value from a comma separated field.
+Checks for an input to be a specified value from a comma separated field.
 
 #### Example
 
@@ -1400,7 +1400,7 @@ It checks for an input to be a specified value from a comma separated field.
 
 ### validate-per-page-value-list
 
-It checks for a comma separated numbers input.
+Checks for comma separated numbers.
 
 #### Example
 
@@ -1420,7 +1420,7 @@ It checks for a comma separated numbers input.
 
 ### validate-phoneLax
 
-It checks for a valid phone number, formatting may be lax.
+Checks for a valid phone number. Formatting may be lax.
 
 #### Example
 
@@ -1436,7 +1436,7 @@ It checks for a valid phone number, formatting may be lax.
 
 ### validate-phoneStrict
 
-It checks for a valid phone number with strict formatting.
+Checks for a valid phone number with strict formatting.
 
 #### Example
 
@@ -1452,7 +1452,7 @@ It checks for a valid phone number with strict formatting.
 
 ### validate-range
 
-It checks for an input to be within a specified range.
+Checks for an input to be within a specified range.
 
 #### Example
 
@@ -1471,7 +1471,7 @@ It checks for an input to be within a specified range.
 
 ### validate-required-datetime
 
-It validates a required datetime field.
+Validates a required datetime field.
 
 #### Example
 
@@ -1497,7 +1497,7 @@ It validates a required datetime field.
 
 ### validate-select
 
-It checks for a select field to be selected.
+Checks for a select field to be selected.
 
 #### Example
 
@@ -1517,7 +1517,7 @@ It checks for a select field to be selected.
 
 ### validate-ssn
 
-It checks for a valid social security number.
+Checks for a valid Social Security number.
 
 #### Example
 
@@ -1533,7 +1533,7 @@ It checks for a valid social security number.
 
 ### validate-state
 
-It checks for a valid State/Province.
+Checks for a valid State/Province.
 
 #### Example
 
@@ -1549,7 +1549,7 @@ It checks for a valid State/Province.
 
 ### validate-street
 
-It checks for a valid street address, it allows only letters (a-z or A-Z), numbers (0-9), spaces and `#`.
+Checks for a valid street address. It allows only letters (a-z or A-Z), numbers (0-9), spaces and `#`.
 
 #### Example
 
@@ -1565,7 +1565,7 @@ It checks for a valid street address, it allows only letters (a-z or A-Z), numbe
 
 ### validate-url
 
-It checks for a valid URL.
+Checks for a valid URL.
 
 #### Example
 
@@ -1581,7 +1581,7 @@ It checks for a valid URL.
 
 ### validate-xml-identifier
 
-It checks for a valid XML-identifier (Ex: something\_1, block5, id-4).
+Checks for a valid XML-identifier (Ex: something\_1, block5, id-4).
 
 #### Example
 
@@ -1597,7 +1597,7 @@ It checks for a valid XML-identifier (Ex: something\_1, block5, id-4).
 
 ### validate-zero-or-greater
 
-It checks that a number is zero or greater in this field.
+Checks that a number is zero or greater in this field.
 
 #### Example
 
@@ -1613,7 +1613,7 @@ It checks that a number is zero or greater in this field.
 
 ### validate-zip-international
 
-It checks for a valid international zip code.
+Checks for a valid international zip code.
 
 #### Example
 
@@ -1629,7 +1629,7 @@ It checks for a valid international zip code.
 
 ### validate-zip-us
 
-It checks for a valid US zip code (Ex: 90602 or 90602-1234).
+Checks for a valid US zip code (Ex: 90602 or 90602-1234).
 
 #### Example
 
@@ -1645,7 +1645,7 @@ It checks for a valid US zip code (Ex: 90602 or 90602-1234).
 
 ### vinUS
 
-It checks for a valid vehicle identification number (VIN).
+Checks for a valid vehicle identification number (VIN).
 
 #### Example
 
@@ -1661,7 +1661,7 @@ It checks for a valid vehicle identification number (VIN).
 
 ### zip-range
 
-It checks for a zip code to be in the range 902xx-xxxx to 905-xx-xxxx.
+Checks for a zip code to be in the range 902xx-xxxx to 905-xx-xxxx.
 
 #### Example
 
