@@ -53,13 +53,13 @@ Your on-premises infrastructure must meet the following requirements before inst
 
 ### Commerce Services Connector
 
-The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/user-guide/system/saas.html) extension to be installed on your system and [configured]({{ site.user_guide_url }}/system/saas.html#createsaasenv) with API keys. To verify that the extension is installed, run the following command:
+The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/system/saas.html) extension to be installed on your system and [configured]({{ site.user_guide_url }}/system/saas.html#createsaasenv) with API keys. To verify that the extension is installed, run the following command:
 
 ```bash
 bin/magento module:status Magento_ServicesConnector
 ```
 
-__If you have installed the extension__ and configured it using an existing API key for a different service, you must regenerate the API key and update it in the {{ site.data.var.ee }} Admin for the agent.
+__If you have installed the extension__ and configured it using an existing API key for a different service, you **MUST regenerate the API key** and update it in the {{ site.data.var.ee }} Admin for the agent.
 
 1. Put your website into [maintenance mode]({{ site.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-maint.html).
 1. Log in to [accounts.magento.com](https://accounts.magento.com/).
@@ -184,30 +184,27 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    shasum -a 512 -c launcher.checksum
    ```
 
-1. Create the `swat-agent.env` file with the following contents.
+1. Create the `config.yaml` file with the following contents.
 
-   ```config
-   SWAT_AGENT_PREFERRED_APPLICATION_NAME=<Test Inc>
-   SWAT_AGENT_APP_NAME=<APP_NAME>
-   SWAT_AGENT_APPLICATION_PHP_PATH=php
-   SWAT_AGENT_APPLICATION_MAGENTO_PATH=<APPLICATION ROOT e.g: /var/www/html >
-   SWAT_AGENT_APPLICATION_DB_USER=<APPLICATION_DB_USER>
-   SWAT_AGENT_APPLICATION_DB_PASSWORD=<APPLICATION_DB_PASSWORD>
-   SWAT_AGENT_APPLICATION_DB_HOST=<APPLICATION_DB_HOST>
-   SWAT_AGENT_APPLICATION_DB_NAME=<APPLICATION_DB_NAME>
-   SWAT_AGENT_APPLICATION_DB_PORT=3306
-   SWAT_AGENT_APPLICATION_DB_TABLE_PREFIX=<TABLE_PREFIX>
-   SWAT_AGENT_APPLICATION_DB_REPLICATED=<false or true>
-   SWAT_AGENT_APPLICATION_CHECK_REGISTRY_PATH=<TEMPORARY DIRECTORY e.g: /tmp/swat-agent-production >
-   SWAT_AGENT_BACKEND_HOST=check.swat.magento.com:443
-   SWAT_AGENT_RUN_CHECKS_ON_START=1
-   SWAT_AGENT_LOG_LEVEL=error
-   SWAT_AGENT_ENABLE_AUTO_UPGRADE=true
-   SWAT_AGENT_IS_SANDBOX=false
+   ```yaml
+   project:
+     appname: "Acme Inc" # Company or site name that you provided when installing the agent
+   application:
+     phppath: php # Path to your PHP CLI interpreter (usually /usr/bin/php)
+     magentopath: /var/www/html/example.com # Root directory where your Adobe Commerce application is installed (usually /var/www/html)
+     checkregistrypath: /path/to/swat-agent/tmp # Temporary directory for the agent (usually /usr/local/swat-agent/tmp)
+     issandbox: false # Enabling sandbox mode to use the agent on staging environment (true or false)
+     database:
+       user: your-adobe-commerce-db-username # Database user for your Adobe Commerce installation
+       password: your-password # Database password for the specified user for your Adobe Commerce installation
+       host: 127.0.0.1 # Database host for your Adobe Commerce installation
+       dbname: your-adobe-commerce-db-name # Database name for your Adobe Commerce installation
+       port: 3306 # Database port for your Adobe Commerce installation (usually 3306)
+       tableprefix: # Table Prefix for your Adobe Commerce installation (default value: empty)
+   enableautoupgrade: true # Enables automatic upgrade (restart required after an upgrade; agent does not check for upgrades if the option is disabled; true or false)
+   runchecksonstart: true # Collect data on the first run (Usually 1)
+   loglevel: error # Determines what events are logged based on severity (usually error)
    ```
-
-   {:.bs-callout-info}
-   See [configuration reference](#configuration-reference) for descriptions and recommended values for all properties.
 
 1. Verify the installation.
 
@@ -231,12 +228,6 @@ We recommend configuring the agent to run as a service. If you have limited acce
 
 #### Service
 
-1. Copy the `scheduler` binary file to the directory where you want to store it.
-
-   ```bash
-   cp scheduler /usr/local/bin/
-   ```
-
 1. Create a systemd unit file (`/etc/systemd/system/scheduler.service`) with the following configuration.
 
    ```config
@@ -247,16 +238,13 @@ We recommend configuring the agent to run as a service. If you have limited acce
    [Service]
    Type=simple
    DynamicUser=yes
-   ExecStart=/usr/local/bin/scheduler
+   ExecStart=/path/to/agent/scheduler
    Restart=always
    RestartSec=3
-   EnvironmentFile=/path/to/swat-agent.env
 
    [Install]
    WantedBy=multi-user.target
    ```
-
-   Make sure that the value for the `EnvironmentFile` property matches the path to the `swat-agent.env` file that was created during installation.
 
 1. Launch the service.
 
@@ -275,7 +263,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
 1. Validate that the service is up and running.
 
    ```bash
-   journalctl -u scheduler | grep "Next Version might update" | tail -1 && echo "Agent is successfully installed"
+   journalctl -u scheduler | grep "Application is going to update" | tail -1 && echo "Agent is successfully installed"
    ```
 
 #### Cron
@@ -285,7 +273,7 @@ If you do not have root permissions or do not have permissions to configure a se
 Update your cron schedule:
 
 ```bash
-( crontab -l ; echo "* * * * * flock -n /tmp/swat-agent.lockfile -c 'source /path/to/agent/swat-agent.env; /path/to/agent/scheduler' >> /path/to/agent/errors.log 2>&1" ) | sort - | uniq - | crontab -
+( crontab -l ; echo "* * * * * flock -n /tmp/swat-agent.lockfile -c '/path/to/agent/scheduler' >> /path/to/agent/errors.log 2>&1" ) | sort - | uniq - | crontab -
 ```
 
 ### Uninstall
@@ -354,9 +342,9 @@ If you configured the agent to run with cron instead, use the following instruct
    rm -rf swat-agent
    ```
 
-### Configuration reference
+### Override the configuration file
 
-The following table provides descriptions and recommended values for all properties in the agent `.env` configuration file:
+You can override the values that you specified in the configuration file during installation by using environment variables. This preserves backward compatibility with earlier versions of the agent. See the following table for recommended values:
 
 Property | Description |
 ---------|-------------|
@@ -371,8 +359,6 @@ Property | Description |
 `SWAT_AGENT_APPLICATION_DB_TABLE_PREFIX` | Table Prefix for your {{ site.data.var.ee }} installation (default value: `empty`)
 `SWAT_AGENT_APPLICATION_DB_REPLICATED` | Whether your {{ site.data.var.ee }} installation has a secondary database instance (usually `false`)
 `SWAT_AGENT_APPLICATION_CHECK_REGISTRY_PATH` | Temporary directory for the agent (usually `/usr/local/swat-agent/tmp`)
-`SWAT_AGENT_BACKEND_HOST` | Site Wide Analysis Backend Server and port (usually `check.swat.magento.com:443`)
-`SWAT_AGENT_LOGIN_BACKEND_HOST` | Site Wide Analysis Tool backend login server and port (usually `login.swat.magento.com:443`)
 `SWAT_AGENT_RUN_CHECKS_ON_START` | Collect data on the first run (usually `1`)
 `SWAT_AGENT_LOG_LEVEL` | Determines what events are logged based on severity  (usually `error`)
 `SWAT_AGENT_ENABLE_AUTO_UPGRADE` | Enables automatic upgrade (restart required after an upgrade; agent does not check for upgrades if the option is disabled; `true` or `false`)
