@@ -1,0 +1,35 @@
+name: Incorrect or unclear topic
+description: "Unclear or incorrect documentation: ambiguous guidelines, wrong or obsolete examples, typos, etc."
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report this issue!
+        This request should only relate to the content of the devdocs.magento.com website.
+        If you are having an issue with the actual product (as opposed to the docs), search the [Help Center](https://support.magento.com/hc/en-us) or report it as a [codebase issue](https://devdocs.magento.com/contributor-guide/contributing.html#report).
+        Requests that do not comply with our Code of Conduct or do not contain enough information may be closed at the maintainers' discretion.
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the documentation you are requesting.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: input
+    attributes:
+      label: Which topic?
+      description: A link to the topic that needs clarification or correction
+      placeholder: "Example: https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What's wrong with the content?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What changes do you propose?
+  - type: textarea
+    attributes:
+      label: Anything else that can help to cover this?
