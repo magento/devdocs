@@ -185,6 +185,9 @@ pages:
       url: /frontend-dev-guide/validations/form-validation.html
       children:
 
+        - label: Validation rule list
+          url: /frontend-dev-guide/validations/rule-list.html
+
         - label: Custom validation rule
           url: /frontend-dev-guide/validations/custom-validation.html
 
