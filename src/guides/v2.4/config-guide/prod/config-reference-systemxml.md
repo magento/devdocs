@@ -412,7 +412,7 @@ The following validation rules are available:
 
 ### Default Values
 
-The default values for fields can be set in the module's `config.xml` file located under `etc/config.xml` by specicfying the default value under the section / group / field ID.
+The default values for fields can be set in the module's `config.xml` file located under `etc/config.xml` by specifying the default value under the section / group / field ID.
 
 ### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID`
 
