@@ -128,11 +128,11 @@ To configure New Relic for Starter environments:
 
    -  Copy the license key.
 
-1. Add the New Relic license key to an environment using the Magento Cloud CLI, or [add it from the Admin].
+1. Add the New Relic license key to an environment using the `magento-cloud` CLI, or [add it from the Admin].
 
    -  Change to the environment that needs the license key.
 
-   -  Set the variable using the following Magento Cloud CLI command:
+   -  Set the variable using the following `magento-cloud` CLI command:
 
       ```bash
       magento-cloud variable:set php:newrelic.license <newrelic-license-key>

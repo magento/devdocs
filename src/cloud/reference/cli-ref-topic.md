@@ -4,29 +4,31 @@ title: Magento Cloud CLI
 functional_areas:
   - Cloud
 ---
-> The ```magento-cloud``` CLI tool enables developers and system administrators the ability to manage Cloud projects and environments, perform routines and run automation tasks using the magento-cloud CLI. The `magento-cloud` CLI extends the features and functionality of Project Web Interface. After you install the `magento-cloud` CLI on your local workstation you can use it to manage all of your {{site.data.var.ece}} Starter and Pro Integration environments.
+The ```magento-cloud``` CLI tool enables developers and system administrators the ability to manage Cloud projects and environments, perform routines and run automation tasks. The `magento-cloud` CLI extends the features and functionality of the Project Web Interface. After you install the `magento-cloud` CLI on your local workstation, you can use it to manage your {{site.data.var.ece}} Starter and Pro Integration environments.
 
 {:.procedure}
 To install the ```magento-cloud```CLI:
 
 1. On your local workstation, change to the directory where you want to clone the Cloud project and where the [file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
-2. Install the `magento-cloud` CLI.
+1. Install the `magento-cloud` CLI.
 
    ```bash
    curl -sS https://accounts.magento.cloud/cli/installer | php
    ```
-3. Add `magento-cloud` CLI to the bash profile.
+
+1. Add `magento-cloud` CLI to the bash profile.
 
    ```bash
    export PATH=$PATH:$HOME/.magento-cloud/bin
    ```
 
-   4. Reload the updated bash profile.
+1. Reload the updated bash profile.
 
    ```bash
    . ~/.bash_profile
    ```
-4. To initiate the CLI, call `magento-cloud` and enter your Cloud account credentials when prompted.
+
+1. To initiate the CLI, call `magento-cloud` and enter your Cloud account credentials when prompted.
 
    ```bash
    magento-cloud
@@ -37,7 +39,8 @@ To install the ```magento-cloud```CLI:
    Please log in using your Magento Cloud account.
    Your email address or username:
    ```
-5. Verify the `magento-cloud` command is in your path. The following example lists the available commands.
+
+1. Verify the `magento-cloud` command is in your path. The following example lists the available commands.
 
    ```bash
    magento-cloud list
@@ -45,10 +48,9 @@ To install the ```magento-cloud```CLI:
 
 ## Common commands
 
-Adobe  designed these commands to manage Cloud Integration environments. It is a best practice to run the `magento-cloud` CLI from a project directory, because you can omit the `-p <project ID>` parameter.
+Adobe  designed these commands to manage Cloud Integration environments. It is recommended you run the `magento-cloud` CLI from a project directory, because you can omit the `-p <project ID>` parameter.
 
 The following list of commonly used `magento-cloud` CLI commands includes required options only. You can use the `--help` option with any command to see more information.
-
 
 | Command                                               | Description                                        |
 | ------------------------------------------------------- | ---------------------------------------------------- |
@@ -74,18 +76,17 @@ magento-cloud environment:list
 
 ### Common environment commands
 
-
-| Action                              | Command                                                                          |
-| ------------------------------------- | ---------------------------------------------------------------------------------- |
-| Checkout environment                | `magento-cloud environment:checkout <ENVIRONMENT_ID>`                            |
-| Merge change to parent environment  | `magento-cloud environment:merge -p <PROJECT_ID> -e <ENVIRONMENT_ID>`            |
-| Synchronize with parent environment | `magento-cloud environment:synchronize -p <PROJECT_ID> -e <ENVIRONMENT_ID> {code |
-| List environment variables          | `magento-cloud variable:list`                                                    |
-| Set a variable value                | `magento-cloud variable:set <VARIABLE_NAME> <VARIABLE_VALUE>`                    |
+| Action                              | Command                                                               |
+| ------------------------------------- | ----------------------------------------------------------------------- |
+| Checkout environment                | `magento-cloud environment:checkout <ENVIRONMENT_ID>`                 |
+| Merge change to parent environment  | `magento-cloud environment:merge -p <PROJECT_ID> -e <ENVIRONMENT_ID>` |
+| Synchronize with parent environment | `magento-cloud environment:synchronize -p <PROJECT_ID> -e <ENVIRONMENT_ID> {code|data}` |
+| List environment variables          | `magento-cloud variable:list`                                         |
+| Set a variable value                | `magento-cloud variable:set <VARIABLE_NAME> <VARIABLE_VALUE>`         |
 
 ### Redeploy the environment
 
-Trigger a redeployment without using a push. You must verify and confirm the environment to redeploy. Do not use redeploy if there is a build in a pending state.
+Trigger a redeployment without using a push. Verify and confirm the environment to redeploy. Do not use redeploy if there is a build in a pending state.
 
 ```bash
 magento-cloud environment:redeploy
@@ -155,7 +156,7 @@ Help:
 
 The `magento-cloud` CLI checks for available updates when you log in, but you can check for updates using the `self:update` command. If there is an update available, follow the instructions to update the CLI.
 
-If your magento-cloud CLI is up to date, you see the following response:
+If your `magento-cloud` CLI is up to date, you see the following response:
 
 ```bash
 magento-cloud update

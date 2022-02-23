@@ -17,7 +17,7 @@ To use SSH, you need to:
 
 *  Generate your SSH public and private keys
 *  Add your SSH public key to your remote server either through CLI commands or the Project Web Interface
-*  Use Magento Cloud CLI or Git commands to [SSH](#ssh) to an environment
+*  Use `magento-cloud` CLI or Git commands to [SSH](#ssh) to an environment
 
 You create an SSH key pair including a public and private key:
 
@@ -34,7 +34,7 @@ When you enter an SSH command to connect your client to the remote host, the hos
 
 You can connect using SSH in any of the following ways:
 
-*  [SSH using Magento Cloud CLI](#magento-cli)
+*  [SSH using `magento-cloud` CLI](#magento-cli)
 *  [Locate the SSH command in the Project Web Interface](#web-interface)
 *  [Git SSH commands for Pro Staging and Production](#pro)
 
@@ -94,7 +94,7 @@ ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
 
 ### SSH commands for Pro Staging and Production {#pro}
 
-You can not use the `magento-cloud` CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.
+You cannot use the `magento-cloud` CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.
 
 With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.
 

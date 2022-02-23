@@ -15,7 +15,7 @@ To manage the branches and environments with the Project Web Interface, see [Man
 
 ## Use Magento Cloud CLI commands {#env-start-comm}
 
-`magento-cloud` CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter. See the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
+The `magento-cloud` CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter. See the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 ## Get started creating branches {#getstarted}
 
@@ -275,7 +275,7 @@ Request timeout for icmp_seq 2
 
 ## Interact with environments using the magento-cloud CLI {#commands}
 
-After you [setup SSH keys]({{ site.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use Magento Cloud CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
+After you [setup SSH keys]({{ site.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use `magento-cloud` CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
 
 {% include cloud/log-in-db.md %}
 
