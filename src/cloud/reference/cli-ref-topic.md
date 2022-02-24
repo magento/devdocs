@@ -7,7 +7,7 @@ functional_areas:
 The `magento-cloud` CLI tool enables developers and system administrators the ability to manage Cloud projects and environments, perform routines and run automation tasks. The `magento-cloud` CLI extends the features and functionality of the Project Web Interface. After you install the `magento-cloud` CLI on your local workstation, you can use it to manage your {{site.data.var.ece}} Starter and Pro Integration environments.
 
 {:.procedure}
-To install the ```magento-cloud```CLI:
+To install the `magento-cloud` CLI:
 
 1. On your local workstation, change to the directory where you intend to clone the Cloud project and where the [file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
 
