@@ -9,7 +9,7 @@ The `magento-cloud` CLI tool enables developers and system administrators the ab
 {:.procedure}
 To install the ```magento-cloud```CLI:
 
-1. On your local workstation, change to the directory where you want to clone the Cloud project and where the [file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
+1. On your local workstation, change to the directory where you intend to clone the Cloud project and where the [file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
 
 1. Install the `magento-cloud` CLI.
 
