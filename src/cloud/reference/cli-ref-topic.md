@@ -7,9 +7,9 @@ functional_areas:
 The `magento-cloud` CLI tool enables developers and system administrators the ability to manage Cloud projects and environments, perform routines and run automation tasks. The `magento-cloud` CLI extends the features and functionality of the Project Web Interface. After you install the `magento-cloud` CLI on your local workstation, you can use it to manage your {{site.data.var.ece}} Starter and Pro Integration environments.
 
 {:.procedure}
-To install the ```magento-cloud```CLI:
+To install the `magento-cloud` CLI:
 
-1. On your local workstation, change to the directory where you want to clone the Cloud project and where the [file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
+1. On your local workstation, change to the directory where you intend to clone the Cloud project and where the [file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
 
 1. Install the `magento-cloud` CLI.
 
@@ -49,7 +49,7 @@ To install the ```magento-cloud```CLI:
 
 ## Common commands
 
-Adobe  designed these commands to manage Cloud Integration environments. It is recommended you run the `magento-cloud` CLI from a project directory, because you can omit the `-p <project ID>` parameter.
+Adobe designed these commands to manage Cloud Integration environments and recommends that you run the `magento-cloud` CLI from a project directory, so that you can omit the `-p <project-ID>` parameter.
 
 The following list of commonly used `magento-cloud` CLI commands includes required options only. You can use the `--help` option with any command to see more information.
 
@@ -81,7 +81,7 @@ magento-cloud environment:list
 | ------------------------------------- | ----------------------------------------------------------------------- |
 | Checkout environment                | `magento-cloud environment:checkout`                 |
 | Merge change to parent environment  | `magento-cloud environment:merge -p -e` |
-| Synchronize with parent environment | `magento-cloud environment:synchronize -p -e {code\|data}` |
+| Synchronize with parent environment | `magento-cloud environment:synchronize -p -e {code|data}` |
 | List environment variables          | `magento-cloud variable:list`                                         |
 | Set a variable value                | `magento-cloud variable:set`         |
 
