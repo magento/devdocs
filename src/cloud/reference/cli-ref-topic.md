@@ -57,9 +57,9 @@ The following list of commonly used `magento-cloud` CLI commands includes requir
 | ------------------------------------------------------- | ---------------------------------------------------- |
 | `magento-cloud login`                                 | Log in to the project.                             |
 | `magento-cloud list`                                  | List the available commands for CLI tool.          |
-| `magento-cloud environment:list`                      | List the environments in the current project.      |
-| `magento-cloud environment:checkout ` | Check out an existing environment.                 |
-| `magento-cloud environment:merge -e ` | Merge changes in this environment with its parent. |
+| `magento-cloud environment:list`                 | List the environments in the current project.      |
+| `magento-cloud environment:checkout` | Check out an existing environment.                 |
+| `magento-cloud environment:merge -e` | Merge changes in this environment with its parent. |
 | `magento-cloud variables`                             | List variables in this environment.                |
 | `magento-cloud ssh`                                   | Use SSH to connect to the remote environment.      |
 
@@ -79,11 +79,11 @@ magento-cloud environment:list
 
 | Action                              | Command                                                               |
 | ------------------------------------- | ----------------------------------------------------------------------- |
-| Checkout environment                | `magento-cloud environment:checkout `                 |
-| Merge change to parent environment  | `magento-cloud environment:merge -p  -e ` |
-| Synchronize with parent environment | `magento-cloud environment:synchronize -p  -e  {code\|data}` |
+| Checkout environment                | `magento-cloud environment:checkout`                 |
+| Merge change to parent environment  | `magento-cloud environment:merge -p -e` |
+| Synchronize with parent environment | `magento-cloud environment:synchronize -p -e {code\|data}` |
 | List environment variables          | `magento-cloud variable:list`                                         |
-| Set a variable value                | `magento-cloud variable:set  `         |
+| Set a variable value                | `magento-cloud variable:set`         |
 
 ### Redeploy the environment
 
