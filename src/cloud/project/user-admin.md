@@ -313,11 +313,10 @@ To create an API token:
 
 [{{ site.data.var.ece }} account]: https://accounts.magento.cloud/user/
 [{{ site.data.var.ece }} user account]: https://account.magento.cloud/user
-[Authenticator (Windows Phone)]: http://www.windowsphone.com/en-us/store/app/authenticator/021dd79f-0598-e011-986b-78e7d1fa76f8
 [Authy (Android/iPhone)]: https://www.authy.com/app/
 [enable SSH keys]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html
 [FreeOTP (Android)]: https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp
 [GAuth Authenticator (Firefox OS, desktop, others)]: https://github.com/gbraad/gauth
-[Google Authenticator (Android/iPhone/BlackBerry)]: https://support.google.com/accounts/answer/1066447?hl=en
+[Google Authenticator (Android/iPhone)]: https://support.google.com/accounts/answer/1066447?hl=en
 [Enable MFA for SSH]: {{ site.baseurl }}/cloud/project/project-enable-mfa-enforcement.html
 [snapshots]: {{ site.baseurl }}/cloud/project/project-webint-snap.html
