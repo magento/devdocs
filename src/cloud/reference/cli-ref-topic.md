@@ -81,7 +81,7 @@ magento-cloud environment:list
 | ------------------------------------- | ----------------------------------------------------------------------- |
 | Checkout environment                | `magento-cloud environment:checkout`                 |
 | Merge change to parent environment  | `magento-cloud environment:merge -p -e` |
-| Synchronize with parent environment | `magento-cloud environment:synchronize -p -e {code\|data}` |
+| Synchronize with parent environment | `magento-cloud environment:synchronize -p -e {code|data}` |
 | List environment variables          | `magento-cloud variable:list`                                         |
 | Set a variable value                | `magento-cloud variable:set`         |
 
