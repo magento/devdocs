@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Cloud CLI 
+title: Magento Cloud CLI
 functional_areas:
   - Cloud
 ---
@@ -10,6 +10,7 @@ The ```magento-cloud``` CLI tool enables developers and system administrators th
 To install the ```magento-cloud```CLI:
 
 1. On your local workstation, change to the directory where you want to clone the Cloud project and where the [file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
+
 1. Install the `magento-cloud` CLI.
 
    ```bash
@@ -57,8 +58,8 @@ The following list of commonly used `magento-cloud` CLI commands includes requir
 | `magento-cloud login`                                 | Log in to the project.                             |
 | `magento-cloud list`                                  | List the available commands for CLI tool.          |
 | `magento-cloud environment:list`                      | List the environments in the current project.      |
-| `magento-cloud environment:checkout <environment-ID>` | Check out an existing environment.                 |
-| `magento-cloud environment:merge -e <environment-ID>` | Merge changes in this environment with its parent. |
+| `magento-cloud environment:checkout ` | Check out an existing environment.                 |
+| `magento-cloud environment:merge -e ` | Merge changes in this environment with its parent. |
 | `magento-cloud variables`                             | List variables in this environment.                |
 | `magento-cloud ssh`                                   | Use SSH to connect to the remote environment.      |
 
@@ -78,11 +79,11 @@ magento-cloud environment:list
 
 | Action                              | Command                                                               |
 | ------------------------------------- | ----------------------------------------------------------------------- |
-| Checkout environment                | `magento-cloud environment:checkout <ENVIRONMENT_ID>`                 |
-| Merge change to parent environment  | `magento-cloud environment:merge -p <PROJECT_ID> -e <ENVIRONMENT_ID>` |
-| Synchronize with parent environment | `magento-cloud environment:synchronize -p <PROJECT_ID> -e <ENVIRONMENT_ID> {code|data}` |
+| Checkout environment                | `magento-cloud environment:checkout `                 |
+| Merge change to parent environment  | `magento-cloud environment:merge -p  -e ` |
+| Synchronize with parent environment | `magento-cloud environment:synchronize -p  -e  {code\|data}` |
 | List environment variables          | `magento-cloud variable:list`                                         |
-| Set a variable value                | `magento-cloud variable:set <VARIABLE_NAME> <VARIABLE_VALUE>`         |
+| Set a variable value                | `magento-cloud variable:set  `         |
 
 ### Redeploy the environment
 
@@ -166,5 +167,3 @@ magento-cloud update
 Checking for Magento Cloud CLI updates (current version: X.XX.X)
 No updates found
 ```
-
-{:.no-copy}
