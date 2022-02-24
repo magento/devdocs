@@ -49,7 +49,7 @@ To install the ```magento-cloud```CLI:
 
 ## Common commands
 
-Adobe  designed these commands to manage Cloud Integration environments. It is recommended you run the `magento-cloud` CLI from a project directory, because you can omit the `-p <project ID>` parameter.
+Adobe designed these commands to manage Cloud Integration environments and recommends that you run the `magento-cloud` CLI from a project directory, so that you can omit the `-p <project-ID>` parameter.
 
 The following list of commonly used `magento-cloud` CLI commands includes required options only. You can use the `--help` option with any command to see more information.
 
