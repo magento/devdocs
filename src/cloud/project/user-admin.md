@@ -191,9 +191,8 @@ After you add a user to a Cloud project, ask the user to review their account se
 
 {{site.data.var.ece}} supports two-factor authentication using any of the following applications:
 
--  [Google Authenticator (Android/iPhone/BlackBerry)][]
+-  [Google Authenticator (Android/iPhone)][]
 -  [Authy (Android/iPhone)][]
--  [Authenticator (Windows Phone)][]
 -  [FreeOTP (Android)][]
 -  [GAuth Authenticator (Firefox OS, desktop, others)][]
 
