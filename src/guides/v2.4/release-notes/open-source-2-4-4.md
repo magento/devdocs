@@ -683,6 +683,16 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  You can now pass a `data` argument to a block instance constructor by `di.xml`.
 
+#### JavaScript dependency updates
+
+<!--- magento/magento2/pull/33871-->
+
+*  `jquery-validate` third-party library [GitHub-33853](https://github.com/magento/magento2/issues/33853)
+
+<!--- ENGCOM-8667-->
+
+*  `Less.js` (v3.13.1) [GitHub-32845](https://github.com/magento/magento2/issues/32845)
+
 #### Library removals and deprecations
 
 *  The following libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality:

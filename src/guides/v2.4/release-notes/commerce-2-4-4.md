@@ -859,6 +859,16 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
 
+#### JavaScript dependency updates
+
+<!--- magento/magento2/pull/33871-->
+
+*  `jquery-validate` third-party library  [GitHub-33853](https://github.com/magento/magento2/issues/33853)
+
+<!--- ENGCOM-8667-->
+
+*  `Less.js` (v3.13.1) [GitHub-32845](https://github.com/magento/magento2/issues/32845)
+
 #### Library removals and deprecations
 
 *  The following libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality:
@@ -1225,7 +1235,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Import of table rates now works as expected when using the S3 storage adapter. Previously, {{ site.data.var.ee }} displayed this error: `File "https://[bucket].s3.eu-central-1.amazonaws.com/[prefix]/tmp/phpLjGmHf" not found`. [GitHub-33072](https://github.com/magento/magento2/issues/33072)
 
-<!--- magento/magento2/pull/33232-->
+<!--- MC-42577-->
 
 *  You can now disable shipment update emails as expected from **Stores**  > **Configuration**  >  **Sales**  >  **Sales Emails**. [GitHub-33165](https://github.com/magento/magento2/issues/33165)
 
@@ -1355,7 +1365,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 ### Translations and locales
 
-<!--- AC-285-->
+<!--- AC-285 MC-41400-->
 
 *  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ee }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
 
@@ -1494,6 +1504,10 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 <!--- MC-41880-->
 
 *  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ee }} ignored this option.
+
+### Known issue
+
+**Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree.  When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not  editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.  <!--- BUNDLE-3088-->
 
 ## Community contributions
 
