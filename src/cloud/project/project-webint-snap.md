@@ -32,7 +32,7 @@ To create a snapshot using the Project Web Interface:
 1. Click **Create**.
 
 {:.procedure}
-To create a snapshot using the Magento Cloud CLI:
+To create a snapshot using the `magento-cloud` CLI:
 
 1. Open a terminal and navigate to your {{site.data.var.ece}} project.
 1. Checkout the environment branch to snapshot.

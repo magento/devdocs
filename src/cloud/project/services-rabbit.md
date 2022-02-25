@@ -65,7 +65,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
 
 ### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
 
-1. Log in to the Magento Cloud CLI and project:
+1. Log in to the `magento-cloud` CLI and project:
 
    ```bash
    magento-cloud login

@@ -136,7 +136,7 @@ On the *Variables* tab, you can view, create, and manage environment variables f
 
 ![Environment variables fastly credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-web-ui-environment-variables.png){:width="650px"}
 
-You can also [list and review]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html) environment variables using the following Magento Cloud CLI command.
+You can also [list and review]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html) environment variables using the following `magento-cloud` CLI command.
 
 ```bash
 magento-cloud variable:get -e <environment ID>
