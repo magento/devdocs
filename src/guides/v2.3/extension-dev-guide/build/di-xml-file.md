@@ -40,7 +40,6 @@ $this->_state->setAreaCode($areaCode);
 $this->_objectManager->configure($this->_configLoader->load($areaCode));
 ```
 
-
 In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php) class also loads the area based on the URL in the request.
 ```php
 $path = $this->request->get('resource');
@@ -55,7 +54,6 @@ $this->_state->setAreaCode(Area::AREA_CRONTAB);
 $configLoader = $this->objectManager->get(\Magento\Framework\ObjectManager\ConfigLoaderInterface::class);
 $this->objectManager->configure($configLoader->load(Area::AREA_CRONTAB));
 ```
-
 
 ## Type configuration
 
