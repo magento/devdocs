@@ -6,7 +6,8 @@ redirect_from:
   - /safe-upgrade-tool/install.html
 functional_areas:
   - Upgrade
-redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/install.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/install.html
+layout: migrated
 ---
 
 The {{site.data.var.uct}} is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
