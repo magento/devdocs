@@ -7,7 +7,7 @@ As of Magento 2.3.4, the `filter` attribute of the [`products`]({{page.baseurl}}
 
 ## Prerequisites
 
-You have several options when enabling a custom attribute (or any attribute that is not listed by default in the `ProductAttributeFilterInput` object) for filtering. Navigate to the attribute's **Storefront Properties** page (**Stores** > Attributes > **Product** > attribute name > **Storefront Properties**) in the Admin, then perform one or both of the following actions:
+You have several options when enabling a custom attribute (or any attribute that is not listed by default in the `ProductAttributeFilterInput` object) for filtering. Navigate to the attribute's **Storefront Properties** page (**Stores** > Attributes > **Product** > &lt;attribute name&gt; > **Storefront Properties**) in the Admin, then perform one or both of the following actions:
 
 -  Set the **Use in Layered Navigation** field to **Filterable (with results)** or **Filterable (no results)**. This field allows the attribute to be used as a filter and returns layered navigation and aggregation data. If this field is set to **No**, then the attribute will not return layered navigation and aggregation data.
 
