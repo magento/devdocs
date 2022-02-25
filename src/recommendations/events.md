@@ -7,7 +7,7 @@ ee_only: True
 When you install and configure SaaS-based Adobe Commerce features such as [Product Recommendations]({{ site.user_guide_url }}/recommendations/install-configure.html) or [Live Search]({{ site.user_guide_url }}/live-search/install.html), the modules deploy behavioral data collection to your storefront. This mechanism collects anonymized behavioral data from your shoppers and powers product recommendations. For example, the `view` event is used to compute the `Viewed this, viewed that` recommendation type, and the `place-order` event is used to compute the `Bought this, bought that` recommendation type.
 
 {:.bs-callout-info}
-Data collection for the purposes of Product recommendations does not include any personally identifiable information (PII). Additionally, all user identifiers like cookie IDs and IP addresses are strictly anonymized. [Learn more](https://www.adobe.com/privacy/policy.html).
+Data collection for the purposes of Product recommendations does not include personally identifiable information (PII). All user identifiers, such as cookie IDs and IP addresses, are strictly anonymized. [Learn more](https://www.adobe.com/privacy/policy.html).
 
 The following events are not specific to Product Recommendations, but are required to return results:
 
