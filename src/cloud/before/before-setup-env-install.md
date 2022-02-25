@@ -206,7 +206,7 @@ To verify the Integration master branch environment, log into the Project Web In
 With these steps completed, you should have:
 
 -  A {{site.data.var.ee}} account and initial project setup and master branch
--  A local workspace configured with installations of required software, Magento Cloud CLI
+-  A local workspace configured with installations of required software, `magento-cloud` CLI
 -  SSH keys set up
 -  The file system owner configured
 -  Your initial code branch

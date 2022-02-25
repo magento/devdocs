@@ -17,7 +17,7 @@ The {{site.data.var.ece}} project is a Git repository of {{site.data.var.ee}} co
 
 ## Clone the project
 
-The following instructions use a combination of Magento Cloud CLI commands and Git commands to clone a `master` environment from your project to your local workstation. To see a full list of Magento Cloud CLI commands, use the `magento-cloud list` command.
+The following instructions use a combination of `magento-cloud` CLI commands and Git commands to clone a `master` environment from your project to your local workstation. To see a full list of `magento-cloud` CLI commands, use the `magento-cloud list` command.
 
  {:.bs-callout-info}
 Some Git commands cannot complete an action in your {{site.data.var.ece}} project. For example, you can create a new branch using a Git command, but you cannot create and activate a new environment using the `git checkout -b <branch-name>` command. You must create an environment using the `magento-cloud environment:branch <branch-name>` command for the environment to become _active_. Alternatively, you can use the Project Web UI to create active environments. See [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
@@ -29,7 +29,7 @@ To clone a project master environment:
 
 1. Change to the web server or virtual host _docroot_ directory.
 
-1. Log in to the Magento Cloud CLI.
+1. Log in using the `magento-cloud` CLI.
 
    ```bash
    magento-cloud login
@@ -122,7 +122,7 @@ magento-cloud vset <variable-name> <variable-value>
 ```
 
 {:.bs-callout-warning}
-Every time you add or modify a variable using the web interface or the CLI, the branch automatically redeploys.
+Every time you add or modify a variable using the web interface or the `magento-cloud` CLI, the branch automatically redeploys.
 
 {:.procedure}
 To add variables using the Project Web Interface:
