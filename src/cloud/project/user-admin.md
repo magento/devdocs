@@ -33,7 +33,7 @@ When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users wi
 
 ## Add users and manage access
 
-You can add users and assign roles using the Magento Cloud CLI or the Project Web Interface.
+You can add users and assign roles using the `magento-cloud` CLI or the Project Web Interface.
 
 {:.bs-callout-tip}
 Changing user configuration on an {{site.data.var.ece}} environment requires a site deployment for the changes to take effect, which takes your site offline until the deployment completes. For Production environments, we recommend completing user administration tasks during off-peak hours to prevent service disruptions.
@@ -191,9 +191,8 @@ After you add a user to a Cloud project, ask the user to review their account se
 
 {{site.data.var.ece}} supports two-factor authentication using any of the following applications:
 
--  [Google Authenticator (Android/iPhone/BlackBerry)][]
+-  [Google Authenticator (Android/iPhone)][]
 -  [Authy (Android/iPhone)][]
--  [Authenticator (Windows Phone)][]
 -  [FreeOTP (Android)][]
 -  [GAuth Authenticator (Firefox OS, desktop, others)][]
 
@@ -313,11 +312,10 @@ To create an API token:
 
 [{{ site.data.var.ece }} account]: https://accounts.magento.cloud/user/
 [{{ site.data.var.ece }} user account]: https://account.magento.cloud/user
-[Authenticator (Windows Phone)]: http://www.windowsphone.com/en-us/store/app/authenticator/021dd79f-0598-e011-986b-78e7d1fa76f8
 [Authy (Android/iPhone)]: https://www.authy.com/app/
 [enable SSH keys]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html
 [FreeOTP (Android)]: https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp
 [GAuth Authenticator (Firefox OS, desktop, others)]: https://github.com/gbraad/gauth
-[Google Authenticator (Android/iPhone/BlackBerry)]: https://support.google.com/accounts/answer/1066447?hl=en
+[Google Authenticator (Android/iPhone)]: https://support.google.com/accounts/answer/1066447?hl=en
 [Enable MFA for SSH]: {{ site.baseurl }}/cloud/project/project-enable-mfa-enforcement.html
 [snapshots]: {{ site.baseurl }}/cloud/project/project-webint-snap.html

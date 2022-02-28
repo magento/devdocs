@@ -1,5 +1,5 @@
-name: Bug report
-description: Technical issue with https://devdocs.magento.com/
+name: Site bug
+description: Something isn't working on devdocs.magento.com or when building the website locally.
 labels: ["bug"]
 assignees:
   - dshevtsov
@@ -8,8 +8,8 @@ body:
     attributes:
       value: |
         Thank you for taking the time to report this issue!
-        GitHub Issues in this repo should relate to this project's codebase.
-        Before submitting this issue, please make sure you are complying with our [Code of Conduct](https://github.com/magento/devdocs/blob/master/.github/CODE_OF_CONDUCT.md).
+        This bug report should only relate to the devdocs website itself or non-content issues such as when building locally or running rake commands.
+        If you are having an issue with the actual product (as opposed to the docs), search the [Help Center](https://support.magento.com/hc/en-us) or report it as a [codebase issue](https://devdocs.magento.com/contributor-guide/contributing.html#report).
         Issues that do not comply with our Code of Conduct or do not contain enough information may be closed at the maintainers' discretion.
   - type: checkboxes
     attributes:

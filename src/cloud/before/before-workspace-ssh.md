@@ -33,7 +33,7 @@ If you authenticate to a project with multi-factor authentication (MFA) enabled,
    abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud: Permission denied (publickey).
    ```
 
-During the SSH certificate generation, the Magento Cloud CLI adds an additional SSH key to your local environment. That key will be used by default if your local SSH configuration does not include the SSH key for project access.
+During the SSH certificate generation, the `magento-cloud` CLI adds an additional SSH key to your local environment. That key will be used by default if your local SSH configuration does not include the SSH key for project access.
 
 {:.procedure}
 To add your SSH key to the local configuration:

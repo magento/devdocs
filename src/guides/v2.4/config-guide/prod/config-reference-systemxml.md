@@ -409,3 +409,21 @@ The following validation rules are available:
 | `validate-xml-identifier`       | Allows a valid XML-identifier. For example, something_1, block5, id-4.                                                  |
 | `validate-zip-us`               | Allows a valid (US) ZIP code. For example, 90602 or 90602-1234.                                                         |
 | `vinUS`                         | Allows (US) vehicle identification number (VIN) value.                                                                  |
+
+### Default Values
+
+Default values for fields may be set in the module's `etc/config.xml` file by specifying the default value in the `section/group/field_ID` node.
+
+### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID`
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <A_UNIQUE_SECTION_ID>
+            <A_UNIQUE_GROUP_ID>
+                <ANOTHER_UNIQUE_FIELD_ID>This is the default value</ANOTHER_UNIQUE_FIELD_ID>
+            </A_UNIQUE_GROUP_ID>
+        </A_UNIQUE_SECTION_ID>
+    </default>
+</config>
+```
