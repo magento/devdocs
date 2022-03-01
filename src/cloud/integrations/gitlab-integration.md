@@ -170,8 +170,8 @@ If the integration succeeds, the [Project Web Interface]({{ site.baseurl }}/clou
 
 ## Create a new Cloud branch
 
-Use the Magento Cloud CLI `environment:push` command to create and activate a new environment. See [Create a new Cloud branch]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#create-a-new-cloud-branch).
+Use the `magento-cloud` CLI `environment:push` command to create and activate a new environment. See [Create a new Cloud branch]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#create-a-new-cloud-branch).
 
 ## Remove the integration
 
-Use the Magento Cloud CLI `integration:delete` command to remove the integration. See [Remove the integration]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#remove-the-integration).
+Use the `magento-cloud` CLI `integration:delete` command to remove the integration. See [Remove the integration]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#remove-the-integration).
