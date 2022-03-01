@@ -3,6 +3,9 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
+{:.bs-callout-info}
+To help ensure this release delivers the highest standards of security and quality, the pre-release period for Adobe Commerce customers is now planned for **March 29**, two weeks prior to the **general availability date of April 12** for both {{ site.data.var.ee }} and {{ site.data.var.ce }}.
+
 {{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
 
 This release includes almost 250 quality fixes and enhancements.
@@ -104,7 +107,7 @@ Performance enhancements in this release:
 
 *  Cart operations for carts containing over 750 configurable products have been improved by increasing the memory limit set by `max_input_vars` in the `php.ini` file to support input variables volume.
 
-*  Optimization of sales rules processing during checkout by deferring total calculation. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
+*  Optimization of sales rules processing during checkout by deferring total calculation. Typically, sales rule processing occurs every time a shopper adds a product to their cart, updates product quantity, or clicks the  **Place Order** button. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
 
 *  Improvements to the validation process for orders affected by a cart price rule during asynchronous order placement. <!--- MCP-304-->
 
