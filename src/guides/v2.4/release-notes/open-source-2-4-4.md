@@ -2,6 +2,10 @@
 group: release-notes
 title: Magento Open Source 2.4.4 Release Notes
 ---
+
+{:.bs-callout-warning}
+To help ensure this release delivers the highest standards of security and quality, the pre-release period for Adobe Commerce customers is now planned for **March 29**, two weeks prior to the **general availability date of April 12** for both {{ site.data.var.ee }} and {{ site.data.var.ce }}.
+
 {{ site.data.var.ce }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
 
 This release includes almost 250 quality fixes and enhancements.
@@ -65,7 +69,7 @@ Security improvements for this release improve compliance with the latest securi
 
 {{ site.data.var.ce }} 2.4.4 now supports PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Additional platform enhancements include:
 
-*  {{ site.data.var.ce }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ce }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ce }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch.
+*  {{ site.data.var.ce }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ce }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ce }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch. See [Switching to OpenSearch for Adobe Commerce on Cloud 2.4.4](https://support.magento.com/hc/en-us/articles/4419942355725-Switching-to-OpenSearch-for-Adobe-Commerce-on-Cloud-2-4-4)
 
 *  The `JQuery` library has been upgraded to version 3.6. The `jquery-ui` library has been upgraded to version 1.13.0. Several other JavaScript libraries have been updated to the latest versions.
 
@@ -76,6 +80,18 @@ Security improvements for this release improve compliance with the latest securi
 *  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
 
 *  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Three Laminas dependencies were removed from the codebase to reduce the number of dependencies.
+
+#### jQuery UI upgrade
+
+jQuery UI has been upgraded to the latest version (v1.13.0). The following v1.10.0 jQuery components have been removed:
+
+*  `ajaxOptions` and `cache` options for tabs. See [Tabs](https://jqueryui.com/changelog/1.10.0/#tabs).
+
+*  `.zIndex()`. jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
+
+*  Data fallbacks for widget names. You must use the full name for the `.data()` key.
+
+*  Hard coding of classes such as `ui-corner-all` in widgets.
 
 ### GraphQL
 
@@ -491,6 +507,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  The class `BundleDiscountPrice` in `magento2/app/code/Magento/Bundle/Pricing/Price/ConfiguredPrice.php` is now declared as expected. Previously, {{ site.data.var.ce }} threw this error: `Class Magento\Bundle\Pricing\Price\BundleDiscountPrice not found`. [GitHub-33334](https://github.com/magento/magento2/issues/33334)
 
+<!--- AC-1239-->
+
+*  Escaped CSV field values written by the AWS S3 adapter now match the data written by other file system adapters.
+
 ### GraphQL
 
 <!--- PWA-1938-->
@@ -667,6 +687,45 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  You can now pass a `data` argument to a block instance constructor by `di.xml`.
 
+#### JavaScript dependency updates
+
+<!--- magento/magento2/pull/33871-->
+
+*  `jquery-validate` third-party library [GitHub-33853](https://github.com/magento/magento2/issues/33853)
+
+<!--- ENGCOM-8667-->
+
+*  `Less.js` (v3.13.1) [GitHub-32845](https://github.com/magento/magento2/issues/32845)
+
+#### Library removals and deprecations
+
+*  The following libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality:
+
+   *  `es6-collections.js`   <!--- AC-18-->
+   *  `MutationObserver.js` <!--- AC-15-->
+   *  `Modernizr` <!--- AC-12-->
+   *  `FormData.js`
+
+*  Removed the unused `jquery.hoverIntent` JavaScript library. [GitHub-33732](https://github.com/magento/magento2/issues/33732) <!--- AC-97-->
+
+*  `lib/internal/Magento/Framework/Filter/Money.php` has been deprecated. It contains the `money_format()` function, which was removed in PHP 8.x. [GitHub-33870](https://github.com/magento/magento2/issues/33870)<!--- magento/magento2/pull/34366)-->
+
+*  Removed the deprecated, unsupported `grunt-autoprefixer` package. [GitHub-34037](https://github.com/magento/magento2/issues/34037) <!--- magento/magento2/pull/34032-->
+
+#### Library upgrades
+
+*  The following libraries have been upgraded to more recent versions:
+
+   *  `script.aculo.us` <!--- AC-363-->
+   *  `Chart.js`  <!--- AC-361-->
+   *  `moment.js` <!--- AC-11-->
+   *  `moment-timezone-with-data.js`   <!--- AC-10-->
+   *  `matchMedia.js` <!--- AC-8-->
+   *  `underscore.js`  <!--- AC-13-->
+   *  `PrototypeJS`  <!--- AC-17-->
+   *  `RequireJS`
+   *  `LessCSS`
+
 ### Logging
 
 <!--- MC-42360-->
@@ -677,13 +736,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  The auto-creation of arrays from false values is no longer permitted. [GitHub-34499](https://github.com/magento/magento2/issues/34499), [GitHub-34589](https://github.com/magento/magento2/issues/34589)
 
-### Locales
-
-<!--- AC-285-->
-
-*  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ce }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
-
-### Magento Coding Standard
+### {{ site.data.var.ee }} coding standard
 
 <!--- magento/magento-coding-standard/pull/219-->
 
@@ -691,19 +744,19 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/33858-->
 
-*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the Magento Coding Standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
+*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the {{ site.data.var.ee }} coding standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
 
 <!--- magento/magento-coding-standard/pull/322-->
 
-*  Added new sniff `Magento2.PHP.ArrayAutovivification` to the Magento Coding Standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
+*  Added new sniff `Magento2.PHP.ArrayAutovivification` to the {{ site.data.var.ee }} coding standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
 
 <!--- magento/magento-coding-standard/pull/325-->
 
-*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the Magento Coding Standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
+*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the {{ site.data.var.ee }} coding standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
 
 <!--- magento/magento-coding-standard/pull/326-->
 
-*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the Magento Coding Standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
+*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the {{ site.data.var.ee }} coding standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
 
 <!--- magento/magento-coding-standard/pull/335-->
 
