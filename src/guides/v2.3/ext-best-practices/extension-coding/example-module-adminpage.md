@@ -201,6 +201,7 @@ namespace MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld;
 
 use Magento\Backend\App\Action;
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\View\Result\Page;
 use Magento\Framework\Controller\ResultFactory;
 
 /**
