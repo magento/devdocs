@@ -3,7 +3,7 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
-{:.bs-callout-info}
+{:.bs-callout-warning}
 To help ensure this release delivers the highest standards of security and quality, the pre-release period for Adobe Commerce customers is now planned for **March 29**, two weeks prior to the **general availability date of April 12** for both {{ site.data.var.ee }} and {{ site.data.var.ce }}.
 
 {{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
