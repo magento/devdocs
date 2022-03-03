@@ -26,7 +26,7 @@ As a result, you could receive 503 errors when attempting operations that requir
 If you need to complete bulk actions that take longer than 3 minutes, you can prevent 503 errors by changing the _Admin path timeout_ value.
 
 {:.procedure}
-To extend the Fastly timeout for the Admin:
+To extend the Fastly timeout:
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -35,6 +35,9 @@ To extend the Fastly timeout for the Admin:
 1. In the *Fastly Configuration* section, expand **Advanced Configuration**.
 
 1. Set the **Admin path timeout** value in seconds. This value cannot be more than 10 minutes (600 seconds).
+
+   >!NOTE
+   >To extend timeouts for additional endpoints, see [Increase Timeouts for Long Jobs](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-INCREASE-TIMEOUTS-LONG-JOBS.md).
 
 1. Click **Save Config** at the top of the page.
 
