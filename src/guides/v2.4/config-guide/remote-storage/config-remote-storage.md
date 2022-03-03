@@ -13,7 +13,7 @@ The Remote Storage module provides the option to store media files and schedule 
 Remote storage is available in version 2.4.2 and later only. See the [2.4.2 release notes]({{page.baseurl}}/release-notes/open-source-2-4-2.html).
 
 {:.bs-callout-info}
-The Remote storage module has a _limited_ support on {{site.data.var.ece}}.
+The Remote storage module has _limited_ support on {{site.data.var.ece}}. Adobe cannot fully troubleshoot the third-party storage adapter service.
 
 ![schema image]
 
