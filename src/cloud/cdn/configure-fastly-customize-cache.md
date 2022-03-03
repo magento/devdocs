@@ -29,7 +29,7 @@ If you need to complete bulk actions that take longer than 3 minutes, you can pr
 To extend Fastly timeout parameters other than Admin in the Fastly UI, see [Increase Timeouts for Long Jobs](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-INCREASE-TIMEOUTS-LONG-JOBS.md).
 
 {:.procedure}
-To extend the Fastly timeout for the admin:
+To extend the Fastly timeout for the Admin:
 
 {% include cloud/admin-ui-login-step.md %}
 
