@@ -36,7 +36,7 @@ To extend the Fastly timeout:
 
 1. Set the **Admin path timeout** value in seconds. This value cannot be more than 10 minutes (600 seconds).
 
-   >!NOTE
+   {:.bs-callout-info}
    >To extend timeouts for additional endpoints, see [Increase Timeouts for Long Jobs](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-INCREASE-TIMEOUTS-LONG-JOBS.md).
 
 1. Click **Save Config** at the top of the page.
