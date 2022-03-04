@@ -25,6 +25,9 @@ As a result, you could receive 503 errors when attempting operations that requir
 
 If you need to complete bulk actions that take longer than 3 minutes, you can prevent 503 errors by changing the _Admin path timeout_ value.
 
+{:.bs-callout-info}
+To extend Fastly timeout parameters other than Admin in the Fastly UI, see [Increase Timeouts for Long Jobs](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-INCREASE-TIMEOUTS-LONG-JOBS.md).
+
 {:.procedure}
 To extend the Fastly timeout for the Admin:
 
