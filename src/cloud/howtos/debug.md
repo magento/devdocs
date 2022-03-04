@@ -234,7 +234,7 @@ We enable Xdebug in the environment. Be aware that this is a configuration chang
 
 For initiating debugging, performing setup, and more, you need the SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{ site.baseurl }}/cloud/project/projects.html) and your project spreadsheet.
 
-For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:
+For Starter environments and Pro Integration environments, you can use the following `magento-cloud` CLI command to SSH into those environments:
 
 ```bash
 magento-cloud environment:ssh --pipe -e <environment-ID>

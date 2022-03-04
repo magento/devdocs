@@ -68,7 +68,6 @@
 | kate-kyzyma | [magento/magento2#32282](https://github.com/magento/magento2/pull/32282) |  [magento/magento2#33788](https://github.com/magento/magento2/issues/33788) |
 | AnnaAPak | [magento/magento2#32226](https://github.com/magento/magento2/pull/32226) |  [magento/magento2#32381](https://github.com/magento/magento2/issues/32381) |
 | kate-kyzyma | [magento/magento2#32139](https://github.com/magento/magento2/pull/32139) |  [magento/magento2#33786](https://github.com/magento/magento2/issues/33786) |
-@@ -37,6 +147,24 @@ Magento2
 | kate-kyzyma | [magento/magento2#32112](https://github.com/magento/magento2/pull/32112) |  [magento/magento2#33775](https://github.com/magento/magento2/issues/33775) |
 | kate-kyzyma | [magento/magento2#31963](https://github.com/magento/magento2/pull/31963) |  [magento/magento2#33783](https://github.com/magento/magento2/issues/33783) |
 | convenient | [magento/magento2#31879](https://github.com/magento/magento2/pull/31879) |  [maritos/magento2-performance-fixes#4](https://github.com/maritos/magento2-performance-fixes/issues/4) |

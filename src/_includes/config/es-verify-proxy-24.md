@@ -64,7 +64,7 @@ Connection: keep-alive
 
 ### Configure HTTP Basic authentication in the Admin
 
-Perform the same tasks as discussed in [Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html) *except* click **Yes** from the **Enable Elasticsearch HTTP Auth** list and enter your username and password in the provided fields.
+Perform the same tasks as discussed in [Configure Magento to use a search engine]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html) *except* click **Yes** from the **Enable Elasticsearch HTTP Auth** list and enter your username and password in the provided fields.
 
 Click **Test Connection** to make sure it works and then click **Save Config**.
 

@@ -65,7 +65,7 @@ The following packages may also be helpful for your PHP installation:
 
 ### Set up PHP memory limit {#cloud-first-php}
 
-When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.ee}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
+When you're working with the `magento-cloud` CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.ee}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
 
 Before working with your {{site.data.var.ece}} project, set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 

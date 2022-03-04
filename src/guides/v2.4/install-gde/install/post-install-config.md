@@ -78,11 +78,11 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 *  Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org))
 *  Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04), [Ubuntu documentation](https://help.ubuntu.com/community/MailServer))
 
-### Refine Elasticsearch for enhanced performance:
+### Refine the search engine for enhanced performance:
 
-Elasticsearch is required for all installations as of 2.4.0.
+Elasticsearch or OpenSearch is required for all installations as of 2.4.0.
 
-*  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
+*  [Install and configure the search engine]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
 ### Set up an message queue
 

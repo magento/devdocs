@@ -29,12 +29,12 @@ The following example changes the quantity and description of an item in a gift 
 
 ```graphql
 mutation{
-  updateGiftRegistryItems(giftRegistryUid: "iSJHFdAtF8YBM5ALgNyNIgQmnbOW9t69", items: [{
-    giftRegistryItemUid: "OQ=="
-    quantity: 3
-    note:  "This is the number one thing on our list."
-  }
-  ]){
+  updateGiftRegistryItems(giftRegistryUid: "iSJHFdAtF8YBM5ALgNyNIgQmnbOW9t69",
+    items: [{
+      gift_registry_item_uid: "OQ=="
+      quantity: 3
+      note:  "This is the number one thing on our list."}
+    ]){
     gift_registry {
       uid
       event_name
@@ -97,7 +97,7 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`giftRegistryItemUid` | ID! | The unique ID of a `giftRegistryItem` object
+`gift_registry_item_uid` | ID! | The unique ID of a `giftRegistryItem` object
 `note` |String | The updated description of the item
 `quantity` | Float! | The updated quantity of the gift registry item
 
