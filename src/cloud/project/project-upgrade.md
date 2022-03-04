@@ -16,7 +16,7 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. Befo
 
 Review the [service versions][System requirements] information for the latest software version requirements. Your upgrade tasks may include the following:
 
--  Update PHP, Elasticsearch, and other services for compatibility with new {{site.data.var.ee}} versions. See [Change service version].
+-  Update PHP, Opensearch, and other services for compatibility with new {{site.data.var.ee}} versions. See [Change service version].
 -  Convert an older configuration management file.
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables.
 -  Upgrade third-party extensions to the latest supported version.

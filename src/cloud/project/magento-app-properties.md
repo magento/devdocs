@@ -101,7 +101,7 @@ The following is an example of the default relationships:
 relationships:
     database: "mysql:mysql"
     redis: "redis:redis"
-    elasticsearch: "elasticsearch:elasticsearch"
+    opensearch: "opensearch:opensearch"
 ```
 
 See [Services]({{ site.baseurl }}/cloud/project/services.html) for a full list of currently supported service types and endpoints.

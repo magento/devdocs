@@ -21,7 +21,7 @@ Scaling must use the same instance type and size for each node:
 
 ### Core tier scaling
 
-There are 3 nodes (core nodes) for data storage, cache, and services: **ElasticSearch**, **MariaDB**, **Redis**, and more. When the core tier approaches capacity, the only way to scale is to increase the server size, such as boosting the CPU power and memory. Capacity is limited to the size of the node that is available. Because the database cluster is designed for high availability, you cannot scale horizontally in a reliable way with the technologies used.
+There are 3 nodes (core nodes) for data storage, cache, and services: **Opensearch**, **MariaDB**, **Redis**, and more. When the core tier approaches capacity, the only way to scale is to increase the server size, such as boosting the CPU power and memory. Capacity is limited to the size of the node that is available. Because the database cluster is designed for high availability, you cannot scale horizontally in a reliable way with the technologies used.
 
 ![Core tier scaling]
 
