@@ -4,8 +4,222 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jan 24 15:38:42 2022
+updated: Tue Feb 22 17:59:54 2022
 entries:
+- description: Added configuration options to the Site-Wide Analysis Tool [agent installation](https://devdocs.magento.com/tools/site-wide-analysis.html)
+    topic.
+  versions: 2.x
+  type: Major Update
+  date: February 19, 2022
+  link: https://github.com/magento/devdocs/pull/9367
+  merge_commit: 52be498831add99aaf3b8c2e87493abca135cdb9
+  contributor: yvoronoy
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+  - 'Progress: done'
+- description: Bumped the [supported version](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    of Elasticsearch for 2.4.5 from 7.16 to 7.17.
+  versions: 2.4.5
+  type: Technical
+  date: February 18, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2811
+  merge_commit: d400028929fc54945a0fd99d56bf8e2db1261162
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.5
+- description: Added release notes data to `src/_data/core-releases.json` and [Released
+    versions](https://devdocs.magento.com/release/released-versions.html).
+  versions: 2.x
+  type: Technical
+  date: February 16, 2022
+  link: https://github.com/magento/devdocs/pull/9358
+  merge_commit: 91c869e44c4af68768d1ad3f426da4dc6a28eeea
+  contributor: BarnyShergold
+  membership: false
+  labels:
+  - 2.x
+  - Technical
+  - 'Progress: done'
+- description: Bumped the [supported version](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    of Elasticsearch for 2.4.3 from 7.9 to 7.10.
+  versions: 2.4.3
+  type: Technical
+  date: February 15, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2801
+  merge_commit: 452e698395db18ac8857b602256d562e6f3d593e
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.3
+- description: Migrated the majority of the Product Recommendations documentation
+    from the developer guide to the [user guide](https://docs.magento.com/user-guide/recommendations/overview.html).
+  versions: 2.4.x
+  type: Major Update
+  date: February 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2692
+  merge_commit: 68183e1b5751b203699dfc06d57113b9e70a8c67
+  contributor: erikmarr
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: 'Cloud patch release 1.0.14: [Critical patch added to Magento Cloud
+    Patches](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v1014)
+    package.<br/>Corrected a reference to media disk space in the [Manage disk space
+    topic](https://devdocs.magento.com/cloud/project/manage-disk-space.html#check-dedicated-clusters).'
+  versions: 2.x
+  type: Major Update
+  date: February 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2798
+  merge_commit: '07951cb01160523116c458c1df274d4dca22eac2'
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Updated the [public roadmap](https://devdocs.magento.com/release/roadmap.html)
+    with the latest information.
+  versions: 2.x
+  type: Major Update
+  date: February 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2793
+  merge_commit: c8f85237b92b52462df3eae0dbf3140c0612eede
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.10 Quality Patches Tool (QPT) package release.
+  versions: 2.x
+  type: Major Update
+  date: February 9, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2792
+  merge_commit: 3d4b3aab5990c9b4c06db4b17663ff81d90d7eea
+  contributor: apoltoratskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Published [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/)
+    for Amazon Sales Channel 4.4.2.
+  versions: 2.x
+  type: Major Update
+  date: February 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2779
+  merge_commit: '09c0f4b969154ce31ac96b7987ab69da596ab20d'
+  contributor: hickskenh
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Restored introductory topics for the [Upgrade Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html)
+    and [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html)
+    so that they appear in site search results.
+  versions: 2.4.x
+  type: Technical
+  date: February 7, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2783
+  merge_commit: 49f421ee343f792f787f7303d885950d756d7185
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
+- description: When creating a new [package in Marketplace EQP](https://devdocs.magento.com/marketplace/eqp/v1/packages.html),
+    you must specify a new field, `version`. Another field, `sku`, is conditionally
+    required.
+  versions: 2.4.x
+  type: Technical
+  date: February 3, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2768
+  merge_commit: e69c21b2ca2070b53f2af52eed86527dcde74f42
+  contributor: mikeweis
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
+- description: Update the [public roadmap](https://devdocs.magento.com/release/roadmap.html).
+  versions: 2.x
+  type: Major Update
+  date: February 3, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2769
+  merge_commit: a2a28b4a2158afffa9975bd48981059e5963b048
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added a new topic about [installing and configuring](https://devdocs.magento.com/tools/site-wide-analysis.html)
+    the Site Wide Analysis Tool Agent for on-premises installations of Adobe Commerce.
+  versions: 2.x
+  type: New Topic
+  date: February 2, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2626
+  merge_commit: f9c371673c9228e4e2e5d288c965e18cead3e7d9
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - New Topic
+- description: Updated the [Cloud MySQL configuration topic](https://devdocs.magento.com/cloud/project/services-mysql.html)
+    to clarify how to specify schemas, endpoints, and properties for the database.
+  versions: 2.x
+  type: Technical
+  date: February 1, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2760
+  merge_commit: 4a7afa2f509f06de84c2057026ec583313f4b94c
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Added the [Create a custom REST API](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/create-custom-rest-api.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: January 27, 2022
+  link: https://github.com/magento/devdocs/pull/9300
+  merge_commit: 5fd0d57992aea22a2952b4c20701b3368d455383
+  contributor: nitish-ranjan05
+  membership: false
+  labels:
+  - 2.3.x
+  - partners-contribution
+  - New Topic
+  - 'Partner: Ziffity'
+  - 2.4.x
+  - 'Progress: done'
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.9 Quality Patches Tool (QPT) package release.
+  versions: 2.x
+  type: Major Update
+  date: January 24, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2751
+  merge_commit: 599ee42938d2929cfedef767695443f2c87555fd
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Updated the [release schedule](https://devdocs.magento.com/release/).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 24, 2022
+  link: https://github.com/magento/devdocs/pull/9328
+  merge_commit: c1653953f4e26420c0eab621f45d72eb8bee63a4
+  contributor: misuadobe
+  membership: false
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+  - 'Progress: done'
 - description: Restored 2.3.x [Upgrade Guide](https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html)
     topics and redirected only the 2.4.x topics to the migrated guide on [Experience
     League](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).

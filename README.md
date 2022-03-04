@@ -169,4 +169,4 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 -  [Slack](https://magentocommeng.slack.com/archives/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
 -  [Visit our wiki](https://github.com/magento/devdocs/wiki)
--  <a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Twitter @MagentoDevDocs</a>
+-  <a href="https://twitter.com/AdobeCommrcDocs" class="twitter-follow-button" data-show-count="false">Twitter @AdobeCommrcDocs</a>

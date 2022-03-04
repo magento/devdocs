@@ -48,7 +48,7 @@ Before Magento 2.4, MySQL was the default catalog search engine, but MySQL is no
 
 Use the following resources to help guide you through this process:
 
-*  [Install and configure Elasticsearch]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/es-overview.html)
+*  [Install and configure the search engine]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/es-overview.html)
 *  [Installing Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
 *  Configure Elasticsearch to work with [nginx]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/es-config-nginx.html) or [Apache]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/es-config-apache.html)
 *  [Configure Magento to use Elasticsearch]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/configure-magento.html)
@@ -74,4 +74,4 @@ After you configure Elasticsearch and reindex, you are ready to upgrade to Magen
 Related topics
 
 *  [Verify Elasticsearch is installed](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html)
-*  [Configure Elasticsearch stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)
+*  [Configure search stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)

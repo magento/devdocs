@@ -63,7 +63,7 @@ branches, enter tickets, and support environments. These user accounts can inclu
 
 Typically, the only user the License Owner must create is the _Technical Admin_. The Technical Admin needs a user account with admin access to create user accounts for developers, set environment permissions, and manage all branches and environments. The Technical Admin can be a developer, a consultant, a [Adobe Solution Partner][], or yourself.
 
-You can create a Technical Admin through the Project portal, from the Project Web interface, or from the command line using the Magento Cloud CLI. For details on using the web interface and command line, see [Manage user access to Cloud projects][].
+You can create a Technical Admin through the Project portal, from the Project Web interface, or from the command line using the `magento-cloud` CLI. For details on using the web interface and command line, see [Manage user access to Cloud projects][].
 
 ### User registration
 

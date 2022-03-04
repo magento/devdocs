@@ -173,21 +173,6 @@ This method is a good choice for authenticating customers and Admin users in thi
 {:.bs-callout-info}
 You should use this type of authentication mechanism over HTTPS.
 
-### Integration (Bearer Authentication)
-
-This method is a good choice for integrating with a third-party system that supports this kind of authentication. You can restrict access to specific resources.
-
-Magento generates a consumer key, consumer secret, access token, and access token secret when you create an active integration (self activated).
-
-To use bearer authentication for API requests, you can use an access token. [Create an active integration]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#integration-tokens) (self activated) and [use the access token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access) in the authorization header:
-
-```bash
-curl -X GET "http://magento2ce74.loc:8080/index.php/rest/V1/customers/1" -H "Authorization: Bearer 9xvitupdkju0cabq2i3dxyg6bblqmg5h"
-```
-
-{:.bs-callout-info}
-You should use this type of authentication mechanism over HTTPS.
-
 ### Integration (Oauth)
 
 This method is a good choice for integrating with a third-party system that supports OAuth 1.0a.

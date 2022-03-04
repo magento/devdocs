@@ -31,7 +31,19 @@ These release notes can include:
 
 -  {:.fix} <!--- MC-42242--> You can now create a company with a customer account that has a custom attribute with a (`File`) or (`Image`) type. Previously, if the account had one of these customizable options, the Company edit page loader did not resolve, which prevented the editing of company details.
 
--  {:.fix} <!--- MC-42242--> -  The `products` query now returns an accurate `total_count` field when shared catalog is enabled.
+-  {:.fix} <!--- MC-42268--> The `products` query now returns an accurate `total_count` field when shared catalog is enabled.
+
+-  {:.fix} <!--- MC-42203-->  You can now update a file for a customer attribute when creating a company. Previously, when you tried to create a company with an attachment of type `File`, Magento did not create the company and logged this error in the exception log: `Something went wrong while saving file`.
+
+-  {:.fix} <!--- MC-43178--> The Company Configuration and Create Company pages now work as expected after you disable an online shipping method. Verification has been added to prevent the attempted processing of disabled Shipping modules. Previously, Magento displayed this error: `Type Error occurred when creating object: Magento\CompanyShipping\Model\Source\ShippingMethod, Too few arguments to function Magento\CompanyShipping\Model\Source\ShippingMethod::__construct(), 1 passed in /var/www/html/elmtup/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 and exactly 2 expected`.
+
+-  {:.fix} <!--- MC-42214--> The Category page now displays consistent product data while permissions are being generated during partial indexing. A new partial indexer for directory permissions has been added to this process. Previously, the data displayed while the indexer ran was incorrect.
+
+-  {:.fix} <!--- MC-42567--> The `categoryList` query now returns the correct number of products when catalog permissions are used and products are assigned to a shared catalog.
+
+-  {:.fix} <!--- MC-42528--> The `categoryList` query now respects category permissions and returns only permitted categories. Previously, it returned all assigned and unassigned categories.
+
+-  {:.fix} <!--- MC-42399--> `rest/V1/company/{id}` now returns `is_purchase_order_enabled` attribute values as expected.
 
 ## Magento B2B - Version 1.3.2
 
