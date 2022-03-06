@@ -6,6 +6,11 @@ title: Magento 2.4 backward incompatible changes
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
 ## 2.4.4
+### Changes to naming conventions for language package filenames
+
+2.4.4 and its support for PHP 8.1 requires changes in how translation packages are named. Language package filenames must now follow the naming conventions enforced by PHP 8.1. Consequently, lowercase letters are no longer permitted in the second part of the locale name.
+
+The `nl_di` translation package has been renamed to `nl_DI`. **Merchants using this translation pack must update their configuration (path: `general/locale/code`) from `nl_di` to `nl_DI` to use  Adobe Commerce 2.4.4**.
 
 ### Inventory check on cart load
 
