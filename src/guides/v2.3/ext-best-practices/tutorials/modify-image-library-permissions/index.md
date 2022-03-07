@@ -138,5 +138,5 @@ The following configuration overrides the default directory restriction for the 
 </type>
 ```
 
-[`di.xml`]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html
+[`di.xml`]: {{page.baseurl}}/extension-dev-guide/build/di-xml-file.html
 [Storage class]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Cms/Model/Wysiwyg/Images/Storage.php
