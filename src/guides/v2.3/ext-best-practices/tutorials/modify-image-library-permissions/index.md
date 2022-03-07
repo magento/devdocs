@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Modify Media Library folder permissions
 ---
 
-The Magento Media Gallery gives admins the ability to upload image files in specific folders. The Storage class for images in the CMS module manages image file uploads, file retrievals, and directory creation.
+The Media Gallery gives admins the ability to upload image files in specific folders. The Storage class for images in the CMS module manages image file uploads, file retrievals, and directory creation.
 
 Due to code changes, how you extend your Media Gallery depends on your version of Adobe Commerce:
 
