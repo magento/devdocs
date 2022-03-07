@@ -19,28 +19,28 @@ For security purposes, Magento provides Media Gallery access to contents in spec
 
 By default, Magento allows Media Gallery access to the following two directories under `/pub/media`:
 
-*  `catalog/category`
-*  `wysiwyg`
+* `catalog/category`
+* `wysiwyg`
 
 In this tutorial, you will learn how to extend "Media Gallery Allowed" folders using the `config.xml` file.
 
 1. Create a `config.xml` file.
 
-   If your module does not have one, create a `config.xml` file under the etc directory.
+ If your module does not have one, create a `config.xml` file under the etc directory.
 
 1. Add a new "Media Gallery Allowed" folder:
 
    ```xml
    <system>
-       <media_storage_configuration>
-           <allowed_resources>
-               <media_gallery_image_folders>
-                   <!-- new "Media Gallery Allowed" folders -->
-                   <my_image_folder>custom_folder_name</my_image_folder>
-                   <my_catalog_image_folder>catalog/custom_folder_name</my_catalog_image_folder>
-               </media_gallery_image_folders>
-           </allowed_resources>
-       </media_storage_configuration>
+      <media_storage_configuration>
+         <allowed_resources>
+            <media_gallery_image_folders>
+               <!-- new "Media Gallery Allowed" folders -->
+               <my_image_folder>custom_folder_name</my_image_folder>
+               <my_catalog_image_folder>catalog/custom_folder_name</my_catalog_image_folder>
+            </media_gallery_image_folders>
+         </allowed_resources>
+      </media_storage_configuration>
    </system>
    ```
 
@@ -53,14 +53,14 @@ For security purposes, Magento does not provide Media Library access to contents
 
 By default, Magento allows Media Library access to all directories under `/pub/media` except the following:
 
-*  `captcha`
-*  `catalog/product`
-*  `customer`
-*  `downloadable`
-*  `import`
-*  `theme`
-*  `theme_customization`
-*  `tmp`
+* `captcha`
+* `catalog/product`
+* `customer`
+* `downloadable`
+* `import`
+* `theme`
+* `theme_customization`
+* `tmp`
 
 In this tutorial, you will learn how to specify Media Library view permissions for folders using the `di.xml` file.
 
