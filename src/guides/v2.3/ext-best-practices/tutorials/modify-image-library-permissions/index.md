@@ -9,7 +9,7 @@ Due to code changes, how you extend your Media Gallery depends on your version o
 
 Once you've listed both product names, you can call the product `Commerce`.
 
--  Commerce versions `2.3.7-p2` and later must use the [#configxml-method](config.xml method)
+-  Commerce versions `2.3.7-p2` and later must use the [#configxml-method](config.xml method).
 -  Commerce versions `2.3.7-p1` and earlier must use the [#dixml-method](di.xml method)
 
 ## config.xml method {#configxml-method}
