@@ -7,8 +7,8 @@ The Magento Media Gallery gives admins the ability to upload image files in spec
 
 Due to code changes, how you extend your Media Gallery depends on your version of Adobe Commerce:
 
-- Adobe Commerce versions `2.4.3-p1` and later should use the [#configxml-method](config.xml method)
-- Adobe Commerce versions `2.4.0-2.4.3` should use the [#dixml-method](di.xml method)
+-  Adobe Commerce versions `2.4.3-p1` and later should use the [#configxml-method](config.xml method)
+-  Adobe Commerce versions `2.4.0-2.4.3` should use the [#dixml-method](di.xml method)
 
 ## config.xml method {#configxml-method}
 
