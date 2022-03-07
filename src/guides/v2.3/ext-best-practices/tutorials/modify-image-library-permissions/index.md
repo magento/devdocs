@@ -66,7 +66,7 @@ By default, Commerce allows Media Library access to all directories under `/pub/
 
 In this tutorial, you will learn how to specify Media Library view permissions for folders using the `di.xml` file.
 
-## Step 1: Create `di.xml` file
+### Step 1: Create a `di.xml` file
 
 If your module does not have one, create a [`di.xml`] file under the `etc` directory.
 
