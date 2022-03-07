@@ -5,7 +5,9 @@ title: Modify Media Library folder permissions
 
 The Media Gallery gives admins the ability to upload image files in specific folders. The Storage class for images in the CMS module manages image file uploads, file retrievals, and directory creation.
 
-Due to code changes, how you extend your Media Gallery depends on your version of Adobe Commerce:
+Due to code changes, how you extend your Media Gallery depends on your version of {{site.data.var.ee}} or {{site.data.var.ce}}:
+
+Once you've listed both product names, you can call the product `Commerce`.
 
 -  Adobe Commerce versions `2.3.7-p2` and later should use the [#configxml-method](config.xml method)
 -  Adobe Commerce versions `2.3.7-p1` and earlier should use the [#dixml-method](di.xml method)
