@@ -21,6 +21,17 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.11
+
+-  **MDVA-42790** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.5`)_-Fixes the issue where product price attributes cannot be updated for a specific website via REST API.
+-  **MDVA-41350** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where an exception is thrown when an admin user with restricted access adds a product outside their role scope by SKU in an order.
+-  **MDVA-42269** _(for Adobe Commerce and Magento Open Source `>=2.4.3-p1 <2.4.5`)_-Fixes the issue where an admin user cannot log in to Admin due to the "TypeError: strtotime() expects parameter 1 to be string, null given" error.
+-  **MDVA-40830** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where the store credit is applied multiple times during order placement.
+-  **MDVA-42237** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where a configurable product special price is not updated after changes in its subproduct price.
+-  **MDVA-42520** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where the tax rate is applied twice if "Enable Cross Border Trade" is used.
+- Updated patches: MDVA-27239, MDVA-39305, MDVA-41236, MDVA-36832.
+- Deprecated patch: MDVA-37725.
+
 ## v1.1.10
 
 -  **MDVA-38728** _(for Adobe Commerce and Magento Open Source `>=2.3.2 <2.4.5`)_-Fixes the issue where mass attribute update creates URL rewrite for Default Store only after changing "Product visibility".
