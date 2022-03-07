@@ -3,21 +3,23 @@ group: extension-best-practices
 title: Modify Media Library folder permissions
 ---
 
-The Magento Media Gallery gives admins the ability to upload image files in specific folders. The Storage class for images in the CMS module manages image file uploads, file retrievals, and directory creation.
+The Media Gallery gives admins the ability to upload image files in specific folders. The Storage class for images in the CMS module manages image file uploads, file retrievals, and directory creation.
 
-Due to code changes, how you extend your Media Gallery depends on your version of Adobe Commerce:
+Due to code changes, how you extend your Media Gallery depends on your version of {{site.data.var.ee}} or {{site.data.var.ce}}:
 
--  Adobe Commerce versions `2.4.3-p1` and later should use the [#configxml-method](config.xml method)
--  Adobe Commerce versions `2.4.0-2.4.3` should use the [#dixml-method](di.xml method)
+Once you've listed both product names, you can call the product `Commerce`.
+
+-  Commerce versions `2.4.3-p1` and later must use the [#configxml-method](config.xml method)
+-  Commerce versions `2.4.0-2.4.3` must use the [#dixml-method](di.xml method)
 
 ## config.xml method {#configxml-method}
 
 {:.bs-callout-info}
-The config.xml method is only available for Adobe Commerce versions 2.4.3-p1 and later. For earlier versions, see [the di.xml method](#dixml-method).
+Use the `config.xml` method for Commerce versions 2.4.3-p1 and later. For earlier versions, see [the `di.xml` method](#dixml-method).
 
-For security purposes, Magento provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` is used to define "Media Gallery Allowed" folders.
+For security purposes, Commerce provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` defines the "Media Gallery Allowed" folders.
 
-By default, Magento allows Media Gallery access to the following two directories under `/pub/media`:
+By default, Commerce allows Media Gallery access to the following two directories under `/pub/media`:
 
 -  `catalog/category`
 -  `wysiwyg`
@@ -26,32 +28,32 @@ In this tutorial, you will learn how to extend "Media Gallery Allowed" folders u
 
 1. Create a `config.xml` file.
 
-   If your module does not have one, create a `config.xml` file under the etc directory.
+ If your module does not have one, create a `config.xml` file under the `etc` directory.
 
 1. Add a new "Media Gallery Allowed" folder:
 
    ```xml
    <system>
-       <media_storage_configuration>
-           <allowed_resources>
-               <media_gallery_image_folders>
-                   <!-- new "Media Gallery Allowed" folders -->
-                   <my_image_folder>custom_folder_name</my_image_folder>
-                   <my_catalog_image_folder>catalog/custom_folder_name</my_catalog_image_folder>
-               </media_gallery_image_folders>
-           </allowed_resources>
-       </media_storage_configuration>
+      <media_storage_configuration>
+         <allowed_resources>
+            <media_gallery_image_folders>
+               <!-- new "Media Gallery Allowed" folders -->
+               <my_image_folder>custom_folder_name</my_image_folder>
+               <my_catalog_image_folder>catalog/custom_folder_name</my_catalog_image_folder>
+            </media_gallery_image_folders>
+         </allowed_resources>
+      </media_storage_configuration>
    </system>
    ```
 
 ## di.xml method {#dixml-method}
 
 {:.bs-callout-info}
-The config.xml method is only available for Adobe Commerce versions `2.4.0-2.4.3`. For later versions, see [the config.xml method](#configxml-method).
+Use the `di.xml` method for versions `2.4.0-2.4.3`. For later versions, see [the config.xml method](#configxml-method). If you subsequently upgrade to version `2.4.3-p1` or higher, you must implement the `config.xml` method.
 
-For security purposes, Magento does not provide Media Library access to contents in specific folders. This configuration is set in the CMS module's `di.xml` file and injected into the Storage class constructor.
+For security purposes, Commerce does not provide Media Library access to contents in specific folders. This configuration is set in the CMS module's `di.xml` file and injected into the `Storage` class constructor.
 
-By default, Magento allows Media Library access to all directories under `/pub/media` except the following:
+By default, Commerce allows Media Library access to all directories under `/pub/media` except the following:
 
 -  `captcha`
 -  `catalog/product`
@@ -64,11 +66,11 @@ By default, Magento allows Media Library access to all directories under `/pub/m
 
 In this tutorial, you will learn how to specify Media Library view permissions for folders using the `di.xml` file.
 
-## Step 1: Create `di.xml` file
+### Step 1: Create a `di.xml` file
 
 If your module does not have one, create a [`di.xml`] file under the `etc` directory.
 
-## Step 2: Specify class type configuration
+### Step 2: Specify the class type configuration
 
 To work with the constructor arguments for the `Storage` class, create a new `type` element with the `name` property set to `Magento\Cms\Model\Wysiwyg\Images\Storage` in the `di.xml` file.
 
@@ -81,7 +83,7 @@ Under the `type` element, create an `arguments` element.
 </type>
 ```
 
-## Step 3: Specify argument name
+## Step 3: Specify an argument name
 
 To change the content of the `dirs` argument provided to the constructor, create a new `argument` array element with the name `dirs` under `arguments`.
 
@@ -94,11 +96,9 @@ To change the content of the `dirs` argument provided to the constructor, create
 </type>
 ```
 
-## Step 4: Exclude or include directory
+### Step 4: Specify the directory to exclude or include
 
-### Step 4a: Exclude a directory
-
-Add entries to the `exclude` array to extend the list of view restricted directories.
+Add entries to the `exclude` array to extend the list of view-restricted directories.
 
 The following configuration restricts Media Library access to content under `pub/media/private-directory/`:
 
@@ -116,8 +116,6 @@ The following configuration restricts Media Library access to content under `pub
     </arguments>
 </type>
 ```
-
-### Step 4b: Include an excluded directory
 
 Add entries to the `include` array to override directory restrictions.
 
@@ -138,5 +136,5 @@ The following configuration overrides the default directory restriction for the 
 </type>
 ```
 
-[`di.xml`]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html
+[`di.xml`]: {{page.baseurl}}/extension-dev-guide/build/di-xml-file.html
 [Storage class]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Cms/Model/Wysiwyg/Images/Storage.php
