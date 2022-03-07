@@ -28,7 +28,7 @@ In this tutorial, you will learn how to extend "Media Gallery Allowed" folders u
 
 1. Create a `config.xml` file.
 
- If your module does not have one, create a `config.xml` file under the etc directory.
+ If your module does not have one, create a `config.xml` file under the `etc` directory.
 
 1. Add a new "Media Gallery Allowed" folder:
 
