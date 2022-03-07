@@ -17,7 +17,7 @@ Once you've listed both product names, you can call the product `Commerce`.
 {:.bs-callout-info}
 Use the `config.xml` method for Commerce versions 2.3.7-p2 and later. For earlier versions, see [the `di.xml` method](#dixml-method).
 
-For security purposes, Magento provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` is used to define "Media Gallery Allowed" folders.
+For security purposes, Commerce provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` defines the "Media Gallery Allowed" folders.
 
 By default, Magento allows Media Gallery access to the following two directories under `/pub/media`:
 
