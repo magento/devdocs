@@ -7,15 +7,12 @@ The media gallery gives admins the ability to upload image files in specific fol
 
 Due to code changes, how you extend your media gallery depends on your version of {{site.data.var.ee}} or {{site.data.var.ce}}:
 
-Once you've listed both product names, you can call the product `Commerce`.
+-  [#configxml](Commerce versions `2.3.7-p2` and later)
+-  [#dixml](Commerce versions `2.3.7-p1` and earlier)
 
--  Commerce versions `2.3.7-p2` and later must use the [#configxml-method](config.xml method).
--  Commerce versions `2.3.7-p1` and earlier must use the [#dixml-method](di.xml method).
+## Commerce versions `2.3.7-p2` and later {#configxml}
 
-## config.xml method {#configxml-method}
-
-{:.bs-callout-info}
-Use the `config.xml` method for Commerce versions 2.3.7-p2 and later. For earlier versions, see [the `di.xml` method](#dixml-method).
+In Commerce versions 2.3.7-p2 and later, you must modify the media library folder permissions in a `config.xml` file. 
 
 For security purposes, Commerce provides media gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` defines the "Media Gallery Allowed" folders.
 
@@ -46,10 +43,9 @@ In this tutorial, you will learn how to extend "Media Gallery Allowed" folders u
    </system>
    ```
 
-## di.xml method {#dixml-method}
+## Commerce versions `2.3.7-p1` and earlier {#dixml}
 
-{:.bs-callout-info}
-Use the `di.xml` method for versions `2.3.7-p1` and earlier. For later versions, see [the config.xml method](#configxml-method). If you subsequently upgrade to version `2.3.7-p2` or higher, you must implement the `config.xml` method.
+In versions `2.3.7-p1` and earlier. you must modify the media library folder permissions in a `di.xml` file. If you subsequently upgrade to version `2.3.7-p2` or higher, you must implement the `config.xml` method.
 
 For security purposes, Commerce does not provide Media Library access to contents in specific folders. This configuration is set in the CMS module's `di.xml` file and injected into the `Storage` class constructor.
 
