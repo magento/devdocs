@@ -12,7 +12,7 @@ Due to code changes, how you extend your media gallery depends on your version o
 
 ## Commerce versions `2.3.7-p2` and later {#configxml}
 
-In Commerce versions 2.3.7-p2 and later, you must modify the media library folder permissions in a `config.xml` file. 
+In Commerce versions 2.3.7-p2 and later, you must modify the media library folder permissions in a `config.xml` file.
 
 For security purposes, Commerce provides media gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` defines the "Media Gallery Allowed" folders.
 
