@@ -49,7 +49,7 @@ In this tutorial, you will learn how to extend "Media Gallery Allowed" folders u
 ## di.xml method {#dixml-method}
 
 {:.bs-callout-info}
-The config.xml method is only available for Adobe Commerce versions `2.3.7-p1` and earlier. For later versions, see [the config.xml method](#configxml-method).
+Use the `di.xml` method for versions `2.3.7-p1` and earlier. For later versions, see [the config.xml method](#configxml-method). If you subsequently upgrade to version `2.3.7-p2` or higher, you must implement the `config.xml` method.
 
 For security purposes, Magento does not provide Media Library access to contents in specific folders. This configuration is set in the CMS module's `di.xml` file and injected into the Storage class constructor.
 
