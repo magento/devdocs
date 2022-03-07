@@ -70,7 +70,7 @@ In this tutorial, you will learn how to specify Media Library view permissions f
 
 If your module does not have one, create a [`di.xml`] file under the `etc` directory.
 
-## Step 2: Specify class type configuration
+### Step 2: Specify the class type configuration
 
 To work with the constructor arguments for the `Storage` class, create a new `type` element with the `name` property set to `Magento\Cms\Model\Wysiwyg\Images\Storage` in the `di.xml` file.
 
