@@ -7,8 +7,8 @@ The Magento Media Gallery gives admins the ability to upload image files in spec
 
 Due to code changes, how you extend your Media Gallery depends on your version of Adobe Commerce:
 
-- Adobe Commerce versions `2.3.7-p2` and later should use the [#configxml-method](config.xml method)
-- Adobe Commerce versions `2.3.7-p1` and earlier should use the [#dixml-method](di.xml method)
+-  Adobe Commerce versions `2.3.7-p2` and later should use the [#configxml-method](config.xml method)
+-  Adobe Commerce versions `2.3.7-p1` and earlier should use the [#dixml-method](di.xml method)
 
 ## config.xml method {#configxml-method}
 
@@ -19,8 +19,8 @@ For security purposes, Magento provides Media Gallery access to contents in spec
 
 By default, Magento allows Media Gallery access to the following two directories under `/pub/media`:
 
-- `catalog/category`
-- `wysiwyg`
+-  `catalog/category`
+-  `wysiwyg`
 
 In this tutorial, you will learn how to extend "Media Gallery Allowed" folders using the `config.xml` file.
 
@@ -53,14 +53,14 @@ For security purposes, Magento does not provide Media Library access to contents
 
 By default, Magento allows Media Library access to all directories under `/pub/media` except the following:
 
-- `captcha`
-- `catalog/product`
-- `customer`
-- `downloadable`
-- `import`
-- `theme`
-- `theme_customization`
-- `tmp`
+-  `captcha`
+-  `catalog/product`
+-  `customer`
+-  `downloadable`
+-  `import`
+-  `theme`
+-  `theme_customization`
+-  `tmp`
 
 In this tutorial, you will learn how to specify Media Library view permissions for folders using the `di.xml` file.
 
