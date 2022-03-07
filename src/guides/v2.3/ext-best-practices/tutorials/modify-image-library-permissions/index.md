@@ -51,7 +51,7 @@ In this tutorial, you will learn how to extend "Media Gallery Allowed" folders u
 {:.bs-callout-info}
 Use the `di.xml` method for versions `2.3.7-p1` and earlier. For later versions, see [the config.xml method](#configxml-method). If you subsequently upgrade to version `2.3.7-p2` or higher, you must implement the `config.xml` method.
 
-For security purposes, Magento does not provide Media Library access to contents in specific folders. This configuration is set in the CMS module's `di.xml` file and injected into the Storage class constructor.
+For security purposes, Commerce does not provide Media Library access to contents in specific folders. This configuration is set in the CMS module's `di.xml` file and injected into the `Storage` class constructor.
 
 By default, Magento allows Media Library access to all directories under `/pub/media` except the following:
 
