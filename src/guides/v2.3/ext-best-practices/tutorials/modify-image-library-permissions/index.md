@@ -83,7 +83,7 @@ Under the `type` element, create an `arguments` element.
 </type>
 ```
 
-## Step 3: Specify argument name
+## Step 3: Specify an argument name
 
 To change the content of the `dirs` argument provided to the constructor, create a new `argument` array element with the name `dirs` under `arguments`.
 
