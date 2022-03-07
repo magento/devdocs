@@ -228,7 +228,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
 
 #### Service
 
-1. Create a systemd unit file (`/etc/systemd/system/scheduler.service`) with the following configuration.
+1. Create a systemd unit file (`/etc/systemd/system/scheduler.service`) with the following configuration. (Replace `<filesystemowner>` with unix user owner of /path/to/agent directory)
 
    ```config
    [Unit]
@@ -237,7 +237,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
 
    [Service]
    Type=simple
-   DynamicUser=yes
+   User=<filesystemowner>
    ExecStart=/path/to/agent/scheduler
    Restart=always
    RestartSec=3
