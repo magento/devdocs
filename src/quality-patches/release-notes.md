@@ -29,8 +29,8 @@ For information about quality patches created by the Community for {{site.data.v
 -  **MDVA-40830** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where the store credit is applied multiple times during order placement.
 -  **MDVA-42237** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where a configurable product special price is not updated after changes in its subproduct price.
 -  **MDVA-42520** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where the tax rate is applied twice if "Enable Cross Border Trade" is used.
-- Updated patches: MDVA-27239, MDVA-39305, MDVA-41236, MDVA-36832.
-- Deprecated patch: MDVA-37725.
+-  Updated patches: MDVA-27239, MDVA-39305, MDVA-41236, MDVA-36832.
+-  Deprecated patch: MDVA-37725.
 
 ## v1.1.10
 
