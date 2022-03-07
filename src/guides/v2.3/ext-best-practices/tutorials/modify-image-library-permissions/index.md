@@ -96,11 +96,11 @@ To change the content of the `dirs` argument provided to the constructor, create
 </type>
 ```
 
-## Step 4: Exclude or include directory
+### Step 4: Specify the directory to exclude or include
 
 ### Step 4a: Exclude a directory
 
-Add entries to the `exclude` array to extend the list of view restricted directories.
+Add entries to the `exclude` array to extend the list of view-restricted directories.
 
 The following configuration restricts Media Library access to content under `pub/media/private-directory/`:
 
