@@ -53,7 +53,7 @@ Use the `di.xml` method for versions `2.3.7-p1` and earlier. For later versions,
 
 For security purposes, Commerce does not provide Media Library access to contents in specific folders. This configuration is set in the CMS module's `di.xml` file and injected into the `Storage` class constructor.
 
-By default, Magento allows Media Library access to all directories under `/pub/media` except the following:
+By default, Commerce allows Media Library access to all directories under `/pub/media` except the following:
 
 -  `captcha`
 -  `catalog/product`
