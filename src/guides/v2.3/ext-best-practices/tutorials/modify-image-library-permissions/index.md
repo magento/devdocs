@@ -15,7 +15,7 @@ Once you've listed both product names, you can call the product `Commerce`.
 ## config.xml method {#configxml-method}
 
 {:.bs-callout-info}
-The config.xml method is only available for Adobe Commerce versions 2.3.7-p2 and later. For earlier versions, see [the di.xml method](#dixml-method).
+Use the `config.xml` method for Commerce versions 2.3.7-p2 and later. For earlier versions, see [the `di.xml` method](#dixml-method).
 
 For security purposes, Magento provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` is used to define "Media Gallery Allowed" folders.
 
