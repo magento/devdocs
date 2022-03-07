@@ -19,7 +19,7 @@ Use the `config.xml` method for Commerce versions 2.3.7-p2 and later. For earlie
 
 For security purposes, Commerce provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` defines the "Media Gallery Allowed" folders.
 
-By default, Magento allows Media Gallery access to the following two directories under `/pub/media`:
+By default, Commerce allows Media Gallery access to the following two directories under `/pub/media`:
 
 -  `catalog/category`
 -  `wysiwyg`
