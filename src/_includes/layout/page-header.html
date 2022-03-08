@@ -48,6 +48,8 @@
   <h2 class="page-subtitle no_toc">{{ page.subtitle }}</h2>
   {% endif %}
 
-  {% include layout/github-links.html %}
+  {% unless page.layout == 'migrated' %}
+	{% include layout/github-links.html %}
+	{% endunless %}
 
 </section>
