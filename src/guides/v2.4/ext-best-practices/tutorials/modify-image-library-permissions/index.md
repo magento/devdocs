@@ -9,8 +9,8 @@ Due to code changes, how you extend your media gallery depends on your version o
 
 Once you've listed both product names, you can call the product `Commerce`.
 
--  [#configxml](Commerce versions `2.4.3-p1` and later)
--  [#dixml](Commerce versions `2.4.0-2.4.3`)
+-  [Commerce versions `2.4.3-p1` and later](#configxml)
+-  [Commerce versions `2.4.0-2.4.3`](#dixml)
 
 ## Commerce versions 2.4.3-p1 and higher {#configxml}
 
