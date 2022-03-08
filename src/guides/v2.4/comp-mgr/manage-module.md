@@ -3,7 +3,8 @@ group: software-update-guide
 title: Manage modules
 functional_areas:
   - Upgrade
-redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/modules/manage.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/modules/manage.html
+layout: migrated
 ---
 
 You must use the command line to manage Magento modules.
