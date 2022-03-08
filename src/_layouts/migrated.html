@@ -1,0 +1,40 @@
+{% include layout/header.html %}
+
+<div class="content-container">
+
+	{% include layout/sidebar.html %}
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<div class="message-banner">
+					<b>This page has <a href="{{ page.migrated_to }}">moved</a> and will be redirected soon.</b>
+				</div>
+				{% include layout/page-header.html %}
+			</header>
+			<main>
+				{{ content }}
+			</main>
+			<footer class="content-footer">
+				{% include layout/content-footer.html %}
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		{% include layout/page-info.html %}
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+{% include layout/footer.html %}
+
+<style>
+	main {
+		filter: opacity(30%);
+	}
+	section .page-intro {
+		filter: opacity(30%);
+	}
+</style>
