@@ -47,7 +47,7 @@ In this tutorial, you will learn how to extend "Media Gallery Allowed" folders u
 
 ## Commerce versions 2.4.0 - 2.4.3 {#dixml}
 
-In versions `2.4.0-2.4.3`, you must modify media library folder permissions in a `di.xml` file. If you subsequently upgrade to version `2.4.3-p1` or higher, you must implement the `config.xml` method.
+In versions 2.4.0 - 2.4.3, you must modify media library folder permissions in a `di.xml` file. If you subsequently upgrade to version 2.4.3-p1 or higher, you must implement the `config.xml` method.
 
 For security purposes, Commerce does not provide Media Library access to contents in specific folders. This configuration is set in the CMS module's `di.xml` file and injected into the `Storage` class constructor.
 
