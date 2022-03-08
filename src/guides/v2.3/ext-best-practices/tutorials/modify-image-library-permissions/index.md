@@ -7,8 +7,8 @@ The media gallery gives admins the ability to upload image files in specific fol
 
 Due to code changes, how you extend your media gallery depends on your version of {{site.data.var.ee}} or {{site.data.var.ce}}:
 
--  [#configxml](Commerce versions 2.3.7-p2 and higher)
--  [#dixml](Commerce versions 2.3.7-p1 and lower)
+-  [Commerce versions 2.3.7-p2 and higher](#configxml)
+-  [Commerce versions 2.3.7-p1 and lower](#dixml)
 
 ## Commerce versions 2.3.7-p2 and higher {#configxml}
 
