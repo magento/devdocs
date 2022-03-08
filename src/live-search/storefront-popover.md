@@ -23,6 +23,10 @@ Review the set of product attributes that are [searchable]({{ site.user_guide_ur
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
 
+## Popover page size
+
+The page size of the storefront popover determines how many lines of autocompleted products can be returned. Previously, the page size of the popover was hard-coded to 6 lines. The `page_size` value is now a configurable setting that is passed to the constructor. During the Live Search installation, the `page_size` value changes to the current value of the [Catalog Search](https://docs.magento.com/user-guide/configuration/catalog/catalog.html#catalog-search) - `Autocomplete Limit` setting. Merchants can change the page size of the popover by updating the value in the configuration. By default, the Catalog Search - Autocomplete Limit value is set to 8.
+
 ## Styling popover elements
 
 The popover always displays the product `name` and `price`, and the selection of fields is not configurable. However, elements of the popover can be styled using CSS classes. For example, the following declarations change the background color of the popover container and footer.
