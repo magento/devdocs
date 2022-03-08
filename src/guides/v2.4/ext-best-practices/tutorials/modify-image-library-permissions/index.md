@@ -3,9 +3,9 @@ group: extension-best-practices
 title: Modify Media Library folder permissions
 ---
 
-The Media Gallery gives admins the ability to upload image files in specific folders. The Storage class for images in the CMS module manages image file uploads, file retrievals, and directory creation.
+The media gallery gives admins the ability to upload image files in specific folders. The Storage class for images in the CMS module manages image file uploads, file retrievals, and directory creation.
 
-Due to code changes, how you extend your Media Gallery depends on your version of {{site.data.var.ee}} or {{site.data.var.ce}}:
+Due to code changes, how you extend your media gallery depends on your version of {{site.data.var.ee}} or {{site.data.var.ce}}:
 
 Once you've listed both product names, you can call the product `Commerce`.
 
@@ -16,9 +16,9 @@ Once you've listed both product names, you can call the product `Commerce`.
 
 In versions 2.4.3-p1 and higher, you must modify media library folder permissions in a 'config.xml' file.
 
-For security purposes, Commerce provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` defines the "Media Gallery Allowed" folders.
+For security purposes, Commerce provides media gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` defines the "Media Gallery Allowed" folders.
 
-By default, Commerce allows Media Gallery access to the following two directories under `/pub/media`:
+By default, Commerce allows the media gallery access to the following two directories under `/pub/media`:
 
 -  `catalog/category`
 -  `wysiwyg`
