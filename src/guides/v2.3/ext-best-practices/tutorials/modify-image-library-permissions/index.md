@@ -43,7 +43,7 @@ In this tutorial, you will learn how to extend "Media Gallery Allowed" folders u
    </system>
    ```
 
-## Commerce versions `2.3.7-p1` and lower {#dixml}
+## Commerce versions 2.3.0 - 2.3.7-p1 {#dixml}
 
 In versions `2.3.7-p1` and lower. you must modify media library folder permissions in a `di.xml` file. If you subsequently upgrade to version `2.3.7-p2` or higher, you must implement the `config.xml` method.
 
