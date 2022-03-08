@@ -14,7 +14,7 @@ Once you've listed both product names, you can call the product `Commerce`.
 
 ## Commerce versions 2.4.3-p1 and higher {#configxml}
 
-In versions '2.4.3-p1' and higher, you must modify media library folder permissions in a 'config.xml' file.
+In versions 2.4.3-p1 and higher, you must modify media library folder permissions in a 'config.xml' file.
 
 For security purposes, Commerce provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` defines the "Media Gallery Allowed" folders.
 
