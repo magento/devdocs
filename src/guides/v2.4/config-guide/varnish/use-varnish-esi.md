@@ -32,10 +32,9 @@ Magento 2 will create an ESI tag when several conditions are met:
   <referenceContainer name="content">
       <block class="Magento\Framework\View\Element\Template" template="Magento_Paypal::esi.phtml" ttl="30"/>
    </referenceContainer>
-``` 
+```
 
 In the example above content from `esi.phtml` will be added to a homepage and will be automatically updated by Varnish every 30 seconds.
-
 
 ## Limitations
 
