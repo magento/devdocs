@@ -166,7 +166,8 @@ All database configurations are available in this node.
 ```
 
 ## default_connection
-Specify message queues default connection. Can be `db`, `amqp` or a custom queue system like `redismq`. But `amqp` or `redismq` should be installed and configured first to be able to use it, otherwise messages won't be processed correctly.
+
+Defines the default connection for message queues. The value can be `db`, `amqp`, or a custom queue system like `redismq`. If you specify any value other than `db`, the message queue software must be installed and configured first. Otherwise, messages will not be processed correctly.
 
 ```conf
 'queue' => [
@@ -174,8 +175,8 @@ Specify message queues default connection. Can be `db`, `amqp` or a custom queue
 ]
 ```
 
-If `queue/default_connection` is specified in `env.php`, this connection is used for all message queues through the system, unless specific connection is defined in `queue_topology.xml`, `queue_publisher.xml` or `queue_consumer.xml` file.
-For example, if `queue/default_connection` is `amqp` in `env.php` but `db` connection is specified in queue configuration related xml files of a module, this module will use MySQL as a message broker.
+If `queue/default_connection` is specified in `env.php`, this connection is used for all message queues through the system, unless a specific connection is defined in a `queue_topology.xml`, `queue_publisher.xml` or `queue_consumer.xml` file.
+For example, if `queue/default_connection` is `amqp` in `env.php` but a `db` connection is specified in the queue configuration XML files of a module, the module will use MySQL as a message broker.
 
 ## directories
 
