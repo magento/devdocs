@@ -15,7 +15,7 @@ These release notes can include:
 
 -  {:.fix} <!--- MC-42153--> The POST `V1/order/:orderId/invoice` request now supports the creation of partial invoices when the **Payment on Account** payment method is enabled. Previously, {{ site.data.var.ee }} threw this error: `An invoice for partial quantities cannot be issued for this order. To continue, change the specified quantity to the full quantity`. [GitHub-32428](https://github.com/magento/magento2/issues/32428)
 
--  {:.fix} <!--- MC-41975--> PayPal PayFlow Pro now works as expected with B2B negotiable quote when the customer’s cart contains other products. {{ site.data.var.ee }} now successfully processes the order and sends email to the customer as expected. Previously, {{ site.data.var.ee }} threw a fatal error and sent a confirmation email to the customer that contained zero values.
+-  {:.fix} <!--- MC-41975--> PayPal PayFlow Pro now works as expected with B2B negotiable quote when the customer’s cart contains other products. {{ site.data.var.ee }} now successfully processes the order and sends an email to the customer as expected. Previously, {{ site.data.var.ee }} threw a fatal error and sent a confirmation email to the customer that contained zero values.
 
 -  {:.fix} <!--- MC-41819--> Pagination is now correctly displayed on catalog search result page after excluding some products in shared catalog.
 
@@ -23,7 +23,7 @@ These release notes can include:
 
 -  {:.fix} <!--- MC-42927--> The **Submit** button on the Create New Company form is now disabled after one click to prevent multiple form submissions. Previously, you could submit this form multiple times by clicking on this button repeatedly, which generated an error.
 
--  {:.fix} <!--- MC-42787--> {{ site.data.var.ee }} no longer displays the reorder link on the storefront when a shopper logs into a store for which re-orders have been disabled. {{ site.data.var.ee }} now uses the Admin configuration settings (Admin **Reorder** > **Stores** > **Configuration** > **Sales** > **Allow Reorder** set to **no**).
+-  {:.fix} <!--- MC-42787--> {{ site.data.var.ee }} no longer displays the reorder link on the storefront when a shopper logs into a store for which reorders have been disabled. {{ site.data.var.ee }} now uses the Admin configuration settings (Admin **Reorder** > **Stores** > **Configuration** > **Sales** > **Allow Reorder** set to **no**).
 
 -  {:.fix} <!--- MC-43115--> Quick Order search by SKU is now case-insensitive when shared catalog is enabled.
 
@@ -93,7 +93,7 @@ These release notes can include:
 
 -  {:.fix} <!--- MC-41232--> Shoppers are now redirected to the negotiable quote page after pasting the link to a negotiable quote in the URL field and successfully logging in. Previously, shoppers were redirected to the My Account page.
 
--  {:.fix} <!--- MC-39317--> Re-ordering now works as expected for orders that contain a product with a Date Customizable Option for a customer account that was created during checkout. Previously, Magento did not process the re-order and displayed this error: `The product has required options. Enter the options and try again`.
+-  {:.fix} <!--- MC-39317--> Reordering now works as expected for orders that contain a product with a Date Customizable Option for a customer account that was created during checkout. Previously, Magento did not process the reorder and displayed this error: `The product has required options. Enter the options and try again`.
 
 -  {:.fix} <!--- MC-39063--> The shipping address for a negotiable quote is no longer editable during checkout when the Purchase Order module is disabled. This behavior resulted from a previous fix in which `isQuoteAddressLocked` was removed from the negotiable quote checkout renderer.
 

@@ -3,6 +3,9 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
+{:.bs-callout-warning}
+To help ensure this release delivers the highest standards of security and quality, the pre-release period for Adobe Commerce customers is now planned for **March 29**, two weeks prior to the **general availability date of April 12** for both {{ site.data.var.ee }} and {{ site.data.var.ce }}.
+
 {{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
 
 This release includes almost 250 quality fixes and enhancements.
@@ -66,7 +69,7 @@ Security improvements for this release improve compliance with the latest securi
 
 {{ site.data.var.ee }} 2.4.4 now supports PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Additional platform enhancements include:
 
-*  {{ site.data.var.ee }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ee }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ee }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch.
+*  {{ site.data.var.ee }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ee }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ee }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch. See [Switching to OpenSearch for Adobe Commerce on Cloud 2.4.4](https://support.magento.com/hc/en-us/articles/4419942355725-Switching-to-OpenSearch-for-Adobe-Commerce-on-Cloud-2-4-4)
 
 *  The `JQuery` library has been upgraded to version 3.6. The `jquery-ui` library has been upgraded to version 1.13.0. Several other JavaScript libraries have been updated to the latest versions.
 
@@ -78,6 +81,18 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Three Laminas dependencies were removed from the codebase to reduce the number of dependencies.
 
+#### jQuery UI upgrade
+
+jQuery UI has been upgraded to the latest version (v1.13.0). The following v1.10.0 jQuery components have been removed:
+
+*  `ajaxOptions` and `cache` options for tabs. See [Tabs](https://jqueryui.com/changelog/1.10.0/#tabs).
+
+*  `.zIndex()`. jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
+
+*  Data fallbacks for widget names. You must use the full name for the `.data()` key.
+
+*  Hard coding of classes such as `ui-corner-all` in widgets.
+
 ### Performance and scalability enhancements
 
 {{ site.data.var.ee }} performance enhancements boost high throughput order processing and message queue optimization. The asynchronous orders feature introduced in this release supports the creation of approximately 60,000 orders/hour. Earlier versions of {{ site.data.var.ee }} supported the processing of approximately 10,000 orders/hour, which presented a potential bottleneck for flash sales. The new multiple consumers feature supports scaling the number of message queue consumers on a single Cloud instance and increases the number of orders processed per hour.
@@ -86,13 +101,13 @@ Performance enhancements in this release:
 
 *  The AsyncOrder feature supports faster order placement than synchronous execution provides. When AsyncOrder is enabled, order placement is executed in the background while shoppers complete other tasks on the storefront.
 
-*  The new **Enable Inventory Check On Cart Load** configuration option (Admin > **Stores** > **Configuration** >  **Catalog** > **Inventory** > **Stock Options**) provides switchable inventory checks on quote load. It is enabled by default. When this option is disabled, {{ site.data.var.ee }} skips the inventory check as the quote loads, which speeds up checkout, especially for carts containing many items.
+*  The new **Enable Inventory Check On Cart Load** configuration option provides a switchable inventory check when loading a product in the cart. It is enabled by default. When you disable this option, {{ site.data.var.ee }} skips the inventory check as the quote loads, which speeds up checkout, especially for carts containing many items.
 
-*  The new `multiple_processes` configuration option supports running parallel consumers in multiple processes. To enable this feature, add `multiple_processes` to the `app/etc/env.php` file.
+*  The new `multiple_processes` configuration option supports running parallel consumers in multiple processes. Previously, `cron` ran a single consumer when needed. Launching multiple consumers to run processes in parallel can improve task execution speed. To enable this feature, add `multiple_processes` to the `app/etc/env.php` file.
 
 *  Cart operations for carts containing over 750 configurable products have been improved by increasing the memory limit set by `max_input_vars` in the `php.ini` file to support input variables volume.
 
-*  Optimization of sales rules processing during checkout by deferring total calculation. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
+*  Optimization of sales rules processing during checkout by deferring total calculation. Typically, sales rule processing occurs every time a shopper adds a product to their cart, updates product quantity, or clicks the  **Place Order** button. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
 
 *  Improvements to the validation process for orders affected by a cart price rule during asynchronous order placement. <!--- MCP-304-->
 
@@ -126,7 +141,7 @@ This release includes these GraphQL enhancements:
 
 *  **Updated core GraphQL library**. The `webonyx` library, which enables core GraphQL to function, has been upgraded to version ^14.9. <!--- PWA-2137 2184 -->
 
-*  **Fixed translation issues in GraphQL with multi-site and multi-language stores**. The GraphQl resolver now returns translated strings based on store scope as expected. <!--- PWA-1946-->
+*  **Fixed translation issues in GraphQL with multi-site and multi-language stores**. The GraphQL resolver now returns translated strings based on store scope as expected. <!--- PWA-1946-->
 
 *  GraphQL now provides New Relic with descriptive transaction names, which can be helpful for debugging. [GitHub-30915](https://github.com/magento/magento2/issues/30915) <!--- PWA-1311-->
 
@@ -156,7 +171,15 @@ PWA Studio v.12.3.0 is compatible with {{ site.data.var.ee }} 2.4.4. It includes
 
 ### Accessibility updates
 
-This release brings enhanced conformance to standard accessibility guidelines. It includes improved tooltips, accessible naming and tagging of screen elements, and redesigned icons and buttons. Over 80% of these fixes help improve the shopping experience for users Without Vision or Limited Vision.
+This release brings increased conformance to standard accessibility guidelines. These enhancements improve the experience of users with limited vision or with limited language, cognitive, and learning abilities.  Screen Reader tools performance has also improved.
+
+Accessibility enhancements include:
+
+*  Tooltip links with text and accurate, task-focused, visible labels for inputs
+*  Edit buttons now have unique text.
+*  Admin buttons now have unique, accessible, and descriptive purpose in adherence to AA standards
+*  Icon images that convey meaning now provide a textual alternative.
+*  Enhanced contrast in Admin buttons and form fields to a contrast ratio of at least 3:1 with adjacent colors.
 
 ### Page Builder
 
@@ -625,6 +648,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  The class `BundleDiscountPrice` in `magento2/app/code/Magento/Bundle/Pricing/Price/ConfiguredPrice.php` is now declared as expected. Previously, {{ site.data.var.ee }} threw this error: `Class Magento\Bundle\Pricing\Price\BundleDiscountPrice not found`. [GitHub-33334](https://github.com/magento/magento2/issues/33334)
 
+<!--- AC-1239-->
+
+*  Escaped CSV field values written by the AWS S3 adapter now match the data written by other file system adapters.
+
 ### Gift cards
 
 <!--- MC-42327-->
@@ -823,99 +850,27 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Updated the root `composer.json` metapackage and  `composer.json` file for each module to PHP 8.1. [GitHub-34009](https://github.com/magento/magento2/issues/34009)
 
-<!--- AC-1650-->
-
-*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`.
-
 *  Third-party `jquery.tabs` library (latest version)
 
 *  NPM packages (latest version) [GitHub-33512](https://github.com/magento/magento2/issues/33512), [GitHub-33972](https://github.com/magento/magento2/issues/33972) <!--- magento/magento2/pull/33515 33998-->
 
 *  `jquery.cookie` third-party library (latest version) [GitHub-34427](https://github.com/magento/magento2/issues/34427) <!--- AC-101-->
 
-*  `aws-sdk-php`  [GitHub-34751](https://github.com/magento/magento2/issues/34751) <!--- AC-1924-->
-
-*  `magento/semver`  [GitHub-34538](https://github.com/magento/magento2/issues/34538) <!--- magento/magento-semver/pull/68-->
-
 #### Composer dependency updates
 
-The following dependencies have been updated for PHP 8.1 compatibility:
+*  All Composer dependencies were updated to the versions compatible with PHP 8.1.
 
-<!--- AC-1750 1751 1752-->
+*  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
 
-*  `phpgt/dom` (most recent 2.x version) [GitHub-34633](https://github.com/magento/magento2/issues/34633)
-
-<!--- magento/magento2/pull/34788-->
-
-*  `elasticsearch/elasticsearch`  [GitHub-34533](https://github.com/magento/magento2/issues/34533)
-
-<!--- magento/magento2/pull/34555-->
-
-*  `phpstan/phpstan` (v1.x) [GitHub-34604](https://github.com/magento/magento2/issues/34604)
-
-<!--- magento/magento2/pull/34788-->
-
-*  `fgrosse/phpasn1` [GitHub-34591](https://github.com/magento/magento2/issues/34591)
-
-<!--- AC-1258-->
-
-*  `endroid/qr-code` [GitHub-34101](https://github.com/magento/magento2/issues/34101)
-
-<!--- AC-1304-->
-
-*  Updated dependency versions for `infra-tools` and MHCI to the latest compatible version in sync with the root `composer.json` file. [GitHub-34133](https://github.com/magento/magento2/issues/34133)
-
-<!--- magento/magento2/pull/33762-->
-
-*  `phpunit/phpunit` (v9.3.0). (Updating the `phpunit/phpunit` Composer dependency to the latest version has eliminated integration test errors.) [GitHub-33761](https://github.com/magento/magento2/issues/33761), [GitHub-33596](https://github.com/magento/magento2/issues/33596)
-
-<!--- AC-622-->
-
-*  `squizlabs/php_codesniffer` (v3.6.0) [GitHub-33832](https://github.com/magento/magento2/issues/33832)
-
-*  `ramsey/uuid` Composer dependency (v4.2.0) [GitHub-33832](https://github.com/magento/magento2/issues/33832)
-
-<!--- AC-301-->
-
-*  `phpseclib/phpseclib`  (v3.0.8) [GitHub-32864](https://github.com/magento/magento2/issues/32864)
-
-<!--- magento/magento2/pull/33363-->
-
-*  `phpseclib/mcrypt_compat`  (v2.0)  [GitHub-32865](https://github.com/magento/magento2/issues/32865)
-
-<!--- magento/magento2/pull/33605)-->
-
-*  `laminas/laminas-code` (v4.4.2) [GitHub-33509](https://github.com/magento/magento2/issues/33509), [GitHub-34543](https://github.com/magento/magento2/issues/34543)
-
-<!--- ENGCOM-8667-->
-
-*  `Less.js` (v3.13.1) [GitHub-32845](https://github.com/magento/magento2/issues/32845)
-
-<!--- magento/magento2/pull/33860-->
-
-*  `guzzlehttp/guzzle` (v7.3.0)  [GitHub-32869](https://github.com/magento/magento2/issues/32869)
+#### JavaScript dependency updates
 
 <!--- magento/magento2/pull/33871-->
 
 *  `jquery-validate` third-party library  [GitHub-33853](https://github.com/magento/magento2/issues/33853)
 
-<!--- magento/magento2/pull/34367)-->
+<!--- ENGCOM-8667-->
 
-*  `laminas/laminas-server`, `laminas/laminas-view` [GitHub-34240](https://github.com/magento/magento2/issues/34240), [GitHub-34214](https://github.com/magento/magento2/issues/34214)
-
-<!--- magento/magento2/pull/34396)-->
-
-*  `pelago/emogrifier` (v6.x) [GitHub-34374](https://github.com/magento/magento2/issues/34374)
-
-<!--- AC-1521 1650-->
-
-*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`.
-
-<!--- AC-1366-->
-
-*  `laminas/laminas-math` [GitHub-34242](https://github.com/magento/magento2/issues/34242)
-
-[GitHub-34700](https://github.com/magento/magento2/issues/34700)
+*  `Less.js` (v3.13.1) [GitHub-32845](https://github.com/magento/magento2/issues/32845)
 
 #### Library removals and deprecations
 
@@ -956,13 +911,7 @@ The following dependencies have been updated for PHP 8.1 compatibility:
 
 *  The auto-creation of arrays from false values is no longer permitted. [GitHub-34499](https://github.com/magento/magento2/issues/34499), [GitHub-34589](https://github.com/magento/magento2/issues/34589)
 
-### Locales
-
-<!--- AC-285-->
-
-*  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ee }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
-
-### Magento Coding Standard
+### {{ site.data.var.ee }} coding standard
 
 <!--- magento/magento-coding-standard/pull/219-->
 
@@ -970,19 +919,19 @@ The following dependencies have been updated for PHP 8.1 compatibility:
 
 <!--- magento/magento2/pull/33858-->
 
-*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the Magento Coding Standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
+*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the {{ site.data.var.ee }} coding standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
 
 <!--- magento/magento-coding-standard/pull/322-->
 
-*  Added new sniff `Magento2.PHP.ArrayAutovivification` to the Magento Coding Standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
+*  Added new sniff `Magento2.PHP.ArrayAutovivification` to the {{ site.data.var.ee }} coding standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
 
 <!--- magento/magento-coding-standard/pull/325-->
 
-*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the Magento Coding Standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
+*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the {{ site.data.var.ee }} coding standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
 
 <!--- magento/magento-coding-standard/pull/326-->
 
-*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the Magento Coding Standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
+*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the {{ site.data.var.ee }} coding standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
 
 <!--- magento/magento-coding-standard/pull/335-->
 
@@ -1289,7 +1238,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Import of table rates now works as expected when using the S3 storage adapter. Previously, {{ site.data.var.ee }} displayed this error: `File "https://[bucket].s3.eu-central-1.amazonaws.com/[prefix]/tmp/phpLjGmHf" not found`. [GitHub-33072](https://github.com/magento/magento2/issues/33072)
 
-<!--- magento/magento2/pull/33232-->
+<!--- MC-42577-->
 
 *  You can now disable shipment update emails as expected from **Stores**  > **Configuration**  >  **Sales**  >  **Sales Emails**. [GitHub-33165](https://github.com/magento/magento2/issues/33165)
 
@@ -1419,7 +1368,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 ### Translations and locales
 
-<!--- AC-285-->
+<!--- AC-285 MC-41400-->
 
 *  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ee }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
 
@@ -1558,6 +1507,10 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 <!--- MC-41880-->
 
 *  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ee }} ignored this option.
+
+### Known issue
+
+**Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree.  When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not  editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.  <!--- BUNDLE-3088-->
 
 ## Community contributions
 
