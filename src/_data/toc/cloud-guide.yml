@@ -41,7 +41,7 @@ pages:
           url: /cloud/reference/cloud-composer.html
           versionless: true
 
-        - label: Cloud CLI for Commerce
+        - label: magento-cloud CLI 
           url: /cloud/reference/cli-ref-topic.html
           versionless: true
 

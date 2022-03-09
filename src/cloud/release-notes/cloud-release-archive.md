@@ -72,7 +72,7 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 
 -  {:.fix}<!-- MAGECLOUD-3957 -->Fixed an issue that caused an error with static content deployment during build. After an installation and `{{site.data.var.ct}}` config dump, an error occurred if there was no locale specified for the admin user in the `config.php` file. Now, there is a default locale for the admin user in the `config.php` file.
 
--  {:.fix}<!-- MAGECLOUD-4009 -->Fixed an `Undefined index error` that occurs when a Magento Cloud CLI command fails in an environment that is not configured with a secure URL (https). Now, the ece-tools package uses the base URL (http) if the secure URL is not available.
+-  {:.fix}<!-- MAGECLOUD-4009 -->Fixed an `Undefined index error` that occurs when a `magento-cloud` CLI command fails in an environment that is not configured with a secure URL (https). Now, the ece-tools package uses the base URL (http) if the secure URL is not available.
 
 ## v2002.0.20
 

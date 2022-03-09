@@ -6,7 +6,8 @@ redirect_from:
   - /safe-upgrade-tool/developer.html
 functional_areas:
   - Upgrade
-redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html
+layout: migrated
 ---
 
 This topic contains information for developers who work closely with the {{site.data.var.ee}} code and want to learn detailed information about the {{site.data.var.uct}}. You can use this knowledge to customize the tool's components.
