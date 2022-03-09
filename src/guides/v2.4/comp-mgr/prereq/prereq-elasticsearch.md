@@ -3,7 +3,8 @@ group: software-update-guide
 title: Check the catalog search engine
 functional_areas:
   - Upgrade
-redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
+layout: migrated
 ---
 
 Before you upgrade from Magento 2.3.x to Magento 2.4, you must check whether you are using MySQL, Elasticsearch, or a third-party extension as your catalog search engine in your Magento 2.3.x instance. The result determines what you must do **before** upgrading to Magento 2.4.
