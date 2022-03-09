@@ -27,9 +27,9 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 ## Add user authentication requirements
 
-For added security, Adobe provides project-level MFA enforcement to require two-factor authentication for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
+For added security, Adobe provides project-level MFA enforcement to require two-factor authentication (2FA) for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
 
-When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable two-factor authentication (TFA) on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for TFA and SSH access](#update-account-security-settings).
+When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
 
 ## Add users and manage access
 
@@ -42,7 +42,7 @@ Changing user configuration on an {{site.data.var.ece}} environment requires a s
 
 To add a user to a project or environment, you need the email address associated with an existing {{ site.data.var.ece }} account. New users can [register for an account][{{site.data.var.ece}} account] and provide the associated email address after completing account validation.
 
-### Manage users with the CLI {#cloud-user-mg-cli}
+### Manage users with the `magento-cloud` CLI {#cloud-user-mg-cli}
 
 Use the {{site.data.var.ece}} command line client to manage users and integrate this with any other automated system.
 
@@ -53,12 +53,12 @@ Available commands:
 -  `magento-cloud user:list [users]`–list project users
 -  `magento-cloud user:role`–view or change the user role
 
-The following examples use the CLI to add a user, configure roles, and modify project assignments and assigned user roles.
+The following examples use the `magento-cloud` CLI to add a user, configure roles, and modify project assignments and assigned user roles.
 
 {:.procedure}
 To add a user and assign roles:
 
-1. Use the CLI to add the user.
+1. Use the `magento-cloud` CLI to add the user.
 
    ```bash
    magento-cloud user:add
@@ -173,9 +173,9 @@ Add an environment-level user:
 
 After you add a user to a Cloud project, ask the user to review their account settings and add the following security configuration as needed:
 
--  Enable two-factor authentication (TFA)
+-  Enable 2FA
 
-   Adobe recommends adding two-factor authentication to all accounts to meet security and compliance standards. Projects configured with [MFA enforcement][Enable MFA for SSH] require two-factor authentication on accounts that use SSH to access the projects.
+   Adobe recommends adding 2FA to all accounts to meet security and compliance standards. Projects configured with [MFA enforcement][Enable MFA for SSH] require 2FA on accounts that use SSH to access the projects.
 
 -  Enable SSH keys
 
@@ -185,21 +185,21 @@ After you add a user to a Cloud project, ask the user to review their account se
 
    Users can generate an API token that can be used for secure SSH access to an environment. You need the token to enable authentication workflows for automated processes.
 
-   On projects with MFA enforcement enabled, you must use the API token to authenticate SSH access requests from automated accounts. The token allows automated processes to bypass authentication workflows which require two-factor authentication.
+   On projects with MFA enforcement enabled, you must use the API token to authenticate SSH access requests from automated accounts. The token allows automated processes to bypass authentication workflows which require 2FA.
 
-### Enable TFA for Cloud accounts
+### Enable 2FA for Cloud accounts
 
-{{site.data.var.ece}} supports two-factor authentication using any of the following applications:
+{{site.data.var.ece}} supports 2FA using any of the following applications:
 
 -  [Google Authenticator (Android/iPhone)][]
 -  [Authy (Android/iPhone)][]
 -  [FreeOTP (Android)][]
 -  [GAuth Authenticator (Firefox OS, desktop, others)][]
 
-Instructions for installing the authenticator application and enabling two-factor authentication (TFA) are available on the {{site.data.var.ece}} _Account settings_ page in the Cloud Project Web UI.
+Instructions for installing the authenticator application and enabling 2FA are available on the {{site.data.var.ece}} _Account settings_ page in the Cloud Project Web UI.
 
 {:.procedure}
-To enable TFA on your {{site.data.var.ece}} user account:
+To enable 2FA on your {{site.data.var.ece}} user account:
 
 1. Log in to the [{{site.data.var.ece}} user account][{{site.data.var.ece}} account].
 
@@ -207,7 +207,7 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
    ![Cloud projects page]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-tab.png){:width="550px"}
 
-1. Click **Security** to access the TFA configuration settings. Then, click **Set up application**.
+1. Click **Security** to access the 2FA configuration settings. Then, click **Set up application**.
 
    ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-tfa-setup-app.png){:width="550px"}
 
@@ -215,21 +215,21 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
    ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-tfa-setup-app-options.png){:width="550px"}
 
-1. Add your {{site.data.var.ece}} account to the authenticator app.
+1. Add your {{site.data.var.ece}} account to the authenticator application.
 
-   -  On your mobile device, open the authenticator application. Then, add the setup code to the app.
+   -  On your mobile device, open the authenticator application. Then, add the setup code to the application.
 
-      For example, for Google Authenticator, click the + sign in the app. Then, enter the text code from Adobe in the app, or scan the QR code to enable {{site.data.var.ece}} TFA.
+      For example, for Google Authenticator, click the + sign in the application. Then, enter the text code from Adobe in the application, or scan the QR code to enable {{site.data.var.ece}} 2FA.
 
-      ![Cloud 2FA app device setup]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-app-example.png){:width="400px"}
+      ![Cloud 2FA application device setup]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-app-example.png){:width="400px"}
 
-   -  On the _TFA set up - Application_ page, type the two-factor authentication code from your mobile device in the **Application verification code** field.
+   -  On the _TFA set up - Application_ page, type the 2FA code from your mobile device in the **Application verification code** field.
 
       ![Cloud 2FA app device setup]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-tfa-setup-steps.png){:width="550px"}
 
    -  Click **Verify and save**.
 
-      If the code is valid, Adobe sends a notification to the account email address confirming that the account now has two-factor authentication.
+      If the code is valid, Adobe sends a notification to the account email address confirming that the account now has 2FA.
 
 1. Optional. Enable _Trusted browser_ settings to cache the authentication code in the browser for 30 days.
 
@@ -239,45 +239,45 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
 1. Save the recovery codes.
 
-   -  On the _TFA setup - Recovery_ codes page, copy and save the recovery codes so that you can log into your {{site.data.var.ece}} project when you cannot access your mobile device or authentication app.
+   -  On the _2FA setup - Recovery_ codes page, copy and save the recovery codes so that you can log into your {{site.data.var.ece}} project when you cannot access your mobile device or authentication application.
 
-     ![Cloud TFA recovery codes]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-recovery-codes.png){:width="550px"}
+     ![Cloud 2FA recovery codes]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-recovery-codes.png){:width="550px"}
 
-   -  Copy the recovery codes to another location or write them down in case you lose access to your device or authentication app.
+   -  Copy the recovery codes to another location or write them down in case you lose access to your device or authentication application.
 
    -  Click **Save** to save the codes to your account so you can view and manage them from your account security settings.
 
       {:.bs-callout-warning}
-      If you lose access to an account with TFA and have no recovery codes, you must contact your project administrator, or submit a support ticket to reset the TFA application.
+      If you lose access to an account with 2FA and have no recovery codes, you must contact your project administrator, or submit a support ticket to reset the 2FA application.
 
-1. After completing the TFA setup, click **Save** to update your account.
+1. After completing the 2FA setup, click **Save** to update your account.
 
-1. Authenticate your current session with two-factor authentication.
+1. Authenticate your current session with 2FA.
 
    -  Log out of your account.
 
    -  Log in with your username and password.
 
-   -  When prompted, enter the two-factor authentication code for the `accounts.magento.cloud` entry from the authenticator application on your mobile device.
+   -  When prompted, enter the 2FA code for the `accounts.magento.cloud` entry from the authenticator application on your mobile device.
 
-### Manage TFA configuration and recovery codes
+### Manage 2FA configuration and recovery codes
 
-You can manage the TFA configuration for a {{site.data.var.ece}} account from the _Security_ section on the _Account settings_ page.
+You can manage the 2FA configuration for a {{site.data.var.ece}} account from the _Security_ section on the _Account settings_ page.
 
 1. Log in to the {{ site.data.var.ece }} user account.
 
 1. On the Cloud projects page, click the **Account Settings** tab.
 
-1. Click **Security** to view the TFA configuration options.
+1. Click **Security** to view the 2FA configuration options.
 
-   ![Cloud manage TFA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="550px"}
+   ![Cloud manage 2FA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="550px"}
 
-1. Use the available links to update the two-factor authentication settings for your {{site.data.var.ece}} account:
+1. Use the available links to update the 2FA settings for your {{site.data.var.ece}} account:
 
-   -  Disable two-factor authentication
+   -  Disable 2FA
    -  Reset the authenticator application
    -  Add or remove trusted browsers
-   -  View or refresh TFA recovery codes on account
+   -  View or refresh 2FA recovery codes on account
 
 ### Create an API token
 
