@@ -1,0 +1,21 @@
+<!-- footer-->
+<div class="page-footer">
+    <div class="container">
+  
+      <div class="copyright-links">
+        {% include layout/footer-links.html %}
+      </div>
+  
+          <div class="copyright-date">&copy; {{ site.time | date: '%Y' }} Adobe. All rights reserved.</div>
+  
+    </div>
+  </div>
+  <!-- / #footer -->
+  
+  {% if page.layout == 'migrated' %}
+  <style>
+    .page-footer {
+      margin-left: 270px;
+    }
+  </style>
+  {% endif %}
