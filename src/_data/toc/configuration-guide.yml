@@ -258,6 +258,9 @@ pages:
         - label: How Varnish caching works
           url: /config-guide/varnish/use-varnish-cache-how.html
 
+        - label: Varnish ESI Block
+          url: /config-guide/varnish/use-varnish-esi.html
+
     - label: Use memcached for session storage
       url: /config-guide/memcache/memcache.html
       children:
