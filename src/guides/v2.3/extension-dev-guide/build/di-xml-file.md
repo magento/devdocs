@@ -34,6 +34,7 @@ During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstr
 **Examples:**
 
 In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php) class loads the area based on the front-name provided in the [URL](https://glossary.magento.com/url).
+
 ```php
 $areaCode = $this->_areaList->getCodeByFrontName($this->_request->getFrontName());
 $this->_state->setAreaCode($areaCode);
@@ -41,6 +42,7 @@ $this->_objectManager->configure($this->_configLoader->load($areaCode));
 ```
 
 In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php) class also loads the area based on the URL in the request.
+
 ```php
 $path = $this->request->get('resource');
 $params = $this->parsePath($path);
@@ -49,6 +51,7 @@ $this->objectManager->configure($this->configLoader->load($params['area']));
 ```
 
 In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php) class always loads the `crontab` area.
+
 ```php
 $this->_state->setAreaCode(Area::AREA_CRONTAB);
 $configLoader = $this->objectManager->get(\Magento\Framework\ObjectManager\ConfigLoaderInterface::class);
