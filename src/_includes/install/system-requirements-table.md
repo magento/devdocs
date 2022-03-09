@@ -18,8 +18,6 @@
 | AWS MQ             |       |       |          | 3.8.11    |       |       |                  |          |       |       |            |               |               |            |            |            |
 | AWS ElastiCache    |       |       |          | Redis 6.x |       |       |                  |          |       |       |            |               |               |            |            |            |
 | AWS ElasticSearch  |       |       |          | 7.9       |       |       |                  |          |       |       |            |               |               |            |            |            |
-|                    |       |       |          |           |       |       |                  |          |       |       |            |               |               |            |            |            |
-|                    |       |       |          |           |       |       |                  |          |       |       |            |               |               |            |            |            |
 
 <style>
 .comparison-table {
