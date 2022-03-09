@@ -1,9 +1,6 @@
 ---
 group: inventory
 title: Inventory API reference
-redirect_from:
-  - /guides/v2.3/inventory/catalog-inventory-replacements.html
-  - /guides/v2.3/inventory/scalable-inventory-replacements.html
 ---
 
 <!-- Magento 2 inventory project (a.k.a MSI) release branch blob url variable

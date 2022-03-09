@@ -75,7 +75,7 @@ None
 
 ## Check whether products in the list are salable
 
-This call returns boolean values that indicate whether products provided in SKU parameter are salable from the specified stock.
+This call returns boolean values that indicate whether the products provided in the SKU parameter are salable from the specified stock.
 
 **Sample Usage:**
 
