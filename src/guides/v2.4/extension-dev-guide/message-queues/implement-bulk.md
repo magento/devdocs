@@ -354,8 +354,8 @@ The `queue_topology.xml` file defines the message routing rules and declares que
 ```
 
 {:.bs-callout-info}
-Message queues connection is defined dynamically based on deployment configuration in `env.php`. If AMQP is configured in deployment configuration of the queue, AMQP connection is used. Otherwise, db connection is used.
-As a result, if AMQP is configured in deployment configuration of the queue, connection declaration can be omitted in [message queue configuration files]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html): `queue_customer.xml`, `queue_publisher.xml`, `queue_topology.xml`.
+Message queue connections are defined dynamically, based on the deployment configuration in the `env.php` file. If AMQP is configured in the deployment configuration of the queue, AMQP connections are used. Otherwise, database connections are used.
+As a result, if AMQP is configured in the deployment configuration of the queue, you can omit connection declarations in the `queue_customer.xml`, `queue_publisher.xml`, and `queue_topology.xml` [message queue configuration files]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html).
 
 #### Related Topics
 
