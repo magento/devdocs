@@ -18,6 +18,12 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v1.0.10
+
+Release date: March 10, 2022
+
+-  {:.new}**Support PHP 8.1**-Added support for PHP 8.1, dropped support for PHP 7.1
+
 ## v1.0.9
 
 Release date: October 25, 2021

@@ -21,6 +21,18 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v2002.1.9
+
+Release date: March 10, 2022
+
+- {:.new}**Support PHP 8.1**-Added support for PHP 8.1
+- {:.new}**OpenSearch**-Now ece-tools can configure OpenSearch service during Magento deploy
+- {:.new}**Consumer multiple processes**-Added settings to specify the number of processes to spawn for each consumer
+- {:.new}**OpenSearch scheme and full host path**-Added possibility to configure ElasticSearch scheme and full host path
+- {:.fix}**AWS S3**-Changed the method of AWS S3 enablement
+- {:.fix}**Fix driver_options reader**-Added reading driver_options configuration for DB connection from env.php by ece-tools for validators
+- {:.fix}**symfony/process ^5.3**-Added the compatibility with symfony/process ^5.3
+
 ## v2002.1.8
 
 Release date: October 25, 2021
