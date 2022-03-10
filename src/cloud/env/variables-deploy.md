@@ -241,7 +241,7 @@ stage:
 **Known limitations**—
 
 -  Changing the search engine to any type other than `elasticsuite` causes a deploy failure accompanied by an appropriate validation error
--  Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
+-  Removing the Elasticsearch service causes a deploy failure accompanied by an appropriate validation error
 
 {:.bs-callout-info}
 For details on using or troubleshooting the Elasticsuite plugin with {{site.data.var.ee}}, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
