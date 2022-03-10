@@ -175,7 +175,7 @@ Defines the default connection for message queues. The value can be `db`, `amqp`
 ]
 ```
 
-If `queue/default_connection` is specified in `env.php`, this connection is used for all message queues through the system, unless a specific connection is defined in a `queue_topology.xml`, `queue_publisher.xml` or `queue_consumer.xml` file.
+If `queue/default_connection` is specified in the system `env.php` file, this connection is used for all message queues through the system, unless a specific connection is defined in a `queue_topology.xml`, `queue_publisher.xml` or `queue_consumer.xml` file.
 For example, if `queue/default_connection` is `amqp` in `env.php` but a `db` connection is specified in the queue configuration XML files of a module, the module will use MySQL as a message broker.
 
 ## directories
