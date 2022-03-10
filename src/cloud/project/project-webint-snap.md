@@ -120,18 +120,25 @@ To restore a snapshot using the Magento Cloud CLI:
 
 You can create a copy of your database using the `{{site.data.var.ct}} db-dump` command. By default, this command creates backups in the `/app/var/dump-main` directory for all database connections that are specified in the environment configuration. For example, if you configured your project to use split databases, the `db-dump` operation creates backups for each of the configured databases.
 
-You can also back up only selected databases by appending the database names to the command, for example:
+You can choose to back up selected databases by appending the database names to the command, for example:
 
 ```bash
 php vendor/bin/ece-tools -- main sales
 ```
+
+Consider the following guidelines:
+
+-  For Production environments, Adobe recommends completing database dump operations during off-peak hours to minimize service disruptions that occur when the site is in maintenance mode.
+-  The `db-dump` command creates an archive in your remote project directory called  `dump-<timestamp>.sql.gz`.
+-  If an error occurs during the dump operation, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
+-  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump might not be copied. The command generates a `var/dbdump.lock` file to prevent the command from running on more than one node.
 
 For help, use the command: `php vendor/bin/ece-tools db-dump --help`
 
 {:.procedure}
 To create a database dump in the Staging or Production environment:
 
-1. [Use SSH to log in to the environment]({{ site.baseurl }}/cloud/env/environments-ssh.html) that contains the database to copy:
+1. [Use SSH to log in to the remote environment]({{ site.baseurl }}/cloud/env/environments-ssh.html) that contains the database to copy:
 
    -  **Staging:** `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
    -  **Production:** `ssh -A <project ID>@<project ID>.ent.magento.cloud`
@@ -162,13 +169,6 @@ To create a database dump in the Staging or Production environment:
    [2020-01-28 16:38:10] INFO: Backup completed.
    [2020-01-28 16:38:11] NOTICE: Maintenance mode is disabled.
    ```
-
-{:.bs-callout-info}
-
--  For Production environments, Adobe recommends completing database dump operations during off-peak hours to minimize service disruptions that occur when the site is in maintenance mode.
--  The `db-dump` command creates an archive in your remote project directory called  `dump-<timestamp>.sql.gz`.
--  If an error occurs during the dump operation, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
--  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump might not be copied. The command generates a `var/dbdump.lock` file to prevent the command from running on more than one node.
 
 {:.bs-callout-tip}
 If you want to push this data into an environment, see [Migrate data and static files]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html).

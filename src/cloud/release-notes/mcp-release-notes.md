@@ -21,6 +21,13 @@ The `{{site.data.var.mcp-package}}` package uses the following version sequence:
 
 <!--Add release notes below-->
 
+## v1.0.15
+
+Release date: March 10, 2022
+
+-  **Support PHP 8.1**—Added support for PHP 8.1 and dropped support for PHP 7.0 and 7.1.
+-  **Added patch for {{site.data.var.ee}} 2.3.3**—Fixed currency displaying on product page.
+
 ## v1.0.14
 
 Release date: February 13, 2022
