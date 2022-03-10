@@ -82,10 +82,10 @@ deploy updates to existing files without removing the previous versions. Because
 
 Use this environment variable to confirm message queues are running after a deployment.
 
-- `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
-- `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
-- `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers.
-- `multiple_processes`-A number specifying the number of processes to spawn for each consumer. Supported in Magento **2.4.4** or greater.
+-  `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
+-  `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
+-  `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers.
+-  `multiple_processes`-A number specifying the number of processes to spawn for each consumer. Supported in Magento **2.4.4** or greater.
 
 ```yaml
 stage:
