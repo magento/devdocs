@@ -15,7 +15,7 @@ An example:
 </div>
 ```
 
-Varnish will fetch content from `http://domain.com/index.php/page_cache/block/esi/blocks` and put it in place of `esi` tag.
+Varnish will fetch content from `http://domain.com/index.php/page_cache/block/esi/blocks` and put it in place of the `esi` tag.
 
 ## Magento 2 and Varnish ESI
 
@@ -34,11 +34,11 @@ Magento 2 will create an ESI tag when several conditions are met:
    </referenceContainer>
 ```
 
-In the example above content from `esi.phtml` will be added to a homepage and will be automatically updated by Varnish every 30 seconds.
+In the example above, content from `esi.phtml` will be added to a homepage and will be automatically updated by Varnish every 30 seconds.
 
 ## Limitations
 
-Currently, Varnish doesn't support ESI over https so Magento 2 will automatically switch to http.
+Currently, Varnish does not support ESI over HTTPS so Magento 2 will automatically switch to HTTP.
 
 `Magento\PageCache\Observer\ProcessLayoutRenderElement`:
 
@@ -48,7 +48,7 @@ Currently, Varnish doesn't support ESI over https so Magento 2 will automaticall
         \Magento\Framework\View\Layout $layout
     ) {
     ....
-        // Varnish does not support ESI over HTTPS must change to HTTP
+        // Varnish does not support ESI over HTTPS, must change to HTTP
         $url = substr($url, 0, 5) === 'https' ? 'http' . substr($url, 5) : $url;
         return sprintf('<esi:include src="%s" />', $url);
     }
