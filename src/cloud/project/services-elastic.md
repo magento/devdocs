@@ -75,8 +75,6 @@ When you install or upgrade your {{ site.data.var.ece }} project, always check f
 
 -  **Project upgrade**–Verify that the Elasticsearch PHP client in the new application version is compatible with the Elasticsearch service version installed on the Cloud infrastructure.
 
-{% include cloud/cloud-elasticsearch-client-compatibility.md %}
-
 {%include cloud/note-cloud-services-compatibility.md%}
 
 {:.procedure}
@@ -200,9 +198,11 @@ If you use the ElasticSuite third-party plugin, you must [update the `{{site.dat
 When setting up ElasticSuite, add the configuration settings to the `ELASTICSUITE_CONFIGURATION` deploy variable. This configuration saves the settings across deployments.
 
 ### Remove plugins for Elasticsearch
+
 Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` does not uninstall or disable them as you might expect. You must take the additional step of reindexing your Elasticsearch data. This behavior is intentional to prevent possible loss or corruption of data that depends on these plugins.
 
-**To remove Elasticsearch plugins:**
+{.:procedure}
+To remove Elasticsearch plugins:
 
 1. Remove the Elasticsearch plugin entries from your `.magento/services.yaml` file.
 1. Add, commit, and push your code changes.
