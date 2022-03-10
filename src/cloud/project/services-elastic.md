@@ -21,8 +21,6 @@ redirect_from:
 {:.bs-callout-tip}
 Adobe recommends that you always set up Elasticsearch for your {{ site.data.var.ece }} project even if you plan to configure a third-party search tool for your {{ site.data.var.ee }} application. Setting up Elasticsearch provides a fallback option in case the third-party search tool fails.
 
-{:.bs-callout-warning}
-
 {:.procedure}
 To enable Elasticsearch:
 
