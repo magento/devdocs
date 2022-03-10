@@ -25,8 +25,6 @@ The release notes include:
 
 Release date: March 10, 2022
 
-{:.new}**Service updates**
-
 -  {:.new}**Opensearch**—Added support for Opensearch for {{site.data.var.ee}} versions 2.4.4, 2.4.3-p2, and 2.3.7-p3.<!-- MCLOUD-8296 -->
 -  {:.new}**PHP**—Added support for PHP 8.1.
 -  {:.fix}**symfony/process**—Added the compatibility with symfony/process ^5.3.<!-- MCLOUD-8283 -->
