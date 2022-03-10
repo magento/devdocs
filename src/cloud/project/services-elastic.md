@@ -9,7 +9,7 @@ redirect_from:
   - /cloud/project/project-conf-files_services-elastic.html
 ---
 
-[Elasticsearch](https://www.elastic.co) is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
+[Elasticsearch](https://www.elastic.co) is an open-source product that enables you to take data from any source, any format, and search and visualize it in real time.
 
 -  Elasticsearch performs quick and advanced searches on products in the product catalog
 -  Elasticsearch Analyzers support multiple languages
@@ -19,7 +19,10 @@ redirect_from:
 {% include cloud/service-config-integration-starter.md %}
 
 {:.bs-callout-tip}
-Adobe recommends that you always set up Elasticsearch for your {{ site.data.var.ece }} project even if you plan to configure a third-party search tool for your {{ site.data.var.ee }} application. Setting up Elasticsearch provides a fallback option in the event that the third-party search tool fails.
+Adobe recommends that you always set up Elasticsearch for your {{ site.data.var.ece }} project even if you plan to configure a third-party search tool for your {{ site.data.var.ee }} application. Setting up Elasticsearch provides a fallback option in case the third-party search tool fails.
+
+{:.bs-callout-warning}
+
 
 {:.procedure}
 To enable Elasticsearch:
@@ -199,7 +202,7 @@ When setting up ElasticSuite, add the configuration settings to the `ELASTICSUIT
 
 ### Remove plugins for Elasticsearch
 
-Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` does not uninstall or disable them as you might expect. You must take the additional step of reindexing your Elasticsearch data. This behavior is intentional to prevent possible loss or corruption of data that depends on these plugins.
+Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` does not uninstall or disable them as you might expect. You must reindex your Elasticsearch data. This behavior is intentional to prevent possible loss or corruption of data that depends on these plugins.
 
 {.:procedure}
 To remove Elasticsearch plugins:
@@ -237,7 +240,7 @@ For details on using or troubleshooting the Elasticsuite plugin with {{site.data
 
 ## Troubleshooting
 
-See the following {{site.data.var.ee}} Support articles for help troubleshooting Elasticsearch problems:
+See the following {{site.data.var.ee}} Support articles for help with troubleshooting Elasticsearch problems:
 
 -  [Elasticsearch 5 is configured, but search page does not load with "Fielddata is disabled..." error](https://support.magento.com/hc/en-us/articles/360027356612-Elasticsearch-5-is-configured-but-search-page-does-not-load-with-Fielddata-is-disabled-error)
 -  [Catalog pagination doesn't work when Elasticsearch 6.x is used](https://support.magento.com/hc/en-us/articles/360035142371)
