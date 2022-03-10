@@ -23,7 +23,6 @@ Adobe recommends that you always set up Elasticsearch for your {{ site.data.var.
 
 {:.bs-callout-warning}
 
-
 {:.procedure}
 To enable Elasticsearch:
 
