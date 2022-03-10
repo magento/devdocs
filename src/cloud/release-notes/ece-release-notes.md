@@ -25,13 +25,13 @@ The release notes include:
 
 Release date: March 10, 2022
 
-- {:.new}**Support PHP 8.1**-Added support for PHP 8.1
-- {:.new}**OpenSearch**-Added support for Opensearch for Commerce 2.4.4, 2.4.3-p2, and 2.3.7-p3.
-- {:.new}**Consumer multiple processes**-Added settings to specify the number of processes to spawn for each consumer, see [CRON_CONSUMERS_RUNNER environment variable]({{ site.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner) for more information.
-- {:.new}**OpenSearch scheme and full host path**-Added possibility to configure ElasticSearch scheme and full host path
-- {:.fix}**AWS S3**-Changed the method of AWS S3 enablement
-- {:.fix}**Fix driver_options reader**-Added reading driver_options configuration for DB connection from env.php by ece-tools for validators
-- {:.fix}**symfony/process ^5.3**-Added the compatibility with symfony/process ^5.3
+-  {:.new}**Support PHP 8.1**-Added support for PHP 8.1
+-  {:.new}**OpenSearch**-Added support for Opensearch for Commerce 2.4.4, 2.4.3-p2, and 2.3.7-p3.
+-  {:.new}**Consumer multiple processes**-Added settings to specify the number of processes to spawn for each consumer, see [CRON_CONSUMERS_RUNNER environment variable]({{ site.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner) for more information.
+-  {:.new}**OpenSearch scheme and full host path**-Added possibility to configure ElasticSearch scheme and full host path
+-  {:.fix}**AWS S3**-Changed the method of AWS S3 enablement
+-  {:.fix}**Fix driver_options reader**-Added reading driver_options configuration for DB connection from env.php by ece-tools for validators
+-  {:.fix}**symfony/process ^5.3**-Added the compatibility with symfony/process ^5.3
 
 ## v2002.1.8
 
