@@ -8,7 +8,7 @@ namespace :multirepo do
   task :init do
     protocol = ENV['token'] ? "https://#{ENV['token']}@github.com/" : 'git@github.com:'
     @content_map.each do |subrepo|
-      repo_url = protocol + subrepo['repository'] + '.git'
+      repo_url = "#{protocol}#{subrepo['repository']}.git"
       add_subrepo(subrepo['directory'], repo_url, subrepo['branch'], subrepo['filter'])
     end
   end

@@ -115,7 +115,7 @@ namespace :test do
         puts "No links for #{include}".yellow
       end
       puts "Found #{includes.size} unlinked includes".red
-      puts 'Be careful removing include files. Some include files, such as those in the layout/** directory, may not be linked in the project, but may be used implicitly by the doc theme.'.bold  
+      puts 'Be careful removing include files. Some include files, such as those in the layout/** directory, may not be linked in the project, but may be used implicitly by the doc theme.'.bold
     end
   end
 end
