@@ -1,8 +1,8 @@
-<!--Note: The error code tables in this file are auto-generated from source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to the magento/ece-tools repository.-->
+<!-Note: The error code tables in this file are auto-generated from source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to the magento/ece-tools repository.->
 
 ## Critical Errors
 
-Critical errors indicate a problem with the {{ site.data.var.ece }} project configuration that causes deployment failure, for example incorrect, unsupported, or missing configuration for required settings. Before you can deploy, you must update the configuration to resolve these errors.
+Critical errors indicate a problem with the Magento Commerce Cloud project configuration that causes deployment failure, for example incorrect, unsupported, or missing configuration for required settings. Before you can deploy, you must update the configuration to resolve these errors.
 
 ### Build stage
 
@@ -33,7 +33,7 @@ Critical errors indicate a problem with the {{ site.data.var.ece }} project conf
 | 23 |  | Unable to create a logger object |  |
 | 24 | backup-data: static-content | Failed to clean the `./init/pub/static/` directory | Failed to clean `./init/pub/static` folder. Check your filesystem permissions. |
 | 25 |  | Cannot find the Composer package | If you installed the Magento application version directly from the Magento git repository, verify that the `DEPLOYED_MAGENTO_VERSION_FROM_GIT` environment variable is configured. |
-| 26 | validate-config | Remove Magento Braintree module configuration which is no longer supported in Magento 2.4 and later versions. | Support for the Braintree module is no longer included with Magento 2.4.0 and later. Remove the CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL variable from the variables section of the .magento.app.yaml file. For Braintree payment support, use an official extension from the Commerce Marketplace instead. |
+| 26 | validate-config | Remove Magento Braintree module configuration which is no longer supported in Magento 2.4 and later versions. | Support for the Braintree module is no longer included with Magento 2.4.0 and later. Remove the CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL variable from the variables section of the .magento.app.yaml file. For Braintree payment support, use an official extension from the Magento Marketplace instead. |
 
 ### Deploy stage
 
@@ -46,7 +46,7 @@ Critical errors indicate a problem with the {{ site.data.var.ece }} project conf
 | 104 |  | Failed to parse the `.magento.env.yaml` file | Configuration is not defined in the `./vendor/magento/ece-tools/config/schema.yaml` file. Check that the config variable name is correct, and that it is defined. |
 | 105 |  | Unable to read the `.magento.env.yaml` file | Unable to read the `./.magento.env.yaml` file. Check file permissions. |
 | 106 |  | Unable to read the `.schema.yaml` file |  |
-| 107 | pre-deploy: clean-redis-cache | Failed to clean the Redis cache | Failed to clean the Redis cache. Check that the Redis cache configuration is correct and that the Redis service is available. See [Setup Redis service]({{ site.baseurl }}/cloud/project/services-redis.html). |
+| 107 | pre-deploy: clean-redis-cache | Failed to clean the Redis cache | Failed to clean the Redis cache. Check that the Redis cache configuration is correct and that the Redis service is available. See [Setup Redis service](https://devdocs.magento.com/cloud/project/services-redis.html). |
 | 108 | pre-deploy: set-production-mode | Command `/bin/magento maintenance:enable` failed | Check the `cloud.log` for more information. For more detailed command output, add the `VERBOSE_COMMANDS: '-vvv'` option to the `.magento.env.yaml` file. |
 | 109 | validate-config | Incorrect database configuration | Check that the `DATABASE_CONFIGURATION` environment variable is configured correctly. |
 | 110 | validate-config | Incorrect session configuration | Check that the `SESSION_CONFIGURATION` environment variable is configured correctly. The configuration must contain at least the `save` parameter. |
@@ -70,12 +70,15 @@ Critical errors indicate a problem with the {{ site.data.var.ece }} project conf
 | 128 | disable-maintenance-mode | Command `/bin/magento maintenance:disable` failed | Check the `cloud.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output. |
 | 129 | install-update: reset-password | Unable to read reset password template |  |
 | 130 | install-update: cache_type | Command failed: `php ./bin/magento cache:enable` | Command `php ./bin/magento cache:enable` runs only when Magento was installed but `./app/etc/env.php` file was absent or empty at the beginning of the deployment. Check the `cloud.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output. |
-| 131 | install-update | The `crypt/key`  key value does not exist in the `./app/etc/env.php` file or the `CRYPT_KEY` cloud environment variable | This error occurs if the `./app/etc/env.php` file is not present when Magento deployment begins, or if the `crypt/key` value is undefined. If you migrated the database from another environment, retrieve the crypt key value from that environment. Then, add the value to the [CRYPT_KEY]({{ site.baseurl }}/cloud/env/variables-deploy.html#crypt_key) cloud environment variable in your current environment. See [Add the Magento encryption key]({{ site.baseurl }}/cloud/setup/first-time-setup-import-import.html#encryption-key). If you accidentally removed the `./app/etc/env.php` file, use the following command to restore it from the backup files created from a previous deployment: `./vendor/bin/ece-tools backup:restore` CLI command ." |
-| 132 |  | Can not connect to the Elasticsearch service | Check for valid Elasticsearch credentials and verify that the service is running |
-| 133 | validate-config | Remove Magento Braintree module configuration which is no longer supported in Magento 2.4 and later versions. | Support for the Braintree module is no longer included with Magento 2.4.0 and later. Remove the CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL variable from the variables section of the .magento.app.yaml file. For Braintree support, use an official Braintree Payments extension from the Commerce Marketplace instead. |
+| 131 | install-update | The `crypt/key`  key value does not exist in the `./app/etc/env.php` file or the `CRYPT_KEY` cloud environment variable | This error occurs if the `./app/etc/env.php` file is not present when Magento deployment begins, or if the `crypt/key` value is undefined. If you migrated the database from another environment, retrieve the crypt key value from that environment. Then, add the value to the [CRYPT_KEY](https://devdocs.magento.com/cloud/env/variables-deploy.html#crypt_key) cloud environment variable in your current environment. See [Add the Magento encryption key](https://devdocs.magento.com/cloud/setup/first-time-setup-import-import.html#encryption-key). If you accidentally removed the `./app/etc/env.php` file, use the following command to restore it from the backup files created from a previous deployment: `./vendor/bin/ece-tools backup:restore` CLI command ." |
+| 132 |  | Cannot connect to the Elasticsearch service | Check for valid Elasticsearch credentials and verify that the service is running |
+| 137 |  | Cannot connect to the Opensearch service | Check for valid Opensearch credentials and verify that the service is running |
+| 133 | validate-config | Remove Magento Braintree module configuration which is no longer supported in Magento 2.4 and later versions. | Support for the Braintree module is no longer included with Magento 2.4.0 and later. Remove the CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL variable from the variables section of the .magento.app.yaml file. For Braintree support, use an official Braintree Payments extension from the Magento Marketplace instead. |
 | 134 | validate-config | Magento 2.4.0 requires Elasticsearch service to be installed | Install Elasticsearch service |
+| 138 | validate-config | Magento 2.4.4 requires Opensearch or Elasticsearch service to be installed | Install Opensearch service |
 | 135 | validate-config | The search engine must be set to Elasticsearch for Magento >= 2.4.0 | Check the SEARCH_CONFIGURATION variable for the `engine` option. If it is configured, remove the option, or set the value to "elasticsearch". |
-| 136 | validate-config | Split Database was removed starting from Magento 2.5.0. | If you use split database you have to revert to or migrate to a single database or use an alternative approach. |
+| 136 | validate-config | Split Database was removed starting from Magento 2.5.0. | If you use split database that you have to revert to or migrate to a single database or use an alternative approach. |
+| 139 | validate-config | Incorrect search engine | This Magento version does not support Opensearch. You must use versions 2.3.7-p3, 2.4.3-p2, or higher |
 
 ### Post-deploy stage
 
@@ -88,7 +91,7 @@ Critical errors indicate a problem with the {{ site.data.var.ece }} project conf
 | 204 |  | Failed to parse the `.magento.env.yaml` file | The `./.magento.env.yaml` file format is invalid. Use a YAML parser to check the syntax and fix any errors. |
 | 205 |  | Unable to read the `.magento.env.yaml` file | Check file permissions. |
 | 206 |  | Unable to read the `.schema.yaml` file |  |
-| 207 | warm-up | Failed to warm-up some pages |  |
+| 207 | warm-up | Failed to warm up some pages |  |
 | 208 | time-to-firs-byte | Failed to test time to first byte (TTFB) |  |
 | 227 | clean-cache | Command `/bin/magento cache:flush` failed | Check the `cloud.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output. |
 
@@ -104,7 +107,7 @@ Critical errors indicate a problem with the {{ site.data.var.ece }} project conf
 
 ## Warning Errors
 
-Warning errors indicate a problem with the {{ site.data.var.ece }} project configuration such as incorrect, deprecated, unsupported, or missing configuration settings for optional features that can affect site operation. Although a warning does not cause deployment failure, you should review warning messages and update the configuration to resolve them.
+Warning errors indicate a problem with the Magento Commerce Cloud project configuration such as incorrect, deprecated, unsupported, or missing configuration settings for optional features that can affect site operation. Although a warning does not cause deployment failure, you should review warning messages and update the configuration to resolve them.
 
 ### Build stage
 
@@ -124,12 +127,12 @@ Warning errors indicate a problem with the {{ site.data.var.ece }} project confi
 {:.error-table}
 | Error code | Deploy step | Error description (Title) | Suggested action |
 | - | - | - | - |
-| 2001 | pre-deploy:cache | Cache is configured for a Redis service that is not available. Configuration will be ignored. |  |
+| 2001 | pre-deploy:cache | Cache is configured for a Redis service that is not available. Configuration is ignored. |  |
 | 2002 | validate-config | The configured state is not ideal |  |
 | 2003 | validate-config | The directory nesting level value for error reporting has not been configured |  |
 | 2004 | validate-config | Invalid configuration in the ./pub/errors/local.xml file. |  |
 | 2005 | validate-config | Admin data is used to create an admin user during initial installation only. Any changes to Admin data are ignored during the upgrade process. | After the initial installation, you can remove admin data from the configuration. |
-| 2006 | validate-config | Admin user was not created as admin email was not set | After installation, you can create an admin user manually: Use ssh to connect to your environment. Then, run the `bin/magento admin:user:create` command. |
+| 2006 | validate-config | Admin user was not created as admin email was not set | After installation, you can create an admin user manually:  Use ssh to connect to your environment. Then, run the `bin/magento admin:user:create` command. |
 | 2007 | validate-config | Update php version to recommended version |  |
 | 2008 | validate-config | Solr support has been deprecated in Magento 2.1. |  |
 | 2009 | validate-config | Solr is no longer supported by Magento 2.2 or later. |  |
@@ -139,11 +142,11 @@ Warning errors indicate a problem with the {{ site.data.var.ece }} project confi
 | 2013 | validate-config | SCD options ignored because the deploy process did not run on the build phase |  |
 | 2014 | validate-config | The configuration contains deprecated variables or values |  |
 | 2015 | validate-config | Environment configuration is not valid |  |
-| 2016 | validate-config | JSON type configuration can not be decoded |  |
+| 2016 | validate-config | JSON type configuration cannot be decoded |  |
 | 2017 | validate-config | The current configuration is not compatible with this version of Magento |  |
 | 2018 | validate-config | Some services have passed EOL |  |
 | 2019 | validate-config | The MySQL search configuration option is deprecated | Use Elasticsearch instead. |
-| 2029 | validate-config | Split Database was deprecated in the Magento 2.4.2 and will be removed in 2.5. | If you use split database you should start planning to revert to or migrate to a single database or use an alternative approach. |
+| 2029 | validate-config | Split Database was deprecated in the Magento 2.4.2 and will be removed in 2.5. | If you use split database that you should start planning to revert to or migrate to a single database or use an alternative approach. |
 | 2020 | install-update | Magento installation completed, but the `app/etc/env.php` configuration file was missing or empty. | Required data will be restored from environment configurations and from .magento.env.yaml file. |
 | 2021 | install-update:db-connection | For split databases used custom connections |  |
 | 2022 | install-update:db-connection | You have changed to a database configuration that is not compatible with the slave connection. |  |
@@ -153,6 +156,7 @@ Warning errors indicate a problem with the {{ site.data.var.ece }} project confi
 | 2026 | pre-deploy:restore-writable-dirs | Failed to restore some data generated during the build phase to the mounted directories | Check the `cloud.log` for more information. |
 | 2027 | validate-config:mage-mode-variable | Mode value for MAGE_MODE environment variable not supported | Remove the MAGE_MODE environment variable, or change its value to "production". Magento Cloud supports "production" mode only. |
 | 2028 | remote-storage | Remote storage could not be enabled. | Verify remote storage credentials. |
+| 2030 | validate-config | Elasticsearch and Opensearch services are both installed at infrastructure layer. Magento 2.4.4 and higher uses Opensearch by default | Consider removing the Elasticsearch or Opensearch service from the infrastructure layer to optimize resource usage. |
 
 ### Post-deploy stage
 
@@ -160,8 +164,8 @@ Warning errors indicate a problem with the {{ site.data.var.ece }} project confi
 | Error code | Post-deploy step | Error description (Title) | Suggested action |
 | - | - | - | - |
 | 3001 | validate-config | Debug logging is enabled in Magento | To save disk space, do not enable debug logging for your production environments. |
-| 3002 | warm-up | Can not fetch store urls |  |
-| 3003 | warm-up | Can not fetch store url |  |
+| 3002 | warm-up | Cannot fetch store urls |  |
+| 3003 | warm-up | Cannot fetch store url |  |
 | 3004 | backup | Cannot create backup files |  |
 
 ### General
@@ -169,7 +173,7 @@ Warning errors indicate a problem with the {{ site.data.var.ece }} project confi
 {:.error-table}
 | Error code | General step | Error description (Title) | Suggested action |
 | - | - | - | - |
-| 4001 |  | Can not get system processor count: |  |
+| 4001 |  | Cannot get system processor count: |  |
 
 <!--Custom css-->
 
