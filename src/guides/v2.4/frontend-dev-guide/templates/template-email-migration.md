@@ -6,11 +6,22 @@ functional_areas:
 ---
 
 {% raw %}
+
 ## Removal of Legacy Variable Resolver
-With the release of Magento 2.4.4, `\Magento\Framework\Filter\VariableResolver\LegacyResolver` and `\Magento\Framework\Filter\VariableResolver\StrategyResolver`  have been removed and any legacy templates in the database will only be resolved using strict mode. Database templates can be checked using cli commands to verify
+
+With the release of Magento 2.4.4 and 2.4.3-p2, `\Magento\Framework\Filter\VariableResolver\LegacyResolver` and `\Magento\Framework\Filter\VariableResolver\StrategyResolver` have been removed and any legacy templates in the database will only be resolved using strict mode. Database templates can be checked using cli commands to verify
 compatibility with strict mode.
 
-## CLI Commands To Verify Strict Mode Compatibility
+## Email and Newsletter CLI Commands To Verify Compatibility with Strict Mode
+
+The following command will scan email template overrides for any potential variable usage compatibility issues.
+
+```bash
+bin/magento dev:email:override-compatibility-check
+```
+
+The following command will scan newsletter templates for any potential variable usage compatibility issues.
+
 ```bash
 bin/magento dev:email:newsletter-compatibility-check
 ```

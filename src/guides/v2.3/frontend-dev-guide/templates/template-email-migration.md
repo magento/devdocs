@@ -6,8 +6,25 @@ functional_areas:
 ---
 
 {% raw %}
-With the release of Magento 2.3.4, we made some changes to custom email templates and how they access data and methods for email content.
-This topic describes the changes and provides instructions on how to convert your existing custom email templates.
+
+## Removal of Legacy Variable Resolver
+
+With the release of Magento 2.3.7-p3, `\Magento\Framework\Filter\VariableResolver\LegacyResolver` and `\Magento\Framework\Filter\VariableResolver\StrategyResolver` have been removed and any legacy templates in the database will only be resolved using strict mode. Database templates can be checked using cli commands to verify
+compatibility with strict mode.
+
+## Email and Newsletter CLI Commands To Verify Compatibility with Strict Mode
+
+The following command will scan email template overrides for any potential variable usage compatibility issues.
+
+```bash
+bin/magento dev:email:override-compatibility-check
+```
+
+The following command will scan newsletter templates for any potential variable usage compatibility issues.
+
+```bash
+bin/magento dev:email:newsletter-compatibility-check
+```
 
 ## Changes to the custom email template workflow
 
