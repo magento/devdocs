@@ -34,7 +34,7 @@ Magento 2 will create an ESI tag when several conditions are met:
    </referenceContainer>
 ```
 
-In the example above, content from `esi.phtml` will be added to a homepage and will be automatically updated by Varnish every 30 seconds.
+In the example above, content from `esi.phtml` is added to a homepage and is automatically updated by Varnish every 30 seconds.
 
 ## Limitations
 
