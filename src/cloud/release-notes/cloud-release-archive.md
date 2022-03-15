@@ -62,7 +62,7 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 
 -  {:.new}<!-- MAGECLOUD-4674-->Added support for RabitMQ version 3.8.
 
--  {:.new}<!-- MAGECLOUD-4018 -->Updated interactive validations for service compatibility to reflect supported versions for the new {{ site.data.var.ee }} 2.3.3 and 2.2.10 releases. See [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions).
+-  {:.new}<!-- MAGECLOUD-4018 -->Updated interactive validations for service compatibility to reflect supported versions for the new {{ site.data.var.ee }} 2.3.3 and 2.2.10 releases. See [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) in the _Installation guide_ for recommended versions.
 
 -  {:.fix}<!-- MAGECLOUD-3653-->Improved the log message returned when the cron job management process in the deploy phase tries to stop a cron job that has already finished to clarify that this issue is not an error.  Changed the log level from `INFO` to `DEBUG`.
 

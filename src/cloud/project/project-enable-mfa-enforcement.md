@@ -24,7 +24,7 @@ MFA allows users to exchange an OAUTH access token with a short-lived SSH certif
 
 If the user accessing the environment has the Admin or Contributor role, a valid SSH key, and a valid TFA code or API token, {{site.data.var.ece}} uses these credentials to generate the temporary SSH certificate. The certificate expiration is set to 1 hour, but it refreshes automatically during the current session.
 
-After logging into a project with MFA, users must use the CLI to generate the SSH certificate:
+After logging into a project with MFA, users must use the `magento-cloud` CLI to generate the SSH certificate:
 
 ```bash
 magento-cloud ssh-cert:load
@@ -52,7 +52,7 @@ To add SSH certificate auto-generation to your `magento-cloud` CLI configuration
       auto_load_ssh_cert: true
     ```
 
-1. Use the Magento Cloud CLI to authenticate again:
+1. Use the `magento-cloud` CLI to authenticate again:
 
    ```bash
    magento-cloud logout
@@ -96,7 +96,7 @@ To connect using SSH with TFA user account credentials:
 
 1. Log in to your {{site.data.var.ece}} account and authenticate using TFA.
 
-1. On your local workstation, use the CLI to generate the SSH certificate.
+1. On your local workstation, use the `magento-cloud` CLI to generate the SSH certificate.
 
    ```bash
    magento-cloud ssh-cert:load
@@ -146,7 +146,7 @@ To connect using SSH with TFA user account credentials:
    {:.bs-callout-info}
    If you do not have TFA enabled on your account, you must enable it. See [Enable TFA on {{ site.data.var.ece }} accounts][Enable TFA].
 
-1. On your local workstation, use the CLI to generate the SSH certificate.
+1. On your local workstation, use the `magento-cloud` CLI to generate the SSH certificate.
 
    ```bash
    magento-cloud ssh-cert:load
@@ -284,7 +284,7 @@ To verify TFA configuration and authentication:
 {:.procedure}
 To authenticate and reload the SSH certificate:
 
-1. Use the Magento Cloud CLI to authenticate again:
+1. Use the `magento-cloud` CLI to authenticate again:
 
    ```bash
    magento-cloud logout

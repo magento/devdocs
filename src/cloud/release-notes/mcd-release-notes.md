@@ -18,6 +18,24 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v1.3.1
+
+Release date: March 10, 2022
+
+-  {:.new}**Support PHP 8.1**—Added support for PHP 8.1.
+-  {:.new}**Opensearch**—Added images of Opensearch versions 1.1 and 1.2.
+-  {:.new}**Composer 2.1**—Set composer 2.1.x by default in PHP 8.x images.
+-  {:.new}**PHP images improvements**—
+
+   -  Added PHP 8.1 images
+   -  Upgraded xDebug version 3.1.2
+   -  Upgraded xmlrpc 1.0.0RC3
+
+-  {:.fix}**Elasticsearch & Opensearch improvements**—Improvements in Elasticsearch and Opensearch Dockerfiles; removed the Elasticsearch 5.2 image.
+-  {:.fix}**Sodium extension**—Enabled the `sodium` extension by default in all PHP images.
+-  {:.fix}**Composer cache volume**—Fixed path for Composer cache volume to have cached Composer packages.
+-  {:.fix}**Memory limitation in nginx**—Fixed limitation of memory in NGINX image.
+
 ## v1.3.0
 
 Release date: October 25, 2021

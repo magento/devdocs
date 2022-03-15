@@ -63,7 +63,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Add new extensions, integrations, and code in iterated branches**–Make and test changes locally, push to Integration, then to Staging and Production. Test and resolve issues in each environment before merging the updates to the next environment. Some extensions and integrations must be enabled and configured in a specific order due to dependencies. Adding these in groups can make your build and deploy process much easier and help determine where issues occur.
 
--  **Verify service versions and relationships and the ability to connect**–Verify the services that are available to your application and ensure you are using the most current, compatible version. See [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions) and [Service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships).
+-  **Verify service versions and relationships and the ability to connect**–Verify the services that are available to your application and ensure you are using the most current, compatible version. See [Service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships) and [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) in the _Installation guide_ for recommended versions..
 
 -  **Test locally and in the Integration environment before deploying to Staging and Production**–Identify and fix issues in your local and Integration environments to prevent extended downtime when you deploy to Staging and Production environments.
 
