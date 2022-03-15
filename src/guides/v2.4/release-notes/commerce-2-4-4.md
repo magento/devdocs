@@ -63,7 +63,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Developers can now configure the limit on the size of arrays accepted by {{ site.data.var.ee }} RESTful endpoints on a per-endpoint basis. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-465-->
 
-*  Added mechanisms for limiting the size and number of resources that a user can request through a web API on a system-wide basis, and for overriding the defaults on individual modules. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-1120-->
+*  Added mechanisms for limiting the size and number of resources that a user can request through a web API on a system-wide basis, and for overriding the defaults on individual modules. This resolves the issue addressed by `MC-43048__set_rate_limits__2.4.3.patch`. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-1120-->
 
 ### Platform enhancements
 
@@ -196,77 +196,6 @@ Accessibility enhancements include:
 ### Page Builder
 
 Merchants can now add alternative text (`alt_text`) to images (Image, Banner, Slide) to enhance content accessibility. [GitHub-746](https://github.com/magento/magento2-page-builder/issues/746) <!--- PB-1193-->
-
-## Installation on cloud infrastructure
-
-To upgrade to 2.4.4, partners that build and deploy {{ site.data.var.ee }} on cloud infrastructure must update the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json) and `.magento.app.yaml` files as described below.
-
-### Update the `repositories` and `require` sections in the Magento Cloud template `composer.json` file
-
-Update the `repositories` section to add the Magento Cloud and Quality packages that support 2.4.4.
-
-```php
-    "repositories": {
-        "ece-tools": {
-            "type": "vcs",
-            "url": "https://github.com/magento/ece-tools.git"
-        },
-        "mcd": {
-            "type": "vcs",
-            "url": "https://github.com/magento/magento-cloud-docker.git"
-        },
-        "mcc": {
-            "type": "vcs",
-            "url": "https://github.com/magento/magento-cloud-components.git"
-        },
-        "mcp": {
-            "type": "vcs",
-            "url": "https://github.com/magento/magento-cloud-patches.git"
-        },
-        "mqp": {
-            "type": "vcs",
-            "url": "https://github.com/magento/quality-patches.git"
-        },
-        "repo": {
-            "type": "composer",
-            "url": "https://repo.magento.com"
-        }
-```
-
-Update the `require` section to include the correct version of each repository as follows:
-
-```json
-   "require": {
-        "magento/product-enterprise-edition": ">=2.4.4 <2.4.5",
-        "magento/composer-root-update-plugin": "~1.1",
-        "magento/ece-tools": "dev-2.4.4-beta as 2002.1.9",
-        "magento/magento-cloud-docker": "dev-2.4.4-beta as 1.3.1",
-        "magento/magento-cloud-components": "dev-2.4.4-beta as 1.0.10",
-        "magento/magento-cloud-patches": "dev-2.4.4-beta as 1.0.14",
-        "magento/quality-patches": "dev-2.4.4-beta as 1.1.5",
-        "fastly/magento2": "^1.2.34"
-    },
-```
-### Update the `magento.app.yaml` file
-
-In the `magento.app.yaml` file, update the `type`, `flavor`, and `dependency` sections to use PHP 8.1 and Composer 2.2.4. Add `composer install`.
-
-```yaml
-type: php:8.1
-build:
-    flavor: none
-dependencies:
-    php:
-        composer/composer: '^2.2.4'
-...
-hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        set -e
-        composer install
-        php ./vendor/bin/ece-tools run scenario/build/generate.xml
-        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
-```
 
 ## Fixed issues
 
@@ -404,7 +333,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Placing an order no longer results in the removal of all cache tags that are related to the ordered products from the Varnish cache. [GitHub-30128](https://github.com/magento/magento2/issues/30128)
 
-<!--- magento/magento2/pull/33468-->
+<!--- AC-1478-->
 
 *  Full-site page cache is no longer wiped out when you update a product from top categories or run an index to update product attributes or stock status. Previously, Varnish cache added top menu category IDs to all page cache tags. [GitHub-33465](https://github.com/magento/magento2/issues/33465)
 
@@ -1410,7 +1339,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ee }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
 
-<!--- MC-41583-->
+<!--- MC-41583 AC-989-->
 
 *  Swiss region names are now consistently presented in English in the create or edit address forms. [GitHub-32602](https://github.com/magento/magento2/issues/32602)
 
@@ -1558,7 +1487,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ee }} ignored this option.
 
-### Known issues
+## Known issues
 
 **Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree.  When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not  editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.  <!--- BUNDLE-3088-->
 
@@ -1569,6 +1498,7 @@ Dotdigital is a customer engagement platform that helps digital marketers and de
 Dotdigital’s 350+ employees serve mid-market and enterprise companies around the world and across industries. We aspire to inspire responsible marketing and are committed to sustainability, privacy, and security. Dotdigital is proud to be the world’s first carbon-neutral marketing automation platform, certified for ISO 14001, ISO 27701, and ISO 27001.
 
 See [Dotdigital — Marketing Automation](https://marketplace.magento.com/dotdigital-dotdigital-magento2-os-package.html) for purchase and download information.
+
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
