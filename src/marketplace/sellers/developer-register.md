@@ -25,7 +25,7 @@ If you already have a Magento account, log in as a registered user.
 
 1. Under _Personal Information_, enter your **First Name**, **Last Name**, **Email Address**, and **Country**.
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info}
     If there is already a Magento account with this email address, click the link to access your account.
 
 1. Under _My Company Primarily_, choose the best description of your company’s primary focus. Then, set **My Role** to the option that best describes what you do for the company.

@@ -2,7 +2,7 @@
 group: extensions
 title: Amazon Sales Channel Release Notes
 ---
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 Amazon Sales Channel versions 4.0.0 and 4.1.0 are only supported for {{site.data.var.ee}} 2.3.x versions.<br/>Amazon Sales Channel version 4.2.0 is compatible with {{site.data.var.ee}} 2.3.x versions but is only supported for {{site.data.var.ee}} 2.4.x versions.
 
 **Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x and 2.4.x. We no longer support the extension on {{site.data.var.ee}} 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
@@ -134,7 +134,7 @@ Amazon Sales Channel 4.1.0 is compatible with {{site.data.var.ee}} 2.3.x of {{si
 
 Amazon Sales Channel 4.0.0 is compatible with {{site.data.var.ee}} versions 2.3.0, 2.3.1, 2.3.2, 2.3.3, and 2.3.4 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 Amazon Sales Channel 4.0.0 is not supported for {{site.data.var.ee}} 2.3.5. For support with {{site.data.var.ee}} 2.3.5, upgrade to Amazon Sales Channel 4.1.0.
 
 -  {:.new}Introduced a new [Amazon Sales Channel](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-sales-channel-home.html) home page with improved "card view" for your store information.
