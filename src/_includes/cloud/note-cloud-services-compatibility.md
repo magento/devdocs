@@ -1,2 +1,2 @@
 {:.bs-callout-info}
-Version support and compatibility for {{site.data.var.ece}} is determined by service versions deployed on the Cloud infrastructure. In some cases, the supported or recommended versions differ from the versions supported by {{site.data.var.ee}} on-premises deployments.
+Version support and compatibility for {{site.data.var.ece}} is determined by service versions deployed on the Cloud infrastructure, and in rare cases may differ from the versions supported by {{site.data.var.ee}} on-premises deployments. See [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) in the _Installation guide_ for recommended versions.

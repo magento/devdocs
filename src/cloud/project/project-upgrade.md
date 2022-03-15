@@ -157,7 +157,7 @@ To check the `auto-load:psr-4` configuration:
 
 ## Upgrade the application
 
-Review the [service versions][version compatibility matrix] information for the latest software version requirements before upgrading your application.
+Review the [service versions][System requirements] information for the latest software version requirements before upgrading your application.
 
 {%include cloud/note-pro-using-yaml-support.md%}
 
@@ -307,5 +307,5 @@ To resolve the error:
 [Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
 [Migration of Zend Framework to the Laminas Project]: https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251
 [Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
-[version compatibility matrix]: {{site.baseurl}}/cloud/project/services.html#service-versions
+[System requirements]: {{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html
 [version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage
