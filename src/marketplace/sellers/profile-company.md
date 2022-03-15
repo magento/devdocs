@@ -81,7 +81,7 @@ _Social Networks_
 
 1. When prompted, enter your **PayPal Email** address.
 
-   {: .bs-callout .bs-callout-info}
+   {: .bs-callout-info}
    **Important:** This payment information is required of all developers, even those who make their extensions available at no charge. Magento sends your revenue share on a monthly basis to PayPal account.
 
 1. Watch for a confirmation email sent to the email address associated with the account.

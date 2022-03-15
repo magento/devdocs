@@ -22,7 +22,7 @@ The `setShippingMethodsOnCart` mutation defines the shipping methods for your or
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 **Request:**
