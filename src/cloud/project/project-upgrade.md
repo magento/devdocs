@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to a newer version. Before upgrading your project, review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches] for upgrade path details.
+You can upgrade the core {{site.data.var.ee}} code base to a newer version. Before upgrading your project, review the [{{site.data.var.ece}} service versions][System requirements] information for the latest software version requirements. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches] for upgrade path details.
 
 {% include cloud/note-upgrade.md %}
 
