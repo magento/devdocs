@@ -7,7 +7,7 @@ functional_areas:
   - Application  
 ---
 
-You can choose which [version of PHP]({{ site.baseurl}}/cloud/project/services.html#service-versions) to run in your `.magento.app.yaml` file:
+You can choose which [version of PHP]({{ site.baseurl}}/guides/v2.4/install-gde/system-requirements.html) to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: mymagento
