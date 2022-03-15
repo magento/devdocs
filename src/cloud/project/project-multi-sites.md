@@ -339,4 +339,4 @@ Adobe recommends fully testing in the Staging environment before pushing to the 
 
 [addstorecode]: {{ site.baseurl }}/guides/v2.4/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl
 [config-multiweb]: {{ site.baseurl }}/guides/v2.4/config-guide/multi-site/ms_over.html
-[Manage domains]: {{ site.baseurl }}cloud/cdn/configure-fastly-customize-cache.html#manage-domains
+[Manage domains]: {{ site.baseurl }}/cloud/cdn/configure-fastly-customize-cache.html#manage-domains
