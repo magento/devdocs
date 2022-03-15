@@ -168,7 +168,7 @@ The `observer` [xml](https://glossary.magento.com/xml) element has the following
 *  `disabled` - Determines whether this observer is active or not. Default value is false.
 *  `shared` - Determines the [lifestyle]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration) of the class. Default is `true`.
 
-{: .bs-callout .bs-callout-warning}
+{: .bs-callout-warning}
 The observer name must be unique, or an override will occur.
 
 Below is an example of how to assign observers to watch certain events:
