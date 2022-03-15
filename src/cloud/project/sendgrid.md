@@ -29,4 +29,4 @@ For {{site.data.var.ece}} Pro, the CNAME records resolve to the Domain Keys Iden
 {: .bs-callout-info}
 **SendGrid DKIM signatures** are not available in Commerce Cloud Starter. They are only available in Commerce Cloud Pro.
 
-Adobe does not support allowlists, but you can review the [Sender Policy Framework (SPF)](https://sendgrid.com/docs/Glossary/spf.html) guidelines to improve delivery.
+Adobe does not support allowlists, but you can review the [Sender Policy Framework (SPF)](https://docs.sendgrid.com/ui/account-and-settings/spf-records#spf-overview) guidelines to improve delivery.
