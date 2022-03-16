@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to a newer version. Before upgrading your project, review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches] for upgrade path details.
+You can upgrade the core {{site.data.var.ee}} code base to a newer version. Before upgrading your project, review the [service versions][System requirements] information for the latest software version requirements. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches] for upgrade path details.
 
 {% include cloud/note-upgrade.md %}
 
@@ -14,7 +14,7 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. Befo
 
 ## Upgrade from older versions of the application
 
-Review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. Your upgrade tasks may include the following:
+Review the [service versions][System requirements] information for the latest software version requirements. Your upgrade tasks may include the following:
 
 -  Update PHP, Elasticsearch, and other services for compatibility with new {{site.data.var.ee}} versions. See [Change service version].
 -  Convert an older configuration management file.
@@ -307,5 +307,5 @@ To resolve the error:
 [Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
 [Migration of Zend Framework to the Laminas Project]: https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251
 [Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
-[System requirements]: {{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html
+[System requirements]: {{site.baseurl}}/guides/v2.4/install-gde/system-requirements.html
 [version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage
