@@ -400,7 +400,7 @@ Incorrect:
 {% raw %}{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}{% endraw %}
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Exception: argument value can contain spaces if it is enclosed in brackets.
 
 ## Supported email clients and devices {#supported-clients}

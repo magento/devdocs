@@ -9,7 +9,7 @@ functional_areas:
 
 ![Cloud Benefits]
 
-{{site.data.var.ece}} provides a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Elasticsearch technologies; a git-based workflow with automatic build and deploy for efficient **Rapid development** and **Continuous deployment** every time you push code changes in a Platform as a Service (PaaS) environment; highly **Customizable** environment configuration files and [tools](#ece-tools-package); and AWS hosting that offers a **Scalable** and **Secure** environment for online sales and retailing.
+{{site.data.var.ece}} provides a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Elasticsearch technologies; a Git-based workflow with automatic build and deploy for efficient **Rapid development** and **Continuous deployment** every time you push code changes in a Platform as a Service (PaaS) environment; highly **Customizable** environment configuration files and [tools](#ece-tools-package); and AWS hosting that offers a **Scalable** and **Secure** environment for online sales and retailing.
 
 ## Technology stack
 
@@ -24,7 +24,7 @@ Each {{site.data.var.ece}} plan provides a PaaS Integration environment for deve
 
 ## {{site.data.var.ct}} package
 
-The [`{{site.data.var.ct}}` package][ece] is a scalable deployment tool that simplifies the Cloud upgrade process. In 2018, we deprecated the `magento-cloud-configuration` and `ece-patches` packages in favor of providing a single package. We encourage all customers to [upgrade to use `{{site.data.var.ct}}`]({{ site.baseurl }}/cloud/project/ece-tools-upgrade-project.html) as soon as possible to benefit from the package features, such as commands to create a backup of the database, apply custom patches, and verify environment configuration.
+The [`{{site.data.var.ct}}` package][ece] is a scalable deployment tool that simplifies the Cloud upgrade process and includes commands to create a backup of the database, apply custom patches, and verify environment configuration.
 
 <!-- Link definitions -->
 
