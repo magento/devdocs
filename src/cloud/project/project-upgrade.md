@@ -14,7 +14,7 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. Befo
 
 ## Upgrade from older versions of the application
 
-Review the [{{site.data.var.ece}} service versions][System requirements] information for the latest software version requirements. Your upgrade tasks may include the following:
+Review the [service versions][System requirements] information for the latest software version requirements. Your upgrade tasks may include the following:
 
 -  Update PHP, Elasticsearch, and other services for compatibility with new {{site.data.var.ee}} versions. See [Change service version].
 -  Convert an older configuration management file.
