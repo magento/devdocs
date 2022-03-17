@@ -14,8 +14,7 @@ compatibility with strict mode.
 
 ## Verify compatibility with strict mode
 
-The following command will scan all database email templates overridden via the Magento admin **Marketing** > Communications > **Email Templates** > **Add New Template** area
-for any potential variable usage compatibility issues. 
+The following command scans all database email templates overridden using the Magento admin **Marketing** > Communications > **Email Templates** > **Add New Template** area for potential variable usage compatibility issues. 
 
 ```bash
 bin/magento dev:email:override-compatibility-check
@@ -23,7 +22,7 @@ bin/magento dev:email:override-compatibility-check
 
 To scan email templates overriden using a custom [theme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html#customize-email-theme), please consider using the [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/install.html).
 
-The following command will scan newsletter templates for any potential variable usage compatibility issues.
+The following command scans newsletter templates for any potential variable usage compatibility issues.
 
 ```bash
 bin/magento dev:email:newsletter-compatibility-check
