@@ -1,11 +1,11 @@
 ---
 group: configuration-guide
-title: Varnish ESI Block
+title: Varnish ESI block
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---
 
-Edge Side Includes (ESI) are special directives to include web pages in other web pages.
+Edge Side Includes (ESI) are special directives that you can use to include web pages in other web pages.
 
 An example:
 
@@ -15,11 +15,11 @@ An example:
 </div>
 ```
 
-Varnish will fetch content from `http://domain.com/index.php/page_cache/block/esi/blocks` and put it in place of `esi` tag.
+Varnish will fetch content from `http://domain.com/index.php/page_cache/block/esi/blocks` and replace the `<esi>` tag with it.
 
-## Magento 2 and Varnish ESI
+## Commerce and Varnish ESI
 
-An ESI tag is created when several conditions are met:
+The Commerce framework creates an ESI tag when the following conditions are met:
 
 *  The caching application is set to `Varnish Cache`
 *  A XML layout `block` element is added with a `ttl` attribute
@@ -34,11 +34,11 @@ An ESI tag is created when several conditions are met:
    </referenceContainer>
 ```
 
-In the example above, content from `esi.phtml` is added to a homepage and is automatically updated by Varnish every 30 seconds.
+In the example above, the `block` element adds content from the `esi.phtml` template  to a homepage and Varnish  automatically updates it every 30 seconds.
 
 ## Limitations
 
-Currently, Varnish does not support ESI over https so it automatically switches to http.
+Currently, Varnish does not support ESI over HTTPS so it automatically switches to HTTP.
 
 `Magento\PageCache\Observer\ProcessLayoutRenderElement`:
 
