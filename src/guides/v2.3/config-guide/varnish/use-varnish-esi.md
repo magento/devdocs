@@ -19,10 +19,10 @@ Varnish will fetch content from `http://domain.com/index.php/page_cache/block/es
 
 ## Magento 2 and Varnish ESI
 
-Magento 2 will create an ESI tag when several conditions are met:
+An ESI tag is created when several conditions are met:
 
-*  Caching application is set to `Varnish Cache`
-*  XML layout `block` element is added with `ttl` attribute
+*  The caching application is set to `Varnish Cache`
+*  A XML layout `block` element is added with a `ttl` attribute
 
 ### Example
 
@@ -34,11 +34,11 @@ Magento 2 will create an ESI tag when several conditions are met:
    </referenceContainer>
 ```
 
-In the example above content from `esi.phtml` will be added to a homepage and will be automatically updated by Varnish every 30 seconds.
+In the example above, content from `esi.phtml` is added to a homepage and is automatically updated by Varnish every 30 seconds.
 
 ## Limitations
 
-Currently, Varnish doesn't support ESI over https so Magento 2 will automatically switch to http.
+Currently, Varnish does not support ESI over https so it automatically switches to http.
 
 `Magento\PageCache\Observer\ProcessLayoutRenderElement`:
 
