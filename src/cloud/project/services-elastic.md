@@ -32,7 +32,7 @@ To enable Elasticsearch:
        disk: 1024
    ```
 
-   For Pro projects, you must submit a {{site.data.var.ee}} Support ticket to change the Elasticsearch version.
+   For Pro projects, you must submit a {{site.data.var.ee}} Support ticket to change the Elasticsearch version in the Staging and Production environments.
 
    For details on determining the correct version to install, see [Elasticsearch software compatibility](#elasticsearch-software-compatibility).
 

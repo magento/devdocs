@@ -5,7 +5,7 @@ contributor_name: Rakesh Jesadiya
 contributor_link: https://github.com/RakeshJesadiya
 ---
 
-This DateTime library provides utilities to work with date and time formatting. Provided methods in this library are described below.
+The DateTime library provides utilities to work with date and time formatting. Provided methods in this library are described below.
 
 ## Usage
 
@@ -46,7 +46,7 @@ use Magento\Framework\Stdlib\DateTime;
      */
     public function getFormatDate(): string
     {
-    return $this->dataTime->formatDate(time());
+    return $this->dateTime->formatDate(time());
     }
 ...
 ```
