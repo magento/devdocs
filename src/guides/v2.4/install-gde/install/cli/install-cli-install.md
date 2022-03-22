@@ -280,7 +280,7 @@ magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --elasticsearch-port=9200
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You must enter the command either on a single line or, as in the preceding example, with a `\` character at the end of each line.
 
 Messages like the following display if the installation is successful:

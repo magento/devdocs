@@ -63,7 +63,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Developers can now configure the limit on the size of arrays accepted by {{ site.data.var.ce }} RESTful endpoints on a per-endpoint basis. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-465-->
 
-*  Added mechanisms for limiting the size and number of resources that a user can request through a web API on a system-wide basis, and for overriding the defaults on individual modules. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-1120-->
+*  Added mechanisms for limiting the size and number of resources that a user can request through a web API on a system-wide basis, and for overriding the defaults on individual modules. This resolves the issue addressed by `MC-43048__set_rate_limits__2.4.3.patch`. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-1120-->
 
 ### Platform enhancements
 
@@ -115,7 +115,17 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 
 ### Vendor-Bundled Extensions
 
-With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all vendor-bundled extensions have been removed from the {{ site.data.var.ce }} 2.4.4 code base. Merchants should migrate to the official extensions, which are available on the Commerce Marketplace.
+With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all vendor-bundled extensions have been removed from the {{ site.data.var.ce }} 2.4.4 code base. Merchants should migrate to the official extensions, which are available on the [Commerce Marketplace](https://marketplace.magento.com/extensions.html).
+
+[Amazon Pay](https://docs.magento.com/user-guide/payment/payments.html)
+
+[dotdigital](https://docs.magento.com/user-guide/marketing/communications.html)
+
+[Klarna](https://docs.magento.com/user-guide/payment/payments.html)
+
+[Vertex](https://docs.magento.com/user-guide/tax/taxes.html)
+
+[YotPo](https://docs.magento.com/user-guide/marketing/product-reviews.html)
 
 ### PayPal Payment enhancements
 
@@ -265,7 +275,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Placing an order no longer results in the removal of all cache tags that are related to the ordered products from the Varnish cache. [GitHub-30128](https://github.com/magento/magento2/issues/30128)
 
-<!--- magento/magento2/pull/33468-->
+<!--- AC-1478-->
 
 *  Full-site page cache is no longer wiped out when you update a product from top categories or run an index to update product attributes or stock status. Previously, Varnish cache added top menu category IDs to all page cache tags. [GitHub-33465](https://github.com/magento/magento2/issues/33465)
 
@@ -375,7 +385,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-42340-->
 
-*  You can now use the `addConfigurableProductsToCart` mutation to add a configurable product to the cart on a non-default store view. Previously, you could not add a configurable product to a cart when website ID and store ID differed.
+*  You can now use the `addConfigurableProductsToCart` mutation to add a configurable product to the cart on a non-default store view. Previously, you could not add a configurable product to a cart when website ID and store ID differed. [GitHub-30948](https://github.com/magento/magento2/issues/30948)
 
 <!--- MC-43051-->
 
@@ -511,6 +521,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Escaped CSV field values written by the AWS S3 adapter now match the data written by other file system adapters.
 
+<!--- MC-43046-->
+
+*  S3 compatible storage is now supported. [GitHub-32114](https://github.com/magento/magento2/issues/32114)
+
 ### GraphQL
 
 <!--- PWA-1938-->
@@ -601,7 +615,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 ### Import/export
 
-<!--- MC-41672-->
+<!--- MC-41672 23734-->
 
 *  {{ site.data.var.ce }} now converts the timestamp in the export filename to the user’s timezone after a scheduled export. Previously, these values were not converted, and {{ site.data.var.ce }} displayed the UTC timestamp.
 
@@ -616,6 +630,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- AC-988-->
 
 *  You can now import successfully after running `bin/magento app:config:dump` and manually editing `config.php`. [GitHub-31428](https://github.com/magento/magento2/issues/31428)
+
+<!--- MC-41672-->
+
+*  Non-default multiple value separators can now be used in custom multi-select attributes. Previously, validation failed during import. [GitHub-23156](https://github.com/magento/magento2/issues/23156)
 
 ### Index
 
@@ -687,6 +705,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  You can now pass a `data` argument to a block instance constructor by `di.xml`.
 
+<!--- MC-43096-->
+
+*  Optimized `Generator.php` for readability. [GitHub-33809](https://github.com/magento/magento2/issues/33809)
+
+<!--- AC-1313-->
+
+*  Improved the JWK check in the `JwsManager` class to handle situations when the algorithm is set directly in the header. GitHub-32636](https://github.com/magento/magento2/issues/32636)
+
 #### JavaScript dependency updates
 
 <!--- magento/magento2/pull/33871-->
@@ -725,6 +751,12 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
    *  `PrototypeJS`  <!--- AC-17-->
    *  `RequireJS`
    *  `LessCSS`
+
+### Invoice
+
+<!--- AC-1564-->
+
+*  Casting to `int` has been removed for auto-incremented invoice IDs when prefixed with a string. As a result, invoices now display a 0 for numbers that are prefixed with a string. GitHub-34451](https://github.com/magento/magento2/issues/34451)
 
 ### Logging
 
@@ -916,6 +948,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-42332-->
 
 *  The Admin order detail page now loads as expected. Previously, {{ site.data.var.ce }} threw the following error when loading the order detail page for orders with certain taxes: `Call to a member function getId() on array`.
+
+<!--- MC-38521-->
+
+*  Administrators 4th restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ce }} threw an error when an administrator with these permissions tried to view an order. GitHub-14633](https://github.com/magento/magento2/issues/14633)
 
 ### Payment methods
 
@@ -1167,6 +1203,10 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  Display anomalies with storefronts running the Filipino (Philippines) locales have been resolved. [GitHub-33996](https://github.com/magento/magento2/issues/33996)
 
+<!--- AC-1308-->
+
+*  You can now successfully enter a customer date of birth when creating a new account in stores set to a Portuguese(Portugal) locale. Previously,  {{ site.data.var.ce }} threw an error when you tried to create an account. [GitHub-34130](https://github.com/magento/magento2/issues/34130)
+
 ### UI
 
 <!--- AC-258-->
@@ -1181,7 +1221,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  {{ site.data.var.ce }} now displays related products, up-sell products, and cross-sell products according to their positions in the Admin.
 
-<!--- magento/magento2/pull/33098-->
+<!--- MC-42502-->
 
 *  `.action-close` buttons now work as expected when `Multiselect` is used in a modal. Previously, the `action-close` button did not work because it inherited the CSS of the  `.action-close` button of the modal. [GitHub-27240](https://github.com/magento/magento2/issues/27240)
 
@@ -1281,11 +1321,29 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  {{ site.data.var.ce }} now generates a `customertoken` by GraphQL or REST API requests as expected after multiple consecutive failed login attempts. Previously, {{ site.data.var.ce }} did not check whether the value of `lock_expires_at` in `oauth_token_request_log` was greater than the current date and time, and always returned the number of failed attempts, which prevented the customer from ever logging in. [GitHub-34067](https://github.com/magento/magento2/issues/34067)
 
+<!--- AC-1190-->
+
+*  Adding a masked quote ID to `QuoteRepository::getList` no longer causes an infinite loop. Previously, using the payment processor that relied on the REST API to update orders triggered this behavior. [GitHub-33675](https://github.com/magento/magento2/issues/33675)
+
+<!--- MC-41612-->
+
+*  The `/rest/all/V1/categories/<above_created_category_id>`  PUT call now respects the values specified by `available_sort_by`.  Previously, the Available Product Listing Sort By drop down was selected with all possible options on the Category page, and the **Use All** checkbox was selected. [GitHub-32596](https://github.com/magento/magento2/issues/32596)
+
 ### Wish list
 
 <!--- MC-41880-->
 
 *  {{ site.data.var.ce }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ce }} ignored this option.
+
+## Known Issue
+
+**Issue**: The description of Dotdigital on **Find Partners and Extensions** > **Magento Marketplace** is outdated. Here is an updated description:
+
+Dotdigital is a customer engagement platform that helps digital marketers and developers deliver communications across the customer journey. We harness the power of customer data, powering engagement, conversion, and loyalty for brands as they grow and scale. Customers love our easy-to-use platform that connects first party data across the systems, surfacing powerful insights and automating predictive cross-channel messages.
+
+Dotdigital’s 350+ employees serve mid-market and enterprise companies around the world and across industries. We aspire to inspire responsible marketing and are committed to sustainability, privacy, and security. Dotdigital is proud to be the world’s first carbon-neutral marketing automation platform, certified for ISO 14001, ISO 27701, and ISO 27001.
+
+See [Dotdigital — Marketing Automation](https://marketplace.magento.com/dotdigital-dotdigital-magento2-os-package.html) for purchase and download information.
 
 ## Community contributions
 

@@ -85,6 +85,7 @@ Use this environment variable to confirm message queues are running after a depl
 -  `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
 -  `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
 -  `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers.
+-  `multiple_processes`-A number specifying the number of processes to spawn for each consumer. Supported in Magento **2.4.4** or greater.
 
 ```yaml
 stage:
@@ -95,6 +96,9 @@ stage:
       consumers:
         - consumer1
         - consumer2
+-     multiple_processes:
+        consumer1: 4
+        consumer2: 3
 ```
 
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-message-queues.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
@@ -237,7 +241,7 @@ stage:
 **Known limitations**—
 
 -  Changing the search engine to any type other than `elasticsuite` causes a deploy failure accompanied by an appropriate validation error
--  Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
+-  Removing the Elasticsearch service causes a deploy failure accompanied by an appropriate validation error
 
 {:.bs-callout-info}
 For details on using or troubleshooting the Elasticsuite plugin with {{site.data.var.ee}}, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
@@ -482,7 +486,7 @@ stage:
     SCD_MAX_EXECUTION_TIME: 3600
 ```
 
-{% include cloud/note-increase-scd-max-execution-time-variable.md%}
+{% include cloud/note-increase-scd-max-execution-time-variable.md %}
 
 ### `SCD_NO_PARENT`
 
@@ -636,7 +640,7 @@ stage:
 
 Enable or disable the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for `bin/magento` CLI commands performed during the deployment phase.
 
-{:.bs-callout}
+{: .bs-callout-info }
 To use the VERBOSE_COMMANDS setting to control the detail in command output for both successful and failed `bin/magento` CLI commands, you must set [MIN_LOGGING_LEVEL]({{ site.baseurl }}/cloud/env/variables-global.html#min_logging_level) `debug`.
 
 Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
