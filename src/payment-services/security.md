@@ -1,6 +1,8 @@
 ---
 group: payment-services
 title: Security
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/security.html
+layout: migrated
 ---
 
 Security is of the utmost concern in Payment Services. No private or Payment Card Industry (PCI) regulated information is passed across your services.
