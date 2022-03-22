@@ -15,7 +15,7 @@ For added security, {{site.data.var.ece}} provides multi-factor authentication (
 
 When MFA is enabled on a project, all {{site.data.var.ece}} accounts with SSH access must follow an authentication workflow that requires either a two-factor authentication (TFA) code or API token and an SSH certificate to access the environment.
 
-{:.bs.callout-important}
+{:.bs-callout-info}
 MFA is not enabled on Cloud projects by default. The Account owner for the {{ site.data.var.ece }} project must submit a {{site.data.var.ee}} support request to enable it. As soon as MFA is turned on, all users must have two-factor authentication (TFA) enabled on their {{ site.data.var.ece }} account for SSH access to the project environments.
 
 ## Certificates for SSH access
@@ -211,7 +211,7 @@ To connect using SSH with an API token credential:
 ### Example automated SSH script
 
 There are two options for storing the API token.
-{:.bs.callout-important}
+{:.bs-callout-info}
 If an API token is stored, the `magento-cloud` CLI will automatically authenticate and there is no need to perform the `mgc login` command
 
 #### Create an environment variable to store the API token.

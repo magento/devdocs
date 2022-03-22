@@ -1,6 +1,8 @@
 ---
 group: payment-services
 title: Configure Payment Services
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/configure/configure-cli.html
+layout: migrated
 ---
 
 After you install Payment Services, you can easily configure it from [within the Admin]({{ site.user_guide_url }}/payment-services/configure-payments.html) or via the Command Line Interface (CLI).

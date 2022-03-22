@@ -14,7 +14,7 @@ Before you can submit your extension to Commerce Marketplace, the code must be c
 ![]({{ site.baseurl }}/marketplace/sellers/images/extension-prep.png){: .zoom}
 _Building and Submitting an Extension_
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info}
 Commerce Marketplace does not support encrypted extensions at this time.
 
 ## Build your extension

@@ -154,7 +154,7 @@ To import a database dump into the Docker environment:
    magento-cloud db:dump
    ```
 
-   {: .bs-callout-note }
+   {: .bs-callout-info }
    The `magento-cloud db:dump` command runs the [mysqldump][] command with the `--single-transaction` flag, which allows you to back up your database without locking the tables.
 
 1. Place the resulting SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
