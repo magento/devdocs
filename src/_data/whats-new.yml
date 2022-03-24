@@ -4,8 +4,138 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Tue Feb 22 17:59:54 2022
+updated: Mon Mar 21 14:38:37 2022
 entries:
+- description: The page size of the Live Search [storefront popover](https://devdocs.magento.com/live-search/storefront-popover.html)
+    is now configurable.
+  versions: 2.4.x
+  type: Major Update
+  date: March 15, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2842
+  merge_commit: 530613f7b458fc5785f8343b6bfdee430c8ddc5c
+  contributor: ccondra
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: Cloud tools release:<br/>- [Ece-tools 2002.1.9](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v200219)<br/>-
+    [Cloud Docker 1.3.1](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v131)<br/>-
+    [Cloud components 1.0.10](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html#v1010)<br/>-
+    [Cloud patches 1.0.15](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v1015)
+  versions: 2.x
+  type: Major Update
+  date: March 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2849
+  merge_commit: cc5fd21b70525f88604ad61e232a5145efa546c3
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Add [Migrated topics](https://devdocs.magento.com/migrated.html) with
+    the list of devdocs topics migrated to other websites.
+  versions: ''
+  type: New Topic
+  date: March 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2844
+  merge_commit: 61a618736d770063dc9de4328bad91a30cfa4b44
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - New Topic
+- description: Added 2.4.3-p2 and 2.3.7-p3 to the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    table.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: March 9, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2847
+  merge_commit: 480a33a4052361edbc6c1b7a4d4b158c21124162
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Clarify scope of [Remote storage](https://devdocs.magento.com/guides/v2.4/config-guide/remote-storage/config-remote-storage.html)
+    support for Cloud.
+  versions: 2.4.x
+  type: Technical
+  date: March 9, 2022
+  link: https://github.com/magento/devdocs/pull/9374
+  merge_commit: be3ac99116f893fbc4ed981b957443b20da6932c
+  contributor: shiftedreality
+  membership: true
+  labels:
+  - Internal Dev
+  - Technical
+  - 2.4.x
+  - 'Progress: done'
+- description: Re-added instructions for managing [Media Library folder permissions]
+    (https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/modify-image-library-permissions/)
+    in down-level versions of Adobe Commerce and Magento Open Source.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: March 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2839
+  merge_commit: 510fa5c19934a89f6751671f71d3710a0f0a5b01
+  contributor: jhadobe
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.11 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: March 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2841
+  merge_commit: a9fe0235ab03e8d3704bcf1b9f5ab403976b8ed3
+  contributor: katmoon
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: The [release schedule](https://devdocs.magento.com/release/) has been
+    updated with new dates for version 2.4.4.
+  versions: 2.4.4
+  type: Major Update
+  date: February 28, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2831
+  merge_commit: f5f5c8411c9919ee5c27547ba71680eb19836fbf
+  contributor: hickskenh
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Corrected references in the Cloud guide to the `magento-cloud` CLI.
+    This should improve the likelihood it will surface properly when searched.
+  versions: 2.x
+  type: Technical
+  date: February 25, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2799
+  merge_commit: b3cc43c00d9f7a2d27075039759e2650fdb317fb
+  contributor: gamarshall
+  membership: true
+  labels:
+  - Editorial
+  - 2.x
+  - Technical
+- description: Added a remarkable [Validation rule list](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/validations/rule-list.html)
+    to the Frontend Developer's Guide.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: February 23, 2022
+  link: https://github.com/magento/devdocs/pull/9356
+  merge_commit: cf2d65a391c3af92d0abfe4cd0a8e7117fa6f940
+  contributor: goivvy
+  membership: false
+  labels:
+  - 2.3.x
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
 - description: Added configuration options to the Site-Wide Analysis Tool [agent installation](https://devdocs.magento.com/tools/site-wide-analysis.html)
     topic.
   versions: 2.x

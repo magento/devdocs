@@ -27,7 +27,7 @@ This section discusses how to manually migrate media files.
 
 ### Media files stored in the database
 
-{:.bs-class-warning}
+{:.bs-callout-warning}
 The database media storage method is deprecated as of Magento 2.4.3.4
 
 This section applies to you *only* if you store media files in the Magento database. This step should be performed before <a href="{{ page.baseurl }}/migration/migration-migrate-data.html">migration of data</a>:

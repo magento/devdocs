@@ -348,6 +348,6 @@ services:
 [.magento.app.yaml]: {{site.baseurl}}/cloud/project/magento-app.html
 [services.yaml]: {{site.baseurl}}/cloud/project/services.html
 [mounts]: {{ site.baseurl }}/cloud/project/magento-app-properties.html#mounts
-[available services]: {{site.baseurl}}/cloud/project/services.html#service-versions
+[available services]: {{site.baseurl}}/guides/v2.4/install-gde/system-requirements.html
 [Override configuration]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html#override-configuration
 [Service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
