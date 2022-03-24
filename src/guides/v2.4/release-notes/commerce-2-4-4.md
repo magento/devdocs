@@ -310,7 +310,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42811-->
 
-*  { site.data.var.ee }} now updates the category product cache as expected when a bundle product reappears in stock.
+*  {{ site.data.var.ee }} now updates the category product cache as expected when a bundle product reappears in stock.
 
 <!--- MC-42811-->
 
@@ -750,7 +750,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/34234)-->
 
-*  Fixed `abs()` and `round()` functions for compatibility with PHP7.x and PHP8.x  [GitHub-34322](https://github.com/magento/magento2/issues/34322)
+*  Fixed `abs()` and `round()` functions for compatibility with PHP7.x and PHP8.x.  [GitHub-34322](https://github.com/magento/magento2/issues/34322)
 
 <!--- AC-719-->
 
@@ -871,7 +871,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1564-->
 
-*  Casting to `int` has been removed for auto-incremented invoice IDs when prefixed with a string. As a result, invoices now display a 0 for numbers that are prefixed with a string. GitHub-34451](https://github.com/magento/magento2/issues/34451)
+*  Casting to `int` has been removed for auto-incremented invoice IDs when prefixed with a string. As a result, invoices now display a 0 for numbers that are prefixed with a string. [GitHub-34451](https://github.com/magento/magento2/issues/34451)
 
 ### Logging
 
@@ -887,7 +887,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- magento/magento-coding-standard/pull/219-->
 
-*  Updated `phpunit/ phpunit` to the latest version for the `magento-coding-standard` repository. GitHub-33622](https://github.com/magento/magento2/issues/33622)
+*  Updated `phpunit/ phpunit` to the latest version for the `magento-coding-standard` repository. [GitHub-33622](https://github.com/magento/magento2/issues/33622)
 
 <!--- magento/magento2/pull/33858-->
 
@@ -1073,7 +1073,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-38521-->
 
-*  Administrators 4th restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ee }} threw an error when an administrator with these permissions tried to view an order. GitHub-14633](https://github.com/magento/magento2/issues/14633)
+*  Administrators with restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ee }} threw an error when an administrator with these permissions tried to view an order. [GitHub-14633](https://github.com/magento/magento2/issues/14633)
 
 ### Payment methods
 
@@ -1379,11 +1379,11 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- MC-41850-->
 
-*  {{ site.data.var.ce }} now trims the non-breaking space characters from the Contact Us form email input field. Previously, the form was submitted without removing the non-breaking space characters from the email input (if given), which caused errors in the log files. The **Reply-To** field was also missing from the generated contact email message to the store administrator.
+*  {{ site.data.var.ee }} now trims the non-breaking space characters from the Contact Us form email input field. Previously, the form was submitted without removing the non-breaking space characters from the email input (if given), which caused errors in the log files. The **Reply-To** field was also missing from the generated contact email message to the store administrator.
 
 <!--- MC-42793-->
 
-*  {{ site.data.var.ce }} now displays related products, up-sell products, and cross-sell products according to their positions in the Admin.
+*  {{ site.data.var.ee }} now displays related products, up-sell products, and cross-sell products according to their positions in the Admin.
 
 <!--- MC-42502-->
 
@@ -1419,7 +1419,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- MC-42750-->
 
-*  The Admin customer grid now displays all customer data, including newly added `date` custom attributes, as expected. Previously, {{ site.data.var.ce }} threw an error and did not display the Admin customer grid correctly when the `date` attribute set was set as a column.
+*  The Admin customer grid now displays all customer data, including newly added `date` custom attributes, as expected. Previously, {{ site.data.var.ee }} threw an error and did not display the Admin customer grid correctly when the `date` attribute set was set as a column.
 
 <!--- AC-1280-->
 
@@ -1451,7 +1451,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- magento/magento2/pull/31879-->
 
-*  {{ site.data.var.ce }} no longer displays this message after upgrade when Cookie Restriction Mode is disabled: `The store will not work correctly in the case when cookies are disabled`. [GitHub-33811](https://github.com/magento/magento2/issues/33811)
+*  {{ site.data.var.ee }} no longer displays this message after upgrade when Cookie Restriction Mode is disabled: `The store will not work correctly in the case when cookies are disabled`. [GitHub-33811](https://github.com/magento/magento2/issues/33811)
 
 ### URL rewrites
 
