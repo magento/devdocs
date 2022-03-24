@@ -107,7 +107,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |shared_packages[N].artifact.file_upload_id|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
 |shared_packages[N].artifact.sku|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
 |shared_packages[N].artifact.version|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
-|short_description|substring|GET, POST, PUT|marketing|yes|The short description for the package.|Short free text|
+|short_description|string|GET|-|no|Was the short description for the package.|No longer used. Will always be returned as an empty string.|
 |sku|substring|GET, POST|-|yes|The SKU generated from metadata in the code artifact. Only specified in a `POST` when creating another version of an existing extension.|A SKU|
 |stability|string|GET, POST, PUT|marketing|yes|The version's build stability|`stable`, `beta`|
 |sort|string|GET|-|no|A comma-separated list of fields to sort the list, each field prefixed by `-` for descending order, or `+` for ascending order.|See [Get package details](#get-package-details).|
@@ -613,7 +613,6 @@ The following example shows a POST request with all required parameters set for 
       }
     ],
     "name" : "One Click Checkout",
-    "short_description" : "<Short description here>",
     "long_description" : "<Long description here>",
     "release_notes" : "<Release notes here>",
     "version" : "1.1.5",
@@ -789,7 +788,6 @@ the required parameters are listed below by their respective parallel EQP pipeli
 |Parameter|Comments|
 |---------|---------|
 |name||
-|short_description||
 |long_description||
 |documentation_artifacts||
 |categories||
@@ -811,7 +809,6 @@ POST request in draft mode can be done with a minimal set of parameters:
 |name||
 |version||
 |sku|Only valid when a previous version exists|
-|short_description||
 |long_description||
 
 With the returned  `submission_id`, the remaining required parameters can be supplied using a PUT request in draft mode, and/or with an `action` to submit to either technical or marketing review; or both.
@@ -875,7 +872,7 @@ curl -X GET \
       }
     ],
     "name" : "One Click Checkout",
-    "short_description" : "<Short description here>",
+    "short_description" : "",
     "long_description" : "<Long description here>",
     "sku" : "acme/one-click-checkout",
     "version" : "1.1.5",
@@ -1014,6 +1011,7 @@ curl -X GET \
 *  The `sku` and version will be determined from the code artifact (M2 zip file) meta-information (M2 `composer.json`), once it passes the malware checks.
 *  The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.
 *  The `eqp_status` field will indicate the current state of the package in the EQP process.
+*  The `short_description` field will always be returned as an empty string.  This field is no longer used.  It is returned for backward compatibility.
 
 To get additional details about the results of EQP testing, see [EQP Test Reports](test-results.html)
 
@@ -1030,7 +1028,6 @@ The following fields enable both sorting and filtering support. Refer to the [Pa
 |sku|Sub-string match|
 |version|Sub-string match|
 |name|Sub-string match|
-|short_description|Sub-string match|
 |long_description|Sub-string match|
 |release_notes|Sub-string match|
 |is_patch|Exact match|
