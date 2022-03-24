@@ -3,9 +3,6 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
-{:.bs-callout-warning}
-To help ensure this release delivers the highest standards of security and quality, the pre-release period for Adobe Commerce customers is now planned for **March 29**, two weeks prior to the **general availability date of April 12** for both {{ site.data.var.ee }} and {{ site.data.var.ce }}.
-
 {{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
 
 This release includes almost 250 quality fixes and enhancements.
@@ -425,6 +422,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  GraphQL category queries return information about changes to staged categories as expected.
 
+<!--- AC-711-->
+
+*  Products lists are now accurately rendered in the Admin in deployments with products assigned to both a parent category and its subcategories but in different positions within each category. Previously, product list rendering failed with this error: `Item (Magento\Catalog\Model\Product\Interceptor) with the same ID "<ID>" already exists`. [GitHub-33145](https://github.com/magento/magento2/issues/33145)
+
+<!--- AC-1148-->
+
+*  `multiselect` attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
+
 ### Catalog rule
 
 <!--- MC-41807-->
@@ -697,6 +702,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 ### Import/export
 
+<!--- AC-1486-->
+
+*  `bin/magento remote-storage:sync` no longer fails when filenames are similar but differ by only one or two characters. Previously, the first image was stored correctly, but the second, similarly named image triggered a sync failure and this error: `Notice: Undefined index: media/catalog/product/5/_ in /src/vendor/magento/module-remote-storage/Driver/Adapter/Cache/Generic.php on line 197`. [GitHub-34337](https://github.com/magento/magento2/issues/34337)
+
 <!--- MC-41672-->
 
 *  {{ site.data.var.ee }} now converts the timestamp in the export filename to the user’s timezone after a scheduled export. Previously, these values were not converted, and {{ site.data.var.ee }} displayed the UTC timestamp.
@@ -793,7 +802,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1313-->
 
-*  Improved the JWK check in the `JwsManager` class to handle situations when the algorithm is set directly in the header. GitHub-32636](https://github.com/magento/magento2/issues/32636)
+*  Improved the JWK check in the `JwsManager` class to handle situations when the algorithm is set directly in the header. Previously, this check ignored this valid scenario. [GitHub-32636](https://github.com/magento/magento2/issues/32636)
 
 #### Upgrades for PHP 8.1 compatibility
 
@@ -930,10 +939,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Removed `CliCacheFlushActionGroup` from `CatalogSearch`, `GroupedProduct`, `Newsletter`, `Paypal`, `Quote`, and `Review` modules. [GitHub-33531](https://github.com/magento/magento2/issues/33531)
 
-<!--- magento/magento2/pull/32226-->
-
-*  Added test for the scenario in which the **Append Comments** checkbox is unexpectedly unchecked. [GitHub-32381](https://github.com/magento/magento2/issues/32381)
-
 <!--- AC-515-->
 
 *  Non-strict comparisons between numbers and non-numeric strings now work by casting the number to string and comparing the strings. Comparisons between numbers and numeric strings continue to work as before. This means that 0 == "not-a-number" is now considered false. [GitHub-33780](https://github.com/magento/magento2/issues/33780)
@@ -1036,11 +1041,18 @@ Repetitive actions have been replaced with action groups in these tests:
 
 #### New tests
 
-`StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+`AdminCreateOrderWithCheckedAppendCommentCheckboxTest` [GitHub-32381](https://github.com/magento/magento2/issues/32381)
 
 `CheckoutWithEnabledCaptchaTest` [GitHub-32991](https://github.com/magento/magento2/issues/32991)
 
+`StorefrontAddProductWithBackordersAllowedOnProductLevelToCartTest` [GitHub-33635](https://github.com/magento/magento2/issues/33635)
+
+`StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+
 `StorefrontCaptchaCheckoutWithEnabledCaptchaTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+
+`StorefrontCheckoutWithEnabledMinimumOrderAmountOptionTest` [GitHub-33460](https://github.com/magento/magento2/issues/33460)
+
 #### Refactored tests
 
 `CaptchaWithDisabledGuestCheckoutTest` [GitHub-30828](https://github.com/magento/magento2/issues/30828)
