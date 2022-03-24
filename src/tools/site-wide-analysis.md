@@ -50,6 +50,7 @@ Your on-premises infrastructure must meet the following requirements before inst
    -  `awk`
    -  `nice`
    -  `grep`
+   -  `netcat`
 
 ### Commerce Services Connector
 
