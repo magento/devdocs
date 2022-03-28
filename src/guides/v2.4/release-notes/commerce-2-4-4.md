@@ -26,7 +26,7 @@ Look for the following highlights in this release.
 
 ### Security enhancements
 
-This release includes three security fixes and platform security improvements. Several of these security fixes have been backported to {{ site.data.var.ee }} 2.4.3-p2 and {{ site.data.var.ee }} 2.3.7-p3.
+This release includes one security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ee }} 2.4.3-p2 and {{ site.data.var.ee }} 2.3.7-p3.
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts:
 
