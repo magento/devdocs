@@ -362,11 +362,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-711-->
 
-*  Products lists are now accurately rendered in the Admin in deployments with products assigned to both a parent category and its subcategories but in different positions within each category. Previously, product list rendering failed with this error: `Item (Magento\Catalog\Model\Product\Interceptor) with the same ID "<ID>" already exists`. [GitHub-33145](https://github.com/magento/magento2/issues/33145
+*  Product lists are now accurately rendered in the Admin in deployments with products assigned to both a parent category and its subcategories but in different positions within each category. Previously, product list rendering failed with this error: `Item (Magento\Catalog\Model\Product\Interceptor) with the same ID "<ID>" already exists`. [GitHub-33145](https://github.com/magento/magento2/issues/33145
 
 <!--- AC-1148-->
 
-*  `multiselect` attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)### Catalog rule
+*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)### Catalog rule
 
 <!--- MC-41807-->
 
