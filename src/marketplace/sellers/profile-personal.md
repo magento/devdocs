@@ -2,6 +2,8 @@
 group: marketplace-sellers
 title: Personal Profile
 redirect_from: /marketplace/sellers/personal-profile.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-personal/
+layout: migrated
 ---
 
 The information in your personal profile identifies you as a vendor in Commerce Marketplace, and includes your background, image, contact information, and social network addresses. The Personal Profile page initially appears when you set up your Marketplace account as an individual. From your Marketplace account, the Personal Profile is located on the Developer Portal tab under My Information.
