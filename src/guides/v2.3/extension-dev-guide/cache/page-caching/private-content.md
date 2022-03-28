@@ -7,7 +7,7 @@ Since private content is specific to individual users, it is reasonable to handl
 
 Use our [customer-data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/web/js/customer-data.js) JS library to store private data in local storage, invalidate private data using customizable rules, and synchronize data with the backend.
 
-This example displays a customer's name on a cacheable page.
+This example displays a product comparison on a cacheable page.
 
 ## Create a section source {#config-cache-priv-how-source}
 
