@@ -31,6 +31,7 @@ Attribute | Data type | Description
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Deprecated. This field should not be used on the storefront. Timestamp indicating when the product was created
 `crosssell_products` | [ProductInterface] | An array of cross-sell products
+`custom_attributes` | [ProductInterface] | A list of product custom attributes details. PWA Studio only.
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | Deprecated. Use `uid` instead. The ID number assigned to the product
