@@ -38,7 +38,7 @@ The reviewer should check whether the task meets the original acceptance criteri
 
 All changes to Adobe Commerce projects should be covered by automated tests to meet the "Definition of Done" (DoD).
 
-The details on backward compatiblity criterias included in the "Definition of Done" (DoD) can be found on [DoD - Automated Tests page][3]
+The details on different types of automated tests can be found on [DoD - Automated Tests page][3]
 
 ## Documentation
 

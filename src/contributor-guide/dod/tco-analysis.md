@@ -75,7 +75,6 @@ This table lists the levels for the changes that are not currently covered by SV
 | PHP Interface (marked with @api)       | Method parameter default value removed                                                                                   | MAJOR |
 |                                        | Method parameter default value changed                                                                                   | MAJOR |
 |                                        | Method parameter default value added                                                                                     | MINOR |
-|                                        |                                                                                                                          |       |
 | PHP Class (marked with @api)           | Method argument or return value format changed (Example: before - [1, 2, 3], after - ['items' => [1,2,3], 'count' => 3]) | MAJOR |
 |                                        | Trait removed                                                                                                            | MAJOR |
 | Message queue                          | Topic removed                                                                                                            | MAJOR |
@@ -85,6 +84,9 @@ This table lists the levels for the changes that are not currently covered by SV
 |                                        | New container/block added to handle                                                                                      | MINOR |
 |                                        | Removed layout handle                                                                                                    | MAJOR |
 | Static view files                      | JS/CSS/LESS file removed/moved                                                                                           | MAJOR |
+| GraphQL schema                         | Removed type, field, argument, interface, directive, value, location                                                     | MAJOR |
+|                                        | Added required argument, input field, directive argument                                                                 | MAJOR |
+|                                        | Changed kind of argument, type, field                                                                                    | MAJOR |
 
 ### Potential number of affected customisations
 
