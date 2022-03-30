@@ -4,8 +4,22 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Mar 21 14:38:37 2022
+updated: Mon Mar 28 14:44:53 2022
 entries:
+- description: Added the new [Varnish ESI Block](https://devdocs.magento.com/guides/v2.4/config-guide/varnish/use-varnish-esi.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: March 22, 2022
+  link: https://github.com/magento/devdocs/pull/9380
+  merge_commit: 9f9bd4a6c246711f968101387e0a052a1c1d09d8
+  contributor: goivvy
+  membership: false
+  labels:
+  - 2.3.x
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
 - description: The page size of the Live Search [storefront popover](https://devdocs.magento.com/live-search/storefront-popover.html)
     is now configurable.
   versions: 2.4.x
