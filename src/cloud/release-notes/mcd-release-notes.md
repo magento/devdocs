@@ -22,7 +22,7 @@ The release notes include:
 
 Release date: March 31, 2022
 
--  {:.new}**Added ES 7.10 image**<!-- MCLOUD-8548 -->
+-  {:.new}**Added Elasticsearch 7.10 image**<!-- MCLOUD-8548 -->
 
 ## v1.3.1
 
