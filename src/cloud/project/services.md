@@ -25,21 +25,29 @@ The cloud infrastructure supports and deploys the following services:
 
 -  [`mysql`]({{ site.baseurl }}/cloud/project/services-mysql.html)
 -  [`redis`]({{ site.baseurl }}/cloud/project/services-redis.html)
--  [`elasticsearch`]({{ site.baseurl }}/cloud/project/services-elastic.html)
+-  [`opensearch`]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 -  [`rabbitmq`]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 
-You can view default versions and disk values in the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
+You can view default versions and disk values in the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, `opensearch`, and `rabbitmq` services defined in the `services.yaml` configuration file:
 
 ```yaml
 mysql:
-    type: mysql:<version>
+    type: mysql:10.4
     disk: 5120
+    configuration:
+      properties:
+        optimizer_switch: "rowid_filter=off"
+        optimizer_use_condition_selectivity: 1
 
 redis:
-    type: redis:<version>
+    type: redis:6.2
 
-elasticsearch:
-    type: elasticsearch:<version>
+opensearch:
+    type: opensearch:1.2
+    disk: 1024
+
+rabbitmq:
+    type: rabbitmq:3.9
     disk: 1024
 ```
 
@@ -130,10 +138,10 @@ To verify relationships in local environment:
    ...
            type: 'redis:3.8'
            port: 6379
-   elasticsearch:
+   opensearch:
        -
    ...
-           type: 'elasticsearch:6.6'
+           type: 'opensearch:6.6'
            port: 9200
    database:
        -
@@ -167,7 +175,7 @@ To verify relationships in remote environments:
 
 ### Software EOL checks
 
-During the deployment process, {{site.data.var.ct}} checks installed service versions against the end-of-life (EOL) dates for each service.
+During the deployment process, `{{site.data.var.ct}}` checks installed service versions against the end-of-life (EOL) dates for each service.
 
 -  If a service version is within three months of the EOL date, a notification displays in the deploy log.
 -  If the EOL date is in the past, a warning notification displays.

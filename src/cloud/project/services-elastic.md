@@ -34,8 +34,6 @@ To enable Elasticsearch:
 
    For Pro projects, you must submit a {{site.data.var.ee}} Support ticket to change the Elasticsearch version in the Staging and Production environments.
 
-   For details on determining the correct version to install, see [Elasticsearch software compatibility](#elasticsearch-software-compatibility).
-
 1. Set the `relationships` property in the `.magento.app.yaml` file.
 
    ```yaml

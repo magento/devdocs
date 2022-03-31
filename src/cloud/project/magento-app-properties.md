@@ -31,15 +31,13 @@ The `build` property determines what happens by default when building the projec
 
 ```yaml
 # The toolstack used to build the application.
-type: php:7.4
+type: php:8.1
 build:
-    flavor: composer
-```
+    flavor: none
 
-The default flavor is `composer`, which refers to the latest Composer 1.x release. During the build, this configuration runs the following command:
-
-```terminal
-composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
+dependencies:
+    php:
+        composer/composer: '2.2.4'
 ```
 
 ### Installing and using Composer 2
@@ -102,6 +100,7 @@ relationships:
     database: "mysql:mysql"
     redis: "redis:redis"
     opensearch: "opensearch:opensearch"
+    rabbitmq: "rabbitmq:rabbitmq"
 ```
 
 See [Services]({{ site.baseurl }}/cloud/project/services.html) for a full list of currently supported service types and endpoints.
@@ -252,14 +251,15 @@ hooks:
     # We run build hooks before your application has been packaged.
     build: |
         set -e
-        php ./vendor/bin/ece-tools build:generate
-        php ./vendor/bin/ece-tools build:transfer
+        composer install
+        php ./vendor/bin/ece-tools run scenario/build/generate.xml
+        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./vendor/bin/ece-tools deploy
+        php ./vendor/bin/ece-tools run scenario/deploy.xml
     # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
     post_deploy: |
-        php ./vendor/bin/ece-tools post-deploy
+        php ./vendor/bin/ece-tools run scenario/post-deploy.xml
 ```
 
 Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files.

@@ -400,7 +400,7 @@ The method you choose is up to you. You have the following options:
 {:.procedure}
 To compress files and copy them to your local machine:
 
-1. Use SSH to login to the remote environment.
+1. Use SSH to log in to the remote environment.
 
 1. Compress the files.
 
