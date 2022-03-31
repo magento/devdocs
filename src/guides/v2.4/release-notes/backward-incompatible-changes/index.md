@@ -6,6 +6,13 @@ title: Magento 2.4 backward incompatible changes
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
 ## 2.4.4
+
+### Removal of deprecated email variable usage
+
+Email variable usage was deprecated back in 2.3.4 as part of a security risk mitigation in favor of a more strict variable syntax. This legacy behavior has been fully removed in this release as a continuation of that security risk mitigation.
+
+As a result, email or newsletter templates that worked in previous versions of Magento may not work correctly after upgrading to Adobe Commerce 2.4.4 or Magento Open Source 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates](({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
+
 ### Changes to naming conventions for language package filenames
 
 2.4.4 and its support for PHP 8.1 requires changes in how translation packages are named. Language package filenames must now follow the naming conventions enforced by PHP 8.1. Consequently, lowercase letters are no longer permitted in the second part of the locale name.

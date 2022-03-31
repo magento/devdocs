@@ -20,6 +20,14 @@ Although code for these features is bundled with quarterly releases of the {{ si
 {:.bs-callout-info}
 All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ce }} 2.4.4.
 
+### Hotfixes included in this release
+
+{{ site.data.var.ce }} 2.4.4 includes resolution of all issues that were addressed by the following hotfixes, which were provided for {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.3, 2.4.3-p1, and 2.3.7-p2:
+
+*  The vulnerability addressed by `MDVA-43395_EE_2.4.3-p1_COMPOSER_v1.patch` and `MDVA-43443_EE_2.4.3-p1_COMPOSER_v1.patch` has been resolved in this release.
+
+*  `AC-384_Fix_Incompatible_PHP_Method__2.4.3_ce.patch`. This patch addresses a fatal PHP error that occurred during upgrade. See the [Adobe Commerce upgrade 2.4.3, 2.3.7-p1 PHP Fatal error Hotfix](https://support.magento.com/hc/en-us/articles/4408021533069-Adobe-Commerce-upgrade-2-4-3-2-3-7-p1-PHP-Fatal-error-Hotfix) Knowledge Base article.
+
 ## {{ site.data.var.ce }} 2.4.4 highlights
 
 Look for the following highlights in this release.
@@ -41,6 +49,8 @@ See [Adobe Security Bulletin](https://helpx.adobe.com/security.html) for the lat
 #### Additional security enhancements
 
 Security improvements for this release improve compliance with the latest security best practices, including:
+
+*  Email variable usage was deprecated back in 2.3.4 as part of a security risk mitigation in favor of a more strict variable syntax. This legacy behavior has been fully removed in this release as a continuation of that security risk mitigation. See [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html).
 
 *  Integration tokens can no longer be used for API Bearer token authentication. Previously, an integration token could be used as a standalone key for token-based authentication. However, this behavior has been disabled by default due to the security implications of a never-expiring access token. The previous behavior can be enabled through the command line or Admin. See [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html). <!--- AC-1619--->
 
