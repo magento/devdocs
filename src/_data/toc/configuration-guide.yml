@@ -115,9 +115,6 @@ pages:
         - label: Dependency reports
           url: /config-guide/cli/config-cli-subcommands-depen.html
 
-        - label: Catalog sync
-          url: /config-guide/cli/config-cli-subcommands-catalog-sync.html
-
         - label: Configuration management
           children:
 
