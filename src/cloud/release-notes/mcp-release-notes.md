@@ -21,6 +21,16 @@ The `{{site.data.var.mcp-package}}` package uses the following version sequence:
 
 <!--Add release notes below-->
 
+## v1.0.16
+
+Release date: March 31, 2022
+
+Critical patch for {{site.data.var.ee}} 2.3.3-p1 and later versions:
+
+Updated patches to resolve a **critical** vulnerability resulting in unauthenticated remote code execution.<!-- MCLOUD-8479 -->
+
+See [Adobe Security bulletin APSB22-12](https://helpx.adobe.com/security/products/magento/apsb22-12.html).
+
 ## v1.0.15
 
 Release date: March 10, 2022
