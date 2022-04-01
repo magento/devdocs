@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Packages
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/packages/
+layout: migrated
 ---
 
 Use this resource to initiate and manage all aspects of submitting a package to the

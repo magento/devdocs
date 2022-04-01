@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Files
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/files/
+layout: migrated
 ---
 
 Use the `files` resource to manage all artifacts that you upload:

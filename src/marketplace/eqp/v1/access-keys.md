@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: API access keys
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/access-keys/
+layout: migrated
 ---
 
 {:.bs-callout-info}
