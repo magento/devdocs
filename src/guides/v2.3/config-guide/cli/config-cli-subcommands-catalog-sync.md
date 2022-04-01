@@ -1,7 +1,7 @@
 ---
 group: configuration-guide
 title: Catalog Sync
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/landing/catalog-sync.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/user-guides/catalog-sync.html
 layout: migrated
 ---
 
