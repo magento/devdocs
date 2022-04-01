@@ -3,6 +3,9 @@ group: payment-services
 title: Customize buttons and messaging
 ---
 
+{:.bs-callout-warning}
+Refer to the [Configure in the Dashboard](https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/configure/configure-dashboard.html?lang=en) page for more information.
+
 You can easily customize [PayPal Smart button styling](#paypal-smart-buttons) and [PayPal PayLater messaging, styling, and layout](#paypal-paylater) on the product page, the checkout page, in the shopping cart, and in the mini cart.
 
 ## PayPal Smart Buttons
