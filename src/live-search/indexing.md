@@ -2,6 +2,8 @@
 group: live-search
 title: Indexing
 ee_only: True
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/indexing.html
+layout: migrated
 ---
 
 Product attribute properties (metadata) determine how an attribute can be used in the catalog, its appearance and behavior in the store, and the data that is included in data transfer operations. The scope of attribute metadata is `website/store/store view`.
