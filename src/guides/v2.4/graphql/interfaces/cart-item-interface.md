@@ -38,11 +38,11 @@ Attribute |  Data Type | Description
 `row_total_including_tax` | Money! | The value of `row_total` plus the tax applied to the item
 `total_item_discount` | Money | The total of all discounts applied to the item
 
-### CartItemError
+### CartItemError object {#CartItemError}
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`code` | CartItemErrorType! | An error code that describes the error encountered
+`code` | CartItemErrorType! | An error code that describes the error encountered. One of `ITEM_QTY`, `ITEM_INCREMENTS`, or `UNDEFINED`
 `message` | String! | A localized error message
 
 ### SelectedCustomizableOption attributes {#SelectedCustomizableOption}

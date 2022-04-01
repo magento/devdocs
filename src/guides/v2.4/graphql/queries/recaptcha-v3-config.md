@@ -38,7 +38,7 @@ query {
   "data": {
     "recaptchaV3Config": {
       "minimum_score": 0.5,
-      "website_key": "6Lc1KW0dAAAAADtVR_BxrwFNQVxyCLwRLvSFGICK",
+      "website_key": "<key-value>",
       "badge_position": "inline",
       "language_code": "",
       "failure_message": "reCAPTCHA verification failed.",
