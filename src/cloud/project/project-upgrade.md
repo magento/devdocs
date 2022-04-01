@@ -114,10 +114,10 @@ To update the `.magento.app.yaml` file:
    ```yaml
    type: php:8.1
 
-   build: 
+   build:
        flavor: none
-   dependencies: 
-       php: 
+   dependencies:
+       php:
            composer/composer: '2.2.4'
    ```
 
