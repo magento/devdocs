@@ -2,6 +2,9 @@
 group: extensions
 title: Vendor Bundled Extensions (VBEs)
 permalink: extensions/vendor/
+redirect_from:   
+  - /extensions/vendor/yotpo/release-notes.html
+  - /extensions/vendor/dotdigital/release-notes.html
 ---
 
 {:.bs-callout-warning}
