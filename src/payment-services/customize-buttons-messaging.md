@@ -5,6 +5,9 @@ migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/
 layout: migrated
 ---
 
+{:.bs-callout-warning}
+Since the Payment Services 1.1.0 release it is possible to customize your buttons and messaging in your Dashboard. Refer to the [Configure in the Dashboard](https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/configure/configure-dashboard.html?lang=en) topic for more information.
+
 You can easily customize [PayPal Smart button styling](#paypal-smart-buttons) and [PayPal PayLater messaging, styling, and layout](#paypal-paylater) on the product page, the checkout page, in the shopping cart, and in the mini cart.
 
 ## PayPal Smart Buttons
