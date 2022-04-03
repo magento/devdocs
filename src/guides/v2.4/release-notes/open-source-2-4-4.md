@@ -3,9 +3,6 @@ group: release-notes
 title: Magento Open Source 2.4.4 Release Notes
 ---
 
-{:.bs-callout-warning}
-To help ensure this release delivers the highest standards of security and quality, the pre-release period for Adobe Commerce customers is now planned for **March 29**, two weeks prior to the **general availability date of April 12** for both {{ site.data.var.ee }} and {{ site.data.var.ce }}.
-
 {{ site.data.var.ce }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
 
 This release includes almost 250 quality fixes and enhancements.
@@ -29,7 +26,7 @@ Look for the following highlights in this release.
 
 ### Security enhancements
 
-This release includes three security fixes and platform security improvements. Several of these security fixes have been backported to {{ site.data.var.ce }} 2.4.3-p2 and {{ site.data.var.ce }} 2.3.7-p3.
+This release includes one security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ce }} 2.4.3-p2 and {{ site.data.var.ce }} 2.3.7-p3.
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts:
 
@@ -255,7 +252,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-42811-->
 
-*  { site.data.var.ce }} now updates the category product cache as expected when a bundle product reappears in stock.
+*  {{ site.data.var.ce }} now updates the category product cache as expected when a bundle product reappears in stock.
 
 <!--- AC-715-->
 
@@ -363,7 +360,13 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  GraphQL category queries return information about changes to staged categories as expected.
 
-### Catalog rule
+<!--- AC-711-->
+
+*  Product lists are now accurately rendered in the Admin in deployments with products assigned to both a parent category and its subcategories but in different positions within each category. Previously, product list rendering failed with this error: `Item (Magento\Catalog\Model\Product\Interceptor) with the same ID "<ID>" already exists`. [GitHub-33145](https://github.com/magento/magento2/issues/33145
+
+<!--- AC-1148-->
+
+*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)### Catalog rule
 
 <!--- MC-41807-->
 
@@ -615,6 +618,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 ### Import/export
 
+<!--- AC-1486-->
+
+*  `bin/magento remote-storage:sync` no longer fails when filenames are similar but differ by only one or two characters. Previously, the first image was stored correctly, but the second, similarly named image triggered a sync failure and this error: `Notice: Undefined index: media/catalog/product/5/_ in /src/vendor/magento/module-remote-storage/Driver/Adapter/Cache/Generic.php on line 197`. [GitHub-34337](https://github.com/magento/magento2/issues/34337)
+
 <!--- MC-41672 23734-->
 
 *  {{ site.data.var.ce }} now converts the timestamp in the export filename to the user’s timezone after a scheduled export. Previously, these values were not converted, and {{ site.data.var.ce }} displayed the UTC timestamp.
@@ -659,7 +666,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/34234)-->
 
-*  Fixed `abs()` and `round()` functions for compatibility with PHP7.x and PHP8.x  [GitHub-34322](https://github.com/magento/magento2/issues/34322)
+*  Fixed `abs()` and `round()` functions for compatibility with PHP7.x and PHP8.x.  [GitHub-34322](https://github.com/magento/magento2/issues/34322)
 
 <!--- AC-719-->
 
@@ -675,7 +682,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-42960-->
 
-*  {{ site.data.var.ee }} now displays an informative error when an administrator with a read-only `pubs/media` tries to access the product details page for a product that includes images. Previously, {{ site.data.var.ee }} threw a PHP error. [GitHub-32819](https://github.com/magento/magento2/issues/32819)
+*  {{ site.data.var.ce }} now displays an informative error when an administrator with a read-only `pubs/media` tries to access the product details page for a product that includes images. Previously, {{ site.data.var.ce }} threw a PHP error. [GitHub-32819](https://github.com/magento/magento2/issues/32819)
 
 <!--- AC-853-->
 
@@ -699,7 +706,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-1338-->
 
-*  The helper `Magento\Payment\Helper\Data` no longer creates new layouts in constructors. Previously, when this helper was used in custom commands without specifying an area code,  {{ site.data.var.ee }} threw an error. [GitHub-33908](https://github.com/magento/magento2/issues/33908)
+*  The helper `Magento\Payment\Helper\Data` no longer creates new layouts in constructors. Previously, when this helper was used in custom commands without specifying an area code, {{ site.data.var.ce }} threw an error. [GitHub-33908](https://github.com/magento/magento2/issues/33908)
 
 <!--- AC-1077-->
 
@@ -711,7 +718,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-1313-->
 
-*  Improved the JWK check in the `JwsManager` class to handle situations when the algorithm is set directly in the header. GitHub-32636](https://github.com/magento/magento2/issues/32636)
+*  Improved the JWK check in the `JwsManager` class to handle situations when the algorithm is set directly in the header. Previously, this check ignored this valid scenario. [GitHub-32636](https://github.com/magento/magento2/issues/32636)
 
 #### JavaScript dependency updates
 
@@ -725,7 +732,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 #### Library removals and deprecations
 
-*  The following libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality:
+*  The following libraries have been removed because all browsers that {{ site.data.var.ce }} 2.4.x supports have built-in support for this functionality:
 
    *  `es6-collections.js`   <!--- AC-18-->
    *  `MutationObserver.js` <!--- AC-15-->
@@ -756,7 +763,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-1564-->
 
-*  Casting to `int` has been removed for auto-incremented invoice IDs when prefixed with a string. As a result, invoices now display a 0 for numbers that are prefixed with a string. GitHub-34451](https://github.com/magento/magento2/issues/34451)
+*  Casting to `int` has been removed for auto-incremented invoice IDs when prefixed with a string. As a result, invoices now display a 0 for numbers that are prefixed with a string. [GitHub-34451](https://github.com/magento/magento2/issues/34451)
 
 ### Logging
 
@@ -772,7 +779,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- magento/magento-coding-standard/pull/219-->
 
-*  Updated `phpunit/ phpunit` to the latest version for the `magento-coding-standard` repository. GitHub-33622](https://github.com/magento/magento2/issues/33622)
+*  Updated `phpunit/ phpunit` to the latest version for the `magento-coding-standard` repository. [GitHub-33622](https://github.com/magento/magento2/issues/33622)
 
 <!--- magento/magento2/pull/33858-->
 
@@ -823,10 +830,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- magento/magento2/pull/33530-->
 
 *  Removed `CliCacheFlushActionGroup` from `CatalogSearch`, `GroupedProduct`, `Newsletter`, `Paypal`, `Quote`, and `Review` modules. [GitHub-33531](https://github.com/magento/magento2/issues/33531)
-
-<!--- magento/magento2/pull/32226-->
-
-*  Added test for the scenario in which the **Append Comments** checkbox is unexpectedly unchecked. [GitHub-32381](https://github.com/magento/magento2/issues/32381)
 
 <!--- AC-515-->
 
@@ -930,11 +933,18 @@ Repetitive actions have been replaced with action groups in these tests:
 
 #### New tests
 
-`StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+`AdminCreateOrderWithCheckedAppendCommentCheckboxTest` [GitHub-32381](https://github.com/magento/magento2/issues/32381)
 
 `CheckoutWithEnabledCaptchaTest` [GitHub-32991](https://github.com/magento/magento2/issues/32991)
 
+`StorefrontAddProductWithBackordersAllowedOnProductLevelToCartTest` [GitHub-33635](https://github.com/magento/magento2/issues/33635)
+
+`StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+
 `StorefrontCaptchaCheckoutWithEnabledCaptchaTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+
+`StorefrontCheckoutWithEnabledMinimumOrderAmountOptionTest` [GitHub-33460](https://github.com/magento/magento2/issues/33460)
+
 #### Refactored tests
 
 `CaptchaWithDisabledGuestCheckoutTest` [GitHub-30828](https://github.com/magento/magento2/issues/30828)
@@ -951,7 +961,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-38521-->
 
-*  Administrators 4th restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ce }} threw an error when an administrator with these permissions tried to view an order. GitHub-14633](https://github.com/magento/magento2/issues/14633)
+*  Administrators with restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ce }} threw an error when an administrator with these permissions tried to view an order. [GitHub-14633](https://github.com/magento/magento2/issues/14633)
 
 ### Payment methods
 
@@ -1309,7 +1319,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  The totals retrieved by the `PUT /V1/guest-carts/:cartId/collect-totals` request are now updated by the correct `shippingMethod`. [GitHub-18508](https://github.com/magento/magento2/issues/18508)
 
-<!--- MC-30627-->
+<!--- MC-30627 AC-796-->
 
 *  Adding a new deserializer to the REST API no longer removes other deserializers. Previously, the REST API accepted a new content type, but CORE defined content types for APIs no longer worked and returned a 400 error. [GitHub-26433](https://github.com/magento/magento2/issues/26433)
 
@@ -1335,7 +1345,9 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  {{ site.data.var.ce }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ce }} ignored this option.
 
-## Known Issue
+## Known Issues
+
+**Issue**: Shoppers cannot add a product to their cart when no options are selected in Admin **Store** >  **Configuration** > **General** > **Country Options** > **Allow Countries**. {{ site.data.var.ce }} instead displays this following console error: `Failed to load resource: the server responded with a status of 400 (Bad Request)`. <!--- AC-2564-->
 
 **Issue**: The description of Dotdigital on **Find Partners and Extensions** > **Magento Marketplace** is outdated. Here is an updated description:
 

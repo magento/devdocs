@@ -3,9 +3,6 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
-{:.bs-callout-warning}
-To help ensure this release delivers the highest standards of security and quality, the pre-release period for Adobe Commerce customers is now planned for **March 29**, two weeks prior to the **general availability date of April 12** for both {{ site.data.var.ee }} and {{ site.data.var.ce }}.
-
 {{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
 
 This release includes almost 250 quality fixes and enhancements.
@@ -29,7 +26,7 @@ Look for the following highlights in this release.
 
 ### Security enhancements
 
-This release includes three security fixes and platform security improvements. Several of these security fixes have been backported to {{ site.data.var.ee }} 2.4.3-p2 and {{ site.data.var.ee }} 2.3.7-p3.
+This release includes one security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ee }} 2.4.3-p2 and {{ site.data.var.ee }} 2.3.7-p3.
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts:
 
@@ -313,7 +310,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42811-->
 
-*  { site.data.var.ee }} now updates the category product cache as expected when a bundle product reappears in stock.
+*  {{ site.data.var.ee }} now updates the category product cache as expected when a bundle product reappears in stock.
 
 <!--- MC-42811-->
 
@@ -424,6 +421,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-43010-->
 
 *  GraphQL category queries return information about changes to staged categories as expected.
+
+<!--- AC-711-->
+
+*  Product lists are now accurately rendered in the Admin in deployments with products assigned to both a parent category and its subcategories but in different positions within each category. Previously, product list rendering failed with this error: `Item (Magento\Catalog\Model\Product\Interceptor) with the same ID "<ID>" already exists`. [GitHub-33145](https://github.com/magento/magento2/issues/33145)
+
+<!--- AC-1148-->
+
+*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
 
 ### Catalog rule
 
@@ -697,6 +702,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 ### Import/export
 
+<!--- AC-1486-->
+
+*  `bin/magento remote-storage:sync` no longer fails when filenames are similar but differ by only one or two characters. Previously, the first image was stored correctly, but the second, similarly named image triggered a sync failure and this error: `Notice: Undefined index: media/catalog/product/5/_ in /src/vendor/magento/module-remote-storage/Driver/Adapter/Cache/Generic.php on line 197`. [GitHub-34337](https://github.com/magento/magento2/issues/34337)
+
 <!--- MC-41672-->
 
 *  {{ site.data.var.ee }} now converts the timestamp in the export filename to the user’s timezone after a scheduled export. Previously, these values were not converted, and {{ site.data.var.ee }} displayed the UTC timestamp.
@@ -741,7 +750,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/34234)-->
 
-*  Fixed `abs()` and `round()` functions for compatibility with PHP7.x and PHP8.x  [GitHub-34322](https://github.com/magento/magento2/issues/34322)
+*  Fixed `abs()` and `round()` functions for compatibility with PHP7.x and PHP8.x.  [GitHub-34322](https://github.com/magento/magento2/issues/34322)
 
 <!--- AC-719-->
 
@@ -793,7 +802,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1313-->
 
-*  Improved the JWK check in the `JwsManager` class to handle situations when the algorithm is set directly in the header. GitHub-32636](https://github.com/magento/magento2/issues/32636)
+*  Improved the JWK check in the `JwsManager` class to handle situations when the algorithm is set directly in the header. Previously, this check ignored this valid scenario. [GitHub-32636](https://github.com/magento/magento2/issues/32636)
 
 #### Upgrades for PHP 8.1 compatibility
 
@@ -862,7 +871,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1564-->
 
-*  Casting to `int` has been removed for auto-incremented invoice IDs when prefixed with a string. As a result, invoices now display a 0 for numbers that are prefixed with a string. GitHub-34451](https://github.com/magento/magento2/issues/34451)
+*  Casting to `int` has been removed for auto-incremented invoice IDs when prefixed with a string. As a result, invoices now display a 0 for numbers that are prefixed with a string. [GitHub-34451](https://github.com/magento/magento2/issues/34451)
 
 ### Logging
 
@@ -878,7 +887,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- magento/magento-coding-standard/pull/219-->
 
-*  Updated `phpunit/ phpunit` to the latest version for the `magento-coding-standard` repository. GitHub-33622](https://github.com/magento/magento2/issues/33622)
+*  Updated `phpunit/ phpunit` to the latest version for the `magento-coding-standard` repository. [GitHub-33622](https://github.com/magento/magento2/issues/33622)
 
 <!--- magento/magento2/pull/33858-->
 
@@ -929,10 +938,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- magento/magento2/pull/33530-->
 
 *  Removed `CliCacheFlushActionGroup` from `CatalogSearch`, `GroupedProduct`, `Newsletter`, `Paypal`, `Quote`, and `Review` modules. [GitHub-33531](https://github.com/magento/magento2/issues/33531)
-
-<!--- magento/magento2/pull/32226-->
-
-*  Added test for the scenario in which the **Append Comments** checkbox is unexpectedly unchecked. [GitHub-32381](https://github.com/magento/magento2/issues/32381)
 
 <!--- AC-515-->
 
@@ -1036,11 +1041,18 @@ Repetitive actions have been replaced with action groups in these tests:
 
 #### New tests
 
-`StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+`AdminCreateOrderWithCheckedAppendCommentCheckboxTest` [GitHub-32381](https://github.com/magento/magento2/issues/32381)
 
 `CheckoutWithEnabledCaptchaTest` [GitHub-32991](https://github.com/magento/magento2/issues/32991)
 
+`StorefrontAddProductWithBackordersAllowedOnProductLevelToCartTest` [GitHub-33635](https://github.com/magento/magento2/issues/33635)
+
+`StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+
 `StorefrontCaptchaCheckoutWithEnabledCaptchaTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+
+`StorefrontCheckoutWithEnabledMinimumOrderAmountOptionTest` [GitHub-33460](https://github.com/magento/magento2/issues/33460)
+
 #### Refactored tests
 
 `CaptchaWithDisabledGuestCheckoutTest` [GitHub-30828](https://github.com/magento/magento2/issues/30828)
@@ -1061,7 +1073,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-38521-->
 
-*  Administrators 4th restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ee }} threw an error when an administrator with these permissions tried to view an order. GitHub-14633](https://github.com/magento/magento2/issues/14633)
+*  Administrators with restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ee }} threw an error when an administrator with these permissions tried to view an order. [GitHub-14633](https://github.com/magento/magento2/issues/14633)
 
 ### Payment methods
 
@@ -1367,11 +1379,11 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- MC-41850-->
 
-*  {{ site.data.var.ce }} now trims the non-breaking space characters from the Contact Us form email input field. Previously, the form was submitted without removing the non-breaking space characters from the email input (if given), which caused errors in the log files. The **Reply-To** field was also missing from the generated contact email message to the store administrator.
+*  {{ site.data.var.ee }} now trims the non-breaking space characters from the Contact Us form email input field. Previously, the form was submitted without removing the non-breaking space characters from the email input (if given), which caused errors in the log files. The **Reply-To** field was also missing from the generated contact email message to the store administrator.
 
 <!--- MC-42793-->
 
-*  {{ site.data.var.ce }} now displays related products, up-sell products, and cross-sell products according to their positions in the Admin.
+*  {{ site.data.var.ee }} now displays related products, up-sell products, and cross-sell products according to their positions in the Admin.
 
 <!--- MC-42502-->
 
@@ -1407,7 +1419,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- MC-42750-->
 
-*  The Admin customer grid now displays all customer data, including newly added `date` custom attributes, as expected. Previously, {{ site.data.var.ce }} threw an error and did not display the Admin customer grid correctly when the `date` attribute set was set as a column.
+*  The Admin customer grid now displays all customer data, including newly added `date` custom attributes, as expected. Previously, {{ site.data.var.ee }} threw an error and did not display the Admin customer grid correctly when the `date` attribute set was set as a column.
 
 <!--- AC-1280-->
 
@@ -1439,7 +1451,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- magento/magento2/pull/31879-->
 
-*  {{ site.data.var.ce }} no longer displays this message after upgrade when Cookie Restriction Mode is disabled: `The store will not work correctly in the case when cookies are disabled`. [GitHub-33811](https://github.com/magento/magento2/issues/33811)
+*  {{ site.data.var.ee }} no longer displays this message after upgrade when Cookie Restriction Mode is disabled: `The store will not work correctly in the case when cookies are disabled`. [GitHub-33811](https://github.com/magento/magento2/issues/33811)
 
 ### URL rewrites
 
@@ -1490,6 +1502,8 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 ## Known issues
 
 **Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree.  When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not  editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.  <!--- BUNDLE-3088-->
+
+**Issue**: Shoppers cannot add a product to their cart when no options are selected in Admin **Store** >  **Configuration** > **General** > **Country Options** > **Allow Countries**. {{ site.data.var.ee }} instead displays this following console error: `Failed to load resource: the server responded with a status of 400 (Bad Request)`. <!--- AC-2564-->
 
 **Issue**: The description of Dotdigital on **Find Partners and Extensions** > **Magento Marketplace** is outdated. Here is an updated description:
 

@@ -50,10 +50,3 @@ pages:
   - label: Vendor Bundled Extensions (VBEs)
     url: /extensions/vendor/
     versionless: true
-    children:
-      - label: Yotpo
-        versionless: true
-        children:
-        - label: Release Notes
-          versionless: true
-          url: /extensions/vendor/yotpo/release-notes.html
