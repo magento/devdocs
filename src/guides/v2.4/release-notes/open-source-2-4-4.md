@@ -378,7 +378,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-1148-->
 
-*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
+*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_product_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
 
 ### Catalog rule
 
@@ -476,7 +476,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/34106-->
 
-*  Corrected issues with `sprintf(__())` and `sprintf(Magento\Framwork\Phrase())` construction for compatibility with PHP 8.x throughout the codebase. Previously, {{ site.data.var.ce }} threw this type of error: `Expected parameter of type 'string', 'Magento\Framework\Phrase' provided`. [GitHub-34085](https://github.com/magento/magento2/issues/34085)
+*  Corrected issues with `sprintf(__())` and `sprintf(Magento\Framework\Phrase())` construction for compatibility with PHP 8.x throughout the codebase. Previously, {{ site.data.var.ce }} threw this type of error: `Expected parameter of type 'string', 'Magento\Framework\Phrase' provided`. [GitHub-34085](https://github.com/magento/magento2/issues/34085)
 
 <!--- AC-1605-->
 
@@ -704,7 +704,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-1977-->
 
-*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` ({{ site.data.var.ce }}) to `Magento/GiftCardSampleData` ({{ site.data.var.ee }}). This has resolved problems installing Magento Open Source with sample data on PHP8.1.
+*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` ({{ site.data.var.ce }}) to `Magento/GiftCardSampleData` ({{ site.data.var.ee }}). This has resolved problems installing ({{ site.data.var.ce }}) with sample data on PHP8.1.
 
 <!--- AC-1001-->
 
