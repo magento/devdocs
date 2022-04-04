@@ -63,7 +63,7 @@ The Production and Staging environments include the following technologies. You 
 
 ### Services {#cloud-arch-services}
 
-{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch ({{site.data.var.ee}} 2.2.x and later), Redis, and RabbitMQ.
+{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch ({{site.data.var.ee}} 2.2.x and later), Opensearch 2.4.4 and later, Redis, and RabbitMQ.
 
 Each service runs in a separate, secure container. Containers are managed together in the project. Some services are standard, such as the following:
 

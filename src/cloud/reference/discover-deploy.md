@@ -159,7 +159,7 @@ When you initially set up a project from a template, we retrieve the code from [
 
 You should create a branch from `master` for your custom code, extensions and modules, and third party integrations. We provide a full Integration environment for testing your code in the cloud.
 
-When you push your code from your local workspace to the remote repository, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
+When you push your code from your local workspace to the remote repository, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an Opensearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
 
 If you have a syntax error in a configuration file, our Git server refuses the push. For details, see [Protective Block]({{ site.baseurl }}/cloud/live/live-prot.html).
 

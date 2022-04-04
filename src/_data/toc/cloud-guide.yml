@@ -445,6 +445,10 @@ pages:
               url: /cloud/project/services-elastic.html
               versionless: true
 
+            - label: Set up Opensearch service
+              url: /cloud/project/services-opensearch.html
+              versionless: true
+
             - label: Set up RabbitMQ service
               url: /cloud/project/services-rabbit.html
               versionless: true
