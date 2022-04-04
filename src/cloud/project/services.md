@@ -182,6 +182,12 @@ During the deployment process, `{{site.data.var.ct}}` checks installed service v
 
 To maintain store security, update installed software versions before they reach EOL. You can review the EOL dates in the [{{ site.data.var.ct }} `eol.yaml` file](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).
 
+### Migrate to Opensearch
+
+{%include cloud/note-elasticsearch.md%}
+
+For {{ site.data.var.ee }} version 2.4.4 and later, see [Set up Opensearch service](/cloud/project/services-opensearch.html).
+
 ## Change service version
 
 You can upgrade the installed service version for compatibility with the {{site.data.var.ee}} version deployed in your Cloud environment.

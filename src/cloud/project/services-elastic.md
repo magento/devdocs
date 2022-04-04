@@ -9,7 +9,11 @@ redirect_from:
   - /cloud/project/project-conf-files_services-elastic.html
 ---
 
-[Elasticsearch](https://www.elastic.co) is an open-source product that enables you to take data from any source, any format, and search and visualize it in real time. For {{ site.data.var.ee }} version 2.4.4 and later, see [Set up Opensearch service](/cloud/project/services-opensearch.html).
+[Elasticsearch](https://www.elastic.co) is an open-source product that enables you to take data from any source, any format, and search and visualize it in real time.
+
+{%include cloud/note-elasticsearch.md%}
+
+For {{ site.data.var.ee }} version 2.4.4 and later, see [Set up Opensearch service](/cloud/project/services-opensearch.html).
 
 -  Elasticsearch performs quick and advanced searches on products in the product catalog
 -  Elasticsearch Analyzers support multiple languages

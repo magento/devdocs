@@ -1,2 +1,2 @@
- {:.bs-callout-info}
- Beginning with {{ site.data.var.ee }} version 2.4.4, {{ site.data.var.ece }} will not support the use of Elasticsearch.
+ {:.bs-callout-warning}
+  Elasticsearch is no longer supported for {{ site.data.var.ece }}. {{ site.data.var.ee }} and {{ site.data.var.ce }} versions 2.4.4, 2.4.3-p2, and 2.3.7-p3 support the Opensearch service. The on-premises installations continue to support Elasticsearch.

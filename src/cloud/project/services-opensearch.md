@@ -9,14 +9,14 @@ functional_areas:
 
 The [Opensearch](https://www.opensearch.org) service is an open-source fork of Elasticsearch 7.10.2, following the licensing changes for Elasticsearch. See [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) for a list of supported versions.
 
+{% include cloud/note-elasticsearch.md %}
+
 Opensearch enables you to take data from any source, any format, and search and visualize it in real time.
 
 -  Quick and advanced searches on products in the product catalog
 -  Elasticsearch Analyzers support multiple languages
 -  Supports stop words and synonyms
 -  Indexing does not impact customers until the reindex operation completes
-
-{% include cloud/note-elasticsearch.md %}
 
 {% include cloud/service-config-integration-starter.md %}
 
