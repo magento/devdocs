@@ -378,7 +378,9 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-1148-->
 
-*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)### Catalog rule
+*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
+
+### Catalog rule
 
 <!--- MC-41807-->
 
