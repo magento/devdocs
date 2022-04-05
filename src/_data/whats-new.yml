@@ -6,7 +6,7 @@ link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
 updated: Mon Apr 4 14:38:38 2022
 entries:
-- description: "[Cloud Tools release 2002.1.10](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v2002110)"
+- description: [Cloud Tools release 2002.1.10](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v2002110)
   versions: 2.x
   type: Major Update
   date: March 31, 2022
