@@ -58,7 +58,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Email variable usage was deprecated back in 2.3.4 as part of a security risk mitigation in favor of a more strict variable syntax. This legacy behavior has been fully removed in this release as a continuation of that security risk mitigation.
 
-   As a result, email or newsletter templates that worked in previous versions of Magento may not work correctly after upgrading to Adobe Commerce 2.4.4 or Magento Open Source 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates]({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
+   As a result, email or newsletter templates that worked in previous versions of Magento may not work correctly after upgrading to {{ site.data.var.ee }} 2.4.4 or {{ site.data.var.ce }} 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates]({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
 
 *  Integration tokens can no longer be used for API Bearer token authentication. Previously, an integration token could be used as a standalone key for token-based authentication. However, this behavior has been disabled by default due to the security implications of a never-expiring access token. The previous behavior can be enabled through the command line or Admin. See [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html). <!--- AC-1619--->
 
@@ -446,7 +446,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1148-->
 
-*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
+*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_product_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
 
 ### Catalog rule
 
@@ -550,7 +550,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/34106-->
 
-*  Corrected issues with `sprintf(__())` and `sprintf(Magento\Framwork\Phrase())` construction for compatibility with PHP 8.x throughout the codebase. Previously, {{ site.data.var.ee }} threw this type of error: `Expected parameter of type 'string', 'Magento\Framework\Phrase' provided`. [GitHub-34085](https://github.com/magento/magento2/issues/34085)
+*  Corrected issues with `sprintf(__())` and `sprintf(Magento\Framework\Phrase())` construction for compatibility with PHP 8.x throughout the codebase. Previously, {{ site.data.var.ee }} threw this type of error: `Expected parameter of type 'string', 'Magento\Framework\Phrase' provided`. [GitHub-34085](https://github.com/magento/magento2/issues/34085)
 
 <!--- AC-1605-->
 
@@ -792,7 +792,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1977-->
 
-*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` ({{ site.data.var.ce }}) to `Magento/GiftCardSampleData` ({{ site.data.var.ee }}). This has resolved problems installing Magento Open Source with sample data on PHP8.1.
+*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` ({{ site.data.var.ce }}) to `Magento/GiftCardSampleData` ({{ site.data.var.ee }}). This has resolved problems installing ({{ site.data.var.ce }}) with sample data on PHP8.1.
 
 <!--- AC-1001-->
 

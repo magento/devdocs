@@ -58,6 +58,9 @@ pages:
         - label: Component Status
           url: /release-notes/component-status.html
 
+        - label: Adobe Commerce 2.3.7-p3 Release Notes
+          url: /release-notes/2-3-7-p3.html
+
         - label: Adobe Commerce 2.3.7-p2 Release Notes
           url: /release-notes/2-3-7-p2.html
 
