@@ -40,7 +40,7 @@ For information about quality patches created by the Community for {{site.data.v
 -  **MDVA-43232** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.5`)_-Fixes the issue where sorting products in visual merchandiser by Special Price To Bottom/Top causes an error while saving category.
 -  **MDVA-43726** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.3`)_-Fixes the issue where Catalog price rule based on store-level attribute match fails to apply after partial reindex.
 -  Updated patches: MDVA-36464, MDVA-37478, MDVA-38608.
--  Added patches metadata for SWAT tool.
+-  Added patches metadata for the Site-Wide Analysis Tool.
 
 ## v1.1.11
 
