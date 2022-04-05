@@ -1527,6 +1527,8 @@ A hot fix will be available for this issue in the near future. <!--- MCLOUD-8425
 
 **Issue**: Shoppers cannot add a product to their cart when no options are selected in Admin **Store** >  **Configuration** > **General** > **Country Options** > **Allow Countries**. {{ site.data.var.ee }} instead displays this following console error: `Failed to load resource: the server responded with a status of 400 (Bad Request)`. <!--- AC-2564-->
 
+**Issue**: The **Search by keyword** input field (**Catalog** > **Products**) does not contain an aria-label attribute as expected for accessibility. This field instead displays placeholder text.  <!--- AC-2060-->
+
 **Issue**: The description of Dotdigital on **Find Partners and Extensions** > **Magento Marketplace** is outdated. Here is an updated description:
 
 Dotdigital is a customer engagement platform that helps digital marketers and developers deliver communications across the customer journey. We harness the power of customer data, powering engagement, conversion, and loyalty for brands as they grow and scale. Customers love our easy-to-use platform that connects first party data across the systems, surfacing powerful insights and automating predictive cross-channel messages.
