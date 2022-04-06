@@ -2,6 +2,8 @@
 group: live-search
 title: Facets
 ee_only: True
+migrated to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/facets/facets.html
+layout: migrated
 ---
 
 Faceting is a high-performance filtering method that uses multiple dimensions of searchable static and dynamic attribute values as search criteria. The available facets appear in the left sidebar of search results pages, with the most commonly used facets “pinned” to the top of the list. The [`productSearch` query]({{ site.baseurl }}/live-search/product-search.html) contains an example where facets have been configured.

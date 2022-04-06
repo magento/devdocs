@@ -2,6 +2,8 @@
 group: live-search
 title: Synonyms
 ee_only: True
+migrated to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/facets/synonyms.html
+layout: migrated
 ---
 
 Synonyms expand the reach of shopper queries to include words they might use that differ from those in the catalog. Some synonyms are interchangeable, while others represent a subset of a keyword.
