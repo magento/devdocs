@@ -63,7 +63,7 @@ Attribute | Data Type | Description
 `VALUE` | String | Attribute value
 
 Type | Implements
---- | --- 
+--- | ---
 AttributeOptions | AttributeOptionsInterface
 AttributeOption | AttributeOptionInterface
 UiAttributeTypeSelect | UiInputTypeInterface, AttributeOptionsInterface, SelectableInputTypeInterface
