@@ -10,7 +10,7 @@ The `attributesMetadata` query returns metadata around product custom attributes
 
 ```json{ attributesMetadata(
       entityType: AttributeEntityTypeEnum!,
-       attributeUids:[ID!], 
+       attributeUids:[ID!],
        showSystemAttributes: Boolean):
         AttributesMetadata
 }
