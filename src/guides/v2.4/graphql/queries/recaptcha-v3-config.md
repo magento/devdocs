@@ -8,8 +8,6 @@ The `recaptchaV3Config` query returns information about the reCaptcha V3 configu
 
 ## Syntax
 
-Return metadata for custom attributes:
-
 `{recaptchaV3Config {ReCaptchaConfigurationV3}}`
 
 ## Example usage
@@ -62,9 +60,10 @@ None
 ## Output attributes
 
 Attribute | Data Type | Description
-`website_key` | String! | The website key generated when the Google reCAPTCHA account was registered
-`minimum_score` | Float! | The minimum score that identifies a user interaction as a potential risk
-`badge_position` | String! | The position of the invisible reCAPTCHA badge on each page
-`language_code` | String | A two-character code that specifies the language that is used for Google reCAPTCHA text and messaging
-`failure_message` | String! | The message that appears to the user if validation fails
-`forms` | [ReCaptchaFormEnum!]! | A list of forms on the storefront that have been configured to use reCAPTCHA V3
+--- | --- | ---
+`BADGE_POSITION` | String! | The position of the invisible reCAPTCHA badge on each page
+`FAILURE_MESSAGE` | String! | The message that appears to the user if validation fails
+`FORMS` | [ReCaptchaFormEnum!]! | A list of forms on the storefront that have been configured to use reCAPTCHA V3
+`LANGUAGE_CODE` | String | A two-character code that specifies the language that is used for Google reCAPTCHA text and messaging
+`MINIMUM_SCORE` | Float! | The minimum score that identifies a user interaction as a potential risk
+`WEBSITE_KEY` | String! | The website key generated when the Google reCAPTCHA account was registered

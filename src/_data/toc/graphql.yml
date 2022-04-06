@@ -686,15 +686,7 @@ pages:
           exclude_versions: ["2.3"]
 
     - label: Interfaces
-      children:
-        - label: AttributeMetadata
-          url: /graphql/interfaces/attribute-metadata.html
-          edition: pwa-only
-
-        - label: PWA implementations
-          url: /graphql/interfaces/pwa-implementations.html
-          edition: pwa-only
-        
+      children:        
         - label: Product interface implementations
           url: /graphql/interfaces/product-interface-implementations.html
 
@@ -727,6 +719,14 @@ pages:
 
         - label: Virtual product data types
           url: /graphql/interfaces/virtual-product.html
+
+        - label: AttributeMetadata
+          url: /graphql/interfaces/attribute-metadata.html
+          edition: pwa-only
+
+        - label: PWA implementations
+          url: /graphql/interfaces/pwa-implementations.html
+          edition: pwa-only
 
         - label: CartItemInterface attributes and implementations
           url: /graphql/interfaces/cart-item-interface.html

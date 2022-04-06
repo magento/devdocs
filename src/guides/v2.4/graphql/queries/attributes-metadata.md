@@ -4,13 +4,17 @@ title: attributesMetadata query
 pwa_only: True
 ---
 
-The `attributesMetadata` query returns information about any product custom attributes.
+The `attributesMetadata` query returns metadata around product custom attributes.
 
 ## Syntax
 
-Return metadata for custom attributes:
-
-`{attributesMetadata(entityType attributeUids showSystemAttributes)}`
+```json{ attributesMetadata(
+      entityType: AttributeEntityTypeEnum!,
+       attributeUids:[ID!], 
+       showSystemAttributes: Boolean):
+        AttributesMetadata
+}
+```
 
 ## Example usage
 
@@ -89,16 +93,17 @@ Return metadata for custom attributes:
               }
             ]
           }
+        }
 ```
 
 ## Input attributes
 
 Attribute | Data type | Description
 --- | --- | ---
-`entityType` | AttributeEntityTypeEnum! | The type of entity to search
-`attributeUids` | [ID!] | An array of attribute IDs to search
-`showSystemAttributes` | Boolean | Indicates whether to also return matching system attributes
+`ATTRIBUTEUIDS` | [ID!] | An array of attribute IDs to search
+`ENTITYTYPE` | AttributeEntityTypeEnum! | The type of entity to search
+`SHOWSYSTEMATTRIBUTES` | Boolean | Indicates whether to also return matching system attributes
 
 ## Output attributes
 
-The `AttributesMetadata` returns details about custom EAV attributes, and optionally, system attributes.
+{% include graphql/attribute-metadata.md %}
