@@ -11,4 +11,3 @@ Attribute | Type | Description
 `SORT_ORDER` | Int | The relative position of the attribute
 `UID` | ID | The unique ID of an attribute
 `UI_INPUT` | UiInputTypeInterface | Frontend UI properties of the attribute
-
