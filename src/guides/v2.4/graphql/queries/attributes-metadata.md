@@ -100,9 +100,9 @@ The `attributesMetadata` query returns metadata around product custom attributes
 
 Attribute | Data type | Description
 --- | --- | ---
-`ATTRIBUTEUIDS` | [ID!] | An array of attribute IDs to search
-`ENTITYTYPE` | AttributeEntityTypeEnum! | The type of entity to search
-`SHOWSYSTEMATTRIBUTES` | Boolean | Indicates whether to also return matching system attributes
+`attributeuids` | [ID!] | An array of attribute IDs to search
+`entitytype` | AttributeEntityTypeEnum! | The type of entity to search
+`showsystemattributes` | Boolean | Indicates whether to also return matching system attributes
 
 ## Output attributes
 

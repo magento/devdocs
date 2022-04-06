@@ -12,26 +12,26 @@ pwa_only: True
 
 Attribute | Data Type | Description
 --- | --- | ---
-`USED_IN_COMPONENTS` | [CustomAttributesListsEnum!] | Places in the store front where the attribute is used
+`used_in_components` | [CustomAttributesListsEnum!] | Places in the store front where the attribute is used
 
 ### UiInputTypeInterface
 
 Attribute | Data Type | Description
 --- | --- | ---
-`IS_HTML_ALLOWED` | Boolean | Indicates whether the attribute value is allowed to have html content
-`UI_INPUT_TYPE` | UiInputTypeEnum | The frontend input type of the attribute
+`is_html_allowed` | Boolean | Indicates whether the attribute value is allowed to have html content
+`ui_input_type` | UiInputTypeEnum | The frontend input type of the attribute
 
 ### AttributeOptionsInterface
 
 Attribute | Data Type | Description
 --- | --- | ---
-`ATTRIBUTE_OPTIONS`| [AttributeOptionInterface] | An array of attribute options
+`attribute_options`| [AttributeOptionInterface] | An array of attribute options
 
 ### SelectableInputTypeInterface
 
 Attribute | Data Type | Description
 --- | --- | ---
-`ATTRIBUTE_OPTIONS` | [AttributeOptionInterface] | An array of attribute options
+`attribute_options` | [AttributeOptionInterface] | An array of attribute options
 
 ## Types
 
@@ -39,28 +39,28 @@ Attribute | Data Type | Description
 
 Attribute | Data Type | Description
 --- | --- | ---
-`STORE_CODE`| String | The assigned store code
-`LABEL`| String | The label assigned to the attribute
+`store_code`| String | The assigned store code
+`label`| String | The label assigned to the attribute
 
 ### CustomAttribute
 
 Attribute | Data Type | Description
 --- | --- | ---
-`ATTRIBUTE_METADATA` | AttributeMetadataInterface | Attribute metadata details
-`ENTERED_ATTRIBUTE_VALUE` | EnteredAttributeValue | Attribute value represented as entered data using input type like text field
-`SELECTED_ATTRIBUTE_OPTIONS` | SelectedAttributeOption | Attribute value represented as selected options using input type like select
+`attribute_metadata` | AttributeMetadataInterface | Attribute metadata details
+`entered_attribute_value` | EnteredAttributeValue | Attribute value represented as entered data using input type like text field
+`selected_attribute_options` | SelectedAttributeOption | Attribute value represented as selected options using input type like select
 
 ### SelectedAttributeOption
 
 Attribute | Data Type | Description
 --- | --- | ---
-`ATTRIBUTE_OPTION` | [AttributeOptionInterface!] | Selected attribute option details
+`attribute_option` | [AttributeOptionInterface!] | Selected attribute option details
 
 ### EnteredAttributeValue
 
 Attribute | Data Type | Description
 --- | --- | ---
-`VALUE` | String | Attribute value
+`value` | String | Attribute value
 
 Type | Implements
 --- | ---
