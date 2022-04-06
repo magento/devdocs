@@ -2,7 +2,7 @@
 group: live-search
 title: Synonyms
 ee_only: True
-migrated to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/facets/synonyms.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/facets/synonyms.html
 layout: migrated
 ---
 
