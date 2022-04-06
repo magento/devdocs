@@ -2,7 +2,7 @@
 group: live-search
 title: Rules
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/facets/rules.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/rules/rules.html
 layout: migrated
 ---
 
