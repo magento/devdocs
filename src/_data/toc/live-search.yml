@@ -4,6 +4,26 @@ pages:
   url: /live-search/overview.html
   versionless: true
 
+- label: Storefront Popover
+  url: /live-search/storefront-popover.html
+  versionless: true
+
+- label: Facets
+  url: /live-search/facets.html
+  versionless: true
+
+- label: Synonyms
+  url: /live-search/synonyms.html
+  versionless: true
+
+- label: Rules
+  url: /live-search/rules.html
+  versionless: true
+
+- label: Indexing
+  url: /live-search/indexing.html
+  versionless: true
+
 - label: GraphQL
   children:
     - label: GraphQL Support
