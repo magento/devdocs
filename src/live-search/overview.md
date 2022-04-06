@@ -4,13 +4,12 @@ title: Live Search
 ee_only: True
 ---
 
-Live Search powered by [Adobe Sensei](https://www.adobe.com/sensei.html) delivers a lightning fast, super relevant, and intuitive search experience for the storefront.
+Live Search powered by [Adobe Sensei](https://www.adobe.com/sensei.html) delivers a lightning fast, super relevant, and intuitive search experience for the storefront. Live Search is available for {{site.data.var.ee}} at no additional charge.
 
 For merchants, this robust and highly customizable solution features multidimensional, [faceted search](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/facets/facets.html) with [synonyms](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/synonyms/synonyms.html) and merchandising [rules](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/rules/rules.html) that make it easy to add conditions that trigger events that boost or bury products on schedule.
 
-In the storefront, a search-as-you-type [popover](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-storefront/storefront-popover.html) replaces the standard quick Search box for stores that use the Luma theme or a derivative.
+In the storefront, a search-as-you-type [popover](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-storefront/storefront-popover.html) replaces the standard quick Search box for stores that use the Luma theme or a derivative theme.
 
-Live Search is available for {{site.data.var.ee}} at no additional charge.
 
 ## Architectural overview
 
