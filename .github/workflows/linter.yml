@@ -55,12 +55,20 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
-        uses: github/super-linter@v4.9.2
+        uses: github/super-linter/slim@v4.9.2
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
-          VALIDATE_HTML: false
-          VALIDATE_JSCPD: false
-          VALIDATE_OPENAPI: false
+          VALIDATE_BASH: true
+          VALIDATE_BASH_EXEC: true
+          VALIDATE_CSS: true
+          VALIDATE_DOCKERFILE_HADOLINT: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_GITLEAKS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          VALIDATE_MARKDOWN: true
           MARKDOWN_CONFIG_FILE: .markdownlint.json
-          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_RUBY: true
+          VALIDATE_SHELL_SHFMT: true
+          VALIDATE_YAML: true
