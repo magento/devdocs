@@ -10,7 +10,6 @@ For merchants, this robust and highly customizable solution features multidimens
 
 In the storefront, a search-as-you-type [popover](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-storefront/storefront-popover.html) replaces the standard quick Search box for stores that use the Luma theme or a derivative theme.
 
-
 ## Architectural overview
 
 Live Search is deployed as a service. The {{site.data.var.ee}} side of the architecture includes hosting the search Admin, syncing catalog data, and running the query service.
