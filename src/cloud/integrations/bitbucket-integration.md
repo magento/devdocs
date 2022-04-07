@@ -178,7 +178,7 @@ In order to communicate events—such as a push—with your Cloud Git server, is
 
 ### Test the integration
 
-After configuring the Bitbucket integration, you can verify the integration using the `magento-cloud` CLI:
+After configuring the Bitbucket integration, you can verify the integration is operational using the `magento-cloud` CLI:
 
 ```bash
 magento-cloud integration:validate
