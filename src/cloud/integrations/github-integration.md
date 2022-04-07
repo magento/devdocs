@@ -12,7 +12,7 @@ The GitHub integration enables you to manage your {{site.data.var.ece}} environm
 
 This integration enables you to:
 
--  Create a new environment when you create a branch
+-  Create an environment when you create a branch
 -  Redeploy the environment when you merge a pull request
 -  Delete the environment when you delete the branch
 
@@ -24,7 +24,7 @@ You must be a member of a group with write-access to the GitHub repository, so t
 
 ## Prepare your repository
 
-You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty GitHub repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
+Clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty GitHub repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
 
 1. From the terminal, log in to your {{site.data.var.ece}} project.
 
@@ -50,11 +50,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
    git remote add origin git@github.com:<user-name>/<repo-name>.git
    ```
 
-1. Delete the default `magento` remote.
-
-   ```bash
-   git remote remove magento
-   ```
+   The default name for the remote connection may be `origin` or `magento`. If `origin` exists, you can choose a different name or you can rename or delete the existing reference. See [git-remote documentation](https://git-scm.com/docs/git-remote).
 
 1. Verify that you added the GitHub remote correctly.
 
@@ -112,7 +108,7 @@ To enable the GitHub integration:
    **Example 2**: Enable the GitHub integration for an organization repository:
 
    ```bash
-   magento-cloud integration:add --type=github --project=ov58dlacU2e --token=<token> --repository=Magento/teamrepo
+   magento-cloud integration:add --type=github --project=<project-id> --token=<token> --repository=Magento/teamrepo
    ```
 
 1. Enter the required information when prompted.
@@ -124,13 +120,13 @@ To enable the GitHub integration:
    Repository: myUserName/myrepo
    Build PRs: yes
    Fetch branches: yes
-   Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
+   Payload URL: https://us.magento.cloud/api/projects/<project-id>/integrations/wO8a0eoamxwcg/hook
    ```
    {:.no-copy}
 
 ## Add the webhook in GitHub
 
-In order to communicate events—such as a push—with your Cloud Git server, you need to create a webhook for your GitHub repository:
+In order to communicate events—such as a push—with your Cloud Git server, you must create a webhook for your GitHub repository:
 
 1. In your GitHub repository, click the **Settings** tab.
 
@@ -150,18 +146,38 @@ In order to communicate events—such as a push—with your Cloud Git server, yo
 
 ## Test the integration
 
-To verify the integration works, make a change in the GitHub repository and use the magento-cloud CLI to pull the change into the local environment.
+After configuring the GitHub integration, you can verify the integration using the magento-cloud CLI:
+
+```bash
+magento-cloud integration:validate
+```
+
+Or you can test it by pushing a simple change to your GitHub repository.
+
+1. Create a test file.
+
+   ```bash
+   touch test.md
+   ```
+
+1. Commit and push the change to your GitHub repository.
+
+   ```bash
+   git add . && git commit -m "Testing GitHub integration" && git push
+   ```
+
+1. Log in to the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project deploying.
 
 ## Remove the integration
 
-You can safely remove the Github integration from your project without affecting your code.
+You can safely remove the GitHub integration from your project without affecting your code.
 
 {:.procedure}
-To remove the Github integration:
+To remove the GitHub integration:
 
 1. From the terminal, log in to your {{site.data.var.ece}} project.
 
-1. List your integrations. You need the Github integration ID to complete the next step.
+1. List your integrations. You need the GitHub integration ID to complete the next step.
 
    ```bash
    magento-cloud integration:list
@@ -173,4 +189,4 @@ To remove the Github integration:
    magento-cloud integration:delete <project-ID>
    ```
 
-Also, you can remove the Github integration by logging in to your Github account and removing the web hook in the _Webhooks_ tab of the repository _Settings_.
+Also, you can remove the GitHub integration by logging in to your GitHub account and removing the web hook in the _Webhooks_ tab of the repository _Settings_.
