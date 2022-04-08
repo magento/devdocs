@@ -53,7 +53,7 @@ Several product types support customization. Use the following attributes to ide
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`customizable_option_uid` | ID! | The unique ID for a specific `CustomizableOptionInterface` object, such as a `CustomizableFieldOption`, `customizablefileoption`,  or `CustomizableAreaOption` object
+`customizable_option_uid` | ID! | The unique ID for a specific `CustomizableOptionInterface` object, such as a `CustomizableFieldOption`, `CustomizableFileOption`,  or `CustomizableAreaOption` object
 `id` | Int! | Deprecated. Use `customizable_option_uid` instead
 `is_required` | Boolean! | Indicates whether the customizable option is required
 `label` | String! | The display name of the selected customizable option

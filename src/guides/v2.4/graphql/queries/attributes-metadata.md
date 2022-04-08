@@ -8,7 +8,8 @@ The `attributesMetadata` query returns metadata around product custom attributes
 
 ## Syntax
 
-```json{ attributesMetadata(
+```json
+{ attributesMetadata(
       entityType: AttributeEntityTypeEnum!,
        attributeUids:[ID!],
        showSystemAttributes: Boolean):
@@ -21,7 +22,8 @@ The `attributesMetadata` query returns metadata around product custom attributes
 **Request:**
 
 ```graphql
-{attributesMetadata(
+{
+attributesMetadata(
     entityType: PRODUCT
   ) {
     items {
@@ -47,7 +49,8 @@ The `attributesMetadata` query returns metadata around product custom attributes
       uid
       __typename
     }
-  }}
+  }
+}
 ```
 
 **Response:**
@@ -100,9 +103,9 @@ The `attributesMetadata` query returns metadata around product custom attributes
 
 Attribute | Data type | Description
 --- | --- | ---
-`attributeuids` | [ID!] | An array of attribute IDs to search
-`entitytype` | AttributeEntityTypeEnum! | The type of entity to search
-`showsystemattributes` | Boolean | Indicates whether to also return matching system attributes
+`attributeUids` | [ID!] | An array of attribute IDs to search
+`entityType` | AttributeEntityTypeEnum! | The type of entity to search
+`showSystemAttributes` | Boolean | Indicates whether to also return matching system attributes
 
 ## Output attributes
 
