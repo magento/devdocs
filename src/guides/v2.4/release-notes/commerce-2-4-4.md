@@ -1079,7 +1079,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41981-->
 
-*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admins. Previously, {{ site.data.var.ee }} threw an error and did not process the re-order.
+*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admin. Previously, {{ site.data.var.ee }} threw an error and did not process the re-order.
 
 <!--- MC-42746-->
 
@@ -1094,6 +1094,10 @@ Repetitive actions have been replaced with action groups in these tests:
 *  Administrators with restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ee }} threw an error when an administrator with these permissions tried to view an order. [GitHub-14633](https://github.com/magento/magento2/issues/14633)
 
 ### Payment methods
+
+<!--- AC-1830-->
+
+*  Shoppers can now use Braintree to place an order using a billing address without a set region in deployments with 3DS enabled. Previously, checkout froze when the shopper clicked **Place order**, and the purchase could not be completed. [GitHub-34204](https://github.com/magento/magento2/issues/34204)
 
  <!--- AC-1229-->
 
@@ -1518,10 +1522,6 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 *  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ee }} ignored this option.
 
 ## Known issues
-
-**Issue**: The New Relic PHP extension is not currently available for PHP 8.1. As a result, merchants cannot currently access New Relic using the command-line interface (CLI). Adobe Commerce displays this message: `PHP Warning:  PHP Startup: Unable to load dynamic library 'newrelic.so' (tried: /usr/lib/php/20210902-zts/newrelic.so (/usr/lib/php/20210902-zts/newrelic.so: cannot open shared object file: No such file or directory), /usr/lib/php/20210902-zts/newrelic.so.so (/usr/lib/php/20210902-zts/newrelic.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0`.
-
-A hot fix will be available for this issue in the near future. <!--- MCLOUD-8425-->
 
 **Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree. When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not  editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.  <!--- BUNDLE-3088-->
 

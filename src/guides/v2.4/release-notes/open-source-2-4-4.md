@@ -967,7 +967,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41981-->
 
-*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admins. Previously, {{ site.data.var.ce }} threw an error and did not process the re-order.
+*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admin. Previously, {{ site.data.var.ce }} threw an error and did not process the re-order.
 
 <!--- MC-42332-->
 
@@ -979,7 +979,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ### Payment methods
 
- <!--- AC-1229-->
+<!--- AC-1830-->
+
+*  Shoppers can now use Braintree to place an order using a billing address without a set region in deployments with 3DS enabled. Previously, checkout froze when the shopper clicked **Place order**, and the purchase could not be completed. [GitHub-34204](https://github.com/magento/magento2/issues/34204)
+
+<!--- AC-1229-->
 
 *  The Venmo payment option is now supported.
 
