@@ -979,7 +979,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ### Payment methods
 
- <!--- AC-1229-->
+<!--- AC-1830-->
+
+*  Shoppers can now use Braintree to place an order using a billing address without a set region in deployments with 3DS enabled. Previously, checkout froze when the shopper clicked **Place order**, and the purchase could not be completed. [GitHub-34204](https://github.com/magento/magento2/issues/34204)
+
+<!--- AC-1229-->
 
 *  The Venmo payment option is now supported.
 
