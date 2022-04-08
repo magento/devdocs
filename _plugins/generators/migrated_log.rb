@@ -25,7 +25,14 @@ module Jekyll
           title: page.data['title'],
           guide: @site.data['toc'][page.data['group']]['label'],
           migrated_from: url_prefix + page.url,
-          migrated_to: page.data['migrated_to']
+          migrated_to: page.data['migrated_to'],
+          migrated_to_source: if page.data['migrated_to'].start_with?('https://experienceleague.adobe.com')
+                                'Adobe Experience League'
+                              elsif page.data['migrated_to'].start_with?('https://developer.adobe.com')
+                                'Adobe Developer'
+                              else
+                                abort "Error in '#{page.path}'.\nThe 'migrated_to' parameter in the front matter points to the wrong domain: #{page.data['migrated_to']}.\nShould be 'https://experienceleague.adobe.com' or 'https://developer.adobe.com'".red
+                              end
         }
         migrated_pages_data << migrated_page
       end
@@ -37,7 +44,7 @@ module Jekyll
         content += "\n## #{guide}\n\n\n"
         topics.sort_by { |topic| topic[:title] }
               .each do |topic|
-          content += "1. [#{topic[:title]}](#{topic[:migrated_from]}) has moved to <#{topic[:migrated_to]}>\n"
+          content += "1. [#{topic[:title]}](#{topic[:migrated_from]}) has moved to [#{topic[:migrated_to_source]}](#{topic[:migrated_to]})\n"
         end
       end
 
