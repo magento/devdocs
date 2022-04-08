@@ -22,7 +22,6 @@ query {
     minimum_score
     website_key
     badge_position
-    language_code
     failure_message
     forms
   }
@@ -38,7 +37,6 @@ query {
       "minimum_score": 0.5,
       "website_key": "<key-value>",
       "badge_position": "inline",
-      "language_code": "",
       "failure_message": "reCAPTCHA verification failed.",
       "forms": [
         "PLACE_ORDER",

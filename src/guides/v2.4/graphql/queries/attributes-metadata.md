@@ -4,15 +4,15 @@ title: attributesMetadata query
 pwa_only: True
 ---
 
-The `attributesMetadata` query returns metadata around product custom attributes.
+In the admin, custom attributes are defined on the store level, rather than with the product. The `attributesMetadata` query returns these custom product attributes.
 
 ## Syntax
 
 ```json
 { attributesMetadata(
       entityType: AttributeEntityTypeEnum!,
-       attributeUids:[ID!],
-       showSystemAttributes: Boolean):
+      attributeUids:[ID!],
+      showSystemAttributes: Boolean):
         AttributesMetadata
 }
 ```

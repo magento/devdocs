@@ -8,7 +8,7 @@ pwa_only: True
 
 ### ProductAttributeMetadata
 
-`ProductAttributeMetadata` implements `AttributeMetadataInterface`.
+`ProductAttributeMetadata` implements [`AttributeMetadataInterface`]({{ page.baseurl }}/graphql/interfaces/attribute-metadata.html).
 
 Attribute | Data Type | Description
 --- | --- | ---
@@ -39,8 +39,8 @@ Attribute | Data Type | Description
 
 Attribute | Data Type | Description
 --- | --- | ---
-`store_code`| String | The assigned store code
 `label`| String | The label assigned to the attribute
+`store_code`| String | The assigned store code
 
 ### CustomAttribute
 
