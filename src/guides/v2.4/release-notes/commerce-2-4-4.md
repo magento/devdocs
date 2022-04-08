@@ -1079,7 +1079,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41981-->
 
-*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admins. Previously, {{ site.data.var.ee }} threw an error and did not process the re-order.
+*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admin. Previously, {{ site.data.var.ee }} threw an error and did not process the re-order.
 
 <!--- MC-42746-->
 
