@@ -20,6 +20,14 @@ Although code for these features is bundled with quarterly releases of the {{ si
 {:.bs-callout-info}
 All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ce }} 2.4.4.
 
+### Hotfixes included in this release
+
+{{ site.data.var.ce }} 2.4.4 includes resolution of all issues that were addressed by the following hotfixes, which were provided for {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.3, 2.4.3-p1, and 2.3.7-p2:
+
+*  The vulnerability addressed by `MDVA-43395_EE_2.4.3-p1_COMPOSER_v1.patch` and `MDVA-43443_EE_2.4.3-p1_COMPOSER_v1.patch` has been resolved in this release.
+
+*  `AC-384_Fix_Incompatible_PHP_Method__2.4.3_ce.patch`. This patch addresses a fatal PHP error that occurred during upgrade. See the [Adobe Commerce upgrade 2.4.3, 2.3.7-p1 PHP Fatal error Hotfix](https://support.magento.com/hc/en-us/articles/4408021533069-Adobe-Commerce-upgrade-2-4-3-2-3-7-p1-PHP-Fatal-error-Hotfix) Knowledge Base article.
+
 ## {{ site.data.var.ce }} 2.4.4 highlights
 
 Look for the following highlights in this release.
@@ -41,6 +49,10 @@ See [Adobe Security Bulletin](https://helpx.adobe.com/security.html) for the lat
 #### Additional security enhancements
 
 Security improvements for this release improve compliance with the latest security best practices, including:
+
+*  Email variable usage was deprecated back in 2.3.4 as part of a security risk mitigation in favor of a more strict variable syntax. This legacy behavior has been fully removed in this release as a continuation of that security risk mitigation.
+
+   As a result, email or newsletter templates that worked in previous versions of Magento may not work correctly after upgrading to {{ site.data.var.ee }} 2.4.4 or {{ site.data.var.ce }} 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates]({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
 
 *  Integration tokens can no longer be used for API Bearer token authentication. Previously, an integration token could be used as a standalone key for token-based authentication. However, this behavior has been disabled by default due to the security implications of a never-expiring access token. The previous behavior can be enabled through the command line or Admin. See [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html). <!--- AC-1619--->
 
@@ -366,7 +378,9 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-1148-->
 
-*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_produdct_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)### Catalog rule
+*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_product_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
+
+### Catalog rule
 
 <!--- MC-41807-->
 
@@ -462,7 +476,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/34106-->
 
-*  Corrected issues with `sprintf(__())` and `sprintf(Magento\Framwork\Phrase())` construction for compatibility with PHP 8.x throughout the codebase. Previously, {{ site.data.var.ce }} threw this type of error: `Expected parameter of type 'string', 'Magento\Framework\Phrase' provided`. [GitHub-34085](https://github.com/magento/magento2/issues/34085)
+*  Corrected issues with `sprintf(__())` and `sprintf(Magento\Framework\Phrase())` construction for compatibility with PHP 8.x throughout the codebase. Previously, {{ site.data.var.ce }} threw this type of error: `Expected parameter of type 'string', 'Magento\Framework\Phrase' provided`. [GitHub-34085](https://github.com/magento/magento2/issues/34085)
 
 <!--- AC-1605-->
 
@@ -690,7 +704,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-1977-->
 
-*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` ({{ site.data.var.ce }}) to `Magento/GiftCardSampleData` ({{ site.data.var.ee }}). This has resolved problems installing Magento Open Source with sample data on PHP8.1.
+*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` ({{ site.data.var.ce }}) to `Magento/GiftCardSampleData` ({{ site.data.var.ee }}). This has resolved problems installing ({{ site.data.var.ce }}) with sample data on PHP8.1.
 
 <!--- AC-1001-->
 
@@ -953,7 +967,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41981-->
 
-*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admins. Previously, {{ site.data.var.ce }} threw an error and did not process the re-order.
+*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admin. Previously, {{ site.data.var.ce }} threw an error and did not process the re-order.
 
 <!--- MC-42332-->
 
@@ -965,7 +979,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ### Payment methods
 
- <!--- AC-1229-->
+<!--- AC-1830-->
+
+*  Shoppers can now use Braintree to place an order using a billing address without a set region in deployments with 3DS enabled. Previously, checkout froze when the shopper clicked **Place order**, and the purchase could not be completed. [GitHub-34204](https://github.com/magento/magento2/issues/34204)
+
+<!--- AC-1229-->
 
 *  The Venmo payment option is now supported.
 

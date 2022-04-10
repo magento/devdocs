@@ -26,10 +26,12 @@ module Jekyll
           guide: @site.data['toc'][page.data['group']]['label'],
           migrated_from: url_prefix + page.url,
           migrated_to: page.data['migrated_to'],
-          migrated_to_source: if page.data['migrated_to'].include?('experienceleague.adobe.com')
+          migrated_to_source: if page.data['migrated_to'].start_with?('https://experienceleague.adobe.com')
                                 'Adobe Experience League'
-                              elsif page.data['migrated_to'].include?('developer.adobe.com')
+                              elsif page.data['migrated_to'].start_with?('https://developer.adobe.com')
                                 'Adobe Developer'
+                              else
+                                abort "Error in '#{page.path}'.\nThe 'migrated_to' parameter in the front matter points to the wrong domain: #{page.data['migrated_to']}.\nShould be 'https://experienceleague.adobe.com' or 'https://developer.adobe.com'".red
                               end
         }
         migrated_pages_data << migrated_page

@@ -4,8 +4,19 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Mar 28 14:44:53 2022
+updated: Mon Apr 4 14:38:38 2022
 entries:
+- description: "[Cloud Tools release 2002.1.10](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v2002110)"
+  versions: 2.x
+  type: Major Update
+  date: March 31, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2874
+  merge_commit: 2c247451904438aee97c084ceb2550f8c663380f
+  contributor: BaDos
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
 - description: Added the new [Varnish ESI Block](https://devdocs.magento.com/guides/v2.4/config-guide/varnish/use-varnish-esi.html)
     topic.
   versions: 2.3.x, 2.4.x
