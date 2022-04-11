@@ -91,13 +91,13 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 -  `<your-GitLab-token>`—The personal access token you generated for GitLab
 -  `--base-url`-URL of GitLab (https://gitlab.com/ if GitLab is used in its SaaS version)
 -  `--server-project`-Project name in GitLab (part after the base url)
--  `--build-merge-requests`-—An _optional_ parameter that instructs {{site.data.var.ece}} to build a new environment for every merge requests (`true` by default)
+-  `--build-merge-requests`-—An _optional_ parameter that instructs {{site.data.var.ece}} to build a new environment for every merge request (`true` by default)
 -  `--merge-requests-clone-parent-data`-—An _optional_ parameter that instructs {{site.data.var.ece}} to clone the parent environment's data for merge requests (`true` by default)
 -  `--fetch-branches`—An _optional_ parameter that causes {{site.data.var.ece}} to fetch all branches from the remote (as inactive environments) (`true` by default)
 -  `--prune-branches`—An _optional_ parameter that instructs {{site.data.var.ece}} to delete branches that do not exist on the remote (`true` by default)
 
 {:.bs-callout-warning}
-The `magento-cloud integration` command overwrites *_all_* code in your {{site.data.var.ece}} project with the code from your GitLab repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is important to clone all of your branches from your {{site.data.var.ece}} project and push them to your GitLab repository before adding the GitLab integration.
+The `magento-cloud integration` command overwrites *_all_* code in your {{site.data.var.ece}} project with the code from your GitLab repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is very important to clone all of your branches from your {{site.data.var.ece}} project and push them to your GitLab repository before adding the GitLab integration.
 
 {:.procedure}
 To enable the GitLab integration:
