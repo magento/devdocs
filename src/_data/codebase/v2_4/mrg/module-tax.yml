@@ -1,6 +1,5 @@
 ---
 title: Tax
-release: 2.4.3
 content: |-
   ## Purpose of module
   The Magento_Tax module provides the calculations needed to compute the consumption tax on goods and services.

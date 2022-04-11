@@ -1,0 +1,12 @@
+---
+title: AsyncOrder
+content: "The _AsyncOrder_ module enables asynchronous order placement, which marks
+  the order as `received`, places it in a queue, and processes it in a first-in-first-out
+  basis.\n\nAsyncOrder values:\n\n-  `0` — (_Default value_) Disable the AsyncOrder
+  module and use the standard synchronous order placement. \n-  `1` — Enable the AsyncOrder
+  module for asynchronous order placement.\n\nTo enable AsyncOrder, set the `checkout/async`
+  variable in the `env.php` file. For example:\n\n```php\n<?php\n      'checkout'
+  => [\n               'async' => 1\n       ]\n```\n\nAlternatively, you can set the
+  variable using the command-line interface:\n\n```bash\nbin/magento setup:config:set
+  --checkout-async 1\n```\n\nBefore disabling the AsyncOrder module, you must verify
+  that all asynchronous order processes are complete."

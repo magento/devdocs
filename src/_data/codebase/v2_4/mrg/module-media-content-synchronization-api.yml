@@ -1,6 +1,5 @@
 ---
 title: MediaContentSynchronizationApi
-release: 2.4.3
 content: |-
   The Magento_MediaContentSynchronizationApi module is responsible for the media gallery data synchronization implementation API.
 

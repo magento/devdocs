@@ -1,6 +1,5 @@
 ---
 title: ScalableOms
-release: 2.4.3
 content: |-
   Magento\ScalableOms (Order Management System) module provides ability for system extension
   (Sales can be configured to work with separate database).

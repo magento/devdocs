@@ -1,6 +1,5 @@
 ---
 title: PurchaseOrder
-release: 2.4.3
 content: "​\n## Overview\n​\nThe PurchaseOrder module contains functionality for creating
   purchase orders in a B2B environment. When enabled, all orders created within the
   company will be created as purchase orders.  This allows B2B users to enforce purchasing

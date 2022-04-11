@@ -1,6 +1,5 @@
 ---
 title: InventoryLowQuantityNotification
-release: 2.4.3
 content: |-
   The `InventoryLowQuantityNotification` module integrates Inventory Management business logic into Magento's low quantity notification logic.
 

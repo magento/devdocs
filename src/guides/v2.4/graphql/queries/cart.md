@@ -657,7 +657,7 @@ Attribute |  Data Type | Description
 `postcode` | String | The postal code for the billing address
 `region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
 `street` | [String!]! | The street for the billing address
-`telephone` | String! | The telephone number for the billing address
+`telephone` | String | The telephone number for the billing address
 
 ### CartAddressRegion object {#CartAddressRegion}
 

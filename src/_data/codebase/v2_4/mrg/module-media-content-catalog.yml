@@ -1,6 +1,5 @@
 ---
 title: MediaContentCatalog
-release: 2.4.3
 content: |-
   The Magento_MediaContentCatalog provides the implementation of MediaContent functionality for Magento_Catalog module
 

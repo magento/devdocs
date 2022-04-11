@@ -1,6 +1,5 @@
 ---
 title: GiftCardRequisitionList
-release: 2.4.3
 content: |-
   The Magento_GiftCardRequisitionList module enables gift cards to be displayed in a requisition list in an B2B environment. This module extends Magento_RequisitionList and Magento_GiftCard modules.
 

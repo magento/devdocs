@@ -1,6 +1,5 @@
 ---
 title: WebapiSecurity
-release: 2.4.3
 content: |-
   The Magento_WebapiSecurity module enables access management of some Web API resources.
 

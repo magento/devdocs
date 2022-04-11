@@ -1,5 +1,4 @@
 ---
 title: GroupedCatalogInventory
-release: 2.4.3
 content: Magento_GroupedCatalogInventory contains behavior related to the inventory
   status of items within grouped products.

@@ -1,5 +1,4 @@
 ---
 title: UrlRewrite
-release: 2.4.3
 content: Magento_UrlRewrite module provides ability to customize website URLs by creating
   custom URL rewrite rules.

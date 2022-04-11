@@ -1,6 +1,5 @@
 ---
 title: InventoryInStorePickupSales
-release: 2.4.3
 content: |-
   The `InventoryInStorePickupSales` module provides business logic for In-Store Pickup functionality related to Sales operations.
 
