@@ -19,6 +19,265 @@ entries:
   - Major Update
   - 2.3.x
   - 2.4.x
+- description: Added a new topic to the _Performance Best Practices_ guide titled
+    [High-throughput Order Processing](https://devdocs.magento.com/guides/v2.4/performance-best-practices/high-throughput-order-processing.html),
+    which describes how you can improve performance by optimizing the order placement
+    and checkout experience.
+  versions: 2.4.4
+  type: New Topic
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2703
+  merge_commit: 3df07dbfdac714fe121630c041191bb4f8fa94ff
+  contributor: hguthrie
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.4
+- description: Updated [Protected endpoints](https://devdocs.magento.com/guides/v2.4/rest/protected-endpoints.html)
+    and [Protected mutations](https://devdocs.magento.com/guides/v2.4/graphql/protected-mutations.html)
+    to include reCAPTCHA support for coupon codes.
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2786
+  merge_commit: e2840a9ee5ac9be63bfe85a6d132067f02e290ea
+  contributor: nathanjosiah
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added mechanisms for limiting the size and number of resources that
+    a user can request through a web API on a systemwide basis, and for overriding
+    the defaults on individual modules. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html)
+    for more information.
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2773
+  merge_commit: fe01a3db68b7d5e73a6769d8c6539457f351f5da
+  contributor: arhiopterecs
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: In previous releases, an integration token could be used on its own
+    for token-based authentication. This behavior has been disabled by default due
+    to the security implications of a never-expiring access token. Namely, if the
+    access token is compromised it provides undetected persistent access to a store.
+    [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html)
+    describes a workaround.
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2771
+  merge_commit: 911b32c60741e1da0fc66861ba74662844f79bdc
+  contributor: nathanjosiah
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: You can now use OpenSearch as your catalog search engine. OpenSearch
+    is an open source fork of Elasticsearch 7.10.2, following Elasticsearch's licensing
+    change. (Elasticsearch is still supported for on-premises installations. It is
+    no longer supported on Cloud.) All instructions to configure Adobe Commerce or
+    Magento Open Source to use ElasticSearch 7 apply to OpenSearch. [Migrate ElasticSearch
+    to OpenSearch](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/opensearch-migration.html)
+    describes how to switch search engines.
+  versions: 2.4.4
+  type: New Topic
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2767
+  merge_commit: 94bb0ae87bc56ee61c2ff1ed1e55a4728f2fc199
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.4
+- description: Updated the [availability and compatibility](https://devdocs.magento.com/release/availability.html)
+    of Magento-developed extensions (MDEs). Added [messaging](https://devdocs.magento.com/extensions/vendor/)
+    about removing vendor-bundled extensions (VBEs) in 2.4.4.
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2696
+  merge_commit: 1b44ed61b6a427832d94a4daa81ac4682311236d
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added the [`assignCustomerToGuestCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/assign-customer-to-guest-cart.html).
+  versions: 2.4.4
+  type: New Topic
+  date: April 12, 2022
+  link: https://github.com/magento/devdocs/pull/9252
+  merge_commit: ca699079e8f6d776901ef78504320a7ca5803512
+  contributor: karyna-tsymbal-atwix
+  membership: true
+  labels:
+  - Waiting for Response
+  - Community
+  - partners-contribution
+  - 'Partner: Atwix'
+  - New Topic
+  - 'Progress: done'
+  - 2.4.4
+- description: The output objects for the [`closeNegotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/close-negotiable-quotes.html)
+    and [`deleteNegotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-negotiable-quotes.html)
+    mutations have changed. They are now capable of handling different results when
+    multiple negotiable quotes are specified.
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2704
+  merge_commit: f628c4d58a287953e400ae438bd10d971f6fab47
+  contributor: keharper
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added the [`placeNegotiableQuoteOrder` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/place-negotiable-quote-order.html).
+  versions: 2.4.4
+  type: New Topic
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2691
+  merge_commit: 4aa5d29ca1a7eebb6cc896431f1913c594f15b43
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.4
+- description: Added the [setNegotiableQuoteShippingMethods mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/set-negotiable-quote-shipping-methods.html).
+  versions: 2.4.4
+  type: New Topic
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2697
+  merge_commit: 4c65e90a2539488902acfb56c0d125cea4647cc7
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.4
+- description: Added the `email`, `is_virtual`, `prices`, and `total_quantity` fields
+    to the [`NegotiableQuote` object](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quote.html#output-attributes).
+  versions: 2.4.4
+  type: Technical
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2676
+  merge_commit: b28444dbd5acba7390c7a71c65de0f1f121254e3
+  contributor: keharper
+  membership: true
+  labels:
+  - Technical
+  - 2.4.4
+- description: Adds the [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
+    for Adobe Commerce 2.4.4-beta2.
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2651
+  merge_commit: 6d9f57db7d31334caba4c7fe8ec64d6b1956d8be
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added the [`setNegotiableQuoteBillingAddress` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/set-negotiable-quote-billing-address.html).
+  versions: 2.4.4
+  type: New Topic
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2624
+  merge_commit: c863c423e9552b0b06519956e87448c14a3bda5b
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.4
+- description: You can now apply a filter to the `aggregations` output object of a
+    [`products` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/products.html)
+    to restrict the output. When the `category_id` field is specified as part of the
+    `ProductAttributeFilterInput` input object, the `includeDirectChildrenOnly` field
+    of the `AggregationsCategoryFilterInput` object can be used in the response to
+    refine the returned aggregations. If `includeDirectChildrenOnly` is set to true,
+    then the aggregations will contain only direct child categories. Otherwise, the
+    category aggregations will follow the default algorithm.
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento/devdocs/pull/9240
+  merge_commit: b3d8693f75b3113cdd8dfff52337954af2c6c448
+  contributor: thiaramus
+  membership: true
+  labels:
+  - Major Update
+  - Internal Dev
+  - 'Progress: done'
+  - 2.4.4
+- description: The [`setNegotiableQuoteShippingAddress` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/set-negotiable-quote-shipping-address.html)
+    now allows you to specify full addresses. Previously, the mutation only accepted
+    address IDs. The [NegotiableQuoteAddressInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/negotiable-quote-address-interface.html)
+    was also added.
+  versions: 2.4.4
+  type: New Topic
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2621
+  merge_commit: b2b6e20151a4bd04dfffc90ead3fe4572a212b20
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.4
+- description: Added [highlights](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/index.html)
+    for major backward incompatible changes (BICs).
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2591
+  merge_commit: 2252c3a902a2ff3cba204bbe89aa5f4111972408
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added the [`setNegotiableQuotePaymentMethod` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/set-negotiable-quote-payment-method.html).
+  versions: 2.4.4
+  type: New Topic
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2571
+  merge_commit: 50e9bbfd9da080c359d6335f0c918d0067890bdd
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.4
+- description: All GraphQL calls now return the `X-Magento-Cache-Id` header. The value
+    of this header is a hash comprised of factors such as store ID, currency code,
+    customer group ID, and others. When specified as an input header for a query on
+    behalf of a logged-in customer, this value causes the query to return cached values
+    applicable to the customer. [Caching for logged-in customers](https://devdocs.magento.com/guides/v2.4/graphql/caching.html#customers)
+    provides more details.
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2412
+  merge_commit: 3a074cfc4628ee548de94ca8ca98ffac1d9c8090
+  contributor: keharper
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added attributes to the [storeConfig query](https://devdocs.magento.com/guides/v2.4/graphql/queries/store-config.html)
+    to support the Zero Subtotal and Check/Money Order payment methods.
+  versions: 2.4.4
+  type: Major Update
+  date: April 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2349
+  merge_commit: 986ec9bfa306183b357ae87698da9a4b62d16286
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
 - description: "[Cloud Tools release 2002.1.10](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v2002110)"
   versions: 2.x
   type: Major Update
