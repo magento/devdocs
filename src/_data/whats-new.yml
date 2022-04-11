@@ -6,19 +6,6 @@ link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
 updated: Mon Apr 11 14:38:41 2022
 entries:
-- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.1.12 Quality Patches Tool package release.
-  versions: 2.3.x, 2.4.x
-  type: Major Update
-  date: April 5, 2022
-  link: https://github.com/magento-commerce/devdocs/pull/2888
-  merge_commit: 01cfac8de9bf5da2c945ac72f00f6e84d6fb7417
-  contributor: agorbivskyi
-  membership: true
-  labels:
-  - Major Update
-  - 2.3.x
-  - 2.4.x
 - description: Added a new topic to the _Performance Best Practices_ guide titled
     [High-throughput Order Processing](https://devdocs.magento.com/guides/v2.4/performance-best-practices/high-throughput-order-processing.html),
     which describes how you can improve performance by optimizing the order placement
@@ -278,6 +265,19 @@ entries:
   labels:
   - Major Update
   - 2.4.4
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.12 Quality Patches Tool package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: April 5, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2888
+  merge_commit: 01cfac8de9bf5da2c945ac72f00f6e84d6fb7417
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
 - description: "[Cloud Tools release 2002.1.10](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v2002110)"
   versions: 2.x
   type: Major Update
