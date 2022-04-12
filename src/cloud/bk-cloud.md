@@ -9,7 +9,7 @@ functional_areas:
 
 ![Cloud Benefits]
 
-{{site.data.var.ece}} provides a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Opensearch technologies; a git-based workflow with automatic build and deploy for efficient **Rapid development** and **Continuous deployment** every time you push code changes in a Platform as a Service (PaaS) environment; highly **Customizable** environment configuration files and [tools](#ece-tools-package); and AWS hosting that offers a **Scalable** and **Secure** environment for online sales and retailing.
+{{site.data.var.ece}} provides a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and supported search engine technologies; a git-based workflow with automatic build and deploy for efficient **Rapid development** and **Continuous deployment** every time you push code changes in a Platform as a Service (PaaS) environment; highly **Customizable** environment configuration files and [tools](#ece-tools-package); and AWS hosting that offers a **Scalable** and **Secure** environment for online sales and retailing.
 
 ## Technology stack
 

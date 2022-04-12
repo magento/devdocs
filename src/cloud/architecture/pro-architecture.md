@@ -193,7 +193,8 @@ The Production environment has three virtual machines (VMs) behind an Elastic Lo
    -  `pub/static`
    -  `app/etc`
 -  **Redis**—one server per VM with only one active and the other two as replicas
--  **Opensearch**—search for {{site.data.var.ece}} 2.2 and later
+-  **Elasticsearch**—search for {{site.data.var.ece}} 2.2 to 2.4.3-p2
+-  **Opensearch**—search for {{site.data.var.ece}} 2.3.7-p3, 2.4.3-p2, 2.4.4 and later
 -  **Galera**—database cluster with one MariaDB MySQL database per node with an auto-increment setting of three for unique IDs across every database
 
 The following figure shows the technologies used in the Production environment:

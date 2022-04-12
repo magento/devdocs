@@ -546,11 +546,11 @@ Use this environment variable to retain customized search service settings betwe
 stage:
   deploy:
    SEARCH_CONFIGURATION:
-     engine: opensearch
-     opensearch_server_hostname: hostname
-     opensearch_server_port: '123456'
-     opensearch_index_prefix: magento
-     opensearch_server_timeout: '15'
+     engine: elasticsearch
+     elasticsearch_server_hostname: hostname
+     elasticsearch_server_port: '123456'
+     elasticsearch_index_prefix: magento
+     elasticsearch_server_timeout: '15'
 ```
 
 {% include cloud/merge-configuration.md %}
@@ -561,8 +561,8 @@ The following example merges a new value to the existing configuration:
 stage:
   deploy:
     SEARCH_CONFIGURATION:
-      engine: opensearch
-      opensearch_server_port: '1234'
+      engine: elasticsearch
+      elasticsearch_server_port: '1234'
       _merge: true
 ```
 
