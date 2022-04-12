@@ -19,13 +19,16 @@ The SendGrid SMTP proxy is not intended for use as a general-purpose email serve
 
 {:.bs-callout-tip}
 You can find SendGrid details for your account in the [Onboarding UI](https://cloud.magento.com) and select the **Project Details** > **Hosting  Info** tab.
+
 ## Ports
+
 Emails are proxied through SendGrid's SMTP proxy host and encrypted over port 465 before being sent outbound.
 
 *  Use Port 465 and 587 to send mail to your external mail server
 *  Use Port 25 to send through `MAGENTO_CLOUD_SMTP_HOST`
 
 ## Enable or disable email
+
 By default, email support is disabled on Staging and Production environments. You must enable email support on an environment to send emails including Welcome, password reset, and two-factor authentication emails for Cloud project users. See [Configure emails for testing](https://devdocs.magento.com/cloud/project/project-webint-basic.html#email).
 
 ## DomainKeys Identified Mail (DKIM)
