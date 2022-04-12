@@ -1,6 +1,5 @@
 ---
 title: NegotiableQuoteSharedCatalog
-release: 2.4.3
 content: |-
   The Magento_NegotiableQuoteSharedCatalog module enables the NegotiableQuote module to interact with a SharedCatalog in an B2B environment. This module extends the Magento_NegotiableQuote module and Magento_SharedCatalog modules.
 

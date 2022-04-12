@@ -204,7 +204,7 @@ After you make the change in the Admin, run `bin/magento app:config:dump` on you
 `config.php` contains:
 
 *  Changes to the website, store, and store view.
-*  Non-system-specific Elasticsearch settings
+*  Non-system-specific search engine settings
 *  Non-sensitive PayPal settings
 *  Comments that inform you of sensitive settings that were omitted from `config.php`
 

@@ -1,6 +1,5 @@
 ---
 title: InventoryReservations
-release: 2.4.3
 content: |-
   The `InventoryReservations` module provides logic for handling product reservations.
 

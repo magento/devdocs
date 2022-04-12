@@ -6,7 +6,7 @@ functional_areas:
   - Orders
 ---
 
-In a production environment, you would typically [create an integration]({{page.baseurl}}/get-started/create-integration.html) and supply the integration token with any REST call that requires admin privileges. The token allows Magento to verify that the caller is authorized to access the affected system resource.
+In a production environment, you would typically [create an integration]({{page.baseurl}}/get-started/create-integration.html) and use OAuth to provide authentication for any REST call that requires admin privileges. This process allows Magento to verify that the caller is authorized to access the affected system resource.
 
 In this tutorial, we will supply an admin token instead. To get a token, you must have 2FA configured. This tutorial assumes that you are using Google Authenticator as your 2FA solution. The endpoint and payload will be different for other 2FA solutions. See [Two-Factor Authentication]({{page.baseurl}}/security/two-factor-authentication.html) for more information.
 

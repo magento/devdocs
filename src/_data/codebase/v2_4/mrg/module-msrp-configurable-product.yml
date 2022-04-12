@@ -1,6 +1,5 @@
 ---
 title: MsrpConfigurableProduct
-release: 2.4.3
 content: "The **Magento_MsrpConfigurableProduct** module provides type and resolver
   information for the Magento_Msrp module from the ConfigurableProduct module.\nProvides
   implementation of msrp price calculation for Configurable Product.\n\n## Installation\n\nFor

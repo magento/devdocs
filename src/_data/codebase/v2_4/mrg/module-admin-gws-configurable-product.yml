@@ -1,6 +1,5 @@
 ---
 title: AdminGwsConfigurableProduct
-release: 2.4.3
 content: |-
   The Magento_AdminGwsConfigurableProduct module is a part of the restricted admin user permissions functionality in Magento EE. It extends the Magento_AdminGws module functionality for configurable product.
 

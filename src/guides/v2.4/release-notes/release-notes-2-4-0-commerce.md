@@ -78,7 +78,7 @@ The following platform upgrades help enhance website security and performance. S
 
 *  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Commerce Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all  unit and integration tests have been configured to be run with PHPUnit 9.
 
-*  **Elasticsearch 7.6.x support**. Elasticsearch 7.6.x is now the default catalog search engine for {{site.data.var.ee}} and {{site.data.var.ee}}. You cannot install or upgrade to version 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed. Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
+*  **Elasticsearch 7.6.x support**. Elasticsearch 7.6.x is now the default catalog search engine for {{site.data.var.ee}} and {{site.data.var.ee}}. You cannot install or upgrade to version 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed. Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Search engine prerequisites]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
 
 *  **MySQL 8.0 support**. Magento 2.4.x supports MySQL 8.x. (Magento 2.4.0 was tested with MySQL 8.0.20.) Merchants are encouraged to migrate their deployments to MySQL 8.x to take advantage of its improved performance, security, and reliability. Although MySQL 5.7 is still supported for Magento 2.4.x, MySQL 5.6 is no longer supported. You cannot host Magento 2.4.x with a MySQL 5.6 database. See [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
@@ -1678,7 +1678,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Search
 
-*  Elasticsearch 7.6.x is now the default catalog search engine for {{site.data.var.ee}} and {{site.data.var.ee}}. You cannot install or upgrade to version 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed. Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
+*  Elasticsearch 7.6.x is now the default catalog search engine for {{site.data.var.ee}} and {{site.data.var.ee}}. You cannot install or upgrade to version 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed. Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Search engine prerequisites]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
 
 <!--- MC-23753-->
 

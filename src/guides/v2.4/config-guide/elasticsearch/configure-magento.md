@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Configure Commerce and Magento to use Elasticsearch
+title: Search engine configuration
 functional_areas:
   - Configuration
   - Search

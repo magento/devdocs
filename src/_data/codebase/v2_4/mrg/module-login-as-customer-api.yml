@@ -1,5 +1,24 @@
 ---
 title: LoginAsCustomerApi
-release: 2.4.3
-content: The Magento_LoginAsCustomerApi module provides API for ability to login into
-  customer account for an admin user.
+content: "This module provides API for ability to login into customer account for
+  an admin user.\n\n### Public APIs\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\Data\\AuthenticationDataInterface`:\n
+  \   - contains authentication data\n    \n-`\\Magento\\LoginAsCustomerApi\\Api\\Data\\IsLoginAsCustomerEnabledForCustomerResultInterface`:\n
+  \   - contains the result of the check whether the login as customer is enabled\n\n-
+  `\\Magento\\LoginAsCustomerApi\\Api\\AuthenticateCustomerBySecretInterface`:\n    -
+  authenticate a customer by secret\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\ConfigInterface`:\n
+  \   - check if Login as Customer extension is enabled\n    - check if store view
+  manual choice is enabled\n    - get authentication data expiration time (in seconds)\n\n-
+  `\\Magento\\LoginAsCustomerApi\\Api\\DeleteAuthenticationDataForUserInterface`:\n
+  \   - delete authentication data by user id\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\GenerateAuthenticationSecretInterface`:\n
+  \   - generate authentication secret\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\GetAuthenticationDataBySecretInterface`:\n
+  \   - get authentication data by secret\n    \n- `\\Magento\\LoginAsCustomerApi\\Api\\GetLoggedAsCustomerAdminIdInterface`:\n
+  \   - get id of admin logged as customer\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\GetLoggedAsCustomerCustomerIdInterface`:\n
+  \   - get id of customer admin is logged as\n  \n- `\\Magento\\LoginAsCustomerApi\\Api\\IsLoginAsCustomerEnabledForCustomerInterface`:\n
+  \   - check if login as customer functionality is enabled for customer\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\IsLoginAsCustomerSessionActiveInterface`:\n
+  \   - check if Login as Customer session is still active\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\SaveAuthenticationDataInterface`:\n
+  \   - save authentication data. Return secret key\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\SetLoggedAsCustomerAdminIdInterface`:\n
+  \   - set id of admin logged as customer\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\SetLoggedAsCustomerCustomerIdInterface`:\n
+  \   - set id of customer admin is logged as\n\nFor information about a public API
+  in Magento 2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
+  Additional information\n\nThis module is a part of Login As Customer feature.\n\n[Learn
+  more about Login As Customer feature](https://docs.magento.com/user-guide/customers/login-as-customer.html)."

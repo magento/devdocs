@@ -1,6 +1,5 @@
 ---
 title: ConfigurableProduct
-release: 2.4.3
 content: "The Magento_ConfigurableProduct module introduces new product type in the
   Magento application called Configurable Product.\nThis module is designed to extend
   existing functionality of Magento_Catalog module by adding new product type.\n\nConfigurable
