@@ -4,7 +4,7 @@ title: Inventory API reference
 ---
 
 <!-- Magento 2 inventory project (a.k.a MSI) release branch blob url variable
-{% assign  msi_blob_url = 'https://github.com/magento/inventory/blob/1.2.0' %} -->
+{% assign  msi_blob_url = 'https://github.com/magento/inventory/blob/1.2.4' %} -->
 
 {{site.data.var.im}} provides new modules, interfaces, and classes to manage inventory quantities, sources, stocks, etc. This reference details deprecated modules and new services available for managing inventory for single and multi source merchants.
 

@@ -1,6 +1,5 @@
 ---
 title: GiftWrappingStaging
-release: 2.4.3
 content: |-
   The Magento_GiftWrappingStaging module is a part of the staging functionality in Magento EE. It allows to stage value of 'Allow Gift Wrapping' flag and price of the wrapping for each product update.
 

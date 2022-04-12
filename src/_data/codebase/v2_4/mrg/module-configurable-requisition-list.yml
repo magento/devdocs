@@ -1,6 +1,5 @@
 ---
 title: ConfigurableRequisitionList
-release: 2.4.3
 content: |-
   The Magento_ConfigurableRequisitionList module enables configurable products to be displayed in a requisition list in an B2B environment. This module extends Magento_RequisitionList and Magento_Configurable modules.
 

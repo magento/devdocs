@@ -1,5 +1,4 @@
 ---
 title: SharedCatalogGraphQl
-release: 2.4.3
 content: "**SharedCatalogGraphQL** customises products and categoryTree queries to
   reflect shared catalog information"

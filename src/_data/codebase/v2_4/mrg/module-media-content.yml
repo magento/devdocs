@@ -1,6 +1,5 @@
 ---
 title: MediaContent
-release: 2.4.3
 content: |-
   The Magento_MediaContent module provides implementations for managing relations between content and media files used in that content.
 

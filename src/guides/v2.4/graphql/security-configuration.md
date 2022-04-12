@@ -7,19 +7,9 @@ The Framework and `GraphQl` module `di.xml` files define several security-relate
 
 To override these default values, create a custom module and provide a new value in the appropriate [di.xml]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html) file.
 
-## Framework configuration
+## Input limiting
 
-In GraphQL, the `SearchCriteriaValidator` class constructor limits the maximum page size in queries to `300` by default as well. You can change the default in the `di.xml` file. The following example changes the limit to `100`:
-
-```xml
-<type name="Magento\Framework\GraphQl\Query\Resolver\Argument\Validator\SearchCriteriaValidator">
-    <arguments>
-        <argument name="maxPageSize" xsi:type="number">100</argument>
-    </arguments>
-</type>
-```
-
-[API security]({{page.baseurl}}/get-started/api-security.html) describes additional arguments that are applicable to web APIs in general.
+In GraphQL, you can limit the maximum page size allowed. For information about how to enable and configure this feature, as well as additional arguments that are applicable to web APIs in general, see [API security]({{page.baseurl}}/get-started/api-security.html).
 
 ## GraphQl module configuration
 

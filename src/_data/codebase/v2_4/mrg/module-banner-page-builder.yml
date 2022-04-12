@@ -1,5 +1,4 @@
 ---
 title: BannerPageBuilder
-release: 2.4.3
 content: The Magento_BannerPageBuilder extends existing Dynamic Block tests in Magento
   EE, and adds new tests for PageBuilder usage.

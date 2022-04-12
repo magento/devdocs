@@ -1,6 +1,5 @@
 ---
 title: ScalableInventory
-release: 2.4.3
 content: |-
   Magento\ScalableInventory module provides ability for system extension (CatalogInventory can be configured to work with separate quantity storage).
   Extraction of quantity updates to separate storage will guarantee better scalability for Magento,

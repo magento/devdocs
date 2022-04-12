@@ -1,5 +1,4 @@
 ---
 title: CatalogInventory
-release: 2.4.3
 content: Magento_CatalogInventory module allows retrieve and update stock attributes,
   such as status and quantity.
