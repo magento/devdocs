@@ -92,7 +92,7 @@ The `attribute_set_id` for the `Default` attribute set is `4`:
 
 ```html
 GET http://domain.com/rest/default/V1/products/attribute-sets/4/attributes
-``` 
+```
 
 **Response:**
 
