@@ -14,14 +14,13 @@ The SendGrid Simple Mail Transfer Protocol (SMTP) proxy service provides outboun
 *  Up to 12,000 outbound transactional emails per month, excluding marketing campaigns
 *  Custom domain registration (Pro only)
 *  Automated integration for Starter and Pro Integration environments. Pro Production and Staging environments require manual provisioning and configuration during the Infrastructure as a Service (IaaS) hardware provisioning process.
-  
+
 The SendGrid SMTP proxy is not intended for use as a general-purpose email server to receive incoming email or for use with email marketing campaigns.
 
 {:.bs-callout-tip}
 You can find SendGrid details for your account in the [Onboarding UI](https://cloud.magento.com) and select the **Project Details** > **Hosting  Info** tab.
-
 ## Ports
-Emails are proxied through SendGrid's SMTP proxy host and encrypted over port 465 before being sent outbound.  
+Emails are proxied through SendGrid's SMTP proxy host and encrypted over port 465 before being sent outbound.
 
 *  Use Port 465 and 587 to send mail to your external mail server
 *  Use Port 25 to send through `MAGENTO_CLOUD_SMTP_HOST`
@@ -59,8 +58,8 @@ s2.example.com IN CNAME <s2.example.sendgrid.net>
 **To validate your configuration using Domain Information Groper (DiG):**
 
 ```terminal
-dig CNAME em.domain_name 
-dig CNAME s1.domainkey.domain_name 
+dig CNAME em.domain_name
+dig CNAME s1.domainkey.domain_name
 dig CNAME s2.domainkey.domain_name
 ```
 
@@ -81,8 +80,7 @@ The SendGrid SMTP proxy service 12,000 email threshold refers to the number of a
 
 1. Check the `/var/log/mail.log` for `authentication failed : Maxium credits exceeded` entries.
 
-If you see any authentication failed log entries, you can [submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) to request a credit allotment increase.  
-
+If you see any authentication failed log entries, you can [submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) to request a credit allotment increase.
 ## Email reputation monitoring
 An email sender reputation is a score assigned by an Internet Service Provider (ISP) to a company that sends emails. It is an important part of your email deliverability. The higher the score, the more likely an ISP delivers emails to a recipient's inbox. If the score falls below a certain level, the ISP may route messages to recipients' spam folders or even reject them completely. The score is determined by several factors. See [5 Ways to Check Your Sending Reputation](https://sendgrid.com/blog/5-ways-check-sending-reputation/).
 
