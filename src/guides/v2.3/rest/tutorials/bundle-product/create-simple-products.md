@@ -567,3 +567,5 @@ POST http://domain.com/rest/default/V1/products
 
   ![Simple products]({{ page.baseurl }}/rest/tutorials/bundle-product/images/simple-products-admin-grid.png)
 
+ {:.bs-callout-info}
+You might want to reindex and clear cache if you don't see the bundle product on the frontend.
