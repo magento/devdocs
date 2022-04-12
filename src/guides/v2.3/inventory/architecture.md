@@ -60,7 +60,7 @@ For non-headless installations, Inventory Management has dependencies on the fol
 
 ### Dependencies in a headless installation
 
-In headless installations, Magento Inventory Management is dependent on the following modules:
+In headless installations, Inventory Management is dependent on the following modules:
 
 *  BundleProduct
 *  Catalog
