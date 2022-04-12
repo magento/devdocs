@@ -104,7 +104,7 @@ Before upgrading the application, you must update your project configuration fil
 
 ### .magento.app.yaml
 
- Always review the values contained in the [.magento.app.yaml][] file for your installed version, because it controls the way your application builds and deploys to the cloud infrastructure.
+ Always review the values contained in the [.magento.app.yaml][] file for your installed version, because it controls the way your application builds and deploys to the cloud infrastructure. The following example is for version 2.4.4 and uses Composer 2.2.4. The `build: flavor:` property is not used for Composer 2.x; see [Installing and using Composer 2][use-composer-2].
 
 {:.procedure}
 To update the `.magento.app.yaml` file:
@@ -362,3 +362,4 @@ To resolve the error:
 [System requirements]: {{site.baseurl}}/guides/v2.4/install-gde/system-requirements.html
 [templates]: https://github.com/magento/magento-cloud
 [version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage
+[use-composer-2]: {{site.baseurl}}/cloud/project/magento-app-properties.html#installing-and-using-composer-2

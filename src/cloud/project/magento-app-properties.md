@@ -42,7 +42,7 @@ dependencies:
 
 ### Installing and using Composer 2
 
-To install and use Composer 2.x in your Starter and Pro projects, you need to make three changes to your `.magento.app.yaml` configuration:
+The `build: flavor:` property is not used for Composer 2.x; therefore, you must manually install composer during the build phase. To install and use Composer 2.x in your Starter and Pro projects, you need to make three changes to your `.magento.app.yaml` configuration:
 
 1. Remove `composer` as the `build: flavor:` and add `none`. This change prevents Cloud from using the default 1.x version of Composer to run build tasks.
 1. Add `composer/composer: '^2.0'` as a `php` dependency to install Composer 2.x.
