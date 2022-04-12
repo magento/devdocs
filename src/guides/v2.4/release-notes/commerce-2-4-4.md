@@ -50,7 +50,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 *  use of a unique location rather than `/admin`
 *  good password hygiene
 
-See [Adobe Security Bulletin](https://helpx.adobe.com/security.html) for the latest discussion of these fixed issues.
+See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb22-13.html) for the latest discussion of these fixed issues.
 
 #### Additional security enhancements
 
