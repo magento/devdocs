@@ -25,7 +25,7 @@ The cloud infrastructure supports and deploys the following services:
 
 -  [`mysql`]({{ site.baseurl }}/cloud/project/services-mysql.html)
 -  [`redis`]({{ site.baseurl }}/cloud/project/services-redis.html)
--  [`elasticsearch`]({{ site.baseurl }}/cloud/project/services-elasticsearch.html)
+-  [`elasticsearch`]({{ site.baseurl }}/cloud/project/services-elastic.html)
 -  [`opensearch`]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 -  [`rabbitmq`]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 

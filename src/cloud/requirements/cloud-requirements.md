@@ -59,7 +59,7 @@ You cannot upgrade the software, but you can configure the following services:
 *  [MySQL]({{ site.baseurl }}/cloud/project/services-mysql.html)
 *  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
 *  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
-*  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elasticsearch.html)
+*  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
 *  [Opensearch]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 
  {:.bs-callout-info}

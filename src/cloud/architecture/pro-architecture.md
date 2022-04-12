@@ -231,6 +231,7 @@ On Pro plan projects, the Master branch provides an active PaaS environment with
 -  [MySQL]({{ site.baseurl }}/cloud/project/services-mysql.html)
 -  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
 -  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
+-  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
 -  [Opensearch]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 
 For the Staging and Production environments, we recommend installing the latest version of the Fastly CDN module. See [Fastly in Cloud]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
