@@ -445,7 +445,7 @@ pages:
               url: /cloud/project/services-elastic.html
               versionless: true
 
-            - label: Set up Opensearch service
+            - label: Set up OpenSearch service
               url: /cloud/project/services-opensearch.html
               versionless: true
 
