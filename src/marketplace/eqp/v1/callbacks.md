@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: API callbacks
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/callbacks/
+layout: migrated
 ---
 
 The multiple steps of the EQP process take time to complete. The results of these steps can impact the availability or status of data that was previously submitted.

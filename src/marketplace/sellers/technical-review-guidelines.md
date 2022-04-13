@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Technical Review Guidelines
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/technical-review-guidelines/
+layout: migrated
 ---
 
 During technical review, your code is examined to detect the presence of viruses, malware, and any indication of plagiarism. The process also ensures that the package meets Composer packaging and format requirements and Magento coding standards.
