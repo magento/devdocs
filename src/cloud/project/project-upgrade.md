@@ -65,6 +65,7 @@ To check the `auto-load:psr-4` configuration:
           "Magento\\": "app/code/Magento/",
           "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
        },
+   }
    ```
 
 1. If the Zend dependency is missing, update the `composer.json` file:
