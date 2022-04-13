@@ -55,9 +55,9 @@ To check the `auto-load:psr-4` configuration:
 
 1. Open the `composer.json` file in a text editor.
 
-1. Check the `autoload:psr-4` section for the Zend plugin manager implementation for controllers dependency::
+1. Check the `autoload:psr-4` section for the Zend plugin manager implementation for controllers dependency.
 
-   ```diff
+   ```json
     "autoload": {
        "psr-4": {
           "Magento\\Framework\\": "lib/internal/Magento/Framework/",
@@ -198,8 +198,8 @@ To update the `composer.json` file for {{site.data.var.ee}} version 2.4.4:
 
    ```json
    "extra": {
-      ...
       "component_paths": {
+         ...
          "tinymce/tinymce": "lib/web/tiny_mce_5"
       },
    },
