@@ -66,9 +66,8 @@ To check the `auto-load:psr-4` configuration:
           "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
        },
    ```
-   {:.no-copy}
 
-1. If the Zend dependency is missing, update `composer.json`:
+1. If the Zend dependency is missing, update the `composer.json` file:
 
    -  Add the following line to the `autoload:psr-4` section.
 
