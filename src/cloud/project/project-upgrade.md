@@ -171,12 +171,11 @@ Before upgrading, always check that the dependencies in the `composer.json` file
 {:.procedure}
 To update the `composer.json` file for {{site.data.var.ee}} version 2.4.4:
 
-1. Add the `allow-plugins` to the `config` section.
+1. Add the following `allow-plugins` to the `config` section:
 
    ```json
 
    "config": {
-      ...
       "allow-plugins": {
          "dealerdirect/phpcodesniffer-composer-installer": true,
          "laminas/laminas-dependency-plugin": true,
@@ -185,21 +184,19 @@ To update the `composer.json` file for {{site.data.var.ee}} version 2.4.4:
    },
    ```
 
-1. Require the following plugin:
+1. Add the following plugin to the `require` section:
 
    ```json
    "require": {
-      ...
       "magento/composer-root-update-plugin": "^2.0.2"
    },
    ```
 
-1. Add the following component to the `extra` section:
+1. Add the following component to the `extra:component_paths` section:
 
    ```json
    "extra": {
       "component_paths": {
-         ...
          "tinymce/tinymce": "lib/web/tiny_mce_5"
       },
    },
