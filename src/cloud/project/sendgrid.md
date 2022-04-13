@@ -22,7 +22,7 @@ You can find SendGrid details for your account in the [Onboarding UI](https://cl
 
 ## Ports
 
-Emails are proxied through SendGrid's SMTP proxy host and encrypted over port 465 before being sent outbound.
+Emails are sent through SendGrid’s SMTP proxy host and encrypted on port 465 before they are sent out.
 
 *  Use Port 465 and 587 to send mail to your external mail server
 *  Use Port 25 to send through `MAGENTO_CLOUD_SMTP_HOST`
@@ -38,7 +38,7 @@ DKIM is an email authentication protocol that helps Internet Service Providers (
 {: .bs-callout-info}
 **SendGrid DKIM signatures and domain authentication support** are available only on {{site.data.var.ece}} Pro and not on Starter. As a result, outbound emails are likely to be flagged by spam filters. Using DKIM improves the delivery rate as an authenticated email sender. A workaround is to upgrade from Starter to Pro or use your own SMTP server or email delivery service provider.
 
-After domain authentication is set up, SendGrid automatically handles Security Policy Framework (SPF) and DKIM records for you. After SendGrid provides the `CNAME` records to add to your DNS records, you can add dedicated IP addresses and make other account updates without having to manage your SPF records manually.
+After domain authentication is set up, SendGrid automatically handles Security Policy Framework (SPF) and DKIM records for you. After SendGrid provides the `CNAME` records to add to your DNS records, you can add dedicated IP addresses and make other account updates without having to manage your SPF records manually. See [Automated Security and Your DKIM Signature](https://docs.sendgrid.com/ui/account-and-settings/dkim-records#automated-security-and-your-dkim-signature).
 
 ## Enable DKIM for your domain
 
@@ -47,19 +47,28 @@ For SendGrid to send transactional emails on your behalf, configure your DNS set
 1. Open a [support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) and request to enable the DKIM on a specific domain.
 1. Update your DNS configuration with the `TXT` and `CNAME` records provided to you in the support ticket.
 
-**Example `TXT` record with your account ID:**
+### Example `TXT` record with your account ID
 
 ```text
 >v=spf1 include:u17504801.wl.sendgrid.net -all
 ```
 
-**Example `CNAME` records to add to your DNS:**
+### Example `CNAME` records to add to your DNS
 
 ```text
 em.example.com IN CNAME <sendgrid.net>
 s1.example.com IN CNAME <s1.example.sendgrid.net>
 s2.example.com IN CNAME <s2.example.sendgrid.net>
 ```
+
+### Example DKIM subdomain record
+
+```text
+subdomain.yourdomain.com. | CNAME | uXXXXXXX.wlXXX.sendgrid.net
+s1._domainkey.yourdomain.com. | CNAME | s1.domainkey.uXXX.wlXXX.sendgrid.net
+s2._domainkey.yourdomain.com. | CNAME | s2.domainkey.uXXX.wlXXX.sendgrid.net
+```
+## Validate your configuration
 
 **To validate your configuration using Domain Information Groper (DiG):**
 
@@ -72,8 +81,8 @@ dig CNAME s2.domainkey.domain_name
 ## Outbound transactional email credits
 The SendGrid SMTP proxy service 12,000 email threshold refers to the number of allocated transactional emails that you can send on a monthly basis from {{site.data.var.ece}} Pro Production, Integration, and Staging branches.
 
-*  Transactional email credits renew on the first day of each month
-*  If you run out of credits, you can either request more credits or wait for the renewal count to reset the first day of each month
+*  Transactional email credits renew on the first day of each month.
+*  If you run out of credits, you can either request more credits or wait for the renewal count to reset the first day of each month.
 *  There are no hard limits on the number of emails that can be sent in Production, as long as the Sender Reputation score is over 95%. The reputation is affected by the number of bounced/rejected emails and whether DNS-based spam registries have flagged your domain as a potential spam source.
 
 {:.procedure}
