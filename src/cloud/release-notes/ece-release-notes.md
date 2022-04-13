@@ -21,6 +21,12 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v2002.1.10
+
+Release date: March 31, 2022
+
+-  {:.fix}**Elasticsearch 7.10**—Updated validators to support the 7.10 version of Elasticsearch.<!-- MCLOUD-8548 -->
+
 ## v2002.1.9
 
 Release date: March 10, 2022

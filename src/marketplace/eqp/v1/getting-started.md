@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Getting started
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/getting-started/
+layout: migrated
 ---
 
 Follow these steps to get started using the **Marketplace EQP API**.

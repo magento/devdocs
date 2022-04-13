@@ -23,6 +23,10 @@ In previous versions of Magento, the access token could be used on its own for t
 
 However, while it is not recommended, this behavior can be restored in the Admin by setting the **Stores** > **Configuration** > **Services** > **OAuth** > **Consumer Settings** > **Allow OAuth Access Tokens to be used as standalone Bearer tokens** option to **Yes**. You can also enable this setting from the CLI by running the following command:
 
+```bash
+bin/magento config:set oauth/consumer/enable_integration_as_bearer 1
+```
+
 If you are trying to upgrade from a previous version and need to update your integration implementation to properly utilize the OAuth workflow, review [OAuth-based Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html). Otherwise, you can partially update your integration to simply store and utilize all four credentials to sign your requests.
 
 There is a comprehensive guide for this on the OAuth-based authentication page, but can also be done in isolation without supporting the entire OAuth workflow. For example, in the following script the four credentials are used to create a new CMS page without using external libraries or implementing the full OAuth handshake.

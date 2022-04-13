@@ -2,6 +2,8 @@
 group: marketplace-sellers
 title: Register as a Developer
 redirect_from: /marketplace/sellers/register-as-a-developer.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/developer-register/
+layout: migrated
 ---
 
 Follow these steps to create a new developer account, or to register as a developer with your existing Magento account.

@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Product Descriptions
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/product-descriptions/
+layout: migrated
 ---
 
 Every extension submitted requires a long, detailed description of the product as part of the marketing submission process. Some products, such as integration extensions and payment extensions, have additional requirements for their long descriptions.

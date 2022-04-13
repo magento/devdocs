@@ -18,6 +18,12 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v1.3.2
+
+Release date: March 31, 2022
+
+-  {:.new}**Added Elasticsearch 7.10 image**<!-- MCLOUD-8548 -->
+
 ## v1.3.1
 
 Release date: March 10, 2022

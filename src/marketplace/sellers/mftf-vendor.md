@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: MFTF Vendor-supplied Tests
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/mftf-vendor/
+layout: migrated
 ---
 
 {:.bs-callout-info}
