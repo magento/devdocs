@@ -188,7 +188,7 @@ To update the `composer.json` file for {{site.data.var.ee}} version 2.4.4:
 
    ```json
    "require": {
-      "magento/composer-root-update-plugin": "^2.0.2"
+       "magento/composer-root-update-plugin": "^2.0.2"
    },
    ```
 
