@@ -2,7 +2,8 @@
 group: live-search
 title: Live Search Release Notes
 ee_only: True
-redirect_to: https://docs.magento.com/user-guide/live-search/release-notes.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/release-notes.html
+layout: migrated
 ---
 
 These release notes describe the latest versions of Live Search and include:

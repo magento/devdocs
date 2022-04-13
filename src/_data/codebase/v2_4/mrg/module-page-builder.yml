@@ -1,6 +1,5 @@
 ---
 title: PageBuilder
-release: 2.4.3
 content: |-
   The Magento_PageBuilder module provides an enhancement for the default Magento WYSIWYG editor. It installs an alternative editor in the Admin area for building content.
 

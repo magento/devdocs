@@ -1,6 +1,5 @@
 ---
 title: InventorySetupFixtureGenerator
-release: 2.4.3
 content: |-
   The `InventorySetupFixtureGenerator` module customizes the process of Inventory Data (Salable Quantity) Generation for [performance testing](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-perf-data.html).
 

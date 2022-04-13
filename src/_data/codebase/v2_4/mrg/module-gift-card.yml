@@ -1,6 +1,5 @@
 ---
 title: GiftCard
-release: 2.4.3
 content: "Magento_GiftCard module introduces new product type in the Magento application
   called GiftCard Product.\nThis module extends existing functionality of Magento_Catalog
   module by adding new product type.\n\nThis product option enables store owner to

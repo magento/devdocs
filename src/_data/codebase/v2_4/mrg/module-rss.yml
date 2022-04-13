@@ -1,5 +1,4 @@
 ---
 title: Rss
-release: 2.4.3
 content: Magento_Rss module is responsible for processing all RSS feeds of the application
   and allows to turn on/off RSS centrally.

@@ -1,6 +1,40 @@
 ---
 title: ImportExport
-release: 2.4.3
-content: |-
-  Magento_ImportExport module provides a framework and basic functionality for importing/exporting various entities in Magento.
-  It can be disabled and in such case all dependent import/export functionality (products, customers, orders etc.) will be disabled in Magento.
+content: "This module provides a framework and basic functionality for importing/exporting
+  various entities in Magento.\nIt can be disabled and in such case all dependent
+  import/export functionality (products, customers, orders etc.) will be disabled
+  in Magento.\n\n## Installation\n\nThe Magento_ImportExport module creates the following
+  tables in the database:\n- `importexport_importdata`\n- `import_history`\n\nAll
+  database schema changes made by this module are rolled back when the module gets
+  disabled and setup:upgrade command is run.\n\nFor information about a module installation
+  in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Structure\n\n`Files/` - the directory that contains sample import files.\n\nFor
+  information about a typical file structure of a module in Magento 2, see [Module
+  file structure](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_ImportExport
+  module. For more information about the Magento extension mechanism, see [Magento
+  plugins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_ImportExport module.\n\n###
+  Layouts\n\nThis module introduces the following layout handles in the `view/frontend/layout`
+  directory:\n\n- `adminhtml_export_getfilter`\n- `adminhtml_export_index`\n- `adminhtml_history_grid_block`\n-
+  `adminhtml_history_index`\n- `adminhtml_import_busy`\n- `adminhtml_import_index`\n-
+  `adminhtml_import_start`\n- `adminhtml_import_validate`\n\nFor more information
+  about a layout in Magento 2, see the [Layout documentation](http://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  UI components\n\nYou can extend an export updates using the configuration files
+  located in the `view/adminhtml/ui_component` directory:\n\n- `export_grid` \n\nFor
+  information about a UI component in Magento 2, see [Overview of UI components](http://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n###
+  Public APIs\n\n- `Magento\\ImportExport\\Api\\Data\\ExportInfoInterface`\n    -
+  getter and setter interface with data needed for export\n\n- `Magento\\ImportExport\\Api\\Data\\ExtendedExportInfoInterface`\n
+  \   - extends `Magento\\ImportExport\\Api\\Data\\ExportInfoInterface`. Contains
+  data for skipped attributes\n\n- `\\Magento\\ImportExport\\Api\\ExportManagementInterface`\n
+  \   - Executing actual export and returns export data\n\nFor information about a
+  public API in Magento 2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
+  Additional information\n\n#### Message Queue Consumer\n\n- `exportProcessor` - consumer
+  to run export process\n\n[Learn how to manage Message Queues](https://devdocs.magento.com/guides/v2.4/config-guide/mq/manage-message-queues.html).\n\n####
+  Create custom import entity\n\n1. Declare the new import entity in `etc/import.xml`\n2.
+  Create an import model\n\n#### Create custom export entity\n\n1. Declare the new
+  import entity in `etc/export.xml`\n2. Create an export model\n\nYou can get more
+  information about import/export processes in magento at the articles:\n- [Create
+  custom import entity](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/custom-import-entity.html)\n-
+  [Import](https://docs.magento.com/user-guide/system/data-import.html)\n- [Export](https://docs.magento.com/user-guide/system/data-export.html)"

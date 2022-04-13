@@ -1,7 +1,7 @@
 {
   "application": {
     "name": "Magento CLI",
-    "version": "2.4.3"
+    "version": "2.4.4"
   },
   "commands": [
     {
@@ -10,7 +10,7 @@
         "help [--format FORMAT] [--raw] [--] [<command_name>]"
       ],
       "description": "Display help for a command",
-      "help": "The <info>help</info> command displays help for a given command:\n\n  <info>php /var/www/html/magento2/bin/magento help list</info>\n\nYou can also output the help in other formats by using the <comment>--format</comment> option:\n\n  <info>php /var/www/html/magento2/bin/magento help --format=xml list</info>\n\nTo display the list of available commands, please use the <info>list</info> command.",
+      "help": "The <info>help</info> command displays help for a given command:\n\n  <info>php bin/magento help list</info>\n\nYou can also output the help in other formats by using the <comment>--format</comment> option:\n\n  <info>php bin/magento help --format=xml list</info>\n\nTo display the list of available commands, please use the <info>list</info> command.",
       "definition": {
         "arguments": {
           "command_name": {
@@ -113,7 +113,7 @@
         "list [--raw] [--format FORMAT] [--] [<namespace>]"
       ],
       "description": "List commands",
-      "help": "The <info>list</info> command lists all commands:\n\n  <info>php /var/www/html/magento2/bin/magento list</info>\n\nYou can also display the commands for a specific namespace:\n\n  <info>php /var/www/html/magento2/bin/magento list test</info>\n\nYou can also output the information in other formats by using the <comment>--format</comment> option:\n\n  <info>php /var/www/html/magento2/bin/magento list --format=xml</info>\n\nIt's also possible to get raw list of commands (useful for embedding command runner):\n\n  <info>php /var/www/html/magento2/bin/magento list --raw</info>",
+      "help": "The <info>list</info> command lists all commands:\n\n  <info>php bin/magento list</info>\n\nYou can also display the commands for a specific namespace:\n\n  <info>php bin/magento list test</info>\n\nYou can also output the information in other formats by using the <comment>--format</comment> option:\n\n  <info>php bin/magento list --format=xml</info>\n\nIt's also possible to get raw list of commands (useful for embedding command runner):\n\n  <info>php bin/magento list --raw</info>",
       "definition": {
         "arguments": {
           "namespace": {
@@ -284,7 +284,7 @@
         "admin:user:unlock <username>"
       ],
       "description": "Unlock Admin Account",
-      "help": "This command unlocks an admin account by its username.\nTo unlock:\n      <comment>/var/www/html/magento2/bin/magento admin:user:unlock username</comment>",
+      "help": "This command unlocks an admin account by its username.\nTo unlock:\n      <comment>bin/magento admin:user:unlock username</comment>",
       "definition": {
         "arguments": {
           "username": {
@@ -1180,7 +1180,7 @@
     {
       "name": "catalog:images:resize",
       "usage": [
-        "catalog:images:resize [-a|--async]"
+        "catalog:images:resize [-a|--async] [--skip_hidden_images]"
       ],
       "description": "Creates resized product images",
       "help": "Creates resized product images",
@@ -1194,6 +1194,15 @@
             "is_value_required": false,
             "is_multiple": false,
             "description": "Resize image in asynchronous mode",
+            "default": false
+          },
+          "skip_hidden_images": {
+            "name": "--skip_hidden_images",
+            "shortcut": "",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Do not process images marked as hidden from product page",
             "default": false
           },
           "help": {
@@ -2385,6 +2394,160 @@
       "hidden": false
     },
     {
+      "name": "dev:email:newsletter-compatibility-check",
+      "usage": [
+        "dev:email:newsletter-compatibility-check"
+      ],
+      "description": "Scans newsletter templates for potential variable usage compatibility issues",
+      "help": "Scans newsletter templates for potential variable usage compatibility issues",
+      "definition": {
+        "arguments": [],
+        "options": {
+          "help": {
+            "name": "--help",
+            "shortcut": "-h",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Display this help message",
+            "default": false
+          },
+          "quiet": {
+            "name": "--quiet",
+            "shortcut": "-q",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Do not output any message",
+            "default": false
+          },
+          "verbose": {
+            "name": "--verbose",
+            "shortcut": "-v|-vv|-vvv",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
+            "default": false
+          },
+          "version": {
+            "name": "--version",
+            "shortcut": "-V",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Display this application version",
+            "default": false
+          },
+          "ansi": {
+            "name": "--ansi",
+            "shortcut": "",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Force ANSI output",
+            "default": false
+          },
+          "no-ansi": {
+            "name": "--no-ansi",
+            "shortcut": "",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Disable ANSI output",
+            "default": false
+          },
+          "no-interaction": {
+            "name": "--no-interaction",
+            "shortcut": "-n",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Do not ask any interactive question",
+            "default": false
+          }
+        }
+      },
+      "hidden": false
+    },
+    {
+      "name": "dev:email:override-compatibility-check",
+      "usage": [
+        "dev:email:override-compatibility-check"
+      ],
+      "description": "Scans email template overrides for potential variable usage compatibility issues",
+      "help": "Scans email template overrides for potential variable usage compatibility issues",
+      "definition": {
+        "arguments": [],
+        "options": {
+          "help": {
+            "name": "--help",
+            "shortcut": "-h",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Display this help message",
+            "default": false
+          },
+          "quiet": {
+            "name": "--quiet",
+            "shortcut": "-q",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Do not output any message",
+            "default": false
+          },
+          "verbose": {
+            "name": "--verbose",
+            "shortcut": "-v|-vv|-vvv",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
+            "default": false
+          },
+          "version": {
+            "name": "--version",
+            "shortcut": "-V",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Display this application version",
+            "default": false
+          },
+          "ansi": {
+            "name": "--ansi",
+            "shortcut": "",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Force ANSI output",
+            "default": false
+          },
+          "no-ansi": {
+            "name": "--no-ansi",
+            "shortcut": "",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Disable ANSI output",
+            "default": false
+          },
+          "no-interaction": {
+            "name": "--no-interaction",
+            "shortcut": "-n",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Do not ask any interactive question",
+            "default": false
+          }
+        }
+      },
+      "hidden": false
+    },
+    {
       "name": "dev:profiler:disable",
       "usage": [
         "dev:profiler:disable"
@@ -3304,470 +3467,6 @@
             "description": "Overwrite XML file",
             "default": false
           },
-          "help": {
-            "name": "--help",
-            "shortcut": "-h",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this help message",
-            "default": false
-          },
-          "quiet": {
-            "name": "--quiet",
-            "shortcut": "-q",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not output any message",
-            "default": false
-          },
-          "verbose": {
-            "name": "--verbose",
-            "shortcut": "-v|-vv|-vvv",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
-            "default": false
-          },
-          "version": {
-            "name": "--version",
-            "shortcut": "-V",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this application version",
-            "default": false
-          },
-          "ansi": {
-            "name": "--ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Force ANSI output",
-            "default": false
-          },
-          "no-ansi": {
-            "name": "--no-ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Disable ANSI output",
-            "default": false
-          },
-          "no-interaction": {
-            "name": "--no-interaction",
-            "shortcut": "-n",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not ask any interactive question",
-            "default": false
-          }
-        }
-      },
-      "hidden": false
-    },
-    {
-      "name": "dotdigital:connector:automap",
-      "usage": [
-        "dotdigital:connector:automap"
-      ],
-      "description": "Auto-map data fields",
-      "help": "Auto-map data fields",
-      "definition": {
-        "arguments": [],
-        "options": {
-          "help": {
-            "name": "--help",
-            "shortcut": "-h",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this help message",
-            "default": false
-          },
-          "quiet": {
-            "name": "--quiet",
-            "shortcut": "-q",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not output any message",
-            "default": false
-          },
-          "verbose": {
-            "name": "--verbose",
-            "shortcut": "-v|-vv|-vvv",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
-            "default": false
-          },
-          "version": {
-            "name": "--version",
-            "shortcut": "-V",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this application version",
-            "default": false
-          },
-          "ansi": {
-            "name": "--ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Force ANSI output",
-            "default": false
-          },
-          "no-ansi": {
-            "name": "--no-ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Disable ANSI output",
-            "default": false
-          },
-          "no-interaction": {
-            "name": "--no-interaction",
-            "shortcut": "-n",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not ask any interactive question",
-            "default": false
-          }
-        }
-      },
-      "hidden": false
-    },
-    {
-      "name": "dotdigital:connector:enable",
-      "usage": [
-        "dotdigital:connector:enable [--username USERNAME] [--password PASSWORD] [--automap-datafields [AUTOMAP-DATAFIELDS]] [--enable-syncs [ENABLE-SYNCS]] [--remove-ip-restriction [REMOVE-IP-RESTRICTION]] [--enable-email-capture [ENABLE-EMAIL-CAPTURE]]"
-      ],
-      "description": "Add Dotdigital API credentials and enable the connector",
-      "help": "Add Dotdigital API credentials and enable the connector",
-      "definition": {
-        "arguments": [],
-        "options": {
-          "username": {
-            "name": "--username",
-            "shortcut": "",
-            "accept_value": true,
-            "is_value_required": true,
-            "is_multiple": false,
-            "description": "API username",
-            "default": null
-          },
-          "password": {
-            "name": "--password",
-            "shortcut": "",
-            "accept_value": true,
-            "is_value_required": true,
-            "is_multiple": false,
-            "description": "API password",
-            "default": null
-          },
-          "automap-datafields": {
-            "name": "--automap-datafields",
-            "shortcut": "",
-            "accept_value": true,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Automap data fields",
-            "default": null
-          },
-          "enable-syncs": {
-            "name": "--enable-syncs",
-            "shortcut": "",
-            "accept_value": true,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Enable syncs",
-            "default": null
-          },
-          "remove-ip-restriction": {
-            "name": "--remove-ip-restriction",
-            "shortcut": "",
-            "accept_value": true,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Remove IP restriction",
-            "default": null
-          },
-          "enable-email-capture": {
-            "name": "--enable-email-capture",
-            "shortcut": "",
-            "accept_value": true,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Enable email capture",
-            "default": null
-          },
-          "help": {
-            "name": "--help",
-            "shortcut": "-h",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this help message",
-            "default": false
-          },
-          "quiet": {
-            "name": "--quiet",
-            "shortcut": "-q",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not output any message",
-            "default": false
-          },
-          "verbose": {
-            "name": "--verbose",
-            "shortcut": "-v|-vv|-vvv",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
-            "default": false
-          },
-          "version": {
-            "name": "--version",
-            "shortcut": "-V",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this application version",
-            "default": false
-          },
-          "ansi": {
-            "name": "--ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Force ANSI output",
-            "default": false
-          },
-          "no-ansi": {
-            "name": "--no-ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Disable ANSI output",
-            "default": false
-          },
-          "no-interaction": {
-            "name": "--no-interaction",
-            "shortcut": "-n",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not ask any interactive question",
-            "default": false
-          }
-        }
-      },
-      "hidden": false
-    },
-    {
-      "name": "dotdigital:migrate",
-      "usage": [
-        "dotdigital:migrate"
-      ],
-      "description": "Migrate data into email_ tables to sync with Engagement Cloud",
-      "help": "Migrate data into email_ tables to sync with Engagement Cloud",
-      "definition": {
-        "arguments": [],
-        "options": {
-          "help": {
-            "name": "--help",
-            "shortcut": "-h",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this help message",
-            "default": false
-          },
-          "quiet": {
-            "name": "--quiet",
-            "shortcut": "-q",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not output any message",
-            "default": false
-          },
-          "verbose": {
-            "name": "--verbose",
-            "shortcut": "-v|-vv|-vvv",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
-            "default": false
-          },
-          "version": {
-            "name": "--version",
-            "shortcut": "-V",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this application version",
-            "default": false
-          },
-          "ansi": {
-            "name": "--ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Force ANSI output",
-            "default": false
-          },
-          "no-ansi": {
-            "name": "--no-ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Disable ANSI output",
-            "default": false
-          },
-          "no-interaction": {
-            "name": "--no-interaction",
-            "shortcut": "-n",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not ask any interactive question",
-            "default": false
-          }
-        }
-      },
-      "hidden": false
-    },
-    {
-      "name": "dotdigital:sync",
-      "usage": [
-        "dotdigital:sync [--from [FROM]] [--] [<sync>]"
-      ],
-      "description": "Run syncs to populate email_ tables before importing to Engagement Cloud",
-      "help": "Run syncs to populate email_ tables before importing to Engagement Cloud",
-      "definition": {
-        "arguments": {
-          "sync": {
-            "name": "sync",
-            "is_required": false,
-            "is_array": false,
-            "description": "The name of the sync to run",
-            "default": null
-          }
-        },
-        "options": {
-          "from": {
-            "name": "--from",
-            "shortcut": "",
-            "accept_value": true,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Specify a date/time (parsable by \\DateTime) to run a sync from (if supported)",
-            "default": null
-          },
-          "help": {
-            "name": "--help",
-            "shortcut": "-h",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this help message",
-            "default": false
-          },
-          "quiet": {
-            "name": "--quiet",
-            "shortcut": "-q",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not output any message",
-            "default": false
-          },
-          "verbose": {
-            "name": "--verbose",
-            "shortcut": "-v|-vv|-vvv",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
-            "default": false
-          },
-          "version": {
-            "name": "--version",
-            "shortcut": "-V",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this application version",
-            "default": false
-          },
-          "ansi": {
-            "name": "--ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Force ANSI output",
-            "default": false
-          },
-          "no-ansi": {
-            "name": "--no-ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Disable ANSI output",
-            "default": false
-          },
-          "no-interaction": {
-            "name": "--no-interaction",
-            "shortcut": "-n",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not ask any interactive question",
-            "default": false
-          }
-        }
-      },
-      "hidden": false
-    },
-    {
-      "name": "dotdigital:task",
-      "usage": [
-        "dotdigital:task [<task>]"
-      ],
-      "description": "Run dotdigital module tasks on demand",
-      "help": "Run dotdigital module tasks on demand",
-      "definition": {
-        "arguments": {
-          "task": {
-            "name": "task",
-            "is_required": false,
-            "is_array": false,
-            "description": "The name of the task to run",
-            "default": null
-          }
-        },
-        "options": {
           "help": {
             "name": "--help",
             "shortcut": "-h",
@@ -7387,10 +7086,10 @@
     {
       "name": "queue:consumers:start",
       "usage": [
-        "queue:consumers:start [--max-messages MAX-MESSAGES] [--batch-size BATCH-SIZE] [--area-code AREA-CODE] [--single-thread] [--pid-file-path PID-FILE-PATH] [--] <consumer>"
+        "queue:consumers:start [--max-messages MAX-MESSAGES] [--batch-size BATCH-SIZE] [--area-code AREA-CODE] [--single-thread] [--multi-process [MULTI-PROCESS]] [--pid-file-path PID-FILE-PATH] [--] <consumer>"
       ],
       "description": "Start MessageQueue consumer",
-      "help": "This command starts MessageQueue consumer by its name.\n\nTo start consumer which will process all queued messages and terminate execution:\n\n    <comment>/var/www/html/magento2/bin/magento queue:consumers:start someConsumer</comment>\n\nTo specify the number of messages which should be processed by consumer before its termination:\n\n    <comment>/var/www/html/magento2/bin/magento queue:consumers:start someConsumer --max-messages=50</comment>\n\nTo specify the number of messages per batch for the batch consumer:\n\n    <comment>/var/www/html/magento2/bin/magento queue:consumers:start someConsumer --batch-size=500</comment>\n\nTo specify the preferred area:\n\n    <comment>/var/www/html/magento2/bin/magento queue:consumers:start someConsumer --area-code='adminhtml'</comment>\n\nTo do not run multiple copies of one consumer simultaneously:\n\n    <comment>/var/www/html/magento2/bin/magento queue:consumers:start someConsumer --single-thread'</comment>\n\nTo save PID enter path (This option is deprecated, use --single-thread instead):\n\n    <comment>/var/www/html/magento2/bin/magento queue:consumers:start someConsumer --pid-file-path='/var/someConsumer.pid'</comment>",
+      "help": "This command starts MessageQueue consumer by its name.\n\nTo start consumer which will process all queued messages and terminate execution:\n\n    <comment>bin/magento queue:consumers:start someConsumer</comment>\n\nTo specify the number of messages which should be processed by consumer before its termination:\n\n    <comment>bin/magento queue:consumers:start someConsumer --max-messages=50</comment>\n\nTo specify the number of messages per batch for the batch consumer:\n\n    <comment>bin/magento queue:consumers:start someConsumer --batch-size=500</comment>\n\nTo specify the preferred area:\n\n    <comment>bin/magento queue:consumers:start someConsumer --area-code='adminhtml'</comment>\n\nTo do not run multiple copies of one consumer simultaneously:\n\n    <comment>bin/magento queue:consumers:start someConsumer --single-thread</comment>\n\nTo save PID enter path (This option is deprecated, use --single-thread instead):\n\n    <comment>bin/magento queue:consumers:start someConsumer --pid-file-path='/var/someConsumer.pid'</comment>\n\nTo define the number of processes per consumer:\n\n    <comment>bin/magento queue:consumers:start someConsumer --multi-process=4</comment>",
       "definition": {
         "arguments": {
           "consumer": {
@@ -7437,6 +7136,15 @@
             "is_multiple": false,
             "description": "This option prevents running multiple copies of one consumer simultaneously.",
             "default": false
+          },
+          "multi-process": {
+            "name": "--multi-process",
+            "shortcut": "",
+            "accept_value": true,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "The number of processes per consumer.",
+            "default": null
           },
           "pid-file-path": {
             "name": "--pid-file-path",
@@ -8371,7 +8079,7 @@
     {
       "name": "setup:config:set",
       "usage": [
-        "setup:config:set [--backend-frontname BACKEND-FRONTNAME] [--enable-debug-logging ENABLE-DEBUG-LOGGING] [--enable-syslog-logging ENABLE-SYSLOG-LOGGING] [--remote-storage-driver REMOTE-STORAGE-DRIVER] [--remote-storage-prefix REMOTE-STORAGE-PREFIX] [--remote-storage-bucket REMOTE-STORAGE-BUCKET] [--remote-storage-region REMOTE-STORAGE-REGION] [--remote-storage-key REMOTE-STORAGE-KEY] [--remote-storage-secret REMOTE-STORAGE-SECRET] [--consumers-wait-for-messages CONSUMERS-WAIT-FOR-MESSAGES] [--amqp-host AMQP-HOST] [--amqp-port AMQP-PORT] [--amqp-user AMQP-USER] [--amqp-password AMQP-PASSWORD] [--amqp-virtualhost AMQP-VIRTUALHOST] [--amqp-ssl AMQP-SSL] [--amqp-ssl-options AMQP-SSL-OPTIONS] [--key KEY] [--db-host DB-HOST] [--db-name DB-NAME] [--db-user DB-USER] [--db-engine DB-ENGINE] [--db-password DB-PASSWORD] [--db-prefix DB-PREFIX] [--db-model DB-MODEL] [--db-init-statements DB-INIT-STATEMENTS] [-s|--skip-db-validation] [--http-cache-hosts HTTP-CACHE-HOSTS] [--db-ssl-key DB-SSL-KEY] [--db-ssl-cert DB-SSL-CERT] [--db-ssl-ca DB-SSL-CA] [--db-ssl-verify] [--session-save SESSION-SAVE] [--session-save-redis-host SESSION-SAVE-REDIS-HOST] [--session-save-redis-port SESSION-SAVE-REDIS-PORT] [--session-save-redis-password SESSION-SAVE-REDIS-PASSWORD] [--session-save-redis-timeout SESSION-SAVE-REDIS-TIMEOUT] [--session-save-redis-persistent-id SESSION-SAVE-REDIS-PERSISTENT-ID] [--session-save-redis-db SESSION-SAVE-REDIS-DB] [--session-save-redis-compression-threshold SESSION-SAVE-REDIS-COMPRESSION-THRESHOLD] [--session-save-redis-compression-lib SESSION-SAVE-REDIS-COMPRESSION-LIB] [--session-save-redis-log-level SESSION-SAVE-REDIS-LOG-LEVEL] [--session-save-redis-max-concurrency SESSION-SAVE-REDIS-MAX-CONCURRENCY] [--session-save-redis-break-after-frontend SESSION-SAVE-REDIS-BREAK-AFTER-FRONTEND] [--session-save-redis-break-after-adminhtml SESSION-SAVE-REDIS-BREAK-AFTER-ADMINHTML] [--session-save-redis-first-lifetime SESSION-SAVE-REDIS-FIRST-LIFETIME] [--session-save-redis-bot-first-lifetime SESSION-SAVE-REDIS-BOT-FIRST-LIFETIME] [--session-save-redis-bot-lifetime SESSION-SAVE-REDIS-BOT-LIFETIME] [--session-save-redis-disable-locking SESSION-SAVE-REDIS-DISABLE-LOCKING] [--session-save-redis-min-lifetime SESSION-SAVE-REDIS-MIN-LIFETIME] [--session-save-redis-max-lifetime SESSION-SAVE-REDIS-MAX-LIFETIME] [--session-save-redis-sentinel-master SESSION-SAVE-REDIS-SENTINEL-MASTER] [--session-save-redis-sentinel-servers SESSION-SAVE-REDIS-SENTINEL-SERVERS] [--session-save-redis-sentinel-verify-master SESSION-SAVE-REDIS-SENTINEL-VERIFY-MASTER] [--session-save-redis-sentinel-connect-retries SESSION-SAVE-REDIS-SENTINEL-CONNECT-RETRIES] [--cache-backend CACHE-BACKEND] [--cache-backend-redis-server CACHE-BACKEND-REDIS-SERVER] [--cache-backend-redis-db CACHE-BACKEND-REDIS-DB] [--cache-backend-redis-port CACHE-BACKEND-REDIS-PORT] [--cache-backend-redis-password CACHE-BACKEND-REDIS-PASSWORD] [--cache-backend-redis-compress-data CACHE-BACKEND-REDIS-COMPRESS-DATA] [--cache-backend-redis-compression-lib CACHE-BACKEND-REDIS-COMPRESSION-LIB] [--cache-id-prefix CACHE-ID-PREFIX] [--allow-parallel-generation] [--page-cache PAGE-CACHE] [--page-cache-redis-server PAGE-CACHE-REDIS-SERVER] [--page-cache-redis-db PAGE-CACHE-REDIS-DB] [--page-cache-redis-port PAGE-CACHE-REDIS-PORT] [--page-cache-redis-password PAGE-CACHE-REDIS-PASSWORD] [--page-cache-redis-compress-data PAGE-CACHE-REDIS-COMPRESS-DATA] [--page-cache-redis-compression-lib PAGE-CACHE-REDIS-COMPRESSION-LIB] [--page-cache-id-prefix PAGE-CACHE-ID-PREFIX] [--lock-provider LOCK-PROVIDER] [--lock-db-prefix LOCK-DB-PREFIX] [--lock-zookeeper-host LOCK-ZOOKEEPER-HOST] [--lock-zookeeper-path LOCK-ZOOKEEPER-PATH] [--lock-file-path LOCK-FILE-PATH] [--document-root-is-pub DOCUMENT-ROOT-IS-PUB] [--magento-init-params MAGENTO-INIT-PARAMS]"
+        "setup:config:set [--backend-frontname BACKEND-FRONTNAME] [--enable-debug-logging ENABLE-DEBUG-LOGGING] [--enable-syslog-logging ENABLE-SYSLOG-LOGGING] [--remote-storage-driver REMOTE-STORAGE-DRIVER] [--remote-storage-prefix REMOTE-STORAGE-PREFIX] [--remote-storage-endpoint REMOTE-STORAGE-ENDPOINT] [--remote-storage-bucket REMOTE-STORAGE-BUCKET] [--remote-storage-region REMOTE-STORAGE-REGION] [--remote-storage-key REMOTE-STORAGE-KEY] [--remote-storage-secret REMOTE-STORAGE-SECRET] [--remote-storage-path-style REMOTE-STORAGE-PATH-STYLE] [--amqp-host AMQP-HOST] [--amqp-port AMQP-PORT] [--amqp-user AMQP-USER] [--amqp-password AMQP-PASSWORD] [--amqp-virtualhost AMQP-VIRTUALHOST] [--amqp-ssl AMQP-SSL] [--amqp-ssl-options AMQP-SSL-OPTIONS] [--consumers-wait-for-messages CONSUMERS-WAIT-FOR-MESSAGES] [--key KEY] [--db-host DB-HOST] [--db-name DB-NAME] [--db-user DB-USER] [--db-engine DB-ENGINE] [--db-password DB-PASSWORD] [--db-prefix DB-PREFIX] [--db-model DB-MODEL] [--db-init-statements DB-INIT-STATEMENTS] [-s|--skip-db-validation] [--http-cache-hosts HTTP-CACHE-HOSTS] [--db-ssl-key DB-SSL-KEY] [--db-ssl-cert DB-SSL-CERT] [--db-ssl-ca DB-SSL-CA] [--db-ssl-verify] [--session-save SESSION-SAVE] [--session-save-redis-host SESSION-SAVE-REDIS-HOST] [--session-save-redis-port SESSION-SAVE-REDIS-PORT] [--session-save-redis-password SESSION-SAVE-REDIS-PASSWORD] [--session-save-redis-timeout SESSION-SAVE-REDIS-TIMEOUT] [--session-save-redis-persistent-id SESSION-SAVE-REDIS-PERSISTENT-ID] [--session-save-redis-db SESSION-SAVE-REDIS-DB] [--session-save-redis-compression-threshold SESSION-SAVE-REDIS-COMPRESSION-THRESHOLD] [--session-save-redis-compression-lib SESSION-SAVE-REDIS-COMPRESSION-LIB] [--session-save-redis-log-level SESSION-SAVE-REDIS-LOG-LEVEL] [--session-save-redis-max-concurrency SESSION-SAVE-REDIS-MAX-CONCURRENCY] [--session-save-redis-break-after-frontend SESSION-SAVE-REDIS-BREAK-AFTER-FRONTEND] [--session-save-redis-break-after-adminhtml SESSION-SAVE-REDIS-BREAK-AFTER-ADMINHTML] [--session-save-redis-first-lifetime SESSION-SAVE-REDIS-FIRST-LIFETIME] [--session-save-redis-bot-first-lifetime SESSION-SAVE-REDIS-BOT-FIRST-LIFETIME] [--session-save-redis-bot-lifetime SESSION-SAVE-REDIS-BOT-LIFETIME] [--session-save-redis-disable-locking SESSION-SAVE-REDIS-DISABLE-LOCKING] [--session-save-redis-min-lifetime SESSION-SAVE-REDIS-MIN-LIFETIME] [--session-save-redis-max-lifetime SESSION-SAVE-REDIS-MAX-LIFETIME] [--session-save-redis-sentinel-master SESSION-SAVE-REDIS-SENTINEL-MASTER] [--session-save-redis-sentinel-servers SESSION-SAVE-REDIS-SENTINEL-SERVERS] [--session-save-redis-sentinel-verify-master SESSION-SAVE-REDIS-SENTINEL-VERIFY-MASTER] [--session-save-redis-sentinel-connect-retries SESSION-SAVE-REDIS-SENTINEL-CONNECT-RETRIES] [--cache-backend CACHE-BACKEND] [--cache-backend-redis-server CACHE-BACKEND-REDIS-SERVER] [--cache-backend-redis-db CACHE-BACKEND-REDIS-DB] [--cache-backend-redis-port CACHE-BACKEND-REDIS-PORT] [--cache-backend-redis-password CACHE-BACKEND-REDIS-PASSWORD] [--cache-backend-redis-compress-data CACHE-BACKEND-REDIS-COMPRESS-DATA] [--cache-backend-redis-compression-lib CACHE-BACKEND-REDIS-COMPRESSION-LIB] [--cache-id-prefix CACHE-ID-PREFIX] [--allow-parallel-generation] [--page-cache PAGE-CACHE] [--page-cache-redis-server PAGE-CACHE-REDIS-SERVER] [--page-cache-redis-db PAGE-CACHE-REDIS-DB] [--page-cache-redis-port PAGE-CACHE-REDIS-PORT] [--page-cache-redis-password PAGE-CACHE-REDIS-PASSWORD] [--page-cache-redis-compress-data PAGE-CACHE-REDIS-COMPRESS-DATA] [--page-cache-redis-compression-lib PAGE-CACHE-REDIS-COMPRESSION-LIB] [--page-cache-id-prefix PAGE-CACHE-ID-PREFIX] [--lock-provider LOCK-PROVIDER] [--lock-db-prefix LOCK-DB-PREFIX] [--lock-zookeeper-host LOCK-ZOOKEEPER-HOST] [--lock-zookeeper-path LOCK-ZOOKEEPER-PATH] [--lock-file-path LOCK-FILE-PATH] [--document-root-is-pub DOCUMENT-ROOT-IS-PUB] [--magento-init-params MAGENTO-INIT-PARAMS]"
       ],
       "description": "Creates or modifies the deployment configuration",
       "help": "Creates or modifies the deployment configuration",
@@ -8423,6 +8131,15 @@
             "description": "Remote storage prefix",
             "default": ""
           },
+          "remote-storage-endpoint": {
+            "name": "--remote-storage-endpoint",
+            "shortcut": "",
+            "accept_value": true,
+            "is_value_required": true,
+            "is_multiple": false,
+            "description": "Remote storage endpoint",
+            "default": null
+          },
           "remote-storage-bucket": {
             "name": "--remote-storage-bucket",
             "shortcut": "",
@@ -8459,14 +8176,14 @@
             "description": "Remote storage secret key",
             "default": ""
           },
-          "consumers-wait-for-messages": {
-            "name": "--consumers-wait-for-messages",
+          "remote-storage-path-style": {
+            "name": "--remote-storage-path-style",
             "shortcut": "",
             "accept_value": true,
             "is_value_required": true,
             "is_multiple": false,
-            "description": "Should consumers wait for a message from the queue? 1 - Yes, 0 - No",
-            "default": null
+            "description": "Remote storage path style",
+            "default": "0"
           },
           "amqp-host": {
             "name": "--amqp-host",
@@ -8530,6 +8247,15 @@
             "is_multiple": false,
             "description": "Amqp SSL Options (JSON)",
             "default": ""
+          },
+          "consumers-wait-for-messages": {
+            "name": "--consumers-wait-for-messages",
+            "shortcut": "",
+            "accept_value": true,
+            "is_value_required": true,
+            "is_multiple": false,
+            "description": "Should consumers wait for a message from the queue? 1 - Yes, 0 - No",
+            "default": null
           },
           "key": {
             "name": "--key",
@@ -9699,7 +9425,7 @@
     {
       "name": "setup:install",
       "usage": [
-        "setup:install [--backend-frontname BACKEND-FRONTNAME] [--enable-debug-logging ENABLE-DEBUG-LOGGING] [--enable-syslog-logging ENABLE-SYSLOG-LOGGING] [--remote-storage-driver REMOTE-STORAGE-DRIVER] [--remote-storage-prefix REMOTE-STORAGE-PREFIX] [--remote-storage-bucket REMOTE-STORAGE-BUCKET] [--remote-storage-region REMOTE-STORAGE-REGION] [--remote-storage-key REMOTE-STORAGE-KEY] [--remote-storage-secret REMOTE-STORAGE-SECRET] [--consumers-wait-for-messages CONSUMERS-WAIT-FOR-MESSAGES] [--amqp-host AMQP-HOST] [--amqp-port AMQP-PORT] [--amqp-user AMQP-USER] [--amqp-password AMQP-PASSWORD] [--amqp-virtualhost AMQP-VIRTUALHOST] [--amqp-ssl AMQP-SSL] [--amqp-ssl-options AMQP-SSL-OPTIONS] [--key KEY] [--db-host DB-HOST] [--db-name DB-NAME] [--db-user DB-USER] [--db-engine DB-ENGINE] [--db-password DB-PASSWORD] [--db-prefix DB-PREFIX] [--db-model DB-MODEL] [--db-init-statements DB-INIT-STATEMENTS] [-s|--skip-db-validation] [--http-cache-hosts HTTP-CACHE-HOSTS] [--db-ssl-key DB-SSL-KEY] [--db-ssl-cert DB-SSL-CERT] [--db-ssl-ca DB-SSL-CA] [--db-ssl-verify] [--session-save SESSION-SAVE] [--session-save-redis-host SESSION-SAVE-REDIS-HOST] [--session-save-redis-port SESSION-SAVE-REDIS-PORT] [--session-save-redis-password SESSION-SAVE-REDIS-PASSWORD] [--session-save-redis-timeout SESSION-SAVE-REDIS-TIMEOUT] [--session-save-redis-persistent-id SESSION-SAVE-REDIS-PERSISTENT-ID] [--session-save-redis-db SESSION-SAVE-REDIS-DB] [--session-save-redis-compression-threshold SESSION-SAVE-REDIS-COMPRESSION-THRESHOLD] [--session-save-redis-compression-lib SESSION-SAVE-REDIS-COMPRESSION-LIB] [--session-save-redis-log-level SESSION-SAVE-REDIS-LOG-LEVEL] [--session-save-redis-max-concurrency SESSION-SAVE-REDIS-MAX-CONCURRENCY] [--session-save-redis-break-after-frontend SESSION-SAVE-REDIS-BREAK-AFTER-FRONTEND] [--session-save-redis-break-after-adminhtml SESSION-SAVE-REDIS-BREAK-AFTER-ADMINHTML] [--session-save-redis-first-lifetime SESSION-SAVE-REDIS-FIRST-LIFETIME] [--session-save-redis-bot-first-lifetime SESSION-SAVE-REDIS-BOT-FIRST-LIFETIME] [--session-save-redis-bot-lifetime SESSION-SAVE-REDIS-BOT-LIFETIME] [--session-save-redis-disable-locking SESSION-SAVE-REDIS-DISABLE-LOCKING] [--session-save-redis-min-lifetime SESSION-SAVE-REDIS-MIN-LIFETIME] [--session-save-redis-max-lifetime SESSION-SAVE-REDIS-MAX-LIFETIME] [--session-save-redis-sentinel-master SESSION-SAVE-REDIS-SENTINEL-MASTER] [--session-save-redis-sentinel-servers SESSION-SAVE-REDIS-SENTINEL-SERVERS] [--session-save-redis-sentinel-verify-master SESSION-SAVE-REDIS-SENTINEL-VERIFY-MASTER] [--session-save-redis-sentinel-connect-retries SESSION-SAVE-REDIS-SENTINEL-CONNECT-RETRIES] [--cache-backend CACHE-BACKEND] [--cache-backend-redis-server CACHE-BACKEND-REDIS-SERVER] [--cache-backend-redis-db CACHE-BACKEND-REDIS-DB] [--cache-backend-redis-port CACHE-BACKEND-REDIS-PORT] [--cache-backend-redis-password CACHE-BACKEND-REDIS-PASSWORD] [--cache-backend-redis-compress-data CACHE-BACKEND-REDIS-COMPRESS-DATA] [--cache-backend-redis-compression-lib CACHE-BACKEND-REDIS-COMPRESSION-LIB] [--cache-id-prefix CACHE-ID-PREFIX] [--allow-parallel-generation] [--page-cache PAGE-CACHE] [--page-cache-redis-server PAGE-CACHE-REDIS-SERVER] [--page-cache-redis-db PAGE-CACHE-REDIS-DB] [--page-cache-redis-port PAGE-CACHE-REDIS-PORT] [--page-cache-redis-password PAGE-CACHE-REDIS-PASSWORD] [--page-cache-redis-compress-data PAGE-CACHE-REDIS-COMPRESS-DATA] [--page-cache-redis-compression-lib PAGE-CACHE-REDIS-COMPRESSION-LIB] [--page-cache-id-prefix PAGE-CACHE-ID-PREFIX] [--lock-provider LOCK-PROVIDER] [--lock-db-prefix LOCK-DB-PREFIX] [--lock-zookeeper-host LOCK-ZOOKEEPER-HOST] [--lock-zookeeper-path LOCK-ZOOKEEPER-PATH] [--lock-file-path LOCK-FILE-PATH] [--document-root-is-pub DOCUMENT-ROOT-IS-PUB] [--base-url BASE-URL] [--language LANGUAGE] [--timezone TIMEZONE] [--currency CURRENCY] [--use-rewrites USE-REWRITES] [--use-secure USE-SECURE] [--base-url-secure BASE-URL-SECURE] [--use-secure-admin USE-SECURE-ADMIN] [--admin-use-security-key ADMIN-USE-SECURITY-KEY] [--admin-user [ADMIN-USER]] [--admin-password [ADMIN-PASSWORD]] [--admin-email [ADMIN-EMAIL]] [--admin-firstname [ADMIN-FIRSTNAME]] [--admin-lastname [ADMIN-LASTNAME]] [--search-engine SEARCH-ENGINE] [--elasticsearch-host ELASTICSEARCH-HOST] [--elasticsearch-port ELASTICSEARCH-PORT] [--elasticsearch-enable-auth ELASTICSEARCH-ENABLE-AUTH] [--elasticsearch-username ELASTICSEARCH-USERNAME] [--elasticsearch-password ELASTICSEARCH-PASSWORD] [--elasticsearch-index-prefix ELASTICSEARCH-INDEX-PREFIX] [--elasticsearch-timeout ELASTICSEARCH-TIMEOUT] [--cleanup-database] [--sales-order-increment-prefix SALES-ORDER-INCREMENT-PREFIX] [--use-sample-data] [--enable-modules [ENABLE-MODULES]] [--disable-modules [DISABLE-MODULES]] [--convert-old-scripts [CONVERT-OLD-SCRIPTS]] [-i|--interactive] [--safe-mode [SAFE-MODE]] [--data-restore [DATA-RESTORE]] [--dry-run [DRY-RUN]] [--magento-init-params MAGENTO-INIT-PARAMS]"
+        "setup:install [--backend-frontname BACKEND-FRONTNAME] [--enable-debug-logging ENABLE-DEBUG-LOGGING] [--enable-syslog-logging ENABLE-SYSLOG-LOGGING] [--remote-storage-driver REMOTE-STORAGE-DRIVER] [--remote-storage-prefix REMOTE-STORAGE-PREFIX] [--remote-storage-endpoint REMOTE-STORAGE-ENDPOINT] [--remote-storage-bucket REMOTE-STORAGE-BUCKET] [--remote-storage-region REMOTE-STORAGE-REGION] [--remote-storage-key REMOTE-STORAGE-KEY] [--remote-storage-secret REMOTE-STORAGE-SECRET] [--remote-storage-path-style REMOTE-STORAGE-PATH-STYLE] [--amqp-host AMQP-HOST] [--amqp-port AMQP-PORT] [--amqp-user AMQP-USER] [--amqp-password AMQP-PASSWORD] [--amqp-virtualhost AMQP-VIRTUALHOST] [--amqp-ssl AMQP-SSL] [--amqp-ssl-options AMQP-SSL-OPTIONS] [--consumers-wait-for-messages CONSUMERS-WAIT-FOR-MESSAGES] [--key KEY] [--db-host DB-HOST] [--db-name DB-NAME] [--db-user DB-USER] [--db-engine DB-ENGINE] [--db-password DB-PASSWORD] [--db-prefix DB-PREFIX] [--db-model DB-MODEL] [--db-init-statements DB-INIT-STATEMENTS] [-s|--skip-db-validation] [--http-cache-hosts HTTP-CACHE-HOSTS] [--db-ssl-key DB-SSL-KEY] [--db-ssl-cert DB-SSL-CERT] [--db-ssl-ca DB-SSL-CA] [--db-ssl-verify] [--session-save SESSION-SAVE] [--session-save-redis-host SESSION-SAVE-REDIS-HOST] [--session-save-redis-port SESSION-SAVE-REDIS-PORT] [--session-save-redis-password SESSION-SAVE-REDIS-PASSWORD] [--session-save-redis-timeout SESSION-SAVE-REDIS-TIMEOUT] [--session-save-redis-persistent-id SESSION-SAVE-REDIS-PERSISTENT-ID] [--session-save-redis-db SESSION-SAVE-REDIS-DB] [--session-save-redis-compression-threshold SESSION-SAVE-REDIS-COMPRESSION-THRESHOLD] [--session-save-redis-compression-lib SESSION-SAVE-REDIS-COMPRESSION-LIB] [--session-save-redis-log-level SESSION-SAVE-REDIS-LOG-LEVEL] [--session-save-redis-max-concurrency SESSION-SAVE-REDIS-MAX-CONCURRENCY] [--session-save-redis-break-after-frontend SESSION-SAVE-REDIS-BREAK-AFTER-FRONTEND] [--session-save-redis-break-after-adminhtml SESSION-SAVE-REDIS-BREAK-AFTER-ADMINHTML] [--session-save-redis-first-lifetime SESSION-SAVE-REDIS-FIRST-LIFETIME] [--session-save-redis-bot-first-lifetime SESSION-SAVE-REDIS-BOT-FIRST-LIFETIME] [--session-save-redis-bot-lifetime SESSION-SAVE-REDIS-BOT-LIFETIME] [--session-save-redis-disable-locking SESSION-SAVE-REDIS-DISABLE-LOCKING] [--session-save-redis-min-lifetime SESSION-SAVE-REDIS-MIN-LIFETIME] [--session-save-redis-max-lifetime SESSION-SAVE-REDIS-MAX-LIFETIME] [--session-save-redis-sentinel-master SESSION-SAVE-REDIS-SENTINEL-MASTER] [--session-save-redis-sentinel-servers SESSION-SAVE-REDIS-SENTINEL-SERVERS] [--session-save-redis-sentinel-verify-master SESSION-SAVE-REDIS-SENTINEL-VERIFY-MASTER] [--session-save-redis-sentinel-connect-retries SESSION-SAVE-REDIS-SENTINEL-CONNECT-RETRIES] [--cache-backend CACHE-BACKEND] [--cache-backend-redis-server CACHE-BACKEND-REDIS-SERVER] [--cache-backend-redis-db CACHE-BACKEND-REDIS-DB] [--cache-backend-redis-port CACHE-BACKEND-REDIS-PORT] [--cache-backend-redis-password CACHE-BACKEND-REDIS-PASSWORD] [--cache-backend-redis-compress-data CACHE-BACKEND-REDIS-COMPRESS-DATA] [--cache-backend-redis-compression-lib CACHE-BACKEND-REDIS-COMPRESSION-LIB] [--cache-id-prefix CACHE-ID-PREFIX] [--allow-parallel-generation] [--page-cache PAGE-CACHE] [--page-cache-redis-server PAGE-CACHE-REDIS-SERVER] [--page-cache-redis-db PAGE-CACHE-REDIS-DB] [--page-cache-redis-port PAGE-CACHE-REDIS-PORT] [--page-cache-redis-password PAGE-CACHE-REDIS-PASSWORD] [--page-cache-redis-compress-data PAGE-CACHE-REDIS-COMPRESS-DATA] [--page-cache-redis-compression-lib PAGE-CACHE-REDIS-COMPRESSION-LIB] [--page-cache-id-prefix PAGE-CACHE-ID-PREFIX] [--lock-provider LOCK-PROVIDER] [--lock-db-prefix LOCK-DB-PREFIX] [--lock-zookeeper-host LOCK-ZOOKEEPER-HOST] [--lock-zookeeper-path LOCK-ZOOKEEPER-PATH] [--lock-file-path LOCK-FILE-PATH] [--document-root-is-pub DOCUMENT-ROOT-IS-PUB] [--base-url BASE-URL] [--language LANGUAGE] [--timezone TIMEZONE] [--currency CURRENCY] [--use-rewrites USE-REWRITES] [--use-secure USE-SECURE] [--base-url-secure BASE-URL-SECURE] [--use-secure-admin USE-SECURE-ADMIN] [--admin-use-security-key ADMIN-USE-SECURITY-KEY] [--admin-user [ADMIN-USER]] [--admin-password [ADMIN-PASSWORD]] [--admin-email [ADMIN-EMAIL]] [--admin-firstname [ADMIN-FIRSTNAME]] [--admin-lastname [ADMIN-LASTNAME]] [--search-engine SEARCH-ENGINE] [--elasticsearch-host ELASTICSEARCH-HOST] [--elasticsearch-port ELASTICSEARCH-PORT] [--elasticsearch-enable-auth ELASTICSEARCH-ENABLE-AUTH] [--elasticsearch-username ELASTICSEARCH-USERNAME] [--elasticsearch-password ELASTICSEARCH-PASSWORD] [--elasticsearch-index-prefix ELASTICSEARCH-INDEX-PREFIX] [--elasticsearch-timeout ELASTICSEARCH-TIMEOUT] [--cleanup-database] [--sales-order-increment-prefix SALES-ORDER-INCREMENT-PREFIX] [--use-sample-data] [--enable-modules [ENABLE-MODULES]] [--disable-modules [DISABLE-MODULES]] [--convert-old-scripts [CONVERT-OLD-SCRIPTS]] [-i|--interactive] [--safe-mode [SAFE-MODE]] [--data-restore [DATA-RESTORE]] [--dry-run [DRY-RUN]] [--magento-init-params MAGENTO-INIT-PARAMS]"
       ],
       "description": "Installs the Magento application",
       "help": "Installs the Magento application",
@@ -9751,6 +9477,15 @@
             "description": "Remote storage prefix",
             "default": ""
           },
+          "remote-storage-endpoint": {
+            "name": "--remote-storage-endpoint",
+            "shortcut": "",
+            "accept_value": true,
+            "is_value_required": true,
+            "is_multiple": false,
+            "description": "Remote storage endpoint",
+            "default": null
+          },
           "remote-storage-bucket": {
             "name": "--remote-storage-bucket",
             "shortcut": "",
@@ -9787,14 +9522,14 @@
             "description": "Remote storage secret key",
             "default": ""
           },
-          "consumers-wait-for-messages": {
-            "name": "--consumers-wait-for-messages",
+          "remote-storage-path-style": {
+            "name": "--remote-storage-path-style",
             "shortcut": "",
             "accept_value": true,
             "is_value_required": true,
             "is_multiple": false,
-            "description": "Should consumers wait for a message from the queue? 1 - Yes, 0 - No",
-            "default": null
+            "description": "Remote storage path style",
+            "default": "0"
           },
           "amqp-host": {
             "name": "--amqp-host",
@@ -9858,6 +9593,15 @@
             "is_multiple": false,
             "description": "Amqp SSL Options (JSON)",
             "default": ""
+          },
+          "consumers-wait-for-messages": {
+            "name": "--consumers-wait-for-messages",
+            "shortcut": "",
+            "accept_value": true,
+            "is_value_required": true,
+            "is_multiple": false,
+            "description": "Should consumers wait for a message from the queue? 1 - Yes, 0 - No",
+            "default": null
           },
           "key": {
             "name": "--key",
@@ -12056,341 +11800,6 @@
         }
       },
       "hidden": false
-    },
-    {
-      "name": "vertex:tax:warm-wsdl-cache",
-      "usage": [
-        "vertex:tax:warm-wsdl-cache"
-      ],
-      "description": "Execute WSDL Cache Warming",
-      "help": "Execute WSDL Cache Warming",
-      "definition": {
-        "arguments": [],
-        "options": {
-          "help": {
-            "name": "--help",
-            "shortcut": "-h",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this help message",
-            "default": false
-          },
-          "quiet": {
-            "name": "--quiet",
-            "shortcut": "-q",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not output any message",
-            "default": false
-          },
-          "verbose": {
-            "name": "--verbose",
-            "shortcut": "-v|-vv|-vvv",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
-            "default": false
-          },
-          "version": {
-            "name": "--version",
-            "shortcut": "-V",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this application version",
-            "default": false
-          },
-          "ansi": {
-            "name": "--ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Force ANSI output",
-            "default": false
-          },
-          "no-ansi": {
-            "name": "--no-ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Disable ANSI output",
-            "default": false
-          },
-          "no-interaction": {
-            "name": "--no-interaction",
-            "shortcut": "-n",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not ask any interactive question",
-            "default": false
-          }
-        }
-      },
-      "hidden": false
-    },
-    {
-      "name": "yotpo:reset",
-      "usage": [
-        "yotpo:reset [-e|--entity [ENTITY]]"
-      ],
-      "description": "Reset Yotpo sync flags &/or configurations",
-      "help": "Reset Yotpo sync flags &/or configurations",
-      "definition": {
-        "arguments": [],
-        "options": {
-          "entity": {
-            "name": "--entity",
-            "shortcut": "-e",
-            "accept_value": true,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Entity type (orders)",
-            "default": "orders"
-          },
-          "help": {
-            "name": "--help",
-            "shortcut": "-h",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this help message",
-            "default": false
-          },
-          "quiet": {
-            "name": "--quiet",
-            "shortcut": "-q",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not output any message",
-            "default": false
-          },
-          "verbose": {
-            "name": "--verbose",
-            "shortcut": "-v|-vv|-vvv",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
-            "default": false
-          },
-          "version": {
-            "name": "--version",
-            "shortcut": "-V",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this application version",
-            "default": false
-          },
-          "ansi": {
-            "name": "--ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Force ANSI output",
-            "default": false
-          },
-          "no-ansi": {
-            "name": "--no-ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Disable ANSI output",
-            "default": false
-          },
-          "no-interaction": {
-            "name": "--no-interaction",
-            "shortcut": "-n",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not ask any interactive question",
-            "default": false
-          }
-        }
-      },
-      "hidden": false
-    },
-    {
-      "name": "yotpo:sync",
-      "usage": [
-        "yotpo:sync [-e|--entity ENTITY] [-l|--limit [LIMIT]]"
-      ],
-      "description": "Sync Yotpo manually (reviews module)",
-      "help": "Sync Yotpo manually (reviews module)",
-      "definition": {
-        "arguments": [],
-        "options": {
-          "entity": {
-            "name": "--entity",
-            "shortcut": "-e",
-            "accept_value": true,
-            "is_value_required": true,
-            "is_multiple": false,
-            "description": "Entity type (allowed options: orders)",
-            "default": "orders"
-          },
-          "limit": {
-            "name": "--limit",
-            "shortcut": "-l",
-            "accept_value": true,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Max entity items to sync. WARNING: Setting a high sync limit (or no limit) may result in a high server load (0=no limit).",
-            "default": null
-          },
-          "help": {
-            "name": "--help",
-            "shortcut": "-h",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this help message",
-            "default": false
-          },
-          "quiet": {
-            "name": "--quiet",
-            "shortcut": "-q",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not output any message",
-            "default": false
-          },
-          "verbose": {
-            "name": "--verbose",
-            "shortcut": "-v|-vv|-vvv",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
-            "default": false
-          },
-          "version": {
-            "name": "--version",
-            "shortcut": "-V",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this application version",
-            "default": false
-          },
-          "ansi": {
-            "name": "--ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Force ANSI output",
-            "default": false
-          },
-          "no-ansi": {
-            "name": "--no-ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Disable ANSI output",
-            "default": false
-          },
-          "no-interaction": {
-            "name": "--no-interaction",
-            "shortcut": "-n",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not ask any interactive question",
-            "default": false
-          }
-        }
-      },
-      "hidden": false
-    },
-    {
-      "name": "yotpo:update-metadata",
-      "usage": [
-        "yotpo:update-metadata"
-      ],
-      "description": "Manually send platform metadata to Yotpo",
-      "help": "Manually send platform metadata to Yotpo",
-      "definition": {
-        "arguments": [],
-        "options": {
-          "help": {
-            "name": "--help",
-            "shortcut": "-h",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this help message",
-            "default": false
-          },
-          "quiet": {
-            "name": "--quiet",
-            "shortcut": "-q",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not output any message",
-            "default": false
-          },
-          "verbose": {
-            "name": "--verbose",
-            "shortcut": "-v|-vv|-vvv",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
-            "default": false
-          },
-          "version": {
-            "name": "--version",
-            "shortcut": "-V",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Display this application version",
-            "default": false
-          },
-          "ansi": {
-            "name": "--ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Force ANSI output",
-            "default": false
-          },
-          "no-ansi": {
-            "name": "--no-ansi",
-            "shortcut": "",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Disable ANSI output",
-            "default": false
-          },
-          "no-interaction": {
-            "name": "--no-interaction",
-            "shortcut": "-n",
-            "accept_value": false,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "Do not ask any interactive question",
-            "default": false
-          }
-        }
-      },
-      "hidden": false
     }
   ],
   "namespaces": [
@@ -12478,6 +11887,8 @@
       "id": "dev",
       "commands": [
         "dev:di:info",
+        "dev:email:newsletter-compatibility-check",
+        "dev:email:override-compatibility-check",
         "dev:profiler:disable",
         "dev:profiler:enable",
         "dev:query-log:disable",
@@ -12489,16 +11900,6 @@
         "dev:tests:run",
         "dev:urn-catalog:generate",
         "dev:xml:convert"
-      ]
-    },
-    {
-      "id": "dotdigital",
-      "commands": [
-        "dotdigital:connector:automap",
-        "dotdigital:connector:enable",
-        "dotdigital:migrate",
-        "dotdigital:sync",
-        "dotdigital:task"
       ]
     },
     {
@@ -12667,20 +12068,6 @@
       "id": "varnish",
       "commands": [
         "varnish:vcl:generate"
-      ]
-    },
-    {
-      "id": "vertex",
-      "commands": [
-        "vertex:tax:warm-wsdl-cache"
-      ]
-    },
-    {
-      "id": "yotpo",
-      "commands": [
-        "yotpo:reset",
-        "yotpo:sync",
-        "yotpo:update-metadata"
       ]
     }
   ]

@@ -112,18 +112,18 @@ In {{site.data.var.ee}} version 2.2.8 and later, you can create the Magento admi
 {:.bs-callout-tip}
 To enable remote storage services during installation, see [Configure Remote Storage]({{ page.baseurl }}/config-guide/remote-storage/config-remote-storage.html) in the _Configuration Guide_.
 
-**Elasticsearch configuration options:**
+**Search engine configuration options:**
 
 |Name|Value|Required?|
 |--- |--- |--- |
-`--search-engine` | The version of Elasticsearch to use as the search engine. Possible values are `elasticsearch7`, `elasticsearch6`, and `elasticsearch5`. The default is `elasticsearch7`. Elasticsearch 5 has been deprecated and is not recommended. | No
-`--elasticsearch-host` | The host name or IP address where Elasticsearch is running. The default is `localhost`. | No
+`--search-engine` | The version of the search engine. Possible values are `elasticsearch7`, `elasticsearch6`, and `elasticsearch5`. The default is `elasticsearch7`. If you have installed OpenSearch as your search engine, specify the value `elasticsearch7`. Elasticsearch 5 has been deprecated and is not recommended. | No
+`--elasticsearch-host` | The host name or IP address where the search engine is running. The default is `localhost`. | No
 `--elasticsearch-port` | The port for incoming HTTP requests. The default is `9200`. | No
-`--elasticsearch-index-prefix` | A prefix that identifies the Elasticsearch index. The default is `magento2`. | No
+`--elasticsearch-index-prefix` | A prefix that identifies the search index. The default is `magento2`. | No
 `--elasticsearch-timeout` | The number of seconds before the system times out. The default is `15`. | No
-`--elasticsearch-enable-auth` | Enables authentication on the Elasticsearch server. The default is `false`. | No
-`--elasticsearch-username` | The user ID to authenticate Elasticsearch | No, unless authentication is enabled
-`--elasticsearch-password` | The password to authenticate Elasticsearch | No, unless authentication is enabled
+`--elasticsearch-enable-auth` | Enables authentication on the search engine server. The default is `false`. | No
+`--elasticsearch-username` | The user ID to authenticate  | No, unless authentication is enabled
+`--elasticsearch-password` | The password to authenticate | No, unless authentication is enabled
 
 **RabbitMQ configuration options:**
 
@@ -136,6 +136,17 @@ To enable remote storage services during installation, see [Configure Remote Sto
 |`--amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.|No|
 |`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
 |`--consumers-wait-for-messages`|Should consumers wait for a message from the queue? 1 - Yes, 0 - No|No|
+
+**Remote storage options:**
+
+| Name| Description | Required? |
+|--- |--- |--- |
+| `remote-storage-driver` | Adapter name<br>Possible values:<br>**file**: Disables remote storage and uses the local filesystem<br>**aws-s3**: Use the [Amazon Simple Storage Service (Amazon S3)](https://aws.amazon.com/s3/) | No |
+| `remote-storage-bucket` | Object storage or container name | No |
+| `remote-storage-prefix` | Optional prefix (location inside of object storage) | No |
+| `remote-storage-region` | Region name | No |
+| `remote-storage-key` | Optional access key | No |
+| `remote-storage-secret` | Optional secret key | No |
 
 **Lock configuration options:**
 

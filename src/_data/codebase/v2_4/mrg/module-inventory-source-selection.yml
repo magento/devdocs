@@ -1,6 +1,5 @@
 ---
 title: InventorySourceSelection
-release: 2.4.3
 content: |-
   The `InventorySourceSelection` module provides source selection logic for Inventory Management.
 

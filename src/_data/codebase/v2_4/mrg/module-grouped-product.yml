@@ -1,6 +1,5 @@
 ---
 title: GroupedProduct
-release: 2.4.3
 content: |-
   Magento_GroupedProduct module provides ability to offer several standalone products for sale as a group on the same Product Detail page.
   It can offer variations of a product, or group them by season or theme to create a coordinated set.

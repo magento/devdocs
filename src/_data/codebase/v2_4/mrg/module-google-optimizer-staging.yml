@@ -1,6 +1,5 @@
 ---
 title: GoogleOptimizerStaging
-release: 2.4.3
 content: |-
   The Magento_GoogleOptimizerStaging module is a part of the staging functionality in Magento EE. It enables you to stage values of the product metadata.
 
