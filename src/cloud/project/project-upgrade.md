@@ -104,7 +104,7 @@ Before upgrading the application, you must update your project configuration fil
 
 ### .magento.app.yaml
 
- Always review the values contained in the [.magento.app.yaml][] file for your installed version, because it controls the way your application builds and deploys to the cloud infrastructure. The following example is for version 2.4.4 and uses Composer 2.2.4. The `build: flavor:` property is not used for Composer 2.x; see [Installing and using Composer 2][use-composer-2].
+Always review the values contained in the [.magento.app.yaml][] file for your installed version, because it controls the way your application builds and deploys to the cloud infrastructure. The following example is for version 2.4.4 and uses Composer 2.2.4. The `build: flavor:` property is not used for Composer 2.x; see [Installing and using Composer 2][use-composer-2].
 
 {:.procedure}
 To update the `.magento.app.yaml` file:
@@ -297,7 +297,7 @@ To create a system-specific configuration file:
    This generates an updated `/app/etc/config.php` file with a module list and configuration settings.
 
 {:.bs-callout-warning}
-For an upgrade, you delete the `config.php` file. Once this file is added to your code, you should **not** delete it. If you must remove or edit settings, you must edit the file manually.
+For an upgrade, you delete the `config.php` file. Once this file is added to your code, you should **not** delete it. If you must remove or edit settings, edit the file manually.
 
 ### Upgrade extensions
 
