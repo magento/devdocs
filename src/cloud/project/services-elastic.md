@@ -13,7 +13,7 @@ redirect_from:
 
 {%include cloud/note-elasticsearch.md%}
 
-For {{ site.data.var.ee }} version 2.4.4 and later, see [Set up Opensearch service](/cloud/project/services-opensearch.html).
+For {{ site.data.var.ee }} version 2.4.4 and later, see [Set up OpenSearch service](/cloud/project/services-opensearch.html).
 
 -  Elasticsearch performs quick and advanced searches on products in the product catalog
 -  Elasticsearch Analyzers support multiple languages

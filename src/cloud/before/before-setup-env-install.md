@@ -183,7 +183,7 @@ For development and testing in an environment as close to Integration as possibl
 
 -  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
 -  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
--  [Opensearch]({{ site.baseurl }}/cloud/project/services-opensearch.html)
+-  [OpenSearch]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 -  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 -  [Additional software]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/optional.html)
 

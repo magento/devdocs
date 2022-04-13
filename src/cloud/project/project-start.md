@@ -11,7 +11,7 @@ All {{site.data.var.ece}} projects include essential files for credentials and a
 File                      | Description
 ------------------------- | -----------
 `/.magento/routes.yaml`   | Configuration file that redirects `www` to the naked domain and `php` application to serve HTTP. See [Configure environments]({{ site.baseurl }}/cloud/env/environments.html).
-`/.magento/services.yaml` | Configuration file that defines a MySQL instance (MariaDB), Redis, and Opensearch or Elasticsearch. See [Configure environments]({{ site.baseurl }}/cloud/env/environments.html).
+`/.magento/services.yaml` | Configuration file that defines a MySQL instance (MariaDB), Redis, and OpenSearch or Elasticsearch. See [Configure environments]({{ site.baseurl }}/cloud/env/environments.html).
 `/app`                    | The `code` folder is used for custom modules. The `design` folder is used for custom themes. See [Install a theme]({{ site.baseurl }}/cloud/howtos/custom-theme.html). The `etc` folder contains configuration files for the application.
 `/m2-hotfixes`            | Used for custom patches.
 `/update`                 | A service folder used by the support module.
