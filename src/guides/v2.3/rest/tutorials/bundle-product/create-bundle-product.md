@@ -22,7 +22,6 @@ POST http://domain.com/rest/default/V1/products
     "sku": "Desktop-Computer",
     "name": "Desktop Computer",
     "attribute_set_id": 4,
-    "price": 1000,
     "status": 1,
     "visibility": 4,
     "type_id": "bundle",
@@ -120,7 +119,7 @@ POST http://domain.com/rest/default/V1/products
 
 ```json
 {
-    "id": 20,
+    "id": 25,
     "sku": "Desktop-Computer",
     "name": "Desktop Computer",
     "attribute_set_id": 4,
@@ -128,8 +127,8 @@ POST http://domain.com/rest/default/V1/products
     "status": 1,
     "visibility": 4,
     "type_id": "bundle",
-    "created_at": "2022-04-12 21:11:44",
-    "updated_at": "2022-04-12 21:11:44",
+    "created_at": "2022-04-15 18:04:04",
+    "updated_at": "2022-04-15 18:04:04",
     "weight": 0,
     "extension_attributes": {
         "website_ids": [
@@ -142,8 +141,8 @@ POST http://domain.com/rest/default/V1/products
             }
         ],
         "stock_item": {
-            "item_id": 20,
-            "product_id": 20,
+            "item_id": 25,
+            "product_id": 25,
             "stock_id": 1,
             "qty": 0,
             "is_in_stock": true,
@@ -171,7 +170,7 @@ POST http://domain.com/rest/default/V1/products
         },
         "bundle_product_options": [
             {
-                "option_id": 12,
+                "option_id": 14,
                 "title": "RAM",
                 "required": true,
                 "type": "select",
@@ -179,9 +178,9 @@ POST http://domain.com/rest/default/V1/products
                 "sku": "Desktop-Computer",
                 "product_links": [
                     {
-                        "id": "15",
+                        "id": "19",
                         "sku": "RAM-12G",
-                        "option_id": 12,
+                        "option_id": 14,
                         "qty": 1,
                         "position": 1,
                         "is_default": false,
@@ -190,20 +189,20 @@ POST http://domain.com/rest/default/V1/products
                         "can_change_quantity": 0
                     },
                     {
-                        "id": "16",
+                        "id": "20",
                         "sku": "RAM-24G",
-                        "option_id": 12,
+                        "option_id": 14,
                         "qty": 1,
                         "position": 2,
                         "is_default": false,
-                        "price": 25,
+                        "price": 50,
                         "price_type": null,
                         "can_change_quantity": 0
                     }
                 ]
             },
             {
-                "option_id": 13,
+                "option_id": 15,
                 "title": "Monitor",
                 "required": true,
                 "type": "select",
@@ -211,24 +210,24 @@ POST http://domain.com/rest/default/V1/products
                 "sku": "Desktop-Computer",
                 "product_links": [
                     {
-                        "id": "17",
+                        "id": "21",
                         "sku": "Monitor-15",
-                        "option_id": 13,
+                        "option_id": 15,
                         "qty": 1,
                         "position": 1,
                         "is_default": false,
-                        "price": 25,
+                        "price": 100,
                         "price_type": null,
                         "can_change_quantity": 0
                     },
                     {
-                        "id": "18",
+                        "id": "22",
                         "sku": "Monitor-17",
-                        "option_id": 13,
+                        "option_id": 15,
                         "qty": 1,
                         "position": 2,
                         "is_default": false,
-                        "price": 25,
+                        "price": 150,
                         "price_type": null,
                         "can_change_quantity": 0
                     }
