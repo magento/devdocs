@@ -78,7 +78,7 @@ To install an {{site.data.var.ee}} on-premises project:
            image: 'redis'
        elasticsearch:
            version: '7.5'
-           image: 'elasticsearch'
+           image: 'magento/magento-cloud-docker-elasticsearch'
    hooks:
        build: |
            set -e
