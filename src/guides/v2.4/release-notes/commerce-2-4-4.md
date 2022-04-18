@@ -50,7 +50,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 *  use of a unique location rather than `/admin`
 *  good password hygiene
 
-See [Adobe Security Bulletin](https://helpx.adobe.com/security.html) for the latest discussion of these fixed issues.
+See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb22-13.html) for the latest discussion of these fixed issues.
 
 #### Additional security enhancements
 
@@ -200,8 +200,7 @@ PWA Studio v.12.3.0 is compatible with {{ site.data.var.ee }} 2.4.4. It includes
 
 Live Search now supports PHP 8.1.
 
-The new `Magento_ElasticsearchCatalogPermissionsGraphQ1` module is disabled during the updated Live Search [installation](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/onboard/install.html).
-For more information, see the Live Search [Release Notes](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/release-notes.html).
+The new `Magento_ElasticsearchCatalogPermissionsGraphQl` module is disabled during the updated Live Search [installation](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/onboard/install.html). Existing Live Search installations must be upgraded to Live Search 2.0.0 to take advantage of these features. For more information, see the Live Search [Release Notes](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/release-notes.html).
 
 ### Accessibility updates
 

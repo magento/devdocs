@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Users
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/users/
+layout: migrated
 ---
 
 The `users` resource accesses and updates your user profile. You can also access your sales reports.

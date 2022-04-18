@@ -60,6 +60,7 @@ You cannot upgrade the software, but you can configure the following services:
 *  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
 *  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 *  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
+*  [OpenSearch]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 
  {:.bs-callout-info}
 See [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) in the _Installation guide_ for recommended versions.

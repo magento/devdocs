@@ -193,7 +193,8 @@ The Production environment has three virtual machines (VMs) behind an Elastic Lo
    -  `pub/static`
    -  `app/etc`
 -  **Redis**—one server per VM with only one active and the other two as replicas
--  **Elasticsearch**—search for {{site.data.var.ece}} 2.2 and later
+-  **Elasticsearch**—search for {{site.data.var.ece}} 2.2 to 2.4.3-p2
+-  **OpenSearch**—search for {{site.data.var.ece}} 2.3.7-p3, 2.4.3-p2, 2.4.4 and later
 -  **Galera**—database cluster with one MariaDB MySQL database per node with an auto-increment setting of three for unique IDs across every database
 
 The following figure shows the technologies used in the Production environment:
@@ -231,6 +232,7 @@ On Pro plan projects, the Master branch provides an active PaaS environment with
 -  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
 -  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 -  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
+-  [OpenSearch]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 
 For the Staging and Production environments, we recommend installing the latest version of the Fastly CDN module. See [Fastly in Cloud]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 

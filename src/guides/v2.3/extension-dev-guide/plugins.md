@@ -476,7 +476,7 @@ Using these methods:
 | **around**    |                  | aroundDispatch() |                  |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
 
-`PluginB`::`aroundDispatch()` does not define the ($next)[{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php] argument with a `callable` type. For example:
+`PluginB`::`aroundDispatch()` does not define the [$next]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php) argument with a `callable` type. For example:
 
 ```php
 <?php
@@ -575,5 +575,3 @@ Related topics
 
 *  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
 *  [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
-*  [The Plugin Integration Test Kata](http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata) by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list)
-*  [The Around Interceptor Kata](http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata) by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list)

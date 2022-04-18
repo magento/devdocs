@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Reports
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/reports/
+layout: migrated
 ---
 
 ## User Reports

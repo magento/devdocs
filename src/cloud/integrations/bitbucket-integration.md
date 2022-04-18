@@ -40,23 +40,13 @@ You must clone your {{site.data.var.ece}} project from an existing environment a
    magento-cloud project:get <project-ID>
    ```
 
-1. List the tracked repositories.
-
-   ```bash
-   git remote -v
-   ```
-
-1. Delete the default `origin` remote.
-
-   ```bash
-   git remote remove origin
-   ```
-
 1. Add your Bitbucket repository as a remote.
 
    ```bash
    git remote add origin git@bitbucket.org:<user-name>/<repo-name>.git
    ```
+
+   The default name for the remote connection may be `origin` or `magento`. If `origin` exists, you can choose a different name or you can rename or delete the existing reference. See [git-remote documentation](https://git-scm.com/docs/git-remote).
 
 1. Verify that you added the Bitbucket remote correctly.
 
@@ -188,7 +178,13 @@ In order to communicate events—such as a push—with your Cloud Git server, is
 
 ### Test the integration
 
-After configuring the Bitbucket integration, test it by pushing a simple change to your Bitbucket repository.
+After configuring the Bitbucket integration, you can verify the integration is operational using the `magento-cloud` CLI:
+
+```bash
+magento-cloud integration:validate
+```
+
+Or you can test it by pushing a simple change to your Bitbucket repository.
 
 1. Create a test file.
 
@@ -206,7 +202,7 @@ After configuring the Bitbucket integration, test it by pushing a simple change 
 
    ![Testing the Bitbucket integration]({{ site.baseurl }}/common/images/cloud/cloud_test_bitbucket_integration.png)
 
-## Create a new Cloud branch
+## Create a Cloud branch
 
 The Bitbucket integration cannot activate new environments in your {{site.data.var.ece}} project. If you create an environment with Bitbucket, you must activate the environment manually. To avoid this extra step, it is best practice to create environments using the `magento-cloud` CLI tool or the Project Web UI.
 
@@ -227,7 +223,7 @@ To activate a branch created with Bitbucket:
    ```
    {:.no-copy}
 
-1. Verify the environment is active.
+1. Verify that the environment is active.
 
    ```bash
    magento-cloud environment:list
@@ -245,7 +241,7 @@ To activate a branch created with Bitbucket:
    * - Indicates the current environment
    ```
 
-After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular Git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
+After you create an environment, you can push the corresponding branch to your remote Bitbucket repository using regular Git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
 
 ## Remove the integration
 

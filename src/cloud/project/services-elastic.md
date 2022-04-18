@@ -11,6 +11,10 @@ redirect_from:
 
 [Elasticsearch](https://www.elastic.co) is an open-source product that enables you to take data from any source, any format, and search and visualize it in real time.
 
+{%include cloud/note-elasticsearch.md%}
+
+For {{ site.data.var.ee }} version 2.4.4 and later, see [Set up OpenSearch service](/cloud/project/services-opensearch.html).
+
 -  Elasticsearch performs quick and advanced searches on products in the product catalog
 -  Elasticsearch Analyzers support multiple languages
 -  Supports stop words and synonyms
@@ -33,8 +37,6 @@ To enable Elasticsearch:
    ```
 
    For Pro projects, you must submit a {{site.data.var.ee}} Support ticket to change the Elasticsearch version in the Staging and Production environments.
-
-   For details on determining the correct version to install, see [Elasticsearch software compatibility](#elasticsearch-software-compatibility).
 
 1. Set the `relationships` property in the `.magento.app.yaml` file.
 

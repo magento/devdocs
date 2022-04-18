@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Sandbox
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/sandbox/
+layout: migrated
 ---
 
 {:.bs-callout-info}
