@@ -181,6 +181,45 @@ In the following example, an attribute named `stock_item` of type `Magento\Catal
 
 When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property comes from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column.
 
+When adding Searching extension attributes, you need to take into account that this can cause ambiguity in the selection of fields in the resulting SQL query when using REST API.
+In such case, it will be required to explicitly specify the table name along with the field on which the selection will be made.
+
+For example, the configuration below may introduce ambiguity when getting orders via REST API, which can be solved by specifying the table name along with the field on which the selection should be made.
+
+```xml
+<config>
+    <extension_attributes for="Magento\Sales\Api\Data\OrderInterface">
+        <attribute code="field1" type="int">
+            <join reference_table="sales_order" join_on_field="entity_id" reference_field="entity_id">
+                <field>field1</field>
+            </join>
+        </attribute>
+    </extension_attributes>
+</config>
+```
+
+**REST API Endpoint:**
+
+`GET http://<host>/rest/default/V1/orders`
+
+**Payload:**
+
+```http
+searchCriteria[filter_groups][0][filters][0]
+[field]=main_table.created_at&searchCriteria
+[filter_groups][0][filters][0][value]=2021-09-14%2000:00:00
+&searchCriteria[filter_groups][0][filters][0]
+[conditionType]=from
+&searchCriteria[filter_groups][1][filters][0]
+[field]=main_table.created_at
+&searchCriteria[filter_groups][1][filters][0]
+[value]=2021-09-14%2023:59:59
+&searchCriteria[filter_groups][1][filters][0]
+[conditionType]=to
+&searchCriteria[pageSize]=10
+&searchCriteria[currentPage]=86
+```
+
 ### Extension attribute authentication {#ext-aut}
 
 Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See [Web API authentication overview]({{ page.baseurl }}/get-started/authentication/gs-authentication.html) for general information about authentication in Magento.
