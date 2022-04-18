@@ -18,27 +18,27 @@ At a high level, the criteria defined in our "definition of done" revolve around
 
 ## Definition of Done
 
-The checklist that can be used to evaluate if the DoD has been met:
+The basic checklist used to evaluate if the DoD has been met is:
 
 -  All changes must be approved by reviewer.
--  All changes must be covered by automated tests if that is possible.
+-  All changes must be covered by automated tests if possible.
 -  All functional changes should be documented.
--  All backward incompatible changes should be approved and covered by static tests if that is possible. Static tests should be delivered to the [magento-coding-standard][5] repository.
+-  All backward incompatible changes should be approved and covered by static tests if possible. Static tests should be delivered to the [magento-coding-standard][5] repository.
 -  TCO impact should be defined for all changes.
 
 The following sections provide additional details about each of these criteria:
 
 ## Review
 
-A task, when complete by the author, should be reviewed by a maintainer through a process of formal code review.
+A task, when complete by the author, should be reviewed by a maintainer through a formal code review.
 
-The reviewer should check whether the task meets the original acceptance criteria, verify that there are no code defects and that all points of this definition of done are met.
+The reviewer should check whether the task meets the original acceptance criteria, verify that there are no code defects and that all points of this DoD are met.
 
 ## Tests
 
-All changes to Adobe Commerce projects should be covered by automated tests to meet the "Definition of Done" (DoD).
+To meet the DoD, all changes to Adobe Commerce projects should be covered by automated tests.
 
-The details on different types of automated tests can be found on [DoD - Automated Tests page][3]
+Details on different types of automated tests can be found in [DoD - Automated Tests page][3].
 
 ## Documentation
 
@@ -55,15 +55,15 @@ For documenting backward-incompatible changes, please see [Backwards Compatible 
 
 ## Backward Compatibility
 
-All backward incompatible changes should be approved and covered by static tests to meet the "Definition of Done" (DoD).
+All backward incompatible changes should be approved and covered by static tests.
 
-The details on backward compatiblity criterias included in the "Definition of Done" (DoD) can be found on [DoD - Backward Compatibility page][0]
+The details on backward compatiblity criterias included in the DoD can be found in [DoD - Backward Compatibility][0]
 
 ## TCO Analysis
 
-All functional changes should analysed for the impact on merchant total cost of ownership (TCO) and the results of the analysis should be added to the issue or pull request description to meet the "Definition of Done" (DoD).
+All functional changes should analysed for the impact on merchant total cost of ownership (TCO) and the results of the analysis should be added to the issue or pull request description to meet the DoD.
 
-The details on TCO analysis required to meet the "Definition of Done" (DoD) can be found on [DoD - TCO Analysis][4]
+The details on TCO analysis required to meet the DoD can be found in [DoD - TCO Analysis][4]
 
 The work cannot be considered as complete unless all the criteria are verified.
 
