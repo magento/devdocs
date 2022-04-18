@@ -7,7 +7,7 @@ title: DoD - Automated Tests
 
 All changes to Adobe Commerce projects should be covered by automated tests to meet the "Definition of Done" (DoD).
 
-### Understanding Black, White, and Gray tests
+### Understanding black, white, and gray tests
 
 *  A black box test does not have any knowledge of how the subject of the test is built.
 *  A white box has knowledge of how the subject of the test is built. The test logic is usually coupled to the implementation and will typically be sensitive to changes.
@@ -15,16 +15,16 @@ All changes to Adobe Commerce projects should be covered by automated tests to m
 
 For example:
 
-Assume there is a method with the signature `function removeLetterFromString(string $letter, string $string): string`
+Assume there is a method with the signature `function removeLetterFromString(string $letter, string $string): string`:
 
 *  A black box test would test the obvious cases both normal cases such as `removeLetterFromString('a', 'fooabar') === 'foobr'` and edge cases such as when `$letter` or `$string` are empty or `$letter` contains multiple or multibyte characters. It would probably test several variations of string lengths. Notice there is no knowledge of how this function is written.
-*  A white box test would look into the implementation of the method and see that it calls a microservice API and make sure that each condition of the code has test coverage. For example, this test may force the microservice client to return an error and have a test for the expected handling of that scenario. This wouldn't be a reusable test and it's directly coupled to the implementation.
+*  A white box test would look into the implementation of the method and see that it calls a microservice API and make sure that each condition of the code has test coverage. For example, this test may force the microservice client to return an error and have a test for the expected handling of that scenario. This would not be a reusable test and it is directly coupled to the implementation.
 *  A gray box test would look at the implementation of the method and see that it calls a microservice API and injects the `$string` into the URL so it may add some extra test coverage for strings that contain unsafe URL characters such as `&?=%/`. This is not coupled to the implementation as the implementation could be changed and the test should still pass.
 
-### Automated Tests
+### Automated tests
 
 Code changes must be covered by automated tests according to Classification of Magento Automated Tests.
-When choosing how to cover your changes, pick the most lightweight (execution time wise) test type that will provide sufficient coverage.
+When choosing how to cover your changes, pick the most lightweight (execution-time wise) test type that will provide sufficient coverage.
 If you encounter an existing test that insufficiently covers your changes, you can delete that test but you must write a proper test to replace it. For example, a method that interacts with database has a unit test. You can replace it with an integration test.
 
 Be aware that while high-level tests may provide coverage to code, it is only indirect coverage. Tests with more direct usage of the changed code will likely still needs to be written to ensure that regardless of the which components are actually used in the black box, the individual components still have coverage.
@@ -35,19 +35,19 @@ High level testing policy:
 *  Code must be also shown to work with known collaborators. This must be done through integration tests and ideally should involve as few components as possible per test case. This level of tests ensures that the code will work with its known associates. Specific examples can be subject but such associates would include composites, chains, pools, etc. but also include cases like a Template filter working with a specific processor loaded.
 *  In addition, regardless of the interpretation of the testing strategy below: Any class marked with an `@api` annotation MUST be covered with explicit test coverage via integration or unit tests.
 
-  These tests must test the concrete implementation's behavior in a way that can not be inadvertently changed outside of the test itself.
+These tests must test the concrete implementation's behavior in a way that can not be inadvertently changed outside of the test itself.
 
-  For example: testing a concrete class through DI preference is not safe because it could be overridden via configuration of another loaded module. The test should not ask for the interface but rather the concrete implementation.
+For example: testing a concrete class through DI preference is not safe because it could be overridden via configuration of another loaded module. The test should not ask for the interface but rather the concrete implementation.
 
-### Integration Tests
+### Integration tests
 
 An integration test should be used to cover any code that does not meet the requirements of a unit test or functional test and should be thought of as essentially the default test type.
 
-Integration tests come in many forms and can drastically vary in definition depending on what the intention of the test is. Generally speaking an integration test verifies that two or more things work together correctly. i.e. We are testing the _integration_ of one thing with another thing.
+Integration tests come in many forms and can drastically vary in definition depending on what the intention of the test is. Generally speaking an integration test verifies that two or more things work together correctly; we are testing the _integration_ of one thing with another thing.
 For the purpose of Magento testing, there are essentially two broad categories of integration tests: narrow-form and broad-form.
 
 *  Narrow-form integration tests focus on testing something mostly in isolation an can be as simple as a unit test as described in this guide except without mocked dependencies.
-*  Broad-form integration tests focus on testing something with less isolation and will involve multiple components explicitly collaborating. (compared to narrow-form where the dependencies are implicit collaborating)
+*  Broad-form integration tests focus on testing something with less isolation and will involve multiple components explicitly collaborating, compared to narrow-form where the dependencies are implicit collaborating.
 
 Integration test policy:
 
@@ -56,12 +56,12 @@ Integration test policy:
 *  As mentioned above, classes marked with `@api` must contain coverage. Integration tests must be used cover these classes unless a unit test is more appropriate. This includes JS modules and components.
 *  Consumers of default SPI implementations should have at least basic coverage that ensures the default implementations of the SPI are correctly configured and loaded.
 
-  For example, `Magento\Framework\SomeClassFilter` may contain a `FilterPool` that comes with default `FilterInterface`'s from `Magento\Framework`. Each of these implementations would have their own coverage pursuant to this document. However, there should also be some basic assertions within the test coverage for `Magento\Framework\SomeClassFilter` that ensure each of the default filters are loaded correctly.
-  This should not be explicit coverage such as `$filter->isLoaded('someDefaultFilter')`.
+For example, `Magento\Framework\SomeClassFilter` may contain a `FilterPool` that comes with default `FilterInterface`'s from `Magento\Framework`. Each of these implementations would have their own coverage pursuant to this document. However, there should also be some basic assertions within the test coverage for `Magento\Framework\SomeClassFilter` that ensure each of the default filters are loaded correctly.
+This should not be explicit coverage such as `$filter->isLoaded('someDefaultFilter')`.
 
 See: [Running Integration Tests][1].
 
-### Functional Tests
+### Functional tests
 
 UI functional tests are inherently unstable regardless of platform or testing framework. For this reason, along with reasons of maintainability and quality assurance delivery time, these tests should be prioritized below all other tests types.
 
@@ -69,13 +69,14 @@ Functional test policy:
 
 *  Web API endpoints must have functional test coverage via api-functional tests. These tests should ensure that the endpoints behave in accordance to their service contracts regardless of the actual concrete implementation that may be loaded.
 *  For UI-related code, there are some circumstances where it is not possible to cover changes with unit or integration tests. In these cases the appropriate type of coverage would be a functional test but this is a last resort only.
-  However, aside from those cases UI functional tests should only be used to cover P0/P1 testing scenarios. If there are no scenarios available to make this decision, a product owner must be consulted for approval of new tests.
+
+However, aside from those cases, UI functional tests should only be used to cover P0/P1 testing scenarios. If there are no scenarios available to make this decision, a product owner must be consulted for approval of new tests.
 
 If there is a scenario that is not classified as a P0/P1 but should be, have a discussion with the product owner to get it elevated.
 
 See [Functional Tests][0].
 
-### Unit Tests
+### Unit tests
 
 There are a small number of use cases for unit tests in Magento. The nature of our code and development practices make it increasingly hard to write and maintain high-quality unit tests.
 Many of them end up being replaced by integration tests or are practically useless from the beginning due to how much mocking is needed to make them pass.
@@ -89,7 +90,7 @@ A unit test may be preferred when you have classes or methods that:
 *  Can be covered by a black box test.
    *  The test must not be a mirror of the code. Instead, the test must validate that the contract of the method or class is upheld by the implementation. Specific implementations may be weak in certain areas so specific corner cases could cover that logic while still being a black box test.
 *  Would not be easily foreseen to have dependencies in the future.
-   *  This can be hard to predict but a good example of when it would be unlikely is a simple utility class that performs some standalone operation. By contrast, a helper would be very likely to have dependencies by nature.
+   *  This can be hard to predict but a good example of when it would be unlikely is a simple utility class that performs some standalone operation. By contrast, a helper would be very likely to have dependencies.
 
 Examples:
 
@@ -109,15 +110,14 @@ Examples:
 
 *  Controllers
    *  They are the "glue" that connects different app layers. They should not contain any business logic and should only be responsible for directing request/response information to/from services. They can be tested via integration or functional tests. Also, controller-specific tests will likely be rendered useless and ultimately deleted at some point in the context of the service isolation initiative which makes this idea much more important.
-*  Model triad classes (Model/Resource Model/Collection)
-   *  They have many dependencies and interact with resources.
+*  Model triad classes (Model/Resource Model/Collection) as they have many dependencies and interact with resources.
 *  Factories
 
-### Integrity Tests
+### Integrity tests
 
 Code to cover:
 
-*  Must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.
+*  Must cover any code which introduces convention in scope of a particular implementation, a violation of which would lead to runtime error.
 
 Expected code coverage:
 
@@ -133,8 +133,7 @@ For example:
 Code to cover:
 
 *  Must cover all introduced conventions and discovered faulty or insecure code structures.
-*  Must cover any formal backward-incompatible changes on code level if that is possible. Applies only to BIC of the code in our repositories, there is no requirement to cover third-party dependencies BIC in scope of DoD. The replacement suggestion should be provided in static test message.
-     For more information, see [Magento's backward compatibility policy][2].
+*  Must cover any formal backward-incompatible changes on code level, if possible. Applies only to BIC of the code in our repositories. There is no requirement to cover third-party dependencies BIC in scope of DoD. The replacement suggestion should be provided in static test message. For more information, see [Magento's backward compatibility policy][2].
 
 Expected code coverage:
 
