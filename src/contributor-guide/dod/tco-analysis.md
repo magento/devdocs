@@ -10,7 +10,7 @@ All functional changes must be analysed for the impact on merchant total cost of
 The goal of TCO analysis is to identify:
 
 -  If the changes have impact on TCO
--  The value of the impact, that consists of
+-  The value of the impact, that consists of:
    -  The level of the change (patch/minor/major)
    -  Potential number of affected extensions/customisations (several/many/most/all)
 
@@ -40,8 +40,8 @@ Some changes that have impact on TCO:
 
 ### Level of change
 
-If the changes may have TCO impact, the level of the change should be identified.
-If the backward incompatible change result into SVC build failure - the level of change can be viewed in the SVC build result.
+If the changes may have a TCO impact, the level of the change should be identified.
+If the backward incompatible change results an a SVC build failure - the level of change can be viewed in the SVC build result.
 This table lists the levels for the changes that are not currently covered by SVC:
 
 | Cusomization Point                     | Code Change                                                                                                              | Level |
@@ -90,13 +90,13 @@ This table lists the levels for the changes that are not currently covered by SV
 
 ### Potential number of affected customisations
 
-In order to identify the volume of the impact the usages of the changed code should be detected in the available code/extensions/customisations.
+In order to identify the scope of the impact, usage of the changed code should be detected in the available code/extensions/customisations.
 
 The analysis result should indicate the proportion of reviewed modules to the modules referencing (using) the changed code.
 
 ### TCO Analysis result example
 
-The analysis result should indicate all the changes that have TCO impact (or simply state that there is "No TCO impact").
+The analysis should indicate all the changes that have TCO impact or state that there is "No TCO impact".
 
 For example, if the non-api "SomeClass::someMethod" was changed and the new required argument was added to the CLI command, the analysis result may look like:
 
@@ -107,6 +107,6 @@ Change to CLI command is MAJOR level, it impacts 2 out of 10 reviewed custom mod
 ```
 
 A custom module is a [Magento module][1] that is not part of Adobe Commerce product.
-A change impacts a custom module if it's code needs to be changed in response.
+A change impacts a custom module if its code needs to be changed in response.
 
 [1]: {{site.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html
