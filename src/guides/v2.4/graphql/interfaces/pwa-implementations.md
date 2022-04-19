@@ -20,7 +20,6 @@ Attribute | Data Type | Description
 --- | --- | ---
 `used_in_components` | [CustomAttributesListsEnum!] | Places in the store front where the attribute is used
 
-
 ### SelectableInputTypeInterface
 
 Attribute | Data Type | Description
