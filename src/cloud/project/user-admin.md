@@ -55,6 +55,9 @@ Available commands:
 
 The following examples use the `magento-cloud` CLI to add a user, configure roles, and modify project assignments and assigned user roles.
 
+{:.bs-callout-warning}
+Users granted the **Admin** role can no longer manage users using the `magento-cloud` CLI or by clicking on the **Users** tab when configuring their assigned environments.  You must be a **Super User** to manage users in any environment. To grant a specific user access to the **Users** tab when configuring the environment, a **Super User** or **Account Owner** must assign that user the **Super User** role.
+
 {:.procedure}
 To add a user and assign roles:
 
@@ -150,6 +153,9 @@ Add a project-level user:
 
 {:.procedure}
 Add an environment-level user:
+
+{:.bs-callout-warning}
+You must be a **Super User** or **Account Owner** to add an environment-level user.
 
 1. In the Project Web UI, select the environment. Then, click **Configure environment**.
 
