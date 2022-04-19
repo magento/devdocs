@@ -72,13 +72,13 @@ Critical errors indicate a problem with the Magento Commerce Cloud project confi
 | 130 | install-update: cache_type | Command failed: `php ./bin/magento cache:enable` | Command `php ./bin/magento cache:enable` runs only when Magento was installed but `./app/etc/env.php` file was absent or empty at the beginning of the deployment. Check the `cloud.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output. |
 | 131 | install-update | The `crypt/key`  key value does not exist in the `./app/etc/env.php` file or the `CRYPT_KEY` cloud environment variable | This error occurs if the `./app/etc/env.php` file is not present when Magento deployment begins, or if the `crypt/key` value is undefined. If you migrated the database from another environment, retrieve the crypt key value from that environment. Then, add the value to the [CRYPT_KEY](https://devdocs.magento.com/cloud/env/variables-deploy.html#crypt_key) cloud environment variable in your current environment. See [Add the Magento encryption key](https://devdocs.magento.com/cloud/setup/first-time-setup-import-import.html#encryption-key). If you accidentally removed the `./app/etc/env.php` file, use the following command to restore it from the backup files created from a previous deployment: `./vendor/bin/ece-tools backup:restore` CLI command ." |
 | 132 |  | Cannot connect to the Elasticsearch service | Check for valid Elasticsearch credentials and verify that the service is running |
-| 137 |  | Cannot connect to the Opensearch service | Check for valid Opensearch credentials and verify that the service is running |
+| 137 |  | Cannot connect to the OpenSearch service | Check for valid OpenSearch credentials and verify that the service is running |
 | 133 | validate-config | Remove Magento Braintree module configuration which is no longer supported in Magento 2.4 and later versions. | Support for the Braintree module is no longer included with Magento 2.4.0 and later. Remove the CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL variable from the variables section of the .magento.app.yaml file. For Braintree support, use an official Braintree Payments extension from the Magento Marketplace instead. |
 | 134 | validate-config | Magento 2.4.0 requires Elasticsearch service to be installed | Install Elasticsearch service |
-| 138 | validate-config | Magento 2.4.4 requires Opensearch or Elasticsearch service to be installed | Install Opensearch service |
+| 138 | validate-config | Magento 2.4.4 requires OpenSearch or Elasticsearch service to be installed | Install OpenSearch service |
 | 135 | validate-config | The search engine must be set to Elasticsearch for Magento >= 2.4.0 | Check the SEARCH_CONFIGURATION variable for the `engine` option. If it is configured, remove the option, or set the value to "elasticsearch". |
 | 136 | validate-config | Split Database was removed starting from Magento 2.5.0. | If you use split database that you have to revert to or migrate to a single database or use an alternative approach. |
-| 139 | validate-config | Incorrect search engine | This Magento version does not support Opensearch. You must use versions 2.3.7-p3, 2.4.3-p2, or higher |
+| 139 | validate-config | Incorrect search engine | This Magento version does not support OpenSearch. You must use versions 2.3.7-p3, 2.4.3-p2, or higher |
 
 ### Post-deploy stage
 
@@ -156,7 +156,7 @@ Warning errors indicate a problem with the Magento Commerce Cloud project config
 | 2026 | pre-deploy:restore-writable-dirs | Failed to restore some data generated during the build phase to the mounted directories | Check the `cloud.log` for more information. |
 | 2027 | validate-config:mage-mode-variable | Mode value for MAGE_MODE environment variable not supported | Remove the MAGE_MODE environment variable, or change its value to "production". Magento Cloud supports "production" mode only. |
 | 2028 | remote-storage | Remote storage could not be enabled. | Verify remote storage credentials. |
-| 2030 | validate-config | Elasticsearch and Opensearch services are both installed at infrastructure layer. Magento 2.4.4 and higher uses Opensearch by default | Consider removing the Elasticsearch or Opensearch service from the infrastructure layer to optimize resource usage. |
+| 2030 | validate-config | Elasticsearch and OpenSearch services are both installed at infrastructure layer. Magento 2.4.4 and higher uses OpenSearch by default | Consider removing the Elasticsearch or OpenSearch service from the infrastructure layer to optimize resource usage. |
 
 ### Post-deploy stage
 
