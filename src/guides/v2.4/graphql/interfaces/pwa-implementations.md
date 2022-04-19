@@ -64,10 +64,13 @@ Attribute | Data Type | Description
 
 Type | Implements
 --- | ---
-AttributeOptions | AttributeOptionsInterface
 AttributeOption | AttributeOptionInterface
-UiAttributeTypeSelect | UiInputTypeInterface, AttributeOptionsInterface, SelectableInputTypeInterface
-UiAttributeTypeMultiSelect | UiInputTypeInterface, AttributeOptionsInterface, SelectableInputTypeInterface
-UiAttributeTypeBoolean | UiInputTypeInterface, AttributeOptionsInterface, SelectableInputTypeInterface
+AttributeOptions | AttributeOptionsInterface
 UiAttributeTypeAny | UiInputTypeInterface
+UiAttributeTypeBoolean | UiInputTypeInterface, AttributeOptionsInterface, SelectableInputTypeInterface
 UiAttributeTypeFixedProductTax | UiInputTypeInterface
+UiAttributeTypeMultiSelect | UiInputTypeInterface, AttributeOptionsInterface, SelectableInputTypeInterface
+UiAttributeTypePageBuilder | UiInputTypeInterface
+UiAttributeTypeSelect | UiInputTypeInterface, AttributeOptionsInterface, SelectableInputTypeInterface
+UiAttributeTypeTextarea | UiInputTypeInterface
+UiAttributeTypeTextEditor | UiInputTypeInterface

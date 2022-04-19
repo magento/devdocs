@@ -126,8 +126,10 @@ The following code illustrates the definition of the dynamic block with the `uid
 
 Attribute | Data type | Description
 --- | --- | ---
+`cart_id` | String | The unique ID that identifies the customer's cart
 `dynamic_block_uids` | [ID] | An array of dynamic block UIDs to filter on
 `locations` | [DynamicBlockLocationEnum] | An array indicating the locations the dynamic block can be placed. The possible values are CONTENT, HEADER, FOOTER, LEFT, and RIGHT. If this attribute is not specified, the query returns all locations
+`product_uid` | ID | The unique ID of the product currently viewed
 `type` | DynamicBlockTypeEnum! | A value indicating the type of dynamic block to filter on. The possible values are CART_PRICE_RULE_RELATED, CATALOG_PRICE_RULE_RELATED, and SPECIFIED
 
 ## Output attributes
