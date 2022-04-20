@@ -35,7 +35,9 @@ DKIM is an email authentication technology that enables Internet Service Provide
 ## Sender and Domain authentication
 
 For SendGrid to send transactional emails on your behalf, you must configure your DNS settings to include the three SendGrid subdomain DNS entries. Each SendGrid account is assigned a unique `TXT` record which is used to authenticate outbound emails.
-### To enable domain authentication
+
+{:.procedure}
+To enable domain authentication:
 
 1. Open a [support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) and request to enable the DKIM on a specific domain.
 1. Update your DNS configuration with the `TXT` and `CNAME` records provided to you in the support ticket.
