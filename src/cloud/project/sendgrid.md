@@ -47,6 +47,7 @@ To enable domain authentication:
 ```text
 >v=spf1 include:u17504801.wl.sendgrid.net -all
 ```
+
 **Example `CNAME` records:**
 
 | Domain   | Points To | Record Type
@@ -71,10 +72,13 @@ s2._domainkey.mydomain.com. | CNAME | s2.domainkey.uXXX.wlXXX.sendgrid.net
 ```text
 me12345.mydomain.com | MX | mx.sendgrid.net
 me12345.mydomain.com | TXT | v=spf1 include:sendgrid.net ~all
-m1._mydomain.com | TXT | k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9zqqzjE0D1r04xDN6qwziDnmgcFNNfMewVKN2D1O+2J9N14hRprzByFwfQW76yojh54Xu3uSbQ3JP0A7k8o8GutRF8zbFUA8n0ZH2y0cIEjMliXY4W4LwPA7m4q0ObmvSjhd63O9d8z1XkUBwIDAQAB0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXV0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXV
+m1._mydomain.com | TXT | k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9zqqzjE0D1r04xDN6qwziDnmgcFNNfMewVKN2D1O+2J9N14hRprzByFwfQW76yojW4LwPA7m4q0ObmvSjhd63O9d8z1XkUBwIDAQAB0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXV0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXV
 ```
+
 After domain authentication is set up, SendGrid automatically handles Security Policy Framework (SPF) and DKIM records for you. After SendGrid provides the `CNAME` records to add to your DNS records, you can add dedicated IP addresses and make other account updates without having to manage your SPF records manually. See [Automated Security and Your DKIM Signature](https://docs.sendgrid.com/ui/account-and-settings/dkim-records#automated-security-and-your-dkim-signature).
-## Validate your DNS configuration
+## Test your DNS configuration
+
+To test your DNS configuration, run `dig`:
 
 ```terminal
 dig CNAME em.domain_name
@@ -82,6 +86,7 @@ dig CNAME s1._domainkey.domain_name
 dig CNAME s2._domainkey.domain_name
 ```
 ## Transactional email credits
+
 The 12,000 transactional email threshold refers to the number of transactional email messages that you can send on a monthly basis from {{site.data.var.ece}} Pro Production, Integration, and Staging branches. The threshold is designed to protect against sending spam and potentially damaging your email reputation.
 
 *  Transactional email credits renew on the first day of each month
