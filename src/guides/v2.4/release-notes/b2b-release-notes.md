@@ -45,6 +45,12 @@ These release notes can include:
 
 -  {:.fix} <!--- MC-42399--> `rest/V1/company/{id}` now returns `is_purchase_order_enabled` attribute values as expected.
 
+-  {:.fix} <!--- ACP2E-128--> Custom customer attributes are now displayed as expected in the Company Admin tab.
+
+-  {:.fix} <!--- ACP2E-130--> The My wish list block on the My Account page is now displayed as expected for Company Admins and Company Users.
+
+-  {:.fix} <!--- ACP2E-133--> Quick Order errors are no longer displayed in the shopping cart. Previously, AC displayed this error in the shopping cart when the SKU was not found in the catalog:  `The SKU was not found in the catalog`.
+
 ## Magento B2B - Version 1.3.2
 
 -  {:.fix} <!--- MC-39862--> Magento now successfully sends update emails about expired negotiable quotes. Previously, when a negotiable quote expired, Magento did not send update emails.
