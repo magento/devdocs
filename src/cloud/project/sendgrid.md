@@ -89,7 +89,7 @@ The 12,000 transactional email threshold refers to the number of transactional e
 *  There are no hard limits on the number of emails that can be sent in Production, as long as the Sender Reputation score is over 95%. The reputation is affected by the number of bounced/rejected emails and whether DNS-based spam registries have flagged your domain as a potential spam source
 
 {:.procedure}
-### To check if maximum credits are exceeded
+To check if maximum credits are exceeded:
 
 1. Use SSH to log in to the remote environment.
 
