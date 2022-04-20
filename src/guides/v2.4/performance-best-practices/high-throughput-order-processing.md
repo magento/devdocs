@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/high-throughput-order-processing.html
+layout: migrated
 ---
 
 You can optimize the order placement and checkout experience by configuring the following set of modules for **high-throughput order processing**:

@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/performance-best-practices/advanced-js-bundling.html
+layout: migrated
 ---
 
 ## Introduction
