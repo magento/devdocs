@@ -57,7 +57,7 @@ To enable domain authentication:
 
 ## DKIM signatures and automated security
 
-You can select between automated and manual security when setting up an authenticated domain. If you choose automated security, SendGrid manages your DKIM and SPF records automatically. This means that when you add a new dedicated sending IP address to your account, SendGrid updates your DNS settings and DKIM signature immediately. If you turn automated security off, you are responsible for updating your DKIM signature anytime you make changes to your sending domain.  
+You can select between automated and manual security when setting up an authenticated domain. If you choose automated security, SendGrid manages your DKIM and SPF records automatically. This means that when you add a new dedicated sending IP address to your account, SendGrid updates your DNS settings and DKIM signature immediately. If you turn automated security off, you are responsible for updating your DKIM signature anytime you make changes to your sending domain.
 
 ### DKIM record example with automated security on
 
