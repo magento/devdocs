@@ -8,7 +8,7 @@ redirect_from:
   - /cloud/project/project-conf-files_services.html
 ---
 
-The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and Elasticsearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
+The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and Elasticsearch or OpenSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
 The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the [`relationships`]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_.
 
@@ -26,20 +26,25 @@ The cloud infrastructure supports and deploys the following services:
 -  [`mysql`]({{ site.baseurl }}/cloud/project/services-mysql.html)
 -  [`redis`]({{ site.baseurl }}/cloud/project/services-redis.html)
 -  [`elasticsearch`]({{ site.baseurl }}/cloud/project/services-elastic.html)
+-  [`opensearch`]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 -  [`rabbitmq`]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 
-You can view default versions and disk values in the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
+You can view default versions and disk values in the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, `opensearch` or `elasticsearch`, and `rabbitmq` services defined in the `services.yaml` configuration file:
 
 ```yaml
 mysql:
-    type: mysql:<version>
+    type: mysql:10.4
     disk: 5120
 
 redis:
-    type: redis:<version>
+    type: redis:6.2
 
-elasticsearch:
-    type: elasticsearch:<version>
+opensearch:
+    type: opensearch:1.2
+    disk: 1024
+
+rabbitmq:
+    type: rabbitmq:3.9
     disk: 1024
 ```
 
@@ -128,12 +133,12 @@ To verify relationships in local environment:
    redis:
        -
    ...
-           type: 'redis:3.8'
+           type: 'redis:5.0'
            port: 6379
    elasticsearch:
        -
    ...
-           type: 'elasticsearch:6.6'
+           type: 'elasticsearch:7.7'
            port: 9200
    database:
        -
@@ -167,12 +172,18 @@ To verify relationships in remote environments:
 
 ### Software EOL checks
 
-During the deployment process, {{site.data.var.ct}} checks installed service versions against the end-of-life (EOL) dates for each service.
+During the deployment process, `{{site.data.var.ct}}` checks installed service versions against the end-of-life (EOL) dates for each service.
 
 -  If a service version is within three months of the EOL date, a notification displays in the deploy log.
 -  If the EOL date is in the past, a warning notification displays.
 
 To maintain store security, update installed software versions before they reach EOL. You can review the EOL dates in the [{{ site.data.var.ct }} `eol.yaml` file](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).
+
+### Migrate to OpenSearch
+
+{%include cloud/note-elasticsearch.md%}
+
+For {{ site.data.var.ee }} version 2.4.4 and later, see [Set up OpenSearch service](/cloud/project/services-opensearch.html).
 
 ## Change service version
 
