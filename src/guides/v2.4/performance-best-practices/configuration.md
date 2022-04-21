@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/configuration.html
+layout: migrated
 ---
 
 Magento 2 provides many settings and tools that you can use to improve response time on the pages as well as provide higher throughput.
