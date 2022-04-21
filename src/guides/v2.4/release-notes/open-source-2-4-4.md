@@ -52,7 +52,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Email variable usage was deprecated back in 2.3.4 as part of a security risk mitigation in favor of a more strict variable syntax. This legacy behavior has been fully removed in this release as a continuation of that security risk mitigation.
 
-   As a result, email or newsletter templates that worked in previous versions of Magento may not work correctly after upgrading to {{ site.data.var.ee }} 2.4.4 or {{ site.data.var.ce }} 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates]({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
+   As a result, email or newsletter templates that worked in previous versions of {{ site.data.var.ce }} may not work correctly after upgrading to {{ site.data.var.ee }} 2.4.4 or {{ site.data.var.ce }} 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates]({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
 
 *  Integration tokens can no longer be used for API Bearer token authentication. Previously, an integration token could be used as a standalone key for token-based authentication. However, this behavior has been disabled by default due to the security implications of a never-expiring access token. The previous behavior can be enabled through the command line or Admin. See [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html). <!--- AC-1619--->
 
@@ -418,7 +418,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- ACP2E-115-->
 
-*  Assignment of many products (approximately 10.000) to a category no longer causes the browser to crash.
+*  Assignment of many products (approximately 10,000) to a category no longer causes the browser to crash.
 
 <!--- ACP2E-122-->
 
@@ -466,7 +466,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- ACP2E-175-->
 
-*  Magento no longer throws an internal error when you try to add a disabled child of a configurable product to the cart.
+*  {{ site.data.var.ee }} no longer throws an internal error when you try to add a disabled child of a configurable product to the cart.
 
 ### Customer
 
@@ -706,7 +706,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- ACP2E-51-->
 
-*  The `products` query response now lists products according to sort order.
+*  The `products` query response now lists products according to the specified sort order when multiple products have the same relevance or price value.
 
 <!--- ACP2E-75-->
 
@@ -782,7 +782,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-1172-->
 
-*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for Magento 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
+*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for {{ site.data.var.ce }} 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
 
 <!--- magento/partners-magento2ee/pull/573-->
 
@@ -1491,7 +1491,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- ACP2E-7-->
 
-*  Full-screen product image are now correctly displayed on themes with vertical thumbnail navigation direction on mobile devices. Previously, the product image was incorrectly scaled or invisible on themes with vertical thumbnail navigation direction on mobile devices in full-screen mode.
+*  Full-screen product images are now correctly displayed on themes with vertical thumbnail navigation direction on mobile devices. Previously, product images were incorrectly scaled or invisible on themes with vertical thumbnail navigation direction on mobile devices in full-screen mode.
 
 <!--- ACP2E-23-->
 
@@ -1563,7 +1563,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- ACP2E-91-->
 
-*  `/rest/all/V1/customers` now creates a customer as expected when the request includes valid data. Previously, this request returned the following error when valid data was input: `Fatal error: Allowed memory size of ********** bytes exhausted (tried to allocate **** bytes) in vendor/magento/module-store/Model/StoreRepository.php on line 75`.
+*  Corrected an error that occurred when Add Store Code to Urls is set to Yes and a REST call did not include a store code. Although the payload was valid, the returned the following error: `Fatal error: Allowed memory size of ********** bytes exhausted (tried to allocate **** bytes) in vendor/magento/module-store/Model/StoreRepository.php on line 75`.
 
 <!--- ACP2E-153-->
 

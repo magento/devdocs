@@ -47,7 +47,7 @@ These release notes can include:
 
 -  {:.fix} <!--- ACP2E-128--> Custom customer attributes are now displayed as expected in the Company Admin tab.
 
--  {:.fix} <!--- ACP2E-130--> The My wish list block on the My Account page is now displayed as expected for Company Admins and Company Users.
+-  {:.fix} <!--- ACP2E-130--> The My Wish List block on the My Account page is now displayed as expected for Company Admins and Company Users.
 
 -  {:.fix} <!--- ACP2E-133--> Quick Order errors are no longer displayed in the shopping cart. Previously, {{ site.data.var.ee }} displayed this error in the shopping cart when the SKU was not found in the catalog:  `The SKU was not found in the catalog`.
 
