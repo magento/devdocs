@@ -1563,7 +1563,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- ACP2E-91-->
 
-*  Corrected an error that occurred when Add Store Code to Urls is set to Yes and a REST call did not include a store code. Although the payload was valid, the returned the following error: `Fatal error: Allowed memory size of ********** bytes exhausted (tried to allocate **** bytes) in vendor/magento/module-store/Model/StoreRepository.php on line 75`.
+*  Corrected an error that occurred when **Add Store Code to Urls** is set to **Yes** and a REST call did not include a store code. Although the payload was valid, the call returned the following error: `Fatal error: Allowed memory size of ********** bytes exhausted (tried to allocate **** bytes) in vendor/magento/module-store/Model/StoreRepository.php on line 75`.
 
 <!--- ACP2E-153-->
 
