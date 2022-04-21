@@ -370,6 +370,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  The dropdown list for the **State** field on the Admin create order page is now populated by the predefined values for the selected country. Previously, this field was an input text field instead of a dropdown menu.
 
+<!--- ACP2E-172-->
+
+*  {{ site.data.var.ce }} no longer throws an error after you use the `addConfigurableProductsToCart` mutation to add a configurable product to a cart directly after changing the store view.
+
+<!--- ACP2E-176-->
+
+*  {{ site.data.var.ce }} no longer throws an error when you use the `addConfigurableProductsToCart` mutation to add a disabled child of a configurable product to the cart. Previously, {{ site.data.var.ee }} threw an integrity constraint violation error.
+
 ### Catalog
 
 <!--- MC-41796-->
@@ -424,7 +432,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Price filters now work correctly with out-of-stock configurable products. Previously, out-of-stock configurable products were not shown in their correct price range.
 
-### Catalog rule
+*  ### Catalog rule
 
 <!--- MC-41807-->
 
@@ -765,6 +773,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- magento/magento2/pull/27212-->
 
 *  Resolved consistency issues in merged `indexer.xml` files. The allowed values in `classType` are now the same in unmerged and merged `indexer.xml` files. [GitHub-29609](https://github.com/magento/magento2/issues/29609)
+
+<!--- AC-190-->
+
+*  A synchronization mechanism has been implemented in category indexers to prevent full and partial indexers from running in parallel. Previously, when these indexers ran in parallel, products could be temporarily omitted from storefront category pages or category pages could be temporarily empty of products.
 
 ### Infrastructure
 
@@ -1269,6 +1281,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Rate requests to online shipping carriers have been reduced from several requests to one. Package insurance and handling price per item/package are now calculated correctly. Previously, {{ site.data.var.ee }} displayed incorrect shipping rates for FedEx shipping methods.
 
+<!--- ACP2E-174-->
+
+*  {{ site.data.var.ce }} now displays UPS rates when creating shipping labels for shipping from Puerto Rico. Previously, {{ site.data.var.ce }} did not display these UPS rates.
+
 ### Store
 
 <!--- MC-42884-->
@@ -1496,6 +1512,10 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 <!--- ACP2E-169-->
 
 *  View breakpoints are now consistent across {{ site.data.var.ce }}.
+
+<!--- ACP2E-199-->
+
+*  {{ site.data.var.ce }} now correctly displays custom customer date attributes with custom locales on the Admin customer page.
 
 ### URL rewrites
 
