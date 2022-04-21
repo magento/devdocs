@@ -52,7 +52,7 @@ The release notes include:
 
 -  {:.fix} Product stock update through import now takes into account backorders and `Out-of-Stock Threshold` configuration settings when determining product stock status. Product stock status is now automatically set to out-of-stock if the product does not meet the stock requirements.  If product stock does meet the threshold, the  user-defined stock status `is_in_stock` is used. <!--- ACP2E-14-->
 
--  {:.fix} Shoppers now see the following message when they try to order a product quantity that exceeds the salable quantity:  `We don't have as many quantity as you requested, but we'll back order the remaining no` . Previously, {{site.data.var.ee}} did not display an error message.  <!--- ACP2E-26-->
+-  {:.fix} Shoppers now receive a message when they try to order a product quantity that exceeds the salable quantity. Previously, {{site.data.var.ee}} did not display an error message.  <!--- ACP2E-26-->
 
 -  {:.fix} Merchants can now successfully save a Company account that contains a custom 'company_name' attribute. Previously,  AC threw an error when you tried to  save the Company account.  <!--- ACP2E-156-->
 
