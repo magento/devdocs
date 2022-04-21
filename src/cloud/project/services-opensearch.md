@@ -29,7 +29,7 @@ To enable OpenSearch:
 1. For Starter projects, add the `opensearch` service to the `.magento/services.yaml` file with the appropriate version and allocated disk space in MB.
 
    ```yaml
-   elasticsearch:
+   opensearch:
        type: opensearch:<version>
        disk: 1024
    ```
