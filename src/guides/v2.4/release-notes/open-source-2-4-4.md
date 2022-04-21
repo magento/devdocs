@@ -376,7 +376,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- ACP2E-176-->
 
-*  {{ site.data.var.ce }} no longer throws an error when you use the `addConfigurableProductsToCart` mutation to add a disabled child of a configurable product to the cart. Previously, {{ site.data.var.ee }} threw an integrity constraint violation error.
+*  {{ site.data.var.ce }} no longer throws an error when you use the `addConfigurableProductsToCart` mutation to add a disabled child of a configurable product to the cart. Previously, {{ site.data.var.ce }} threw an integrity constraint violation error.
 
 ### Catalog
 
@@ -1279,7 +1279,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-120-->
 
-*  Rate requests to online shipping carriers have been reduced from several requests to one. Package insurance and handling price per item/package are now calculated correctly. Previously, {{ site.data.var.ee }} displayed incorrect shipping rates for FedEx shipping methods.
+*  Rate requests to online shipping carriers have been reduced from several requests to one. Package insurance and handling price per item/package are now calculated correctly. Previously, {{ site.data.var.ce }} displayed incorrect shipping rates for FedEx shipping methods.
 
 <!--- ACP2E-174-->
 

@@ -30,7 +30,7 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 ### Apply this hotfix after you install 2.4.4
 
-We recommend that you apply the following patch after you install {{ site.data.var.ce }} 2.4.4:
+We recommend that you apply the following patch after you install {{ site.data.var.ee }} 2.4.4:
 
 *  `braintree-disabled-partial-capture-for-applepay-googlepay.patch`.  Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree. When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not editable. This hotfix addresses that issue. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.  <!--- BUNDLE-3088-->
 
@@ -638,7 +638,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- ACP2E-69-->
 
-*  Executing `bin/magento support:backup:code` now creates a backup as expected. Previously, {{ site.data.var.ce }} created a backup but threw an error.
+*  Executing `bin/magento support:backup:code` now creates a backup as expected. Previously, {{ site.data.var.ee }} created a backup but threw an error.
 
 <!--- ACP2E-82-->
 
@@ -1701,7 +1701,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- ACP2E-199-->
 
-*  {{ site.data.var.ce }} now correctly displays custom customer date attributes with custom locales on the Admin customer page.
+*  {{ site.data.var.ee }} now correctly displays custom customer date attributes with custom locales on the Admin customer page.
 
 ### URL rewrites
 
