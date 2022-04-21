@@ -48,6 +48,14 @@ The release notes include:
 
 -  {:.fix} We’ve optimized the performance of the validator that prevents adding new source to a bundled product’s child product with shipment type `Ship Together`. <!--- MC-43039-->
 
+-  {:.fix} The `Allocated sources` column is now included as expected in order export CSV files. Previously, this column was omitted. <!--- ACP2E-3-->
+
+-  {:.fix} Product stock update through import now takes into account backorders and `Out-of-Stock Threshold` configuration settings when determining product stock status. Product stock status is now automatically set to out-of-stock if the product does not meet the stock requirements.  If product stock does meet the threshold, the  user-defined stock status `is_in_stock` is used. <!--- ACP2E-14-->
+
+-  {:.fix} Shoppers now see the following message when they try to order a product quantity that exceeds the salable quantity:  `We don't have as many quantity as you requested, but we'll back order the remaining no` . Previously, {{site.data.var.ee}} did not display an error message.  <!--- ACP2E-26-->
+
+-  {:.fix} Merchants can now successfully save a Company account that contains a custom 'company_name' attribute. Previously,  AC threw an error when you tried to  save the Company account.  <!--- ACP2E-156-->
+
 ### v1.2.3
 
 {{site.data.var.im}} 1.2.3 (module version: `magento/inventory-metapackage = 1.2.3`) is supported with version 2.4.3 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
