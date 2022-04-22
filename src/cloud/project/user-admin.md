@@ -69,7 +69,7 @@ To add a user and assign roles:
    magento-cloud user:add
    ```
 
-2. Follow the prompts to specify the user email address, set the project and environment roles, and add the user:
+1. Follow the prompts to specify the user email address, set the project and environment roles, and add the user:
 
    ```terminal
    Enter the user's email address: alice@example.com
@@ -116,17 +116,17 @@ Access the Project Web UI to add users:
 
 1. Log in to [your {{site.data.var.ece}} account][{{site.data.var.ece}} account].
 
-2. Click the **Projects** tab.
+1. Click the **Projects** tab.
 
    ![Click the projects tab to access your Cloud project]({{ site.baseurl }}/common/images/cloud/cloud_account_project.png){:width="550px"}
 
-3. Click your project name to open the Cloud project portal (Onboarding UI).
+1. Click your project name to open the Cloud project portal (Onboarding UI).
 
-4. Click **Infrastructure access**, and then click **Project Access (Web UI)**.
+1. Click **Infrastructure access**, and then click **Project Access (Web UI)**.
 
    ![Cloud project portal]({{ site.baseurl }}/common/images/cloud/cloud-login-infrastructure-access.png){:width="550px"}
 
-5. In the Project Web UI, add project-level users and environment-level users as needed.
+1. In the Project Web UI, add project-level users and environment-level users as needed.
 
 {:.procedure}
 Add a project-level user:
