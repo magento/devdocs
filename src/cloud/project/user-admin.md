@@ -16,10 +16,10 @@ redirect_from:
 
 You can manage access to {{site.data.var.ece}} projects by adding users and assigning roles. Assign project-level roles to provide access to the entire project, and environment-level roles to set permissions per available environment.
 
-| **Role** | **Scope**  | **Access** |
+| **Role**            | **Scope**  | **Access** |
 |-|-|-|
 | **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Adobe assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You must submit a {{site.data.var.ee}} Support ticket to modify settings or change the Account owner. |
-| **Super user** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][] and managing users. |
+| **Super User** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][] and managing users. |
 | **Project reader** | Project | View access to all project environments. Users with this role cannot perform tasks on any environment. However, you can configure environment-level permissions for users with this role to permit write access to a specific environment. |
 | **Admin** | Environment | Change settings and perform tasks on an environment, including merging with the parent environment |
 | **Contributor** | Environment | Push code and branch the environment |
@@ -27,7 +27,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 ## Add user authentication requirements
 
-For added security, Adobe provides project-level MFA enforcement to require two-factor authentication (2FA) for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
+For added security, Adobe provides project-level multi-factor authentication (MFA) enforcement to require two-factor authentication (2FA) for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
 
@@ -40,7 +40,9 @@ Changing user configuration on an {{site.data.var.ece}} environment requires a s
 
 **Prerequisites:**
 
-To add a user to a project or environment, you need the email address associated with an existing {{ site.data.var.ece }} account. New users can [register for an account][{{site.data.var.ece}} account] and provide the associated email address after completing account validation.
+-  To manage users in any environment requires the **Super User** or **Account Owner** role.
+
+-  To add a user to a project or environment, you need the email address associated with an existing {{ site.data.var.ece }} account. New users can [register for an account][{{site.data.var.ece}} account] and provide the associated email address after completing account validation.
 
 ### Manage users with the `magento-cloud` CLI {#cloud-user-mg-cli}
 
@@ -53,10 +55,10 @@ Available commands:
 -  `magento-cloud user:list [users]`–list project users
 -  `magento-cloud user:role`–view or change the user role
 
-The following examples use the `magento-cloud` CLI to add a user, configure roles, and modify project assignments and assigned user roles.
-
 {:.bs-callout-warning}
-Users granted the **Admin** role can no longer manage users using the `magento-cloud` CLI or by clicking on the **Users** tab when configuring their assigned environments.  You must be a **Super User** to manage users in any environment. To grant a specific user access to the **Users** tab when configuring the environment, a **Super User** or **Account Owner** must assign that user the **Super User** role.
+Users assigned the **Admin** role can no longer manage users using the `magento-cloud` CLI. Only users granted the **Super User** or **Account Owner** role can manage users.
+
+The following examples use the `magento-cloud` CLI to add a user, configure roles, and modify project assignments and assigned user roles.
 
 {:.procedure}
 To add a user and assign roles:
@@ -67,7 +69,7 @@ To add a user and assign roles:
    magento-cloud user:add
    ```
 
-1. Follow the prompts to specify the user email address, set the project and environment roles, and add the user:
+2. Follow the prompts to specify the user email address, set the project and environment roles, and add the user:
 
    ```terminal
    Enter the user's email address: alice@example.com
@@ -102,6 +104,9 @@ The `magento-cloud list` command displays all the `magento-cloud` CLI commands.
 
 ### Manage users from the Project Web UI {#cloud-user-webinterface}
 
+{:.bs-callout-warning}
+Users granted the **Admin** role can no longer manage users by clicking on the **Users** tab when configuring user assigned environments. To grant a user access to the **Users** tab when configuring the environment, a **Super User** or **Account Owner** must grant that user the **Super User** role.
+
 You can add project-level and environment-level users from the Project Web UI, and use the _Edit_ feature to modify permissions for an existing user.
 
 After you add a user, the user receives an email inviting them to join the {{site.data.var.ece}} project.
@@ -111,17 +116,17 @@ Access the Project Web UI to add users:
 
 1. Log in to [your {{site.data.var.ece}} account][{{site.data.var.ece}} account].
 
-1. Click the **Projects** tab.
+2. Click the **Projects** tab.
 
    ![Click the projects tab to access your Cloud project]({{ site.baseurl }}/common/images/cloud/cloud_account_project.png){:width="550px"}
 
-1. Click your project name to open the Cloud project portal (Onboarding UI).
+3. Click your project name to open the Cloud project portal (Onboarding UI).
 
-1. Click **Infrastructure access**, and then click **Project Access (Web UI)**.
+4. Click **Infrastructure access**, and then click **Project Access (Web UI)**.
 
    ![Cloud project portal]({{ site.baseurl }}/common/images/cloud/cloud-login-infrastructure-access.png){:width="550px"}
 
-1. In the Project Web UI, add project-level users and environment-level users as needed.
+5. In the Project Web UI, add project-level users and environment-level users as needed.
 
 {:.procedure}
 Add a project-level user:
@@ -154,8 +159,8 @@ Add a project-level user:
 {:.procedure}
 Add an environment-level user:
 
-{:.bs-callout-warning}
-You must be a **Super User** or **Account Owner** to add an environment-level user.
+   {:.bs-callout-warning}
+   You must be a **Super User** or **Account Owner** to add an environment-level user.
 
 1. In the Project Web UI, select the environment. Then, click **Configure environment**.
 
