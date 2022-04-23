@@ -430,7 +430,7 @@ Default values for fields may be set in the module's `etc/config.xml` file by sp
 
 #### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID` (Website scope)
 
-Using `websites` tag you can specify default value for specific website.
+Using the `websites` tag you can specify the default value for a specific website.
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
