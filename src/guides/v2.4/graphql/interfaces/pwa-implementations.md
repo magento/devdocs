@@ -4,17 +4,6 @@ title: PWA implementations and attributes
 pwa_only: True
 ---
 
-## Inputs
-
-### DynamicBlocksFilterInput
-
-This input is defined in the `magento2-pwa-commerce` extension.
-
-Attribute | Data Type | Description
---- | --- | ---
-`cart_id`| String | The unique ID that identifies the customer's cart
-`product_uid` | ID | The unique ID of the product currently viewed
-
 ## Interfaces
 
 ### AttributeOptionsInterface
