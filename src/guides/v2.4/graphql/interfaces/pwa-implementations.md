@@ -4,6 +4,17 @@ title: PWA implementations and attributes
 pwa_only: True
 ---
 
+## Inputs
+
+### DynamicBlocksFilterInput
+
+This input is defined in the `magento2-pwa-commerce` extension.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`cart_id`| String | The unique ID that identifies the customer's cart
+`product_uid` | ID | The unique ID of the product currently viewed
+
 ## Interfaces
 
 ### AttributeOptionsInterface
@@ -11,14 +22,6 @@ pwa_only: True
 Attribute | Data Type | Description
 --- | --- | ---
 `attribute_options`| [AttributeOptionInterface] | An array of attribute options
-
-### ProductAttributeMetadata
-
-`ProductAttributeMetadata` implements [`AttributeMetadataInterface`]({{ page.baseurl }}/graphql/interfaces/attribute-metadata.html).
-
-Attribute | Data Type | Description
---- | --- | ---
-`used_in_components` | [CustomAttributesListsEnum!] | Places in the store front where the attribute is used
 
 ### SelectableInputTypeInterface
 
@@ -48,6 +51,284 @@ Attribute | Data Type | Description
 Attribute | Data Type | Description
 --- | --- | ---
 `value` | String | Attribute value
+
+### ProductAttributeMetadata
+
+`ProductAttributeMetadata` implements [`AttributeMetadataInterface`]({{ page.baseurl }}/graphql/interfaces/attribute-metadata.html).
+
+Attribute | Data Type | Description
+--- | --- | ---
+`used_in_components` | [CustomAttributesListsEnum!] | Places in the store front where the attribute is used
+
+#### Example usage
+
+**Request**
+
+```graphql
+products(filter: { sku: { eq: "VA08" } }) {
+    items {
+      name
+      sku
+      custom_attributes {
+        attribute_metadata {
+          ... on ProductAttributeMetadata {
+            label
+            code
+            data_type
+            ... on AttributeMetadataInterface {
+              attribute_labels {
+                label
+              }
+            }
+          }
+          ui_input {
+            ui_input_type
+            ... on SelectableInputTypeInterface {
+              attribute_options {
+                label
+                ... on AttributeOption {
+                  value
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Thick Leather Braided Belt",
+          "sku": "VA08",
+          "custom_attributes": [
+            {
+              "attribute_metadata": {
+                "label": "Fashion Color",
+                "code": "fashion_color",
+                "data_type": "INT",
+                "attribute_labels": [
+                  {
+                    "label": "Fashion Color"
+                  }
+                ],
+                "ui_input": {
+                  "ui_input_type": "SELECT",
+                  "attribute_options": [
+                    {
+                      "label": "Gold",
+                      "value": "40"
+                    },
+                    {
+                      "label": "Peach",
+                      "value": "61"
+                    },
+                    {
+                      "label": "Khaki",
+                      "value": "64"
+                    },
+                    {
+                      "label": "Silver",
+                      "value": "43"
+                    },
+                    {
+                      "label": "Lilac",
+                      "value": "67"
+                    },
+                    {
+                      "label": "Rain",
+                      "value": "70"
+                    },
+                    {
+                      "label": "Mint",
+                      "value": "73"
+                    },
+                    {
+                      "label": "Lily",
+                      "value": "76"
+                    },
+                    {
+                      "label": "Latte",
+                      "value": "79"
+                    },
+                    {
+                      "label": "Cocoa",
+                      "value": "82"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attribute_metadata": {
+                "label": "Fashion Material",
+                "code": "fashion_material",
+                "data_type": "STRING",
+                "attribute_labels": [
+                  {
+                    "label": "Fashion Material"
+                  }
+                ],
+                "ui_input": {
+                  "ui_input_type": "MULTISELECT",
+                  "attribute_options": [
+                    {
+                      "label": "14K Gold",
+                      "value": "46"
+                    },
+                    {
+                      "label": "Acrylic",
+                      "value": "118"
+                    },
+                    {
+                      "label": "Cashmere",
+                      "value": "121"
+                    },
+                    {
+                      "label": "Sterling Silver",
+                      "value": "49"
+                    },
+                    {
+                      "label": "Cotton",
+                      "value": "124"
+                    },
+                    {
+                      "label": "Linen",
+                      "value": "127"
+                    },
+                    {
+                      "label": "Leather",
+                      "value": "130"
+                    },
+                    {
+                      "label": "Nylon",
+                      "value": "133"
+                    },
+                    {
+                      "label": "Organic Cotton",
+                      "value": "136"
+                    },
+                    {
+                      "label": "Polyester",
+                      "value": "139"
+                    },
+                    {
+                      "label": "Rayon",
+                      "value": "142"
+                    },
+                    {
+                      "label": "Silk",
+                      "value": "145"
+                    },
+                    {
+                      "label": "Spandex",
+                      "value": "148"
+                    },
+                    {
+                      "label": "Viscose",
+                      "value": "151"
+                    },
+                    {
+                      "label": "Wool",
+                      "value": "154"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attribute_metadata": {
+                "label": "Fashion Size",
+                "code": "fashion_size",
+                "data_type": "INT",
+                "attribute_labels": [
+                  {
+                    "label": "Fashion Size"
+                  }
+                ],
+                "ui_input": {
+                  "ui_input_type": "SELECT",
+                  "attribute_options": [
+                    {
+                      "label": "10",
+                      "value": "109"
+                    },
+                    {
+                      "label": "12",
+                      "value": "112"
+                    },
+                    {
+                      "label": "2",
+                      "value": "97"
+                    },
+                    {
+                      "label": "4",
+                      "value": "100"
+                    },
+                    {
+                      "label": "6",
+                      "value": "103"
+                    },
+                    {
+                      "label": "8",
+                      "value": "106"
+                    },
+                    {
+                      "label": "L",
+                      "value": "85"
+                    },
+                    {
+                      "label": "M",
+                      "value": "88"
+                    },
+                    {
+                      "label": "S",
+                      "value": "91"
+                    },
+                    {
+                      "label": "XS",
+                      "value": "94"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "attribute_metadata": {
+                "label": "Has Video",
+                "code": "has_video",
+                "data_type": "INT",
+                "attribute_labels": [],
+                "ui_input": {
+                  "ui_input_type": "BOOLEAN",
+                  "attribute_options": [
+                    {
+                      "label": "Yes",
+                      "value": "1"
+                    },
+                    {
+                      "label": "No",
+                      "value": "0"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
 
 ### SelectedAttributeOption
 
