@@ -42,6 +42,8 @@ Changing user configuration on an {{site.data.var.ece}} environment requires a s
 
 -  To add a user to a project or environment, you need the email address associated with an existing {{ site.data.var.ece }} account. New users can [register for an account][{{site.data.var.ece}} account] and provide the associated email address after completing account validation.
 
+-  Users assigned the **Admin** role can no longer manage users using the `magento-cloud` CLI. Only users that are granted the **Super User** or **Account Owner** role can manage users.
+
 ### Manage users with the `magento-cloud` CLI {#cloud-user-mg-cli}
 
 Use the {{site.data.var.ece}} command line client to manage users and integrate this with any other automated system.
@@ -63,9 +65,6 @@ To add a user and assign roles:
    ```bash
    magento-cloud user:add
    ```
-
-   {:.bs-callout-warning}
-   Users assigned the **Admin** role can no longer manage users using the `magento-cloud` CLI. Only users that are granted the **Super User** or **Account Owner** role can manage users.
 
 1. Follow the prompts to specify the user email address, set the project and environment roles, and add the user:
 
@@ -151,6 +150,9 @@ Add a project-level user:
    {:.bs-callout-warning}
    After adding project-level users, you must redeploy all environments to apply the changes. Adding a project user does not trigger the redeploy automatically.
 
+ {:.bs-callout-warning}
+   Only **Super Users** can manage users in any environment. To grant a user access to the **Users** tab when configuring the environment, another **Super User** or the **Account Owner** must assign that user the **Super User** role.
+
 {:.procedure}
 Add an environment-level user:
 
@@ -171,9 +173,6 @@ Add an environment-level user:
    -  Click *Add User*.
 
 {%include cloud/note-prevent-site-availability-issues.md%}
-
-   {:.bs-callout-warning}
-   Only **Super Users** can manage users in any environment. To grant a user access to the **Users** tab when configuring the environment, another **Super User** or the **Account Owner** must assign that user the **Super User** role.
 
 ## Update account security settings
 
