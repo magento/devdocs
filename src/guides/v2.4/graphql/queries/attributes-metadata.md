@@ -4,11 +4,11 @@ title: attributesMetadata query
 pwa_only: True
 ---
 
-In the admin, custom attributes are defined on the store level, rather than with the product. The `attributesMetadata` query returns these custom product attributes.
+In the Admin, custom attributes are defined on the store level, rather than with the product. The `attributesMetadata` query returns these custom product attributes.
 
 ## Syntax
 
-```json
+```graphql
 { attributesMetadata(
       entityType: AttributeEntityTypeEnum!,
       attributeUids:[ID!],
