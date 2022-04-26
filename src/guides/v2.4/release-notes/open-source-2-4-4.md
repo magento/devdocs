@@ -178,7 +178,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- ACP2E-215-->
 
-*  `app:config:import` now executes without error when you update `time` values in `config.php`. Previously, changing product alert configuration by manual editing (that is, not using the Admin) resulted in an error.
+*  The `bin/magento app:config:import` command now executes without error when you update `time` values in `config.php`. Previously, changing product alert configuration by manual editing (that is, not using the Admin) resulted in an error.
 
 ### Accessibility
 
@@ -296,7 +296,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-43223-->
 
-*  GraphQL `cart` query responses now return accurate discounts for bundle products with dynamic prices. Previously, query responses included discounts applied to each bundle product individually.
+*  `cart` query responses now return accurate discounts for bundle products with dynamic prices. Previously, query responses included discounts applied to each bundle product individually.
 
 ### Cache
 
@@ -410,7 +410,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-42288-->
 
-*  Coupon generation is now blocked until the related cart price rule is saved with the `auto` option enabled. If you try to save this rule without enabling the `auto` option, {{ site.data.var.ee }} displays this message: `Rule is not saved with auto generate option enabled. Please save the rule and try again`.
+*  Coupon generation is now blocked until the related cart price rule is saved with the `auto` option enabled. If you try to save this rule without enabling the `auto` option, {{ site.data.var.ce }} displays this message: `Rule is not saved with auto generate option enabled. Please save the rule and try again`.
 
 <!--- MC-42743-->
 
@@ -493,7 +493,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- ACP2E-216-->
 
 *  The grid view list of grouped and configurable products now contains only simple and virtual products when adding product options. Previously, Magento included simple products with options.
-*  ### Catalog rule
+
+### Catalog rule
 
 <!--- MC-41807-->
 
@@ -531,7 +532,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- ACP2E-175-->
 
-*  {{ site.data.var.ee }} no longer throws an internal error when you try to add a disabled child of a configurable product to the cart.
+*  {{ site.data.var.ce }} no longer throws an internal error when you try to add a disabled child of a configurable product to the cart.
 
 ### Customer
 
@@ -1300,7 +1301,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-43163-->
 
-*  `POST/rest/V1/orders` now updates extension attributes without error. Previously, an SQL syntax error occurred.
+*  `POST V1/orders` calls now update extension attributes without error. Previously, an SQL syntax error occurred.
 
 ### Search
 
@@ -1330,7 +1331,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-249-->
 
-*  {{ site.data.var.ee }} now adds correct price fields to the Elasticsearch price index mapping. Previously, incorrect price fields were added to the index with store ID instead of website ID.
+*  {{ site.data.var.ce }} now adds correct price fields to the Elasticsearch price index mapping. Previously, incorrect price fields were added to the index with store ID instead of website ID.
 
 ### Shipping
 

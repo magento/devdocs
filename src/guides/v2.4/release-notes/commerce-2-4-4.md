@@ -242,7 +242,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- ACP2E-215-->
 
-*  `app:config:import` now executes without error when you update `time` values in `config.php`. Previously, changing product alert configuration by manual editing (that is, not using the Admin) resulted in an error.
+*  The `bin/magento app:config:import` command now executes without error when you update `time` values in `config.php`. Previously, changing product alert configuration by manual editing (that is, not using the Admin) resulted in an error.
 
 ### Accessibility
 
@@ -370,7 +370,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-43223-->
 
-*  GraphQL `cart` query responses now return accurate discounts for bundle products with dynamic prices. Previously, query responses included discounts applied to each bundle product individually.
+*  `cart` query responses now return accurate discounts for bundle products with dynamic prices. Previously, query responses included discounts applied to each bundle product individually.
 
 ### Cache
 
@@ -474,7 +474,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- ACP2E-137-->
 
-*  Validation has been added to the checkout workflow to compare the customer's street address against default value. If the validation process identifies changes, it sets `customer_address_id` to `null` to treat it as a new customer address. Previously, If the customer saved the address without validation at checkout and the same customer tried to place an order using the same address after validation was applied to checkout field , {{ site.data.var.ce }} did not accept the edited address and threw an exception.
+*  Validation has been added to the checkout workflow to compare the customer's street address against default value. If the validation process identifies changes, it sets `customer_address_id` to `null` to treat it as a new customer address. Previously, If the customer saved the address without validation at checkout and the same customer tried to place an order using the same address after validation was applied to checkout field , {{ site.data.var.ee }} did not accept the edited address and threw an exception.
 
 ### Cart price rules
 
@@ -496,7 +496,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- ACP2E-285-->
 
-*  A product with the price of 0 can now be successfully added to the cart when {{ site.data.var.ce }} is configured with the **Fixed amount discount for whole cart** cart price rule. Previously, {{ site.data.var.ce }} displayed this error:  `report.ERROR: Warning: Division by zero in /home/mer33515/public_html/ee24develop/app/code/Magento/SalesRule/Helper/CartFixedDiscount.php on line 85`.
+*  A product with the price of 0 can now be successfully added to the cart when {{ site.data.var.ee }} is configured with the **Fixed amount discount for whole cart** cart price rule. Previously, {{ site.data.var.ee }} displayed this error: `report.ERROR: Warning: Division by zero in /home/mer33515/public_html/ee24develop/app/code/Magento/SalesRule/Helper/CartFixedDiscount.php on line 85`.
 
 <!--- ACP2E-306-->
 
@@ -1471,7 +1471,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-43163-->
 
-*  `POST/rest/V1/orders` now updates extension attributes without error. Previously, an SQL syntax error occurred.
+*  `POST V1/orders` calls now update extension attributes without error. Previously, an SQL syntax error occurred.
 
 ### Search
 

@@ -24,7 +24,7 @@ The release notes include:
 
 {{site.data.var.im}} 1.2.4 (module version: `magento/inventory-metapackage = 1.2.4`) is supported with version 2.4.4 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
--  {:.fix} {{ site.data.var.ee }} now displays an accurate salable quantity value for all products in the Admin product list view. Previously, {{ site.data.var.ee }} displayed a blank value for salable quantity of in-stock products with SKUs that contained special characters. <!--- MC-41936-->
+-  {:.fix} {{ site.data.var.ce }} now displays an accurate salable quantity value for all products in the Admin product list view. Previously, {{ site.data.var.ce }} displayed a blank value for salable quantity of in-stock products with SKUs that contained special characters. <!--- MC-41936-->
 
 -  {:.fix} Performance has improved for cart-and-checkout actions such as adding products to the cart in deployments with many (approximately 10,000) inventory sources. <!--- MC-42570-->
 
@@ -36,13 +36,13 @@ The release notes include:
 
 -  {:.fix} The storefront category page now displays the correct product count after removing a product from a category by API. Previously, the category page product count was incorrect until re-indexing occurred. <!--- MC-42287-->
 
--  {:.fix} Configurable products can now be returned to stock when creating a credit memo when the **Manage Stock** option is disabled. Previously, Magento did not display the **Return to stock** checkbox on the credit memo creation page when this option was disabled. <!--- MC-42002-->
+-  {:.fix} Configurable products can now be returned to stock when creating a credit memo when the **Manage Stock** option is disabled. Previously, {{ site.data.var.ce }} did not display the **Return to stock** checkbox on the credit memo creation page when this option was disabled. <!--- MC-42002-->
 
 -  {:.fix} Management of Inventory stock that exceeds 10,000 items has improved. Previously, performance issues sometimes prevented merchants from editing stock in the Admin before launching their website. <!--- MC-42643-->
 
 -  {:.fix} The Admin **SYSTEM** > **Permissions** > **User Roles** page has been changed to provide administrators with restricted permissions access to delivery methods configuration. The Shipping methods section has been renamed to Delivery methods, and In-Store Pickup has been moved under Delivery methods section. [GitHub-30053](https://github.com/magento/magento2/issues/30053)  <!--- MC-41545-->
 
--  {:.fix} {{site.data.var.ee}} no longer creates a duplicate product reservation after a credit memo is updated by API. <!--- MC-41757-->
+-  {:.fix} {{site.data.var.ce}} no longer creates a duplicate product reservation after a credit memo is updated by API. <!--- MC-41757-->
 
 -  {:.fix} Switching from the Pick in Store tab to the Shipping tab in the checkout workflow no longer triggers a JavaScript error when only In-Store Pickup Delivery is available. <!--- MC-42808-->
 
@@ -52,11 +52,11 @@ The release notes include:
 
 -  {:.fix} The `Allocated sources` column is now included as expected in order export CSV files. Previously, this column was omitted. <!--- ACP2E-3-->
 
--  {:.fix} Product stock update through import now takes into account back orders and `Out-of-Stock Threshold` configuration settings when determining product stock status. Product stock status is now automatically set to out-of-stock if the product does not meet the stock requirements.  If product stock does meet the threshold, the  user-defined stock status `is_in_stock` is used. <!--- ACP2E-14-->
+-  {:.fix} Product stock update through import now takes into account back orders and `Out-of-Stock Threshold` configuration settings when determining product stock status. Product stock status is now automatically set to out-of-stock if the product does not meet the stock requirements. If product stock does meet the threshold, the  user-defined stock status `is_in_stock` is used. <!--- ACP2E-14-->
 
 -  {:.fix} Shoppers now receive a message when they try to order a product quantity that exceeds the salable quantity. Previously, {{site.data.var.ee}} did not display an error message.  <!--- ACP2E-26-->
 
--  {:.fix} Merchants can now successfully save a Company account that contains a custom `company_name` attribute. Previously, {{ site.data.var.ee }} threw an error when you tried to save the Company account.  <!--- ACP2E-156-->
+-  {:.fix} Merchants can now successfully save a Company account that contains a custom `company_name` attribute. Previously, {{ site.data.var.ce }} threw an error when you tried to save the Company account.  <!--- ACP2E-156-->
 
 -  {:.fix} Products no longer go out of stock after being imported with zero (0) quantity when back orders are enabled. <!--- ACP2E-244-->
 
