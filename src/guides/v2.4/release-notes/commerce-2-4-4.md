@@ -368,6 +368,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  The GraphQL resolver for bundle products now checks whether child bundle products have been disabled. Previously, this check did not occur and queries such `categoryList` returned child products that were not salable.
 
+<!--- MC-43223-->
+
+*  GraphQL `cart` query responses now return accurate discounts for bundle products with dynamic prices. Previously, query responses included discounts applied to each bundle product individually.
+
 ### Cache
 
 <!--- AC-328-->
