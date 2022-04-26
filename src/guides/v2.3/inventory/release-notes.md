@@ -24,11 +24,13 @@ The release notes include:
 
 {{site.data.var.im}} 1.2.4 (module version: `magento/inventory-metapackage = 1.2.4`) is supported with version 2.4.4 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
--  {:.fix} {{ site.data.var.ce }} now displays an accurate salable quantity value for all products in the Admin product list view. Previously, {{ site.data.var.ce }} displayed a blank value for salable quantity of in-stock products with SKUs that contained special characters. <!--- MC-41936-->
+-  {:.fix} {{ site.data.var.ee }} now displays an accurate salable quantity value for all products in the Admin product list view. Previously, {{ site.data.var.ee }} displayed a blank value for salable quantity of in-stock products with SKUs that contained special characters. <!--- MC-41936-->
 
 -  {:.fix} Performance has improved for cart-and-checkout actions such as adding products to the cart in deployments with many (approximately 10,000) inventory sources. <!--- MC-42570-->
 
 -  {:.fix} The `bin/magento inventory:reservation:list-inconsistencies` command now handles orders with partial shipments correctly even if the reservations are missed from the database and the cache has been cleared. Previously, when this command was executed with a pre-cleared cache, Magento displayed this error: `Area code is not set`. <!--- MC-42142-->
+
+-  {:.fix} The `bin/magento inventory:reservation:list-inconsistencies` command no longer returns an undefined index error. <!--- MC-42006-->
 
 -  {:.fix} Incremental indexing of grouped product child products no longer causes other grouped products to be incorrectly indexed when children are shared. <!--- MC-41963-->
 
@@ -50,11 +52,15 @@ The release notes include:
 
 -  {:.fix} The `Allocated sources` column is now included as expected in order export CSV files. Previously, this column was omitted. <!--- ACP2E-3-->
 
--  {:.fix} Product stock update through import now takes into account backorders and `Out-of-Stock Threshold` configuration settings when determining product stock status. Product stock status is now automatically set to out-of-stock if the product does not meet the stock requirements.  If product stock does meet the threshold, the  user-defined stock status `is_in_stock` is used. <!--- ACP2E-14-->
+-  {:.fix} Product stock update through import now takes into account back orders and `Out-of-Stock Threshold` configuration settings when determining product stock status. Product stock status is now automatically set to out-of-stock if the product does not meet the stock requirements.  If product stock does meet the threshold, the  user-defined stock status `is_in_stock` is used. <!--- ACP2E-14-->
 
 -  {:.fix} Shoppers now receive a message when they try to order a product quantity that exceeds the salable quantity. Previously, {{site.data.var.ee}} did not display an error message.  <!--- ACP2E-26-->
 
--  {:.fix} Merchants can now successfully save a Company account that contains a custom 'company_name' attribute. Previously,  AC threw an error when you tried to  save the Company account.  <!--- ACP2E-156-->
+-  {:.fix} Merchants can now successfully save a Company account that contains a custom `company_name` attribute. Previously, {{ site.data.var.ee }} threw an error when you tried to save the Company account.  <!--- ACP2E-156-->
+
+-  {:.fix} Products no longer go out of stock after being imported with zero (0) quantity when back orders are enabled. <!--- ACP2E-244-->
+
+-  {:.fix} Stock status for a configurable product with multiple sources during import no longer changes when child products are assigned to the non-default stock. They are listed as in-stock because the other source has quantity greater than 0. Previously, the configurable product was listed as out of stock. <!--- ACP2E-337-->
 
 ### v1.2.3
 
