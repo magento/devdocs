@@ -184,7 +184,7 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 When you add search extension attributes, you must consider that this can cause ambiguity in the selection of fields in the resulting SQL query when using REST APIs.
 In these cases, the REST call must explicitly specify both the table name and field to use for selecting.
 
-For example, the configuration below may introduce ambiguity when getting orders via REST API, which can be solved by specifying the table name along with the field on which the selection should be made.
+For example, the following configuration may introduce ambiguity when getting orders via REST API. The configuration constructs a query like `SELECT .... FROM sales_order AS main_table LEFT JOIN sales_order`. This creates an ambiguity for all columns from the `sales_order` table in that MySQL cannot determine if it should take them from the `main_table` or from the `sales_order` from the `JOIN` clause.
 
 ```xml
 <config>
