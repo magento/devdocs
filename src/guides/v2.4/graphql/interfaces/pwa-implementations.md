@@ -51,7 +51,7 @@ Attribute | Data Type | Description
 
 #### Example usage
 
-**Request**
+**Request:**
 
 ```graphql
 products(filter: { sku: { eq: "VA08" } }) {
