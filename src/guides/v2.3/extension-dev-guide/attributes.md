@@ -181,7 +181,7 @@ In the following example, an attribute named `stock_item` of type `Magento\Catal
 
 When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property comes from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column.
 
-When adding Searching extension attributes, you need to take into account that this can cause ambiguity in the selection of fields in the resulting SQL query when using REST API.
+When you add search extension attributes, you must consider that this can cause ambiguity in the selection of fields in the resulting SQL query when using REST APIs.
 In such case, it will be required to explicitly specify the table name along with the field on which the selection will be made.
 
 For example, the configuration below may introduce ambiguity when getting orders via REST API, which can be solved by specifying the table name along with the field on which the selection should be made.
