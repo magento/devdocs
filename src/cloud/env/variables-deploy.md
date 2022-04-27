@@ -372,7 +372,7 @@ stage:
 ```
 
 {:.bs-callout-info}
-If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html#configuration-example) in the _{{site.data.var.ee}} Configuration Guide_. To override the generated cache configuration, use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
+If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model to enable [L2 cache]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html), {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html#configuration-example) in the _{{site.data.var.ee}} Configuration Guide_. To override the generated cache configuration, use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 

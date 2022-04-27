@@ -165,7 +165,7 @@ In this example, we will create and pass a `lifetime_spend` custom value.
     }
    ```
 
-   and save the file to <Vendor>/<module>/Model.
+   and save the file to `<Vendor>/<module>/Model`.
 
 1. Add the new directive to the pool by adding this block to `di.xml`.
 
