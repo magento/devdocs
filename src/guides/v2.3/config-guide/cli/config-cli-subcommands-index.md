@@ -138,7 +138,7 @@ You can run the following indexes in parallel mode:
 -  `Catalog Price` can be paralleled by website and customer groups.
 -  `Catalog Permissions` can be paralleled by customer groups.
 
-If you want to use parallelization, you must set one of the available modes of dimensions for the product price indexer:
+To use parallelization, set one of the available dimensions modes for the product price indexer:
 
 -  `none` (default)
 -  `website`
@@ -150,7 +150,7 @@ For example, to set the mode per website:
 ```bash
 bin/magento indexer:set-dimensions-mode catalog_product_price website
 ```
-If you want to use parallelization for Catalog permissions, you must set one of the available modes of dimensions for the Catalog Permissions indexer:
+To use parallelization for Catalog permissions, set one of the available dimensions modes for the Catalog Permissions indexer:
 
 -  `none` (default)
 -  `customer_group`
