@@ -4,7 +4,7 @@ title: attributesMetadata query
 pwa_only: True
 ---
 
-In the Admin, custom attributes are defined on the store level, rather than with the product. The `attributesMetadata` query returns these custom product attributes.
+The `attributesMetadata` query returns information such as `data_type`, `sort_order`, and `ui_input` data, that can be used for filtering, searching and layered navigation. `attributeMetadata` provides details beyond what is available in [`customAttributeMetadata`]({{page.baseurl}}/graphql/queries/custom-attribute-metadata.html).  
 
 ## Syntax
 
