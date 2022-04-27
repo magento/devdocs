@@ -3,108 +3,164 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
-{{ site.data.var.ee }} 2.4.4-beta4 introduces support for PHP 8.1. Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
+{{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
+
+This release includes almost 250 quality fixes and enhancements.
+
+{:.bs-callout-info}
+Thanks to our partner [Atwix](https://www.atwix.com/) for their substantial contributions to making our 2.4.4 framework compatible with PHP 8.1.
 
 {:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
-## {{ site.data.var.ee }} Beta program
+## Other release information
 
-The {{ site.data.var.ee }} 2.4.4 [Beta program](https://devdocs.magento.com/release/beta-program.html) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to {{ site.data.var.ee }} 2.4.4. We are launching this program five months before {{ site.data.var.ee }} 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) DevBlog post.
-
-## {{ site.data.var.ee }} 2.4.4-beta4
-
-{{ site.data.var.ee }} 2.4.4-beta4 has been tested against the following component versions:
-
-*  Composer 2.1.6
-*  Elasticsearch 7.16.1
-*  MariaDB 10.4.14
-*  MySQL 8.0.22
-*  OpenSearch 1.1
-*  PHP 8.0.13
-*  Redis 6.0.12
-*  Varnish 6.5.1
+Although code for these features is bundled with quarterly releases of the {{ site.data.var.ee }} core code, several of these projects (for example, B2B, Page Builder, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
 {:.bs-callout-info}
 All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ee }} 2.4.4.
-## {{ site.data.var.ee }} 2.4.4-beta4 highlights
 
-{{ site.data.var.ee }} 2.4.4-beta4 includes the following enhancements:
+### Hotfixes included in this release
 
-*  All Magento project libraries and dependencies have been updated for compatibility with PHP 8.1.
-*  Support for the latest ElasticSearch version (7.16.1) and OpenSearch 1.1
-*  The `jquery-ui` library has been upgraded to version 1.13.0.
-*  Deprecated methods in jQuery 3.6.x and earlier have been removed to simplify future upgrade.
-*  The third-party `jquery.tabs` library has been updated to the latest version.
+{{ site.data.var.ee }} 2.4.4 includes resolution of all issues that were addressed by the following hotfixes, which were provided for {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.3, 2.4.3-p1, and 2.3.7-p2:
 
-We are not releasing Cloud packages for this Beta release.
+*  The vulnerability addressed by `MDVA-43395_EE_2.4.3-p1_COMPOSER_v1.patch` and `MDVA-43443_EE_2.4.3-p1_COMPOSER_v1.patch` has been resolved in this release.
 
-### Additional changes
+*  `AC-384_Fix_Incompatible_PHP_Method__2.4.3_ce.patch`. This patch addresses a fatal PHP error that occurred during upgrade. See the [Adobe Commerce upgrade 2.4.3, 2.3.7-p1 PHP Fatal error Hotfix](https://support.magento.com/hc/en-us/articles/4408021533069-Adobe-Commerce-upgrade-2-4-3-2-3-7-p1-PHP-Fatal-error-Hotfix) Knowledge Base article.
 
-*  The `Magento\Framework\MessageQueue\TopologyTest` is now compatible with the AWS MQ for RabbitMQ service. Previously, this test failed with this message: `Invalid exchange configuration: magento-topic-based-exchange1 Failed asserting that two arrays are equal`. <!--- AC-1248-->
+### Apply this hotfix after you install 2.4.4
 
-*  {{ site.data.var.ee }} no longer displays a deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0. <!--- AC-1678-->
+We recommend that you apply the following patch after you install {{ site.data.var.ee }} 2.4.4:
 
-*  HTML tags are now nested and closed properly to meet standards in JQuery 3.5.x for non-void elements including custom elements. <!--- AC-1942-->
-
-*  Added return type declarations to internal methods with incomplete return types for compatibility with PHP 8.1. [GitHub-34498](https://github.com/magento/magento2/issues/34498) <!--- AC-1606-->
+*  `braintree-disabled-partial-capture-for-applepay-googlepay.patch`.  Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree. When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not editable. This hotfix addresses that issue. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.  <!--- BUNDLE-3088-->
 
 ## {{ site.data.var.ee }} 2.4.4 highlights
 
-The following highlights were added in earlier versions of 2.4.4 and are included in this release.
+Look for the following highlights in this release.
+
+### Security enhancements
+
+This release includes one security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ee }} 2.4.3-p2 and {{ site.data.var.ee }} 2.3.7-p3.
+
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts:
+
+*  IP allowlisting
+*  [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html)
+*  use of a VPN
+*  use of a unique location rather than `/admin`
+*  good password hygiene
+
+See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb22-13.html) for the latest discussion of these fixed issues.
+
+#### Additional security enhancements
+
+Security improvements for this release improve compliance with the latest security best practices, including:
+
+*  Email variable usage was deprecated back in 2.3.4 as part of a security risk mitigation in favor of a more strict variable syntax. This legacy behavior has been fully removed in this release as a continuation of that security risk mitigation.
+
+   As a result, email or newsletter templates that worked in previous versions of {{ site.data.var.ee }} may not work correctly after upgrading to {{ site.data.var.ee }} 2.4.4 or {{ site.data.var.ce }} 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates]({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
+
+*  Integration tokens can no longer be used for API Bearer token authentication. Previously, an integration token could be used as a standalone key for token-based authentication. However, this behavior has been disabled by default due to the security implications of a never-expiring access token. The previous behavior can be enabled through the command line or Admin. See [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html). <!--- AC-1619--->
+
+*  Session IDs are no longer stored in the database. <!--- AC-522-->
+
+*  OAuth access tokens and password reset tokens are now encrypted when stored in the database. <!--- AC-520 1323-->
+
+*  Validation has been strengthened to prevent the upload of non alpha-numeric file extensions. <!--- AC-479-->
+
+*  Added reCAPTCHA support to coupon codes. <!--- AC-461-->
+
+*  Swagger is now disabled by default when {{ site.data.var.ee }} is in production mode. <!--- AC-1450-->
+
+*  HTTPS is now enabled by default for the {{ site.data.var.ee }} storefront. The **Use Secure URLs on Storefront** and **Use Secure URLs in Admin** settings are enabled by default, and all built-in cookies are now set as secure.  <!--- AC-1173-->
+
+*  The dependency confusion plugin is now required for all {{ site.data.var.ee }} installations. Previously, this plugin was required for Composer-based installations only. It now permits trusted versions. Merchants can bypass the constraints set in this plugin that prohibit certain combinations of Composer installations. The constraints can be bypassed for trusted versions, and {{ site.data.var.ee }} now displays a warning before proceeding with installation.  <!--- AC-501 970-->
+
+*  Developers can now configure the limit on the size of arrays accepted by {{ site.data.var.ee }} RESTful endpoints on a per-endpoint basis. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-465-->
+
+*  Added mechanisms for limiting the size and number of resources that a user can request through a web API on a system-wide basis, and for overriding the defaults on individual modules. This resolves the issue addressed by `MC-43048__set_rate_limits__2.4.3.patch`. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-1120-->
+
+### Platform enhancements
+
+{{ site.data.var.ee }} 2.4.4 now supports PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Additional platform enhancements include:
+
+*  {{ site.data.var.ee }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ee }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ee }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch. See [Switching to OpenSearch for Adobe Commerce on Cloud 2.4.4](https://support.magento.com/hc/en-us/articles/4419942355725-Switching-to-OpenSearch-for-Adobe-Commerce-on-Cloud-2-4-4)
+
+*  The `JQuery` library has been upgraded to version 3.6. The `jquery-ui` library has been upgraded to version 1.13.0. Several other JavaScript libraries have been updated to the latest versions.
+
+*  TinyMCE 5.8.1 is now supported. TinyMCE 4 has been removed from the codebase. <!--- AC-41-->
 
 *  The `RequireJS` library has been upgraded to the latest version (v2.3.6). [GitHub-33672](https://github.com/magento/magento2/issues/33672) <!--- AC-40 422-->
 
 *  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
 
-*  TinyMCE 5 is now supported. <!--- AC-41-->
+*  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Three Laminas dependencies were removed from the codebase to reduce the number of dependencies.
 
-*  Adobe Composer dependencies have been upgraded to the latest versions that are compatible with PHP 8.0.x. <!--- AC-35-->
+#### jQuery UI upgrade
 
-*  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Outdated Laminas dependencies have been removed from the codebase.
+jQuery UI has been upgraded to the latest version (v1.13.0). The following v1.10.0 jQuery components have been removed:
 
-*  The `endroid/qr-code` dependency has been updated to the latest version. [GitHub-34101](https://github.com/magento/magento2/issues/34101) <!--- AC-1258-->
+*  `ajaxOptions` and `cache` options for tabs. See [Tabs](https://jqueryui.com/changelog/1.10.0/#tabs).
 
-### Library upgrades
+*  `.zIndex()`. jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
 
-*  The following libraries have been upgraded to more recent versions:
+*  Data fallbacks for widget names. You must use the full name for the `.data()` key.
 
-   *  `script.aculo.us` <!--- AC-363-->
-   *  `Chart.js`  <!--- AC-361-->
-   *  `moment.js` <!--- AC-11-->
-   *  `moment-timezone-with-data.js`   <!--- AC-10-->
-   *  `matchMedia.js` <!--- AC-8-->
-   *  `underscore.js`  [GitHub-32850](https://github.com/magento/magento2/issues/32850) <!--- AC-13-->
-   *  `PrototypeJS`  <!--- AC-17-->
+*  Hard coding of classes such as `ui-corner-all` in widgets.
 
-### Library removals
+### Performance and scalability enhancements
 
-*  The following libraries have been removed:
+{{ site.data.var.ee }} performance enhancements boost high throughput order processing and message queue optimization. The asynchronous orders feature introduced in this release supports the creation of approximately 60,000 orders/hour. Earlier versions of {{ site.data.var.ee }} supported the processing of approximately 10,000 orders/hour, which presented a potential bottleneck for flash sales. The new multiple consumers feature supports scaling the number of message queue consumers on a single Cloud instance and increases the number of orders processed per hour.
 
-   *  `es6-collections.js`   <!--- AC-18-->
-   *  `MutationObserver.js` <!--- AC-15-->
-   *  `Modernizr` <!--- AC-12-->
-   *  `FormData.js`
+Performance enhancements in this release:
 
-These libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality.
+*  The AsyncOrder feature supports faster order placement than synchronous execution provides. When AsyncOrder is enabled, order placement is executed in the background while shoppers complete other tasks on the storefront.
 
-### Performance enhancements
+*  The new **Enable Inventory Check On Cart Load** configuration option provides a switchable inventory check when loading a product in the cart. It is enabled by default. When you disable this option, {{ site.data.var.ee }} skips the inventory check as the quote loads, which speeds up checkout, especially for carts containing many items.
+
+*  The new `multiple_processes` configuration option supports running parallel consumers in multiple processes. Previously, `cron` ran a single consumer when needed. Launching multiple consumers to run processes in parallel can improve task execution speed. To enable this feature, add `multiple_processes` to the `app/etc/env.php` file.
 
 *  Cart operations for carts containing over 750 configurable products have been improved by increasing the memory limit set by `max_input_vars` in the `php.ini` file to support input variables volume.
 
-*  Optimization of sales rules processing during checkout by deferring total calculation. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
+*  Optimization of sales rules processing during checkout by deferring total calculation. Typically, sales rule processing occurs every time a shopper adds a product to their cart, updates product quantity, or clicks the  **Place Order** button. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
 
-*  Improvements to order validation process for orders affected by a cart price rule during asynchronous order placement. <!--- MCP-304-->
+*  Improvements to the validation process for orders affected by a cart price rule during asynchronous order placement. <!--- MCP-304-->
+
+See [High-throughput Order Processing](https://devdocs.magento.com/guides/v2.4/performance-best-practices/high-throughput-order-processing.html).
 
 ### GraphQL
 
 This release includes these GraphQL enhancements:
 
-*  Storefront performance has been improved by changes to how GraphQL requests are cached. Fastly and Varnish now cache GraphQL requests sent with auth tokens. <!--- PWA-1817-->
+*  **Complete GraphQL coverage for negotiable quotes**.  B2B company users can now complete all tasks related to negotiable quotes using GraphQL. Previous versions of this API supported negotiation flows but not checkout. <!--- PWA-2101-->
 
-*  The `storeConfig` query now returns the configuration settings for the Zero Subtotal Checkout and Check/Money Order payment methods. <!--- PWA-1576-->
+#### New mutations
 
-*  Merchants can use the new [`setNegotiableQuotePaymentMethod` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-payment-method.html) to set the payment method on a negotiable quote. <!--- PWA-2114-->
+*  [`assignCustomerToGuestCart`]({{page.baseurl}}/graphql/mutations/assign-customer-to-guest-cart.html) mutation
+
+*  [`placeNegotiableQuoteOrder`]({{page.baseurl}}/graphql/mutations/place-negotiable-quote-order.html) mutation
+
+*  [`setNegotiableQuoteBillingAddress`]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-billing-address.html) mutation
+
+*  [`setNegotiableQuotePaymentMethod`]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-payment-method.html) mutation<!--- PWA-2114-->
+
+*  [`setNegotiableQuoteShippingMethods`]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-shipping-methods.html) mutation
+
+*  [`setNegotiableQuoteShippingAddress`]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-shipping-address.html) mutation
+
+*  **Performance improvements**:
+
+   *  The performance of GraphQL cart operations has improved. The `collectQuoteTotals()` method is now called only once during a GraphQL request, which reduces response time. <!--- PWA-2110-->
+
+   *  Storefront performance has been improved by changes to how GraphQL requests are cached. Fastly and Varnish now cache GraphQL requests sent with `auth` tokens. <!--- PWA-1817-->
+
+*  **New storefront-related Admin configuration settings**. The `storeConfig` query now returns the configuration settings for the Zero Subtotal Checkout and Check/Money Order payment methods. <!--- PWA-1576-->
+
+*  **Updated core GraphQL library**. The `webonyx` library, which enables core GraphQL to function, has been upgraded to version ^14.9. <!--- PWA-2137 2184 -->
+
+*  **Fixed translation issues in GraphQL with multi-site and multi-language stores**. The GraphQL resolver now returns translated strings based on store scope as expected. <!--- PWA-1946-->
+
+*  GraphQL now provides New Relic with descriptive transaction names, which can be helpful for debugging. [GitHub-30915](https://github.com/magento/magento2/issues/30915) <!--- PWA-1311-->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -114,78 +170,53 @@ This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl
 
 ### Vendor-Bundled Extensions
 
-With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all vendor-bundled extensions have been removed from the {{ site.data.var.ee }} 2.4.4 GA code base. Merchants should migrate to the official extensions, which will be available on the Commerce Marketplace in early 2022. We are working with each of these partners to ensure that a Marketplace alternative is available.
+With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all vendor-bundled extensions have been removed from the {{ site.data.var.ee }} 2.4.4 code base. Merchants should migrate to the official extensions, which are available on the [Commerce Marketplace](https://marketplace.magento.com/extensions.html). <!--- AC-1165-->
 
-## Installation on cloud infrastructure
+[Amazon Pay](https://docs.magento.com/user-guide/payment/payments.html)
 
-To upgrade to 2.4.4-beta, Beta partners that build and deploy {{ site.data.var.ee }} on cloud infrastructure must update the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json) and `.magento.app.yaml` files as described below.
+[dotdigital](https://docs.magento.com/user-guide/marketing/communications.html)
 
-### Update the `repositories` and `require` sections in the Magento Cloud template `composer.json` file
+[Klarna](https://docs.magento.com/user-guide/payment/payments.html)
 
-Update the `repositories` section to add the Magento Cloud and Quality packages that support the 2.4.4-beta2 version.
+[Vertex](https://docs.magento.com/user-guide/tax/taxes.html)
 
-```php
-    "repositories": {
-        "ece-tools": {
-            "type": "vcs",
-            "url": "https://github.com/magento/ece-tools.git"
-        },
-        "mcd": {
-            "type": "vcs",
-            "url": "https://github.com/magento/magento-cloud-docker.git"
-        },
-        "mcc": {
-            "type": "vcs",
-            "url": "https://github.com/magento/magento-cloud-components.git"
-        },
-        "mcp": {
-            "type": "vcs",
-            "url": "https://github.com/magento/magento-cloud-patches.git"
-        },
-        "mqp": {
-            "type": "vcs",
-            "url": "https://github.com/magento/quality-patches.git"
-        },
-        "repo": {
-            "type": "composer",
-            "url": "https://repo.magento.com"
-        }
-```
+[YotPo](https://docs.magento.com/user-guide/marketing/product-reviews.html)
 
-Update the  `require` section to include the correct version of each repository as follows:
+### PWA Studio
 
-```json
-   "require": {
-        "magento/product-enterprise-edition": ">=2.4.4 <2.4.5",
-        "magento/composer-root-update-plugin": "~1.1",
-        "magento/ece-tools": "dev-2.4.4-beta as 2002.1.9",
-        "magento/magento-cloud-docker": "dev-2.4.4-beta as 1.3.1",
-        "magento/magento-cloud-components": "dev-2.4.4-beta as 1.0.10",
-        "magento/magento-cloud-patches": "dev-2.4.4-beta as 1.0.14",
-        "magento/quality-patches": "dev-2.4.4-beta as 1.1.5",
-        "fastly/magento2": "^1.2.34"
-    },
-```
-### Update the `magento.app.yaml` file
+PWA Studio v.12.3.0 is compatible with {{ site.data.var.ee }} 2.4.4. It includes support for reCaptcha, Page Builder content optimization, and personalized content. For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
 
-In the `magento.app.yaml` file, update the `type`, `flavor`, and `dependency` sections to use PHP 8.0 and Composer 2. Add `composer install`.
+### PayPal Payment enhancements
 
-```yaml
-type: php:8.0
-build:
-    flavor: none
-dependencies:
-    php:
-        composer/composer: '^2.0'
-...
-hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        set -e
-        composer install
-        php ./vendor/bin/ece-tools run scenario/build/generate.xml
-        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
-```
+*  The Venmo payment option is now supported.  <!--- AC-1229-->
+
+*  Pay Later has been added as an option for shoppers based on the shopper's location, not the merchant’s location.
+
+*  Merchants can now set the shopper country when testing the shopper experience in their country of choice. Previously, tests were limited to testing only for the country in which the merchant is located. This change is valid in sandbox mode only.
+
+*  Messaging on the checkout page now displays accurate messaging on how much and in how many increments shopper will be expected to pay when using Pay Later.
+
+### Live Search
+
+Live Search now supports PHP 8.1.
+
+The new `Magento_ElasticsearchCatalogPermissionsGraphQl` module is disabled during the updated Live Search [installation](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/onboard/install.html). Existing Live Search installations must be upgraded to Live Search 2.0.0 to take advantage of these features. For more information, see the Live Search [Release Notes](https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/release-notes.html).
+
+### Accessibility updates
+
+This release brings increased conformance to standard accessibility guidelines. These enhancements improve the experience of users with limited vision or with limited language, cognitive, and learning abilities.  Screen Reader tools performance has also improved.
+
+Accessibility enhancements include:
+
+*  Tooltip links with text and accurate, task-focused, visible labels for inputs
+*  Edit buttons now have unique text.
+*  Admin buttons now have unique, accessible, and descriptive purpose in adherence to AA standards
+*  Icon images that convey meaning now provide a textual alternative.
+*  Enhanced contrast in Admin buttons and form fields to a contrast ratio of at least 3:1 with adjacent colors.
+
+### Page Builder
+
+Merchants can now add alternative text (`alt_text`) to images (Image, Banner, Slide) to enhance content accessibility. [GitHub-746](https://github.com/magento/magento2-page-builder/issues/746) <!--- PB-1193-->
 
 ## Fixed issues
 
@@ -197,21 +228,83 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} now logs static content deployment errors in build log files as expected.
 
-<!--- AC-1480-->
-
-*  [GitHub-33760](https://github.com/magento/magento2/issues/33760)
-
 <!--- MC-43094-->
 
-*  Data patches can no longer ignore a table’s unique constraints and insert duplicate values into a MySQL database table. Previously, patches could insert duplicate values, which corrupted the database. [GitHub-32283](https://github.com/magento/magento2/issues/32283)
-
-<!--- AC-1510-->
-
-*  URL rewrites are no longer re-generated for all store views during the creation of a new store view when executing `bin/magento setup:upgrade`. [GitHub-32954](https://github.com/magento/magento2/issues/32954)
+*  Data patches can no longer ignore a table’s unique constraints and insert duplicate values into a MySQL database table. Previously, patches could insert duplicate values, which corrupted the database.
 
 <!--- AC-1480-->
 
 *  Merchants can now successfully upgrade from an {{ site.data.var.ee }} 2.4.2 deployment with Klarna to {{ site.data.var.ee }} 2.4.3. [GitHub-33760](https://github.com/magento/magento2/issues/33760)
+
+<!--- ACP2E-77-->
+
+*  Sitemap generator configuration can now be successfully changed from the command line. Previously, {{ site.data.var.ee }} displayed this error when you tried to change sitemap configuration outside the Admin: `Import failed: Notice: Trying to access array offset on value of type null in app/code/Magento/Cron/Model/Config/Backend/Sitemap.php on line 78`.  [GitHub-31428](https://github.com/magento/magento2/issues/31428)
+
+### Accessibility
+
+<!--- AC-1589-->
+
+*  Accessibility errors with navigation on the cart and checkout pages have been resolved. [GitHub-34483](https://github.com/magento/magento2/issues/34483)
+
+<!--- AC-1289-->
+
+*  Screen readers can now read all relevant form elements on product pages.
+
+<!--- AC-1277-->
+
+*  Contrast has been improved for image delete and move icon buttons throughout the storefront to improve readability for low vision users.
+
+<!--- AC-1272-->
+
+*  The magnifying glass icon that is used to execute searches throughout the product interface has been assigned an accessible name and textual alternative.
+
+<!--- AC-1275-->
+
+*  The rich text editor toolbar can now be accessed using the Tab key.
+
+<!--- AC-1283-->
+
+*  The **This item has weight** select input on the **Catalog** > **Product** details page now has visible labels and an accessible name.
+
+<!--- AC-1284-->
+
+*  The accessible name of the control now includes the text of its visible label for the number of items per page dropdown.
+
+<!--- AC-1287-->
+
+*  The table controls on the **Catalog** > **Product** details page now have visible labels and an accessible name when the table is collapsed.
+
+<!--- AC-1288-->
+
+*  Edit links in the Products table now have unique, meaningful link text.
+
+<!--- AC-1276-->
+
+*  The triggers that expands tooltips now provide textual names.
+
+<!--- AC-1285-->
+
+*  Buttons throughout the storefront now have unique, descriptive accessible names. Previously, split buttons with a text button and an adjacent down arrow icon button had the same accessible name.
+
+<!--- AC-1277-->
+
+*  Contrast has been improved for image delete and move icon buttons throughout the storefront to improve readability for low vision users.
+
+<!--- AC-1279-->
+
+*  Textual alternatives have been added to the pencil icon that appears when a merchant edits input for the Search Engine Optimization accordion.
+
+<!--- AC-1272-->
+
+*  The magnifying glass icon that is used to execute searches throughout the product interface has been assigned an accessible name and textual alternative.
+
+<!--- AC-1286-->
+
+*  The product page **New View** text input field now has an accessible name.
+
+<!--- AC-1283-->
+
+*  The **This item has weight** select input on the **Catalog** > **Product** details page now has visible labels and an accessible name.
 
 ### AdminGWS
 
@@ -245,7 +338,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42811-->
 
-*  Magento now updates the category product cache as expected when a bundle product reappears in stock.
+*  {{ site.data.var.ee }} now updates the category product cache as expected when a bundle product reappears in stock.
 
 <!--- MC-42811-->
 
@@ -253,7 +346,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-715-->
 
-*  Currency conversion now occurs as expected in email confirmations for bundle product purchases in multi-store deployments that use different currencies. [GitHub-33426](https://github.com/magento/magento2/issues/33426)
+*  Currency conversion now occurs as expected in email confirmations for bundle product purchases in multi-store deployments that use different currencies. [GitHub-33426](https://github.com/magento/magento2/issues/33426)
+
+<!--- ACP2E-64-->
+
+*  Advanced pricing special price discounts are now correctly displayed for bundle products with a % prefix in the product grid. Previously, a % discount was incorrectly displayed with $ prefix instead of % in the product grid.
 
 ### Cache
 
@@ -267,7 +364,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1478-->
 
-*  Full-site page cache is no longer wiped out when you update a product from top categories or run an index to update product attributes or stock status.  Previously, Varnish cache added top menu category IDs to all page cache tags. [GitHub-33465](https://github.com/magento/magento2/issues/33465)
+*  Full-site page cache is no longer wiped out when you update a product from top categories or run an index to update product attributes or stock status. Previously, Varnish cache added top menu category IDs to all page cache tags. [GitHub-33465](https://github.com/magento/magento2/issues/33465)
 
 ### Cart and checkout
 
@@ -305,7 +402,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1089-->
 
-*  The Order Summary section of the checkout page now displays the correct currency and amount when a deployment is configured for `Poland` country and `PLN` currency. Previously, the shopping cart and checkout page displayed the amount **PLN 0**.
+*  The Order Summary section of the checkout page now displays the correct currency and amount when a deployment is configured for `Poland` country and `PLN` currency. Previously, the shopping cart and checkout page displayed the amount **PLN 0**.
 
 <!--- MC-32805-->
 
@@ -313,11 +410,39 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-43176-->
 
-*  GraphQL `product` queries for configurable products in a specific store now return the price ranges of products on the specified store only. Previously, requests returned price ranges for simple products on non-specified stores.
+*  GraphQL `products` queries for configurable products in a specific store now return the price ranges of products on the specified store only. Previously, requests returned price ranges for simple products on non-specified stores.
 
 <!--- AC-691-->
 
-*  {{ site.data.var.ee }} no longer throws this error when a shopper adds a billing address that is missing a street field:  `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }”`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
+*  {{ site.data.var.ee }} no longer throws this error when a shopper adds a billing address that is missing a street field: `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }”`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
+
+<!--- AC-1625-->
+
+*  {{ site.data.var.ee }} no longer throws a console error during checkout in stores from which the mini cart has been removed. [GitHub-34513](https://github.com/magento/magento2/issues/34513)
+
+<!--- AC-691-->
+
+*  Checkout no longer fails at the payment stage when the billing address is missing street field values or the street field value is not an array. Previously, checkout failed with this error: `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }”`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
+
+<!--- ACP2E-22-->
+
+*  Sales total is now calculated correctly in the coupon report grid. Previously, the sales total did not include the shipping amount.
+
+<!--- ACP2E-44-->
+
+*  Whole-cart discounts are now calculated correctly when the shopper switches between shipping methods.
+
+<!--- ACP2E-159-->
+
+*  The dropdown list for the **State** field on the Admin create order page is now populated by the predefined values for the selected country. Previously, this field was an input text field instead of a dropdown menu.
+
+<!--- ACP2E-172-->
+
+*  {{ site.data.var.ee }} no longer throws an error after you use the `addConfigurableProductsToCart` mutation to add a configurable product to a cart directly after changing the store view.
+
+<!--- ACP2E-176-->
+
+*  {{ site.data.var.ee }} no longer throws an error when you use the `addConfigurableProductsToCart` mutation to add a disabled child of a configurable product to the cart. Previously, {{ site.data.var.ee }} threw an integrity constraint violation error.
 
 ### Catalog
 
@@ -337,10 +462,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} no longer throws an exception when performing a mass attribute update action on the product grid when a product has a `datetime` attribute.
 
-<!--- MC-42214-->
-
-*  The Category page now displays consistent product data while permissions are being generated during partial indexing. A new partial indexer for directory permissions has been added to this process. Previously, the data displayed while the indexer ran was incorrect.
-
 <!--- MC-42659-->
 
 *  Administrators can now re-assign the last product remaining in a category and save the empty category.
@@ -351,15 +472,39 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-43010-->
 
-*  GraphQL queries can now be used to retrieve information about scheduled updates for categories. Previously, {{ site.data.var.ee }} threw an error when executing a GraphQL query to retrieve category information for a scheduled category update.
+*  GraphQL category queries return information about changes to staged categories as expected.
 
-<!--- MC-41936-->
+<!--- AC-711-->
 
-*  {{ site.data.var.ee }} now displays an accurate salable quantity value for all products in the Admin product list view. Previously, {{ site.data.var.ee }} displayed a blank value for salable quantity of in-stock products with SKUs that contained special characters.
+*  Product lists are now accurately rendered in the Admin in deployments with products assigned to both a parent category and its subcategories but in different positions within each category. Previously, product list rendering failed with this error: `Item (Magento\Catalog\Model\Product\Interceptor) with the same ID "<ID>" already exists`. [GitHub-33145](https://github.com/magento/magento2/issues/33145)
 
-<!--- AC-1169-->
+<!--- AC-1148-->
 
-*  The `V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**.  [GitHub-30132](https://github.com/magento/magento2/issues/30132)
+*  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_product_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
+
+<!--- AC-904-->
+
+*  Added validation for the case when a router cannot instantiate an action class collected from a URL. {{ site.data.var.ee }} now displays the standard error message. Previously, {{ site.data.var.ee }} displayed this error:  `PHP Error: Cannot instantiate abstract class Magento\Catalog\Controller\Product\Compare`.
+
+<!--- ACP2E-10-->
+
+*  {{ site.data.var.ee }} now correctly calculates discounts when two cart rules are applied to an order that meet these conditions: one cart rule is applied with a coupon code and a **Fixed price on whole cart**  condition and the second cart price rule has no coupon and a **Percent of product price discount** condition. Previously, the relevant algorithm could not properly split the discount proportionally among cart products when a previous cart rule had already applied a discount on some products.
+
+<!--- ACP2E-115-->
+
+*  Assignment of many products (approximately 10,000) to a category no longer causes the browser to crash.
+
+<!--- ACP2E-122-->
+
+*  Image attributes are now saved in the database consistently whether saving from the Admin or importing. Previously, image ALT text values were saved inconsistently. If the image existed and the label was set to null, the label value was not reset in the database.
+
+<!--- ACP2E-155-->
+
+*  The Catalog Widget SQL query has been optimized. Previously, large MySQL queries slowed down page load and resulted in MySQL outages.
+
+<!--- ACP2E-165-->
+
+*  Price filters now work correctly with out-of-stock configurable products. Previously, out-of-stock configurable products were not shown in their correct price range.
 
 ### Catalog rule
 
@@ -383,15 +528,19 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42340-->
 
-*  You can now use the `addConfigurableProductsToCart` mutation to add a configurable product to the cart on a non-default store view. Previously, you could not add a configurable product to a cart when website ID and store ID differed.
+*  You can now use the `addConfigurableProductsToCart` mutation to add a configurable product to the cart on a non-default store view. Previously, you could not add a configurable product to a cart when website ID and store ID differed. [GitHub-30948](https://github.com/magento/magento2/issues/30948)
 
 <!--- MC-43051-->
 
-*  GraphQL `product` queries no longer return data about the disabled child products of configurable products.
+*  GraphQL `products` queries no longer return data about the disabled child products of configurable products.
 
-<!--- MC-38815-->
+<!--- ACP2E-101-->
 
-*  GraphQL queries now return billing address as expected when the value of an optional telephone field is set to an empty string. Previously, queries returned a null address value. [GitHub-30218](https://github.com/magento/magento2/issues/30218), [GitHub-30948](https://github.com/magento/magento2/issues/30948)
+*  Creating new configurations for a configurable product no longer overrides changes in existing configurations. Previously, the status of existing variations were overridden with the default status `enabled` after new variations were generated.
+
+<!--- ACP2E-175-->
+
+*  {{ site.data.var.ee }} no longer throws an internal error when you try to add a disabled child of a configurable product to the cart.
 
 ### Customer
 
@@ -423,23 +572,31 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Sales update emails sent from the Admin for non-default store views now contain correct order status labels. Previously, these emails always displayed status from the default store. [GitHub-29263](https://github.com/magento/magento2/issues/29263)
 
-<!--- magento/magento2/pull/32720-->
-
-*  Order and shipment notification emails now work as expected in deployments using Microsoft Outlook and MS Exchange Server. Previously, the email body was empty but contained an ATT*-labeled attachment.[GitHub-25076](https://github.com/magento/magento2/issues/25076)
-
 <!--- AC-721-->
 
 *  {{ site.data.var.ee }} now includes `Content-Disposition: inline` headers in email as expected. [GitHub-29258](https://github.com/magento/magento2/issues/29258)
+
+<!--- magento/magento2/pull/32720-->
+
+*  Order and shipment notification emails now work as expected in deployments using Microsoft Outlook and MS Exchange Server. Previously, the email body was empty but contained an ATT*-labeled attachment. [GitHub-25076](https://github.com/magento/magento2/issues/25076)
+
+<!--- ACP2E-47-->
+
+*  Order emails now contain data localized using the shopper’s locale as expected. Previously, order emails used the Admin locale.
+
+<!--- ACP2E-107-->
+
+*  Clicking on the preview of any email template now opens the template preview in a separate window as expected.  Previously, {{ site.data.var.ee }} opened the template preview simultaneously from the Email Templates grid and in a popup window.
+
+<!--- ACP2E-127-->
+
+*  Asynchronous order emails that are sent from a non-default website now include logo URLs from the appropriate website. Previously, these emails always included logos from the default or primary website. (A default key with a `storeCode` value has been assigned to the second array argument that is passed to the `UrlInterface` `getUrl` function. This value distinguish URLs in respect to different stores/websites and generates a correct `baseUrl` for the email content that is sent to customer.)
 
 ### Frameworks
 
 <!--- AC-515-->
 
-*  Non-strict comparisons between numbers and non-numeric strings now work by casting the number to string and comparing the strings. Comparisons between numbers and numeric strings continue to work as before. This means that `0 == "not-a-number"` is now considered false. [GitHub-33780](https://github.com/magento/magento2/issues/33780)
-
-<!--- AC-102-->
-
-*  Updated the `jquery-validate` third-party library for compatibility with PHP 8.1. [GitHub-33853](https://github.com/magento/magento2/issues/33853)
+*  Non-strict comparisons between numbers and non-numeric strings now work by casting the number to string and comparing the strings. Comparisons between numbers and numeric strings continue to work as before. This means that `0 == "not-a-number"` is now considered false. [GitHub-33780](https://github.com/magento/magento2/issues/33780)
 
 <!--- AC-1338-->
 
@@ -448,10 +605,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-1068-->
 
 *  Updated the `allure-framework/allure-php-api` Composer dependency.
-
-<!--- AC-707-->
-
-*  Plugins are no longer run twice when attached to a decorated class. [GitHub-32469](https://github.com/magento/magento2/issues/32469)
 
 <!--- MC-42091-->
 
@@ -467,15 +620,37 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1504-->
 
-*  New required options have been added to the `.htaccess` and `nginx.conf` files that are distributed with Magento for PHP 8.x support. Outdated options have also been removed. [GitHub-34358](https://github.com/magento/magento2/issues/34358)
+*  New required options have been added to the `.htaccess` and `nginx.conf` files that are distributed with {{ site.data.var.ee }} for PHP 8.x support. Outdated options have also been removed. [GitHub-34358](https://github.com/magento/magento2/issues/34358)
 
 <!--- MC-42448-->
 
 *  Merchants can now upload a video for multiple products. The file generation process now appends an extension to the file name only if the uploaded file name includes an extension. Previously, when a merchant tried to upload then save the same video for two different products, {{ site.data.var.ee }} threw this error: `Notice: Undefined index: extension in /app/7ha7zds7wvqys_stg/vendor/magento/framework/File/Uploader.php on line 699`. This occurred because {{ site.data.var.ee }} tried to append a file extension to the name irrespective of whether the uploaded file name had an extension.
 
-<!--- magento/magento2/pull/33632-->
+<!--- magento/magento2/pull/34106-->
 
-*  Refactored the codebase to correct usage of the keyword `match`, which is a reserved keyword in PHP 8.x. [GitHub-33626](https://github.com/magento/magento2/issues/33626)
+*  Corrected issues with `sprintf(__())` and `sprintf(Magento\Framework\Phrase())` construction for compatibility with PHP 8.x throughout the codebase. Previously, {{ site.data.var.ee }} threw this type of error: `Expected parameter of type 'string', 'Magento\Framework\Phrase' provided`. [GitHub-34085](https://github.com/magento/magento2/issues/34085)
+
+<!--- AC-1605-->
+
+<!--- MC-42934-->
+
+*  Improved validation of the advanced search query parameters. [GitHub-33589](https://github.com/magento/magento2/issues/33589)
+
+<!--- ACP2E-69-->
+
+*  Executing `bin/magento support:backup:code` now creates a backup as expected. Previously, {{ site.data.var.ee }} created a backup but threw an error.
+
+<!--- ACP2E-82-->
+
+*  Successfully executed `cron` processes are now assigned a status of `success`. Previously, the same `cron` process could be run twice because successful `cron` processes were assigned a `pending` status.
+
+<!--- ACP2E-170-->
+
+*  The `staging_synchronize_entities_period` `cron` job now works as expected. Previously, the first staging update was applied successfully, but {{ site.data.var.ee }} threw this error with subsequent updates: `report.ERROR: Cron Job staging_synchronize_entities_period has an error: The active update can't be deleted`.
+
+<!--- ACP2E-102-->
+
+*  The `Magento_Logging` module now supports IPv6.
 
 ### General fixes
 
@@ -509,15 +684,47 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/25279-->
 
-*  Password reset token validity has been extended to avoid the occurrence of a race condition during submission of the password change page.  [GitHub-29647](https://github.com/magento/magento2/issues/29647)
+*  Password reset token validity has been extended to avoid the occurrence of a race condition during submission of the password change page. [GitHub-29647](https://github.com/magento/magento2/issues/29647)
+
+<!--- AC-1316-->
+
+*  Permissions that are assigned to new integrations are now respected. [GitHub-33347](https://github.com/magento/magento2/issues/33347)
 
 <!--- AC-1328-->
 
 *  Corrected regression issue that affected messages left in the exception logs for the Contact Us form. [GitHub-34483](https://github.com/magento/magento2/issues/34483)
 
-<!--- AC-1316-->
+<!--- magento/magento2/pull/31654-->
 
-*  Permission assigned to new integrations are now respected. [GitHub-33347](https://github.com/magento/magento2/issues/33347)
+*  Resolved multiple issues with JavaScript loading of customer data. [GitHub-30498](https://github.com/magento/magento2/issues/30498)
+
+<!--- magento/magento2/pull/33324-->
+
+*  Using `QuoteIdToMaskedQuoteId` in an extension no longer significantly increases response time. [GitHub-33676](https://github.com/magento/magento2/issues/33676)
+
+<!--- AC-720-->
+
+*  The class `BundleDiscountPrice` in `magento2/app/code/Magento/Bundle/Pricing/Price/ConfiguredPrice.php` is now declared as expected. Previously, {{ site.data.var.ee }} threw this error: `Class Magento\Bundle\Pricing\Price\BundleDiscountPrice not found`. [GitHub-33334](https://github.com/magento/magento2/issues/33334)
+
+<!--- AC-1239-->
+
+*  Escaped CSV field values written by the AWS S3 adapter now match the data written by other file system adapters.
+
+<!--- MC-43046-->
+
+*  S3 compatible storage is now supported. [GitHub-32114](https://github.com/magento/magento2/issues/32114)
+
+<!--- ACP2E-123-->
+
+*  Logging out from one device no longer automatically logs out the shopper from other devices.
+
+<!--- ACP2E-168-->
+
+*  {{ site.data.var.ee }} now successfully saves a CMS page when you edit it from inline the grid on store-view level when the **Use the parent node hierarchy** configuration setting is disabled. Previously, {{ site.data.var.ee }} displayed this error and did not save your CMS page edits: `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`.
+
+<!--- ACP2E-171-->
+
+*  Breadcrumbs are now displayed correctly for nodes that contain the same page. Previously, {{ site.data.var.ee }} displayed the same node name for pages that belonged to multiple nodes. {{ site.data.var.ee }} retrieved only the first node for a page even when more than one node existed for each page.
 
 ### Gift cards
 
@@ -529,19 +736,15 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- PWA-1938-->
 
-*  The `generateCustomerToken` and `revokeCustomerToken` mutations now provide the correct cache ID for the user state. Previously, these mutations used an invalid `x-magento-cache-id`, which degraded performance.
+*  The `generateCustomerToken` and `revokeCustomerToken` mutations now provide the correct cache ID for the user state. Previously, these mutations used an invalid `x-magento-cache-id`, which degraded performance.
 
 <!--- PWA-1506-->
 
-*  The `setBillingAddressToCart` mutation now correctly uses the `same_as_shipping` parameter to set the billing address to match the shipping address as expected. Previously, {{ site.data.var.ee }} displayed this error: `The shipping method is missing. Select the shipping method and try again`. [GitHub-30924](https://github.com/magento/magento2/issues/30924)
+*  The `setBillingAddressToCart` mutation now correctly uses the `same_as_shipping` parameter to set the billing address to match the shipping address as expected. Previously, {{ site.data.var.ee }} displayed this error: `The shipping method is missing. Select the shipping method and try again`. [GitHub-30924](https://github.com/magento/magento2/issues/30924)
 
 <!--- PWA-1980-->
 
 *  GraphQL cart operations now calculate cart grand totals only when the query requests it. Previously, cart operations always calculated the grand total, which is a resource-intensive operation.
-
-<!--- MC-42567-->
-
-*  The `categoryList` query now returns the correct number of products when catalog permissions are used and products are assigned to a shared catalog.
 
 <!--- MC-42781-->
 
@@ -553,27 +756,23 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42831-->
 
-*  The `ConfigurableCartItem` mutation now returns requested data as expected.
+*  Queries and mutations that return the `ConfigurableCartItem` object contain information about configured variants as expected.
 
 <!--- MC-42082-->
 
-*  GraphQL queries now return configuration product option values and variant attribute values. Previously, these values were empty in query responses.
+*  The `products` query now returns configuration product option values and variant attribute values. Previously, these values were empty in query responses.
 
 <!--- MC-41794-->
 
 *  The `products` query now filters bundle products correctly when child products are disabled on the store-view level. Previously, the query returned child products that were disabled at the store-view level.
 
-<!--- MC-42528-->
-
-*  The `categoryList` query now respects category permissions and returns only permitted categories. Previously, it returned all assigned and unassigned categories.
-
 <!--- PWA-1311-->
 
-*  GraphQL now provides descriptive transaction names, which can be helpful for debugging. [GitHub-30915](https://github.com/magento/magento2/issues/30915)
+*  GraphQL now provides New Relic with descriptive transaction names, which can be helpful for debugging. [GitHub-30915](https://github.com/magento/magento2/issues/30915)
 
 <!--- MC-42903-->
 
-*  GraphQL now supports setting shipping addresses on a shopping cart with an empty telephone number value when the **Show Telephone** Admin configuration setting is set to optional. Previously, {{ site.data.var.ee }} threw this error: `Field CartAddressInput.telephone of required type String! was not provided`.
+*  The `setShippingAddressesOnCart` mutation now supports setting shipping addresses on a shopping cart with an empty telephone number value when the **Show Telephone** Admin configuration setting is set to optional. Previously, {{ site.data.var.ee }} threw this error: `Field CartAddressInput.telephone of required type String! was not provided`.
 
 <!--- MC-42970-->
 
@@ -589,7 +788,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42666-->
 
-*  The `products` mutation  now returns only configurable variants that are assigned to the requested storeview. Previously, all variants of the requested configurable product were returned.
+*  The `products` query  now returns only configurable variants that are assigned to the requested storeview. Previously, all variants of the requested configurable product were returned.
 
 <!--- MC-42652-->
 
@@ -601,11 +800,31 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42443-->
 
-*  Quotes are now updated correctly when product prices are updated by `product` queries. Previously, although the subtotal in the cart summary section was updated correctly, the row subtotal was not updated.
+*  When the price of a tier product is updated from the backend, the new price is updated correctly on the customer's cart. Previously, although the subtotal in the cart summary section was updated correctly, the row subtotal was not updated.
 
 <!--- AC-697-->
 
 *  The `addProductsToCart` mutation now adds all selected options to the cart when used to add bundle products with multiple selection options. Previously, the mutation added only the last selection. [GitHub-33123](https://github.com/magento/magento2/issues/33123)
+
+<!--- MC-38815-->
+
+*  GraphQL queries now return billing address as expected when the value of an optional telephone field is set to an empty string. Previously, queries returned a null address value. [GitHub-30218](https://github.com/magento/magento2/issues/30218)
+
+<!--- ACP2E-51-->
+
+*  The `products` query response now lists products according to the specified sort order when multiple products have the same relevance or price value.
+
+<!--- ACP2E-75-->
+
+*  Concurrent `addSimpleProductsToCart` and `addProductsToCart` requests no longer result in duplicated quote items.
+
+<!--- ACP2E-76-->
+
+*  `products` query layered navigation filters now return correct child categories lists. Only direct subcategories are now included when the `includeDirectChildrenOnly` flag is provided in the request. Previously, all categories were included in response in the aggregation section when a product was assigned to several categories.
+
+<!--- ACP2E-132-->
+
+*  Added search suggestion functionality for GraphQL search queries.
 
 ### Image
 
@@ -623,6 +842,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 ### Import/export
 
+<!--- AC-1486-->
+
+*  `bin/magento remote-storage:sync` no longer fails when filenames are similar but differ by only one or two characters. Previously, the first image was stored correctly, but the second, similarly named image triggered a sync failure and this error: `Notice: Undefined index: media/catalog/product/5/_ in /src/vendor/magento/module-remote-storage/Driver/Adapter/Cache/Generic.php on line 197`. [GitHub-34337](https://github.com/magento/magento2/issues/34337)
+
 <!--- MC-41672-->
 
 *  {{ site.data.var.ee }} now converts the timestamp in the export filename to the user’s timezone after a scheduled export. Previously, these values were not converted, and {{ site.data.var.ee }} displayed the UTC timestamp.
@@ -633,11 +856,19 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1045-->
 
-*  Import no longer fails with this message:  `Import failed: Area code not set: Area code must be set before starting a session`. [GitHub-16171](https://github.com/magento/magento2/issues/16171)
+*  Import no longer fails with this message: `Import failed: Area code not set: Area code must be set before starting a session`. [GitHub-16171](https://github.com/magento/magento2/issues/16171)
 
 <!--- AC-988-->
 
 *  You can now import successfully after running `bin/magento app:config:dump` and manually editing `config.php`. [GitHub-31428](https://github.com/magento/magento2/issues/31428)
+
+<!--- MC-41672 23734-->
+
+*  Non-default multiple value separators can now be used in custom multi-select attributes. Previously, validation failed during import. [GitHub-23156](https://github.com/magento/magento2/issues/23156)
+
+<!--- ACP2E-86-->
+
+*  Product position in categories is now assigned correctly during import from CSV.
 
 ### Index
 
@@ -647,85 +878,35 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/27212-->
 
-*  Resolved consistency issues in merged `indexer.xml` files. The allowed values in `classType` are now the same in unmerged and merged `indexer.xml` files. [GitHub-29609 ](https://github.com/magento/magento2/issues/29609)
+*  Resolved consistency issues in merged `indexer.xml` files. The allowed values in `classType` are now the same in unmerged and merged `indexer.xml` files. [GitHub-29609](https://github.com/magento/magento2/issues/29609)
+
+<!--- AC-190-->
+
+*  A synchronization mechanism has been implemented in category indexers to prevent full and partial indexers from running in parallel. Previously, when these indexers ran in parallel, products could be temporarily omitted from storefront category pages or category pages could be temporarily empty of products.
 
 ### Infrastructure
 
-<!--- AC-1514-->
+<!--- AC-1172-->
 
-*  Upgraded `pelago/emogrifier` to v6.x for PHP 8.1 support. [GitHub-34374](https://github.com/magento/magento2/issues/34374)
+*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for {{ site.data.var.ee }} 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
 
-<!--- AC-1147-->
+<!--- magento/partners-magento2ee/pull/573-->
 
-*  Updated the root `composer.json` metapackage and `composer.json` file for each module to PHP 8.1. [GitHub-34009](https://github.com/magento/magento2/issues/34009)
+*  Refactored the codebase to correct usage of the keyword `match`, which is a reserved keyword in PHP 8.x. [GitHub-33626](https://github.com/magento/magento2/issues/33626)
 
-<!--- AC-301-->
+*  HTML tags are now nested and closed properly to meet standards in JQuery 3.5.x for non-void elements including custom elements. <!--- AC-1942-->
 
-*  Updated `phpseclib/phpseclib` from 2.0.31 to the latest version (v3.0.8). [GitHub-32864](https://github.com/magento/magento2/issues/32864)
+<!--- magento/magento2/pull/34234)-->
 
-<!--- AC-491-->
-
-*  MySQL has been upgraded to the latest 8.0.x version.
-
-<!--- AC-1469-->
-
-*  MariaDB has been upgraded to version 10.4.22.
-
-<!--- ENGCOM-8667-->
-
-*  Updated `Less.js` to 3.13.1. [GitHub-32845](https://github.com/magento/magento2/issues/32845)
-
-<!--- AC-1304-->
-
-*  Updated dependency versions for `infra-tools` and MHCI to the latest compatible version in sync with the root `composer.json` file. [GitHub-34133](https://github.com/magento/magento2/issues/34133)
-
-<!--- AC-1192-->
-
-*  Removed dependency on the deprecated (and now removed) `grunt-autoprefixer` NPM library. [GitHub-34037](https://github.com/magento/magento2/issues/34037)
+*  Fixed `abs()` and `round()` functions for compatibility with PHP7.x and PHP8.x.  [GitHub-34322](https://github.com/magento/magento2/issues/34322)
 
 <!--- AC-719-->
 
 *  Updating `symfony/console` no longer causes failure when running `bin/magento setup:di:compile`. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
 
-<!---magento/magento-coding-standard/pull/206 -->
+<!--- magento/magento2/pull/34175-->
 
-*  Updated the `webonyx/graphql-php` dependency to the latest version in the Magento coding standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
-
-<!---magento/magento2/pull/33860 -->
-
-*  Updated `guzzlehttp/guzzle` from 6.5.5 to the latest version (7.3.0). [GitHub-32869](https://github.com/magento/magento2/issues/32869)
-
-<!---magento/magento2/pull/33515 -->
-
-*  Updated NPM packages and libraries to the latest versions. [GitHub-33512](https://github.com/magento/magento2/issues/33512), [GitHub-33972](https://github.com/magento/magento2/issues/33972)
-
-<!---magento/magento2/pull/33363 -->
-
-*  Updated the `phpseclib/mcrypt_compat` Composer dependency to the latest major version (v2.0). [GitHub-32865](https://github.com/magento/magento2/issues/32865)
-
-<!--- AC-1077-->
-
-*  You can now pass a `data` argument to a block instance constructor by `di.xml`.
-
-<!--- AC-1172-->
-
-*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680), [GitHub-33755](https://github.com/magento/magento2/issues/33755)
-
-<!--- AC-97-->
-
-*  Removed the unused `jquery.hoverIntent` JavaScript library. [GitHub-33732](https://github.com/magento/magento2/issues/33732)
-
-<!--- magento/magento2/pull/34366)-->
-
-*  `lib/internal/Magento/Framework/Filter/Money.php` has been deprecated. It contains the `money_format()` function, which was removed in PHP 8.x. [GitHub-33870](https://github.com/magento/magento2/issues/33870)
-
-<!--- magento/magento2/pull/33605)-->
-
-*  Updated the `laminas/laminas-code` Composer dependency to version 4.4.2 [GitHub-33509](https://github.com/magento/magento2/issues/33509)
-
-<!--- AC-1366-->
-
-*  Added support for PHP 8.1 to `laminas/laminas-math`. [GitHub-34242](https://github.com/magento/magento2/issues/34242)
+*  Corrected the restriction for the `colinmollenhour/cache-backend-redis` Composer dependency. [GitHub-34177](https://github.com/magento/magento2/issues/34177)
 
 <!--- magento/magento2/pull/33932 magento/magento2/pull/33992-->
 
@@ -735,21 +916,13 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} now displays an informative error when an administrator with a read-only `pubs/media` tries to access the product details page for a product that includes images. Previously, {{ site.data.var.ee }} threw a PHP error. [GitHub-32819](https://github.com/magento/magento2/issues/32819)
 
-<!--- magento/magento2/pull/34234)-->
-
-*  Fixed `abs()` and `round()` functions for compatibility with PHP7 and PHP8 [GitHub-34322](https://github.com/magento/magento2/issues/34322)
-
-<!--- AC-1172-->
-
-*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for Magento 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
-
 <!--- AC-853-->
 
-*  All member-level  `@api` annotations have been moved to their class throughout the codebase.
+*  All member-level `@api` annotations have been moved to their class throughout the codebase.
 
 <!--- AC-1977-->
 
-*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` (Magento Open Source) to `Magento/GiftCardSampleData` (Adobe Commerce). This has resolved problems installing Magento Open Source with sample data on PHP8.1.
+*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` ({{ site.data.var.ce }}) to `Magento/GiftCardSampleData` ({{ site.data.var.ee }}). This has resolved problems installing ({{ site.data.var.ce }}) with sample data on PHP8.1.
 
 <!--- AC-1001-->
 
@@ -759,59 +932,130 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Integers and floats in result sets are now returned using native PHP types instead of strings when using emulated prepared statements. [GitHub-34625](https://github.com/magento/magento2/issues/34625)
 
-<!--- AC-1650 1521-->
-
-*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`. [GitHub-34541](https://github.com/magento/magento2/issues/34541)
-
 <!--- AC-1697-->
 
 *  Auto-creation of arrays from false values have been disabled to ensure compatibility with PHP 8.1.
 
-<!--- magento/magento-coding-standard/pull/322-->
+<!--- AC-1338-->
 
-*  Added new sniff `Magento2. PHP.ArrayAutovivification` to the Magento Coding standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
+*  The helper `Magento\Payment\Helper\Data` no longer creates new layouts in constructors. Previously, when this helper was used in custom commands without specifying an area code,  {{ site.data.var.ee }} threw an error. [GitHub-33908](https://github.com/magento/magento2/issues/33908)
 
-<!--- magento/magento2/pull/34279 magento/magento2/pull/34367-->
+<!--- AC-1077-->
 
-*  Added support for PHP 8.1 to `laminas/laminas-server` and `laminas/laminas-view`. [GitHub-34240](https://github.com/magento/magento2/issues/34240), [GitHub-34214](https://github.com/magento/magento2/issues/34214)
+*  You can now pass a `data` argument to a block instance constructor by `di.xml`.
 
-<!--- AC-1192-->
+<!--- MC-43096-->
 
-*  Removed the deprecated, unsupported `grunt-autoprefixer` package. [GitHub-34037](https://github.com/magento/magento2/issues/34037)
+*  Optimized `Generator.php` for readability. [GitHub-33809](https://github.com/magento/magento2/issues/33809)
 
-<!--- magento/magento2/pull/34555-->
+<!--- AC-1313-->
 
-*  The `phpstan/phpstan` Composer dependency has been updated to v1.x. [GitHub-34604](https://github.com/magento/magento2/issues/34604)
+*  Improved the JWK check in the `JwsManager` class to handle situations when the algorithm is set directly in the header. Previously, this check ignored this valid scenario. [GitHub-32636](https://github.com/magento/magento2/issues/32636)
 
-<!--- magento/magento2-page-builder/pull/794-->
+#### Upgrades for PHP 8.1 compatibility
 
-*  Updated the `phpgt/dom` Composer dependency to  the most recent 2.x version. [GitHub-34633](https://github.com/magento/magento2/issues/34633)!--- AC-1750 1751 1752 —->
+<!--- AC-1605-->
 
-<!--- magento/magento-coding-standard/pull/325-->
+*  Functions that have been deprecated in PHP 8.1 have been removed from the codebase. [GitHub-34497](https://github.com/magento/magento2/issues/34497)
 
-*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the Magento Coding standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
+*  Added return type declarations to internal methods with incomplete return types for compatibility with PHP 8.1. [GitHub-34498](https://github.com/magento/magento2/issues/34498) <!--- AC-1606-->
 
-<!--- magento/magento-coding-standard/pull/326-->
+<!--- AC-1147-->
 
-*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the Magento Coding standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
+*  Updated the root `composer.json` metapackage and  `composer.json` file for each module to PHP 8.1. [GitHub-34009](https://github.com/magento/magento2/issues/34009)
 
-<!---magento/magento2/pull/34206 -->
+*  Third-party `jquery.tabs` library (latest version)
 
-*  Updated the codebase to avoid a fatal error when using the `ReflectionType::isBuiltin()` method. [GitHub-34194](https://github.com/magento/magento2/issues/34194)
+*  NPM packages (latest version) [GitHub-33512](https://github.com/magento/magento2/issues/33512), [GitHub-33972](https://github.com/magento/magento2/issues/33972) <!--- magento/magento2/pull/33515 33998-->
 
-<!---magento/magento2/pull/34175 -->
+*  `jquery.cookie` third-party library (latest version) [GitHub-34427](https://github.com/magento/magento2/issues/34427) <!--- AC-101-->
 
-*  Corrected the restriction for the `colinmollenhour/cache-backend-redis` Composer dependency. [GitHub-34177](https://github.com/magento/magento2/issues/34177)
+#### Composer dependency updates
 
-<!--- AC-517-->
+*  All Composer dependencies were updated to the versions compatible with PHP 8.1.
 
-*  `parse_url()` now distinguishes between  absent and empty queries and fragments.  [GitHub-33782](https://github.com/magento/magento2/issues/33782)
+*  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
+
+#### JavaScript dependency updates
+
+<!--- magento/magento2/pull/33871-->
+
+*  `jquery-validate` third-party library  [GitHub-33853](https://github.com/magento/magento2/issues/33853)
+
+<!--- ENGCOM-8667-->
+
+*  `Less.js` (v3.13.1) [GitHub-32845](https://github.com/magento/magento2/issues/32845)
+
+#### Library removals and deprecations
+
+*  The following libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality:
+
+   *  `es6-collections.js`   <!--- AC-18-->
+   *  `MutationObserver.js` <!--- AC-15-->
+   *  `Modernizr` <!--- AC-12-->
+   *  `FormData.js`
+
+*  Removed the unused `jquery.hoverIntent` JavaScript library. [GitHub-33732](https://github.com/magento/magento2/issues/33732) <!--- AC-97-->
+
+*  `lib/internal/Magento/Framework/Filter/Money.php` has been deprecated. It contains the `money_format()` function, which was removed in PHP 8.x. [GitHub-33870](https://github.com/magento/magento2/issues/33870)<!--- magento/magento2/pull/34366)-->
+
+*  Removed the deprecated, unsupported `grunt-autoprefixer` package. [GitHub-34037](https://github.com/magento/magento2/issues/34037) <!--- magento/magento2/pull/34032-->
+
+#### Library upgrades
+
+*  The following libraries have been upgraded to more recent versions:
+
+   *  `script.aculo.us` <!--- AC-363-->
+   *  `Chart.js`  <!--- AC-361-->
+   *  `moment.js` <!--- AC-11-->
+   *  `moment-timezone-with-data.js`   <!--- AC-10-->
+   *  `matchMedia.js` <!--- AC-8-->
+   *  `underscore.js`  <!--- AC-13-->
+   *  `PrototypeJS`  <!--- AC-17-->
+   *  `RequireJS`
+   *  `LessCSS`
+
+### Invoice
+
+<!--- AC-1564-->
+
+*  Casting to `int` has been removed for auto-incremented invoice IDs when prefixed with a string. As a result, invoices now display a 0 for numbers that are prefixed with a string. [GitHub-34451](https://github.com/magento/magento2/issues/34451)
 
 ### Logging
 
 <!--- MC-42360-->
 
 *  {{ site.data.var.ee }} no longer creates log entries for failed API calls executing bulk actions in **System** > **Bulk Actions**. Previously, permanent entries for failed API calls were added to the bulk action log.
+
+<!--- AC-1607-->
+
+*  The auto-creation of arrays from false values is no longer permitted. [GitHub-34499](https://github.com/magento/magento2/issues/34499), [GitHub-34589](https://github.com/magento/magento2/issues/34589)
+
+### {{ site.data.var.ee }} coding standard
+
+<!--- magento/magento-coding-standard/pull/219-->
+
+*  Updated `phpunit/ phpunit` to the latest version for the `magento-coding-standard` repository. [GitHub-33622](https://github.com/magento/magento2/issues/33622)
+
+<!--- magento/magento2/pull/33858-->
+
+*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the {{ site.data.var.ee }} coding standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
+
+<!--- magento/magento-coding-standard/pull/322-->
+
+*  Added new sniff `Magento2.PHP.ArrayAutovivification` to the {{ site.data.var.ee }} coding standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
+
+<!--- magento/magento-coding-standard/pull/325-->
+
+*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the {{ site.data.var.ee }} coding standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
+
+<!--- magento/magento-coding-standard/pull/326-->
+
+*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the {{ site.data.var.ee }} coding standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
+
+<!--- magento/magento-coding-standard/pull/335-->
+
+*  The `Magento2.Annotation.MethodAnnotationStructure` sniff no longer fails with a false positive. [GitHub-34679](https://github.com/magento/magento2/issues/34679)
 
 ### Media Gallery
 
@@ -825,9 +1069,15 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42837-->
 
-*  Loading time for the Media Gallery tab when editing a product with many images has improved.  [GitHub-33434](https://github.com/magento/magento2/issues/33434)
+*  Loading time for the Media Gallery tab when editing a product with many images has improved. [GitHub-33434](https://github.com/magento/magento2/issues/33434)
 
 ### MFTF
+
+<!--- AC-516-->
+
+*  `CURLOPT_POSTFIELDS` no longer accepts objects as arrays. To interpret an object as an array, perform an explicit (`array`) cast. This practice also applies to other options that accept arrays. [GitHub-33781](https://github.com/magento/magento2/issues/33781)
+
+*  `curl_init()` now returns a `CurlHandle` object rather than a resource. The `curl_close()` function no longer has an effect. Instead, the `CurlHandle` instance is automatically destroyed if it is no longer referenced. [GitHub-33781](https://github.com/magento/magento2/issues/33781)
 
 <!--- AC-1397-->
 
@@ -837,9 +1087,17 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Removed `CliCacheFlushActionGroup` from `CatalogSearch`, `GroupedProduct`, `Newsletter`, `Paypal`, `Quote`, and `Review` modules. [GitHub-33531](https://github.com/magento/magento2/issues/33531)
 
-<!--- magento/magento2/pull/32226-->
+<!--- AC-515-->
 
-*  Added test for the scenario in which the **Append Comments** checkbox is unexpectedly unchecked. [GitHub-32381](https://github.com/magento/magento2/issues/32381)
+*  Non-strict comparisons between numbers and non-numeric strings now work by casting the number to string and comparing the strings. Comparisons between numbers and numeric strings continue to work as before. This means that 0 == "not-a-number" is now considered false. [GitHub-33780](https://github.com/magento/magento2/issues/33780)
+
+<!--- AC-517-->
+
+*  `parse_url()` now distinguishes between absent and empty queries and fragments. [GitHub-33782](https://github.com/magento/magento2/issues/33782)
+
+<!--- magento/magento2-functional-testing-framework/pull/873-->
+
+*  Updated the codebase to avoid a fatal error when using the `ReflectionType::isBuiltin()` method. [GitHub-34194](https://github.com/magento/magento2/issues/34194)
 
 #### New action groups
 
@@ -852,6 +1110,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 #### Action groups
 
 Repetitive actions have been replaced with action groups in these tests:
+
+`AdminAddInStockProductToTheCartTest` [GitHub-34512](https://github.com/magento/magento2/issues/34512)
 
 `AdminAddBundleItemsTest` [GitHub-34312](https://github.com/magento/magento2/issues/34312)
 
@@ -903,6 +1163,8 @@ Repetitive actions have been replaced with action groups in these tests:
 
 `AdminUpdateTopCategoryUrlWithRedirectTest` [GitHub-33774](https://github.com/magento/magento2/issues/33774)
 
+`CatalogProductListWidgetOperatorsTest`  [GitHub-34579](https://github.com/magento/magento2/issues/34579)
+
 `CreateProductAttributeEntityWithReservedKeysTest`[GitHub-34422](https://github.com/magento/magento2/issues/34422)
 
 `EnableDisableBundleProductStatusTest` [GitHub-34313](https://github.com/magento/magento2/issues/34313)
@@ -927,18 +1189,31 @@ Repetitive actions have been replaced with action groups in these tests:
 
 #### New tests
 
+`AdminCreateOrderWithCheckedAppendCommentCheckboxTest` [GitHub-32381](https://github.com/magento/magento2/issues/32381)
+
+`CheckoutWithEnabledCaptchaTest` [GitHub-32991](https://github.com/magento/magento2/issues/32991)
+
+`StorefrontAddProductWithBackordersAllowedOnProductLevelToCartTest` [GitHub-33635](https://github.com/magento/magento2/issues/33635)
+
 `StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
 
-StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+`StorefrontCaptchaCheckoutWithEnabledCaptchaTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+
+`StorefrontCheckoutWithEnabledMinimumOrderAmountOptionTest` [GitHub-33460](https://github.com/magento/magento2/issues/33460)
+
 #### Refactored tests
 
 `CaptchaWithDisabledGuestCheckoutTest` [GitHub-30828](https://github.com/magento/magento2/issues/30828)
+
+### Newsletters
+
+*  Users with appropriate permissions can now manage customer newsletter subscriptions as expected. Previously, only administrators with full permissions could manage customer newsletter subscriptions on the Admin customer account page.
 
 ### Order
 
 <!--- MC-41981-->
 
-*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admins. Previously, {{ site.data.var.ee }} threw an error and did not process the re-order.
+*  Shoppers can now successfully re-order an existing order that contains a product with the combination of custom options of type file and type dropdown from both the storefront and Admin. Previously, {{ site.data.var.ee }} threw an error and did not process the re-order.
 
 <!--- MC-42746-->
 
@@ -948,41 +1223,19 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  The Admin order detail page now loads as expected. Previously, {{ site.data.var.ee }} threw the following error when loading the order detail page for orders with certain taxes: `Call to a member function getId() on array`.
 
-### Page Builder
+<!--- MC-38521-->
 
-<!--- AC-973-->
+*  Administrators with restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ee }} threw an error when an administrator with these permissions tried to view an order. [GitHub-14633](https://github.com/magento/magento2/issues/14633)
 
-*  {{ site.data.var.ee }} no longer resizes the Page Builder Insert Link and Insert Image modals when displaying the slider in a small column.
+<!--- ACP2E-74-->
 
-<!--- AC-407-->
-
-*  The Page Builder Table Properties menu is now displayed as expected.
-
-<!--- AC-406-->
-
-*  Slider dots are no longer displayed on the Page Builder Insert link or image modal when the mouse is not hovering over the slider.
-
-<!--- AC-396-->
-
-*  The font size used to display Page Builder Table menu options has been optimized.
-
-<!--- AC-397-->
-
-*  Corrected anomalies with the positioning of the Insert/Edit Image and Insert/Edit Link popup windows.
-
-<!--- AC-398-->
-
-*  {{ site.data.var.ee }} no longer throws an error when you click on **Text Editor** for a banner in Page Builder.
-
-<!--- MC-42779-->
-
-*  Administrators with permissions restricted to Content edit only no longer see an error when using Page Builder to add a product widget to a CMS page. {{ site.data.var.ee }} also displays an accurate product count on the widget settings page. Previously, {{ site.data.var.ee }} required permissions to the Catalog module when retrieving product count and displayed this error: `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`.
-
-<!--- MC-42265-->
-
-*  {{ site.data.var.ee }} no longer converts all dynamic blocks to one language during upgrade.
+*  Shoppers can now place an order that includes a child configurable product when a maximum quantity allowed limit is set.
 
 ### Payment methods
+
+<!--- AC-1830-->
+
+*  Shoppers can now use Braintree to place an order using a billing address without a set region in deployments with 3DS enabled. Previously, checkout froze when the shopper clicked **Place order**, and the purchase could not be completed. [GitHub-34204](https://github.com/magento/magento2/issues/34204)
 
  <!--- AC-1229-->
 
@@ -1014,6 +1267,14 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  PayPal Express now works as expected from the shopping cart. Previously, when you clicked the **PayPal** button to start express checkout from the cart, {{ site.data.var.ee }} threw this error:  `To check out, please sign in with your email address`. [GitHub-33445](https://github.com/magento/magento2/issues/33445)
 
+<!--- MC-42279-->
+
+*  PayPal Payflow Pro now performs delayed capture with correct parent transaction IDs in deployments where the PayPal Payflow Pro gateway with **Payment Action** is set to **Authorization**. A **Sale** transaction is sent to Payflow with a parent transaction ID of the vault token created at checkout as expected. Previously, a **Delayed Capture**  transaction was created and sent to PayPal Payflow. [GitHub-33445](https://github.com/magento/magento2/issues/33445)
+
+<!--- MC-42442-->
+
+*  Shoppers are now redirected to the success page as expected after payment with  PayPal Payments Advanced payment completes. Previously, shoppers were not redirected to this page even though the payment was successfully processed and no errors were logged.
+
 ### Performance
 
 <!--- AC-705-->
@@ -1024,23 +1285,39 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  Module list load execution time has improved.
 
-<!--- MC-42570-->
-
-*  Performance has improved for cart-and-checkout actions such as adding products to the cart in deployments with many (approximately 10,000) inventory sources.
-
 <!--- AC-932-->
 
-*  The performance of the Popular Search Term cache has improved. Previously, the larger the `search_query` table, the longer a search query took to complete. [GitHub-27559](https://github.com/magento/magento2/issues/27559)
+*  The performance of the Popular Search Term cache has improved. Previously, the larger the `search_query` table, the longer a search query took to complete. [GitHub-27559](https://github.com/magento/magento2/issues/27559)
 
 <!--- MC-42892-->
 
 *  {{ site.data.var.ee }} by default resizes images synchronously during product save. Merchants can now resize images as a background asynchronous process by minor edits to a `di.xml` file.
+
+<!--- ENGCOM-9168-->
+
+*  The performance of the Category Products indexer has been improved in multi-store deployments. [GitHub-33984](https://github.com/magento/magento2/issues/33984)
+
+<!--- AC-1179-->
+
+*  The new in-memory cache for `glob()` system calls improves performance by reducing the number of `glob()` calls.  [GitHub-34025](https://github.com/magento/magento2/issues/34025)
+
+<!--- ACP2E-63-->
+
+*  Performance of the asynchronous order grid re-indexing process has been improved.
+
+<!--- ACP2E-117-->
+
+*  Memory consumption during the product export has been optimized.
 
 ### Pricing
 
 <!--- MC-42243-->
 
 *  Price sorting now works as expected when product prices are close to or equal to zero and shared catalogs are enabled. Previously, zero tier prices were ignored during price re-indexing.
+
+<!--- ACP2E-87-->
+
+*  {{ site.data.var.ee }} no longer throws an error if the price filter on the Category page does not contain a second value. Previously, {{ site.data.var.ee }} threw an exception in the log file.
 
 ### ProductAlert
 
@@ -1063,6 +1340,24 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 ### Reviews
 
 *  The product list view now displays the correct starred rating for products. [GitHub-30196](https://github.com/magento/magento2/issues/30196)
+
+<!--- ACP2E-89-->
+
+*  Reviews are now visible as expected when a shopper clicks **Review** on the storefront product page.
+
+<!--- ACP2E-111-->
+
+*  The product star rating is now consistent across the Grid and List views on the storefront product list page. Previously, the same product could have different ratings in Grid and List view modes.
+
+### Rewards
+
+<!--- ACP2E-129-->
+
+*  Reward Points Balance and Reward Points History now display the same balance. Expired points are now deducted correctly. Previously, the Reward Points Balance did not accurately reflect expired points.
+
+<!--- ACP2E-158-->
+
+*  Expired reward points are now marked as **Expired** in the Reason section of the storefront Reward Points History grid.
 
 ### Sales
 
@@ -1102,6 +1397,18 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  Elasticsearch catalog searches are now diacritic-insensitive. Previously, searches for terms without an accent resulted in different results than searches on the same term with an accent.
 
+<!--- ACP2E-8-->
+
+*  Search weight is now correctly set on SKU attributes that contain special characters.
+
+<!--- ACP2E-36-->
+
+*  `category_name` has been added to the system-reserved product attribute codes. {{ site.data.var.ee }} now shows an error if a user tries to create a product attribute with the attribute code `category_name`. Previously, products were not listed in the expected category, and an Elasticsearch error was logged.
+
+<!--- ACP2E-68-->
+
+*  Popular search terms now updated after each GraphQL search query.
+
 ### Shipping
 
 <!--- MC-42758-->
@@ -1116,9 +1423,21 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  Import of table rates now works as expected when using the S3 storage adapter. Previously, {{ site.data.var.ee }} displayed this error: `File "https://[bucket].s3.eu-central-1.amazonaws.com/[prefix]/tmp/phpLjGmHf" not found`. [GitHub-33072](https://github.com/magento/magento2/issues/33072)
 
-<!--- magento/magento2/pull/33232-->
+<!--- MC-42577-->
 
 *  You can now disable shipment update emails as expected from **Stores**  > **Configuration**  >  **Sales**  >  **Sales Emails**. [GitHub-33165](https://github.com/magento/magento2/issues/33165)
+
+<!--- ACP2E-31-->
+
+*  {{ site.data.var.ee }} now displays free shipping cost (0)  on Admin and storefront invoice page totals. Previously, when shipping was zero for an order, {{ site.data.var.ee }} did not display the shipping amount  in totals on the invoice page shipping total.
+
+<!--- ACP2E-120-->
+
+*  Rate requests to online shipping carriers have been reduced from several requests to one. Package insurance and handling price per item/package are now calculated correctly. Previously, {{ site.data.var.ee }} displayed incorrect shipping rates for FedEx shipping methods.
+
+<!--- ACP2E-174-->
+
+*  {{ site.data.var.ee }} now displays UPS rates when creating shipping labels for shipping from Puerto Rico. Previously, {{ site.data.var.ee }} did not display these UPS rates.
 
 ### Staging
 
@@ -1156,21 +1475,25 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 <!--- AC-714-->
 
-*  Tier prices for configurable products now display accurate included and excluded tax values on the storefront. Previously, the same values were displayed for both included and excluded taxes. [GitHub-33673}( https://github.com/magento/magento2/issues/33673)
+*  Tier prices for configurable products now display accurate included and excluded tax values on the storefront. Previously, the same values were displayed for both included and excluded taxes. [GitHub-33673](https://github.com/magento/magento2/issues/33673)
 
 ### Test
 
-<!--- magento/magento2/pull/34454-->
+<!--- magento/magento2/pull/34798-->
 
-*  Unit tests are now compatible with PHP 8.1. [GitHub-34441](https://github.com/magento/magento2/issues/34441)
+*  WebAPI tests are now compatible with PHP 8.1. [GitHub-34653](https://github.com/magento/magento2/issues/34653)
 
-<!--- magento/magento2/pull/34575-->
+<!--- magento/magento2/pull/34820-->
 
-*  Integration tests are now compatible with PHP 8.1. [GitHub-34568](https://github.com/magento/magento2/issues/34568)
+*  Integration tests are now compatible with PHP 8.1. [GitHub-34567](https://github.com/magento/magento2/issues/34567), [GitHub-34569](https://github.com/magento/magento2/issues/34569)
 
 <!--- AC-1225-->
 
 *  Merchants can now test the shopper experience of the country in which the shopper is located, rather than the merchant’s location.
+
+<!--- AC-266-->
+
+*  Integration test memory consumption has been reduced, which improves test performance and reduces the time required for test completion.
 
 <!--- MC-41955-->
 
@@ -1184,13 +1507,13 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  Functional tests have been stabilized for PHP 8.x compatibility. [GitHub-34327](https://github.com/magento/magento2/issues/34327), [GitHub-34188](https://github.com/magento/magento2/issues/34188)
 
-<!--- MC-41836-->
+<!--- magento/magento2/pull/34198-->
 
-*  The API functional tests (`install-config-mysql` file template) have been updated with required Elasticsearch parameters. [GitHub-31019](https://github.com/magento/magento2/issues/31019)
+*  Fixed functional issues in WebAPI tests. [GitHub-34196](https://github.com/magento/magento2/issues/34196)
 
 <!--- AC-1207-->
 
-*  Fixed errors that resulted in false positive static tests.  [GitHub-34056](https://github.com/magento/magento2/issues/34056)
+*  Fixed errors that resulted in false positive static tests. [GitHub-34056](https://github.com/magento/magento2/issues/34056)
 
 <!--- magento/magento2/pull/34300-->
 
@@ -1200,17 +1523,35 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  The `Magento\GraphQl\CatalogGraphQl\ProductSearchTest` test no longer throws this error when run with AWS Elasticsearch: `Magento\GraphQl\CatalogGraphQl\ProductSearchTest::testSearchSuggestions Failed asserting that an array is not empty. /var/www/html/dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogGraphQl/ProductSearchTest.php:94 /var/www/html/dev/tests/api-functional/framework/Magento/TestFramework/TestCase/GraphQlAbstract.php:257`.
 
-<!--- magento/magento2/pull/33762-->
+<!--- magento/magento2/pull/33699-->
 
-*  Updated the `phpunit/phpunit` Composer dependency to the latest version (v9.4.0). (Updating the `phpunit/phpunit` composer dependency to the latest version has eliminated integration test errors.)[GitHub-33761](https://github.com/magento/magento2/issues/33761), [GitHub-33596](https://github.com/magento/magento2/issues/33596), [GitHub-33708](https://github.com/magento/magento2/issues/33708), [GitHub-33707](https://github.com/magento/magento2/issues/33707)
+*  Fixed numerous non-critical unit test warnings by renaming all mock variables to include the `Mock` suffix and removing references to a deprecated Object Manager class. [GitHub-33695](https://github.com/magento/magento2/issues/33695)
 
-<!--- magento/magento-coding-standard/pull/219-->
+*  The `Magento\Framework\MessageQueue\TopologyTest` test is now compatible with the AWS MQ for RabbitMQ service. Previously, this test failed with this message: `Invalid exchange configuration: magento-topic-based-exchange1 Failed asserting that two arrays are equal`. <!--- AC-1248-->
 
-*  Updated `phpunit/ phpunit` to the latest version for the `magento-coding-standard` repository. GitHub-33622](https://github.com/magento/magento2/issues/33622)
+<!--- magento/magento2/pull/34454-->
 
-<!--- magento/magento2/pull/34203-->
+*  Unit tests are now compatible with PHP 8.1. [GitHub-34441](https://github.com/magento/magento2/issues/34441)
 
-*  Fixed functional issues in WebAPI tests. [GitHub-34196](https://github.com/magento/magento2/issues/34196)
+#### Unit tests
+
+The following unit tests have been refactored to use `PHPUnit` instead of `AspectMock`:
+
+`AllureHelperTest` [GitHub-33294](https://github.com/magento/magento2/issues/33294)
+
+`ObjectHandlerUtil` [GitHub-33584](https://github.com/magento/magento2/issues/33584)
+
+`MockModuleResolverBuilder` [GitHub-33583](https://github.com/magento/magento2/issues/33583)
+
+`MagentoTestCase`  [GitHub-33582](https://github.com/magento/magento2/issues/33582)
+
+`ModuleResolverTest` [GitHub-33308](https://github.com/magento/magento2/issues/33308)
+
+`ParallelGroupSorterTest` [GitHub-33306](https://github.com/magento/magento2/issues/33306)
+
+`SuiteGeneratorTest` [GitHub-33299](https://github.com/magento/magento2/issues/33299)
+
+`OperationDataArrayResolverTest`  [GitHub-33296](https://github.com/magento/magento2/issues/33296)
 
 ### Theme
 
@@ -1218,13 +1559,21 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  Notification messages are now displayed correctly when {{ site.data.var.ee }} has a subpath configured in its base URL.
 
+<!--- MC-42469-->
+
+*  Added an `aria-label` element to the storefront page template to indicate the page to which the shopper will navigate to when clicking a link. Previously, the same link text was used for links to different pages. [GitHub-33075](https://github.com/magento/magento2/issues/33075)
+
+<!--- ACP2E-73-->
+
+*  {{ site.data.var.ee }} no longer displays an error message when loading the homepage of a store with pre-existing custom theme. Previously, {{ site.data.var.ee }} displayed this message:  `The store will not work correctly in the case when cookies are disabled`.
+
 ### Translations and locales
 
-<!--- AC-285-->
+<!--- AC-285 MC-41400-->
 
 *  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ee }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
 
-<!--- magento/magento2/pull/33787-->
+<!--- MC-41583 AC-989-->
 
 *  Swiss region names are now consistently presented in English in the create or edit address forms. [GitHub-32602](https://github.com/magento/magento2/issues/32602)
 
@@ -1240,19 +1589,11 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  Display anomalies with storefronts running the Filipino (Philippines) locales have been resolved. [GitHub-33996](https://github.com/magento/magento2/issues/33996)
 
+<!--- AC-1308-->
+
+*  You can now successfully enter a customer date of birth when creating a new account in stores set to a Portuguese(Portugal) locale. Previously,  {{ site.data.var.ee }} threw an error when you tried to create an account. [GitHub-34130](https://github.com/magento/magento2/issues/34130)
+
 ### UI
-
-<!--- AC-1056-->
-
-*  {{ site.data.var.ee }} now displays all options as expected on the Page Builder Font Size options menu. Previously, not all options were displayed.
-
-<!--- AC-982-->
-
-*  You can now use the mouse click to edit a **Text To Display** value in the Page Builder Insert Link popup.
-
-<!--- AC-446-->
-
-*  Display issues with the Page Builder Format menu have been resolved with the TinyMCE 5 library upgrade.
 
 <!--- AC-258-->
 
@@ -1266,7 +1607,7 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  {{ site.data.var.ee }} now displays related products, up-sell products, and cross-sell products according to their positions in the Admin.
 
-<!--- magento/magento2/pull/33098-->
+<!--- MC-42502-->
 
 *  `.action-close` buttons now work as expected when `Multiselect` is used in a modal. Previously, the `action-close` button did not work because it inherited the CSS of the  `.action-close` button of the modal. [GitHub-27240](https://github.com/magento/magento2/issues/27240)
 
@@ -1284,7 +1625,7 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 <!--- AC-1589-->
 
-*  Accessibility errors with navigation on the cart and checkout pages have been resolved.[GitHub-34483](https://github.com/magento/magento2/issues/34483)
+*  Accessibility errors with navigation on the cart and checkout pages have been resolved. [GitHub-34483](https://github.com/magento/magento2/issues/34483)
 
 <!--- AC-1289-->
 
@@ -1300,31 +1641,15 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 <!--- MC-42750-->
 
-*  The Admin customer grid now displays all customer data, including newly added  `date` custom attributes, as expected. Previously, {{ site.data.var.ee }} threw an error and did not display the Admin customer grid correctly when the `date` attribute set was set as a column.
-
-<!--- AC-1277-->
-
-*  Contrast has been improved for image delete and move icon buttons throughout the storefront to improve readability for low vision users.
-
-<!--- AC-1279-->
-
-*  Textual alternatives have been added to the pencil icon that appears when a merchant edits input for the Search Engine Optimization accordion.
+*  The Admin customer grid now displays all customer data, including newly added `date` custom attributes, as expected. Previously, {{ site.data.var.ee }} threw an error and did not display the Admin customer grid correctly when the `date` attribute set was set as a column.
 
 <!--- AC-1280-->
 
 *  Input labels on the **Catalog**  >  **Product** details page have been changed to accurately reflect the purpose of the input. Fields for which user input is not required no longer display labels with an asterisk.
 
-<!--- AC-1272-->
-
-*  The magnifying glass icon that is used to execute searches throughout the product interface has been assigned an accessible name and textual alternative.
-
 <!--- AC-1275-->
 
 *  The rich text editor toolbar can now be accessed using the Tab key.
-
-<!--- AC-1283-->
-
-*  The **This item has weight** select input on the **Catalog** > **Product** details page now has visible labels and an accessible name.
 
 <!--- AC-1284-->
 
@@ -1334,25 +1659,65 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  The table controls on the **Catalog** > **Product** details page now have visible labels and an accessible name when the table is collapsed.
 
-<!--- AC-1288-->
-
-*  Edit links in the Products table now have unique, meaningful link text.
-
-<!--- AC-1276-->
-
-*  The triggers that expands tooltips now provide textual names.
-
 <!--- AC-1285-->
 
 *  Buttons throughout the storefront now have unique, descriptive accessible names. Previously, split buttons with a text button and an adjacent down arrow icon button had the same accessible name.
 
-<!--- AC-1286-->
-
-*  The product page **New View** text input field now has an accessible name.
-
 <!--- AC-1168-->
 
 *  Added a **Today** view option to the Admin Orders and Amounts dashboard charts to provide a summary of sales and orders throughout the day. [GitHub-34008](https://github.com/magento/magento2/issues/34008)
+
+<!--- AC-1481-->
+
+*  The active (click) state of the multi-select **Close** button now works consistently. [GitHub-34338](https://github.com/magento/magento2/issues/34338)
+
+<!--- magento/magento2/pull/31879-->
+
+*  {{ site.data.var.ee }} no longer displays this message after upgrade when Cookie Restriction Mode is disabled: `The store will not work correctly in the case when cookies are disabled`. [GitHub-33811](https://github.com/magento/magento2/issues/33811)
+
+<!--- ACP2E-7-->
+
+*  Full-screen product images are now correctly displayed on themes with vertical thumbnail navigation direction on mobile devices. Previously, product images were incorrectly scaled or invisible on themes with vertical thumbnail navigation direction on mobile devices in full-screen mode.
+
+<!--- ACP2E-23-->
+
+*  Error messages in the product details page no longer disappear quickly when the **Synchronize widget products with backend storage** configuration setting is enabled.
+
+<!--- ACP2E-70-->
+
+*  Validation for negative values has been added to the **Quantity To Return** field on the Create New Return form.
+
+<!--- ACP2E-105-->
+
+*  {{ site.data.var.ee }} no longer displays duplicate addresses when a shopper clicks **Change Address** on the Review and Payments page in a deployment in which the **Address Search** configuration setting is enabled.
+
+<!--- ACP2E-136-->
+
+*  The **Add Products** button is now enabled as expected for administrators with restricted permissions while while working in store-view scope on the Admin Category page.
+
+<!--- ACP2E-169-->
+
+*  View breakpoints are now consistent across {{ site.data.var.ee }}.
+
+<!--- ACP2E-199-->
+
+*  {{ site.data.var.ee }} now correctly displays custom customer date attributes with custom locales on the Admin customer page.
+
+### URL rewrites
+
+<!--- AC-1510-->
+
+*  URL rewrites are no longer re-generated for all store views during the creation of a new store view when executing `bin/magento setup:upgrade`. [GitHub-32954](https://github.com/magento/magento2/issues/32954)
+
+### Visual Merchandiser
+
+<!--- ACP2E-19-->
+
+*  The Visual Merchandiser **Move out of stock to bottom** automatic sorting option now works as expected for configurable products when all simple products are out of stock.
+
+<!--- ACP2E-61-->
+
+*  The Visual Merchandiser rule is no longer saved when no conditions have been added.
 
 ### Web API framework
 
@@ -1366,15 +1731,39 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 <!--- MC-24548-->
 
-*  The totals retrieved by the `PUT /V1/guest-carts/:cartId/collect-totals` request are now updated by the correct `shippingMethod.` [GitHub-18508](https://github.com/magento/magento2/issues/18508)
+*  The totals retrieved by the `PUT /V1/guest-carts/:cartId/collect-totals` request are now updated by the correct `shippingMethod`. [GitHub-18508](https://github.com/magento/magento2/issues/18508)
 
-<!--- MC-42399-->
+<!--- MC-30627 AC-796-->
 
-*  `GET /V1/company/:id` now returns `is_purchase_order_enabled` attribute values as expected.
+*  Adding a new deserializer to the REST API no longer removes other deserializers. Previously, the REST API accepted a new content type, but CORE defined content types for APIs no longer worked and returned a 400 error. [GitHub-26433](https://github.com/magento/magento2/issues/26433)
 
-<!--- AC-786-->
+<!--- AC-698-->
 
-*  Adding a new deserializer to the REST API no longer removes other deserializers. Previously, the REST API accepted a new content type, but CORE defined content types for APIs  no longer worked and returned a 400 error.  [GitHub-26433](https://github.com/magento/magento2/issues/26433)
+*  You can now remove an override for a parameter that is defined in a `webapi.xml`file. [GitHub-33843](https://github.com/magento/magento2/issues/33843)
+
+<!--- AC-1212-->
+
+*  {{ site.data.var.ee }} now generates a `customertoken` by GraphQL or REST API requests as expected after multiple consecutive failed login attempts. Previously, {{ site.data.var.ee }} did not check whether the value of `lock_expires_at` in `oauth_token_request_log` was greater than the current date and time, and always returned the number of failed attempts, which prevented the customer from ever logging in. [GitHub-34067](https://github.com/magento/magento2/issues/34067)
+
+<!--- AC-1190-->
+
+*  Adding a masked quote ID to `QuoteRepository::getList` no longer causes an infinite loop. Previously, using the payment processor that relied on the REST API to update orders triggered this behavior. [GitHub-33675](https://github.com/magento/magento2/issues/33675)
+
+<!--- MC-41612-->
+
+*  The `/rest/all/V1/categories/<above_created_category_id>`  PUT call now respects the values specified by `available_sort_by`.  Previously, the Available Product Listing Sort By drop down was selected with all possible options on the Category page, and the **Use All** checkbox was selected. [GitHub-32596](https://github.com/magento/magento2/issues/32596)
+
+<!--- ACP2E-11-->
+
+*  The performance of REST API requests to create customer tokens has been improved.
+
+<!--- ACP2E-91-->
+
+*  Corrected an error that occurred when **Add Store Code to Urls** is set to **Yes** and a REST call did not include a store code. Although the payload was valid, the call returned the following error: `Fatal error: Allowed memory size of ********** bytes exhausted (tried to allocate **** bytes) in vendor/magento/module-store/Model/StoreRepository.php on line 75`.
+
+<!--- ACP2E-153-->
+
+*  Partial invoices for the same order can now be created simultaneously using the REST API.
 
 ### Wish list
 
@@ -1382,6 +1771,54 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 
 *  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ee }} ignored this option.
 
+### WYSIWYG
+
+<!--- ACP2E-17-->
+
+*  PageBuilder now correctly renders custom widgets with the WYSIWYG editor.
+
+## Known issues
+
+**Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree. When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not  editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.  <!--- BUNDLE-3088-->
+
+**Issue**: Shoppers cannot add a product to their cart when no options are selected in Admin **Store** >  **Configuration** > **General** > **Country Options** > **Allow Countries**. {{ site.data.var.ee }} instead displays this following console error: `Failed to load resource: the server responded with a status of 400 (Bad Request)`. <!--- AC-2564-->
+
+**Issue**: The description of Dotdigital on **Find Partners and Extensions** > **Magento Marketplace** is outdated. Here is an updated description:
+
+Dotdigital is a customer engagement platform that helps digital marketers and developers deliver communications across the customer journey. We harness the power of customer data, powering engagement, conversion, and loyalty for brands as they grow and scale. Customers love our easy-to-use platform that connects first party data across the systems, surfacing powerful insights and automating predictive cross-channel messages.
+
+Dotdigital’s 350+ employees serve mid-market and enterprise companies around the world and across industries. We aspire to inspire responsible marketing and are committed to sustainability, privacy, and security. Dotdigital is proud to be the world’s first carbon-neutral marketing automation platform, certified for ISO 14001, ISO 27701, and ISO 27001.
+
+See [Dotdigital — Marketing Automation](https://marketplace.magento.com/dotdigital-dotdigital-magento2-os-package.html) for purchase and download information.
+
+## Community contributions
+
+We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
+
+The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
+
+### Partner contributions
+
+The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request number, and the GitHub issue number associated with it (if available).
+
+{% include release-notes/engcomm-2-4-4-partner.md %}
+
+### Individual contributor contributions
+
+The following table identifies contributions from our community members. This table lists the community member who contributed the pull request, the external pull request number, and the GitHub issue number associated with it (if available).
+
+{% include release-notes/engcomm-2-4-4-issues.md %}
+
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/system-requirements.html).
+
+### Installation and upgrade instructions
+
+You can install {{site.data.var.ee}} 2.4.4 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
+
+## Migration tool kits
+
+The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
+
+The [Code Migration Toolkit](https://github.com/magento-commerce/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

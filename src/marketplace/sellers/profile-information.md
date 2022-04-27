@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Profile Information
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-information/
+layout: migrated
 ---
 
 Your profile tracks and provides all information for your Marketplace Developer Portal account, including company information, payment account information, access keys, tax forms, and partner information.
@@ -39,7 +41,7 @@ _Contact Information_
 
 Commerce Marketplace uses a pair of public and private 32-character tokens to authenticate access to the repository of third-party extensions and themes. You can create multiple sets of access keys for others who install extensions for your store. Marketplace access keys can be generated, disabled or enabled, and deleted from your account.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info}
 The access key pair that is generated for Marketplace is not the same as the [Encryption Key][1]{: target="_blank"} that is associated with the Magento 2.x setup.
 
 For more technical information, see [Get your authentication keys][2] in the developer documentation.

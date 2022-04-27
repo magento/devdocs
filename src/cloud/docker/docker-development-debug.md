@@ -37,7 +37,7 @@ If you use Microsoft Windows, take the following steps before continuing:
    ```yaml
     fpm_xdebug:
       hostname: fpm_xdebug.magento2.docker
-      image: 'magento/magento-cloud-docker-php:7.4-fpm-1.2.0'
+      image: 'magento/magento-cloud-docker-php:7.4-fpm-1.3.2'
       extends: generic
       volumes:
         - '.:/app:ro,delegated'
@@ -72,11 +72,11 @@ If you use Microsoft Windows, take the following steps before continuing:
 1. Change any Xdebug configuration using the `XDEBUG_CONFIG` option. For example, to change the xdebug.remote_port option:
 
    ```bash
-   XDEBUG_CONFIG='remote_host=host.docker.internal remote_port=9002'
+   XDEBUG_CONFIG='client_host=host.docker.internal client_port=9002'
    ```
    On Linux systems, use the following command instead:
    ```bash
-   XDEBUG_CONFIG=remote_host=host.docker.internal remote_port=9002
+   XDEBUG_CONFIG=client_host=host.docker.internal client_port=9002
    ```
 
 {:.procedure}
@@ -84,16 +84,16 @@ To configure PhpStorm to work with Xdebug:
 
 1. In your PhpStorm project, open the settings panel.
 
-   -  _Mac OS X_—Select **File** > **Preferences**.
+   -  _Mac OS X_—Select **PhpStorm** > **Preferences**.
    -  _Windows/Linux_—Select **File** > **Settings**.
 
-1. In the _Settings_ panel, expand and locate the **Languages & Frameworks** > **PHP** > **Servers** section.
+1. In the _Settings_ panel, expand and locate the **PHP** > **Servers** section.
 
 1. Click the **+** to add a `PHP Remote Debug` server configuration. The project name is in grey at the top.
 
 1. Configure the following settings for the new server configuration:
 
-   -  **Name**—Enter the name used for the `serverName` option from `PHP_IDE_CONFIG` value.
+   -  **Name**—Enter the name used for the `serverName` option from `PHP_IDE_CONFIG` value. By default, MCD use this value: `serverName=magento_cloud_docker`
    -  **Host**—Enter `localhost`.
    -  **Port**—Enter `80`.
    -  **Debugger**—Select `Xdebug`.
@@ -102,7 +102,7 @@ To configure PhpStorm to work with Xdebug:
 
 1. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/cloud/cloud-install_docker_php-storm-edit.png){:width="15px"} and add a value to the `MAGENTO_ROOT` option. The default value is `/app`
 
-1. Change the Xdebug port to 9001 in the **Languages & Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port** panel.
+1. Change the Xdebug port to 9001 in the **PHP** > **Debug** > **Xdebug** > **Debug Port** panel.
 
 1. Click **Apply**.
 
@@ -135,7 +135,7 @@ To debug CLI commands:
       -  _Windows_—Select **TCP socket** and update **Engine Api Url** with `tcp://localhost:2375`.
       -  _Mac OS X_—Select **Docker for Mac**. [_default_]
 
-1. In the **Languages & Frameworks** > **PHP** > **Cli Interpreter** panel, click **[...]**.
+1. In the **PHP** > **Cli Interpreter** panel, click **[...]**.
 
 1. Click **[+]** to add and configure a new Cli Interpreter from your Docker image. Update the following settings:
 

@@ -1,6 +1,8 @@
 ---
 group: payment-services
 title: Install Payment Services
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/get-started/install.html
+layout: migrated
 ---
 
 The Payment Services extension for Adobe Commerce and Magento Open Source can be installed with Composer keys, which are linked to the Magento ID ([mageid]({{ page.baseurl }}/marketplace/sellers/profile-personal.html#field-descriptions)) provided in the signup process. Composer uses these keys during the initial installation of {{site.data.var.ee}}, or in situations in which the Composer keys were not previously saved to the `auth.json` file.
@@ -11,9 +13,12 @@ There are two ways to install this extension---for [{{site.data.var.ece}}](#mage
 
 ## Update minimum-stability setting
 
-Before installing the extension, you must change the `minimum-stability` requirement to `RC` (release candidate) in your `composer.json` file. You can use an IDE or your favorite text editor (like Visual Studio Code or Sublime Text).
+Before installing the extension, you can change the `minimum-stability` requirement to `RC` (release candidate) in your `composer.json` file if you want to try the release candidate version. You can use an IDE or your favorite text editor (like Visual Studio Code or Sublime Text).
 
 In your `composer.json` file, change `"minimum-stability": "stable"` to `"minimum-stability": "RC"`.
+
+{:.bs-callout-warning}
+Changing the `minimum-stability` requirement to `RC` is only mandatory if it is a release candidate. The default value should be `"minimum-stability": "stable"`.
 
 ## Install the extension
 

@@ -14,7 +14,9 @@ namespace :check do
       puts 'Looking in uncommitted files ...'.blue
       modified_files = `git ls-files --modified --others --exclude-standard`.split("\n")
       deleted_files = `git ls-files --deleted`.split("\n")
-      image_files_to_check = (modified_files - deleted_files).select { |file| File.extname(file) =~ /\.(png|jpg|jpeg|gif)/i }
+      image_files_to_check = (modified_files - deleted_files).select do |file|
+        File.extname(file) =~ /\.(png|jpg|jpeg|gif)/i
+      end
 
       next puts 'No images to check.'.magenta if image_files_to_check.empty?
 

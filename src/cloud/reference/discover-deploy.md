@@ -14,7 +14,7 @@ The build and deploy process is slightly different for each plan:
 
 -  **Starter plans**—For the Integration environment, every active branch builds and deploys to a full environment for access and testing. Fully test your code after merging to the `staging` branch. To launch your site, push `staging` to `master` to deploy to the Production environment. You have full access to all branches through the Project Web Interface and the CLI commands.
 
--  **Pro plans**—For the Integration environment, every _active_ branch builds and deploys to a full environment for access and testing. You must merge your code to the `integration` branch before you can merge to the Staging environment and then the Production environment. You can merge to the Staging and Production environments using the Project Web Interface or using SSH and Magento Cloud CLI commands.
+-  **Pro plans**—For the Integration environment, every _active_ branch builds and deploys to a full environment for access and testing. You must merge your code to the `integration` branch before you can merge to the Staging environment and then the Production environment. You can merge to the Staging and Production environments using the Project Web Interface or using SSH and `magento-cloud` CLI commands.
 
 ## Track the process {#track}
 
@@ -34,7 +34,7 @@ For all Starter environments and Pro Integration environments, pushing your Git 
 -  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—defines how to build and deploy {{site.data.var.ee}}, including user access, service mapping (relationships), hooks, cron jobs, and more.
 -  [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
 -  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—defines how {{site.data.var.ee}} processes an incoming URL.
--  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—defines the services {{site.data.var.ee}} uses by name and version. For example, this file can include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
+-  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—defines the services {{site.data.var.ee}} uses by name and version. For example, this file can include versions of MySQL, PHP extensions, and Elasticsearch or OpenSearch. These are referred to as *services*.
 -  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data) {{site.data.var.ee}} uses to configure your store. {{site.data.var.ee}} generates this file if it does not detect it during the build phase. See [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) for information on how to use this file to manage and synchronize the {{site.data.var.ee}} application configuration across your Cloud environments.
 
 ## Required files for your Git branch {#requiredfiles}
@@ -63,7 +63,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Add new extensions, integrations, and code in iterated branches**–Make and test changes locally, push to Integration, then to Staging and Production. Test and resolve issues in each environment before merging the updates to the next environment. Some extensions and integrations must be enabled and configured in a specific order due to dependencies. Adding these in groups can make your build and deploy process much easier and help determine where issues occur.
 
--  **Verify service versions and relationships and the ability to connect**–Verify the services that are available to your application and ensure you are using the most current, compatible version. See [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions) and [Service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships).
+-  **Verify service versions and relationships and the ability to connect**–Verify the services that are available to your application and ensure you are using the most current, compatible version. See [Service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships) and [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) in the _Installation guide_ for recommended versions..
 
 -  **Test locally and in the Integration environment before deploying to Staging and Production**–Identify and fix issues in your local and Integration environments to prevent extended downtime when you deploy to Staging and Production environments.
 
@@ -159,7 +159,7 @@ When you initially set up a project from a template, we retrieve the code from [
 
 You should create a branch from `master` for your custom code, extensions and modules, and third party integrations. We provide a full Integration environment for testing your code in the cloud.
 
-When you push your code from your local workspace to the remote repository, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
+When you push your code from your local workspace to the remote repository, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an OpenSearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
 
 If you have a syntax error in a configuration file, our Git server refuses the push. For details, see [Protective Block]({{ site.baseurl }}/cloud/live/live-prot.html).
 

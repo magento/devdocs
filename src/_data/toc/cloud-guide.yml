@@ -41,7 +41,7 @@ pages:
           url: /cloud/reference/cloud-composer.html
           versionless: true
 
-        - label: Cloud CLI for Commerce
+        - label: magento-cloud CLI 
           url: /cloud/reference/cli-ref-topic.html
           versionless: true
 
@@ -443,6 +443,10 @@ pages:
 
             - label: Set up Elasticsearch service
               url: /cloud/project/services-elastic.html
+              versionless: true
+
+            - label: Set up OpenSearch service
+              url: /cloud/project/services-opensearch.html
               versionless: true
 
             - label: Set up RabbitMQ service

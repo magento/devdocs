@@ -15,7 +15,7 @@ For added security, {{site.data.var.ece}} provides multi-factor authentication (
 
 When MFA is enabled on a project, all {{site.data.var.ece}} accounts with SSH access must follow an authentication workflow that requires either a two-factor authentication (TFA) code or API token and an SSH certificate to access the environment.
 
-{:.bs.callout-important}
+{:.bs-callout-info}
 MFA is not enabled on Cloud projects by default. The Account owner for the {{ site.data.var.ece }} project must submit a {{site.data.var.ee}} support request to enable it. As soon as MFA is turned on, all users must have two-factor authentication (TFA) enabled on their {{ site.data.var.ece }} account for SSH access to the project environments.
 
 ## Certificates for SSH access
@@ -24,7 +24,7 @@ MFA allows users to exchange an OAUTH access token with a short-lived SSH certif
 
 If the user accessing the environment has the Admin or Contributor role, a valid SSH key, and a valid TFA code or API token, {{site.data.var.ece}} uses these credentials to generate the temporary SSH certificate. The certificate expiration is set to 1 hour, but it refreshes automatically during the current session.
 
-After logging into a project with MFA, users must use the CLI to generate the SSH certificate:
+After logging into a project with MFA, users must use the `magento-cloud` CLI to generate the SSH certificate:
 
 ```bash
 magento-cloud ssh-cert:load
@@ -34,10 +34,10 @@ The `ssh-cert:load` command generates the SSH certificate and installs it in the
 
 ### Automatically generate certificate on login
 
-You can configure your local environment to generate the SSH certificate automatically when you authenticate to the Magento Cloud CLI.
+You can configure your local environment to generate the SSH certificate automatically when you authenticate to the `magento-cloud` CLI.
 
 {:.procedure}
-To add SSH certificate auto-generation to your Magento Cloud CLI configuration:
+To add SSH certificate auto-generation to your `magento-cloud` CLI configuration:
 
 1. On your local work environment, create a file named `config.yaml` in the `.magento-cloud` folder in your home directory if it does not exist.
 
@@ -52,7 +52,7 @@ To add SSH certificate auto-generation to your Magento Cloud CLI configuration:
       auto_load_ssh_cert: true
     ```
 
-1. Use the Magento Cloud CLI to authenticate again:
+1. Use the `magento-cloud` CLI to authenticate again:
 
    ```bash
    magento-cloud logout
@@ -96,7 +96,7 @@ To connect using SSH with TFA user account credentials:
 
 1. Log in to your {{site.data.var.ece}} account and authenticate using TFA.
 
-1. On your local workstation, use the CLI to generate the SSH certificate.
+1. On your local workstation, use the `magento-cloud` CLI to generate the SSH certificate.
 
    ```bash
    magento-cloud ssh-cert:load
@@ -146,7 +146,7 @@ To connect using SSH with TFA user account credentials:
    {:.bs-callout-info}
    If you do not have TFA enabled on your account, you must enable it. See [Enable TFA on {{ site.data.var.ece }} accounts][Enable TFA].
 
-1. On your local workstation, use the CLI to generate the SSH certificate.
+1. On your local workstation, use the `magento-cloud` CLI to generate the SSH certificate.
 
    ```bash
    magento-cloud ssh-cert:load
@@ -211,8 +211,8 @@ To connect using SSH with an API token credential:
 ### Example automated SSH script
 
 There are two options for storing the API token.
-{:.bs.callout-important}
-If an API token is stored, the Magento Cloud CLI will automatically authenticate and there is no need to perform the `mgc login` command
+{:.bs-callout-info}
+If an API token is stored, the `magento-cloud` CLI will automatically authenticate and there is no need to perform the `mgc login` command
 
 #### Create an environment variable to store the API token.
 
@@ -284,7 +284,7 @@ To verify TFA configuration and authentication:
 {:.procedure}
 To authenticate and reload the SSH certificate:
 
-1. Use the Magento Cloud CLI to authenticate again:
+1. Use the `magento-cloud` CLI to authenticate again:
 
    ```bash
    magento-cloud logout

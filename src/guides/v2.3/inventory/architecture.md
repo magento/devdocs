@@ -41,7 +41,7 @@ The list of Inventory Management dependencies varies, depending on whether the m
 
 ### Dependencies in a standard installation
 
-For non-headless installations, Magento Inventory Management has dependencies on the following Magento 2.3 modules:
+For non-headless installations, Inventory Management has dependencies on the following modules:
 
 *  Backend
 *  BundleProduct
@@ -60,7 +60,7 @@ For non-headless installations, Magento Inventory Management has dependencies on
 
 ### Dependencies in a headless installation
 
-In headless installations, Magento Inventory Management is dependent on the following Magento 2.3 modules:
+In headless installations, Inventory Management is dependent on the following modules:
 
 *  BundleProduct
 *  Catalog

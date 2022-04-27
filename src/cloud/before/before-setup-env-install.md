@@ -182,7 +182,8 @@ Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts 
 For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html).
 
 -  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
--  [ElasticSearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
+-  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
+-  [OpenSearch]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 -  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 -  [Additional software]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/optional.html)
 
@@ -206,7 +207,7 @@ To verify the Integration master branch environment, log into the Project Web In
 With these steps completed, you should have:
 
 -  A {{site.data.var.ee}} account and initial project setup and master branch
--  A local workspace configured with installations of required software, Magento Cloud CLI
+-  A local workspace configured with installations of required software, `magento-cloud` CLI
 -  SSH keys set up
 -  The file system owner configured
 -  Your initial code branch

@@ -2,6 +2,8 @@
 group: marketplace-sellers
 title: Personal Profile
 redirect_from: /marketplace/sellers/personal-profile.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-personal/
+layout: migrated
 ---
 
 The information in your personal profile identifies you as a vendor in Commerce Marketplace, and includes your background, image, contact information, and social network addresses. The Personal Profile page initially appears when you set up your Marketplace account as an individual. From your Marketplace account, the Personal Profile is located on the Developer Portal tab under My Information.
@@ -43,7 +45,7 @@ Prepare an image for your personal profile that is 255 pixels square, and saved 
 
    `Name: <vendor-name> / <package-name>`
 
-   {: .bs-callout .bs-callout-info}
+   {: .bs-callout-info}
    This unique identifier is used to identify your Marketplace vendor account, and must exactly match the Vendor Name in your personal profile.
 
 ![Contact information]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-contact-info.png){: .zoom}
@@ -82,7 +84,7 @@ _Social Networks_
 
 1. When prompted, enter your **PayPal Email** address.
 
-   {: .bs-callout .bs-callout-info}
+   {: .bs-callout-info}
    **Important:** This payment information is required of all developers, even those who make their extensions available at no charge. Magento sends your revenue share on a monthly basis to PayPal account.
 
    Look for the confirmation email that is sent to the email address associated with the account. To activate your account and gain access to the Developer Portal, click the link in the email.

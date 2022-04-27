@@ -2,6 +2,8 @@
 group: live-search
 title: Storefront Popover
 ee_only: True
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-storefront/storefront-popover.html
+layout: migrated
 ---
 When Live Search is [installed]({{ site.user_guide_url }}/live-search/install.html), a popover appears in the storefront as shoppers type in the [Search]({{ site.user_guide_url }}/catalog/search-quick.html) box. With each character typed, the popover is updated with suggested products and thumbnail images of the top search results.
 
@@ -22,6 +24,10 @@ Review the set of product attributes that are [searchable]({{ site.user_guide_ur
 
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
+
+## Popover page size
+
+The page size of the storefront popover determines how many lines of autocompleted products can be returned. Previously, the page size of the popover was hardcoded to six lines. The `page_size` value is now a configurable setting that is passed to the constructor. During the Live Search installation, the `page_size` value changes to the current value of the [Catalog Search](https://docs.magento.com/user-guide/configuration/catalog/catalog.html#catalog-search) - `Autocomplete Limit` setting. Merchants can change the page size of the popover by updating the value in the configuration. By default, the Catalog Search - Autocomplete Limit value is set to eight lines (or rows).
 
 ## Styling popover elements
 

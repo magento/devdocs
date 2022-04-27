@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Submit for Marketing Review
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-marketing-review/
+layout: migrated
 ---
 
 When you have completed the code, you can submit your extension for marketing review. You can submit your product for both technical and marketing review at the same time. The review process is the same for both extensions and themes.
@@ -156,7 +158,7 @@ Customers are advised to contact you directly for support, using the information
 
 ### Documentation and resources
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info}
 While you can add documentation PDF files during this review, the content is tested during the [Technical Review]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html).
 
 1. On the extension status page, on the left side, under **Marketing Submission**, click <span class="btn">Documentation and Resources</span>.

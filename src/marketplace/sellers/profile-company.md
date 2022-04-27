@@ -2,6 +2,8 @@
 group: marketplace-sellers
 title: Company Profile
 redirect_from: /marketplace/sellers/company-profile.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-company/
+layout: migrated
 ---
 
 Your company profile provides the information about your business and brand that appears in your Commerce Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.
@@ -81,7 +83,7 @@ _Social Networks_
 
 1. When prompted, enter your **PayPal Email** address.
 
-   {: .bs-callout .bs-callout-info}
+   {: .bs-callout-info}
    **Important:** This payment information is required of all developers, even those who make their extensions available at no charge. Magento sends your revenue share on a monthly basis to PayPal account.
 
 1. Watch for a confirmation email sent to the email address associated with the account.

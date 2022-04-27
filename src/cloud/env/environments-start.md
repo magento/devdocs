@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Manage branches with the CLI
+title: Manage branches with the Magento Cloud CLI
 redirect_from:
   - /cloud/before/integration-ip-addr.html
   - /cloud/howtos/environment-tutorial-env-merge.html
@@ -9,13 +9,13 @@ functional_areas:
   - Cloud
 ---
 
-After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) or [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
+To install the `magento-cloud` CLI, see the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html). After you install the `magento-cloud` CLI and set up SSH keys for remote access to your cloud infrastructure, you can use `magento-cloud` CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) or [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html).
 
 ## Use Magento Cloud CLI commands {#env-start-comm}
 
-Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter. See the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
+The `magento-cloud` CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter. See the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 ## Get started creating branches {#getstarted}
 
@@ -273,9 +273,9 @@ Request timeout for icmp_seq 1
 Request timeout for icmp_seq 2
 ```
 
-## Interact with environments via the Magento Cloud CLI {#commands}
+## Interact with environments using the magento-cloud CLI {#commands}
 
-After you [setup SSH keys]({{ site.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use Magento Cloud CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
+After you [setup SSH keys]({{ site.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use `magento-cloud` CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
 
 {% include cloud/log-in-db.md %}
 

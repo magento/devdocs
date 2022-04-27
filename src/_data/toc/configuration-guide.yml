@@ -258,6 +258,9 @@ pages:
         - label: How Varnish caching works
           url: /config-guide/varnish/use-varnish-cache-how.html
 
+        - label: Varnish ESI Block
+          url: /config-guide/varnish/use-varnish-esi.html
+
     - label: Use memcached for session storage
       url: /config-guide/memcache/memcache.html
       children:
@@ -316,6 +319,9 @@ pages:
       include_versions: ["2.3"]
       children:
 
+        - label: Migrate from Elasticsearch to OpenSearch
+          url: /config-guide/elasticsearch/opensearch-migration.html
+
         - label: Configure nginx and Elasticsearch
           url: /config-guide/elasticsearch/es-config-nginx.html
 
@@ -331,15 +337,15 @@ pages:
         - label: Change the Elasticsearch client
           url: /config-guide/elasticsearch/es-downgrade.html
 
-    - label: Configure and maintain Elasticsearch
+    - label: Configure and maintain the search engine
       url: /config-guide/elasticsearch/es-overview.html
       exclude_versions: ["2.3"]
       children:
 
-        - label: Configure Elasticsearch stopwords
+        - label: Configure stopwords
           url: /config-guide/elasticsearch/es-config-stopwords.html
 
-        - label: Configure Commerce and Magento to use Elasticsearch
+        - label: Search engine configuration
           url: /config-guide/elasticsearch/configure-magento.html
 
     - label: Message Queues

@@ -21,6 +21,33 @@ The `{{site.data.var.mcp-package}}` package uses the following version sequence:
 
 <!--Add release notes below-->
 
+## v1.0.16
+
+Release date: March 31, 2022
+
+Critical patch for {{site.data.var.ee}} 2.3.3-p1 and later versions:
+
+Updated patches to resolve a **critical** vulnerability resulting in unauthenticated remote code execution.<!-- MCLOUD-8479 -->
+
+See [Adobe Security bulletin APSB22-12](https://helpx.adobe.com/security/products/magento/apsb22-12.html).
+
+## v1.0.15
+
+Release date: March 10, 2022
+
+-  **Support PHP 8.1**—Added support for PHP 8.1 and dropped support for PHP 7.0 and 7.1.
+-  **Added patch for {{site.data.var.ee}} 2.3.3**—Fixed currency displaying on product page.
+
+## v1.0.14
+
+Release date: February 13, 2022
+
+Critical patch for {{site.data.var.ee}} 2.3.3-p1 and later versions:
+
+Added a patch to resolve a **critical** vulnerability resulting in unauthenticated remote code execution.<!-- MCLOUD-8461 -->
+
+See [Adobe Security bulletin APSB22-12](https://helpx.adobe.com/security/products/magento/apsb22-12.html).
+
 ## v1.0.13
 
 Release date: October 25, 2021

@@ -21,6 +21,25 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v2002.1.10
+
+Release date: March 31, 2022
+
+-  {:.fix}**Elasticsearch 7.10**—Updated validators to support the 7.10 version of Elasticsearch.<!-- MCLOUD-8548 -->
+
+## v2002.1.9
+
+Release date: March 10, 2022
+
+-  {:.new}**OpenSearch**—Added support for OpenSearch for {{site.data.var.ee}} versions 2.4.4, 2.4.3-p2, and 2.3.7-p3.<!-- MCLOUD-8296 -->
+-  {:.new}**PHP**—Added support for PHP 8.1.
+-  {:.fix}**symfony/process**—Added the compatibility with symfony/process ^5.3.<!-- MCLOUD-8283 -->
+
+-  {:.new}**Consumer multiple processes**—Added a `multiple_processes` option so that you can specify the number of processes to spawn for each consumer. See the `CRON_CONSUMERS_RUNNER` variable description in the [Deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner).<!-- MCLOUD-8295 -->
+-  {:.new}**OpenSearch scheme and full host path**—Added the ability to configure an Elasticsearch scheme and full host path.
+-  {:.fix}**AWS S3**—Changed the method of AWS S3 enablement.
+-  {:.fix}**Fix driver_options reader**—Added reading driver_options configuration for DB connection from the `env.php` file by `{{site.data.var.ct}}` for validators.<!-- MCLOUD-8420 -->
+
 ## v2002.1.8
 
 Release date: October 25, 2021

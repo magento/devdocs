@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Submit for Technical Review
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-technical-review/
+layout: migrated
 ---
 
 All extensions submitted to Commerce Marketplace must pass the automated technical review as part of the extension submission workflow. Technical review helps to improve the quality of products on Commerce Marketplace by checking for indications of plagiarism, malware, and adherence to Magento coding standards. Developers whose extensions do not pass technical review receive a report of the results. After the issues are resolved, you are welcome to resubmit the extension. Extensions must pass technical review to receive a listing on Commerce Marketplace.
@@ -11,7 +13,7 @@ When your [extension entry]({{ site.baseurl }}/marketplace/sellers/extension-inf
 
 The following instructions show how to submit an extension for Technical Review. The process is essentially the same for [themes]({{ site.baseurl }}/marketplace/sellers/themes.html) and [shared packages]({{ site.baseurl }}/marketplace/sellers/shared-packages.html).
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info}
 **Important - Shared Packages**: If your extension uses [Shared Packages]({{ site.baseurl }}/marketplace/sellers/shared-packages.html) (or components), the packages must be ready and associated with your submission. You will not be able to submit your extension to Technical Review until the shared packages are available in your account.
 
 ## Prepare for Technical Review
@@ -62,7 +64,7 @@ All products and services are subject to the same Commerce Marketplace terms and
 
 1. Add Documentation and Resources for your extension.
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info}
     Commerce Marketplace tests and reviews documentation during the Technical Review. You can add additional documentation during the [Marketing Review]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html).
 
     You must include **at least one** of the following, in PDF format (less than 5MB):
@@ -78,7 +80,7 @@ All products and services are subject to the same Commerce Marketplace terms and
 
 1. If other components are used by an M2 extension, select the relevant **Shared Package**.
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info}
     **Important:** Before a shared package can be linked to an extension, it must be submitted for review and receive the status **Ready to Use**.
 
     ![]({{ site.baseurl }}/marketplace/sellers/images/technical-submission-shared.png){: .zoom}

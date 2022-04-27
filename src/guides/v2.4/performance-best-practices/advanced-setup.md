@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/performance-best-practices/advanced-setup.html
+layout: migrated
 ---
 
 Magento 2 is a highly flexible and scalable product containing solutions for merchants of all sizes. This section covers best practices and recommendations on configuring Magento to work with large amounts of data, extreme load, and other enterprise cases.

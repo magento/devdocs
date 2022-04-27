@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Technical Reference
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/technical-reference/
+layout: migrated
 ---
 
 ## Guides

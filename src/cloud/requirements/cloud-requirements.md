@@ -47,6 +47,7 @@ The `/` character is not allowed. Branch names must be case-insensitively unique
 You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.
 
 ## Supported software versions {#cloud-arch-software}
+
 {{site.data.var.ece}} uses:
 
 *  Operating system: Debian GNU/Linux
@@ -59,9 +60,10 @@ You cannot upgrade the software, but you can configure the following services:
 *  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
 *  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 *  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
+*  [OpenSearch]({{ site.baseurl }}/cloud/project/services-opensearch.html)
 
  {:.bs-callout-info}
-See the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements.
+See [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) in the _Installation guide_ for recommended versions.
 
 For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
@@ -138,6 +140,3 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 *  Bitbucket
 *  Google
 *  Create your own Cloud account
-
-<!--link definitions-->
-[version compatibility matrix]: {{site.baseurl}}/cloud/project/services.html#service-versions

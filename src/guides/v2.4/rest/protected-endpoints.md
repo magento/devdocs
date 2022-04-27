@@ -45,6 +45,7 @@ Enable for Send To Friend | Not applicable
 Enable for PayPal PayflowPro payment form | Not applicable
 Enable for Braintree payment form | Not applicable
 Enable for Checkout/Placing Order | `POST /V1/carts/mine/payment-information` <br/>`POST /V1/carts/mine/set-payment-information` <br/>`POST /V1/guest-carts/:cartId/payment-information` <br/>`POST /V1/guest-carts/:cartId/set-payment-information`
+Enable for Coupon Codes | `PUT /V1/carts/:cartId/coupons/:couponCode` <br/>`PUT /V1/guest-carts/:cartId/coupons/:couponCode`
 
 {:.ref-header}
 Related topics

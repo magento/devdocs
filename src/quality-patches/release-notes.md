@@ -21,6 +21,51 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.12
+
+-  **MDVA-39713** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.3.6`)_-Fixes the issue where the user is able to edit the start time for an active scheduled update.
+-  **MDVA-42410** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where coupon reports display only default base currency.
+-  **MDVA-41136** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where the expiration date of the "mage-cache-sessid" is not extended, resulting in customer data cleanup.
+-  **MDVA-39993** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <=2.3.7-p2 || >=2.4.0 <2.4.4`)_-Fixes the issue where inventory changes done through API do not reflect on the product page on the frontend.
+-  **MDVA-42855** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.5`)_-Fixes the issue where new customer address is not saved to address book during checkout.
+-  **MDVA-42645** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.5`)_-Fixes the issue where admin cannot refund reward points if store credit functionality is disabled.
+-  **MDVA-43414** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <=2.3.7-p2`)_-Fixes the PHP fatal error that occurs when running the "inventory.reservations.updateSalabilityStatus" queue consumer on numerical SKUs.
+-  **MDVA-41628** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.5`)_-Fixes the issue where existing restricted admin users get access to the new resources when new modules are added.
+-  **MDVA-43348** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where gift card GraphQL request shows an error if gift_card_options contain "uid".
+-  **MDVA-39546** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where the start date for staging update could be set to an earlier date than the current date during editing.
+-  **MDVA-42950** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where videos don't play on the product page.
+-  **MDVA-42689** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where Adobe Commerce throws an Integrity Constraint Violation error while updating product categories during import.
+-  **MDVA-41229** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where images available on the backend do not display on the frontend after configurable products import.
+-  **MDVA-43731** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where "Search Synonyms" no longer work when value is added in "Minimum Terms to Match".
+-  **MDVA-43232** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.5`)_-Fixes the issue where sorting products in visual merchandiser by Special Price To Bottom/Top causes an error while saving category.
+-  **MDVA-43726** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.3`)_-Fixes the issue where Catalog price rule based on store-level attribute match fails to apply after partial reindex.
+-  Updated patches: MDVA-36464, MDVA-37478, MDVA-38608.
+-  Added patches metadata for the Site-Wide Analysis Tool.
+
+## v1.1.11
+
+-  **MDVA-42790** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.5`)_-Fixes the issue where product price attributes cannot be updated for a specific website via REST API.
+-  **MDVA-41350** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where an exception is thrown when an admin user with restricted access adds a product outside their role scope by SKU in an order.
+-  **MDVA-42269** _(for Adobe Commerce and Magento Open Source `>=2.4.3-p1 <2.4.5`)_-Fixes the issue where an admin user cannot log in to Admin due to the "TypeError: strtotime() expects parameter 1 to be string, null given" error.
+-  **MDVA-40830** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where the store credit is applied multiple times during order placement.
+-  **MDVA-42237** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where a configurable product special price is not updated after changes in its subproduct price.
+-  **MDVA-42520** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where the tax rate is applied twice if "Enable Cross Border Trade" is used.
+-  Updated patches: MDVA-27239, MDVA-39305, MDVA-41236, MDVA-36832.
+-  Deprecated patch: MDVA-37725.
+
+## v1.1.10
+
+-  **MDVA-38728** _(for Adobe Commerce and Magento Open Source `>=2.3.2 <2.4.5`)_-Fixes the issue where mass attribute update creates URL rewrite for Default Store only after changing "Product visibility".
+-  **MDVA-43091** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where ordering a bundle product from admin in the backend gives the error "You cannot use decimal quantity for this product".
+-  **MDVA-40816** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where related product rules show products from categories not defined in the rule conditions.
+-  **MDVA-41305** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where GraphQL mutation doesn’t return configurable product options after adding it to the wishlist.
+-  **MDVA-39181** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.5`)_-Fixes the issue where related product rules show products from categories not defined in the rule conditions.
+-  **MDVA-42584** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where configurable stock status in the backend is not updated after changing qty and stock status via Import or API.
+-  **MDVA-40175** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.3`)_-Fixes the issue where "Click to change shipping method" doesn’t show radio buttons to select shipping methods in admin during reorder.
+-  **MDVA-42768** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.5`)_-Fixes the issue where  Configurable product displays regular price as 0 when "Display Out-of-Stock" is Yes.
+-  **MDVA-43201** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where an error occurs in customer login when using DOB attribute with certain locales.
+-  Updated patches: MDVA-35092, MDVA-33970.
+
 ## v1.1.9
 
 -  **MDVA-38346** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where date filters are not working properly when the Magento timezone is different from the local environment timezone.

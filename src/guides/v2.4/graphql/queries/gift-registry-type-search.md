@@ -12,7 +12,7 @@ The `giftRegistryTypeSearch` query returns a list of gift registries that match 
 giftRegistryTypeSearch(
     firstName: String!
     lastName: String!
-    typeUid: String
+    giftRegistryTypeUid: String
 ): [GiftRegistrySearchResult]
 ```
 
@@ -60,7 +60,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `firstName` | String! | The first name of the registrant
 `lastName` | String! | The last name of the registrant
-`typeUid` | String | The type UID of the registry
+`giftRegistryTypeUid` | String | The type UID of the registry
 
 ## Output attributes
 

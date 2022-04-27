@@ -54,7 +54,7 @@ After you know these URLs, you can access those environments without further int
 
 *  Use the URLs to access the store as a customer.
 *  Use the URL /admin to access the Admin panel.
-*  (Pro) Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
+*  (Pro) Use SSH access and Git CLI commands to deploy updated code to Staging or Production. The `magento-cloud` CLI commands are not available in Staging and Production.
 
 For more information, see [SSH and sFTP]({{ site.baseurl }}/cloud/env/environments-ssh.html).
 
