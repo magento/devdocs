@@ -414,7 +414,7 @@ The following validation rules are available:
 
 Default values for fields may be set in the module's `etc/config.xml` file by specifying the default value in the `section/group/field_ID` node.
 
-### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID`
+#### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID` (Default scope)
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
@@ -425,5 +425,23 @@ Default values for fields may be set in the module's `etc/config.xml` file by sp
             </A_UNIQUE_GROUP_ID>
         </A_UNIQUE_SECTION_ID>
     </default>
+</config>
+```
+
+#### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID` (Website scope)
+
+Using the `websites` tag, specify the default value for a specific website.
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <websites>
+        <WEBSITE_CODE>
+            <A_UNIQUE_SECTION_ID>
+                <A_UNIQUE_GROUP_ID>
+                    <ANOTHER_UNIQUE_FIELD_ID>This is the default value</ANOTHER_UNIQUE_FIELD_ID>
+                </A_UNIQUE_GROUP_ID>
+            </A_UNIQUE_SECTION_ID>
+        </WEBSITE_CODE>
+    </websites>
 </config>
 ```
