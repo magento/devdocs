@@ -16,7 +16,3 @@ pages:
   - label: Contribution Programs
     url: /community/contribution-programs.html
     versionless: true
-
-  - label: Multi-repo docs
-    url: /community/multi-repo-docs.html
-    versionless: true
