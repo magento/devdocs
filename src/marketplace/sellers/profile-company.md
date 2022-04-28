@@ -2,6 +2,8 @@
 group: marketplace-sellers
 title: Company Profile
 redirect_from: /marketplace/sellers/company-profile.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-company/
+layout: migrated
 ---
 
 Your company profile provides the information about your business and brand that appears in your Commerce Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.

@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/software.html
+layout: migrated
 ---
 
 We require the following software for production instances of Magento:
@@ -12,7 +14,7 @@ We require the following software for production instances of Magento:
 *  [PHP]({{page.baseurl}}/install-gde/system-requirements.html)
 *  Nginx and [PHP-FPM](https://php-fpm.org/)
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-*  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
+*  [Elasticsearch or OpenSearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
 
 For multi-server deployments, or for merchants planning on scaling their business, we recommend the following:
 

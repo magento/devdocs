@@ -9,6 +9,52 @@ These release notes can include:
 -  {:.new} New features
 -  {:.fix} Fixes and improvements
 
+## Magento B2B - Adobe Commerce 2.4.4
+
+-  {:.fix} <!--- MC-41985--> The time required to upgrade from {{ site.data.var.ee }} 2.3.x to {{ site.data.var.ee }} 2.4.x in deployments with more than 100,000 company roles has been substantially reduced.
+
+-  {:.fix} <!--- MC-42153--> The POST `V1/order/:orderId/invoice` request now supports the creation of partial invoices when the **Payment on Account** payment method is enabled. Previously, {{ site.data.var.ee }} threw this error: `An invoice for partial quantities cannot be issued for this order. To continue, change the specified quantity to the full quantity`. [GitHub-32428](https://github.com/magento/magento2/issues/32428)
+
+-  {:.fix} <!--- MC-41975--> PayPal PayFlow Pro now works as expected with B2B negotiable quote when the customer’s cart contains other products. {{ site.data.var.ee }} now successfully processes the order and sends an email to the customer as expected. Previously, {{ site.data.var.ee }} threw a fatal error and sent a confirmation email to the customer that contained zero values.
+
+-  {:.fix} <!--- MC-41819--> Pagination is now correctly displayed on catalog search result page after excluding some products in shared catalog.
+
+-  {:.fix} <!--- MC-42886--> Customer custom attributes are now saved as expected when creating or saving a company user in the Admin.
+
+-  {:.fix} <!--- MC-42927--> The **Submit** button on the Create New Company form is now disabled after one click to prevent multiple form submissions. Previously, you could submit this form multiple times by clicking on this button repeatedly, which generated an error.
+
+-  {:.fix} <!--- MC-42787--> {{ site.data.var.ee }} no longer displays the reorder link on the storefront when a shopper logs into a store for which reorders have been disabled. {{ site.data.var.ee }} now uses the Admin configuration settings (Admin **Reorder** > **Stores** > **Configuration** > **Sales** > **Allow Reorder** set to **no**).
+
+-  {:.fix} <!--- MC-43115--> Quick Order search by SKU is now case-insensitive when shared catalog is enabled.
+
+-  {:.fix} <!--- MC-42203--> You can now update a file for a customer attribute when creating a company. Previously, when you tried to create a company with an attachment of type `File`, {{ site.data.var.ee }} did not create the company and logged this error in the exception log: `Something went wrong while saving file`.
+
+-  {:.fix} <!--- MC-42242--> You can now create a company with a customer account that has a custom attribute with a (`File`) or (`Image`) type. Previously, if the account had one of these customizable options, the Company edit page loader did not resolve, which prevented the editing of company details.
+
+-  {:.fix} <!--- MC-42268--> The `products` query now returns an accurate `total_count` field when shared catalog is enabled.
+
+-  {:.fix} <!--- MC-42203-->  You can now update a file for a customer attribute when creating a company. Previously, when you tried to create a company with an attachment of type `File`, Magento did not create the company and logged this error in the exception log: `Something went wrong while saving file`.
+
+-  {:.fix} <!--- MC-43178--> The Company Configuration and Create Company pages now work as expected after you disable an online shipping method. Verification has been added to prevent the attempted processing of disabled Shipping modules. Previously, Magento displayed this error: `Type Error occurred when creating object: Magento\CompanyShipping\Model\Source\ShippingMethod, Too few arguments to function Magento\CompanyShipping\Model\Source\ShippingMethod::__construct(), 1 passed in /var/www/html/elmtup/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 and exactly 2 expected`.
+
+-  {:.fix} <!--- MC-42214--> The Category page now displays consistent product data while permissions are being generated during partial indexing. A new partial indexer for directory permissions has been added to this process. Previously, the data displayed while the indexer ran was incorrect.
+
+-  {:.fix} <!--- MC-42567--> The `categoryList` query now returns the correct number of products when catalog permissions are used and products are assigned to a shared catalog.
+
+-  {:.fix} <!--- MC-42528--> The `categoryList` query now respects category permissions and returns only permitted categories. Previously, it returned all assigned and unassigned categories.
+
+-  {:.fix} <!--- MC-42399--> `rest/V1/company/{id}` now returns `is_purchase_order_enabled` attribute values as expected.
+
+-  {:.fix} <!--- ACP2E-128--> Custom customer attributes are now displayed as expected in the Company Admin tab.
+
+-  {:.fix} <!--- ACP2E-130--> The My Wish List block on the My Account page is now displayed as expected for Company Admins and Company Users.
+
+-  {:.fix} <!--- ACP2E-133--> Quick Order errors are no longer displayed in the shopping cart. Previously, {{ site.data.var.ee }} displayed this error in the shopping cart when the SKU was not found in the catalog:  `The SKU was not found in the catalog`.
+
+-  {:.fix} <!--- ACP2E-194--> Shared catalog save operations have been optimized to execute faster. Previously, saving a shared catalog with many customer groups could take several minutes.
+
+-  {:.fix} <!--- MC-42240--> Magento now deletes all subcategory permissions from the `sharedcatalog_category_permissions` table when the parent category is deleted. Previously, only the parent category data was removed.
+
 ## Magento B2B - Version 1.3.2
 
 -  {:.fix} <!--- MC-39862--> Magento now successfully sends update emails about expired negotiable quotes. Previously, when a negotiable quote expired, Magento did not send update emails.
@@ -57,7 +103,7 @@ These release notes can include:
 
 -  {:.fix} <!--- MC-41232--> Shoppers are now redirected to the negotiable quote page after pasting the link to a negotiable quote in the URL field and successfully logging in. Previously, shoppers were redirected to the My Account page.
 
--  {:.fix} <!--- MC-39317--> Re-ordering now works as expected for orders that contain a product with a Date Customizable Option for a customer account that was created during checkout. Previously, Magento did not process the re-order and displayed this error: `The product has required options. Enter the options and try again`.
+-  {:.fix} <!--- MC-39317--> Reordering now works as expected for orders that contain a product with a Date Customizable Option for a customer account that was created during checkout. Previously, Magento did not process the reorder and displayed this error: `The product has required options. Enter the options and try again`.
 
 -  {:.fix} <!--- MC-39063--> The shipping address for a negotiable quote is no longer editable during checkout when the Purchase Order module is disabled. This behavior resulted from a previous fix in which `isQuoteAddressLocked` was removed from the negotiable quote checkout renderer.
 
@@ -228,6 +274,12 @@ This release includes improvements to order approvals, shipping methods, shoppin
 -  {:.fix} Notification emails that are sent to sales representatives assigned to a company now include the assigned corporate logo. Previously, the notification email included the default LUMA logo, not the uploaded corporate logo. <!--- MC-33232-->
 
 -  {:.fix} A requisition list now includes all grouped products and quantities that have been added to the list. Previously, when a merchant navigated to a requisition list after adding products to it from a product detail page, Magento displayed this error: `1 product(s) require your attention - Options were updated. Please review available configurations`. <!--- MC-32877-->
+
+-  {:.fix} The `products` query now returns an accurate `total_count` field when shared catalog is enabled. <!--- MC-42268-->
+
+-  {:.fix} The Company Configuration and Create Company pages now work as expected after you disable an online shipping method. Verification has been added to prevent the attempted processing of disabled Shipping modules. Previously, Magento displayed this error: `Type Error occurred when creating object: Magento\CompanyShipping\Model\Source\ShippingMethod, Too few arguments to function Magento\CompanyShipping\Model\Source\ShippingMethod::__construct(), 1 passed in /var/www/html/elmtup/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 and exactly 2 expected`. <!--- MC-43178-->
+
+-  {:.fix} Integration test memory consumption has been reduced, which improves test performance and reduces the time required for test completion. <!--- AC-266-->
 
 ## Magento B2B - Version 1.2.0
 

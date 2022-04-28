@@ -17,21 +17,141 @@ Customer | Magento grants access to resources with the `anonymous` or `self` per
 
 ## Integration tokens
 
-When a merchant creates and activates an integration, Magento generates a consumer key, consumer secret, access token, and access token secret. All of these entities are used for [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html), but token-based authentication requires only the access token.
+When a merchant creates and activates an integration, Magento generates a consumer key, consumer secret, access token, and access token secret. All of these entities are used for [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html).
 
-Use the following steps to generate an access token:
+In previous versions of Magento, the access token could be used on its own for token-based authentication. This behavior has been disabled by default due to the security implications of a never-expiring access token. Namely, if the access token is compromised it provides undetected persistent access to a store.
 
-1. Log in to Admin and click **System** > **Extensions** > **Integrations** to display the Integrations page.
-1. Click **Add New Integration** to display the New Integration page.
-1. Enter a unique name for the integration in the **Name** field. Then enter your admin password in the **Your Password** field. Leave all other fields blank.
-1. Click the API tab. Select the Magento resources the integration can access. You can select all resources, or select a custom list.
-1. Click **Save** to save your changes and return to the Integrations page.
-1. Click the **Activate** link in the grid that corresponds to the newly-created integration.
-1. Click **Allow** . A dialog similar to the following displays:
+However, while it is not recommended, this behavior can be restored in the Admin by setting the **Stores** > **Configuration** > **Services** > **OAuth** > **Consumer Settings** > **Allow OAuth Access Tokens to be used as standalone Bearer tokens** option to **Yes**. You can also enable this setting from the CLI by running the following command:
 
-   ![REST client]({{ page.baseurl }}/get-started/authentication/images/integration-tokens.png)
+```bash
+bin/magento config:set oauth/consumer/enable_integration_as_bearer 1
+```
 
-The access token can be used in all calls made on behalf of the integration.
+If you are trying to upgrade from a previous version and need to update your integration implementation to properly utilize the OAuth workflow, review [OAuth-based Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html). Otherwise, you can partially update your integration to simply store and utilize all four credentials to sign your requests.
+
+There is a comprehensive guide for this on the OAuth-based authentication page, but can also be done in isolation without supporting the entire OAuth workflow. For example, in the following script the four credentials are used to create a new CMS page without using external libraries or implementing the full OAuth handshake.
+
+### standalone-oauth.php
+
+{% collapsible Click to expand %}
+```php
+<?php
+const CONSUMER_KEY = '<placeholder>';
+const CONSUMER_SECRET = '<placeholder>';
+const ACCESS_TOKEN = '<placeholder>';
+const ACCESS_TOKEN_SECRET = '<placeholder>';
+
+class RequestDTO {
+    public function __construct(
+        public string $url,
+        public string $method = 'GET',
+        public ?string $body = null,
+        public array $headers = [],
+    ) {}
+}
+class OAuthCredentialsDTO {
+    public function __construct(
+        public string $consumerKey,
+        public string $consumerSecret,
+        public string $accessToken,
+        public string $accessTokenSecret
+    ) {}
+}
+
+class OAuthRequestSigner
+{
+    public function sign(
+        RequestDTO $request,
+        OAuthCredentialsDTO $credentials
+    ): string {
+        $urlParts = parse_url($request->url);
+        // Normalize the OAuth params for the base string
+        $normalizedHeaders = $request->headers;
+        sort($normalizedHeaders);
+        $oauthParams = [
+            'oauth_consumer_key' => $credentials->consumerKey,
+            'oauth_nonce' => base64_encode(random_bytes(32)),
+            'oauth_signature_method' => 'HMAC-SHA256',
+            'oauth_timestamp' => time(),
+            'oauth_token' => $credentials->accessToken
+        ];
+        // Create the base string
+        $signingUrl = $urlParts['scheme'] . '://' . $urlParts['host'] . $urlParts['path'];
+        $paramString = $this->createParamString($urlParts['query'] ?? null, $oauthParams);
+        $baseString = strtoupper($request->method) . '&' . rawurlencode($signingUrl) . '&' . rawurlencode($paramString);
+        // Create the signature
+        $signatureKey = $credentials->consumerSecret . '&' . $credentials->accessTokenSecret;
+        $signature = base64_encode(hash_hmac('sha256', $baseString, $signatureKey, true));
+        return $this->createOAuthHeader($oauthParams, $signature);
+    }
+    private function createParamString(?string $query, array $oauthParams): string
+    {
+        // Create the params string
+        $params = array_merge([], $oauthParams);
+        if (!empty($query)) {
+            foreach (explode('&', $query) as $paramToValue) {
+                $paramData = explode('=', $paramToValue);
+                if (count($paramData) === 2) {
+                    $params[rawurldecode($paramData[0])] = rawurldecode($paramData[1]);
+                }
+            }
+        }
+        ksort($params);
+        $paramString = '';
+        foreach ($params as $param => $value) {
+            $paramString .= rawurlencode($param) . '=' . rawurlencode($value) . '&';
+        }
+        return rtrim($paramString, '&');
+    }
+    private function createOAuthHeader(array $oauthParams, string $signature): string
+    {
+        // Create the OAuth header
+        $oauthHeader = "Authorization: Oauth ";
+        foreach ($oauthParams as $param => $value) {
+            $oauthHeader .= "$param=\"$value\",";
+        }
+        return $oauthHeader . "oauth_signature=\"$signature\"";
+    }
+}
+
+function send(RequestDTO $request): string
+{
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $request->url);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $request->headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $request->method);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $request->body ?? '');
+    return (string)curl_exec($ch);
+}
+
+$oauthSigner = new OAuthRequestSigner();
+$request = new RequestDTO(
+    'https://example.com/rest/V1/cmsPage',
+    'POST',
+    '{
+          "page": {
+            "identifier": "test-page",
+            "title": "my-page",
+            "content": "<h1>hello</h1>",
+            "active": true
+          }
+        }',
+    ['Content-Type: application/json']
+);
+$request->headers[] = $oauthSigner->sign(
+    $request,
+    new OAuthCredentialsDTO(
+        CONSUMER_KEY,
+        CONSUMER_SECRET,
+        ACCESS_TOKEN,
+        ACCESS_TOKEN_SECRET
+    )
+);
+echo send($request);
+```
+{% endcollapsible %}
 
 ## Admin and customer access tokens
 

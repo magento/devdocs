@@ -1,6 +1,5 @@
 ---
 title: MediaContentSynchronizationCms
-release: 2.4.3
 content: |-
   The Magento_MediaContentCms provides the implementation of MediaContentSyncronization functionality for Magento_Cms module
 

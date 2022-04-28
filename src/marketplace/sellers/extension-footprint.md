@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Extension Footprint Analysis
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-footprint/
+layout: migrated
 ---
 
 {:.bs-callout-info}

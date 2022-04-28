@@ -305,6 +305,10 @@ pages:
           url: /graphql/mutations/assign-compare-list-to-customer.html
           exclude_versions: ["2.3"]
 
+        - label: assignCustomerToGuestCart mutation
+          url: /graphql/mutations/assign-customer-to-guest-cart.html
+          exclude_versions: [ "2.3" ]
+
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
 
@@ -475,6 +479,11 @@ pages:
           edition: b2b-only
           exclude_versions: [ "2.3" ]
 
+        - label: placeNegotiableQuoteOrder mutation
+          url: /graphql/mutations/place-negotiable-quote-order.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: placeOrder mutation
           url: /graphql/mutations/place-order.html
 
@@ -578,8 +587,23 @@ pages:
         - label: setGuestEmailOnCart mutation
           url: /graphql/mutations/set-guest-email.html
 
-        - label: setNegotiableQuoteShippingAddresses mutation
+        - label: setNegotiableQuoteBillingAddress mutation
+          url: /graphql/mutations/set-negotiable-quote-billing-address.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: setNegotiableQuotePaymentMethod mutation
+          url: /graphql/mutations/set-negotiable-quote-payment-method.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: setNegotiableQuoteShippingAddress mutation
           url: /graphql/mutations/set-negotiable-quote-shipping-address.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: setNegotiableQuoteShippingMethods mutation
+          url: /graphql/mutations/set-negotiable-quote-shipping-methods.html
           edition: b2b-only
           exclude_versions: ["2.3"]
 
@@ -740,6 +764,11 @@ pages:
           url: /graphql/interfaces/invoice-item-interface.html
           exclude_versions: ["2.3"]
 
+        - label: NegotiableQuoteAddressInterface attributes and implementations
+          url: /graphql/interfaces/negotiable-quote-address-interface.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: OrderItemInterface attributes and implementations
           url: /graphql/interfaces/order-item-interface.html
           exclude_versions: ["2.3"]
@@ -760,6 +789,10 @@ pages:
         - label: WishlistItemInterface attributes and implementations
           url: /graphql/interfaces/wishlist-item-interface.html
           exclude_versions: ["2.3"]
+
+    - label: Unions
+      url: /graphql/unions.html
+      exclude_versions: ["2.3"]
 
     - label: Payment methods
       children:

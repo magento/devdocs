@@ -1,10 +1,43 @@
 ---
 title: Catalog
-release: 2.4.3
-content: |-
-  Magento_Catalog module functionality is represented by the following sub-systems:
-   - Products Management. It includes CRUD operation of product, product media, product attributes, etc...
-   - Category Management. It includes CRUD operation of category, category attributes
-
-  Catalog module provides mechanism for creating new product type in the system.
-  Catalog module provides API filtering that allows to limit product selection with advanced filters.
+content: "#Magento_Catalog\nMagento_Catalog module functionality is represented by
+  the following sub-systems:\n - Products Management. It includes CRUD operation of
+  product, product media, product attributes, etc...\n - Category Management. It includes
+  CRUD operation of category, category attributes\n\nCatalog module provides mechanism
+  for creating new product type in the system.\nCatalog module provides API filtering
+  that allows to limit product selection with advanced filters.\n\n## Structure\n\n
+  \ [Learn about a typical file structure for a Magento 2 module]\n  (https://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html).\n\n##
+  Observer\nThis module observes the following events:\n   `etc/events.xml`\n\t   `magento_catalog_api_data_productinterface_save_before`
+  event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\BeforeEntitySave` file.\n\t
+  \  `magento_catalog_api_data_productinterface_save_after` event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\AfterEntitySave`
+  file.\n\t   `magento_catalog_api_data_productinterface_delete_before` event in\n\t
+  \  `Magento\\Framework\\EntityManager\\Observer\\BeforeEntityDelete` file.\n\t   `magento_catalog_api_data_productinterface_delete_after`
+  event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\AfterEntityDelete`
+  file.\n\t   `magento_catalog_api_data_productinterface_load_after` event in\n\t
+  \  `Magento\\Framework\\EntityManager\\Observer\\AfterEntityLoad` file.\n\t   `magento_catalog_api_data_categoryinterface_save_before`
+  event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\BeforeEntitySave` file.\n\t
+  \  `magento_catalog_api_data_categoryinterface_save_after` event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\AfterEntitySave`
+  file.\n\t   `magento_catalog_api_data_categoryinterface_save_after` event in\n\t
+  \  `Magento\\Catalog\\Observer\\InvalidateCacheOnCategoryDesignChange` file.\n\t
+  \  `magento_catalog_api_data_categoryinterface_delete_before` event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\BeforeEntityDelete`
+  file.\n\t   `magento_catalog_api_data_categoryinterface_delete_after` event in\n\t
+  \  `Magento\\Framework\\EntityManager\\Observer\\AfterEntityDelete` file.\n\t   `magento_catalog_api_data_categoryinterface_load_after`
+  event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\AfterEntityLoad` file.\n\t
+  \  `magento_catalog_api_data_categorytreeinterface_save_before` event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\BeforeEntitySave`
+  file.\n\t   `magento_catalog_api_data_categorytreeinterface_save_after` event in\n\t
+  \  `Magento\\Framework\\EntityManager\\Observer\\AfterEntitySave` file.\n\t   `magento_catalog_api_data_categorytreeinterface_delete_before`
+  event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\BeforeEntityDelete`
+  file.\n\t   `magento_catalog_api_data_categorytreeinterface_delete_after` event
+  in\n\t   `Magento\\Framework\\EntityManager\\Observer\\AfterEntityDelete` file.\n\t
+  \  `magento_catalog_api_data_categorytreeinterface_load_after` event in\n\t   `Magento\\Framework\\EntityManager\\Observer\\AfterEntityLoad`
+  file.\n\t   `admin_system_config_changed_section_catalog` event in\n\t   `Magento\\Catalog\\Observer\\SwitchPriceAttributeScopeOnConfigChange`
+  file.\n\t   `catalog_product_save_before` event in\n\t   `Magento\\Catalog\\Observer\\SetSpecialPriceStartDate`
+  file.\n\t   `store_save_after` event in\n\t   `Magento\\Catalog\\Observer\\SynchronizeWebsiteAttributesOnStoreChange`
+  file.\n\t   `catalog_product_save_commit_after` event in\n\t   `Magento\\Catalog\\Observer\\ImageResizeAfterProductSave`
+  file.\n\t   `catalog_category_prepare_save` event in\n\t   `Magento\\Catalog\\Observer\\CategoryDesignAuthorization`
+  file.\n   \n    `/etc/frontend/events.xml`\n\t   `customer_login` event in\n\t   `Magento\\Catalog\\Observer\\Compare\\BindCustomerLoginObserver`
+  file.\n\t\t`customer_logout` event in\n\t   `Magento\\Catalog\\Observer\\Compare\\BindCustomerLogoutObserver`
+  file.\n   \n    `/etc/adminhtml/events.xml`\n\t\t`cms_wysiwyg_images_static_urls_allowed`
+  event in\n\t   `Magento\\Catalog\\Observer\\CatalogCheckIsUsingStaticUrlsAllowedObserver`
+  file.\n\t\t`catalog_category_change_products` event in\n\t   `Magento\\Catalog\\Observer\\CategoryProductIndexer`
+  file.\n\t\t`category_move` event in\n\t   `Magento\\Catalog\\Observer\\FlushCategoryPagesCache`"

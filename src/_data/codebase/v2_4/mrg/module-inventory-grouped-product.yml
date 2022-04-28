@@ -1,6 +1,5 @@
 ---
 title: InventoryGroupedProduct
-release: 2.4.3
 content: |-
   The `InventoryGroupedProduct` module integrates inventory management business logic into Magento's grouped product logic.
 

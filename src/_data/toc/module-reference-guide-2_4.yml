@@ -75,6 +75,12 @@ pages:
   - label: Analytics
     url: /mrg/module-analytics.html
 
+  - label: AsyncOrder
+    url: /mrg/module-async-order.html
+
+  - label: AsyncOrderGraphQl
+    url: /mrg/module-async-order-graph-ql.html
+
   - label: AsynchronousOperations
     url: /mrg/module-asynchronous-operations.html
 
@@ -375,6 +381,9 @@ pages:
   - label: CustomerSegment
     url: /mrg/module-customer-segment.html
 
+  - label: DeferredTotalCalculating
+    url: /mrg/module-deferred-total-calculating.html
+
   - label: Deploy
     url: /mrg/module-deploy.html
 
@@ -422,6 +431,9 @@ pages:
 
   - label: ElasticsearchCatalogPermissions
     url: /mrg/module-elasticsearch-catalog-permissions.html
+
+  - label: ElasticsearchCatalogPermissionsGraphQl
+    url: /mrg/module-elasticsearch-catalog-permissions-graph-ql.html
 
   - label: Email
     url: /mrg/module-email.html
@@ -762,6 +774,9 @@ pages:
   - label: JwtFrameworkAdapter
     url: /mrg/module-jwt-framework-adapter.html
 
+  - label: JwtUserToken
+    url: /mrg/module-jwt-user-token.html
+
   - label: LayeredNavigation
     url: /mrg/module-layered-navigation.html
 
@@ -918,6 +933,9 @@ pages:
   - label: NegotiableQuote
     url: /mrg/module-negotiable-quote.html
 
+  - label: NegotiableQuoteAsyncOrder
+    url: /mrg/module-negotiable-quote-async-order.html
+
   - label: NegotiableQuoteGraphQl
     url: /mrg/module-negotiable-quote-graph-ql.html
 
@@ -951,6 +969,9 @@ pages:
   - label: PageBuilderAdminAnalytics
     url: /mrg/module-page-builder-admin-analytics.html
 
+  - label: PageBuilderAdminGwsAdminUi
+    url: /mrg/module-page-builder-admin-gws-admin-ui.html
+
   - label: PageBuilderAnalytics
     url: /mrg/module-page-builder-analytics.html
 
@@ -959,6 +980,9 @@ pages:
 
   - label: Payment
     url: /mrg/module-payment.html
+
+  - label: PaymentGraphQl
+    url: /mrg/module-payment-graph-ql.html
 
   - label: PaymentStaging
     url: /mrg/module-payment-staging.html
@@ -974,9 +998,6 @@ pages:
 
   - label: PaypalNegotiableQuote
     url: /mrg/module-paypal-negotiable-quote.html
-
-  - label: PaypalOnBoarding
-    url: /mrg/module-paypal-on-boarding.html
 
   - label: PaypalPurchaseOrder
     url: /mrg/module-paypal-purchase-order.html
@@ -1040,6 +1061,9 @@ pages:
 
   - label: ReCaptchaCheckout
     url: /mrg/module-re-captcha-checkout.html
+
+  - label: ReCaptchaCheckoutSalesRule
+    url: /mrg/module-re-captcha-checkout-sales-rule.html
 
   - label: ReCaptchaCompany
     url: /mrg/module-re-captcha-company.html

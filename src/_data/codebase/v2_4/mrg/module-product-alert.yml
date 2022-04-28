@@ -1,6 +1,5 @@
 ---
 title: ProductAlert
-release: 2.4.3
 content: "This module enables product alerts, which allow customers to sign up for
   emails about product price or stock status change.\n\n## Installation\n\nBefore
   installing this module, note that the Magento_ProductAlert is dependent on the following

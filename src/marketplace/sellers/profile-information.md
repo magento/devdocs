@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Profile Information
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-information/
+layout: migrated
 ---
 
 Your profile tracks and provides all information for your Marketplace Developer Portal account, including company information, payment account information, access keys, tax forms, and partner information.

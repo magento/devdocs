@@ -1,6 +1,5 @@
 ---
 title: Widget
-release: 2.4.3
 content: "The Magento_Widget module allows Magento application to be extended with
   custom widget blocks.\n\n## Installation details\n\nBefore installing this module,
   note that the Magento_Widget is dependent on the following modules:\n\n- Magento_Catalog\n-

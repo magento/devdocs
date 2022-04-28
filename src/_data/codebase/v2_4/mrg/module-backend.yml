@@ -1,6 +1,5 @@
 ---
 title: Backend
-release: 2.4.3
 content: |-
   The Magento_Backend module contains common infrastructure and assets for other modules to be defined and used in their
   administration user interface (UI).

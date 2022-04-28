@@ -1,9 +1,31 @@
 ---
 title: OfflineShipping
-release: 2.4.3
-content: |-
-  The Magento_OfflineShipping module implements the shipping methods which do not involve a direct interaction with shipping carriers, so called offline shipping methods. Namely, the following:
-  *Free Shipping
-  *Flat Rate
-  *Table Rates
-  *Store Pickup
+content: "This module implements the shipping methods which do not involve a direct
+  interaction with shipping carriers, so called offline shipping methods. \nNamely,
+  the following:\n- Free Shipping\n- Flat Rate\n- Table Rates\n- Store Pickup\n\n##
+  Installation\n\nBefore installing this module, note that the Magento_OfflineShipping
+  is dependent on the following modules:\n- `Magento_Store`\n- `Magento_Sales`\n-
+  `Magento_Quote`\n- `Magento_Quote`\n- `Magento_SalesRule`\n\nThe Magento_OfflineShipping
+  module creates the `shipping_tablerate` table in the database.\n\nThis module modifies
+  the following tables in the database:\n- `salesrule` - adds column `simple_free_shipping`\n-
+  `sales_order_item` - adds column `free_shipping`\n- `quote_address` - adds column
+  `free_shipping`\n- `quote_item` - adds column `free_shipping`\n- `quote_address_item`
+  - adds column `free_shipping`\n\nFor information about a module installation in
+  Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_OfflineShipping
+  module. For more information about the Magento extension mechanism, see [Magento
+  plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_OfflineShipping module.\n\nA
+  lot of functionality in the module is on JavaScript, use [mixins](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/js_mixins.html)
+  to extend it.\n\n### Layouts\n\nThis module introduces the following layouts in
+  the `view/frontend/layout` directory:\n- `checkout_cart_index`\n- `checkout_index_index`\n\nFor
+  more information about a layout in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  UI components\n\nThis module extends following ui components located in the `view/adminhtml/ui_component`
+  directory:\n- `sales_rule_form`\n- `salesrulestaging_update_form`\n\nFor information
+  about a UI component in Magento 2, see [Overview of UI components](http://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n##
+  Additional information\n\nYou can get more information about offline shipping methods
+  in magento at the articles:\n- [How to configure Free Shipping](https://docs.magento.com/user-guide/shipping/shipping-free.html)\n-
+  [How to configure Flat Rate](https://docs.magento.com/user-guide/shipping/shipping-flat-rate.html)\n-
+  [How to configure Table Rates](https://docs.magento.com/user-guide/shipping/shipping-table-rate.html)\n-
+  [How to configure Store Pickup](https://docs.magento.com/user-guide/shipping/shipping-in-store-delivery.html)"

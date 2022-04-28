@@ -1,5 +1,4 @@
 ---
 title: ReviewGraphQl
-release: 2.4.3
 content: "**ReviewGraphQl** provides endpoints for getting and creating the Product
   reviews by guest and logged in customers."

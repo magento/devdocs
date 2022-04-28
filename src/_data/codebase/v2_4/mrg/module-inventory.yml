@@ -1,6 +1,5 @@
 ---
 title: Inventory
-release: 2.4.3
 content: "The `Inventory` module is part of the new inventory infrastructure,\nwhich
   replaces the legacy `CatalogInventory` module with new and expanded features and
   APIs for Inventory Management.  \n\nThe [Inventory Management overview](https://devdocs.magento.com/guides/v2.4/inventory/index.html)\ndescribes

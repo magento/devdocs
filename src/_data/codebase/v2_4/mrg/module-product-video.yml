@@ -1,6 +1,5 @@
 ---
 title: ProductVideo
-release: 2.4.3
 content: |-
   This module implements functionality related with linking video files from external resources to product.
 

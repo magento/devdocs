@@ -1,6 +1,5 @@
 ---
 title: CatalogInventoryStaging
-release: 2.4.3
 content: |-
   The Magento_CatalogInventoryStaging module is a part of the staging functionality in Magento EE. It extends the Magento_CatalogInventory module functionality, adding the capability to monitor the "Stock Status" field on the Schedule Update form of a product.
 

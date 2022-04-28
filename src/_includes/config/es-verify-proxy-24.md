@@ -13,7 +13,7 @@ Enter the following command:
 curl -i http://<hostname, ip, or localhost>:<proxy port>/_cluster/health
 ```
 
-For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:
+For example, if you enter the command on the search engine server and your proxy uses port 8080:
 
 ```bash
 curl -i http://localhost:8080/_cluster/health
@@ -64,7 +64,7 @@ Connection: keep-alive
 
 ### Configure HTTP Basic authentication in the Admin
 
-Perform the same tasks as discussed in [Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html) *except* click **Yes** from the **Enable Elasticsearch HTTP Auth** list and enter your username and password in the provided fields.
+Perform the same tasks as discussed in [Configure Magento to use a search engine]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html) *except* click **Yes** from the **Enable Elasticsearch HTTP Auth** list and enter your username and password in the provided fields.
 
 Click **Test Connection** to make sure it works and then click **Save Config**.
 

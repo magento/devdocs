@@ -34,7 +34,7 @@ For all Starter environments and Pro Integration environments, pushing your Git 
 -  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—defines how to build and deploy {{site.data.var.ee}}, including user access, service mapping (relationships), hooks, cron jobs, and more.
 -  [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
 -  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—defines how {{site.data.var.ee}} processes an incoming URL.
--  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—defines the services {{site.data.var.ee}} uses by name and version. For example, this file can include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
+-  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—defines the services {{site.data.var.ee}} uses by name and version. For example, this file can include versions of MySQL, PHP extensions, and Elasticsearch or OpenSearch. These are referred to as *services*.
 -  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data) {{site.data.var.ee}} uses to configure your store. {{site.data.var.ee}} generates this file if it does not detect it during the build phase. See [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) for information on how to use this file to manage and synchronize the {{site.data.var.ee}} application configuration across your Cloud environments.
 
 ## Required files for your Git branch {#requiredfiles}
@@ -159,7 +159,7 @@ When you initially set up a project from a template, we retrieve the code from [
 
 You should create a branch from `master` for your custom code, extensions and modules, and third party integrations. We provide a full Integration environment for testing your code in the cloud.
 
-When you push your code from your local workspace to the remote repository, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
+When you push your code from your local workspace to the remote repository, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an OpenSearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
 
 If you have a syntax error in a configuration file, our Git server refuses the push. For details, see [Protective Block]({{ site.baseurl }}/cloud/live/live-prot.html).
 

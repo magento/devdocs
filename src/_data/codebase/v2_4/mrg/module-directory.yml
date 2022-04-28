@@ -1,6 +1,5 @@
 ---
 title: Directory
-release: 2.4.3
 content: |-
   **Directory** enables the management of countries and regions recognized by the store and associated data
   like the country code and currency rates. Also, enables conversion of prices to a specified currency format.
