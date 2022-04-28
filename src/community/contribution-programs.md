@@ -1,6 +1,8 @@
 ---
 group: community
 title: Contribution programs
+migrated_to: https://developer.adobe.com/commerce/contributor/community/contribution-programs/
+layout: migrated
 ---
 
 Adobe is pleased to provide a Solution Partners program for partners.
