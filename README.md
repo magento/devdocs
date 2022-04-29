@@ -2,7 +2,8 @@
 
 Welcome! This site contains the latest Adobe Commerce and Magento Open Source developer documentation for ongoing releases of both products. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
 
-**Important Update**
+> **Important update**
+>
 > The developer documentation for Adobe Commerce and Magento Open Source is moving to the [Adobe Developer](developer.adobe.com/commerce) and [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce.html) sites. After a topic is moved, use the link in the topic header to find the new location.
 >
 >![2022-04-29_14-40-34](https://user-images.githubusercontent.com/6391769/166058975-15c288d6-b266-4f1d-8b52-08ada3ca026f.png)
