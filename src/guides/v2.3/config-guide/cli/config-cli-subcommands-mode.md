@@ -68,7 +68,7 @@ bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 
 where:
 
--  **`{mode}`** is required; it can be either `developer` or `production`
+-  **`{mode}`** is required; it can be either `default`, `developer` or `production`
 
 -  **`--skip-compilation`** is an optional parameter you can use to skip [code compilation]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) when you change to production mode.
 
