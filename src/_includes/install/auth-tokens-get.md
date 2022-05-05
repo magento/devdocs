@@ -1,7 +1,7 @@
 The `repo.magento.com` repository is where Magento 2 and third-party Composer packages are stored and requires authentication. Use your Commerce Marketplace account to generate a pair of 32-character *authentication keys* to access the repository.
 
 {:.bs-callout-info}
-For access to {{site.data.var.ee}} and {{site.data.var.ece}} packages, you must use keys associated with a MAGEID that has been granted access to those packages. If you encounter errors, you may not be authorized to access the package. Contact [Magento support](https://magento.com/support) for assistance with your MAGEID.
+For access entitlement to {{site.data.var.ee}} and {{site.data.var.ece}} packages, you must use keys associated with a MAGEID that has been granted access to those packages. The MAGEID is typically the **Billing Contact** on the {{site.data.var.ee}} account and may not always be the **Project Owner** of the {{site.data.var.ece}} project. If you encounter [errors](https://support.magento.com/hc/en-us/articles/360040296392), you may not have authorization to access the package or the access entitlement has expired due to an outstanding invoice on the account. Contact [{{site.data.var.ee}} support](https://magento.com/support) for assistance with your MAGEID.
 
 To create authentication keys:
 
@@ -12,7 +12,7 @@ To create authentication keys:
 
    ![Get your secure access keys on Commerce Marketplace]({{ site.baseurl }}/common/images/cloud/cloud_access-key.png){:width="500px"}
 
-1. Click **Create a New Access Key**. Enter a specific name for the keys (e.g., the name of the developer receiving the keys) and click **OK**.
+1. Click **Create a New Access Key**. Enter a specific name for the keys (for example, the name of the developer receiving the keys) and click **OK**.
 
 1. New public and private keys are now associated with your account that you can click to copy. Save this information or keep the page open when working with your Magento project. Use the **Public key** as your username and the **Private key** as your password.
 
