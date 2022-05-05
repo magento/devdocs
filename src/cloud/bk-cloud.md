@@ -15,7 +15,7 @@ functional_areas:
 ![Cloud Benefits]
 ## Technology stack
 
-Think of the {{site.data.var.ece}} as five functional layers, as shown here:
+Think of the {{site.data.var.ece}} as five functional layers, as shown below:
 
 ![Cloud Stack]
 
