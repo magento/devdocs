@@ -39,7 +39,7 @@ The APIs can be used to perform a wide array of tasks. For example:
 
 *  Integrate with CRM (Customer Relationship Management) or ERP (Enterprise Resource Planning) backend systems, such as Salesforce or Xero.
 
-*  Integrate with a [CMS](https://glossary.magento.com/cms) (Content Management System). At present, content tagging is not supported.
+*  Integrate with a [CMS](https://glossary.magento.com/cms) (Content Management System). Content tagging is not currently supported.
 
 *  Create [JavaScript](https://glossary.magento.com/javascript) widgets in the Magento [storefront](https://glossary.magento.com/storefront) or on the [Admin](https://glossary.magento.com/admin) panel. The [widget](https://glossary.magento.com/widget) makes AJAX calls to access services.
 
