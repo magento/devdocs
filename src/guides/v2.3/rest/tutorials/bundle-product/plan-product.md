@@ -6,7 +6,7 @@ contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---
 
-To create a bundle product with REST, you'll need to know the following:
+To create a bundle product with REST, you need:
 
 *  The attribute names and values for the attribute set assigned to a bundle product.
 *  The category IDs assigned to a bundle product.
@@ -14,11 +14,11 @@ To create a bundle product with REST, you'll need to know the following:
 
 We will use a `Default` attribute set.
 
-RAM and Monitor sizes will be the customizable aspect of the bundle product. We'll create a simple product for each size of RAM and Monitor (12G, 24G, 15' and 20').
+RAM and Monitor sizes will be the customizable aspect of the bundle product. We will create a simple product for each size of RAM and Monitor (12GB, 24GB, 15" and 20").
 
 ## Define product characteristics
 
-The table below has the general characteristics of a desktop computer we are creating:
+The table below has the general characteristics of the desktop computer we are creating:
 
 Characteristic | Description
 --- | ---
@@ -31,13 +31,13 @@ Description | Desktop computer
 
 ## Find attribute values
 
-We'll make several API calls to find values needed to create simple/bundle products. We'll use `default` store code.
+We will make several API calls to find values needed to create simple/bundle products. We will use `default` as the store code.
 
 ### Find attribute set ID
 
-We'll use `Default` attribute set. We'll need to find out corresponding `attribute_set_id`.
+We will use the `Default` attribute set. We will need to find the corresponding `attribute_set_id`.
 
-The following API call could be used to search for the attribute set named `Default` and `entity_type_id` equals to `4`. `catalog_product` entity has the `entity_type_id` value as `4`.
+The following API call can be used to search for the attribute set named `Default` and `entity_type_id` equals `4`. The `catalog_product` entity has an `entity_type_id` value of `4`.
 
 **Endpoint:**
 
@@ -140,7 +140,7 @@ GET http://domain.com/rest/default/V1/products/attribute-sets/4/attributes
 ]
 ```
 
-The response has over 2000 lines and the above is only a part of it. The table below has attributes that are relevant in this tutorial.
+Because this response can be very long, we have abbreviated the example response above. The table below has attributes that are relevant in this tutorial.
 
 Admin label | Selected value | Attribute ID | attribute_code  | Attribute value
 --- | --- | --- | --- | ---
@@ -148,11 +148,11 @@ Tax Class | Taxable Goods | 134 | `tax_class_id` | 2
 Visibility | Catalog, Search | 99 | `visibility` | 4
 
 {:.bs-callout-warning}
-The attribute ID and value numbers might be different on your installation. Check the values carefully before using them in your calls.
+The attribute ID and value numbers will vary between different installations. Check the values carefully before using them in your calls.
 
 ### List category values
 
-We will assign our Desktop Computer to `What's New` category.
+We will assign our Desktop Computer to the `What's New` category.
 
 Use the following endpoint to find out category's ID.
 
@@ -188,8 +188,8 @@ GET http://domain.com/rest/default/V1/categories?searchCriteria[filter_groups][0
 }
 ```
 
-*  What's New - `32`
+We can see from the above response that the `id` for `What's New` is equal to `32`.
 
 ## Verify this step
 
-At this point, we're gathering information, so there is nothing to verify.
+Since we are only gathering information, there is nothing to verify.

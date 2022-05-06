@@ -6,10 +6,10 @@ contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 Before you run the code, please verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute set]({{ page.baseurl }}/rest/tutorials/bundle-product/plan-product.html#get-attributes) for more information.
 
-We will create 4 simple products: `RAM 12G`, `RAM 24G`, `Monitor 15'` and `Monitor 17'`.
+We will create four simple products: `RAM 12GB`, `RAM 24GB`, `Monitor 15"` and `Monitor 17"`.
 
 **Endpoint:**
 
@@ -22,8 +22,8 @@ POST http://domain.com/rest/default/V1/products
 ```json
 {
   "product": {
-    "sku": "RAM-12G",
-    "name": "RAM 12G",
+    "sku": "RAM-12GB",
+    "name": "RAM 12GB",
     "attribute_set_id": 4,
     "price": 25,
     "status": 1,
@@ -45,7 +45,7 @@ POST http://domain.com/rest/default/V1/products
     "custom_attributes": [
         {
             "attribute_code": "description",
-            "value": "RAM 12G Unit"
+            "value": "RAM 12GB Unit"
         },
         {
             "attribute_code": "tax_class_id",
@@ -63,8 +63,8 @@ POST http://domain.com/rest/default/V1/products
 ```json
 {
     "id": 16,
-    "sku": "RAM-12G",
-    "name": "RAM 12G",
+    "sku": "RAM-12GB",
+    "name": "RAM 12GB",
     "attribute_set_id": 4,
     "price": 25,
     "status": 1,
@@ -147,19 +147,20 @@ POST http://domain.com/rest/default/V1/products
         },
         {
             "attribute_code": "description",
-            "value": "RAM 12G Unit"
+            "value": "RAM 12GB Unit"
         }
     ]
 }
 ```
+{% endcollapsible %}
 
 **Payload 2:**
 
 ```json
 {
   "product": {
-    "sku": "RAM-24G",
-    "name": "RAM 24G",
+    "sku": "RAM-24GB",
+    "name": "RAM 24GB",
     "attribute_set_id": 4,
     "price": 50,
     "status": 1,
@@ -181,7 +182,7 @@ POST http://domain.com/rest/default/V1/products
     "custom_attributes": [
         {
             "attribute_code": "description",
-            "value": "RAM 24G Unit"
+            "value": "RAM 24GB Unit"
         },
         {
             "attribute_code": "tax_class_id",
@@ -199,8 +200,8 @@ POST http://domain.com/rest/default/V1/products
 ```json
 {
     "id": 17,
-    "sku": "RAM-24G",
-    "name": "RAM 24G",
+    "sku": "RAM-24GB",
+    "name": "RAM 24GB",
     "attribute_set_id": 4,
     "price": 50,
     "status": 1,
@@ -283,11 +284,12 @@ POST http://domain.com/rest/default/V1/products
         },
         {
             "attribute_code": "description",
-            "value": "RAM 24G Unit"
+            "value": "RAM 24GB Unit"
         }
     ]
 }
 ```
+{% endcollapsible %}
 
 **Payload 3:**
 
@@ -295,7 +297,7 @@ POST http://domain.com/rest/default/V1/products
 {
   "product": {
     "sku": "Monitor-15",
-    "name": "Monitor 15'",
+    "name": "Monitor 15\"",
     "attribute_set_id": 4,
     "price": 100,
     "status": 1,
@@ -317,7 +319,7 @@ POST http://domain.com/rest/default/V1/products
     "custom_attributes": [
         {
             "attribute_code": "description",
-            "value": "Monitor 15'"
+            "value": "Monitor 15\""
         },
         {
             "attribute_code": "tax_class_id",
@@ -336,7 +338,7 @@ POST http://domain.com/rest/default/V1/products
 {
     "id": 18,
     "sku": "Monitor-15",
-    "name": "Monitor 15'",
+    "name": "Monitor 15\"",
     "attribute_set_id": 4,
     "price": 100,
     "status": 1,
@@ -419,11 +421,12 @@ POST http://domain.com/rest/default/V1/products
         },
         {
             "attribute_code": "description",
-            "value": "Monitor 15'"
+            "value": "Monitor 15\""
         }
     ]
 }
 ```
+{% endcollapsible %}
 
 **Payload 4:**
 
@@ -431,7 +434,7 @@ POST http://domain.com/rest/default/V1/products
 {
   "product": {
     "sku": "Monitor-17",
-    "name": "Monitor 17'",
+    "name": "Monitor 17\"",
     "attribute_set_id": 4,
     "price": 150,
     "status": 1,
@@ -453,7 +456,7 @@ POST http://domain.com/rest/default/V1/products
     "custom_attributes": [
         {
             "attribute_code": "description",
-            "value": "Monitor 17'"
+            "value": "Monitor 17\""
         },
         {
             "attribute_code": "tax_class_id",
@@ -472,7 +475,7 @@ POST http://domain.com/rest/default/V1/products
 {
     "id": 19,
     "sku": "Monitor-17",
-    "name": "Monitor 17'",
+    "name": "Monitor 17\"",
     "attribute_set_id": 4,
     "price": 150,
     "status": 1,
@@ -555,17 +558,18 @@ POST http://domain.com/rest/default/V1/products
         },
         {
             "attribute_code": "description",
-            "value": "Monitor 17'"
+            "value": "Monitor 17\""
         }
     ]
 }
 ```
+{% endcollapsible %}
 
 ## Verify this step
 
-*  Log in to the Luma website and select <b>Catalog > Products</b>. The products appear in the grid.
+*  Log in to the Adobe Commerce Admin Panel and select <b>Catalog > Products</b> and confirm that your products appear in the grid.
 
   ![Simple products]({{ page.baseurl }}/rest/tutorials/bundle-product/images/simple-products-admin-grid.png)
 
  {:.bs-callout-info}
-You might want to reindex and clear cache if you don't see the bundle product on the frontend.
+If you do not see your products in the catalog, you can try reindexing and clearing the cache.

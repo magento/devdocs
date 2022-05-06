@@ -6,7 +6,7 @@ contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---
 
-Let's add the bundle product. We will use two bundle options: `RAM` and `Monitor`.
+Now we will add the bundle product. We will use two bundle options: `RAM` and `Monitor`.
 
 **Endpoint:**
 
@@ -49,7 +49,7 @@ POST http://domain.com/rest/default/V1/products
           "required": true,
           "product_links": [
             {
-              "sku": "RAM-12G",
+              "sku": "RAM-12GB",
               "option_id": 1,
               "qty": 1,
               "position": 1,
@@ -59,7 +59,7 @@ POST http://domain.com/rest/default/V1/products
               "can_change_quantity": 0
             },
             {
-              "sku": "RAM-24G",
+              "sku": "RAM-24GB",
               "option_id": 1,
               "qty": 1,
               "position": 2,
@@ -179,7 +179,7 @@ POST http://domain.com/rest/default/V1/products
                 "product_links": [
                     {
                         "id": "19",
-                        "sku": "RAM-12G",
+                        "sku": "RAM-12GB",
                         "option_id": 14,
                         "qty": 1,
                         "position": 1,
@@ -190,7 +190,7 @@ POST http://domain.com/rest/default/V1/products
                     },
                     {
                         "id": "20",
-                        "sku": "RAM-24G",
+                        "sku": "RAM-24GB",
                         "option_id": 14,
                         "qty": 1,
                         "position": 2,
@@ -291,20 +291,20 @@ POST http://domain.com/rest/default/V1/products
     ]
 }
 ```
-
+{% endcollapsible %}
 ## Verify this step
 
-*  On the Luma storefront page, search for `Desktop Computer`. There will be 1 result.
+1. On the Luma storefront page, search for `Desktop Computer`. There should be one result.
 
-  ![Search]({{ page.baseurl }}/rest/tutorials/bundle-product/images/search-desktop-computer.png)
+    ![Search]({{ page.baseurl }}/rest/tutorials/bundle-product/images/search-desktop-computer.png)
 
-*  Click on the Desktop Computer product.
+1. Click on the Desktop Computer product.
 
-  ![Product]({{ page.baseurl }}/rest/tutorials/bundle-product/images/site-desktop-computer.png)
+    ![Product]({{ page.baseurl }}/rest/tutorials/bundle-product/images/site-desktop-computer.png)
 
-*  Customize Desktop Computer and add to the shopping cart.
+1. Customize Desktop Computer and add it to the shopping cart.
 
-  ![Shopping Cart]({{ page.baseurl }}/rest/tutorials/bundle-product/images/shopping-cart-desktop-computer.png)
+    ![Shopping Cart]({{ page.baseurl }}/rest/tutorials/bundle-product/images/shopping-cart-desktop-computer.png)
 
  {:.bs-callout-info}
-You might want to reindex and clear cache if you don't see the bundle product on the frontend.
+If you do not see the bundle product on the frontend, you can try reindexing and clearing the cache.
