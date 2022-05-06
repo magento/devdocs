@@ -7,10 +7,10 @@ functional_areas:
 
 {{site.data.var.ece}} is a managed, automated hosting platform for the {{site.data.var.ee}} software. {{site.data.var.ece}} comes with additional features that set it apart from the on-premises {{site.data.var.ee}} and {{site.data.var.ce}} platforms:
 
-*  A pre-provisioned infrastructure that includes PHP, MySQL (MariaDB), Redis, RabbitMQ, and supported search engine technologies
-*  Git-based workflow with automatic build and deploy for efficient **Rapid development** and **Continuous deployment** every time you push code changes in a Platform as a Service (PaaS) environment
-*  Highly **Customizable** environment configuration files and command-line interface (CLI) manage and deploy tools
-*  Amazon Web Services (AWS) hosting that offers a **Scalable** and **Secure** environment for online sales and retailing
+*  A pre-provisioned infrastructure that includes PHP, MySQL (MariaDB), Redis, RabbitMQ, and supported search engine technologies.
+*  Git-based workflow with automatic build and deploy for efficient **Rapid development** and **Continuous deployment** every time you push code changes in a Platform as a Service (PaaS) environment.
+*  Highly **Customizable** environment configuration files and command-line interface (CLI) manage and deploy tools.
+*  Amazon Web Services (AWS) hosting that offers a **Scalable** and **Secure** environment for online sales and retailing.
 
 ![Cloud Benefits]
 ## Technology stack
