@@ -2,6 +2,8 @@
 group: marketplace-sellers
 title: Update Extension Information
 redirect_from: /marketplace/sellers/updating-extension-information.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-update-information/
+layout: migrated
 ---
 
 There are four extension submission options:

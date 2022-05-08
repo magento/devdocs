@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Image Tips
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/image-tips/
+layout: migrated
 ---
 
 An image makes a powerful and lasting impression without a word. Images uploaded to your account help people learn about your products, and also represent your brand. Use only high-quality images for your personal, company, and extension profiles. The Magento logo appears as a placeholder in your personal, company, and extension profiles until you upload your images of your own.

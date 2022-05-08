@@ -5,6 +5,8 @@ subgroup: resources
 title: Adobe Commerce Support
 redirect_from:
   - /community/resources/support.html
+migrated_to: https://developer.adobe.com/commerce/contributor/community/support/
+layout: migrated
 ---
 
 If you have issues, receive error messages, or need additional How To's, see our [{{site.data.var.ee}} Support Knowledge Base](https://support.magento.com). The knowledge base includes a growing amount of troubleshooting, how to, and FAQ articles for Magento 2 Commerce, Commerce (Cloud), and Open Source. We are constantly adding new content for Magento platform, services, modules, and much more.

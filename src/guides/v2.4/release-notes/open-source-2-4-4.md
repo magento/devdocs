@@ -52,7 +52,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Email variable usage was deprecated back in 2.3.4 as part of a security risk mitigation in favor of a more strict variable syntax. This legacy behavior has been fully removed in this release as a continuation of that security risk mitigation.
 
-   As a result, email or newsletter templates that worked in previous versions of Magento may not work correctly after upgrading to {{ site.data.var.ee }} 2.4.4 or {{ site.data.var.ce }} 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates]({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
+   As a result, email or newsletter templates that worked in previous versions of {{ site.data.var.ce }} may not work correctly after upgrading to {{ site.data.var.ee }} 2.4.4 or {{ site.data.var.ce }} 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates]({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
 
 *  Integration tokens can no longer be used for API Bearer token authentication. Previously, an integration token could be used as a standalone key for token-based authentication. However, this behavior has been disabled by default due to the security implications of a never-expiring access token. The previous behavior can be enabled through the command line or Admin. See [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html). <!--- AC-1619--->
 
@@ -172,6 +172,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Merchants can now successfully upgrade from an {{ site.data.var.ce }} 2.4.2 deployment with Klarna to {{ site.data.var.ce }} 2.4.3. [GitHub-33760](https://github.com/magento/magento2/issues/33760)
 
+<!--- ACP2E-77-->
+
+*  Sitemap generator configuration can now be successfully changed from the command line. Previously, {{ site.data.var.ce }} displayed this error when you tried to change sitemap configuration outside the Admin: `Import failed: Notice: Trying to access array offset on value of type null in app/code/Magento/Cron/Model/Config/Backend/Sitemap.php on line 78`.  [GitHub-31428](https://github.com/magento/magento2/issues/31428)
+
+<!--- ACP2E-215-->
+
+*  The `bin/magento app:config:import` command now executes without error when you update `time` values in `config.php`. Previously, changing product alert configuration by manual editing (that is, not using the Admin) resulted in an error.
+
 ### Accessibility
 
 <!--- AC-1589-->
@@ -244,6 +252,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Administrators can now log in to the Admin in a deployment for which a custom Admin path is configured and secret key is enabled. Previously, {{ site.data.var.ce }} displayed this error: `Invalid security or form key. Please refresh the page`.
 
+<!--- MC-41949-->
+
+*  {{ site.data.var.ce }} no longer redirects to the All Store View scope when the multi-store hierarchy changes. Previously, after the hierarchy was saved, shoppers were redirected to an incorrect store URL and the All Store Views scope was selected in a multi-store deployment.
+
 ### Bundle products
 
 <!--- MC-42885-->
@@ -269,6 +281,22 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- AC-715-->
 
 *  Currency conversion now occurs as expected in email confirmations for bundle product purchases in multi-store deployments that use different currencies. [GitHub-33426](https://github.com/magento/magento2/issues/33426)
+
+<!--- ACP2E-64-->
+
+*  Advanced pricing special price discounts are now correctly displayed for bundle products with a % prefix in the product grid. Previously, a % discount was incorrectly displayed with $ prefix instead of % in the product grid.
+
+<!--- ACP2E-262-->
+
+*  Bundle product status in the Admin now updates automatically when a related product changes its status.
+
+<!--- ACP2E-326-->
+
+*  The GraphQL resolver for bundle products now checks whether child bundle products have been disabled. Previously, this check did not occur and queries such `categoryList` returned child products that were not salable.
+
+<!--- MC-43223-->
+
+*  `cart` query responses now return accurate discounts for bundle products with dynamic prices. Previously, query responses included discounts applied to each bundle product individually.
 
 ### Cache
 
@@ -346,6 +374,64 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Checkout no longer fails at the payment stage when the billing address is missing street field values or the street field value is not an array. Previously, checkout failed with this error: `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }”`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
 
+<!--- ACP2E-10-->
+
+*  {{ site.data.var.ce }} now correctly calculates discounts when two cart rules are applied to an order that meet these conditions: one cart rule is applied with a coupon code and a **Fixed price on whole cart**  condition and the second cart price rule has no coupon and a **Percent of product price discount** condition. Previously, the relevant algorithm could not properly split the discount proportionally among cart products when a previous cart rule had already applied a discount on some products.
+
+<!--- ACP2E-22-->
+
+*  Sales total is now calculated correctly in the coupon report grid. Previously, the sales total did not include the shipping amount.
+
+<!--- ACP2E-44-->
+
+*  Whole-cart discounts are now calculated correctly when the shopper switches between shipping methods.
+
+<!--- ACP2E-159-->
+
+*  The dropdown list for the **State** field on the Admin create order page is now populated by the predefined values for the selected country. Previously, this field was an input text field instead of a dropdown menu.
+
+<!--- ACP2E-172-->
+
+*  {{ site.data.var.ce }} no longer throws an error after you use the `addConfigurableProductsToCart` mutation to add a configurable product to a cart directly after changing the store view.
+
+<!--- ACP2E-176-->
+
+*  {{ site.data.var.ce }} no longer throws an error when you use the `addConfigurableProductsToCart` mutation to add a disabled child of a configurable product to the cart. Previously, {{ site.data.var.ce }} threw an integrity constraint violation error.
+
+<!--- ACP2E-157-->
+
+*  The coupon usage value no longer changes if the order that the coupon has been applied to fails.  Previously, single-use autogenerated coupons were marked as invalid after the coupon was applied in the cart but the order was not placed.
+
+<!--- ACP2E-137-->
+
+*  Validation has been added to the checkout workflow to compare the customer's street address against default value. If the validation process identifies changes, it sets `customer_address_id` to `null` to treat it as a new customer address. Previously, If the customer saved the address without validation at checkout and the same customer tried to place an order using the same address after validation was applied to checkout field , {{ site.data.var.ce }} did not accept the edited address and threw an exception.
+
+### Cart price rules
+
+<!--- MC-42288-->
+
+*  Coupon generation is now blocked until the related cart price rule is saved with the `auto` option enabled. If you try to save this rule without enabling the `auto` option, {{ site.data.var.ce }} displays this message: `Rule is not saved with auto generate option enabled. Please save the rule and try again`.
+
+<!--- MC-42743-->
+
+*  Added test for confirming the correct application of a cart price rule discount.
+
+<!--- ACP2E-213-->
+
+*  Cart price rules that use an SKU condition with **If an item is FOUND/NOT FOUND in the cart with All/Any of these conditions true** now work as expected with configurable products.
+
+<!--- ACP2E-225-->
+
+*  Cart price rules are now applied correctly for fixed-price bundle products. Previously, cart price rules did not apply to these products when at least one child product had same attribute set specified in the rule condition.
+
+<!--- ACP2E-285-->
+
+*  A product with the price of 0 can now be successfully added to the cart when {{ site.data.var.ce }} is configured with the **Fixed amount discount for whole cart** cart price rule. Previously, {{ site.data.var.ce }} displayed this error:  `report.ERROR: Warning: Division by zero in /home/mer33515/public_html/ee24develop/app/code/Magento/SalesRule/Helper/CartFixedDiscount.php on line 85`.
+
+<!--- ACP2E-306-->
+
+*  Corrected a condition where the `cart` query returned an inaccurate discount amount when shopping cart rules with fixed amount discounts were activated.
+
 ### Catalog
 
 <!--- MC-41796-->
@@ -380,6 +466,34 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Multi-select attributes with many options (over 150) can now be assigned to new products. Previously, attribute options were saved in the `catalog_product_entity_varchar` table, and not all options were present when you reopened the product in the Admin. [GitHub-33486](https://github.com/magento/magento2/issues/33486)
 
+<!--- AC-904-->
+
+*  Added validation for the case when a router cannot instantiate an action class collected from a URL. {{ site.data.var.ce }} now displays the standard error message. Previously, {{ site.data.var.ce }} displayed this error:  `PHP Error: Cannot instantiate abstract class Magento\Catalog\Controller\Product\Compare`.
+
+<!--- ACP2E-115-->
+
+*  Assignment of many products (approximately 10,000) to a category no longer causes the browser to crash.
+
+<!--- ACP2E-122-->
+
+*  Image attributes are now saved in the database consistently whether saving from the Admin or importing. Previously, image ALT text values were saved inconsistently. If the image existed and the label was set to null, the label value was not reset in the database.
+
+<!--- ACP2E-155-->
+
+*  The Catalog Widget SQL query has been optimized. Previously, large MySQL queries slowed down page load and resulted in MySQL outages.
+
+<!--- ACP2E-165-->
+
+*  Price filters now work correctly with out-of-stock configurable products. Previously, out-of-stock configurable products were not shown in their correct price range.
+
+<!--- ACP2E-330-->
+
+*  Updating a child product no longer removes the catalog rule discount inherited from its parent configurable product during the partial indexing process. Previously, when we assigned a configurable product to a category but not its associated simple products, and then used that category to create a catalog rule, {{ site.data.var.ce }} removed the catalog rule assigned to the simple product during the partial indexing process.
+
+<!--- ACP2E-216-->
+
+*  The grid view list of grouped and configurable products now contains only simple and virtual products when adding product options. Previously, Magento included simple products with options.
+
 ### Catalog rule
 
 <!--- MC-41807-->
@@ -389,6 +503,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- MC-38263-->
 
 *  {{ site.data.var.ce }} no longer removes catalog price rules on configurable products during partial re-indexing. Previously, only sub-products were re-indexed when configurable products were re-indexed.
+
+<!--- ACP2E-331-->
+
+*  Catalog price rules with the **category is not category_id** condition now apply to products that do not belong to any category.
 
 ### Configurable products
 
@@ -406,7 +524,15 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-43051-->
 
-*  GraphQL `product` queries no longer return data about the disabled child products of configurable products.
+*  GraphQL `products` queries no longer return data about the disabled child products of configurable products.
+
+<!--- ACP2E-101-->
+
+*  Creating new configurations for a configurable product no longer overrides changes in existing configurations. Previously, the status of existing variations were overridden with the default status `enabled` after new variations were generated.
+
+<!--- ACP2E-175-->
+
+*  {{ site.data.var.ce }} no longer throws an internal error when you try to add a disabled child of a configurable product to the cart.
 
 ### Customer
 
@@ -439,6 +565,18 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- magento/magento2/pull/32720-->
 
 *  Order and shipment notification emails now work as expected in deployments using Microsoft Outlook and MS Exchange Server. Previously, the email body was empty but contained an ATT*-labeled attachment. [GitHub-25076](https://github.com/magento/magento2/issues/25076)
+
+<!--- ACP2E-47-->
+
+*  Order emails now contain data localized using the shopper’s locale as expected. Previously, order emails used the Admin locale.
+
+<!--- ACP2E-107-->
+
+*  Clicking on the preview of any email template now opens the template preview in a separate window as expected.  Previously, {{ site.data.var.ce }} opened the template preview simultaneously from the Email Templates grid and in a popup window.
+
+<!--- ACP2E-127-->
+
+*  Asynchronous order emails that are sent from a non-default website now include logo URLs from the appropriate website. Previously, these emails always included logos from the default or primary website. (A default key with a `storeCode` value has been assigned to the second array argument that is passed to the `UrlInterface` `getUrl` function. This value distinguish URLs in respect to different stores/websites and generates a correct `baseUrl` for the email content that is sent to customer.)
 
 ### Frameworks
 
@@ -483,6 +621,18 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- MC-42934-->
 
 *  Improved validation of the advanced search query parameters. [GitHub-33589](https://github.com/magento/magento2/issues/33589)
+
+<!--- ACP2E-69-->
+
+*  Executing `bin/magento support:backup:code` now creates a backup as expected. Previously, {{ site.data.var.ce }} created a backup but threw an error.
+
+<!--- ACP2E-82-->
+
+*  Successfully executed `cron` processes are now assigned a status of `success`. Previously, the same `cron` process could be run twice because successful `cron` processes were assigned a `pending` status.
+
+<!--- ACP2E-102-->
+
+*  The `Magento_Logging` module now supports IPv6.
 
 ### General fixes
 
@@ -541,6 +691,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- MC-43046-->
 
 *  S3 compatible storage is now supported. [GitHub-32114](https://github.com/magento/magento2/issues/32114)
+
+<!--- ACP2E-123-->
+
+*  Logging out from one device no longer automatically logs out the shopper from other devices.
 
 ### GraphQL
 
@@ -616,6 +770,30 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  GraphQL queries now return billing address as expected when the value of an optional telephone field is set to an empty string. Previously, queries returned a null address value. [GitHub-30218](https://github.com/magento/magento2/issues/30218)
 
+<!--- ACP2E-51-->
+
+*  The `products` query response now lists products according to the specified sort order when multiple products have the same relevance or price value.
+
+<!--- ACP2E-75-->
+
+*  Concurrent `addSimpleProductsToCart` and `addProductsToCart` requests no longer result in duplicated quote items.
+
+<!--- ACP2E-76-->
+
+*  `products` query layered navigation filters now return correct child categories lists. Only direct subcategories are now included when the `includeDirectChildrenOnly` flag is provided in the request. Previously, all categories were included in response in the aggregation section when a product was assigned to several categories.
+
+<!--- ACP2E-132-->
+
+*  Added search suggestion functionality for GraphQL search queries.
+
+<!--- ACP2E-288-->
+
+*  The `OrderAddress.telephone` field is now optional in the `customer` query or other queries and mutations that return or modify customer order addresses.
+
+<!--- ACP2E-278-->
+
+*  Prices are now correctly updated for customers in a specified group in both the storefront and Admin when a group ID is changed via API. Previously, these prices were not updated correctly when a group ID was changed via API.
+
 ### Image
 
 <!--- MC-42080-->
@@ -629,6 +807,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- MC-42160-->
 
 *  The media tag associated with an image added to a CMS page in a deployment where the Admin is set to a different domain than the store URL now contains store URLs as expected. Previously, media tags contained static Admin URLs instead of the expected store URLs. [GitHub-32930](https://github.com/magento/magento2/issues/32930)
+
+<!--- ACP2E-315-->
+
+*  {{ site.data.var.ce }} no longer throws an error when you flush the images cache while simultaneously loading images on the storefront.
 
 ### Import/export
 
@@ -656,6 +838,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Non-default multiple value separators can now be used in custom multi-select attributes. Previously, validation failed during import. [GitHub-23156](https://github.com/magento/magento2/issues/23156)
 
+<!--- ACP2E-86-->
+
+*  Product position in categories is now assigned correctly during import from CSV.
+
 ### Index
 
 <!--- MC-42791-->
@@ -666,11 +852,15 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Resolved consistency issues in merged `indexer.xml` files. The allowed values in `classType` are now the same in unmerged and merged `indexer.xml` files. [GitHub-29609](https://github.com/magento/magento2/issues/29609)
 
+<!--- AC-190-->
+
+*  A synchronization mechanism has been implemented in category indexers to prevent full and partial indexers from running in parallel. Previously, when these indexers ran in parallel, products could be temporarily omitted from storefront category pages or category pages could be temporarily empty of products.
+
 ### Infrastructure
 
 <!--- AC-1172-->
 
-*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for Magento 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
+*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for {{ site.data.var.ce }} 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
 
 <!--- magento/partners-magento2ee/pull/573-->
 
@@ -963,6 +1153,12 @@ Repetitive actions have been replaced with action groups in these tests:
 
 `CaptchaWithDisabledGuestCheckoutTest` [GitHub-30828](https://github.com/magento/magento2/issues/30828)
 
+### Newsletters
+
+<!--- ACP2E-147-->
+
+*  Users with appropriate permissions can now manage customer newsletter subscriptions as expected. Previously, only administrators with full permissions could manage customer newsletter subscriptions on the Admin customer account page.
+
 ### Order
 
 <!--- MC-41981-->
@@ -977,7 +1173,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Administrators with restricted permissions that include order and shipping privileges can now view the order page as expected. Previously, {{ site.data.var.ce }} threw an error when an administrator with these permissions tried to view an order. [GitHub-14633](https://github.com/magento/magento2/issues/14633)
 
-### Payment methods
+<!--- ACP2E-74-->
+
+*  Shoppers can now place an order that includes a child configurable product when a maximum quantity allowed limit is set.
+
+## Payment methods
 
 <!--- AC-1830-->
 
@@ -1003,7 +1203,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Anomalies with PayPal Credit display of gift card amounts have been resolved. Previously, when PayPal Credit was enabled and multiple gift card amounts were configured, if a shopper changed the amount for the value of a gift card, the storefront did not update the amount for installment payments. This was a known issue in {{ site.data.var.ce }} 2.4.3.
 
-#### PayPal
+### PayPal
 
 <!--- MC-42154-->
 
@@ -1016,6 +1216,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-42279-->
 
 *  PayPal Payflow Pro now performs delayed capture with correct parent transaction IDs in deployments where the PayPal Payflow Pro gateway with **Payment Action** is set to **Authorization**. A **Sale** transaction is sent to Payflow with a parent transaction ID of the vault token created at checkout as expected. Previously, a **Delayed Capture**  transaction was created and sent to PayPal Payflow. [GitHub-33445](https://github.com/magento/magento2/issues/33445)
+
+<!--- MC-42442-->
+
+*  Shoppers are now redirected to the success page as expected after payment with  PayPal Payments Advanced payment completes. Previously, shoppers were not redirected to this page even though the payment was successfully processed and no errors were logged.
 
 ### Performance
 
@@ -1039,6 +1243,14 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The new in-memory cache for `glob()` system calls improves performance by reducing the number of `glob()` calls.  [GitHub-34025](https://github.com/magento/magento2/issues/34025)
 
+<!--- ACP2E-63-->
+
+*  Performance of the asynchronous order grid re-indexing process has been improved.
+
+<!--- ACP2E-117-->
+
+*  Memory consumption during the product export has been optimized.
+
 ### Pricing
 
 <!--- MC-42243-->
@@ -1051,6 +1263,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The new `product_alert` consumer improves the sending of customer alerts by creating queue messages, running the consumer, and improving execution time. Previously, {{ site.data.var.ce }} threw an out-of-memory exception when sending more than 100,000 product alerts. {{ site.data.var.ce }} also took more than 20 hours to send all alerts.
 
+<!--- ACP2E-87-->
+
+*  {{ site.data.var.ce }} no longer throws an error if the price filter on the Category page does not contain a second value. Previously, {{ site.data.var.ce }} threw an exception in the log file.
+
 ### Product video
 
 <!--- MC-42105-->
@@ -1060,6 +1276,14 @@ Repetitive actions have been replaced with action groups in these tests:
 ### Reviews
 
 *  The product list view now displays the correct starred rating for products. [GitHub-30196](https://github.com/magento/magento2/issues/30196)
+
+<!--- ACP2E-89-->
+
+*  Reviews are now visible as expected when a shopper clicks **Review** on the storefront product page.
+
+<!--- ACP2E-111-->
+
+*  The product star rating is now consistent across the Grid and List views on the storefront product list page. Previously, the same product could have different ratings in Grid and List view modes.
 
 ### Sales
 
@@ -1075,15 +1299,9 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Automated test coverage to verify the existence of an index for `sales_shipment_grid.order_id` has been added.
 
-### Sales Rule
+<!--- MC-43163-->
 
-<!--- MC-42288-->
-
-*  Coupon generation is now blocked until the related cart price rule is saved with the `auto` option enabled. If you try to save this rule without enabling the `auto` option, {{ site.data.var.ce }} displays this message: `Rule is not saved with auto generate option enabled. Please save the rule and try again`.
-
-<!--- MC-42743-->
-
-*  Added test for confirming the correct application of a cart price rule discount.
+*  `POST V1/orders` calls now update extension attributes without error. Previously, an SQL syntax error occurred.
 
 ### Search
 
@@ -1098,6 +1316,22 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-41706-->
 
 *  Elasticsearch catalog searches are now diacritic-insensitive. Previously, searches for terms without an accent resulted in different results than searches on the same term with an accent.
+
+<!--- ACP2E-8-->
+
+*  Search weight is now correctly set on SKU attributes that contain special characters.
+
+<!--- ACP2E-36-->
+
+*  `category_name` has been added to the system-reserved product attribute codes. {{ site.data.var.ce }} now shows an error if a user tries to create a product attribute with the attribute code `category_name`. Previously, products were not listed in the expected category, and an Elasticsearch error was logged.
+
+<!--- ACP2E-68-->
+
+*  Popular search terms now updated after each GraphQL search query.
+
+<!--- ACP2E-249-->
+
+*  {{ site.data.var.ce }} now adds correct price fields to the Elasticsearch price index mapping. Previously, incorrect price fields were added to the index with store ID instead of website ID.
 
 ### Shipping
 
@@ -1116,6 +1350,22 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- magento/magento2/pull/33232-->
 
 *  You can now disable shipment update emails as expected from **Stores**  > **Configuration**  >  **Sales**  >  **Sales Emails**. [GitHub-33165](https://github.com/magento/magento2/issues/33165)
+
+<!--- ACP2E-31-->
+
+*  {{ site.data.var.ce }} now displays free shipping cost (0)  on Admin and storefront invoice page totals. Previously, when shipping was zero for an order, {{ site.data.var.ce }} did not display the shipping amount  in totals on the invoice page shipping total.
+
+<!--- ACP2E-120-->
+
+*  Rate requests to online shipping carriers have been reduced from several requests to one. Package insurance and handling price per item/package are now calculated correctly. Previously, {{ site.data.var.ce }} displayed incorrect shipping rates for FedEx shipping methods.
+
+<!--- ACP2E-174-->
+
+*  {{ site.data.var.ce }} now displays UPS rates when creating shipping labels for shipping from Puerto Rico. Previously, {{ site.data.var.ce }} did not display these UPS rates.
+
+<!--- ACP2E-227-->
+
+*  The shipping street address is now cleared completely as expected after removal from the input box. Previously, the text box retained one or more characters after you deleted the address.
 
 ### Store
 
@@ -1209,6 +1459,10 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  Added an `aria-label` element to the storefront page template to indicate the page to which the shopper will navigate to when clicking a link. Previously, the same link text was used for links to different pages. [GitHub-33075](https://github.com/magento/magento2/issues/33075)
 
+<!--- ACP2E-73-->
+
+*  {{ site.data.var.ce }} no longer displays an error message when loading the homepage of a store with pre-existing custom theme. Previously, {{ site.data.var.ce }} displayed this message:  `The store will not work correctly in the case when cookies are disabled`.
+
 ### Translations and locales
 
 <!--- AC-285-->
@@ -1234,6 +1488,10 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 <!--- AC-1308-->
 
 *  You can now successfully enter a customer date of birth when creating a new account in stores set to a Portuguese(Portugal) locale. Previously,  {{ site.data.var.ce }} threw an error when you tried to create an account. [GitHub-34130](https://github.com/magento/magento2/issues/34130)
+
+<!--- ACP2E-457-->
+
+*  The product detail page is now successfully displayed with the Arabic (Saudi Arabia) locale. Previously, this locale broke the product detail page.
 
 ### UI
 
@@ -1317,6 +1575,38 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  {{ site.data.var.ce }} no longer displays this message after upgrade when Cookie Restriction Mode is disabled: `The store will not work correctly in the case when cookies are disabled`. [GitHub-33811](https://github.com/magento/magento2/issues/33811)
 
+<!--- ACP2E-7-->
+
+*  Full-screen product images are now correctly displayed on themes with vertical thumbnail navigation direction on mobile devices. Previously, product images were incorrectly scaled or invisible on themes with vertical thumbnail navigation direction on mobile devices in full-screen mode.
+
+<!--- ACP2E-23-->
+
+*  Error messages in the product details page no longer disappear quickly when the **Synchronize widget products with backend storage** configuration setting is enabled.
+
+<!--- ACP2E-70-->
+
+*  Validation for negative values has been added to the **Quantity To Return** field on the Create New Return form.
+
+<!--- ACP2E-105-->
+
+*  {{ site.data.var.ce }} no longer displays duplicate addresses when a shopper clicks **Change Address** on the Review and Payments page in a deployment in which the **Address Search** configuration setting is enabled.
+
+<!--- ACP2E-136-->
+
+*  The **Add Products** button is now enabled as expected for administrators with restricted permissions while while working in store-view scope on the Admin Category page.
+
+<!--- ACP2E-169-->
+
+*  View breakpoints are now consistent across {{ site.data.var.ce }}.
+
+<!--- ACP2E-199-->
+
+*  {{ site.data.var.ce }} now correctly displays custom customer date attributes with custom locales on the Admin customer page.
+
+<!--- MC-41760-->
+
+*  Images added using Page Builder are no longer duplicated on the storefront when displayed with a browser window width of 768px. Previously, with this browser window width, {{ site.data.var.ce }} duplicated images on the storefront by displaying both the mobile and desktop version of images.
+
 ### URL rewrites
 
 <!--- AC-1510-->
@@ -1357,11 +1647,29 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  The `/rest/all/V1/categories/<above_created_category_id>`  PUT call now respects the values specified by `available_sort_by`.  Previously, the Available Product Listing Sort By drop down was selected with all possible options on the Category page, and the **Use All** checkbox was selected. [GitHub-32596](https://github.com/magento/magento2/issues/32596)
 
+<!--- ACP2E-11-->
+
+*  The performance of REST API requests to create customer tokens has been improved.
+
+<!--- ACP2E-91-->
+
+*  Corrected an error that occurred when **Add Store Code to Urls** is set to **Yes** and a REST call did not include a store code. Although the payload was valid, the call returned the following error: `Fatal error: Allowed memory size of ********** bytes exhausted (tried to allocate **** bytes) in vendor/magento/module-store/Model/StoreRepository.php on line 75`.
+
+<!--- ACP2E-153-->
+
+*  Partial invoices for the same order can now be created simultaneously using the REST API.
+
 ### Wish list
 
 <!--- MC-41880-->
 
 *  {{ site.data.var.ce }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ce }} ignored this option.
+
+### WYSIWYG
+
+<!--- ACP2E-17-->
+
+*  PageBuilder now correctly renders custom widgets with the WYSIWYG editor.
 
 ## Known Issues
 
@@ -1395,7 +1703,7 @@ The following table identifies contributions from our community members. This ta
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/system-requirements.html).
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{page.baseurl}}/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
 

@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Abandoned Extensions
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/abandoned-extensions/
+layout: migrated
 ---
 
 Outside of regular extension compatibility checks with the latest patch version, we require the extension to be updated at least once every year.

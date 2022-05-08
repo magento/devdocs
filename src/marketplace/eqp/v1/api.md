@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Marketplace EQP API
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/
+layout: migrated
 ---
 
 The **Commerce Marketplace Extension Quality Program ([EQP]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html)) REST API** provides access to the [Marketplace Developer Portal][1].

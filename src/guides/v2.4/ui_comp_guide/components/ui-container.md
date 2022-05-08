@@ -85,7 +85,7 @@ The following is an example of the Container component only.
             <item name="config" xsi:type="array">
                 <item name="template" xsi:type="string">ui/form/components/complex</item>
                 <item name="sortOrder" xsi:type="number">10</item>
-                <item name="label" xsi:type="string">Container Label</item>
+                <item name="label" xsi:type="string">Notice</item>
                 <item name="additionalClasses" xsi:type="string">sample-additional-class</item>
                 <item name="text" xsi:type="string" translate="true"><![CDATA[
                     <p>
