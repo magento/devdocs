@@ -4,8 +4,22 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Thu May 5 22:19:39 2022
+updated: Mon May 9 14:38:42 2022
 entries:
+- description: Added a tutorial on [creating a bundled product](https://devdocs.magento.com/guides/v2.4/rest/tutorials/bundle-product/bundle-product-intro.html)
+    with the API.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: May 8, 2022
+  link: https://github.com/magento/devdocs/pull/9407
+  merge_commit: 3e39778e0e70a4ee907a075bf41d29cdb0db6384
+  contributor: goivvy
+  membership: false
+  labels:
+  - 2.3.x
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.1.13 Quality Patches Tool package release.
   versions: 2.3.x, 2.4.x
