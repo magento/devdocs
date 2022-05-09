@@ -55,6 +55,11 @@ pages:
         - label: Using queries
           url: /graphql/queries/index.html
 
+        - label: attributesMetadata query
+          url: /graphql/queries/attributes-metadata.html
+          edition: pwa-only
+          exclude_versions: ["2.3"]
+
         - label: availableStores query
           url: /graphql/queries/available-stores.html
           exclude_versions: ["2.3"]
@@ -199,6 +204,11 @@ pages:
 
         - label: pickupLocations query
           url: /graphql/queries/pickup-locations.html
+          exclude_versions: ["2.3"]
+
+        - label: recaptchaV3Config query
+          url: /graphql/queries/recaptcha-v3-config.html
+          edition: pwa-only
           exclude_versions: ["2.3"]
 
         - label: route query
@@ -700,7 +710,7 @@ pages:
           exclude_versions: ["2.3"]
 
     - label: Interfaces
-      children:
+      children:        
         - label: Product interface implementations
           url: /graphql/interfaces/product-interface-implementations.html
 
@@ -733,6 +743,16 @@ pages:
 
         - label: Virtual product data types
           url: /graphql/interfaces/virtual-product.html
+
+        - label: AttributeMetadata
+          url: /graphql/interfaces/attribute-metadata.html
+          edition: pwa-only
+          exclude_versions: ["2.3"]
+
+        - label: PWA implementations
+          url: /graphql/interfaces/pwa-implementations.html
+          edition: pwa-only
+          exclude_versions: ["2.3"]
 
         - label: CartItemInterface attributes and implementations
           url: /graphql/interfaces/cart-item-interface.html

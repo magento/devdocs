@@ -4,6 +4,8 @@ functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://developer.adobe.com/commerce/contributor/guides/install/change-version/
+layout: migrated
 ---
 
 This topic discusses how a contributing developer can change versions of the Magento software after cloning the `develop` branch. This might be necessary to perform some tasks that require a specific Magento version other than `develop`.

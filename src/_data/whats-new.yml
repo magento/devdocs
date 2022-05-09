@@ -4,8 +4,141 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Apr 18 16:08:10 2022
+updated: Thu May 5 22:19:39 2022
 entries:
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.13 Quality Patches Tool package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: May 5, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2943
+  merge_commit: def646b005ecc5e4da33b89394aee3790f533508
+  contributor: apoltoratskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: The [Contributor install](https://devdocs.magento.com/guides/v2.4/install-gde/contrib-git.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/contributor/guides/install/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: April 29, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2938
+  merge_commit: f2799aff82b7b66641c32bfbed9b57ec182188a6
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Contribution resources guide](https://devdocs.magento.com/community/resources.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/contributor/community/)
+    and will be redirected soon.
+  versions: 2.x
+  type: Major Update
+  date: April 28, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2935
+  merge_commit: 4ab139c9e9e5673f3724cfd0ca85a0cede8930b2
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+  - migration
+- description: The [Contributor guide](https://devdocs.magento.com/community/resources.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/contributor/guides/code-contributions/)
+    and will be redirected soon.
+  versions: 2.x
+  type: Major Update
+  date: April 27, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2933
+  merge_commit: 8feeed396e7ebfaf62718c8810dd5095ffb8b13d
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+  - migration
+- description: 'Added fixed issues to the release notes: [Adobe Commerce 2.4.4](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-4.html#fixed-issues),
+    [Magento Open Source 2.4.4](https://devdocs.magento.com/guides/v2.4/release-notes/open-source-2-4-4.html#fixed-issues),
+    [Magento B2B - Adobe Commerce 2.4.4](https://devdocs.magento.com/guides/v2.4/release-notes/b2b-release-notes.html#magento-b2b---adobe-commerce-244),
+    [Inventory Management 1.2.4](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html#v124).'
+  versions: 2.4.4
+  type: Major Update
+  date: April 26, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2929
+  merge_commit: 36146ffdad4a7fa37fc1bd1a9209546794d9be92
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added the `suggestions` output field to the [`products` query ](https://devdocs.magento.com/guides/v2.4/graphql/queries/products.html).
+    This field is returned when the value specified in the `search` input parameter
+    does not return any results.
+  versions: 2.4.4
+  type: Technical
+  date: April 21, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2922
+  merge_commit: e0863f1be4b99d9ec69c41b521900daed20bad41
+  contributor: keharper
+  membership: true
+  labels:
+  - Technical
+  - 2.4.4
+- description: Added previously missing fix descriptions to the Adobe Commerce 2.4.4
+    and Magento Open Source 2.4.4 release notes. See [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.4.4
+  type: Major Update
+  date: April 21, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2921
+  merge_commit: 6ba702e6bbcfea5e4fb463ebda82c99fce5aace2
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added migration metadata for the [Performance Best Practices](https://devdocs.magento.com/guides/v2.4/performance-best-practices/introduction.html)
+    guide, which was recently migrated to Experience League.
+  versions: 2.4.x
+  type: Technical
+  date: April 20, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2920
+  merge_commit: af6ef5a0923b780d267bb48bc2b9b91f369a6dcc
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
+  - migration
+- description: Update the [Configure Xdebug for Docker](https://devdocs.magento.com/cloud/docker/docker-development-debug.html)
+    topic in the Cloud guide.
+  versions: 2.x
+  type: Technical
+  date: April 19, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2912
+  merge_commit: 4444e2a3f2fbbea0ddfa3503d7f7ddf6bf966f44
+  contributor: BaDos
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Updated the [end of support date](https://devdocs.magento.com/release/lifecycle-policy.html)
+    for 2.4.0-2.4.3.
+  versions: 2.4.x
+  type: Technical
+  date: April 18, 2022
+  link: https://github.com/magento/devdocs/pull/9416
+  merge_commit: e5e0dd1e37251388dba618c2de92a00384479a32
+  contributor: misuadobe
+  membership: true
+  labels:
+  - Internal Dev
+  - Technical
+  - 2.4.x
+  - 'Progress: done'
 - description: The [Site-Wide Analysis Tool](https://devdocs.magento.com/tools/site-wide-analysis.html)
     installation topic has moved to [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce-operations/tools/site-wide-analysis-tool/installation.html).
   versions: 2.4.x
