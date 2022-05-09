@@ -4,6 +4,8 @@ title: Code Contributions
 redirect_from:
 - guides/v2.3/contributor-guide/contributing.html
 - guides/v2.4/contributor-guide/contributing.html
+migrated_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/
+layout: migrated
 ---
 
 {:.bs-callout-tip}

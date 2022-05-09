@@ -53,6 +53,8 @@ These release notes can include:
 
 -  {:.fix} <!--- ACP2E-194--> Shared catalog save operations have been optimized to execute faster. Previously, saving a shared catalog with many customer groups could take several minutes.
 
+-  {:.fix} <!--- MC-42240--> Magento now deletes all subcategory permissions from the `sharedcatalog_category_permissions` table when the parent category is deleted. Previously, only the parent category data was removed.
+
 ## Magento B2B - Version 1.3.2
 
 -  {:.fix} <!--- MC-39862--> Magento now successfully sends update emails about expired negotiable quotes. Previously, when a negotiable quote expired, Magento did not send update emails.
