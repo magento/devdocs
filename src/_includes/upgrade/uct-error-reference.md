@@ -4,7 +4,6 @@
 
 These errors are reported when some of the core files are missing or do not match the original.
 
-{:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 2001 | Core file was not found | Run the `composer install` command from the project's root directory. |
@@ -16,7 +15,6 @@ These errors are reported when some of the core files are missing or do not matc
 
 Critical errors are raised when the custom code is referencing entities that are not present in the target {{site.data.var.ee}} version. These errors are also reported when critical coding standards have been broken.
 
-{:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface. |
@@ -48,7 +46,6 @@ Critical errors are raised when the custom code is referencing entities that are
 
 GraphQL Schema critical issues are raised if the schema items are not present in the target version.
 
-{:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 3101 | Type was removed | List all queries that are referencing this field. Check if these queries are used by the customization implementation. Update the client code to handle the changed query interface. |
@@ -74,7 +71,6 @@ GraphQL Schema critical issues are raised if the schema items are not present in
 
 Custom code errors are raised when custom code is using the Adobe Commerce entry points that are not considered/marked as `@api`. The preserved behavior of such entry points is not guaranteed. The customization should rely on `@api` entry points instead. The functionality that is based on non-API Adobe Commerce code should be tested after the upgrade. These errors are also reported when major coding standards have been broken.
 
-{:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 1104 | Using non API class that is inheriting API interface | Classes that are not marked as `@api` may be changed. Consider updating the code to rely on the interface marked as `@api` instead. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
@@ -198,7 +194,6 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 
 These warnings are reported when there are minor inconsistencies in the core codebase.
 
-{:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 2004 | Composer dependency version mismatch | Issue indicates that composer depency version in etalon and actual project is different. Update dependency by running `composer update <package_name>`. |
@@ -207,7 +202,6 @@ These warnings are reported when there are minor inconsistencies in the core cod
 
 Custom code warnings are raised when the references to deprecated code are detected. Such references should be replaced with the supported extension points. Pay attention to the `@see` annotation of deprecated item for recommendations. These errors are also reported when minor coding standards have been broken.
 
-{:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 1131 | Extending from Adobe Commerce ``@deprecated`` class | The extended class will be removed in upcoming versions. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
@@ -234,7 +228,6 @@ Custom code warnings are raised when the references to deprecated code are detec
 
 GraphQL Schema warnings are raised when the additional items are added to the schema in the new version. It is recommended to review the implementation to see if they should be used for requests.
 
-{:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 3206 | Argument default value changed | If the query is used in the customization the argument value may have to be specified explicitly. |
