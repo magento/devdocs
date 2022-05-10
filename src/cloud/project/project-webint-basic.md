@@ -29,7 +29,6 @@ To access projects and environments through the Project Web Interface:
 1. The left pane shows your list of environments.
 1. Click **Access Site** for a list of storefront URLs for web access and the command for SSH access.
 
-
 For more information about using SSH, see [SSH to an environment]({{ site.baseurl }}/cloud/env/environments-ssh.html#magento-cli). To clone the project using either the {{site.data.var.ece}} CLI or Git, use the links in the field under the branch name.
 
 The following figure shows an example.
