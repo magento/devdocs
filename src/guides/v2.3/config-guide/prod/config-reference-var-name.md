@@ -12,7 +12,7 @@ This topic discusses how to derive an environment variable name knowing a config
 You can override the value of _any_ configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/).
 
 {:.bs-callout-tip}
-Check out the [Configure environments]({{ page.baseurl }}/cloud/env/variables-intro.html) topic in the _Cloud_ guide for details on working with variables in {{site.data.var.ece}}.
+Check out the [Configure environments]({{ site.baseurl }}/cloud/env/variables-intro.html) topic in the _Cloud_ guide for details on working with variables in {{site.data.var.ece}}.
 
 A environment variable name consists of its scope followed by its configuration path in a particular format. The following sections discuss how to determine a variable name in more detail.
 
