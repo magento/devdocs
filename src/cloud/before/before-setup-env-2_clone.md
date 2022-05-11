@@ -63,13 +63,13 @@ To clone a project master environment:
 1. Fetch the remote branches.
 
    ```bash
-   git fetch magento
+   git fetch origin
    ```
 
 1. Pull updated code.
 
    ```bash
-   git pull magento <environment-ID>
+   git pull origin <environment-ID>
    ```
 
 ## Change the ADMIN variables
