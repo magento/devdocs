@@ -52,7 +52,7 @@ The script option settings determine the PHP version and {{site.data.var.mcd-pro
 
 > `init-docker.sh` options
 
-{: .install-script-options}
+{:.fixed}
 Option | Description
 :----- | :------
 `-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker environment.
@@ -119,9 +119,3 @@ Prior to setting up a local workspace, gather the following credentials and acco
 [Update the hosts file and install dependencies]: {{site.baseurl}}/cloud/docker/docker-installation.html#update-the-hosts-file-and-install-dependencies
 [{{site.data.var.mcd-package}} GitHub repository]: https://github.com/magento/magento-cloud-docker
 [Get support for {{site.data.var.mcd-prod}}]: {{site.baseurl}}/cloud/docker/docker-troubleshooting.html
-
-<style>
-table.install-script-options td:nth-child(1) {
-  width: 200px;
-}
-</style>
