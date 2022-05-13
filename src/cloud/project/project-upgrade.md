@@ -288,7 +288,7 @@ To create a system-specific configuration file:
 1. Add, commit, and push code changes.
 
    ```bash
-   git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push magento master
+   git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
    ```
 
    This generates an updated `/app/etc/config.php` file with a module list and configuration settings.
@@ -344,7 +344,7 @@ To resolve the error:
 1. Add, commit, and push code changes.
 
    ```bash
-   git add -A && git commit -m "Fixed deployment failure" && git push magento <branch-name>
+   git add -A && git commit -m "Fixed deployment failure" && git push origin <branch-name>
    ```
 
 <!--Link definitions-->
