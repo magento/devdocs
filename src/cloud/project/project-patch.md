@@ -18,7 +18,7 @@ Both packages improve the integration of all {{site.data.var.ee}} versions with 
 {:.bs-callout-tip}
 You can use the [Quality Patches Tool]({{ site.baseurl }}/quality-patches/usage.html) and [{{ site.data.var.mcp-prod }}](#standalone) packages as stand-alone packages for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects. We recommend using the Quality Patches Tool for non-Cloud projects.
 
-When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses {{ site.data.var.mcp-package }} and `magento/quality-patches` to check for pending patches and applies them automatically in the following order:
+When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `{{ site.data.var.mcp-package }}` and `magento/quality-patches` to check for pending patches and applies them automatically in the following order:
 
 1. Apply all required Magento patches included in the {{ site.data.var.mcp-prod }} package.
 1. Apply selected optional Magento patches included in the Quality Patches Tool.
