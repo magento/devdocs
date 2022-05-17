@@ -2,6 +2,8 @@
 group: architecture-guide
 title: Extensibility and modularity
 menu_title: Extensibility and modularity
+migrated_to: https://developer.adobe.com/commerce/php/architecture/modules/
+layout: migrated
 ---
 
 ## Overview

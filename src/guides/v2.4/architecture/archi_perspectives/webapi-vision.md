@@ -1,5 +1,7 @@
 ---
 group: architecture-guide
+migrated_to: https://developer.adobe.com/commerce/php/architecture/technical-vision/web-api/
+layout: migrated
 ---
 
 # Technical vision - Web API

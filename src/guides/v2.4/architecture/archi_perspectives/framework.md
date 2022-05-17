@@ -1,6 +1,8 @@
 ---
 group: architecture-guide
 title: Commerce and Magento Framework
+migrated_to: https://developer.adobe.com/commerce/php/architecture/framework/
+layout: migrated
 ---
 
 ## Overview

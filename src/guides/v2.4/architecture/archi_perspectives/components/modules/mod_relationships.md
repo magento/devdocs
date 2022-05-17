@@ -2,6 +2,8 @@
 group: architecture-guide
 title: Module relationships
 menu_title: Module relationships
+migrated_to: https://developer.adobe.com/commerce/php/architecture/modules/relationships/
+layout: migrated
 ---
 
 ## Overview {#m2arch-module-relationships-overview}

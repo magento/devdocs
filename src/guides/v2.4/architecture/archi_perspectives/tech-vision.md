@@ -1,6 +1,8 @@
 ---
 group: architecture-guide
 title: Magento technical vision
+migrated_to: https://developer.adobe.com/commerce/php/architecture/technical-vision/
+layout: migrated
 ---
 
 The Magento technical vision is a collection of documents that describe the desired state of the Magento platform.
