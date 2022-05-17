@@ -5,8 +5,6 @@ migrated_to: https://developer.adobe.com/commerce/php/architecture/technical-vis
 layout: migrated
 ---
 
-# Technical vision - Web API
-
 Web API is crucial for Magento because of the need to integrate with order management, customer management, and other enterprise management software systems.
 
 There are many headless Magento installations in which a merchant partially uses Magento functionality, while the other pieces of an eCommerce website are provided by other systems.
