@@ -19,12 +19,12 @@ To do so, you have to check the `Enable Magento Integration` as it indicated [he
 
 Apart from this, you are also asked for:
 
-- Magento installation path
-- Adobe Commerce version (i.e., `2.4.1`)
-- Default license name for new modules (by default, `Proprietary`)
+*  Magento installation path
+*  Adobe Commerce version (i.e., `2.4.1`)
+*  Default license name for new modules (by default, `Proprietary`)
 
 ![]({{site.baseurl}}/common/images/phpstorm/enable-magento-integration.png)
 
 You can find more information in the following page:
 
-- [Using the Upgrade Compatibility Tool on PHP Storm](https://experienceleague.adobe.com/docs/commerce-learn/tutorials/upgrade/uct-phpstorm.html?lang=en).
+*  [Using the Upgrade Compatibility Tool on PHP Storm](https://experienceleague.adobe.com/docs/commerce-learn/tutorials/upgrade/uct-phpstorm.html?lang=en).
