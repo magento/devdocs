@@ -20,6 +20,10 @@ Although code for these features is bundled with quarterly releases of the {{ si
 {:.bs-callout-info}
 All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ce }} 2.4.4.
 
+{:.bs-callout-info}
+
+Merchants upgrading to {{ site.data.var.ee }} 2.4.4 or {{ site.data.var.ce }} 2.4.4 after July 2022 will see a warning from Composer about unallowed plugins. Plugins will not be loaded during upgrade unless they have been explicitly allowed. To implement this, Composer is changing the default value of the `allow-plugins` option to `{}`. See the  [Composer plugins issues when upgrading to Adobe Commerce 2.4.4](https://support.magento.com/hc/en-us/articles/6215997614093-Composer-plugins-issues-when-upgrading-to-Adobe-Commerce-2-4-4) Knowledge Base article for instructions on explicitly allowing plugin loading.
+
 ### Hotfixes included in this release
 
 {{ site.data.var.ce }} 2.4.4 includes resolution of all issues that were addressed by the following hotfixes, which were provided for {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.3, 2.4.3-p1, and 2.3.7-p2:
