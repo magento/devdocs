@@ -17,8 +17,8 @@ To install the Magento PHPStorm plugin:
 
 After the installation, it is necessary to enable the integration with Magento:
 
-1.  Go to **Preferences** > **Frameworks**.
-1.  Select the **Enable Magento Integration** checkbox. See [Install PHPStorm plugin](https://github.com/magento/magento2-phpstorm-plugin#installation) topic for more information.
+1. Go to **Preferences** > **Frameworks**.
+1. Select the **Enable Magento Integration** checkbox. See [Install PHPStorm plugin](https://github.com/magento/magento2-phpstorm-plugin#installation) topic for more information.
 
 You also need to provide:
 
