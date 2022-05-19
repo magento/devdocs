@@ -11,7 +11,7 @@ To install the Magento PHPStorm plugin:
 
    ![]({{site.baseurl}}/common/images/phpstorm/download-from-jetbrains.png)
 
-*  In your PHPStorm screen navigate to **Preferences** > **Plugins** and select Magento PHPStorm.
+*  You can also install it from your PHPStorm screen . Navigate to **Preferences** > **Plugins** and select Magento PHPStorm.
 
    ![]({{site.baseurl}}/common/images/phpstorm/install-through-phpstorm.png)
 
