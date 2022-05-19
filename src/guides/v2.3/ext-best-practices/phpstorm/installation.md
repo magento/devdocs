@@ -11,7 +11,7 @@ To install the Magento PHPStorm plugin:
 
    ![]({{site.baseurl}}/common/images/phpstorm/download-from-jetbrains.png)
 
-*  You can also install it from your PHPStorm screen . Navigate to **Preferences** > **Plugins** and select Magento PHPStorm.
+*  Or alternatively, you can install it from your PHPStorm screen. Navigate to **Preferences** > **Plugins** and select Magento PHPStorm.
 
    ![]({{site.baseurl}}/common/images/phpstorm/install-through-phpstorm.png)
 
@@ -29,27 +29,3 @@ You also need to provide:
 ![]({{site.baseurl}}/common/images/phpstorm/enable-magento-integration.png)
 
 See the video tutorial [Using the Upgrade Compatibility Tool on PHP Storm](https://experienceleague.adobe.com/docs/commerce-learn/tutorials/upgrade/uct-phpstorm.html?lang=en) page for more information about the Magento PHPStorm plugin.
-
-You can download this plugin from the [PHP Storm Marketplace](https://plugins.jetbrains.com/plugin/8024-magento-phpstorm).
-
-![]({{site.baseurl}}/common/images/phpstorm/download-from-jetbrains.png)
-
-Or alternatively, you can look for it and install it directly on your PHP Storm through `Preferences -> Plugins`.
-
-![]({{site.baseurl}}/common/images/phpstorm/install-through-phpstorm.png)
-
-In any case, after installing it you will need to enable the integration with Magento through `Preferences -> Frameworks`.
-
-To do so, you have to check the `Enable Magento Integration` as it indicated [here](https://github.com/magento/magento2-phpstorm-plugin#installation).
-
-Apart from this, you are also asked for:
-
-*  Magento installation path
-*  Adobe Commerce version (i.e., `2.4.1`)
-*  Default license name for new modules (by default, `Proprietary`)
-
-![]({{site.baseurl}}/common/images/phpstorm/enable-magento-integration.png)
-
-You can find more information in the following page:
-
-*  [Using the Upgrade Compatibility Tool on PHP Storm](https://experienceleague.adobe.com/docs/commerce-learn/tutorials/upgrade/uct-phpstorm.html?lang=en).
