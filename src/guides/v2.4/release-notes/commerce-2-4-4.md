@@ -22,7 +22,7 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 {:.bs-callout-info}
 
-Composer 2.2 introduced a security feature that requires merchants to identify trusted plugins in their `composer.json` file before the plugins will be executed. (Composer 2.2 was introduced in {{ site.data.var.ee }} 2.3.7/2.4.3 and {{ site.data.var.ce }} 2.3.7/2.4.3.) Currently, plugins that are included in the `composer.json` file but not marked as trusted are automatically installed. However, as of July 2022, Composer will not load plugins unless they have been explicitly allowed. See the [Composer plugins issues when upgrading to Adobe Commerce 2.4.4](https://support.magento.com/hc/en-us/articles/6215997614093-Composer-plugins-issues-when-upgrading-to-Adobe-Commerce-2-4-4) Knowledge Base article for instructions on how to modify the `composer.json` file to explicitly allow plugin loading.
+Composer 2.2 introduced a security feature that requires merchants to identify trusted plugins in their `composer.json` file before the plugins will be executed. Currently, plugins that are included in the `composer.json` file but not marked as trusted are automatically installed. However, as of July 2022, Composer will not load plugins unless they have been explicitly allowed. See the [Composer plugins issues when upgrading to Adobe Commerce 2.4.4](https://support.magento.com/hc/en-us/articles/6215997614093-Composer-plugins-issues-when-upgrading-to-Adobe-Commerce-2-4-4) Knowledge Base article for instructions on how to modify the `composer.json` file to explicitly allow plugin loading.
 
 ### Hotfixes included in this release
 
