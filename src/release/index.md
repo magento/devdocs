@@ -27,7 +27,7 @@ The following table provides the dates for scheduled releases (dates are subject
 Patch and Security Patch Releases are opportunities to upgrade the core codebase to keep your platform secure, reliable, and performant. Feature Releases occur every other month. Feature Releases are independent of the core codebase and are available through external module or extension. Any updates to existing independent features will also be released during Feature Release periods and will happen automatically if the feature is already implemented.
 
 {:.bs-callout-info}
-We have introduced a [new policy](https://www.adobe.com/content/dam/cc/en/legal/terms/enterprise/pdfs/Adobe-Commerce-Software-Lifecycle-Policy.pdf) that applies to our supported release lines. To learn more about the new strategy behind our 2022 release calendar and lifecycle policy, visit our [blog](https://magento.com/blog/accelerating-innovation-through-simplified-release-strategy).
+We have introduced a [new policy](https://www.adobe.com/content/dam/cc/en/legal/terms/enterprise/pdfs/Adobe-Commerce-Software-Lifecycle-Policy.pdf) that applies to our supported release lines. To learn more about the new strategy behind our 2022 release calendar and lifecycle policy, visit our [blog](https://business.adobe.com/blog/how-to/accelerating-innovation-through-simplified-release-strategy).
 
 ## Early access
 

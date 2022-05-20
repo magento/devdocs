@@ -147,8 +147,8 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </td>
 <td align="right">
 <p>50.112.160.58</p>
-<p>`54.213.195.223`</p>
-<p>`35.163.170.185`</p>
+<p>54.213.195.223</p>
+<p>35.163.170.185</p>
 </td>
 <td align="right">
 <p>52.209.44.44</p>
