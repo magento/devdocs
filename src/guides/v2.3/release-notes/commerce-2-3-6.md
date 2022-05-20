@@ -854,7 +854,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/system-requirements.html).
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{page.baseurl}}/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
 

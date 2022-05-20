@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Authentication
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/auth/
+layout: migrated
 ---
 
 {:.bs-callout-info}

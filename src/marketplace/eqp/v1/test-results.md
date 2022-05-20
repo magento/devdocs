@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Test results
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/test-results/
+layout: migrated
 ---
 
 Submissions go through several reviews before being released on the Commerce Marketplace.

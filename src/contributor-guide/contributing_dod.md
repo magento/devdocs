@@ -4,6 +4,8 @@ title: Commerce Definition of Done
 redirect_from:
 - guides/v2.3/contributor-guide/contributing_dod.html
 - guides/v2.4/contributor-guide/contributing_dod.html
+migrated_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/definition-of-done/
+layout: migrated
 ---
 
 ## Overview

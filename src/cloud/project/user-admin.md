@@ -16,10 +16,10 @@ redirect_from:
 
 You can manage access to {{site.data.var.ece}} projects by adding users and assigning roles. Assign project-level roles to provide access to the entire project, and environment-level roles to set permissions per available environment.
 
-| **Role** | **Scope**  | **Access** |
+| **Role**            | **Scope**  | **Access** |
 |-|-|-|
 | **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Adobe assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You must submit a {{site.data.var.ee}} Support ticket to modify settings or change the Account owner. |
-| **Super user** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][] and managing users. |
+| **Super User** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][] and managing users. |
 | **Project reader** | Project | View access to all project environments. Users with this role cannot perform tasks on any environment. However, you can configure environment-level permissions for users with this role to permit write access to a specific environment. |
 | **Admin** | Environment | Change settings and perform tasks on an environment, including merging with the parent environment |
 | **Contributor** | Environment | Push code and branch the environment |
@@ -27,7 +27,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 ## Add user authentication requirements
 
-For added security, Adobe provides project-level MFA enforcement to require two-factor authentication (2FA) for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
+For added security, Adobe provides project-level multi-factor authentication (MFA) enforcement to require two-factor authentication (2FA) for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
 
@@ -40,7 +40,9 @@ Changing user configuration on an {{site.data.var.ece}} environment requires a s
 
 **Prerequisites:**
 
-To add a user to a project or environment, you need the email address associated with an existing {{ site.data.var.ece }} account. New users can [register for an account][{{site.data.var.ece}} account] and provide the associated email address after completing account validation.
+-  To add a user to a project or environment, you need the email address associated with an existing {{ site.data.var.ece }} account. New users can [register for an account][{{site.data.var.ece}} account] and provide the associated email address after completing account validation.
+
+-  Users assigned the **Admin** role can no longer manage users using the `magento-cloud` CLI. Only users that are granted the **Super User** or **Account Owner** role can manage users.
 
 ### Manage users with the `magento-cloud` CLI {#cloud-user-mg-cli}
 
@@ -147,6 +149,9 @@ Add a project-level user:
 
    {:.bs-callout-warning}
    After adding project-level users, you must redeploy all environments to apply the changes. Adding a project user does not trigger the redeploy automatically.
+
+ {:.bs-callout-warning}
+   Only **Super Users** can manage users in any environment. To grant a user access to the **Users** tab when configuring the environment, another **Super User** or the **Account Owner** must assign that user the **Super User** role.
 
 {:.procedure}
 Add an environment-level user:

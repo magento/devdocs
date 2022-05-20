@@ -89,7 +89,7 @@ epoch      timestamp cluster       status node.total node.data shards pri relo i
 1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
 ```
 
-To verify Opensearch is working, enter the following commands:
+To verify OpenSearch is working, enter the following commands:
 
 ```bash
 curl -XGET https://<host>:9200 -u 'admin:admin' --insecure

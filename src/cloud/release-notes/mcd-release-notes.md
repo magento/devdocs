@@ -29,7 +29,7 @@ Release date: March 31, 2022
 Release date: March 10, 2022
 
 -  {:.new}**Support PHP 8.1**—Added support for PHP 8.1.
--  {:.new}**Opensearch**—Added images of Opensearch versions 1.1 and 1.2.
+-  {:.new}**OpenSearch**—Added images of OpenSearch versions 1.1 and 1.2.
 -  {:.new}**Composer 2.1**—Set composer 2.1.x by default in PHP 8.x images.
 -  {:.new}**PHP images improvements**—
 
@@ -37,7 +37,7 @@ Release date: March 10, 2022
    -  Upgraded xDebug version 3.1.2
    -  Upgraded xmlrpc 1.0.0RC3
 
--  {:.fix}**Elasticsearch & Opensearch improvements**—Improvements in Elasticsearch and Opensearch Dockerfiles; removed the Elasticsearch 5.2 image.
+-  {:.fix}**Elasticsearch & OpenSearch improvements**—Improvements in Elasticsearch and OpenSearch Dockerfiles; removed the Elasticsearch 5.2 image.
 -  {:.fix}**Sodium extension**—Enabled the `sodium` extension by default in all PHP images.
 -  {:.fix}**Composer cache volume**—Fixed path for Composer cache volume to have cached Composer packages.
 -  {:.fix}**Memory limitation in nginx**—Fixed limitation of memory in NGINX image.
@@ -191,8 +191,6 @@ Release date: August 5, 2020
 
 -  {:.new}**CLI command updates**
 
-{: .docker-service-versions-table}
-
 | Action                                                                          | Command                                                        |
 | ------------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | Add an entrypoint to the database container to restore the database from backup | `./vendor/bin/ece-docker build:compose --db --with-entrypoint` |
@@ -255,8 +253,6 @@ Release date: June 25, 2020
    -  Improved mutagen file synchronization performance by adding a second sync session to synchronize files in the `vendor` directory. This change prevents mutagen from getting stuck during the file synchronization process. *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/127).*<!--MCLOUD-6010-->
 
    -  {:.new}**CLI command updates**
-
-      {: .docker-service-versions-table}
 
 | Action                                                                                                                     | Command                                                                                                         |
 | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -375,15 +371,3 @@ Release date: Feb 5, 2020
 [Cloud Varnish container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container
 [Pound TLS Termination Proxy]: https://github.com/mnuessler/docker-tls-termination-proxy/blob/master/README.md
 [`pound.cfg`]: https://github.com/magento/magento-cloud-docker/blob/1.0/images/tls/pound.cfg
-
-<!--Custom table configuration-->
-
-<!--
-  This is a style declaration so that first column does not wrap
--->
-
-<style>
-table.docker-service-versions-table td:nth-child(2) {
-  width: 500px;
-}
-</style>

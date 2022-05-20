@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Getting help
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/help/
+layout: migrated
 ---
 
 Use these resources if you need additional help.

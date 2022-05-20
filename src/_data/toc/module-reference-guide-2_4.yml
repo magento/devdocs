@@ -432,6 +432,9 @@ pages:
   - label: ElasticsearchCatalogPermissions
     url: /mrg/module-elasticsearch-catalog-permissions.html
 
+  - label: ElasticsearchCatalogPermissionsGraphQl
+    url: /mrg/module-elasticsearch-catalog-permissions-graph-ql.html
+
   - label: Email
     url: /mrg/module-email.html
 

@@ -249,6 +249,7 @@ Attribute | Data type | Description
 `items` | [[ProductInterface]](#ProductInterface) | An array of products that match the specified search criteria
 `page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | An object that includes the `page_info` and `currentPage` values specified in the query
 `sort_fields` |  [SortFields](#SortFields) | An object that includes the default sort field and all available sort fields
+`suggestions` | [[SearchSuggestion]](#SearchSuggestion) | An array that contains suggested search words. This object is returned when the value specified in the `search` input parameter does not return any results
 `total_count` | Int | The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not
 
 ### AggregationsFilterInput filter
@@ -305,6 +306,14 @@ Attribute | Data type | Description
 `current_page` | Int | Specifies which page of results to return
 `page_size` | Int | Specifies the maximum number of items to return
 `total_pages` | Int | The total number of pages returned
+
+### SearchSuggestion attributes {#SearchSuggestion}
+
+The `SearchSuggestion` object provides an array of suggested search terms.
+
+Attribute | Data type | Description
+--- | --- | ---
+`search` | String! | A string that provides a suggested search term that matches an existing product
 
 ### SortFields attributes {#SortFields}
 

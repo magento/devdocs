@@ -16,11 +16,11 @@ The `CartItemInterface` has the following implementations:
 
 The `CartItemInterface` and all of its implementations can contain the following attributes.
 
-Attribute | Data Type                                                                        | Description
---- |----------------------------------------------------------------------------------| ---
-`errors` | [CartItemError](#CartItemErrorObject)                                            | An array of errors encountered while loading the cart item
-`id` | String                                                                           | Deprecated. Use `uid` instead. The ID of the item
-`prices` | [CartItemPrices](#CartItemPrices)                                                | Includes the price of an item, any applied discounts, and calculated totals
+Attribute |  Data Type | Description
+--- | --- | ---
+`errors` | [CartItemError!](#CartItemError) | An array of errors encountered while loading the cart item. PWA Studio only.
+`id` | String | Deprecated. Use `uid` instead. The ID of the item
+`prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | Contains attributes that are common to all types of products
 `quantity` | Float                                                                            | The number of items in the cart
 `uid` | ID!                                                                              | The unique ID for the `CartItemInterface` object
@@ -38,14 +38,14 @@ Attribute |  Data Type | Description
 `row_total_including_tax` | Money! | The value of `row_total` plus the tax applied to the item
 `total_item_discount` | Money | The total of all discounts applied to the item
 
-### CartItemError object {#CartItemErrorObject}
+### CartItemError object {#CartItemError}
 
-The `CartItemError` object can contain the following attributes.
+The CartItemError object is only available in PWA Studio.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`code`| [CartItemErrorType] | An error code that describes the error encountered. CartItemErrorType is an enumeration that can have the value of UNDEFINED, ITEM_QTY, or ITEM_INCREMENTS
-`message`| [String] | A localized error message
+`code` | CartItemErrorType! | An error code that describes the error encountered. One of `ITEM_QTY`, `ITEM_INCREMENTS`, or `UNDEFINED`
+`message` | String! | A localized error message
 
 ### SelectedCustomizableOption attributes {#SelectedCustomizableOption}
 
@@ -230,6 +230,7 @@ mutation {
   }
 }
 ```
+
 **Response:**
 
 ```json
