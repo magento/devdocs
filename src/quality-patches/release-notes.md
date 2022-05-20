@@ -21,13 +21,25 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.14
+
+-  **MDVA-43983** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where products 'Not Visible Individually' still appear in Catalog Advanced Search Results.
+-  **MDVA-44100** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.5`)_-Fixes the issue where all FPTs are assigned to the last product in the shopping cart and reset for other products.
+-  **MDVA-43605** _(for Adobe Commerce and Magento Open Source `>=2.3.1 <2.4.5`)_-Fixes the issue where order data returns negative values for row totals when using Rest API.
+-  **MDVA-43102** _(for Adobe Commerce and Magento Open Source `>=2.3.1 <2.4.5`)_-Fixes the issue where the salable quantity is not updated correctly when a refund was done via REST API.
+-  **MDVA-43178** _(for Adobe Commerce and Magento Open Source `>=2.4.3-p2 <2.4.5`)_-Fixes the issue where a customer token for a custom store cannot be retrieved in GraphQL.
+-  **MDVA-43859** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.5`)_-Fixes the issue where the error \"No such entity with customerId =\" is logged when a deleted customer tries to log in.
+-  **MDVA-44147** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where a GraphQL request doesn't return Requisition Lists.
+-  **MDVA-44505** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.3`)_-Fixes the issues where GraphQL Applying Reward Points does not update Grand Total and where store credit is applied multiple times during the order placement.
+-  Updated patches: MDVA-29148, MDVA-36464-V5, MDVA-42584, MDVA-39993-V2.
+
 ## v1.1.13
 
 -  **MDVA-42969** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.3`)_-Fixes the issue where the Related Product Rule works only when Customer Segment is set to All.
 -  **MDVA-39605** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.5`)_-Fixes the issue where Redis cache TTL (expiration date) has a wrong value.
 -  **MDVA-43862** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.5`)_-Fixes the issue where the customer can’t update cart items because of a GraphQL UpdateCartItems mutation error.
 -  **MDVA-43824** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <=2.3.7-p3 || >=2.4.1 <2.4.5`)_-Fixes the issue where an error appears on canceling orders with a discount.
--  **MDVA-43451** _(for Adobe Commerce and Magento Open Source `>=1.3.2 <1.3.4`)_-Fixes the issue where the error “The store that was requested wasn’t found. Verify the store and try again.” appears while configuring a shared catalog for a specific website.
+-  **MDVA-43451** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.5`)_-Fixes the issue where the error “The store that was requested wasn’t found. Verify the store and try again.” appears while configuring a shared catalog for a specific website.
 -  **MDVA-43491** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.4.5`)_-Fixes the issue where the base image label doesn’t update when importing products for a multi-store website.
 -  **MDVA-43601** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue with missing triggers after full reindex.
 -  **MDVA-42046** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <=2.3.5-p2 || >=2.4.0 <2.4.5`)_-Fixes the issue where an incorrect value is assigned to a product attribute with a date input field while updating a product.

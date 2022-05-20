@@ -6,14 +6,14 @@ functional_areas:
   - Configuration
 ---
 
-The {{site.data.var.ece}} [Project Web Interface](https://account.magento.com/customer/account/login/) enables you to do the following for all Starter and Pro environments:
+For all {{site.data.var.ece}} projects, you can use the [Project Web Interface](https://account.magento.com/customer/account/login/) to perform the following tasks:
 
 -  [Access projects](#project-access)
 -  [Configure environment settings](#configure-environment-settings)
 -  [Add users and manage access]({{ site.baseurl }}/cloud/project/user-admin.html)
 -  [Manage Git branches]({{ site.baseurl }}/cloud/project/project-webint-branch.html)
 
-As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter and Pro environments.
+Changes that you make to environment configuration trigger a redeployment of that environment.
 
 ## Access your project and environments {#project-access}
 
@@ -26,9 +26,8 @@ The Project Web Interface provides several ways to access your project and envir
 To access projects and environments through the Project Web Interface:
 
 1. [Log in to your project](https://account.magento.com/customer/account/login/).
-1. Click **Access Site** for a list of URLs for web access and the command for SSH access.
-
-   ![Access your project by URL or SSH]({{ site.baseurl }}/common/images/cloud/cloud_project-access.png){:width="600px"}
+1. The left pane shows your list of environments.
+1. Click **Access Site** for a list of storefront URLs for web access and the command for SSH access.
 
 For more information about using SSH, see [SSH to an environment]({{ site.baseurl }}/cloud/env/environments-ssh.html#magento-cli). To clone the project using either the {{site.data.var.ece}} CLI or Git, use the links in the field under the branch name.
 
