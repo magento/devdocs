@@ -4,8 +4,35 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon May 9 14:38:42 2022
+updated: Mon May 16 14:38:43 2022
 entries:
+- description: Update the [Released versions](https://devdocs.magento.com/release/released-versions.html)
+    topic:<br/>- Add 2.4.4, 2.4.3-p2, 2.3.7-p3<br/>- Update the end of support date
+    for 2.4.0-2.4.3
+  versions: 2.3.x, 2.4.x
+  type: Technical
+  date: May 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2958
+  merge_commit: 7231798ae6bd3bfc1ad8b524e97d4b3b318fb1dd
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.3.x
+  - Technical
+  - 2.4.x
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.14 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: May 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2952
+  merge_commit: 9e683d39d04237019f5f0ebb581b83b5c59a416b
+  contributor: apoltoratskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
 - description: Added a tutorial on [creating a bundled product](https://devdocs.magento.com/guides/v2.4/rest/tutorials/bundle-product/bundle-product-intro.html)
     with the API.
   versions: 2.3.x, 2.4.x
