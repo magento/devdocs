@@ -9,6 +9,20 @@ These release notes can include:
 -  {:.new} New features
 -  {:.fix} Fixes and improvements
 
+## Magento B2B - Adobe Commerce 2.4.5
+
+-  {:.fix} <!--- ACP2E-453--> {{ site.data.var.ee }} no longer sends email notifications each time an existing Company is updated by an API call. Emails are now sent only when a company is created.
+
+-  {:.fix} <!--- ACP2E-406--> {{ site.data.var.ee }} now correctly calculates a negotiable quote grand total when the **Enable Cross Border Trade** tax calculation setting is enabled.
+
+-  {:.fix} <!--- ACP2E-322--> Configurable products are now moved to the last position in the product listing after stock is updated when the **Move out of stock to the bottom** setting is enabled. A new custom database query has been implemented to negate Elasticsearch index sort order, which disregards Admin-enabled sort order. Previously, configurable products and their child products were not moved to the bottom of the list when this setting was enabled.
+
+-  {:.fix} <!--- ACP2E-308--> Purchase Order email now honors the email sending setting of each website in a multi-site deployment. A check for the **Disable Email Communications** setting has been added to the custom logic for email queues. Previously, Magento did not honor the email sending setting of the secondary website.
+
+-  {:.fix} <!--- ACP2E-302--> The title of the SKU field of the Quick Order page has been edited for clarity.
+
+-  {:.fix} <!--- ACP2E-543--> {{ site.data.var.ee }} now displays a more informative error message when a shopper enters an invalid SKU in the **Enter SKU or Product Name** field.
+
 ## Magento B2B - Adobe Commerce 2.4.4
 
 -  {:.fix} <!--- MC-41985--> The time required to upgrade from {{ site.data.var.ee }} 2.3.x to {{ site.data.var.ee }} 2.4.x in deployments with more than 100,000 company roles has been substantially reduced.

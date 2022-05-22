@@ -3,10 +3,9 @@ group: release-notes
 title: Magento Open Source 2.4.5 Release Notes
 ---
 
-{{ site.data.var.ce }} 2.4.5 introduces 
+{{ site.data.var.ce }} 2.4.5 introduces
 
 This release includes almost  quality fixes and enhancements.
-
 
 {:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ce }} 2.4.5 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
@@ -43,7 +42,7 @@ Security improvements for this release improve compliance with the latest securi
 
 ### Platform enhancements
 
-{{ site.data.var.ce }} 2.4.5 now supports 
+{{ site.data.var.ce }} 2.4.5 now supports
 
 ### GraphQL
 
@@ -57,7 +56,7 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 
 ### Accessibility updates
 
-This release brings enhanced conformance to standard accessibility guidelines. 
+This release brings enhanced conformance to standard accessibility guidelines.
 
 ### Page Builder
 
@@ -65,7 +64,7 @@ This release brings enhanced conformance to standard accessibility guidelines.
 
 <!--- AC-1589-->
 
-We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code. 
+We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 
 ### Installation, upgrade, deployment
 
