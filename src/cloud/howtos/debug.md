@@ -45,7 +45,7 @@ For Pro Production & Staging environments this configuration step is not require
 
 To enable Xdebug for your project, add `xdebug` to the `runtime:extensions` section of the `.magento.app.yaml` file.
 
-You can enable Xdebug directly to all Starter environments and Pro Integration environments. 
+You can enable Xdebug directly to all Starter environments and Pro Integration environments.
 
 {:.procedure}
 To enable Xdebug:
@@ -264,7 +264,6 @@ The `xdebug_key` can be found by using SSH to login into the primary node and ex
 ```bash
 cat /etc/platform/*/nginx.conf | grep xdebug.sock | head -n1
 ```
-
 
 {:.procedure}
 To set up an SSH tunnel to a Staging or Production environment:
