@@ -20,6 +20,32 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+### v1.2.x
+
+{{site.data.var.im}} 1.2.x (module version: `magento/inventory-metapackage = 1.2.4`) is supported with version 2.4.4 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.fix} The default inventory stock status of bundle and grouped products updates as expected when a merchant creates a shipment from the Admin. Previously, the status of these products remained unchanged after a shipment was created. <!--- ACP2E-418-->
+
+-  {:.fix} Configurable products are now returned back to stock when one of these conditions is met: the parent product has at least one saved child in stock, or the configurable itself was updated and set as **in stock** and had at least one child in stock <!--- ACP2E-443-->
+
+-  {:.fix} Inventory changes implemented through the REST API are now reflected as expected on product detail pages. The cache for catalog products is now cleaned after comparing the last and current stock statuses. Previously, omitting the callback function resulted in the incorrect evaluation of stock status changes, which did not trigger the necessary cache cleaning. As a result, the storefront did not reflect the inventory changes. <!--- ACP2E-161-->
+
+-  {:.fix} Products that are assigned to default stock and that were previously out of stock are now visible on the storefront after updating the source item using `V1/inventory/source-items’. Previously, this REST API endpoint set the wrong 'stock_status`. <!--- ACP2E-562-->
+
+-  {:.fix} Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicate with the exception of a leading zero (for example, `01234` and `1234`). Previously, Magento did not unassign inventory sources and threw an error. <!--- ACP2E-2641-->
+
+-  {:.fix} Product stock status is now always **in stock** on the storefront when infinite back orders are enabled and the product is assigned to a custom stock, regardless of the quantity backordered. Previously, products went out of stock even when back orders were enabled. <!--- ACP2E-664-->
+
+-  {:.fix} Configurable product parent and child product stock is now updated correctly after the source item is updated with `POST /V1/inventory/source-items`. <!--- ACP2E-442-->
+
+-  {:.fix} Out-of-stock grouped products are no longer listed on the storefront Category page. <!--- ACP2E-2082-->
+
+-  {:.fix} Corrected the package name in `CatalogInventory` `composer.json`. <!--- ACP2E-2914-->
+
+-  {:.fix} Back order status is now correctly represented in the Admin after placing an order with zero quantity product in a multi source/stock deployment. [GitHub-33756](https://github.com/magento/magento2/issues/33756) <!--- ACP2E-713-->
+
+-  {:.fix} Out-of-stock bundle products are no longer displayed on the storefront Category page when the bundle product is updated from the stocks section. <!--- ACP2E-2012-->
+
 ### v1.2.4
 
 {{site.data.var.im}} 1.2.4 (module version: `magento/inventory-metapackage = 1.2.4`) is supported with version 2.4.4 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.

@@ -88,7 +88,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-49-->
 
-*  You can now rename a data patch and add the old class name as an alias in the `patch_list` database table. Magento now checks whether data patch aliases already existed in the database before applying the patch. Previously, Magento threw an error under these conditions.
+*  You can now rename a data patch and add the old class name as an alias in the `patch_list` database table. {{ site.data.var.ee }} now checks whether data patch aliases already existed in the database before applying the patch. Previously, {{ site.data.var.ee }} threw an error under these conditions.
 
 ### Accessibility
 
@@ -122,7 +122,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-245-->
 
-*  Permission exceptions are now handled for restricted products that are added by SKU. Shoppers are now given an appropriate message on the storefront, and the quantity field in the error table is disabled. Previously, Magento threw an exception like this: `There has been an error processing your request`.
+*  Permission exceptions are now handled for restricted products that are added by SKU. Shoppers are now given an appropriate message on the storefront, and the quantity field in the error table is disabled. Previously, {{ site.data.var.ee }} threw an exception like this: `There has been an error processing your request`.
 
 <!--- ACP2E-148-->
 
@@ -138,7 +138,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-42-->
 
-*  `cart` query responses no longer return null responses when a product is out of stock. Previously, when you ran a query with an out-of-stock product, Magento displayed a `null` value under the `items` section in the response.
+*  `cart` query responses no longer return null responses when a product is out of stock. Previously, when you ran a query with an out-of-stock product, {{ site.data.var.ee }}displayed a `null` value under the `items` section in the response.
 
 <!--- ACP2E-38-->
 
@@ -162,7 +162,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2630-->
 
-*  Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicate with the exception of a leading zero (for example, `01234` and `1234`). Previously, Magento did not unassign inventory sources and threw an error.
+*  Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicate with the exception of a leading zero (for example, `01234` and `1234`). Previously, {{ site.data.var.ee }}did not unassign inventory sources and threw an error.
 
 ### Catalog
 
@@ -208,7 +208,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-522-->
 
-*  Magento no longer throws an error when a category rule assigns a product to a category, and the category is subsequently sorted.
+*  {{ site.data.var.ee }}no longer throws an error when a category rule assigns a product to a category, and the category is subsequently sorted.
 
 <!--- ACP2E-516-->
 
@@ -228,7 +228,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-345-->
 
-*  Magento now provides validation error messages when you try to add a product URL key with a trailing hyphen. Informative tooltip text is also available.
+*  {{ site.data.var.ee }}now provides validation error messages when you try to add a product URL key with a trailing hyphen. Informative tooltip text is also available.
 
 <!--- ACP2E-274-->
 
@@ -244,7 +244,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-39-->
 
-*  When the `Synchronize widget products with backend storage` setting is enabled, Magento adds recently view product data into the `catalog_product_frontend_action` database table. It includes the customer or visitor ID when adding records. The `recently_viewed_product` section in the response is now empty if customer ID and visitor ID are null. As a result, when the `customer/section/load` Ajax request is sent, Magento can correctly filter recently viewed products based on customer or visitor ID. Previously, the response included all the data available in the `catalog_product_frontend_action` database table because there was no check for an empty customer or visitor ID.
+*  When the `Synchronize widget products with backend storage` setting is enabled, {{ site.data.var.ee }}adds recently view product data into the `catalog_product_frontend_action` database table. It includes the customer or visitor ID when adding records. The `recently_viewed_product` section in the response is now empty if customer ID and visitor ID are null. As a result, when the `customer/section/load` Ajax request is sent, {{ site.data.var.ee }} can correctly filter recently viewed products based on customer or visitor ID. Previously, the response included all the data available in the `catalog_product_frontend_action` database table because there was no check for an empty customer or visitor ID.
 
 <!--- ACP2E-28-->
 
@@ -274,7 +274,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-687-->
 
-*  Magento now displays the correct product price for a configurable product with a selected option after changing its quantity on product details page. Previously, the price was reset to the initial value after the quantity changed.
+*  {{ site.data.var.ee }} now displays the correct product price for a configurable product with a selected option after changing its quantity on product details page. Previously, the price was reset to the initial value after the quantity changed.
 
 <!--- ACP2E-461-->
 
@@ -286,21 +286,21 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-360-->
 
-*  Multi-select attributes are now saved correctly during product edit. Previously, Magento saved the default option for non-selected attributes as well as selected attributes when saving a product.
+*  Multi-select attributes are now saved correctly during product edit. Previously, {{ site.data.var.ee }} saved the default option for non-selected attributes as well as selected attributes when saving a product.
 
 <!--- ACP2E-55-->
 
-*  Magento now displays configurable attributes as expected during the creation of global `select` attributes via a patch script. Previously, eligible global attributes were hidden.
+*  {{ site.data.var.ee }} now displays configurable attributes as expected during the creation of global `select` attributes via a patch script. Previously, eligible global attributes were hidden.
 
 <!--- ACP2E-2521-->
 
-*  `addConfigurableProductsToCart` queries can now be used to add configurable products with custom options. Previously, Magento threw this error: `Magento 2.3.4 graphql Notice: Undefined index: option_value in /var/www/html/mg234/vendor/magento/module-configurable-product-graph-ql/Model/Resolver/ConfigurableCartItemOptions.php on line 62`. [GitHub-28860](https://github.com/magento/magento2/issues/28860)
+*  `addConfigurableProductsToCart` queries can now be used to add configurable products with custom options. Previously, {{ site.data.var.ee }} threw this error: `Magento 2.3.4 graphql Notice: Undefined index: option_value in /var/www/html/mg234/vendor/magento/module-configurable-product-graph-ql/Model/Resolver/ConfigurableCartItemOptions.php on line 62`. [GitHub-28860](https://github.com/magento/magento2/issues/28860)
 
 ### Customer
 
 <!--- ACP2E-390-->
 
-*  Magento now displays predefined EAV system attributes correctly according to the website setting on the storefront. Previously, website-level customer attributes that were enabled for one website and disabled for another were displayed as enabled for both websites.
+*  {{ site.data.var.ee }} now displays predefined EAV system attributes correctly according to the website setting on the storefront. Previously, website-level customer attributes that were enabled for one website and disabled for another were displayed as enabled for both websites.
 
 ### Customer segment
 
@@ -334,7 +334,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2896-->
 
-*  Magento no longer throws an SQL error after assigning a new source to a product and changing its quantity. [GitHub-35262](https://github.com/magento/magento2/issues/35262)
+*  {{ site.data.var.ee }}no longer throws an SQL error after assigning a new source to a product and changing its quantity. [GitHub-35262](https://github.com/magento/magento2/issues/35262)
 
 <!--- AC-401-->
 
@@ -342,7 +342,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-1716-->
 
-*  The `updateCartCurrency` function now sets string instead of an object inside the cart object. Previously, Magento did not load a quote using `getQuote` because the `updateCartCurrency` function set an object instead of a string inside the cart object. [GitHub-34199](https://github.com/magento/magento2/issues/34199)
+*  The `updateCartCurrency` function now sets string instead of an object inside the cart object. Previously, {{ site.data.var.ee }} did not load a quote using `getQuote` because the `updateCartCurrency` function set an object instead of a string inside the cart object. [GitHub-34199](https://github.com/magento/magento2/issues/34199)
 
 <!--- AC-2428-->
 
@@ -352,7 +352,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-1668-->
 
-*  Magento sessions no longer end after a GraphQL request is made. Previously, the `ClearCustomerSessionAfterRequest` plugin logged out the shopper. [GitHub-34550](https://github.com/magento/magento2/issues/34550)
+*  {{ site.data.var.ee }} sessions no longer end after a GraphQL request is made. Previously, the `ClearCustomerSessionAfterRequest` plugin logged out the shopper. [GitHub-34550](https://github.com/magento/magento2/issues/34550)
 
 <!--- ACP2E-675-->
 
@@ -364,7 +364,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-448-->
 
-*  Magento no longer throws an exception when you add a bundle product through Page Builder.
+*  {{ site.data.var.ee }} no longer throws an exception when you add a bundle product through Page Builder.
 
 <!--- ACP2E-427-->
 
@@ -408,7 +408,7 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 <!--- AC-2521-->
 
-*  `addConfigurableProductsToCart` queries can now be used to add configurable products with custom options. Previously, Magento threw this error: `Magento 2.3.4 graphql Notice: Undefined index: option_value in /var/www/html/mg234/vendor/magento/module-configurable-product-graph-ql/Model/Resolver/ConfigurableCartItemOptions.php on line 62`. [GitHub-28860](https://github.com/magento/magento2/issues/28860)
+*  `addConfigurableProductsToCart` queries can now be used to add configurable products with custom options. Previously, {{ site.data.var.ee }} threw this error: `Magento 2.3.4 graphql Notice: Undefined index: option_value in /var/www/html/mg234/vendor/magento/module-configurable-product-graph-ql/Model/Resolver/ConfigurableCartItemOptions.php on line 62`. [GitHub-28860](https://github.com/magento/magento2/issues/28860)
 
 <!--- AC-2522-->
 
@@ -424,7 +424,7 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 <!--- AC-1716-->
 
-*  The `updateCartCurrency` function now sets string instead of an object inside the cart object. Previously, Magento did not load a quote using `getQuote` because the `updateCartCurrency` function set an object instead of a string inside the cart object. [GitHub-34199](https://github.com/magento/magento2/issues/34199)
+*  The `updateCartCurrency` function now sets string instead of an object inside the cart object. Previously, {{ site.data.var.ee }} did not load a quote using `getQuote` because the `updateCartCurrency` function set an object instead of a string inside the cart object. [GitHub-34199](https://github.com/magento/magento2/issues/34199)
 
 <!--- AC-1760-->
 
@@ -440,7 +440,7 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 <!--- AC-2364-->
 
-*  The `GetLines` query no longer throws an exception when fetching a list of categories one of which contains an image that can’t be found on the filesystem. Previously, Magento threw this exception: Category image not found`. [GitHub-34266](https://github.com/magento/magento2/issues/34266)
+*  The `GetLines` query no longer throws an exception when fetching a list of categories one of which contains an image that can’t be found on the filesystem. Previously, {{ site.data.var.ee }} threw this exception: Category image not found`. [GitHub-34266](https://github.com/magento/magento2/issues/34266)
 
 <!--- AC-2368-->
 
@@ -460,7 +460,7 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 <!--- AC-1668-->
 
-*  Magento sessions no longer end after a GraphQL request is made. Previously, the `ClearCustomerSessionAfterRequest` plugin logged out the shopper. [GitHub-34550](https://github.com/magento/magento2/issues/34550)
+*  {{ site.data.var.ee }} sessions no longer end after a GraphQL request is made. Previously, the `ClearCustomerSessionAfterRequest` plugin logged out the shopper. [GitHub-34550](https://github.com/magento/magento2/issues/34550)
 
 <!--- AC-818-->
 
@@ -476,7 +476,7 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 <!--- ACP2E-499-->
 
-*  `setShippingAddressesOnCart` requests now successfully validate region IDs. Previously, Magento threw an error when you used region ID instead of region code.
+*  `setShippingAddressesOnCart` requests now successfully validate region IDs. Previously, {{ site.data.var.ee }} threw an error when you used region ID instead of region code.
 
 <!--- ACP2E-470-->
 
@@ -512,7 +512,7 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 <!--- AC-2364-->
 
-*  The `GetLines` query no longer throws an exception when fetching a list of categories one of which contains an image that can’t be found on the filesystem. Previously, Magento threw this exception: Category image not found`. [GitHub-34266](https://github.com/magento/magento2/issues/34266)
+*  The `GetLines` query no longer throws an exception when fetching a list of categories one of which contains an image that can’t be found on the filesystem. Previously, {{ site.data.var.ee }} threw this exception: Category image not found`. [GitHub-34266](https://github.com/magento/magento2/issues/34266)
 
 <!--- AC-2368-->
 
@@ -548,11 +548,11 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 <!--- ACP2E-632-->
 
-*  Magento now checks for a custom view before filtering columns when exporting reports. Previously, exported reports did not take into account custom views, and exported columns were incorrect.
+*  {{ site.data.var.ee }} now checks for a custom view before filtering columns when exporting reports. Previously, exported reports did not take into account custom views, and exported columns were incorrect.
 
 <!--- ACP2E-502-->
 
-*  Magento now successfully imports images with a long file name. Previously, Magento did not import the image and threw this error: `Imported resource (image) could not be downloaded from external resource due to timeout or access permissions in row(s):`.
+*  {{ site.data.var.ee }} now successfully imports images with a long file name. Previously, {{ site.data.var.ee }} did not import the image and threw this error: `Imported resource (image) could not be downloaded from external resource due to timeout or access permissions in row(s):`.
 
 <!--- ACP2E-294-->
 
@@ -576,7 +576,7 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 <!--- ACP2E-203-->
 
-*  Customer, customer address, and order actions are now logged correctly in the Admin action report. Previously, Magento did not log actions if the `postDispatch` handler had not been specified in configuration settings.
+*  Customer, customer address, and order actions are now logged correctly in the Admin action report. Previously, {{ site.data.var.ee }} did not log actions if the `postDispatch` handler had not been specified in configuration settings.
 
 ### {{ site.data.var.ee }} coding standard
 
@@ -608,7 +608,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-550-->
 
-*  You can now successfully create a new customer from a new order with custom customer attribute that are hidden from the storefront. Previously, Magento did not save the correct values for the custom customer attribute.
+*  You can now successfully create a new customer from a new order with custom customer attribute that are hidden from the storefront. Previously, {{ site.data.var.ee }} did not save the correct values for the custom customer attribute.
 
 <!--- ACP2E-433-->
 
@@ -628,23 +628,23 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-1536-->
 
-*  Magento no longer changes custom email addresses that are assigned to orders when you change the main email address assigned to the customer on the Admin account edit page. Previously, when you edited the main email address for a customer, the new email address was assigned to every order created for that customer. [GitHub-34397](https://github.com/magento/magento2/issues/34397)
+*  {{ site.data.var.ee }} no longer changes custom email addresses that are assigned to orders when you change the main email address assigned to the customer on the Admin account edit page. Previously, when you edited the main email address for a customer, the new email address was assigned to every order created for that customer. [GitHub-34397](https://github.com/magento/magento2/issues/34397)
 
 <!--- AC-2664-->
 
-*  Magento now displays records from the requested store on the credit memos grid page in deployments running PHP 7.4. Previously, Magento threw the following error after you created a credit memo and tried to view it: `The store that was requested wasn't found. Verify the store and try again`.
+*  {{ site.data.var.ee }} now displays records from the requested store on the credit memos grid page in deployments running PHP 7.4. Previously, {{ site.data.var.ee }} threw the following error after you created a credit memo and tried to view it: `The store that was requested wasn't found. Verify the store and try again`.
 
 ### Payment methods
 
 <!--- ACP2E-25-->
 
-*  Administrators can now place an order on the Admin using the PayPal PayflowPro payment method. Previously, Magento displayed this error: `No such entity with cartId = 0`.
+*  Administrators can now place an order on the Admin using the PayPal PayflowPro payment method. Previously, {{ site.data.var.ee }} displayed this error: `No such entity with cartId = 0`.
 
 #### PayPal
 
 <!--- ACP2E-296-->
 
-*  Magento now shows the correct customer name in a guest order paid for with PayPal. Previously, the customer name was displayed as Guest.
+*  {{ site.data.var.ee }} now shows the correct customer name in a guest order paid for with PayPal. Previously, the customer name was displayed as Guest.
 
 ### Performance
 
@@ -694,7 +694,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-615-->
 
-*  Elasticsearch queries now work as expected when `int` is configured as a searchable backend `type` attribute. Previously, Magento threw an `Elasticsearch\Common\Exceptions\BadRequest400Exception` exception.
+*  Elasticsearch queries now work as expected when `int` is configured as a searchable backend `type` attribute. Previously, {{ site.data.var.ee }} threw an `Elasticsearch\Common\Exceptions\BadRequest400Exception` exception.
 
 <!--- ACP2E-99-->
 
@@ -702,7 +702,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-72-->
 
-*  Magento now displays an accurate search results suggestion count on the storefront in deployments where Search Suggestions and the **Show Results Count for Each Suggestion** setting are enabled. Previously, the count displayed next to the keywords was zero.
+*  {{ site.data.var.ee }} now displays an accurate search results suggestion count on the storefront in deployments where Search Suggestions and the **Show Results Count for Each Suggestion** setting are enabled. Previously, the count displayed next to the keywords was zero.
 
 <!--- AC-700-->
 
@@ -712,13 +712,13 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-2052-->
 
-*  Magento no longer throws an error when loading UPS shipping rates if no allowed shipping methods are selected. Previously, when a shopper entered a shipping address in the checkout workflow under these conditions, no other shipping methods were displayed, and Magento displayed an error on the storefront. [GitHub-34411](https://github.com/magento/magento2/issues/34411)
+*  {{ site.data.var.ee }} no longer throws an error when loading UPS shipping rates if no allowed shipping methods are selected. Previously, when a shopper entered a shipping address in the checkout workflow under these conditions, no other shipping methods were displayed, and {{ site.data.var.ee }} displayed an error on the storefront. [GitHub-34411](https://github.com/magento/magento2/issues/34411)
 
 ### Staging
 
 <!--- ACP2E-404-->
 
-*  Magento no longer cleans the full-page cache after applying a staging update for a sales rule in which the cached pages remain unchanged.
+*  {{ site.data.var.ee }} no longer cleans the full-page cache after applying a staging update for a sales rule in which the cached pages remain unchanged.
 
 <!--- ACP2E-304-->
 
@@ -730,7 +730,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-238-->
 
-*  Merchants can now remove an end date for a schedule update or delete and recreate an update. Previously, when an end date was removed, an entity remained scheduled for that time. Magento now removes the outdated update for removed rollback.
+*  Merchants can now remove an end date for a schedule update or delete and recreate an update. Previously, when an end date was removed, an entity remained scheduled for that time. {{ site.data.var.ee }} now removes the outdated update for removed rollback.
 
 <!--- ACP2E-149-->
 
@@ -742,7 +742,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-58-->
 
-*  Magento now displays a form populated with data from the previous scheduled update as expected when you try to create the second schedule update for a product. Previously, Magento displayed this error when you tried to create the second update with a past start date: `The Start Time of this Update cannot be changed. It's been already started`.
+*  {{ site.data.var.ee }} now displays a form populated with data from the previous scheduled update as expected when you try to create the second schedule update for a product. Previously, {{ site.data.var.ee }} displayed this error when you tried to create the second update with a past start date: `The Start Time of this Update cannot be changed. It's been already started`.
 
 <!--- ACP2E-18-->
 
@@ -762,7 +762,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-291-->
 
-*  Magento now updates the Excluding Tax tier price for a simple product on the product page as expected after the quantity of the simple product has changed.
+*  {{ site.data.var.ee }} now updates the Excluding Tax tier price for a simple product on the product page as expected after the quantity of the simple product has changed.
 
 <!--- ACP2E-182-->
 
@@ -824,7 +824,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-2750-->
 
-*  You can now create a customer from the Admin when `Magento_LoginAsCustomerAdminUi` is enabled and **Store View To Login To** is set to manual selection. Previously, Magento threw this error: `(Magento\Framework\Exception\LocalizedException): Unable to get Customer ID`. [GitHub-33096](https://github.com/magento/magento2/issues/33096)
+*  You can now create a customer from the Admin when `Magento_LoginAsCustomerAdminUi` is enabled and **Store View To Login To** is set to manual selection. Previously, {{ site.data.var.ee }} threw this error: `(Magento\Framework\Exception\LocalizedException): Unable to get Customer ID`. [GitHub-33096](https://github.com/magento/magento2/issues/33096)
 
 <!--- AC-2076-->
 
@@ -844,7 +844,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-2251-->
 
-*  You can now set a Vimeo video to run in the background in a `banner` element when CSP is set to `restrict mode`. Previously, Magento threw this JavaScript error when you tried to save the element: `Refused to connect to 'https://vimeo.com/api/v2/video/76979871.json&#39; because it violates the following Content Security Policy directive`.
+*  You can now set a Vimeo video to run in the background in a `banner` element when CSP is set to `restrict mode`. Previously, {{ site.data.var.ee }} threw this JavaScript error when you tried to save the element: `Refused to connect to 'https://vimeo.com/api/v2/video/76979871.json&#39; because it violates the following Content Security Policy directive`.
 
 ### Web API framework
 
@@ -880,7 +880,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-459-->
 
-*  Updating an item quantity from the wishlist page now updates the quantity on the product detail page as expected. Magento now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
+*  Updating an item quantity from the wishlist page now updates the quantity on the product detail page as expected. {{ site.data.var.ee }} now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
 
 ## Known issues
 
