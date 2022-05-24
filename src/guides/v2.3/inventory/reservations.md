@@ -3,7 +3,7 @@ group: inventory
 title: Reservations
 ---
 
-Adobe Commerce and Magento Open Source use _reservations_ to calculate and keep track of the salable quantity of each product assigned to a stock. When a customer places an order, Magento checks whether the quantity requested for each item is available for sale. If yes, Magento creates a reservation as an inventory request for each item, thereby reducing the salable quantity available for purchase. As items are shipped, cancelled or refunded, Magento issues additional reservations that compensate the original. A cron job removes the original reservation and all compensatory reservations from the database when all ordered items have been shipped, cancelled, or refunded.
+Adobe Commerce and Magento Open Source use _reservations_ to calculate and keep track of the salable quantity of each product assigned to a stock. When a customer places an order, the system checks whether the quantity requested for each item is available for sale. If yes, the system creates a reservation as an inventory request for each item, thereby reducing the salable quantity available for purchase. As items are shipped, cancelled or refunded, the system issues additional reservations that compensate the original. A cron job removes the original reservation and all compensatory reservations from the database when all ordered items have been shipped, cancelled, or refunded.
 
 {:.bs-callout-info}
 The reservation capability requires the `inventory.reservations.updateSalabilityStatus` message queue consumer to be running at all times. To check if it is running, use the `bin/magento queue:consumers:list` command. If you do not see it in the list, start it: `bin/magento queue:consumers:start inventory.reservations.updateSalabilityStatus`.
@@ -22,11 +22,11 @@ The system creates a reservation for each product when the following events occu
 
 Reservations are append-only operations, similar to a log of events. The initial reservation is assigned a negative quantity value. All subsequent reservations created while processing the order are positive values. When the order is complete, the sum of all reservations for the product is 0.
 
-Before Magento can issue a reservation in response to a new order, it determines whether there are enough salable items to fulfill the order. The following quantities factor into the calculation:
+Before the system can issue a reservation in response to a new order, it determines whether there are enough salable items to fulfill the order. The following quantities factor into the calculation:
 
 *  **StockItem quantity**. The StockItem quantity is the aggregated amount of inventory from all the physical sources for the current sales channel. If the Baltimore source has 20 units of a product, the Austin source has 25 units of the same product, while the Reno source has 10, and all these sources are linked to Stock A, then the StockItem count for thus product is 55 (20 + 25 + 10). (When items are shipped, the Inventory indexer updates the quantities available at each source.)
 
-*  **Outstanding reservations**. Magento totals all the initial reservations that have not been compensated. This number will always be negative. If customer A has a reservation for 10 items, and customer B has a reservation 5 for items, then outstanding reservations for the product total -15.
+*  **Outstanding reservations**. The system totals all the initial reservations that have not been compensated. This number will always be negative. If customer A has a reservation for 10 items, and customer B has a reservation 5 for items, then outstanding reservations for the product total -15.
 
 Therefore, the merchant can fulfill an incoming order as long as the customer orders less than 40 (55 + -15) units.
 
@@ -177,4 +177,4 @@ Interface | Description
 
 ## Web API support
 
-Magento Web APIs (REST and SOAP) imposes restrictions for entity interfaces that are outside the scope of reservations. Most notably, Web APIs require getter and setter methods. Because reservations are append-only immutable entities, there are no reservation setter methods. Therefore, reservation Web APIs are not supported.
+Adobe Commerce and Magento Open Source web APIs (REST and SOAP) impose restrictions for entity interfaces that are outside the scope of reservations. Most notably, Web APIs require getter and setter methods. Because reservations are append-only immutable entities, there are no reservation setter methods. Therefore, reservation Web APIs are not supported.
