@@ -3,13 +3,16 @@ group: inventory
 title: Reservations
 ---
 
-Magento uses _reservations_ to calculate and keep track of the salable quantity of each product assigned to a stock. When a customer places an order, Magento checks whether the quantity requested for each item is available for sale. If yes, Magento creates a reservation as an inventory request for each item, thereby reducing the salable quantity available for purchase. As items are shipped, cancelled or refunded, Magento issues additional reservations that compensate the original. A cron job removes the original reservation and all compensatory reservations from the database when all ordered items have been shipped, cancelled, or refunded.
+Adobe Commerce and Magento Open Source use _reservations_ to calculate and keep track of the salable quantity of each product assigned to a stock. When a customer places an order, the system checks whether the quantity requested for each item is available for sale. If yes, the system creates a reservation as an inventory request for each item, thereby reducing the salable quantity available for purchase. As items are shipped, cancelled or refunded, the system issues additional reservations that compensate the original. A cron job removes the original reservation and all compensatory reservations from the database when all ordered items have been shipped, cancelled, or refunded.
+
+{:.bs-callout-info}
+The reservation capability requires the `inventory.reservations.updateSalabilityStatus` message queue consumer to be running at all times. To check if it is running, use the `bin/magento queue:consumers:list` command. If you do not see it in the list, start it: `bin/magento queue:consumers:start inventory.reservations.updateSalabilityStatus`.
 
 Reservations prevent the merchant from overselling products, even in cases where the latency between order placement and order processing is high. In addition, reservations are append-only operations that help prevent blocking operations and race conditions at the time of checkout.
 
 ## Reservation calculations
 
-Magento creates a reservation for each product when the following events occur:
+The system creates a reservation for each product when the following events occur:
 
 *  A customer or merchant places an order.
 *  A customer or merchant fully or partially cancels an order.
@@ -19,18 +22,18 @@ Magento creates a reservation for each product when the following events occur:
 
 Reservations are append-only operations, similar to a log of events. The initial reservation is assigned a negative quantity value. All subsequent reservations created while processing the order are positive values. When the order is complete, the sum of all reservations for the product is 0.
 
-Before Magento can issue a reservation in response to a new order, it determines whether there are enough salable items to fulfill the order. The following quantities factor into the calculation:
+Before the system can issue a reservation in response to a new order, it determines whether there are enough salable items to fulfill the order. The following quantities factor into the calculation:
 
 *  **StockItem quantity**. The StockItem quantity is the aggregated amount of inventory from all the physical sources for the current sales channel. If the Baltimore source has 20 units of a product, the Austin source has 25 units of the same product, while the Reno source has 10, and all these sources are linked to Stock A, then the StockItem count for thus product is 55 (20 + 25 + 10). (When items are shipped, the Inventory indexer updates the quantities available at each source.)
 
-*  **Outstanding reservations**. Magento totals all the initial reservations that have not been compensated. This number will always be negative. If customer A has a reservation for 10 items, and customer B has a reservation 5 for items, then outstanding reservations for the product total -15.
+*  **Outstanding reservations**. The system totals all the initial reservations that have not been compensated. This number will always be negative. If customer A has a reservation for 10 items, and customer B has a reservation 5 for items, then outstanding reservations for the product total -15.
 
 Therefore, the merchant can fulfill an incoming order as long as the customer orders less than 40 (55 + -15) units.
 
 When you complete processing an order (Complete, Canceled, Closed), all reservations in the scope of that order should resolve to `0`. This clears all salable quantity holds.
 
- {:.bs-callout-info}
-Backorders (with Out-of-Stock Thresholds) and Notify for Quantity Below Threshold settings also affect the calculation of salable quantities, but they are outside the scope of this topic. For more information about these settings, see [Configuring Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-configure-inventory-management.html) in the _Magento User Guide_.
+{:.bs-callout-info}
+Backorders (with Out-of-Stock Thresholds) and Notify for Quantity Below Threshold settings also affect the calculation of salable quantities, but they are outside the scope of this topic. For more information about these settings, see [Configuring Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-configure-inventory-management.html) in the _Admin User Guide_.
 
 ## Reservation objects
 
@@ -90,15 +93,17 @@ The following example shows the sequence of reservations generated for a simple 
    event_type = shipment_created
    ```
 
-The three `quantity` values sum up to 0 (-25 + 5 + 20). Note that Magento does not modify any existing reservations.
+The three `quantity` values sum up to 0 (-25 + 5 + 20). Note that the system does not modify any existing reservations.
 
 ## Removing processed reservations
 
-Magento provides the `inventory_cleanup_reservations` cron job to clear the reservation table. By default, it runs daily at midnight, though you can configure the times and frequency. The cron job runs a script that queries the database to find complete reservation sequences in which the sum of quantity values is 0. When all reservations for a given product that originated on the same day (or other configured time) have been compensated, Magento subsequently deletes these reservations all at once.
+The `inventory_cleanup_reservations` cron job executes SQL queries to clear the reservation database table. By default, it runs daily at midnight, but you can configure the times and frequency. The cron job runs a script that queries the database to find complete reservation sequences in which the sum of quantity values is 0. When all reservations for a given product that originated on the same day (or other configured time) have been compensated, the cron job deletes the reservations all at once.
 
-Often, all initial reservations produced in a single day cannot compensated that same day.  This situation could occur when a customer places an order minutes before the cron job begins or makes the purchase with an offline payment method, such as a bank transfer. The compensated reservation sequences remain in the database until they have all been compensated. This practice does not interfere with reservation calculations, because the total for each reservation is 0.
+The `inventory_reservations_cleanup` cron job is not the same as the `inventory.reservations.cleanup` message queue consumer. The consumer asynchronously deletes reservations by product SKU after a product has been removed, whereas the cron job clears the entire reservations table. The consumer is required when you enable the [**Synchronize with Catalog**]({{ site.user_guide_url }}/configuration/catalog/inventory.html) stock option in the Admin system configuration. See [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-message-queues.html).
 
- {:.bs-callout-info}
+Often, all initial reservations produced in a single day cannot compensated that same day. This situation could occur when a customer places an order minutes before the cron job begins or makes the purchase with an offline payment method, such as a bank transfer. The compensated reservation sequences remain in the database until they have all been compensated. This practice does not interfere with reservation calculations, because the total for each reservation is 0.
+
+{:.bs-callout-info}
 {{site.data.var.im}} provides commands to detect and manage reservation inconsistencies. See [Inventory CLI reference]({{page.baseurl}}/inventory/inventory-cli-reference.html).
 
 ## Interfaces and services
@@ -172,4 +177,4 @@ Interface | Description
 
 ## Web API support
 
-Magento Web APIs (REST and SOAP) imposes restrictions for entity interfaces that are outside the scope of reservations. Most notably, Web APIs require getter and setter methods. Because reservations are append-only immutable entities, there are no reservation setter methods. Therefore, reservation Web APIs are not supported.
+Adobe Commerce and Magento Open Source web APIs (REST and SOAP) impose restrictions for entity interfaces that are outside the scope of reservations. Most notably, Web APIs require getter and setter methods. Because reservations are append-only immutable entities, there are no reservation setter methods. Therefore, reservation Web APIs are not supported.
