@@ -4,8 +4,89 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Thu May 5 22:19:39 2022
+updated: Mon May 23 16:07:25 2022
 entries:
+- description: Updated the [Adobe Commerce 2.4.4](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-4.html)
+    and [Magento Open Source 2.4.4](https://devdocs.magento.com/guides/v2.4/release-notes/open-source-2-4-4.html)
+    release notes with information about changes to Composer allow-listing of plugins
+    effective July 2022.
+  versions: 2.4.4
+  type: Major Update
+  date: May 20, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2966
+  merge_commit: bdc6b1e9324b58c4927baf9369cd592d71b59100
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Updated the Magento PHPStorm plugin section with a new [installation](https://devdocs.magento.com/guides/v2.4/ext-best-practices/phpstorm/installation.html)
+    topic.
+  versions: 2.4.x
+  type: New Topic
+  date: May 19, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2965
+  merge_commit: 58b7709cb7ee85f7bafb3f84cbe2c56d2db27297
+  contributor: loginesta
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.x
+- description: The [Architecture Guide](https://devdocs.magento.com/guides/v2.4/architecture/bk-architecture.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/architecture/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: May 17, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2963
+  merge_commit: e648e6a324b70875dbe3c28a2911d88ee924cfd2
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Update the [Released versions](https://devdocs.magento.com/release/released-versions.html)
+    topic:<br/>- Add 2.4.4, 2.4.3-p2, 2.3.7-p3<br/>- Update the end of support date
+    for 2.4.0-2.4.3
+  versions: 2.3.x, 2.4.x
+  type: Technical
+  date: May 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2958
+  merge_commit: 7231798ae6bd3bfc1ad8b524e97d4b3b318fb1dd
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.3.x
+  - Technical
+  - 2.4.x
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.14 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: May 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2952
+  merge_commit: 9e683d39d04237019f5f0ebb581b83b5c59a416b
+  contributor: apoltoratskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added a tutorial on [creating a bundled product](https://devdocs.magento.com/guides/v2.4/rest/tutorials/bundle-product/bundle-product-intro.html)
+    with the API.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: May 8, 2022
+  link: https://github.com/magento/devdocs/pull/9407
+  merge_commit: 3e39778e0e70a4ee907a075bf41d29cdb0db6384
+  contributor: goivvy
+  membership: false
+  labels:
+  - 2.3.x
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.1.13 Quality Patches Tool package release.
   versions: 2.3.x, 2.4.x
