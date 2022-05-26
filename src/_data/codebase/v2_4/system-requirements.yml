@@ -1,6 +1,6 @@
 ---
 2.4.5:
-  Composer: '2.1'
+  Composer: '2.2'
   Elasticsearch: '7.17'
   OpenSearch: '1.2'
   MariaDB: '10.4'
