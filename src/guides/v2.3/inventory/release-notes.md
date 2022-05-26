@@ -32,7 +32,7 @@ The release notes include:
 
 -  {:.fix} Products that are assigned to default stock and that were previously out of stock are now visible on the storefront after updating the source item using `V1/inventory/source-items’. Previously, this REST API endpoint set the wrong 'stock_status`. <!--- ACP2E-562-->
 
--  {:.fix} Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicate with the exception of a leading zero (for example, `01234` and `1234`). Previously, Magento did not unassign inventory sources and threw an error. <!--- ACP2E-2641-->
+-  {:.fix} Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicates with the exception of a leading zero (for example, `01234` and `1234`). Previously, Magento did not unassign inventory sources and threw an error. <!--- ACP2E-2641-->
 
 -  {:.fix} Product stock status is now always **in stock** on the storefront when infinite back orders are enabled and the product is assigned to a custom stock, regardless of the quantity backordered. Previously, products went out of stock even when back orders were enabled. <!--- ACP2E-664-->
 

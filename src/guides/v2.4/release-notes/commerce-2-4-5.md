@@ -40,6 +40,14 @@ See Adobe Security Bulletin for the latest discussion of these fixed issues.
 
 Security improvements for this release improve compliance with the latest security best practices, including:
 
+*  reCAPTCHA support has been added to the Wish List Sharing form, invitation create account form, and gift card redemption forms.
+
+*  ACL resources have been added to Inventory.
+
+*  Inventory template security has been enhanced.
+
+*  The `MaliciousCode` filter has been upgraded to use the `HtmlPurifier` library.
+
 ### Platform enhancements
 
 {{ site.data.var.ee }} 2.4.5 now supports
@@ -90,7 +98,39 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 *  You can now rename a data patch and add the old class name as an alias in the `patch_list` database table. {{ site.data.var.ee }} now checks whether data patch aliases already existed in the database before applying the patch. Previously, {{ site.data.var.ee }} threw an error under these conditions.
 
+<!--- AC-3036-->
+
+*  {{ site.data.var.ee }} no longer throws an exception when you try to change the Admin URL to a custom URL from the Admin. Previously, after changing the Admin URL, you could not log in. [GitHub-35416](https://github.com/magento/magento2/issues/35416)
+
 ### Accessibility
+
+<!--- AC-2786-->
+
+The **Shopping bag** button now provides a programmatic or textual indication of its state. Screen reader users are informed that clicking this button will expand other content, or that the associated content is expanded or collapsed. Previously, this button did not provide a programmatic or textual indication of its state.
+
+<!--- AC-2496-->
+
+*  Payment Information credit card option text elements or images of text now meet the WCAG 2.0 required minimum color contrast ratio of 4.5:1 for standard text of 18pt (24px) or 14pt (19px) if bolded. Previously, they did not meet the expected contrast ratio.
+
+<!--- AC-2483-->
+
+*  **Address book**  >  **Communication**  > **Account information** custom focus indicators now provide a contrast ratio of at least 3:1 against the background color.
+
+<!--- AC-2486-->
+
+*  Filter and sort button text now meet the WCAG 2.0 required minimum color contrast ratio of 4.5:1 for standard text of 18pt (24px) or 14pt (19px) if bolded. Previously, navigation buttons for carousels did not meet these minimum contrast requirements.
+
+<!--- AC-2499-->
+
+*  Screen readers announce the word “Venia” only once when navigating to Venia headers and footers. Previously, the same word was announced twice consecutively.
+
+<!--- AC-2585-->
+
+*  Buttons that trigger dropdowns now provide information to screen readers that indicate their expanded or collapsed state and accessible names.
+
+<!--- AC-2482-->
+
+*  Screen reader users are informed when a new page view is rendered. Previously, when a page title changed, the title change was not announced.
 
 ### AdminGWS
 
@@ -114,7 +154,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-455-->
 
-*  The address search pop-up to save cards on the billing step of the checkout workflow no longer causes DOM errors.
+*  The address search pop-up on the billing step of the checkout workflow no longer causes DOM errors.
 
 <!--- ACP2E-368-->
 
@@ -130,7 +170,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-98-->
 
-*  Shoppers with global account sharing are no longer required to log in again to a secondary website in a multisite deployment when guest checkout is disabled. Customer data is now loaded when the shopper navigates to the subdomain. The shopper is no longer asked to login again, and the previous cart contents are displayed.
+*  Shoppers with global account sharing are no longer required to log in again to a secondary website in a multisite deployment when guest checkout is disabled. Customer data is now loaded when the shopper navigates to the subdomain. The shopper is no longer asked to log in again, and the previous cart contents are displayed.
 
 <!--- ACP2E-94-->
 
@@ -258,6 +298,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 *  Page Cache is now cleared as expected for the configurable product parent when changes to a child product are saved. Previously, because the cache was not cleared, changes were not selected on the storefront configuration product page. [GitHub-34508](https://github.com/magento/magento2/issues/34508)
 
+<!--- AC-711-->
+
+*  Product lists are now rendered correctly in the Admin. Previously, the product list did not render, and {{ site.data.var.ee }} displayed this error:  `Item (Magento\Catalog\Model\Product\Interceptor) with the same ID "<ID>" already exists`. [GitHub-33145](https://github.com/magento/magento2/issues/33145)
+
 ### Catalog rule
 
 ### CMS content
@@ -334,7 +378,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2896-->
 
-*  {{ site.data.var.ee }}no longer throws an SQL error after assigning a new source to a product and changing its quantity. [GitHub-35262](https://github.com/magento/magento2/issues/35262)
+*  {{ site.data.var.ee }} no longer throws an SQL error after assigning a new source to a product and changing its quantity. [GitHub-35262](https://github.com/magento/magento2/issues/35262)
 
 <!--- AC-401-->
 
@@ -347,6 +391,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 <!--- AC-2428-->
 
 *  Deprecation notices no longer occur in unit tests due to`\DateTimeFormatter::formatObject()`. This method now works as expected with numeric values for `$format`.
+
+<!--- AC-2893-->
+
+*  {{ site.data.var.ee }} no longer displays a `preg_replace()` error on the Admin. The third argument (`$subject`) is now of type `array|string` instead of `bool`.
+
+<!--- AC-2583-->
+
+*  The `isFreeShipping` method now returns an integer rather than a Boolean.[GitHub-35164](https://github.com/magento/magento2/issues/35164)
 
 ### General fixes
 
@@ -397,6 +449,10 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 <!--- AC-2719-->
 
 *  Merchants can now add a tier price attribute (`tier_price`) to product comparisons. Previously, the product comparisons page crashed when the **Comparable on storefront** setting for this attribute was enabled. [GitHub-35244](https://github.com/magento/magento2/issues/35244)
+
+<!--- AC-2441-->
+
+*  {{ site.data.var.ee }} now displays an error message when you set an invalid cookie domain (**Store**  > **Configurations**  >  **Web**  >  **Default Cookie Settings Cookie Domain**). Previously, the website crashed. [GitHub-35048](https://github.com/magento/magento2/issues/35048)
 
 ### Gift cards
 
@@ -534,6 +590,18 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 *  `products` queries no longer returns price_range values for configurable products that are affected by disabled variants. [GitHub-33629](https://github.com/magento/magento2/issues/33629)
 
+<!--- AC-210-->
+
+*  Added a plugin before the `collectQuoteTotals` call to ensure store credits aren't applied multiple times.
+
+<!--- AC-441-->
+
+*  Creating a new special price schedule with the `POST /V1/products/special-price` endpoint now works as expected. Previously, the endpoint returned the message `Future Update already exists in this time range. Set a different range and try again`.
+
+<!--- ACP2E-636-->
+
+*  The `generateCustomerTokenAsAdmin` request now retrieves customer tokens as expected. Previously, tokens were not returned, and this error was returned: `Customer email provided does not exist`.
+
 ### Image
 
 <!--- ACP2E-71-->
@@ -565,6 +633,10 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 ### Index
 
 ### Infrastructure
+
+<!--- ACP2E-148-->
+
+*  The SQL query that updates affected quotes after a cart price rule is disabled has been optimized to avoid locking the entire quote table.
 
 #### Library removals and deprecations
 
@@ -633,6 +705,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-2664-->
 
 *  {{ site.data.var.ee }} now displays records from the requested store on the credit memos grid page in deployments running PHP 7.4. Previously, {{ site.data.var.ee }} threw the following error after you created a credit memo and tried to view it: `The store that was requested wasn't found. Verify the store and try again`.
+
+<!--- AC-2442-->
+
+*  {{ site.data.var.ee }} now displays credit memos on the credit memo grid page for orders created from store views whose name is prepended with numbers. Previously, {{ site.data.var.ee }} displayed the error: `The store that was requested wasn't found. Verify the store and try again. Exception in /var/www/html/vendor/magento/module-store/Model/StoreRepository.php:75`. [GitHub-35122](https://github.com/magento/magento2/issues/35122)
 
 ### Payment methods
 
@@ -708,11 +784,19 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Products sorted by custom attributes on the Catalog page are now displayed in the expected order. Previously, products were sorted by their attribute option value ID, which reflects the order in which they they were added to the attribute. [GitHub-33810](https://github.com/magento/magento2/issues/33810)
 
+<!--- AC-645-->
+
+*  Filtering products by color swatch in the layered navigation now displays the correct product images. Previously, the layered navigation `PageCache` key did not include filter parameters for configurable products.
+
 ### Shipping
 
 <!--- AC-2052-->
 
 *  {{ site.data.var.ee }} no longer throws an error when loading UPS shipping rates if no allowed shipping methods are selected. Previously, when a shopper entered a shipping address in the checkout workflow under these conditions, no other shipping methods were displayed, and {{ site.data.var.ee }} displayed an error on the storefront. [GitHub-34411](https://github.com/magento/magento2/issues/34411)
+
+<!--- AC-2621-->
+
+*  Virtual product prices are now excluded in calculation table rate shipping amount. Previously, shipping costs for these products were not calculated correctly.[GitHub-35185](https://github.com/magento/magento2/issues/35185)
 
 ### Staging
 
@@ -754,7 +838,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-735-->
 
-*  Fixed Product Tax (FPT) is now correctly displayed for products in the shopping cart. Previously, if multiple products in the shopping cart have **Fixed Product Tax (FPT)** and **Apply Tax To FPT** was enabled, all FPTs were assigned to the last product in the shopping cart and reset for other products.
+*  Fixed Product Tax (FPT) is now correctly displayed for products in the shopping cart. Previously, if multiple products in the shopping cart have **Fixed Product Tax (FPT)** and **Apply Tax To FPT** were enabled, all FPTs were assigned to the last product in the shopping cart and reset for other products.
 
 <!--- ACP2E-350-->
 
@@ -782,6 +866,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ### Test
 
+<!--- AC-2004-->
+
+*  Corrected errors with `Magento.GraphQl.CatalogGraphQl.ProductSearchTest.testSearchSuggestions` when run with AWS Elasticsearch configuration.
+
 #### Unit tests
 
 ### Theme
@@ -804,7 +892,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-557-->
 
-*  Long product names in the **Catalog** > **Products** grid are now word-wrapped instead of being displayed in a single line.
+*  Lengthy product names in the **Catalog** > **Products** grid are now word-wrapped instead of being displayed in a single line.
 
 <!--- ACP2E-545-->
 
@@ -834,7 +922,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The **Search by keyword** input field now has an `aria-label` element instead of a placeholder on the **Catalog** > **Product** page.
 
+<!--- ACP2E-630-->
+
+*  Category creation is now blocked for an administrator with restricted permissions on both the category and product edit pages. Previously, category creation was blocked on the category page, but was still possible through the product edit page.
+
 ### URL rewrites
+
+<!--- AC-2535-->
+
+*  URLs for a product in a specific store view only are now removed from the `url_rewrite` table and Admin after the attribute code visibility status for the specific store view is changed to **Not Visible Individually**.  Previously, all URLs were removed for the product in the `url_rewrite` table. [GitHub-34937](https://github.com/magento/magento2/issues/34937)
 
 ### Video
 
