@@ -1,6 +1,6 @@
 ---
 2.4.5:
-  Composer: '2'
+  Composer: '2.2'
   Elasticsearch: '7.17'
   OpenSearch: '1.2'
   MariaDB: '10.4'
@@ -12,7 +12,7 @@
   Apache: '2.4'
   nginx: '1.8'
 2.4.4:
-  Composer: '2'
+  Composer: '2.1'
   Elasticsearch: '7.16'
   OpenSearch: '1.2'
   MariaDB: '10.4'
