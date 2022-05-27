@@ -74,7 +74,7 @@ After installing the {{site.data.var.b2b}} extension, follow these instructions 
 
 ### Start message consumers
 
-The {{site.data.var.b2b}} extension uses MySQL for message queue management. The following table describes the required message consumers that you must start to use B2B features:
+The {{site.data.var.b2b}} extension uses MySQL for message queue management. The following table describes the required message consumers that you must start to use [B2B features]({{ site.user_guide_url }}/stores/b2b-features.html):
 
 | Consumer                                 | Description                                                                                                                                                                                               |
 |------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
