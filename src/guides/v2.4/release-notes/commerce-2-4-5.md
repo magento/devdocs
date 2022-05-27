@@ -40,7 +40,7 @@ See Adobe Security Bulletin for the latest discussion of these fixed issues.
 
 Security improvements for this release improve compliance with the latest security best practices, including:
 
-*  reCAPTCHA support has been added to the Wish List Sharing form, invitation create account form, and gift card redemption forms.
+*  reCAPTCHA support has been added to the Wish List Sharing, Create New Customer Account, and Gift Card forms.
 
 *  ACL resources have been added to Inventory.
 
@@ -904,7 +904,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-280-->
 
-*  The unavailability of `magento.com` no longer cause performance issues during Admin login. A timeout on the request to fetch release notification has been added.
+*  The unavailability of `magento.com` no longer causes performance issues during Admin login. A timeout on the request to fetch release notification has been added.
 
 <!--- ACP2E-88-->
 
