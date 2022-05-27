@@ -74,23 +74,19 @@ After installing the {{site.data.var.b2b}} extension, follow these instructions 
 
 ### Start message consumers
 
-The {{site.data.var.b2b}} extension uses MySQL for message queue management. If you want to enable the B2B **Shared Catalog** feature, you must start the corresponding message consumers after installation.
+The {{site.data.var.b2b}} extension uses MySQL for message queue management. The following table describes the required message consumers that you must start to use B2B features:
 
-1. List the available message consumers:
-
-   ```bash
-   bin/magento queue:consumers:list
-   ```
-
-   You should see the following consumers:
-
-   ```terminal
-   sharedCatalogUpdatePrice
-   sharedCatalogUpdateCategoryPermissions
-   quoteItemCleaner
-   inventoryQtyCounter
-   async.operations.all
-   ```
+| Consumer                                 | Description                                                                                                                                                                                               |
+|------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `sharedCatalogUpdatePrice`               | Updates shared catalog price. Required when the [**Shared Catalogs**]({{ site.user_guide_url }}/catalog/catalog-shared.html) feature is enabled in the Admin system configuration settings.               |
+| `sharedCatalogUpdateCategoryPermissions` | Update shared catalog category permissions. Required when the [**Shared Catalogs**]({{ site.user_guide_url }}/catalog/catalog-shared.html) feature is enabled in the Admin system configuration settings. |
+| `negotiableQuotePriceUpdate`             | Updates negotiable quote price. Required when the [**Quotes**]({{ site.user_guide_url }}/sales/quotes.html) feature is enabled in the Admin system configuration settings.                                |
+| `purchaseorder.toorder`                  | Converts purchase order to order. Required when the [**Purchase Order**]({{ site.user_guide_url }}/payments/purchase-order.html) feature is enabled in the Admin system configuration settings.           |
+| `purchaseorder.transactional.email`      | Send purchase order emails. Required when the [**Purchase Order**]({{ site.user_guide_url }}/payments/purchase-order.html) feature is enabled in the Admin system configuration settings.                 |
+| `purchaseorder.validation`               | Validates purchase orders. Required when the [**Purchase Order**]({{ site.user_guide_url }}/payments/purchase-order.html) feature is enabled in the Admin system configuration settings.                  |
+| `quoteItemCleaner`                       | Required when the [**Quotes**]({{ site.user_guide_url }}/sales/quotes.html) feature is enabled in the Admin system configuration settings.                                                                |
+| `inventoryQtyCounter`                    |                                                                                                                                                                                                           |
+| `async.operations.all`                   |                                                                                                                                                                                                           |
 
 1. Start each consumer separately:
 
