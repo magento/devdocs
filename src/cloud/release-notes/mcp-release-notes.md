@@ -21,6 +21,12 @@ The `{{site.data.var.mcp-package}}` package uses the following version sequence:
 
 <!--Add release notes below-->
 
+## v1.0.17
+
+Release date: May 24, 2022
+
+Fixed constraints for security patches in the patches.json file.
+
 ## v1.0.16
 
 Release date: March 31, 2022
