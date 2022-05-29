@@ -60,8 +60,14 @@ By default, Magento writes database activity logs to the `var/debug/db.log` file
    ```bash
    bin/magento dev:query-log:disable
    ```
+   
+2. In the [production mode](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html#config-mode-show) run the command for [import configuration](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-config-mgmt-import.html), because the command `bin/magento dev:query-log:disable` sets settings into app/etc/env.php file:
+  
+  ```bash
+  bin/magento app:config:import
+  ```
 
-1. Flush the cache.
+3. Flush the cache.
 
    ```bash
    bin/magento cache:flush
