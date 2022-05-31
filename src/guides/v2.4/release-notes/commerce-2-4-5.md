@@ -52,6 +52,24 @@ Security improvements for this release improve compliance with the latest securi
 
 {{ site.data.var.ee }} 2.4.5 now supports
 
+*  Composer 2.2  <!--- AC-2033-->
+
+*  Elasticsearch v7.17  <!--- AC-2425-->
+
+*  The `TinyMCE` library has been upgraded to v5.10.0. <!--- AC-2039 1784-->
+
+*  `PHPStan` has been upgraded to v1.5. <!--- AC-2876-->
+
+*  The `league/fly` Composer dependencies have been to v2.4.3. <!--- AC-2744-->
+
+*  the `grunt-eslint` (NPM) library has been upgraded to the latest version. <!--- AC-2700-->
+
+*  The `jQuery Storage` libraries have been replaced with `julien-maurel/js-storage`. <!--- AC-2627-->
+
+*  The `php-cs-fixer` and `phpcs` static code analysis tools are now compatible with PHP 8.x. <!--- AC-2259-->
+
+*  The `php-cs-fixer` Composer dependency has been updated to v3.4.0. <!--- AC-2259-->
+
 ### Performance and scalability enhancements
 
 {{ site.data.var.ee }} performance enhancements
@@ -148,6 +166,8 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-680-->
 
+*  The `Parent Only` attribute scope is now used properly in the Cart Rule condition.
+
 <!--- ACP2E-607-->
 
 *  Company name is now visible as expected in the billing and shipping address sections of the checkout workflow.
@@ -203,6 +223,12 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- AC-2630-->
 
 *  Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicate with the exception of a leading zero (for example, `01234` and `1234`). Previously, {{ site.data.var.ee }}did not unassign inventory sources and threw an error.
+
+### Cart price rule
+
+<!--- ACP2E-680-->
+
+*  The `Parent Only` attribute scope is now used properly in the Cart Rule condition.
 
 ### Catalog
 
@@ -340,6 +366,10 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 *  `addConfigurableProductsToCart` queries can now be used to add configurable products with custom options. Previously, {{ site.data.var.ee }} threw this error: `Magento 2.3.4 graphql Notice: Undefined index: option_value in /var/www/html/mg234/vendor/magento/module-configurable-product-graph-ql/Model/Resolver/ConfigurableCartItemOptions.php on line 62`. [GitHub-28860](https://github.com/magento/magento2/issues/28860)
 
+<!--- ACP2E-322-->
+
+*  Configurable products are now moved to the last position in the product listing after stock is updated when the **Move out of stock to the bottom** setting is enabled. A new custom database query has been implemented to negate Elasticsearch index sort order, which disregards Admin-enabled sort order. Previously, configurable products and their child products were not moved to the bottom of the list when this setting was enabled.
+
 ### Customer
 
 <!--- ACP2E-390-->
@@ -351,6 +381,12 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- ACP2E-473-->
 
 *  Customer segment-specific Related Product rules now work as expected. The issue has been fixed by calling a method to add a visitor-segment relation for a specific website. Previously, the segments for this rule fetched only on the basis of registered customers and websites.
+
+### Downloadable
+
+<!--- MC-40675-->
+
+*  You can now remove sample links and files from a downloadable product. [GitHub-31887](https://github.com/magento/magento2/issues/31887)
 
 ### Email
 
@@ -432,7 +468,7 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-234-->
 
-The **Set Product as New From Date** attribute now displays the correct date when the **Set Product as New** attribute is set through a mass product bulk update. Previously, **Set Product as New From Date** was displayed as **Jan 1, 1970**.
+*  The **Set Product as New From Date** attribute now displays the correct date when the **Set Product as New** attribute is set through a mass product bulk update. Previously, **Set Product as New From Date** was displayed as **Jan 1, 1970**.
 
 <!--- ACP2E-277-->
 
@@ -453,6 +489,10 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 <!--- AC-2441-->
 
 *  {{ site.data.var.ee }} now displays an error message when you set an invalid cookie domain (**Store**  > **Configurations**  >  **Web**  >  **Default Cookie Settings Cookie Domain**). Previously, the website crashed. [GitHub-35048](https://github.com/magento/magento2/issues/35048)
+
+<!--- AC-2765-->
+
+*  {{ site.data.var.ee }} no longer throws an error when an administrator with roles scoped to a single website adds product to Content Elements using PageBuilder. Previously, {{ site.data.var.ee }} threw an SQL error.
 
 ### Gift cards
 
@@ -602,6 +642,18 @@ The **Set Product as New From Date** attribute now displays the correct date whe
 
 *  The `generateCustomerTokenAsAdmin` request now retrieves customer tokens as expected. Previously, tokens were not returned, and this error was returned: `Customer email provided does not exist`.
 
+<!--- AC-2371-->
+
+*  GraphQL schema is now valid when a custom `type` product attribute is defined. Previously, the schema was invalid because the `type` attribute on products types was overwritten by the custom `type` attribute. [GitHub-34929](https://github.com/magento/magento2/issues/34929)
+
+<!--- AC-2797-->
+
+*  Customers added through the `createCustomer/createCustomerV2/updateCustomer/updateCustomerV2` mutation  are now added with active newsletter subscriptions. Previously, customers were unsubscribed from newsletters even when the request contained proper input parameters. [GitHub-33599](https://github.com/magento/magento2/issues/33599)
+
+<!--- AC-1883-->
+
+*  The `productDetail` query for a specific store view now returns only categories that are in the specific website's root category in multi-site deployment. Previously, the query returned categories from the root categories of other websites. [GitHub-34570](https://github.com/magento/magento2/issues/34570)
+
 ### Image
 
 <!--- ACP2E-71-->
@@ -672,7 +724,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Logged-in customers are no longer marked as guests in Admin > **Marketing** > **Newsletter Subscribers**.
 
-<!--- AC-2101-->
+<!--- AC-2102-->
 
 *  The newsletter subscription confirmation email now has the correct, store-specific email address in the **From** field if the customer is assigned to a non-default store and subscribed or unsubscribed from the Admin. Previously, the customer received an email with default email in **From** header. [GitHub-34963](https://github.com/magento/magento2/issues/34963)
 
@@ -715,6 +767,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ACP2E-25-->
 
 *  Administrators can now place an order on the Admin using the PayPal PayflowPro payment method. Previously, {{ site.data.var.ee }} displayed this error: `No such entity with cartId = 0`.
+
+<!--- AC-2093-->
+
+*  Payment Review page in the checkout workflow now displays the correct payment method name when payment is made with Venmo, PayPal Later, or PayPal.
 
 #### PayPal
 
@@ -798,6 +854,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Virtual product prices are now excluded in calculation table rate shipping amount. Previously, shipping costs for these products were not calculated correctly.[GitHub-35185](https://github.com/magento/magento2/issues/35185)
 
+<!--- ACP2E-209-->
+
+*  Table rate shipping rates with zero price are now displayed correctly in the checkout workflow Order Summary block for orders that have had a discount coupon applied. Previously, the shipping method was not displayed.
+
 ### Staging
 
 <!--- ACP2E-404-->
@@ -870,6 +930,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Corrected errors with `Magento.GraphQl.CatalogGraphQl.ProductSearchTest.testSearchSuggestions` when run with AWS Elasticsearch configuration.
 
+<!--- AC-1113-->
+
+*  The `testCreateProductOnStoreLevel` integration test no longer a causes nested transaction on the database.
+
 #### Unit tests
 
 ### Theme
@@ -925,6 +989,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ACP2E-630-->
 
 *  Category creation is now blocked for an administrator with restricted permissions on both the category and product edit pages. Previously, category creation was blocked on the category page, but was still possible through the product edit page.
+
+<!--- AC-3058-->
+
+*  The Privacy Policy link in Admin footer now links to the new Adobe Privacy Policy.
 
 ### URL rewrites
 
