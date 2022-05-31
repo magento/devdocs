@@ -234,6 +234,9 @@ To add the public SSH key for your project as a [GitLab deploy key](https://docs
 
 ## Secure your environments and branches {#security}
 
+{:.bs-callout-warning}
+**DO NOT** use the following methods for securing Pro Staging and Production environments. This will break Fastly caching. You must use the [Blocking](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BLOCKING.md) feature available in the Fastly CDN for Magento.
+
 You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.
 
 To secure your Starter and Pro environments:
