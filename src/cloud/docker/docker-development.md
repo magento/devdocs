@@ -26,7 +26,7 @@ The Cloud Docker environment supports Linux, macOS, and Windows operating system
 
 -  [Git] for interaction between your local system and {{site.data.var.ece}} source repositories
 -  [Docker] for Mac 2.2.0.0 or later or Docker for Linux
--  Developer mode on macOS systems might require the [mutagen] option for file synchronization.
+-  Developer mode on macOS systems might require the [Mutagen] option for file synchronization.
 
 ### Docker engine
 
