@@ -1,5 +1,5 @@
 ---
-group:
+group: php-developer-guide
 subgroup: Testing
 title: Object Manager helper
 menu_title: Object Manager helper
