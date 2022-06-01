@@ -61,7 +61,7 @@ You can set the following configuration options for each environment:
 </table>
 
 {:.bs-callout-warning}
-**DO NOT** use the HTTP access control method for securing Pro Staging and Production environments. This will break Fastly caching. You must use the [Blocking](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BLOCKING.md) feature available in the Fastly CDN for Magento.
+**DO NOT** use the HTTP access control method for securing Pro Staging and Production environments. This will break Fastly caching. You must use the [Blocking]({{ site.baseurl }}/cloud/cdn/fastly-vcl-blocking.html) feature available in the Fastly CDN for Magento.
 
 ### Configure emails for testing {#email}
 
