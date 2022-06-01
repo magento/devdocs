@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Code generation
+migrated_to: https://developer.adobe.com/commerce/php/development/components/code-generation/
+layout: migrated
 ---
 
 ## Overview of code generation {#codegen-over}

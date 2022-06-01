@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Validate
+migrated_to: https://developer.adobe.com/commerce/php/development/validate/
+layout: migrated
 ---
 
 After your [module](https://glossary.magento.com/module) is built, you need to test it. Read through the Definition of Done to confirm that your module and coding practice is compliant with Magento.

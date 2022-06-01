@@ -4,6 +4,8 @@ subgroup: Testing
 title: Object Manager helper
 menu_title: Object Manager helper
 menu_order: 3
+migrated_to: https://developer.adobe.com/commerce/php/development/components/object-manager/helper/
+layout: migrated
 ---
 
 Block and model class constructors declare many dependencies. The Magento system uses constructor [dependency injection](https://glossary.magento.com/dependency-injection).

@@ -5,6 +5,8 @@ contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
 functional_areas:
   - Services
+migrated_to: https://developer.adobe.com/commerce/php/development/components/web-api/services/
+layout: migrated
 ---
 
 You can configure a Magento or third-party service as a web [API](https://glossary.magento.com/api).

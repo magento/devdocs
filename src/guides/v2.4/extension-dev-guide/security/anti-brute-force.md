@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Protecting against brute force attacks
+migrated_to: https://developer.adobe.com/commerce/php/development/security/brute-force/
+layout: migrated
 ---
 
 In a brute force attack, the attacker tries to guess a value/secret stored on a server by cycling through

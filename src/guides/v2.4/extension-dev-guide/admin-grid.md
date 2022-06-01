@@ -3,6 +3,8 @@ group: php-developer-guide
 title: Admin Grids
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com
+migrated_to: https://developer.adobe.com/commerce/php/development/components/add-admin-grid/
+layout: migrated
 ---
 
 ## Overview

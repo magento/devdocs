@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Codebase changes
+migrated_to: https://developer.adobe.com/commerce/php/development/versioning/code-changes/
+layout: migrated
 ---
 
 Every release includes a change in the codebase. The scope of the change determines whether the MAJOR, MINOR, or PATCH number increases in the version.

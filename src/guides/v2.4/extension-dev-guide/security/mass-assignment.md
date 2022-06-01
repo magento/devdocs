@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Mass assignment
+migrated_to: https://developer.adobe.com/commerce/php/development/security/mass-assignment/
+layout: migrated
 ---
 
 Mass Assignment is a type of attack in which a client inserts or updates data that either should not be available

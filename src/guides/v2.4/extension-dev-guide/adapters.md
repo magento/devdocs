@@ -4,6 +4,8 @@ subgroup: 99_Module Development
 title: Adapters
 menu_title: Adapters
 menu_order: 1000
+migrated_to: https://developer.adobe.com/commerce/php/development/components/adapters/
+layout: migrated
 ---
 
 ## Overview

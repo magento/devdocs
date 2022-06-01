@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Private content
+migrated_to: https://developer.adobe.com/commerce/php/development/cache/page/private-content/
+layout: migrated
 ---
 
 Since private content is specific to individual users, it is reasonable to handle it on the client (i.e., web browser).

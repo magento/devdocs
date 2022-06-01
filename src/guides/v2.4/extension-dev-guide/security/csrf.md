@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Cross-site request forgery (CSRF)
+migrated_to: https://developer.adobe.com/commerce/php/development/security/cross-site-request-forgery/
+layout: migrated
 ---
 
 CSRF is an attack that tricks a user's browser into executing actions on a web application in which the user is currently

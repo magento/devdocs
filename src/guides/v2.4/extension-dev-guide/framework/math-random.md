@@ -3,6 +3,8 @@ group: php-developer-guide
 title: Math Random
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
+migrated_to: https://developer.adobe.com/commerce/php/development/framework/math-random/
+layout: migrated
 ---
 
 ## Overview

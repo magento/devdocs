@@ -6,6 +6,8 @@ menu_title: Configuration importers
 menu_order: 2000
 functional_areas:
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/php/development/configuration/importers/
+layout: migrated
 ---
 
 A configuration importer provides consistent configurations across multiple systems (such as development, staging, and production).

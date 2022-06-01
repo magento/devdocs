@@ -2,6 +2,8 @@
 group: php-developer-guide
 subgroup: 02_Prepare
 title: About component file structure
+migrated_to: https://developer.adobe.com/commerce/php/development/prepare/component-file-structure/
+layout: migrated
 ---
 
 One of the first things you can do to get started with component development is to understand and set up the file system. Each type of component has a *different file structure*, although all components require certain files.

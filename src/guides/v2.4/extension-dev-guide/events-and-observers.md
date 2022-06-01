@@ -4,6 +4,8 @@ subgroup: 99_Module Development
 title: Events and observers
 menu_title: Events and observers
 menu_order: 6
+migrated_to: https://developer.adobe.com/commerce/php/development/components/events-and-observers/
+layout: migrated
 ---
 
 ## Overview

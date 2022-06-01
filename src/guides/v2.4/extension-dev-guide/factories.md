@@ -6,6 +6,8 @@ menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
+migrated_to: https://developer.adobe.com/commerce/php/development/components/factories/
+layout: migrated
 ---
 
 ## Overview

@@ -1,7 +1,8 @@
 ---
 group: php-developer-guide
 title: Message Queues
-
+migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/
+layout: migrated
 ---
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other, nor do they need to communicate with the message queue at the same time. When a sender places a message onto a queue, it is stored until the recipient receives them.

@@ -4,6 +4,8 @@ subgroup: 01_Introduction
 title: Developer roadmap
 menu_title: Developer roadmap
 menu_order: 2
+migrated_to: https://developer.adobe.com/commerce/php/development/roadmap/
+layout: migrated
 ---
 
 This topic introduces the high-level workflow for a developer who wants to create or customize the Magento application. Developers can also package and distribute their customizations to merchants.

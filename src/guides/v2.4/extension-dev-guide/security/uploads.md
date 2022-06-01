@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Working with files
+migrated_to: https://developer.adobe.com/commerce/php/development/security/file-uploads/
+layout: migrated
 ---
 
 When working with files, especially user-uploaded files, it is easy to make a mistake and open your store to dangerous

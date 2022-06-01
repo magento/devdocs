@@ -6,6 +6,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/migration/
+layout: migrated
 ---
 
 ### Migrate from Magento 2.1 to 2.2

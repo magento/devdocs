@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Sensitive Information
+migrated_to: https://developer.adobe.com/commerce/php/development/security/sensitive-information/
+layout: migrated
 ---
 
 Sensitive information is information that either requires additional permissions for read/write operations

@@ -4,6 +4,8 @@ title: Handling outdated in-memory object states
 functional_areas:
   - Configuration
   - System
+migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/object-states/
+layout: migrated
 ---
 
 When Magento is launched, the store's configuration is loaded into memory. Magento uses the in-memory configuration for queue message transactions. When the store's configuration is updated in the admin, the copy in memory does not refresh automatically, resulting in an outdated in-memory object state.

@@ -3,6 +3,8 @@ group: php-developer-guide
 title: URL Library
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
+migrated_to: https://developer.adobe.com/commerce/php/development/framework/url-library/
+layout: migrated
 ---
 
 ## Overview

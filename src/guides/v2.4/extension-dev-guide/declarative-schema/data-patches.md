@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Develop data and schema patches
+migrated_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/patches/
+layout: migrated
 ---
 
 A data patch is a class that contains data modification instructions. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Data/<Patch_Name>.php` file and implements `\Magento\Framework\Setup\Patch\DataPatchInterface`.

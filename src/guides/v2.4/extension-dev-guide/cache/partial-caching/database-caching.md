@@ -4,6 +4,8 @@ title: Create custom cache engines
 redirect_from:
   -  /guides/v2.3/config-guide/database/database.html
   -  /guides/v2.3/config-guide/cache/caching-database.html
+migrated_to: https://developer.adobe.com/commerce/php/development/cache/partial/database-caching/
+layout: migrated
 ---
 
 ## Overview of database caching {#mage-cache-db-over}

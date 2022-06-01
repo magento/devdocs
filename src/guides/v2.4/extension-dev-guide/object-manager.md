@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: ObjectManager
+migrated_to: https://developer.adobe.com/commerce/php/development/components/object-manager/
+layout: migrated
 ---
 
 ## Overview

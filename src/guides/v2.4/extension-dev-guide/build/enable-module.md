@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Enable or disable your component
+migrated_to: https://developer.adobe.com/commerce/php/development/build/component-management/
+layout: migrated
 ---
 
 After you have built the component and are ready to enable it in your Magento environment, do the following:

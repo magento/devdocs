@@ -6,6 +6,8 @@ menu_title: Service contracts
 menu_order: 2
 functional_areas:
   - Services
+migrated_to: https://developer.adobe.com/commerce/php/development/components/service-contracts/
+layout: migrated
 ---
 
 Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price. Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.

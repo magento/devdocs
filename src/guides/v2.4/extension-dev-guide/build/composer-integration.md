@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: The composer.json file
+migrated_to: https://developer.adobe.com/commerce/php/development/build/composer-integration/
+layout: migrated
 ---
 
 ## Overview

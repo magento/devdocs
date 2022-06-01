@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Migrate install/upgrade scripts to declarative schema
+migrated_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/migration-scripts/
+layout: migrated
 ---
 
 Magento provides several commands to help convert your installation and upgrade scripts to declarative schema. These commands also help you test your changes, roll back your changes if anything goes wrong, and help your module maintain backward compatibility.

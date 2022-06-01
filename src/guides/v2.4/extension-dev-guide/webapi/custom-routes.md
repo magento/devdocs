@@ -5,6 +5,8 @@ contributor_name: Comwrap GmbH
 contributor_link: https://www.comwrap.com
 functional_areas:
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/php/development/components/web-api/custom-routes/
+layout: migrated
 ---
 
 You can configure REST endpoints in your module to use custom routes (aliases) for URLs instead of the default URLs. For example, you can define the alias `createWidget` to represent `POST V1/widgets`. However, you cannot create an alias for a route that contains one or more variables, such as `PUT V1/widgets/:widgetId`.

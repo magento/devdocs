@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Array Manager
+migrated_to: https://developer.adobe.com/commerce/php/development/framework/array-manager/
+layout: migrated
 ---
 
 ## Overview

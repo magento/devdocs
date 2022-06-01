@@ -3,6 +3,8 @@ group: php-developer-guide
 title: Check the Commerce version
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/php/development/versioning/check-version/
+layout: migrated
 ---
 
 Use any of the following ways to determine which version of Magento is installed:

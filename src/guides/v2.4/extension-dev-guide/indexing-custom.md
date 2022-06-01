@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Adding a custom indexer
+migrated_to: https://developer.adobe.com/commerce/php/development/components/indexing/custom-indexer/
+layout: migrated
 ---
 
 ## Adding a custom indexer {#m2devgde-indexing-custom}

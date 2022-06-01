@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Public content
+migrated_to: https://developer.adobe.com/commerce/php/development/cache/page/public-content/
+layout: migrated
 ---
 
 By default, all pages in Magento are cacheable, but you can disable caching if necessary (e.g., payment method return page, debug page, or AJAX data source).

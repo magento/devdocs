@@ -4,6 +4,8 @@ subgroup: Security
 title: Non-secure functions
 menu_title: Non-secure functions
 menu_order: 2100
+migrated_to: https://developer.adobe.com/commerce/php/development/security/non-secure-functions/
+layout: migrated
 ---
 
 ## Overview

@@ -4,6 +4,8 @@ subgroup: 99_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
 menu_order: 4
+migrated_to: https://developer.adobe.com/commerce/php/development/components/service-contracts/design-patterns/
+layout: migrated
 ---
 
 In the programming community, a _design pattern_ is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a [design pattern](https://glossary.magento.com/design-pattern) as a best practice with conditions.

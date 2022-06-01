@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Denial-of-Service (DoS) attacks
+migrated_to: https://developer.adobe.com/commerce/php/development/security/denial-of-service-attacks/
+layout: migrated
 ---
 
 A __Denial-of-Service (DoS) attack__ attempts to shut down (halt) servers serving an application to make it

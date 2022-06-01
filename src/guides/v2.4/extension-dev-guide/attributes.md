@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: EAV and extension attributes
+migrated_to: https://developer.adobe.com/commerce/php/development/components/attributes/
+layout: migrated
 ---
 
 There are two types of attributes you can use to extend Magento functionality:

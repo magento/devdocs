@@ -3,6 +3,8 @@ group: php-developer-guide
 title: Versioning schema
 redirect_from:
   - /guides/v2.3/architecture/versioning.html
+migrated_to: https://developer.adobe.com/commerce/php/development/versioning/
+layout: migrated
 ---
 
 {{site.data.var.ee}} and {{site.data.var.ce}} application and module releases have their own unique version number.
