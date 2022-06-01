@@ -44,18 +44,18 @@ The general format of system settings variable names follows:
 
    Global scope variables have the following format:
 
-   <pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE__NAME></pre>
+  <CONFIG__DEFAULT__SYSTEM__VARIABLE__NAME>
 
 *  A specific scope (that is, the setting affects only a specified store view or website)
 
    Store view scope variables, for example, have the following format:
 
-   <pre class="no-copy">CONFIG__STORES__ &lt;STORE_VIEW_CODE>__&lt;SYSTEM__VARIABLE__NAME></pre>
+   <CONFIG__STORES__ STORE_VIEW_CODE>__SYSTEM__VARIABLE__NAME>
 
    For more information about scopes, see:
 
    *  [Step 1: Find the website or store view scope value](#deploy-system-vars-scopes)
-   *  [Magento User Guide]({{ site.user_guide_url }}/configuration/scope.html)
+   *  [Magento User Guide topic on scope]({{ site.user_guide_url }}/configuration/scope.html)
    *  [Scope quick reference]({{ site.user_guide_url }}/stores/store-scope-reference.html)
 
 `<SYSTEM__VARIABLE__NAME>` is the configuration path with double underscore characters substituted for `/`. For more information, see [Step 2: Set system variables](#cloud-system-vars-sys).
@@ -227,7 +227,14 @@ To find the variable name for the shipping country origin:
 
 ## How to use environment variables
 
-Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php) associate array. You can set the values in any PHP script that runs when Magento runs, such as `index.php`.
+Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php) associate array. You can set the values in any PHP script that runs when Magento runs.  
+
+{%
+include note.html
+type='warning'
+content='
+
+Be aware that setting configuration values in `index.php` or `pub/index.php` does not always work as expected since different application entry points are used depending on your web server configuration. To ensure your directives always execute regardless of the application entry point, place your $_ENV directives in `app/bootstrap.php` since this file loads as part of the Magento architecture.  
 
 An example of setting two values follows:
 
@@ -254,5 +261,5 @@ content='
 {:.ref-header}
 Related topics
 
-*  [Magento User Guide discussion of scope]({{ site.user_guide_url }}/configuration/scope.html)
+*  [Magento User Guide topic on scope]({{ site.user_guide_url }}/configuration/scope.html)
 *  [Magento User Guide scope quick reference]({{ site.user_guide_url }}/stores/store-scope-reference.html)
