@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Routing
-migrated_to: https://developer-stage.adobe.com/commerce/php/development/components/routing/
+migrated_to: https://developer.adobe.com/commerce/php/development/components/routing/
 layout: migrated
 ---
 
