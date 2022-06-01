@@ -111,7 +111,7 @@ Prior to setting up a local workspace, gather the following credentials and acco
 [Docker]: https://www.docker.com/get-started
 [Docker desktop]: https://docs.docker.com/desktop/#configure-docker-desktop
 [init-docker.sh]: https://github.com/magento/magento-cloud-docker/blob/develop/bin/init-docker.sh
-[mutagen]: https://mutagen.io/documentation/introduction/installation
+[Mutagen]: https://mutagen.io/documentation/introduction/installation
 [authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [Magento Cloud template]: https://github.com/magento/magento-cloud
 [Set up an account]: {{site.baseurl}}/cloud/before/before-workspace.html#newaccount
