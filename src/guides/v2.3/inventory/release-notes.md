@@ -26,7 +26,7 @@ The release notes include:
 
 -  {:.fix} The default inventory stock status of bundle and grouped products updates as expected when a merchant creates a shipment from the Admin. Previously, the status of these products remained unchanged after a shipment was created. <!--- ACP2E-418-->
 
--  {:.fix} Configurable products are now returned back to stock when one of these conditions is met: the parent product has at least one saved child in stock, or the configurable itself was updated and set as **in stock** and had at least one child in stock <!--- ACP2E-443-->
+-  {:.fix} Configurable products are now returned back to stock when one of these conditions is met: the parent product has at least one saved child in stock, or the configurable product itself was updated and set as **in stock** and had at least one child in stock <!--- ACP2E-443-->
 
 -  {:.fix} Inventory changes implemented through the REST API are now reflected as expected on product detail pages. The cache for catalog products is now cleaned after comparing the last and current stock statuses. Previously, omitting the callback function resulted in the incorrect evaluation of stock status changes, which did not trigger the necessary cache cleaning. As a result, the storefront did not reflect the inventory changes. <!--- ACP2E-161-->
 
@@ -45,6 +45,8 @@ The release notes include:
 -  {:.fix} Back order status is now correctly represented in the Admin after placing an order with zero quantity product in a multi source/stock deployment. [GitHub-33756](https://github.com/magento/magento2/issues/33756) <!--- ACP2E-713-->
 
 -  {:.fix} Out-of-stock bundle products are no longer displayed on the storefront Category page when the bundle product is updated from the stocks section. <!--- ACP2E-2012-->
+
+-  {:.fix} Compatibility issues with PHP 7.4 have been resolved. <!--- AC-3192-->
 
 ### v1.2.4
 

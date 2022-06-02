@@ -62,13 +62,15 @@ Security improvements for this release improve compliance with the latest securi
 
 *  The `league/fly` Composer dependencies have been to v2.4.3. <!--- AC-2744-->
 
-*  the `grunt-eslint` (NPM) library has been upgraded to the latest version. <!--- AC-2700-->
+*  The `grunt-eslint` (NPM) library has been upgraded to the latest version. <!--- AC-2700-->
 
 *  The `jQuery Storage` libraries have been replaced with `julien-maurel/js-storage`. <!--- AC-2627-->
 
 *  The `php-cs-fixer` and `phpcs` static code analysis tools are now compatible with PHP 8.x. <!--- AC-2259-->
 
-*  The `php-cs-fixer` Composer dependency has been updated to v3.4.0. <!--- AC-2259-->
+*  The `php-cs-fixer` Composer dependency has been updated to ^3.4.0. <!--- AC-2259-->
+
+*  The `phpunit/phpunit` Composer dependency updated to version ^9.4. <!--- AC-443-->
 
 ### Performance and scalability enhancements
 
@@ -151,6 +153,12 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 *  Screen reader users are informed when a new page view is rendered. Previously, when a page title changed, the title change was not announced.
 
 ### AdminGWS
+
+### Adobe Stock
+
+<!--- AC-2926-->
+
+*  Users can now successfully sign out of Adobe Stock.
 
 ### Backend
 
@@ -274,7 +282,7 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-522-->
 
-*  {{ site.data.var.ee }}no longer throws an error when a category rule assigns a product to a category, and the category is subsequently sorted.
+*  {{ site.data.var.ee }} no longer throws an error when a category rule assigns a product to a category that is subsequently sorted.
 
 <!--- ACP2E-516-->
 
@@ -436,7 +444,19 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 *  The `isFreeShipping` method now returns an integer rather than a Boolean.[GitHub-35164](https://github.com/magento/magento2/issues/35164)
 
+<!--- AC-2855-->
+
+*  {{ site.data.var.ee }} no longer throws the following error when you create a plugin for any method of class `vendor/magento/module-backend/Model/Menu.php`: `Error: Call to undefined method ReflectionUnionType::getName().  [GitHub-35292](https://github.com/magento/magento2/issues/35292)
+
+<!--- AC-1518-->
+
+*  {{ site.data.var.ee }} now returns a 404 error instead of a 500 error when you navigate to `/checkout/sidebar/updateItemQty/?item_qty=error` on the storefront. Previously, this error was thrown:  `Warning: A non-numeric value encountered in /vendor/magento/module-checkout/Controller/Sidebar/UpdateItemQty.php on line 69`. [GitHub-34380](https://github.com/magento/magento2/issues/34380)
+
 ### General fixes
+
+<!--- AC-2883-->
+
+*  Setting the maximum session size to 0 (Admin **Store**  >  **Settings**  >  **Configuration  - Advanced**) no longer logs out the administrator. [GitHub-35312](https://github.com/magento/magento2/issues/35312)
 
 <!--- AC-1668-->
 
@@ -653,6 +673,22 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- AC-1883-->
 
 *  The `productDetail` query for a specific store view now returns only categories that are in the specific website's root category in multi-site deployment. Previously, the query returned categories from the root categories of other websites. [GitHub-34570](https://github.com/magento/magento2/issues/34570)
+
+<!--- AC-2712-->
+
+*  The `getProductFiltersByCategory` query now returns only the sub category of provided category ID. Previously, it returned all categories. [GitHub-35220](https://github.com/magento/magento2/issues/35220)
+
+<!--- AC-2794-->
+
+*  The `customerOrders` query now responds as expected when the `gift_message` object is specified in the response but no gift message exists. Previously, the query returned this message: `Can't load gift message for order is returned`.
+
+<!--- AC-2515-->
+
+*  Fixed a bug with the `catalog_category_product` indexer that caused the `products` query to return categories from another store.
+
+<!--- AC-1883-->
+
+*  `productDetail` queries for a specific store view now returns only categories that are in the specific website's root category. Previously, this query returned categories in every root category.  [GitHub-34570](https://github.com/magento/magento2/issues/34570)
 
 ### Image
 
@@ -932,7 +968,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-1113-->
 
-*  The `testCreateProductOnStoreLevel` integration test no longer a causes nested transaction on the database.
+*  The `testCreateProductOnStoreLevel` integration test no longer causes a nested transaction on the database.
 
 #### Unit tests
 
@@ -956,7 +992,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-557-->
 
-*  Lengthy product names in the **Catalog** > **Products** grid are now word-wrapped instead of being displayed in a single line.
+*  Lengthy product names in the **Catalog** > **Products** grid are now word-wrapped instead of displayed in a single line.
 
 <!--- ACP2E-545-->
 
@@ -993,6 +1029,14 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-3058-->
 
 *  The Privacy Policy link in Admin footer now links to the new Adobe Privacy Policy.
+
+<!--- AC-2880-->
+
+*  Administrators can now access Admin menu options when JavaScript bundling is enabled in production mode.  [GitHub-35325](https://github.com/magento/magento2/issues/35325)
+
+<!--- AC-2851-->
+
+*  Administrators can now set the current user’s expiration date higher than 2038 and save the user successfully. Previously, the user whose expiration date was changed could not log back in after logging out.
 
 ### URL rewrites
 
@@ -1039,6 +1083,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-2522-->
 
 *  `CartItemInterface` now includes `customizable_options`. [GitHub-31180](https://github.com/magento/magento2/issues/31180)
+
+<!--- AC-2898-->
+
+*  REST API bulk PUT and DELETE requests now work as expected when the `Magento_ReCaptchaWebapiRest` module is enabled. [GitHub-35348](https://github.com/magento/magento2/issues/35348)
 
 ### Wish list
 
