@@ -5,7 +5,7 @@ title: createCustomerAddress mutation
 
 Use the `createCustomerAddress` mutation to create the customer's address.
 
-To return or modify information about a customer, we recommend you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
+To return or modify information about a customer, we recommend you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-session.html).
 
 ## Syntax
 
