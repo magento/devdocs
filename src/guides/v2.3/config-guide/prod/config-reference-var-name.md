@@ -234,9 +234,9 @@ include note.html
 type='warning'
 content='
 
-Be aware that setting configuration values in `index.php` or `pub/index.php` does not always work as expected since different application entry points are used depending on your web server configuration. To ensure your directives always execute regardless of the application entry point, place your $_ENV directives in `app/bootstrap.php` since this file loads as part of the Magento architecture.  
+Be aware that setting variable values in `index.php` or `pub/index.php` does not always work as expected since different application entry points can be used depending on the web server configuration. By placing `$_ENV` directives in the `app/bootstrap.php` file, regardless of different application entry points, the `$_ENV` directives will always execute since the `app/bootstrap.php` file loads as part of the Magento architecture.  
 
-An example of setting two values follows:
+An example of setting two `$_ENV` values follows:
 
 ```php
 $_ENV['CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME'] = 'http://search.example.com';
