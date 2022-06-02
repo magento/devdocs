@@ -17,15 +17,14 @@ module Jekyll
       migrated_pages = @site.pages.filter { |page| page.data['layout'] == 'migrated' }
 
       url_prefix = site.config['url'] + site.config['baseurl']
-
       migrated_pages_data = []
       migrated_pages.each do |page|
         migrated_page = {
           path: page.path,
-          title: page.data['title'],
-          guide: @site.data['toc'][page.data['group']]['label'],
+          title: page.data['title'] || abort("Error in '#{page.path}'.\n Check 'title' in the frontmatter.".red),
+          guide: @site.data.dig('toc', page.data['group'], 'label') || abort("Error in '#{page.path}'.\n Check 'group' in the frontmatter here, or 'label' in the corresponting TOC.".red),
           migrated_from: url_prefix + page.url,
-          migrated_to: page.data['migrated_to'],
+          migrated_to: page.data['migrated_to'] || abort("Error in '#{page.path}'.\n Check 'migrated_to' in the frontmatter.".red),
           migrated_to_source: if page.data['migrated_to'].start_with?('https://experienceleague.adobe.com')
                                 'Adobe Experience League'
                               elsif page.data['migrated_to'].start_with?('https://developer.adobe.com')
