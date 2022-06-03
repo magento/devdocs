@@ -11,9 +11,9 @@
   Varnish: '7.0'
   Apache: '2.4'
   nginx: '1.8'
-  AWS Aurora (MySQL): '5.7'
+  AWS Aurora (MySQL): '8.0.mysql_aurora.3.01.0'
   AWS S3: ✔️
-  AWS MQ: '3.8.11'
+  AWS MQ: '3.9.13'
   AWS ElastiCache: Redis 6
   AWS ElasticSearch: '7.9'
 2.4.4:
