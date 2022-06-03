@@ -15,18 +15,12 @@ roadmap:
         status: inProgress
       - name: GraphQL - Caching updates
         status: inProgress
-      - name: jQuery 3.6.x support
-        status: inProgress
-      - name: OpenSearch 1.x support
-        status: inProgress
       - name: Payment services (extension)
         status: inProgress
         type: Extension
       - name: PayPal and Braintree updates
         status: inProgress
         type: Extension
-      - name: PHP 8.1 support
-        status: inProgress
       - name: PWA - Global theming/styling
         status: inProgress
       - name: PWA - Custom product attributes
@@ -42,8 +36,6 @@ roadmap:
         type: Extension
   - name: Planned
     features:
-      - name: Framework updates (for example, KnockoutJS and RequireJS)
-        status: Planned
       - name: GraphQL - Personalization updates
         status: Planned
       - name: GraphQL - Page Builder improvements
