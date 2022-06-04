@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The Cloud Docker development environment provides MySQL services through a MariaDB (default) or MySQL database deployed to the [Docker database container][]. You connect to the database using `docker-compose` commands. You can also import data from an existing {{site.data.var.ece}} project into the database container using the `magento-cloud db:dump` command.
+The Cloud Docker development environment provides MySQL services through a MariaDB (default) or MySQL database deployed to the [Docker database container][]. You connect to the database using `docker compose` commands. You can also import data from an existing {{site.data.var.ece}} project into the database container using the `magento-cloud db:dump` command.
 
 ## Connect to the database
 
@@ -54,7 +54,7 @@ To connect to the database using Docker commands:
 1. Connect to the CLI container.
 
    ```bash
-   docker-compose run --rm deploy bash
+   docker compose run --rm deploy bash
    ```
 
 1. Connect to the database with a username and password.
@@ -159,7 +159,7 @@ To import a database dump into the Docker environment:
 
 1. Place the resulting SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
 
-   The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command. When you build, you must add the `--with-entrypoint` option to the `ece-docker build:compose` command. This option configures the directories for the imported database. See [Service configuration options][].
+   The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker compose up` command. When you build, you must add the `--with-entrypoint` option to the `ece-docker build:compose` command. This option configures the directories for the imported database. See [Service configuration options][].
 
 {:.bs-callout-tip}
 Although it is a more complex approach, you can use GZIP to import the database by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and import it inside the Docker container.
