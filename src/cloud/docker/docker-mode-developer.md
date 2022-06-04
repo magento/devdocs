@@ -101,19 +101,19 @@ To launch the Docker environment in developer mode:
    -  For {{site.data.var.ee}} version 2.4 and 2.4.1 only, run the following command to apply patches before you deploy.
 
       ```bash
-      docker-compose run --rm deploy php ./vendor/bin/ece-patches apply
+      docker compose run --rm deploy php ./vendor/bin/ece-patches apply
       ```
 
    -  Deploy {{site.data.var.ee}} in the Docker container.
 
       ```bash
-      docker-compose run --rm deploy cloud-deploy
+      docker compose run --rm deploy cloud-deploy
       ```
 
    -  Run post-deploy hooks.
 
        ```bash
-       docker-compose run --rm deploy cloud-post-deploy
+       docker compose run --rm deploy cloud-post-deploy
        ```
 
       {: .bs-callout-info }
@@ -122,11 +122,11 @@ To launch the Docker environment in developer mode:
 1. Configure and connect Varnish.
 
    ```bash
-   docker-compose run --rm deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env
+   docker compose run --rm deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env
    ```
 
    ```bash
-   docker-compose run --rm deploy magento-command setup:config:set --http-cache-hosts=varnish
+   docker compose run --rm deploy magento-command setup:config:set --http-cache-hosts=varnish
    ```
 
 1. Clear the cache.
