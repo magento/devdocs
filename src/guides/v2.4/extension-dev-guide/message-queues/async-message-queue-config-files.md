@@ -5,6 +5,8 @@ contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com
 functional_areas:
   - Services
+migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/async-configuration/
+layout: migrated
 ---
 
 When using the Magento message queue, four configuration files in your module must be updated:

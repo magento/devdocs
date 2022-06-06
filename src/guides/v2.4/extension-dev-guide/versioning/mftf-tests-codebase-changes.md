@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: MFTF test versioning and backward compatibility policy
+migrated_to: https://developer.adobe.com/commerce/php/development/versioning/tests/
+layout: migrated
 ---
 
 ## Goals and requirements
