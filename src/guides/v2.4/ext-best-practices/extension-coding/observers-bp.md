@@ -6,6 +6,8 @@ menu_title: Observers best practices
 menu_order: 4
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/extensions/observers/
+layout: migrated
 ---
 
 ### Overview

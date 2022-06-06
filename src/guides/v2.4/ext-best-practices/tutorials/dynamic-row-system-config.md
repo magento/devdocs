@@ -6,6 +6,8 @@ menu_title: Creating a dynamic row system config
 menu_order: 1010
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/create-dynamic-row-configuration/
+layout: migrated
 ---
 
 This tutorial shows you how to add a new dynamic rows system configuration in the [Magento admin](https://glossary.magento.com/magento-admin), by extending the [Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray][0] class.

@@ -3,6 +3,8 @@ group: extension-best-practices
 title: Issue reporting
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/issue-reporting/
+layout: migrated
 ---
 
 There is now an extension point for the errorHandler to integrate the plugin with the IDE's dialog to report fatal errors.

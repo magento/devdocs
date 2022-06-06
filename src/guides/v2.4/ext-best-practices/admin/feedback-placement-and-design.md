@@ -3,6 +3,8 @@ menu_title: Feedback for Admin Panel Placement and Design
 menu_order: 1
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/admin/placement-and-design/
+layout: migrated
 ---
 
 Please provide feedback for the article: [Admin Panel Placement and Design]({{ page.baseurl }}/ext-best-practices/admin/placement-and-design.html) on this page via GitHub.

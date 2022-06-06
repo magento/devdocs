@@ -3,6 +3,8 @@ group: extension-best-practices
 title: Run the Upgrade Compatibility Tool
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/run-configuration/
+layout: migrated
 ---
 
 Run Configurations are used to run internal and external processes from within IntelliJ Platform-based products.

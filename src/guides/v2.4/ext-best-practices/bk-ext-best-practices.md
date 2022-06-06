@@ -3,6 +3,8 @@ group: extension-best-practices
 title: Best Practices for Extension Developers
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/
+layout: migrated
 ---
 
 {:.bs-callout-info}

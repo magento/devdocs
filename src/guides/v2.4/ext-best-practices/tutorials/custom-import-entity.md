@@ -3,6 +3,8 @@ group: extension-best-practices
 title: Custom import entity
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/create-custom-import-entity/
+layout: migrated
 ---
 
 This tutorial shows you how to extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0] class to import data into your custom module's table.

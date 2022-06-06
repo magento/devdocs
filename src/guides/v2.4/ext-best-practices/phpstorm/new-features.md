@@ -3,6 +3,8 @@ group: extension-best-practices
 title: New features
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/features/
+layout: migrated
 ---
 
 The following sections describe best practices for using the PHPStorm plugin.

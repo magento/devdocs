@@ -4,6 +4,8 @@ subgroup: Security
 title: Writing secure code
 menu_title: Writing secure code
 menu_order: 2100
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/security/
+layout: migrated
 ---
 
 ## Overview

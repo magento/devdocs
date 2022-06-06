@@ -3,6 +3,8 @@ group: extension-best-practices
 title: The built-in Upgrade Compatibility Tool (MVP)
 functional_areas:
 - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/upgrade-compatibility-tool/
+layout: migrated
 ---
 
 The built-in Upgrade Compatibility Tool aims to achieve the same issues coverage as original Adobe Commerce [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html).

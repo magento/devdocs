@@ -3,6 +3,8 @@ group: extension-best-practices
 title: Custom widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/create-custom-widget/
+layout: migrated
 ---
 
 Widgets provide powerful features in Magento 2, that are used to add dynamic or static content to store's pages.

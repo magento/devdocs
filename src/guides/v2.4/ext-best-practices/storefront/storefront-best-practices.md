@@ -5,6 +5,8 @@ functional_areas:
   - Frontend
   - Theme
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/storefront/
+layout: migrated
 ---
 
 The [storefront](https://glossary.magento.com/storefront) theme is the front facing interface for a Magento application that can be customized through a [theme extension]({{ page.baseurl }}/frontend-dev-guide/themes/theme-overview.html). We suggest adopting the following best practices to avoid common problems we have seen other developers make while making a [theme](https://glossary.magento.com/theme) [extension](https://glossary.magento.com/extension).

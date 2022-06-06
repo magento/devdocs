@@ -4,6 +4,8 @@ subgroup: Tutorials
 title: Serialized to JSON data upgrade
 menu_title: Serialized to JSON data upgrade
 menu_order: 1000
+migrated_to: https://developer-stage.adobe.com/commerce/php/best-practices/tutorials/convert-serialized-data/
+layout: migrated
 ---
 
 ## Overview

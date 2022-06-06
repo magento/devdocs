@@ -6,6 +6,8 @@ menu_title: Coding FAQ
 menu_order: 1000
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/extensions/faq/
+layout: migrated
 ---
 
 This page is a compilation of frequently asked coding questions by the Magento Community.

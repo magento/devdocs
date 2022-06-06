@@ -6,6 +6,8 @@ menu_title: Admin FAQ
 menu_order: 1000
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/admin/faq/
+layout: migrated
 ---
 
 This page is a compilation of frequently asked questions by the Magento Community about extensions integrating with the [Admin](https://glossary.magento.com/admin).
