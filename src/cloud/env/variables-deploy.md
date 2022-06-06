@@ -301,7 +301,7 @@ See [Configure the lock]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/in
 -  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 {:.bs-callout-tip}
-The `MYSQL_USE_SLAVE_CONNECTION` variable is supported only on Adobe Commerce on cloud infrastructure Staging and Production Pro cluster environments and is not supported on Starter projects.
+The `MYSQL_USE_SLAVE_CONNECTION` variable is supported only on {{site.data.var.ece}} Staging and Production Pro cluster environments and is not supported on Starter projects.
 
 {{site.data.var.ee}} can read multiple databases asynchronously. Set to `true` to automatically use a _read-only_ connection to the database to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
