@@ -15,7 +15,7 @@ roadmap:
         status: inProgress
       - name: Replace Froogaloop library with player.js
         status: inProgress
-      - name: TindevdocsyMCE 5.10 support
+      - name: TinyMCE 5.10 support
         status: inProgress
       - name: Latest Vimeo API support
         status: inProgress
