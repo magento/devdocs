@@ -20,6 +20,9 @@ on:
 ###############
 # Set the Job #
 ###############
+permissions:
+  contents: read
+
 jobs:
   mdl:
     name: mdl
