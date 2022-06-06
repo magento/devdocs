@@ -13,8 +13,6 @@ roadmap:
         status: inProgress
       - name: Security and quality improvements
         status: inProgress
-      - name: Performance optimizations (catalog/pricing)
-        status: inProgress
       - name: Replace Froogaloop library with player.js
         status: inProgress
       - name: TinyMCE 5.10 support
@@ -30,8 +28,6 @@ roadmap:
       - name: Remove jquery-migrate
         status: Planned
       - name: Remove PHP 7.4 compatibility
-        status: Planned
-      - name: Security and quality improvements
         status: Planned
       - name: Symfony dependency updates
         status: Planned
