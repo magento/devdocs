@@ -227,10 +227,10 @@ To find the variable name for the shipping country origin:
 
 ## How to use environment variables
 
-Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php) associate array. You can set the values in any PHP script that runs when Commerce runs.  
+Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php) associate array. You can set the values in any PHP script that runs when Commerce runs.
 
 {:.bs-callout-tip}
-Setting variable values in `index.php` or `pub/index.php` does not always function as expected since different application entry points can be used depending on the web server configuration. By placing `$_ENV` directives in the `app/bootstrap.php` file, regardless of different application entry points, the `$_ENV` directives always execute since the `app/bootstrap.php` file loads as part of the Commerce architecture.  
+Setting variable values in `index.php` or `pub/index.php` does not always function as expected since different application entry points can be used depending on the web server configuration. By placing `$_ENV` directives in the `app/bootstrap.php` file,regardless of different application entry points, the `$_ENV` directives always execute since the `app/bootstrap.php` file loads as part of the Commerce architecture.
 
 An example of setting two `$_ENV` values follows:
 
