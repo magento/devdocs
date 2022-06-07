@@ -7,14 +7,14 @@ functional_areas:
   - Setup
 ---
 
-This topic discusses how to derive an environment variable name knowing a configuration path. You can override Magento configuration settings using environment variables. For example, you can override the value of a payment processor's live URL on your production system.
+This topic discusses how to derive an environment variable name knowing a configuration path. You can override Adobe Commerce configuration settings using environment variables. For example, you can override the value of a payment processor's live URL on your production system.
 
-You can override the value of _any_ configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/).
+You can override the value of _any_ configuration setting using environment variables; however, Adobe recommends you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/).
 
 {:.bs-callout-tip}
 Check out the [Configure environments]({{ site.baseurl }}/cloud/env/variables-intro.html) topic in the _Cloud_ guide for details on working with variables in {{site.data.var.ece}}.
 
-A environment variable name consists of its scope followed by its configuration path in a particular format. The following sections discuss how to determine a variable name in more detail.
+An environment variable name consists of its scope followed by its configuration path in a particular format. The following sections discuss how to determine a variable name in more detail.
 
 You can use variables for any of the following:
 
@@ -127,7 +127,7 @@ For example, to find a website or store view scope value in the Admin:
 
 To get these values from the database:
 
-1. If you haven't done so already, log in to your development system as the [file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to your development system as the [file system owner](https://glossary.magento.com/magento-file-system-owner) if you have not done so already.
 1. Enter the following command:
 
    ```bash
@@ -227,11 +227,10 @@ To find the variable name for the shipping country origin:
 
 ## How to use environment variables
 
-Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php) associate array. You can set the values in any PHP script that runs when Magento runs.  
+Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php) associate array. You can set the values in any PHP script that runs when Commerce runs.  
 
 {:.bs-callout-tip}
-
-Be aware that setting variable values in `index.php` or `pub/index.php` does not always work as expected since different application entry points can be used depending on the web server configuration. By placing `$_ENV` directives in the `app/bootstrap.php` file, regardless of different application entry points, the `$_ENV` directives will always execute since the `app/bootstrap.php` file loads as part of the Magento architecture.  
+Setting variable values in `index.php` or `pub/index.php` does not always function as expected since different application entry points can be used depending on the web server configuration. By placing `$_ENV` directives in the `app/bootstrap.php` file, regardless of different application entry points, the `$_ENV` directives always execute since the `app/bootstrap.php` file loads as part of the Commerce architecture.  
 
 An example of setting two `$_ENV` values follows:
 
@@ -242,11 +241,13 @@ $_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '123
 
 A step-by-step example is shown in [Set configuration values using environment variables]({{ page.baseurl }}/config-guide/deployment/pipeline/example/environment-variables.html).
 
-*  To use values you set in the `$_ENV` array, you must set `variables_order = "EGPCS"` in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order).
+*  To use values that you set in the `$_ENV` array, you must set `variables_order = "EGPCS"`(Environment, Get, Post, Cookie, and Server) in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order).
 
 *  For Adobe Commerce on cloud infrastructure, if you are attempting to override configuration settings using the [Project Web Interface](https://devdocs.magento.com/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
 
 ![Environment variable example](https://devdocs.magento.com/common/images/cloud/cloud_env_var_example.png)
+
+*  For Adobe
 
 {:.ref-header}
 Related topics
