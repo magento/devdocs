@@ -1,6 +1,7 @@
 ---
 title: Roadmap
 group: release
+description: See what we have planned for Adobe Commerce and Magento Open Source.
 ---
 
 The following table contains the status of items on the {{ site.data.var.ce }} roadmap (items are subject to change):

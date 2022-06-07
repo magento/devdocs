@@ -4,8 +4,84 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon May 23 16:07:25 2022
+updated: Mon Jun 6 14:38:47 2022
 entries:
+- description: Added missing versions for Amazon Web Services on the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    page.
+  versions: 2.4.x
+  type: Technical
+  date: June 3, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2989
+  merge_commit: bf13a57daa910a8e3fa6953c4d3f74589726b0d1
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
+- description: Added descriptions of B2B [message queue consumers](https://devdocs.magento.com/extensions/b2b/#start-message-consumers).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: June 3, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2982
+  merge_commit: e3b399bd80df81a7e09f73c99427859d2d29ec1f
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Updated the product [roadmap](https://devdocs.magento.com/release/roadmap.html)
+    with items for the second half of 2022.
+  versions: 2.4.x
+  type: Major Update
+  date: June 3, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2990
+  merge_commit: b7431cbb627bbf652969ee644f44dedbc710e821
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: The [PHP Developer Guide](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/development/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: June 1, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2984
+  merge_commit: 43e38bd962d38b9a1a82f96aa3679583059b24fb
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Updated the [Xdebug topic](https://devdocs.magento.com/cloud/howtos/debug.html#pro-debug)
+    to clarify that Xdebug is available and enabled in Pro Staging and Production
+    environments.
+  versions: 2.x
+  type: Technical
+  date: May 27, 2022
+  link: https://github.com/magento/devdocs/pull/9444
+  merge_commit: b6db38031215b0b1e3b816008edc47cd008b1327
+  contributor: BarnyShergold
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+  - 'Progress: done'
+- description: Added descriptions of Inventory Management [message queue consumers](https://devdocs.magento.com/guides/v2.4/inventory/index.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: May 25, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2977
+  merge_commit: dd5afa9ec491d084c322ba49027dc7cf8f3f1191
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
 - description: Updated the [Adobe Commerce 2.4.4](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-4.html)
     and [Magento Open Source 2.4.4](https://devdocs.magento.com/guides/v2.4/release-notes/open-source-2-4-4.html)
     release notes with information about changes to Composer allow-listing of plugins
