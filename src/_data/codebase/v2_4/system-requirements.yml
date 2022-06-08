@@ -10,7 +10,6 @@
   Redis: '6.2'
   Varnish: '7.0'
   Apache: '2.4'
-
   nginx: '1.18'
   AWS Aurora (MySQL): '8.0'
   AWS S3: ✔️
@@ -30,7 +29,6 @@
   Redis: '6.2'
   Varnish: '7.0'
   Apache: '2.4'
-
   nginx: '1.18'
   AWS Aurora (MySQL): '5.7'
   AWS S3: ✔️
@@ -49,7 +47,6 @@
   Redis: '6.0'
   Varnish: '6.5'
   Apache: '2.4'
-
   nginx: '1.18'
   AWS Aurora (MySQL): '5.7'
   AWS S3: ✔️
