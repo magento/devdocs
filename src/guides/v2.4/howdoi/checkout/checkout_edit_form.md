@@ -8,6 +8,8 @@ menu_order: 8
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/add-template/
+layout: migrated
 ---
 
 This topic describes how to replace the [HTML](https://glossary.magento.com/html) template for a form field on the [Checkout](https://glossary.magento.com/checkout) page. You might need to replace the template in order to add elements displayed with the field, change the [CSS](https://glossary.magento.com/css) class assigned to it, add attributes and so on.

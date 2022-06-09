@@ -8,6 +8,8 @@ menu_order: 4
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/add-order-validation/
+layout: migrated
 ---
 
 This topic describes how to add custom validations to be performed before the order is placed during [checkout](https://glossary.magento.com/checkout). Namely, the validations which are performed after a shopper clicks the **Place Order** button. Writing the validation logic itself is not covered in this topic.

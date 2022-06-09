@@ -8,6 +8,8 @@ menu_order: 7
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/add-input-mask/
+layout: migrated
 ---
 
 This topic describes how a developer can add custom input masks.

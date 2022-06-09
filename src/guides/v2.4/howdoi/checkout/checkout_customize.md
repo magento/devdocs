@@ -8,6 +8,8 @@ menu_order: 2
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/customize-view/
+layout: migrated
 ---
 
 This topic contains the basic information about how to customize the view of an existing [checkout](https://glossary.magento.com/checkout) step. In the Magento application, checkout is implemented using UI components. You can customize each step by [changing the JavaScript implementation or template](#change-component) for a component, [adding](#add), [disabling](#disable), or [removing](#remove) a component.

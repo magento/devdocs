@@ -8,6 +8,8 @@ menu_order: 1
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/add-new-step/
+layout: migrated
 ---
 
 This topic describes how to create the [frontend](https://glossary.magento.com/frontend) part of the component, implementing a checkout step, and how to add it to the checkout flow.

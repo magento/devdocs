@@ -8,6 +8,8 @@ menu_order: 90
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/add-checkbox/
+layout: migrated
 ---
 
 This topic describes how to add a custom field that influences other fields on the checkout page.

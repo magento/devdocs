@@ -9,6 +9,8 @@ level3_subgroup: checkout-tutorial
 menu_order: 0
 functional_areas:
   - Checkout
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/
+layout: migrated
 ---
 
 Magento [checkout](https://glossary.magento.com/checkout) is implemented using the [UI components]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html).
