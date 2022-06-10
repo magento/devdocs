@@ -3,7 +3,7 @@ group: testing
 title: Application Area attribute in the Integration Testing Framework
 ---
 
-Configure a test environment in scope of the particular [application area][] with the `@magentoAppArea` annotation.
+Configure a test environment in scope of the particular [application area][] with the `AppArea` annotation.
 
 ## Format
 

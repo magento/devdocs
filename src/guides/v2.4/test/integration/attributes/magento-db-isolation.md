@@ -26,7 +26,7 @@ Use test case declarations when a sequence of tests introduces changes to the da
 For example, typical CRUD tests: _create -> read -> update -> delete_.
 Every next test relies on a database state after the previous one.
 If at any point of that sequence (after creation) the test fails, the database will be polluted with test data.
-To apply a database rollback after the test case, create a separate test case with `@magentoDbIsolation` enabled at a class level.
+To apply a database rollback after the test case, create a separate test case with `DbIsolation` enabled at a class level.
 
 Example:
 
