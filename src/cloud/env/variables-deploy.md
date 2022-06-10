@@ -101,6 +101,17 @@ stage:
         consumer2: 3
 ```
 
+Example of an empty array that runs all consumers:
+
+```yaml
+stage:
+  deploy:
+    CRON_CONSUMERS_RUNNER:
+      cron_run: true
+      max_messages: 1000
+      consumers: []
+```
+
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-message-queues.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
 The following command returns a list of message queue consumers:

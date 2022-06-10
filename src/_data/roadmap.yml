@@ -23,8 +23,6 @@ roadmap:
     features:
       - name: OpenSearch as independent search engine
         status: Planned
-      - name: Personalization and inventory improvements
-        status: Planned
       - name: Remove jquery-migrate
         status: Planned
       - name: Remove PHP 7.4 compatibility

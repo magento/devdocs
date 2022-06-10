@@ -36,8 +36,7 @@ module Jekyll
         migrated_pages_data << migrated_page
       end
 
-      migrated_pages_by_group = migrated_pages_data.group_by { |page| page[:guide] }
-
+      migrated_pages_by_group = migrated_pages_data.group_by { |page| page[:guide] }.sort.to_h
       content = "The folowing is the list of topics that have been migrated and will be redirected soon.\n\n"
       migrated_pages_by_group.each do |guide, topics|
         content += "\n## #{guide}\n\n\n"
