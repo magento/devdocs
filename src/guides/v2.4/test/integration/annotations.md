@@ -47,5 +47,5 @@ This order is necessary to meet the requirement of setting up the store-scoped c
 
 <!-- LINK DEFINITIONS -->
 
-[PHPUnit annotations]: https://phpunit.readthedocs.io/en/9.1/annotations.html
+[PHPUnit annotations]: https://phpunit.readthedocs.io/en/9.5/annotations.html
 [Attributes section]: {{ page.baseurl }}/test/integration/attributes.html

@@ -1085,6 +1085,21 @@ entries:
   labels:
   - Major Update
   - 2.4.4
+- description: Added new [parameterized data fixture](https://devdocs.magento.com/guides/v2.4/test/integration/parameterized_data_fixture.html)
+    and [data fixture data provider annotation](https://devdocs.magento.com/guides/v2.4/test/integration/annotations/magento-data-fixture-data-provider.html)
+    documentation for writing tests.
+  versions: 2.4.x
+  type: New Topic
+  date: January 4, 2022
+  link: https://github.com/magento/devdocs/pull/9273
+  merge_commit: ad816f5435223fd1bbdf8187f458fe1582193cb0
+  contributor: thiaramus
+  membership: true
+  labels:
+  - Internal Dev
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.1.8 Quality Patches Tool (QPT) package release.
   versions: 2.x

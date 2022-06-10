@@ -18,7 +18,7 @@ Application isolation annotation:
 ```php?start_inline=1
 #[
     AppIsolation((bool)<status>)
-] 
+]
 ```
 
 ## Test case attribute
@@ -40,7 +40,7 @@ Example:
 ```php?start_inline=1
 #[
     AppIsolation(true)
-] 
+]
 public function testGetAddressById()
 {
     $addressId = 2;

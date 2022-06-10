@@ -9,7 +9,7 @@ Configure a test environment in scope of the particular [application area][] wit
 
 ```php?start_inline=1
 #[
-    AppArea((string) <Area code>)
+    AppArea((string)<'adminhtml'/'frontend'/'global'>)
 ]
 ```
 
@@ -31,7 +31,7 @@ Example:
 ```php?start_inline=1
 #[
     AppArea('adminhtml')
-] 
+]
 namespace Vendor\Module;
 class ClassToTest extends \PHPUnit\Framework\TestCase
 {
@@ -42,7 +42,7 @@ class ClassToTest extends \PHPUnit\Framework\TestCase
 
     #[
         AppArea('frontend')
-    ] 
+    ]
     public function testTwo()
     {
         //...
@@ -78,7 +78,7 @@ class ClassToTest extends \PHPUnit\Framework\TestCase
     // reinitializes the application and executes the test in scope of the frontend area
     #[
         AppArea('frontend')
-    ] 
+    ]
     public function testTwo()
     {
         //...
@@ -87,7 +87,7 @@ class ClassToTest extends \PHPUnit\Framework\TestCase
     // reinitializes the application and executes the test in scope of the adminhtml area
     #[
         AppArea('adminhtml')
-    ] 
+    ]
     public function testThree()
     {
         //...

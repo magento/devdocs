@@ -11,7 +11,7 @@ It enables you to register all the components at a specified directory recursive
 ```php?start_inline=1
 #[
    ComponentsDir((string)<dir_path>)
-] 
+]
 ```
 
 Here, `<dir_path>` is a path to the directory with fixture components.
@@ -35,7 +35,7 @@ namespace Magento\Foo;
 
 #[
    ComponentsDir('Magento/Foo/_files/code/Magento')
-] 
+]
 class BarTest extends \PHPUnit\Framework\TestCase
 {
     #[

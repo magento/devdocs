@@ -1,6 +1,7 @@
 ---
 group: testing
 title: Data fixture attribute
+redirect_from: /guides/v2.4/test/integration/annotations/magento-data-fixture-data-provider.html
 ---
 
 A data fixture is a PHP script that sets data you want to reuse in your test.
@@ -22,7 +23,6 @@ To set up a date fixture, use the `DataFixture` attribute.
 
 -  `<Fully qualified fixture class name>` is the fully qualified name of a class that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
 -  `<Fixture Method>` is the name of the method declared in the current class.
-  
 
 ## Principles
 

@@ -10,7 +10,7 @@ To set Magento configuration values for individual tests and revert them after t
 ```php
 #[
    Config((string)<store_code>, (string)<config_path>, (string)<config_value>, ...)
-] 
+]
 ```
 
 -  `<store_code>` is the code of the store to be configured.
@@ -164,7 +164,7 @@ class ConfigFixtureTest extends \PHPUnit\Framework\TestCase
 
     #[
          Config('default/dev/restrict/allow_ips', '192.168.0.2')
-    ] 
+    ]
     public function testGlobalStoreConfig()
     {
         $this->_object->expects(
@@ -209,7 +209,7 @@ class ConfigFixtureTest extends \PHPUnit\Framework\TestCase
 
     #[
          Config('current_store', 'web/unsecure/base_url', 'http://example.com/')
-    ]     
+    ]
     public function testInitStoreAfter()
     {
         $this->_object->startTest($this);

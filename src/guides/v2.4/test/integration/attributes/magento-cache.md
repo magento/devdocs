@@ -10,7 +10,7 @@ Enable or disable a [cache type][] using the `Cache` attribute.
 ```php?start_inline=1
 #[
    Cache((string)<'all'/'enabled'/'disabled>')
-] 
+]
 ```
 
 Here,
@@ -47,7 +47,7 @@ namespace Magento\Foo;
 
 #[
    Cache('all', true)
-] 
+]
 class BarTest extends \PHPUnit\Framework\TestCase
 {
     public function testOne()
@@ -57,7 +57,7 @@ class BarTest extends \PHPUnit\Framework\TestCase
 
     #[
        Cache('config', false)
-    ] 
+    ]
     public function testTwo()
     {
         ...
@@ -65,7 +65,7 @@ class BarTest extends \PHPUnit\Framework\TestCase
 
     #[
        Cache('all', true, 'config', false)
-    ] 
+    ]
     public function testThree()
     {
         ...
@@ -73,7 +73,7 @@ class BarTest extends \PHPUnit\Framework\TestCase
 
     #[
        Cache('config', false, 'all', true)
-    ] 
+    ]
     public function testFour()
     {
         ...
