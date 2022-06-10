@@ -101,6 +101,17 @@ stage:
         consumer2: 3
 ```
 
+Example of an empty array that runs all consumers:
+
+```yaml
+stage:
+  deploy:
+    CRON_CONSUMERS_RUNNER:
+      cron_run: true
+      max_messages: 1000
+      consumers: []
+```
+
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-message-queues.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
 The following command returns a list of message queue consumers:
@@ -300,6 +311,9 @@ See [Configure the lock]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/in
 -  **Default**—`false`
 -  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
+{:.bs-callout-tip}
+The `MYSQL_USE_SLAVE_CONNECTION` variable is supported only on {{site.data.var.ece}} Staging and Production Pro cluster environments and is not supported on Starter projects.
+
 {{site.data.var.ee}} can read multiple databases asynchronously. Set to `true` to automatically use a _read-only_ connection to the database to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
 ```yaml
@@ -381,6 +395,9 @@ If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the
 
 {:.bs-callout-warning}
 Do not enable this variable on scaled architecture (split architecture) projects. It causes Redis connection errors. Redis slaves are still active but will not be used for Redis reads. As an alternative, we recommend the following: use {{site.data.var.ee}} 2.3.5 or later on Cloud projects with a scaled architecture, implement a new Redis backend configuration, and implement L2 caching for Redis.
+
+{:.bs-callout-tip}
+The `REDIS_USE_SLAVE_CONNECTION` variable is supported only on {{site.data.var.ece}} Staging and Production Pro cluster environments and is not supported on Starter projects.
 
 {{site.data.var.ee}} can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 

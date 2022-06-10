@@ -11,6 +11,12 @@
   Varnish: '7.0'
   Apache: '2.4'
   nginx: '1.8'
+  AWS Aurora (MySQL): '8.0'
+  AWS S3: ✔️
+  AWS MQ: '3.9.13'
+  AWS ElastiCache: Redis 6
+  AWS Elasticsearch: '7.9'
+  AWS OpenSearch: '1.2'
 2.4.4:
   Composer: '2.1'
   Elasticsearch: '7.16'
@@ -23,6 +29,11 @@
   Varnish: '7.0'
   Apache: '2.4'
   nginx: '1.8'
+  AWS Aurora (MySQL): '5.7'
+  AWS S3: ✔️
+  AWS MQ: '3.8.11'
+  AWS ElastiCache: Redis 6
+  AWS Elasticsearch: '7.9'
 2.4.3-p2:
   Composer: '1'
   Elasticsearch: '7.16'
@@ -35,6 +46,11 @@
   Varnish: '6.5'
   Apache: '2.4'
   nginx: '1.8'
+  AWS Aurora (MySQL): '5.7'
+  AWS S3: ✔️
+  AWS MQ: '3.8.11'
+  AWS ElastiCache: Redis 6
+  AWS Elasticsearch: '7.9'
 2.4.3:
   Composer: '1'
   Elasticsearch: '7.10'
@@ -50,7 +66,7 @@
   AWS S3: ✔️
   AWS MQ: '3.8.11'
   AWS ElastiCache: Redis 6
-  AWS ElasticSearch: '7.9'
+  AWS Elasticsearch: '7.9'
 2.4.2:
   Composer: '1'
   Elasticsearch: '7.9'
