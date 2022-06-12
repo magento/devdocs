@@ -108,8 +108,6 @@ This release brings increased conformance to standard accessibility guidelines.
 
 ## Fixed issues
 
-<!--- AC-1589-->
-
 We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 ### Installation, upgrade, deployment
@@ -121,6 +119,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 <!--- AC-3036-->
 
 *  {{ site.data.var.ee }} no longer throws an exception when you try to change the Admin URL to a custom URL from the Admin. Previously, after changing the Admin URL, you could not log in. [GitHub-35416](https://github.com/magento/magento2/issues/35416)
+
+<!--- AC-1480-->
+
+*  Merchants can now successfully upgrade from an {{ site.data.var.ee }} 2.4.2 deployment with Klarna to {{ site.data.var.ee }} 2.4.3. [GitHub-33760](https://github.com/magento/magento2/issues/33760)
 
 ### Accessibility
 
@@ -138,7 +140,7 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- AC-2486-->
 
-*  Filter and sort button text now meet the WCAG 2.0 required minimum color contrast ratio of 4.5:1 for standard text of 18pt (24px) or 14pt (19px) if bolded. Previously, navigation buttons for carousels did not meet these minimum contrast requirements.
+*  **Filter** and **Sort** button text now meet the WCAG 2.0 required minimum color contrast ratio of 4.5:1 for standard text of 18pt (24px) or 14pt (19px) if bolded. Previously, navigation buttons for carousels did not meet these minimum contrast requirements.
 
 <!--- AC-2499-->
 
@@ -168,7 +170,15 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 *  You can now use the REST API to update product price attributes for a specific website. Previously, if some product attributes were overridden for a specific store view, you could not update a price attribute for that product in that same store view.
 
+<!--- ACP2E-780-->
+
+*  {{ site.data.var.ee }} now correctly calculates the cart total for a bundle product when the Product Subselect rule is applied.
+
 ### Cache
+
+<!--- ACP2E-684-->
+
+*  Full page cache is no longer shown as disabled in the Admin when the Magento cache is flushed and `use_stale_cache` is enabled.
 
 ### Cart and checkout
 
@@ -206,7 +216,7 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-42-->
 
-*  `cart` query responses no longer return null responses when a product is out of stock. Previously, when you ran a query with an out-of-stock product, {{ site.data.var.ee }}displayed a `null` value under the `items` section in the response.
+*  `cart` query responses no longer return null responses when a product is out of stock, and a new `errors` element containing the error message was introduced to the response. Previously, when you ran a query with an out-of-stock product, Magento displayed a `null` value under the `items` section in the response. See [cart query](https://devdocs.magento.com/guides/v2.4/graphql/queries/cart.html).
 
 <!--- ACP2E-38-->
 
@@ -230,7 +240,15 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- AC-2630-->
 
-*  Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicate with the exception of a leading zero (for example, `01234` and `1234`). Previously, {{ site.data.var.ee }}did not unassign inventory sources and threw an error.
+*  Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicate with the exception of a leading zero (for example, `01234` and `1234`). Previously, {{ site.data.var.ee }} did not unassign inventory sources and threw an error.
+
+<!--- ACP2E-375-->
+
+*  Store credit is now unavailable when the Zero Subtotal Checkout payment method is disabled. Previously, the Store Credit checkbox was not functional during order placement from Admin. {{ site.data.var.ee }} did not place the order with the store credit and displayed this error: `The requested Payment Method is not available`.
+
+<!--- ACP2E-707-->
+
+*  Merchants can now create a credit memo in which  **Refund Shipping (Incl. Tax)** is set to -0.01 and can now set this amount to 0. Previously, the credit memo could not be created under these conditions.
 
 ### Cart price rule
 
@@ -282,7 +300,7 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-522-->
 
-*  {{ site.data.var.ee }} no longer throws an error when a category rule assigns a product to a category that is subsequently sorted.
+*  {{ site.data.var.ee }} no longer throws an error when a category rule assigns a product to a category that is subsequently sorted in a multi-site deployment.
 
 <!--- ACP2E-516-->
 
@@ -294,7 +312,7 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-468-->
 
-*  Products are now enabled as expected after a schedule update completes.
+*  Products can now be enabled using a scheduled update.
 
 <!--- ACP2E-392-->
 
@@ -330,11 +348,27 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- AC-1705-->
 
-*  Page Cache is now cleared as expected for the configurable product parent when changes to a child product are saved. Previously, because the cache was not cleared, changes were not selected on the storefront configuration product page. [GitHub-34508](https://github.com/magento/magento2/issues/34508)
+*  Page cache is now cleared as expected for the configurable product parent when changes to a child product are saved. Previously, because the cache was not cleared, changes were not selected on the storefront configuration product page. [GitHub-34508](https://github.com/magento/magento2/issues/34508)
 
 <!--- AC-711-->
 
 *  Product lists are now rendered correctly in the Admin. Previously, the product list did not render, and {{ site.data.var.ee }} displayed this error:  `Item (Magento\Catalog\Model\Product\Interceptor) with the same ID "<ID>" already exists`. [GitHub-33145](https://github.com/magento/magento2/issues/33145)
+
+<!--- AC-1214-->
+
+*  Product prices are now the same on the product detail page and in storefront search in multi-store deployments after Catalogue Price Scope changes from **website** to **global**. Previously, the Catalog Search Results page displayed the **global** price, and the product details page displayed the **website** price. [GitHub-34074](https://github.com/magento/magento2/issues/34074)
+
+<!--- ACP2E-316-->
+
+*  Layered navigation now displays products with the highest prices as expected when **Price Navigation Step Calculation** is set to **Manual**.
+
+<!--- ACP2E-711-->
+
+*  You can now change the per-page product limit displayed within a category when **Remember Category Pagination**  is enabled. Previously, the cookie `form_key` and UI `form_key` differed, and {{ site.data.var.ee }} displayed this error:  `Invalid Form Key. Please refresh the page`.
+
+<!--- ACP2E-807-->
+
+*  The EAV indexer now processes product IDs as type `int` to prevent possible performance issues.
 
 ### Catalog rule
 
@@ -378,6 +412,10 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 *  Configurable products are now moved to the last position in the product listing after stock is updated when the **Move out of stock to the bottom** setting is enabled. A new custom database query has been implemented to negate Elasticsearch index sort order, which disregards Admin-enabled sort order. Previously, configurable products and their child products were not moved to the bottom of the list when this setting was enabled.
 
+<!--- ACP2E-43-->
+
+*  {{ site.data.var.ee }} now correctly displays a configurable product’s stock status, available configurations, and displayed price when the availability of one of the configurable product’s child product is changed by a scheduled update. Previously, when a configurable product had two children and the availability of one child product was disabled with a scheduled update, the parent product’s stock status was incorrectly displayed as **Out of Stock** when the update was active, After the update completed, the displayed price and the availability of its configurations was miscalculated.
+
 ### Customer
 
 <!--- ACP2E-390-->
@@ -410,11 +448,11 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-658-->
 
-*  The `bin/magento setup:config:set` command no longer overrides already set cache ID prefixes.
+*  The `bin/magento setup:config:set` command no longer overrides already set cache ID prefixes in `app/etc/env.php`.
 
 <!--- ACP2E-517-->
 
-*  `setup:static-content:deploy -s compact` now includes styles from child themes as expected. Previously, these themes were not present on the storefront after deployment.
+*  `setup:static-content:deploy -s compact` now includes styles from child themes as expected. Previously, theme CSS files were not present on the storefront after deployment.
 
 <!--- AC-1999-->
 
@@ -451,6 +489,10 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- AC-1518-->
 
 *  {{ site.data.var.ee }} now returns a 404 error instead of a 500 error when you navigate to `/checkout/sidebar/updateItemQty/?item_qty=error` on the storefront. Previously, this error was thrown:  `Warning: A non-numeric value encountered in /vendor/magento/module-checkout/Controller/Sidebar/UpdateItemQty.php on line 69`. [GitHub-34380](https://github.com/magento/magento2/issues/34380)
+
+<!--- ACP2E-847-->
+
+*  Magento no longer triggers a `trim(): Passing null to parameter #1 ($string) of type string is deprecated` error when the AMPQ connection is configured without SSL configuration.
 
 ### General fixes
 
@@ -513,6 +555,14 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- AC-2765-->
 
 *  {{ site.data.var.ee }} no longer throws an error when an administrator with roles scoped to a single website adds product to Content Elements using PageBuilder. Previously, {{ site.data.var.ee }} threw an SQL error.
+
+<!--- AC-197-->
+
+*  Validation has been added to the second line of the street address on the edit and add address pages. The minimum and maximum text lengths that are specified on the second are now enforced.
+
+<!--- ACP2E-798-->
+
+*  Magento no longer throws the following error during the creation of a catalog rule in the Admin after upgrade: `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`.
 
 ### Gift cards
 
@@ -596,7 +646,7 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-470-->
 
-*  `products` queries now return only the categories associated with the website passed in the request.
+*  `products` queries now return only the categories associated with the store passed in the request.
 
 <!--- ACP2E-363-->
 
@@ -694,7 +744,7 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-71-->
 
-*  Images on product details page no longer flicker, and the image remains centered as expected. Previously, after a product detail page completed loading an image, the image visibly shifted downwards.
+*  Images on product details pages no longer flicker, and images remain centered as expected. Previously, after a product detail page completed loading an image, the image visibly shifted downwards.
 
 ### Import/export
 
@@ -708,7 +758,7 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 <!--- ACP2E-502-->
 
-*  {{ site.data.var.ee }} now successfully imports images with a long file name. Previously, {{ site.data.var.ee }} did not import the image and threw this error: `Imported resource (image) could not be downloaded from external resource due to timeout or access permissions in row(s):`.
+*  {{ site.data.var.ee }} now successfully imports images with long file names. Previously, {{ site.data.var.ee }} did not import the image and threw this error: `Imported resource (image) could not be downloaded from external resource due to timeout or access permissions in row(s):`.
 
 <!--- ACP2E-294-->
 
@@ -717,6 +767,10 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- ACP2E-59-->
 
 *  Bundle products that contain a question mark (?) in the option title can now be imported successfully because of improvements to the query builder inside `populateExistingOptions` method. The option title is also displayed correctly. Previously, after the initial import, successive imports resulted in corrupted behavior and doubled options. Shoppers could not add the product to the cart, either.
+
+<!--- ACP2E-766-->
+
+*  Added validation for category names during import. Previously, {{ site.data.var.ee }} did not validate category names, which lead to errors when category names exceeded 255 characters.
 
 ### Index
 
@@ -764,6 +818,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The newsletter subscription confirmation email now has the correct, store-specific email address in the **From** field if the customer is assigned to a non-default store and subscribed or unsubscribed from the Admin. Previously, the customer received an email with default email in **From** header. [GitHub-34963](https://github.com/magento/magento2/issues/34963)
 
+<!--- AC-2797-->
+
+*  Customers added through the `createCustomer/createCustomerV2/updateCustomer/updateCustomerV2` mutation are now added with active newsletter subscriptions. Previously, customers were unsubscribed from newsletters even when the request contained proper input parameters. [GitHub-33599](https://github.com/magento/magento2/issues/33599)
+
 ### Order
 
 <!--- ACP2E-550-->
@@ -798,6 +856,14 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  {{ site.data.var.ee }} now displays credit memos on the credit memo grid page for orders created from store views whose name is prepended with numbers. Previously, {{ site.data.var.ee }} displayed the error: `The store that was requested wasn't found. Verify the store and try again. Exception in /var/www/html/vendor/magento/module-store/Model/StoreRepository.php:75`. [GitHub-35122](https://github.com/magento/magento2/issues/35122)
 
+<!--- ACP2E-31-->
+
+*  {{ site.data.var.ee }} now displays the free shipping cost (0) on the Admin and storefront invoice page totals. Previously, when shipping was zero for an order, {{ site.data.var.ee }} did not display the shipping amount in total on the invoice page shipping total.
+
+<!--- ACP2E-740-->
+
+*  Magento now displays correct order status during checkout when customer store credit is used.
+
 ### Payment methods
 
 <!--- ACP2E-25-->
@@ -822,7 +888,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-52-->
 
-*  Redis cache management has been improved by the addition of TTL (expiration date) for configurable product associated products data caches. Previously, these caches were not evicted due to missing TTL if redis keys eviction policy is configured to any of volatile eviction policies.
+*  Redis cache management has been improved by the addition of TTL (expiration date) for configurable products’ associated product data caches. Previously, these caches were not evicted due to missing TTL values if Redis key eviction policy was configured to a volatile eviction policy.
+
+<!--- ACP2E-464-->
+
+*  The new `Grid Filter Condition Type` customer/customer address attribute controls how an attribute filter is matched against the attribute values in the database, Options include `Partial Match`, `Prefix Match`, and `Full Match`.
 
 ### Pricing
 
@@ -838,6 +908,16 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ### Product video
 
+### Promotions
+
+<!--- ACP2E-690-->
+
+*  The **Times Used** value for a discount is no longer incremented twice when a guest customer places an order with a discount and subsequently registers an account.
+
+### ReCAPTCHA
+
+*  The **Submit** button on the Login and Create an Account pages is now inactive until ReCaptcha is fully loaded.
+
 ### Return Merchandise Authorizations (RMA)
 
 <!--- MC-40432-->
@@ -846,9 +926,23 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-247-->
 
-*  The **Use Default** checkbox to enable RMA on the product edit page now works as expected for Default Store. Previously, the checkbox was cleared immediately after the product was saved.
+*  The **Use Default** checkbox, which is used to enable RMA on the product edit page, now works as expected for Default Store. Previously, the checkbox was cleared immediately after the product was saved.
 
 ### Reviews
+
+### Rewards
+
+<!--- ACP2E-433-->
+
+*  Reward points can now be refunded when store credit functionality is disabled.
+
+<!--- ACP2E-757-->
+
+*  Checkout performance has been improved when reward points are applied. When `entity` is  null, then the database query will not be executed because querying the `magento_reward_history` table is not mandatory under the circumstances.
+
+<!--- ACP2E-674-->
+
+*  Credit memos for guest orders no longer check for `customer_id`, which skips querying the `magento_reward_history' database table table for reward points. This change has improved performance.
 
 ### Sales
 
@@ -910,7 +1004,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-238-->
 
-*  Merchants can now remove an end date for a schedule update or delete and recreate an update. Previously, when an end date was removed, an entity remained scheduled for that time. {{ site.data.var.ee }} now removes the outdated update for removed rollback.
+*  Merchants can now remove an end date for a scheduled update or delete and recreate an update. Previously, when an end date was removed, an entity remained scheduled for that time. {{ site.data.var.ee }} now removes the outdated update for removed rollback.
 
 <!--- ACP2E-149-->
 
@@ -918,15 +1012,31 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-81-->
 
-*  The `custom_design_to` attribute value is now updated as expected when a schedule update is changed. Previously, two separate category design updates with no end time were treated as one. When one of the schedule updates was deleted while the first one was running, the `custom_design_from` time value became greater than the `custom_design_to` time values in the next schedule update.
+*  The `custom_design_to` attribute value is now updated as expected when a scheduled update is changed. Previously, two separate category design updates with no end time were treated as one. When one of the scheduled updates was deleted while the first one was running, the `custom_design_from` time value became greater than the `custom_design_to` time values in the next scheduled update.
 
 <!--- ACP2E-58-->
 
-*  {{ site.data.var.ee }} now displays a form populated with data from the previous scheduled update as expected when you try to create the second schedule update for a product. Previously, {{ site.data.var.ee }} displayed this error when you tried to create the second update with a past start date: `The Start Time of this Update cannot be changed. It's been already started`.
+*  Forms are now populated with data as expected after a scheduled update is edited.
 
 <!--- ACP2E-18-->
 
 *  The `vendor/magento/module-catalog-staging/Setup/Patch/Data/MigrateCatalogProducts.php` data patch no longer fails when the database includes product with custom options and the `special_from_date` attribute is set.
+
+<!--- ACP2E-741-->
+
+*  Changes are now saved during a second scheduled update when the changes are added by the running update. Previously, changes were not saved, and merchants needed to re-enter and save changes.
+
+<!--- ACP2E-21-->
+
+*  The Bulk actions log now displays information about failed `to be moved` scheduled updates. Previously, information about these failures was available in the `cron.log` file only.
+
+<!--- ACP2E-420-->
+
+*  Merchants are now restricted to using comma-separated prices when editing a product price in a scheduled update regardless of locale. Previously, prices that contained commas in a scheduled update were divided by 1000 depending on the locale.
+
+<!--- AC-3214-->
+
+*  Problems with DHL domestic shipping in deployments running PHP 8.1 have been resolved by requiring dutiable tags for international shipments only.
 
 ### Store
 
@@ -960,6 +1070,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The `getCartDetails` query no longer includes tax when returning `subtotal_with_discount_excluding_tax`. [GitHub-33905](https://github.com/magento/magento2/issues/33905)
 
+<!--- ACP2E-651-->
+
+*  Web API requests for order data (`rest/V1/orders/`) no longer returns negative values for row totals.
+
 ### Test
 
 <!--- AC-2004-->
@@ -987,6 +1101,18 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ACP2E-362-->
 
 *  The Admin date-time format for Brazilian Portuguese and French locales is now valid.
+
+<!--- ACP2E-785-->
+
+*  Added a grave accent [ ` ] character to the name validator so that customer account can be created for first or last names that include this accent.
+
+<!--- ACP2E-682-->
+
+*  The text on the **Add to cart** button on the Product Details page now remains translated into the language specified in the associated locale. Translation files are now converted to corresponding JavaScript files based on the areas, themes, and locales when `translate_strategy=embedded`. Previously, the text reverted to English after the product was added to the cart.
+
+<!--- ACP2E-752-->
+
+*  Search Synonyms now respect their assigned store scope. Previously, a synonym assigned to a specific store was searchable on any other store.
 
 ### UI
 
@@ -1038,6 +1164,18 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Administrators can now set the current user’s expiration date higher than 2038 and save the user successfully. Previously, the user whose expiration date was changed could not log back in after logging out.
 
+<!--- AC-751-->
+
+*  {{ site.data.var.ee }} now displays an informative error message when an administrator tries to save an address with excessive street lines in Admin **Store** > **Attributes**  > **Customer Address**.  The administrator can now delete the extra address information and successfully save the address. Previously, {{ site.data.var.ee }} committed the extra lines but did not save the data.
+
+<!--- ACP2E-546-->
+
+*  The product listing view configuration in the database and local storage has been updated. Custom grid views are now saved during page reload and view changes.
+
+<!--- ACP2E-747-->
+
+*  You can now switch between store views when website restrictions are enabled. Previously, problems with the store view switcher prevented switching store views.
+
 ### URL rewrites
 
 <!--- AC-2535-->
@@ -1087,6 +1225,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-2898-->
 
 *  REST API bulk PUT and DELETE requests now work as expected when the `Magento_ReCaptchaWebapiRest` module is enabled. [GitHub-35348](https://github.com/magento/magento2/issues/35348)
+
+<!--- AC-763-->
+
+*  The Bulk Rest API now works with the `bySku` option for configurable products. Previously, it returned a 500 error.
 
 ### Wish list
 

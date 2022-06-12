@@ -25,6 +25,14 @@ These release notes can include:
 
 -  {:.fix} <!--- ACP2E-1753--> The **Account Created in** field for a company administrator now retains its value as expected after you save the company.
 
+-  {:.fix} <!--- ACP2E-722 --> customer queries to retrieve customer requisition lists that are filtered by `uid` no longer return empty results.
+
+-  {:.fix} <!--- ACP2E-210 --> Added a plugin before the `collectQuoteTotals` call to ensure that store credits are  applied only once.
+
+-  {:.fix} <!--- ACP2E-665 -->  Customers are now redirected to the login page when their account is deleted by an administrator from the Admin. Previously, {{ site.data.var.ee }} threw an error.  The plugin (`SessionPlugin`) code block is now inside the `try…catch` block. Previously, this code was not wrapped inside the generic exception handling block.
+
+-  {:.fix} <!--- ACP2E-661 --> Pressing **Enter**  on the Quick Order page in mobile mode after entering a valid product name or SKU now takes the shopper to the next field as expected.
+
 ## {{ site.data.var.ee }} B2B - Adobe Commerce 2.4.4
 
 -  {:.fix} <!--- MC-41985--> The time required to upgrade from {{ site.data.var.ee }} 2.3.x to {{ site.data.var.ee }} 2.4.x in deployments with more than 100,000 company roles has been substantially reduced.

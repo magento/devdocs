@@ -24,7 +24,7 @@ The release notes include:
 
 {{site.data.var.im}} 1.2.x (module version: `magento/inventory-metapackage = 1.2.4`) is supported with version 2.4.4 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
--  {:.fix} The default inventory stock status of bundle and grouped products updates as expected when a merchant creates a shipment from the Admin. Previously, the status of these products remained unchanged after a shipment was created. <!--- ACP2E-418-->
+-  {:.fix} The default inventory stock status of bundle and grouped products is now updated as expected when a merchant creates a shipment from the Admin. Previously, the status of these products remained unchanged after a shipment was created. <!--- ACP2E-418-->
 
 -  {:.fix} Configurable products are now returned back to stock when one of these conditions is met: the parent product has at least one saved child in stock, or the configurable product itself was updated and set as **in stock** and had at least one child in stock <!--- ACP2E-443-->
 
@@ -36,7 +36,7 @@ The release notes include:
 
 -  {:.fix} Product stock status is now always **in stock** on the storefront when infinite back orders are enabled and the product is assigned to a custom stock, regardless of the quantity backordered. Previously, products went out of stock even when back orders were enabled. <!--- ACP2E-664-->
 
--  {:.fix} Configurable product parent and child product stock is now updated correctly after the source item is updated with `POST /V1/inventory/source-items`. <!--- ACP2E-442-->
+-  {:.fix} Configurable product parent and child product stock is now updated correctly after the source item is updated with `POST /V1/inventory/source-items`. After the child product has been updated through the API, a new Inventory plugin for default stock checks and updates configurable product quantity and status. <!--- ACP2E-442-->
 
 -  {:.fix} Out-of-stock grouped products are no longer listed on the storefront Category page. <!--- ACP2E-2082-->
 
