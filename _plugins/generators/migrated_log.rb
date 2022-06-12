@@ -14,15 +14,17 @@ module Jekyll
     def generate(site)
       # Make the site object available in any scope in this class.
       @site = site
-      migrated_pages = @site.pages.filter { |page| page.data['layout'] == 'migrated' }
-
+      pages = @site.pages
+      migrated_pages = pages.filter { |page| page.data['layout'] == 'migrated' }
+      number_of_staying_pages = pages.count { |page| page.data['guide_version'] == '2.3' || page.data['group'].nil? }
       url_prefix = site.config['url'] + site.config['baseurl']
       migrated_pages_data = []
       migrated_pages.each do |page|
         migrated_page = {
           path: page.path,
           title: page.data['title'] || abort("Error in '#{page.path}'.\n Check 'title' in the file's frontmatter.".red),
-          guide: @site.data.dig('toc', page.data['group'], 'label') || abort("Error in '#{page.path}'.\n Check 'group' in the file's frontmatter or 'label' in the corresponding TOC.".red),
+          guide: @site.data.dig('toc', page.data['group'],
+                                'label') || abort("Error in '#{page.path}'.\n Check 'group' in the file's frontmatter or 'label' in the corresponding TOC.".red),
           migrated_from: url_prefix + page.url,
           migrated_to: page.data['migrated_to'] || abort("Error in '#{page.path}'.\n Check 'migrated_to' in the file's frontmatter.".red),
           migrated_to_source: if page.data['migrated_to'].start_with?('https://experienceleague.adobe.com')
@@ -35,10 +37,8 @@ module Jekyll
         }
         migrated_pages_data << migrated_page
       end
-
-      migrated_pages_by_group = migrated_pages_data.group_by { |page| page[:guide] }
-
-      content = "The folowing is the list of topics that have been migrated and will be redirected soon.\n\n"
+      migrated_pages_by_group = migrated_pages_data.group_by { |page| page[:guide] }.sort.to_h
+      content = "The folowing #{migrated_pages.size} topics out of #{pages.size - number_of_staying_pages} have been migrated and will be redirected soon.\n\n"
       migrated_pages_by_group.each do |guide, topics|
         content += "\n## #{guide}\n\n\n"
         topics.sort_by { |topic| topic[:title] }
@@ -66,7 +66,7 @@ module Jekyll
 
       # Add the newly constructed page object to the rest of pages
       # on the site.
-      @site.pages << topic
+      pages << topic
     end
   end
 end
