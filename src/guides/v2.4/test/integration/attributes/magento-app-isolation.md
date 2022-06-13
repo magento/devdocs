@@ -21,6 +21,10 @@ Application isolation annotation:
 ]
 ```
 
+### Parameters
+
+ - `<status>` accepts TRUE or FALSE to enable or disable app isolation respectively
+
 ## Test class
 
 The application and related objects are reinitialized after each test case execution.
