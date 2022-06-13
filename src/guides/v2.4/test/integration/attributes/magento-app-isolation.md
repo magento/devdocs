@@ -17,13 +17,14 @@ Application isolation annotation:
 
 ```php?start_inline=1
 #[
-    AppIsolation(<status>)
+    AppIsolation(bool $state = true)
 ]
 ```
 
 ### Parameters
 
- - `<status>` accepts TRUE or FALSE to enable or disable app isolation respectively
+ - **state**
+   - Accepts TRUE or FALSE to enable or disable app isolation respectively.
 
 ## Test class
 

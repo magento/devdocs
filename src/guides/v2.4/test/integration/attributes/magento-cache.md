@@ -9,14 +9,16 @@ Enable or disable a [cache type][] using the `Cache` attribute.
 
 ```php?start_inline=1
 #[
-   Cache(<type>, <status>)
+   Cache(string $type, bool $status)
 ]
 ```
 
-Here,
+### Parameters
 
--  `<type>` is the cache type. Or "all" to change the status of all cache types.
--  `<status>` accepts TRUE or FALSE to enable or disable cache respectively
+- **type**
+  - The cache type. Or "all" to change the status of all cache types.
+- **status**
+  - Accepts TRUE or FALSE to enable or disable cache respectively.
 
 ## Principles
 

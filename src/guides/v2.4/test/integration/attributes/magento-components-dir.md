@@ -10,12 +10,14 @@ It enables you to register all the components at a specified directory recursive
 
 ```php?start_inline=1
 #[
-   ComponentsDir(<dir_path>)
+   ComponentsDir(string $path)
 ]
 ```
 
-Here, `<dir_path>` is a path to the directory with fixture components.
-Each component must be registered using `registration.php` file.
+### Parameters
+
+- **path**
+  - A path to the directory with fixture components. Each component must be registered using `registration.php` file.
 
 ## Test class
 
