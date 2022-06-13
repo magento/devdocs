@@ -49,6 +49,14 @@ features:
           2.3: true
           2.4: true
       -
+        name: Payment Services delivers best-in-class shopper experience
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true 
+      -
         name: PayPal Smart Buttons
         support:
           2.0: false
@@ -179,6 +187,14 @@ features:
           2.2: true
           2.3: true
           2.4: true
+      -
+        name: Payment Services payments, reporting, and reconciliation
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true 
   -
     name: Platform, performance, and security enhancements
     versions:
