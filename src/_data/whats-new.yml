@@ -4,8 +4,73 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jun 6 14:38:47 2022
+updated: Mon Jun 13 14:38:46 2022
 entries:
+- description: Clarified notes throughout the Cloud guide about updating configurations
+    in Pro projects. See [Configure environments](https://devdocs.magento.com/cloud/env/environments.html)
+    as an example.
+  versions: 2.x
+  type: Technical
+  date: June 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3007
+  merge_commit: 16b2bb8e7c6a152e87b191f6b1388135e47d2e1b
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: The [Extension Developer Best Practices Guide](https://devdocs.magento.com/guides/v2.4/ext-best-practices/bk-ext-best-practices.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/best-practices/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: June 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2996
+  merge_commit: 2e00f287e51463a4ee32efe66b8943b9f7971928
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Module reference guide](https://devdocs.magento.com/guides/v2.4/mrg/intro.html)
+    has moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/module-reference/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Technical
+  date: June 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2999
+  merge_commit: d73fc1686f4bcb99d042361e2ed0391554b928b8
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
+- description: 'Cloud guide: updated the [CRON_CONSUMERS_RUNNER](https://devdocs.magento.com/cloud/env/variables-deploy.html#cron_consumers_runner)
+    deploy variable to show an example of an empty array that runs all consumers.'
+  versions: 2.x
+  type: Technical
+  date: June 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3002
+  merge_commit: 8709c3516cbb3c1db60ff04b871ffeeda148d298
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.15 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: June 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3000
+  merge_commit: 25fb4ad8863972827bbc4d623bfc8d3e980767e4
+  contributor: katmoon
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
 - description: Added missing versions for Amazon Web Services on the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     page.
   versions: 2.4.x
