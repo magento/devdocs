@@ -54,13 +54,50 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Composer 2.2  <!--- AC-2033-->
 
-*  Elasticsearch v7.17  <!--- AC-2425-->
+*  Elasticsearch (~7.17.0 with constraint) <!--- AC-2425-->
 
-*  The `TinyMCE` library has been upgraded to v5.10.0. <!--- AC-2039 1784-->
+*  TinyMCE (5.10.2) <!--- AC-2039 1784-->
 
-*  `PHPStan` has been upgraded to v1.5. <!--- AC-2876-->
+*  jQueryUI (1.13.1) <!--- AC-2544-->
 
-*  The `league/fly` Composer dependencies have been to v2.4.3. <!--- AC-2744-->
+*  `PHPStan` (^1.5.7 with constraint) <!--- AC-2876-->
+
+#### Composer dependency updates
+
+<!--- AC-2876 2744 2912 2577-->
+
+The following Composer dependencies have been updated to the latest versions with constraint:
+
+`colinmollenhour/credis`  (1.13.0 or 1.12.2)? <!--- AC-2732-->
+`guzzlehttp/guzzle` (^7.4.2)
+`laminas/laminas-captcha` (updated with a constraint ^2.12) <!--- AC-2625-->
+`laminas/laminas-db`   (^2.15.0)
+`laminas/laminas-di` (^3.4.0)
+`laminas/laminas-escaper` (~2.10.0)
+`laminas/laminas-eventmanager`  (^3.5.0)
+`laminas/laminas-feed`   (^2.17.0)
+`laminas/laminas-mail` (^2.16.0)
+`laminas/laminas-mvc`  (^3.3.3)
+`laminas/laminas-server` (^2.11.1)
+`laminas/laminas-servicemanager`  (^3.11.0)
+`laminas/laminas-session` (^2.12.1)
+`laminas/laminas-validator` (^2.17.0)
+`league/fly`  (2.4.3) <!--- AC-2744-->
+`monolog/monolog`  (^2.5)
+`phpmd/phpmd`   (^2.12.0)
+`phpstan/phpstan`  (^1.5.7)
+`phpunit/phpunit`  (~9.5.20)
+`phpunit/phpunit` (^9.4) <!--- AC-443-->
+`php-cs-fixer` (^3.4.0) <!--- AC-2259-->
+`webonyx/graphql-php`  (14.11.6)
+
+The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view` dependencies have been removed. <!--- AC-2598-->
+
+#### Other upgrades and replacements
+
+*  The default Gateway URL for USPS shipping has been updated to use `https` instead of `http`. <!--- AC-2426-->
+
+*  The `Froogaloop` library has been replaced with the Vimeo `Player.js` library (2.16.4). <!--- AC-2527 2262-->
 
 *  The `grunt-eslint` (NPM) library has been upgraded to the latest version. <!--- AC-2700-->
 
@@ -68,9 +105,17 @@ Security improvements for this release improve compliance with the latest securi
 
 *  The `php-cs-fixer` and `phpcs` static code analysis tools are now compatible with PHP 8.x. <!--- AC-2259-->
 
-*  The `php-cs-fixer` Composer dependency has been updated to ^3.4.0. <!--- AC-2259-->
+*  `glob.js` dependency (upgraded with constraint to ~7.2.0) <!--- AC-2547-->
 
-*  The `phpunit/phpunit` Composer dependency updated to version ^9.4. <!--- AC-443-->
+*  `serve-static.js` dependency (upgraded with constraint ~1.14.2) <!--- AC-2548-->
+
+*  `underscore.js` dependency (NPM) (1.14.2) <!--- AC-2546 2549-->
+
+*  `moment-timezone-with-data.js` (0.5.34) <!--- AC-2545-->
+
+*  The library `jquery/jquery-cookie` has been replaced with `js-cookie/js-cookie`. <!--- AC-2626-->
+
+*  The  `jarallax.js` and `jaralax-video.js` libraries have been updated to the latest versions (2.0.3). <!--- AC-2590-->
 
 ### Performance and scalability enhancements
 
@@ -779,6 +824,14 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- ACP2E-148-->
 
 *  The SQL query that updates affected quotes after a cart price rule is disabled has been optimized to avoid locking the entire quote table.
+
+<!--- ACP2E-2039-->
+
+*  A deprecated Context Menu plugin has been removed from plugins list.
+
+<!--- ACP2E-2039-->
+
+*  The TinyMCE editor toolbar-related logic in the Page Builder module has been updated as a result of introducing `delayedRender` logic for the toolbar in TinyMCE.
 
 #### Library removals and deprecations
 
