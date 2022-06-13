@@ -9,15 +9,14 @@ Enable or disable a [cache type][] using the `Cache` attribute.
 
 ```php?start_inline=1
 #[
-   Cache((string)'<type|all>', (string)<enabled|disabled>')
+   Cache(<type>, <status>)
 ]
 ```
 
 Here,
 
--  `<type>` is a placeholder for a cache type
--  `all` is a value for any cache type
--  `enabled` or `disabled` to enable or disable the cache respectively
+-  `<type>` is the cache type. Or "all" to change the status of all cache types.
+-  `<status>` accepts TRUE or FALSE to enable or disable cache respectively
 
 ## Principles
 
@@ -27,7 +26,7 @@ Here,
 1. A test method attribute completely overrides a test case attribute.
 1. All cache types are disabled by default.
 
-## Test case
+## Test class
 
 `Cache` attribute at the test case level is applied to all tests.
 
@@ -64,7 +63,8 @@ class BarTest extends \PHPUnit\Framework\TestCase
     }
 
     #[
-       Cache('all', true, 'config', false)
+       Cache('all', true),
+       Cache('config', false)
     ]
     public function testThree()
     {
@@ -72,7 +72,8 @@ class BarTest extends \PHPUnit\Framework\TestCase
     }
 
     #[
-       Cache('config', false, 'all', true)
+       Cache('config', false),
+       Cache('all', true)
     ]
     public function testFour()
     {
