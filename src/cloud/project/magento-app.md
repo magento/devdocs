@@ -19,3 +19,7 @@ Use the `.magento.app.yaml` file to define the following configuration values:
 -  [PHP Application]({{ site.baseurl }}/cloud/project/magento-app-php-application.html)—Configure runtime PHP options.
 -  [Workers]({{ site.baseurl }}/cloud/project/magento-app-workers.html)—Create a worker instance and understand background tasks.
 -  [Set Cache For Static Files]({{ site.baseurl }}/cloud/project/set-cache.html)—Set cache time-to-live (TTL) for your media and static files.
+
+## Configuration updates to Pro environments
+
+{% include cloud/note-pro-missing-self-service-options.md %}
