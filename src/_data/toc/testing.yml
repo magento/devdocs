@@ -37,7 +37,7 @@ pages:
           - label: '@magentoDbIsolation'
             url: /test/integration/annotations/magento-db-isolation.html
 
-        - label: Using PHP8 attributes
+        - label: Using PHP built-in attributes
           url: /test/integration/attributes.html
           exclude_versions: [ "2.3" ]
 

@@ -21,7 +21,7 @@ Application isolation annotation:
 ]
 ```
 
-## Test case attribute
+## Test class attribute
 
 The application and related objects are reinitialized after each test case execution.
 This behavior helps to isolate application objects in different test cases.
@@ -30,7 +30,7 @@ The test case isolation is mandatory and cannot be disabled.
 {:.bs-callout-warning}
 Do not share and do not rely on sharing the application objects between test cases.
 
-## Test annotation
+## Test method attribute
 
 By default, the application isolation (that is automatic reinitialization) in tests is disabled.
 To enable the application isolation for a test, use the `AppIsolation` attribute.

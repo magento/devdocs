@@ -9,7 +9,7 @@ Enable or disable a [cache type][] using the `Cache` attribute.
 
 ```php?start_inline=1
 #[
-   Cache((string)<'all'/'enabled'/'disabled>')
+   Cache((string)'<type|all>', (string)<enabled|disabled>')
 ]
 ```
 
