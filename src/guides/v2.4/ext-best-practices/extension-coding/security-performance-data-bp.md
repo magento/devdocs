@@ -6,6 +6,8 @@ menu_title: Security, performance, and data handling
 menu_order: 3
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/extensions/security/
+layout: migrated
 ---
 
 You should make sure that your [extension](https://glossary.magento.com/extension) handles data with care in order to prevent sensitive information from being exposed. Incorrect handling of data requests or class usage can negatively impact your extension and create security vulnerabilities. Consider applying the following best practices to your extension to improve performance and security.
