@@ -9,16 +9,16 @@ To set Magento configuration values for individual tests and revert them after t
 
 ```php
 #[
-   Config((string)<store_code>, (string)<config_path>, (string)<config_value>, ...)
+   Config(<config_path>, <config_value>, <scope_type>, <scope_value>)
 ]
 ```
 
--  `<store_code>` is the code of the store to be configured.
-   When a global scope is required, this should be omitted and the `config path` is prefixed with `default/`. See below for an example.
-   To specify the current store, use `current`.
 -  `<config_path>` is the XPath to the configuration option.
    See [configuration reference][] for available options.
 -  `<config_value>` is a fixture value for the configuration option.
+-  `<scope_type>` is the scope to use to set config value. Allowed values: default, store, group and website. Default: default
+-  `<store_code>` is the code of the scope to be configured.
+   If "default" scope is provided, this parameter can be omitted. If the scope type is store, group or website, the default value of this parameter is the current value of the specified scope.
 
 ## Principles
 
@@ -52,7 +52,7 @@ class ConfigFixtureTest extends \PHPUnit\Framework\TestCase
     }
 
     #[
-         Config('current_store', 'web/unsecure/base_url', 'http://example.com/')
+         Config('web/unsecure/base_url', 'http://example.com/', 'store')
     ]
     public function testGlobalConfig()
     {
@@ -87,7 +87,7 @@ class ConfigFixtureTest extends \PHPUnit\Framework\TestCase
     }
 
     #[
-         Config('current_store', 'dev/restrict/allow_ips', '192.168.0.1')
+         Config( 'dev/restrict/allow_ips', '192.168.0.1', 'store')
     ]
     public function testCurrentStoreConfig()
     {
@@ -125,7 +125,7 @@ class ConfigFixtureTest extends \PHPUnit\Framework\TestCase
     }
 
     #[
-         Config('admin_store', 'dev/restrict/allow_ips', '192.168.0.2')
+         Config('dev/restrict/allow_ips', '192.168.0.2', 'store', 'admin')
     ]
     public function testSpecificStoreConfig()
     {
@@ -163,7 +163,7 @@ class ConfigFixtureTest extends \PHPUnit\Framework\TestCase
     }
 
     #[
-         Config('default/dev/restrict/allow_ips', '192.168.0.2')
+         Config('dev/restrict/allow_ips', '192.168.0.2')
     ]
     public function testGlobalStoreConfig()
     {

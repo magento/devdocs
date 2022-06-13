@@ -20,7 +20,7 @@ DbIsolation((bool))
 ]
 ```
 
-## Test case declaration
+## Test class
 
 Use test case declarations when a sequence of tests introduces changes to the database and relies on the changes made by each other.
 For example, typical CRUD tests: _create -> read -> update -> delete_.
@@ -69,7 +69,7 @@ class Some\EntityTest extends \PHPUnit\Framework\TestCase
 }
 ```
 
-## Test declaration
+## Test method
 
 To isolate changes made to database by a single test, enable the `DbIsolation` for the test.
 
