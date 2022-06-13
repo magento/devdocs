@@ -1,15 +1,15 @@
 ---
 group: testing
-title: Using PHP8 Attributes
+title: Using PHP built-in attributes
 ---
 
-[PHP8 Attributes][] help to declare context in your code. Attributes can be used alone or together with Annotations to help to declare context in your code.
+[PHP built-in attributes][] help to declare context in your code. Attributes can be used alone or together with Annotations to help to declare context in your code.
 
 {:.bs-callout-info}
-Native PHP8 Attributes is available now for the developers, and will be publicly available with Magento 2.4.5 release.
+Using PHP built-in attributes is available now for the developers, and will be publicly available with Magento 2.4.5 release.
 [PHPUnit annotations][] are still available for use with Magento.
 
-### Quick overview
+## Quick overview
 
 The following attributes are available in integration tests:
 
@@ -25,7 +25,13 @@ The following attributes are available in integration tests:
 | Indexer Dimension Mode          | `IndexerDimensionMode`         | `IndexerDimensionMode(string)<indexer>,(string)<mode>)`                                                                                                          | Sets the indexer dimension mode for the test run. More information can be found in the [DevBlog](https://community.magento.com/t5/Magento-DevBlog/Indexers-parallelization-and-optimization/ba-p/104922).                                                                                |
 | Register Components             | `ComponentsDir`                | `ComponentsDir((string)<dir_path>,...)`                                                                                                                          | Registers fixture components from specified directory (recursively). Unregisters the components after the test is finished.                                                                                                                                                              |
 
-### Applying annotations
+### Format
+
+- `AppIsolation(bool $isolationEnabled = false)`
+- `Config(string $storeCode, string $configPath, mixed $configValue, ...)`
+
+
+## Applying annotations
 
 The Magento-specific annotations for integration tests are applied in the following order:
 
@@ -41,7 +47,10 @@ The Magento-specific annotations for integration tests are applied in the follow
 
 This order is necessary to meet the requirement of setting up the store-scoped configuration values for fixture stores (stores that are created by data fixtures).
 
+{:.bs-callout-info}
+[PHP built-in attributes][] are only available with PHP8 and above. 
+
 <!-- LINK DEFINITIONS -->
 
 [PHPUnit annotations]: {{ page.baseurl }}/test/integration/annotations.html
-[PHP8 Attributes]: https://www.php.net/manual/en/language.attributes.overview.php
+[PHP built-in attributes]: https://www.php.net/manual/en/language.attributes.overview.php

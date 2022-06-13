@@ -1,125 +1,78 @@
 ---
 group: testing
 title: Data fixture attribute
-redirect_from: /guides/v2.4/test/integration/annotations/magento-data-fixture-data-provider.html
+redirect_from: 
+  - /guides/v2.4/test/integration/annotations/magento-data-fixture-data-provider.html
+  - /guides/v2.4/test/integration/parameterized_data_fixture.html
 ---
 
-A data fixture is a PHP script that sets data you want to reuse in your test.
-The script can be defined in a separate PHP file, class, or as a local test case method.
+## Overview
 
-Use data fixtures to prepare a database for tests.
-The Integration Testing Framework (ITF) reverts the database to its initial state automatically.
+Parameterized data fixture is a dynamic and scalable data fixture that accepts parameters directly from the fixture declaration. It eliminates the need to create almost identical fixtures every time you need a slight change.
+
+A data fixture is a PHP script that sets data you want to reuse in your test.
+Use data fixtures to prepare a database for tests. The Integration Testing Framework (ITF) reverts the database to its initial state automatically.
 To set up a date fixture, use the `DataFixture` attribute.
 
 ## Format
 
-`DataFixture` takes an argument that points to the data fixture as a filename, full class name, or local method, and an optional alias.
+`DataFixture` takes following arguments.
 
 ```php?start_inline=1
 #[
-    DataFixture((string)<Fully qualified fixture class name>, (array)[<Parameter name>, <Value>], (string)<Fixture Method>, as:(string)<Alias>)
+    DataFixture(string $type, array $data = [], ?string $as = null)
 ]
 ```
 
--  `<Fully qualified fixture class name>` is the fully qualified name of a class that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
--  `<Fixture Method>` is the name of the method declared in the current class.
+### Parameters
 
-## Principles
+- **type**
+  - The fully qualified name of a class that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
+- **data**
+  - The optional array of data passed on to the fixture.
+- **as**
+  - The fixture alias that will be used as a reference to retrieve the data returned by the fixture and also as a reference in other fixtures parameters.
 
-1. Do not use a direct database connection in fixtures to avoid dependencies on the database structure and vendor.
-1. Use an application API to implement your data fixtures.
-1. A method that implements a data fixture must be declared as `public` and `static`.
-1. Fixtures declared at a test level have a higher priority than fixtures declared at a test case level.
-1. Test case fixtures are applied to each test in the test case, unless a test has its own fixtures declared.
-1. attribute declaration at a test case level does not affect tests that have their own attribute declarations.
-1. Fixture alias SHOULD be camelcase.
-1. Fixture data provider MUST be a valid JSON string.
+## Creating the fixture
 
-## Usage
+### Principles
 
-As mentioned above, there are three ways to declare fixtures:
+1. Parameterized Data Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance, a fixture that creates an entity (for example, product).
+1. Parameterized Data Fixture class MUST be placed in the `<ModuleName>/Test/Fixture` folder of the corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (for example, `Magento\Catalog\Test\Fixture`).
+1. Parameterized Data Fixture class SHOULD follow single responsibility principle.
+1. Parameterized Data Fixture class MUST depend only on services from modules that are declared in the `require` section of its module's composer.json.
+1. Parameterized Data Fixture MUST NOT depend on another fixture.
+1. Parameterized Data Fixture SHOULD be implemented using service APIs.
+1. Parameterized Data Fixture SHOULD have dynamic default data to allow generating unique fixtures.
 
--  as a PHP script file that is used by other tests and test cases.
--  as a local method that is used by other tests in the test cases.
--  as a [Class][parameterizedDataFixture] that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
+### Dynamic default data
 
-### Fixture as a separate file
+In order to generate multiple fixtures of the same type without having to manually configure unique fields, you can use the placeholder `%uniqid%` in the default value of unique fields and `Magento\TestFramework\Fixture\Data\ProcessorInterface` to substitute the placeholder with unique sequence.
 
-Define the fixture in a separate file when you want to reuse it in different test cases.
-To declare the fixture, use one of the following conventions:
+[`Magento\Catalog\Test\Fixture\Product`][] demonstrates the usage of `%uniqid%` (`sku`: `simple-product%uniqid%`) in the fixture default data.
 
--  Fixture declaration as a path relative to the test suite directory
-   -  Relative to `dev/tests/integration/<test suite directory>`
-   -  With forward slashes `/`
-   -  No leading slash
-
-  Example:
-
-  ```php
-    #[
-        DataFixture('Magento/Cms/_files/pages.php')
-    ]
-  ```
-
--  Fixture declaration as a path relative to a module
-   -  Relative to the directory of a module available in the project
-   -  With forward slashes `/`
-   -  No leading slash in the path part of the declaration
-
-  Example:
-
-  ```php
-    #[
-        DataFixture('VendorName_ModuleName::Test/Integration/_files/fixture_name.php')
-    ]
-  ```
-
-The ITF includes the declared PHP script to your test and executes it during the test run.
-
-The following example demonstrates a simple implementation of a Cms module page test from the Magento codebase.
-
-Data fixture to test a Cms module page: [`dev/tests/integration/testsuite/Magento/Cms/_files/pages.php`][].
-
-Test case that uses the above data fixture: [`dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php`][].
-
-### Fixture as a method
-
-[`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`][] demonstrates an example of the `testCreatePageWithSameModuleName()` test method that uses data from the `cmsPageWithSystemRouteFixture()` data fixture.
-
-### Data Fixture Data Provider
-
-{:.bs-callout-info}
-Data Fixture Data Provider is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors. It will be released for general use with Magento Open Source 2.4.5.
-
-There are two types of data providers:
-
--  Inline JSON as data provider
--  @magentoDataFixtureDataProvider magentoDataFixtureDataProvider attribute
-
-#### Inline JSON as data provider
-
-Data can be passed to the [Parameterized Data Fixture][parameterizedDataFixture] using the `with` directive as follows:
-
-Example:
+In the following example, a unique `sku` is automatically generated for the first fixture (for example, `simple-product61c10b2e86f991`) and the second fixture (for example, `simple-product61c10b2e86f992`). The sequence is random and therefore unpredictable.
 
 ```php?start_inline=1
-class ProductsList extends \PHPUnit\Framework\TestCase
+class ProductsListTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @magentoDataFixture Magento\Catalog\Test\Fixture\Product with:{"price": 5.0}
-     * @magentoDataFixture Magento\Catalog\Test\Fixture\Product with:{"price": 10.0}
-     * @magentoDataFixture Magento\Catalog\Test\Fixture\Product with:{"price": 15.0}
-     */
+     #[
+        DataFixture(ProductFixture::class),
+        DataFixture(ProductFixture::class)
+     ]
     public function testGetProductsCount(): void
     {
     }
 }
 ```
 
-### Fixture Alias
+### Decoupling fixtures
 
-{:.bs-callout-info}
-Fixture Alias is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors. It will be released for general use with Magento Open Source 2.4.5.
+Fixtures must be written in the way that they only use one API to generate data. For example, the fixture that creates
+a product should only invoke "Create Product" API and return the product created. This fixture should not add any extra
+logic beyond the "create product" API capabilities, such logic should be implemented in a separate fixture.
+
+### Fixture Alias
 
 You can give [Parameterized Data Fixture][parameterizedDataFixture] an alias using the `as` directive. The fixture alias is used as a reference to retrieve the data returned by the fixture and also as a reference in other fixtures parameters.
 
@@ -132,11 +85,11 @@ The following example shows how to retrieve data that was returned by the fixtur
 ```php?start_inline=1
 class ProductsList extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @magentoDataFixture Magento\Catalog\Test\Fixture\Product as:product1
-     * @magentoDataFixture Magento\Catalog\Test\Fixture\Product as:product2
-     * @magentoDataFixture Magento\Catalog\Test\Fixture\Product as:product3
-     */
+    #[
+        DataFixture(ProductFixture::class, as: 'product1'),
+        DataFixture(ProductFixture::class, as: 'product2'),
+        DataFixture(ProductFixture::class, as: 'product3')
+    ]
     public function testGetProductsCount(): void
     {
         $fixtures = DataFixtureStorageManager::getStorage();
@@ -159,11 +112,11 @@ The following example shows how a fixture can use the data of another fixture:
 ```php?start_inline=1
 class QuoteTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @magentoApiDataFixture Magento\Quote\Test\Fixture\GuestCart as:cart
-     * @magentoApiDataFixture Magento\Quote\Test\Fixture\SetBillingAddress with:{"cart_id":"$cart.id$"}
-     */
-    public function testGetBillingAddress(): void
+    #[
+        DataFixture(GuestCartFixture::class, as: 'cart'),
+        DataFixture(SetBillingAddressFixture::class, ['cart_id' => '$cart.id$']),
+    ]
+    public function testCollectTotals(): void
     {
     }
 }
@@ -171,12 +124,12 @@ class QuoteTest extends \PHPUnit\Framework\TestCase
 
 ### Test case and test method scopes
 
-The `@magentoDataFixture` can be specified for a particular test or for an entire test case.
+The `DataFixture` can be specified for a particular test or for an entire test case.
 The basic rules for fixture attribute at different levels are:
 
--  `@magentoDataFixture` at a test case level, makes the framework to apply the declared fixtures to each test in the test case.
+-  `DataFixture` at a test case level, makes the framework to apply the declared fixtures to each test in the test case.
   When the final test is complete, all class-level fixtures are reverted.
--  `@magentoDataFixture` for a particular test, signals the framework to revert the fixtures declared on a test case level and applies the fixtures declared at a test method level instead.
+-  `DataFixture` for a particular test, signals the framework to revert the fixtures declared on a test case level and applies the fixtures declared at a test method level instead.
   When the test is complete, the ITF reverts the applied fixtures.
 
  {:.bs-callout-info}
@@ -188,17 +141,13 @@ A fixture that contains database transactions only, are reverted automatically.
 Otherwise, when a fixture creates files or performs any actions other than database transaction, provide the corresponding rollback logic.
 Rollbacks are run after reverting all the fixtures related to database transactions.
 
-A fixture rollback must be of the same format as the corresponding fixture, a script or a method:
-
--  A rollback script must be named according to the corresponding fixture suffixed with `_rollback` and stored in the same directory.
--  Rollback methods must be of the same class as the corresponding fixture and suffixed with `Rollback`.
+Rollback methods must be of the same class as the corresponding fixture and suffixed with `Rollback`.
 
 Examples:
 
-Fixture/Rollback | Fixture name                                         | Rollback name
------------------|------------------------------------------------------|-------------------------------------------------------------
-Script           | `Magento/Catalog/_files/categories.php`              | `Magento/Catalog/_files/categories_rollback.php`
-Method           | `\Magento\Catalog\Model\ProductTest::prepareProduct` | `\Magento\Catalog\Model\ProductTest::prepareProductRollback`
+| Fixture/Rollback | Fixture name                                         | Rollback name                                                |
+|------------------|------------------------------------------------------|--------------------------------------------------------------|
+| Method           | `\Magento\Catalog\Model\ProductTest::prepareProduct` | `\Magento\Catalog\Model\ProductTest::prepareProductRollback` |
 
 ### Restrictions
 
@@ -207,7 +156,4 @@ Do not rely on and do not modify an application state from within a fixture, bec
 <!-- Link definitions -->
 
 [magentoAppIsolation]: magento-app-isolation.html
-[parameterizedDataFixture]: ../parameterized_data_fixture.html
-[`dev/tests/integration/testsuite/Magento/Cms/_files/pages.php`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/integration/testsuite/Magento/Cms/_files/pages.php
-[`dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php
-[`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php
+[`Magento\Catalog\Test\Fixture\Product`]: {{ site.mage2bloburl }}/{{ page.guide_version }}-develop/app/code/Magento/Catalog/Test/Fixture/Product.php
