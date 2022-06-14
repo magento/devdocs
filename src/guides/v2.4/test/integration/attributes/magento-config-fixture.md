@@ -7,18 +7,22 @@ To set Magento configuration values for individual tests and revert them after t
 
 ## Format
 
-```php
+```php?start_inline=1
 #[
-   Config(<config_path>, <config_value>, <scope_type>, <scope_value>)
+   Config(string $path, mixed $value, string $scopeType = 'default', string? $scopeValue = null)
 ]
 ```
 
--  `<config_path>` is the XPath to the configuration option.
-   See [configuration reference][] for available options.
--  `<config_value>` is a fixture value for the configuration option.
--  `<scope_type>` is the scope to use to set config value. Allowed values: default, store, group and website. Default: default
--  `<store_code>` is the code of the scope to be configured.
-   If "default" scope is provided, this parameter can be omitted. If the scope type is store, group or website, the default value of this parameter is the current value of the specified scope.
+### Parameters
+
+- **path**
+  - The XPath to the configuration option. See [configuration reference][] for available options.
+- **value**
+  - A fixture value for the configuration option.
+- **scopeType**
+  - The scope to use to set config value. Allowed values: default, store, group and website. Default value: default.
+- **scopeValue**
+  - The code of the scope to be configured. If "default" scope is provided, this parameter can be omitted. If the scope type is store, group or website, the default value of this parameter is the current value of the specified scope.
 
 ## Principles
 

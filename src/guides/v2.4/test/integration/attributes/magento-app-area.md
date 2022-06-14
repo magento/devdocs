@@ -1,6 +1,6 @@
 ---
 group: testing
-title: Application Area attribute in the Integration Testing Framework
+title: Application Area attribute
 ---
 
 Configure a test environment in scope of the particular [application area][] with the `AppArea` annotation.
@@ -27,16 +27,16 @@ Configure a test environment in scope of the particular [application area][] wit
 
 ## Fallback sequence
 
-1. Test annotation
-1. Test case annotation
+1. Test method
+1. Test class
 1. Default application area, which is `global`
 
-## Test case attribute
+## Test class attribute
 
-A test case attribute enables the specified application area for all tests in the test case.
+A test class attribute enables the specified application area for all tests in the test class.
 
 {:.bs-callout-info}
-Test attribute override test case attribute.
+Test class attribute override test method attribute.
 
 Example:
 
@@ -69,9 +69,9 @@ class ClassToTest extends \PHPUnit\Framework\TestCase
 
 `testOne()` and `testThree()` are set to run in scope of the `adminhtml` application area, whereas `testTwo()` is set to run in scope of the `frontend` area.
 
-## Test attribute
+## Test method attribute
 
-A test attribute is used to configure the environment in scope of the specified application area for the test.
+A test method attribute is used to configure the environment in scope of the specified application area for the test method.
 Magento is reinitialized in the corresponding scope each time you specify a different area.
 
 Example:

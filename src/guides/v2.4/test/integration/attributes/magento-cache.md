@@ -24,18 +24,18 @@ Enable or disable a [cache type][] using the `Cache` attribute.
 
 1. You can use more than one attribute for a test case or a test method.
 1. Multiple attributes are applied in the given order.
-1. attributes from different scopes are not merged.
-1. A test method attribute completely overrides a test case attribute.
+1. Attributes from different scopes are not merged.
+1. A test method attribute completely overrides a test class attribute.
 1. All cache types are disabled by default.
 
-## Test class
+## Test class annotation
 
 `Cache` attribute at the test case level is applied to all tests.
 
-## Test method
+## Test method annotation
 
-`Cache` attribute at a test method level configures the test only.
-It completely overrides the attribute specified for the test case.
+`Cache` attribute at a test method level configures the test method only.
+It completely overrides the attribute specified for the test class.
 
 ## Example
 
@@ -88,7 +88,7 @@ class BarTest extends \PHPUnit\Framework\TestCase
 -  `testOne()` is run with all cache types enabled.
 -  `testTwo()` is run with all cache types disabled.
 
-   The `Cache('config', false)` completely overrides the test case attribute. The test case attribute wasn't applied in this case. By default, all cache types are disabled. Thus disabling any attributes does not make much sense here.
+   The `Cache('config', false)` completely overrides the test method attribute. The test method attribute wasn't applied in this case. By default, all cache types are disabled. Thus disabling any attributes does not make much sense here.
 -  `testThree()` is run with all but `config` cache type enabled.
 -  `testFour()` is run with all the cache types enabled.
 

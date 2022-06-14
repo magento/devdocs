@@ -19,11 +19,11 @@ It enables you to register all the components at a specified directory recursive
 - **path**
   - A path to the directory with fixture components. Each component must be registered using `registration.php` file.
 
-## Test class
+## Test class attribute
 
 `ComponentsDir` attribute for a test case is applied to all test methods in the test case.
 
-## Test method
+## Test method attribute
 
 `ComponentsDir` attribute for a test method configures the test to run with registered components located in a specified directory.
 If the parent test case also declares a `ComponentsDir`, both attribute are merged.

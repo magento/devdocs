@@ -61,8 +61,14 @@ pages:
             - label: 'DataFixture'
               url: /test/integration/attributes/magento-data-fixture.html
 
+            - label: 'DataFixtureBeforeTransaction'
+              url: /test/integration/attributes/magento-data-fixture-before-transaction.html
+
             - label: 'DbIsolation'
               url: /test/integration/attributes/magento-db-isolation.html
+
+            - label: 'IndexerDimensionMode'
+              url: /test/integration/attributes/magento-indexer-dimension-mode.html
 
     - label: JavaScript Unit Testing
       children:
