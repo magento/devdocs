@@ -29,7 +29,7 @@ When input limiting has been enabled, the system uses the default value for each
 Although some simple examples for configuring these values from the CLI are provided below, all of the values can be [configured per website and per store view]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set) in addition to being configurable globally. In addition, these values can also be configured [via `env.php`]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html#system)
 as well as via [environment variables]({{ page.baseurl }}/config-guide/deployment/pipeline/example/environment-variables.html).
 
-<inlinealert variant="info" slots="text"/>
+{:.bs-callout-tip}
 
 In addition, the Admin provides a configuration setting for limiting session sizes for Admin users and storefront visitors.
 
