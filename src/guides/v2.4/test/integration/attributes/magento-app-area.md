@@ -15,15 +15,15 @@ Configure a test environment in scope of the particular [application area][] wit
 
 ### Parameters
 
-- **area**
-  - Can take any value from the list below
-    - `\Magento\Framework\App\Area::AREA_GLOBAL`
-    - `\Magento\Framework\App\Area::AREA_ADMINHTML`
-    - `\Magento\Framework\App\Area::AREA_FRONTEND`
-    - `\Magento\Framework\App\Area::AREA_WEBAPI_REST`
-    - `\Magento\Framework\App\Area::AREA_WEBAPI_SOAP`
-    - `\Magento\Framework\App\Area::AREA_CRONTAB`
-    - `\Magento\Framework\App\Area::AREA_GRAPHQL`
+-  **area**
+   -  Can take any value from the list below
+      -  `\Magento\Framework\App\Area::AREA_GLOBAL`
+      -  `\Magento\Framework\App\Area::AREA_ADMINHTML`
+      -  `\Magento\Framework\App\Area::AREA_FRONTEND`
+      -  `\Magento\Framework\App\Area::AREA_WEBAPI_REST`
+      -  `\Magento\Framework\App\Area::AREA_WEBAPI_SOAP`
+      -  `\Magento\Framework\App\Area::AREA_CRONTAB`
+      -  `\Magento\Framework\App\Area::AREA_GRAPHQL`
 
 ## Fallback sequence
 
