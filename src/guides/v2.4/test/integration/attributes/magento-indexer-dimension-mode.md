@@ -25,9 +25,9 @@ Sets the indexer dimension mode for the test run.
 ## Principles
 
 1. You can use more than one attribute for a test case or a test method.
-2. Multiple attributes are applied in the given order.
-3. Attributes from different scopes are not merged.
-4. A test method attribute completely overrides a test class attribute.
+1. Multiple attributes are applied in the given order.
+1. Attributes from different scopes are not merged.
+1. A test method attribute completely overrides a test class attribute.
 
 ## Test class attribute
 
