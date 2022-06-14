@@ -12,7 +12,7 @@ Fastly image optimization (Fastly IO) provides real-time image manipulation and 
 -  Force lossy conversion
 -  Deep image optimization
 -  Adaptive pixel ratios
--  Support for common image formats: PNG, JPEG, and GIF
+-  Support for common image formats: PNG, JPEG, GIF, and WebP
 
 You must set up your Fastly service and configure Origin shielding before you enable and configure the Fastly IO option.
 
