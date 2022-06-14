@@ -60,6 +60,9 @@ You can set the following configuration options for each environment:
    </tr>
 </table>
 
+{:.bs-callout-warning}
+**DO NOT** use the HTTP access control method for securing Pro Staging and Production environments. This will break Fastly caching. You must use the [Blocking]({{ site.baseurl }}/cloud/cdn/fastly-vcl-blocking.html) feature available in the Fastly CDN for Magento.
+
 ### Configure emails for testing {#email}
 
 By default, email support is **disabled** on Staging and Production environments. You must enable email support on an environment to send emails including Welcome, password reset, and two-factor authentication emails for Cloud project users.

@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/configuration/
+layout: migrated
 ---
 
 The message queue topology is a {{site.data.var.ce}} feature. It can be included as part of {{site.data.var.ce}} installation, or you can add it to existing modules.
