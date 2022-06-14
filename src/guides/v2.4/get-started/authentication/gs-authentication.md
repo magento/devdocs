@@ -3,6 +3,8 @@ group: web-api
 title: Authentication
 functional_areas:
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication/
+layout: migrated
 ---
 
 Magento allows developers to define web [API](https://glossary.magento.com/api) resources and their permissions in the `webapi.xml` configuration file. See [Services as Web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html).
