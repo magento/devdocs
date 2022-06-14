@@ -17,10 +17,10 @@ Sets the indexer dimension mode for the test run.
 
 ### Parameters
 
- - **indexer**
-   - The name of the indexer code.
- - **dimension**
-   - The name of the dimension mode.
+-  **indexer**
+   -  The name of the indexer code.
+-  **dimension**
+   -  The name of the dimension mode.
 
 ## Principles
 

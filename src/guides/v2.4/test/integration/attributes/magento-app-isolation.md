@@ -21,8 +21,8 @@ Test execution order can vary depending on a PHPUnit version.
 
 ### Parameters
 
- - **state**
-   - Accepts TRUE or FALSE to enable or disable app isolation respectively.
+-  **state**
+   -  Accepts TRUE or FALSE to enable or disable app isolation respectively.
 
 ## Test class attribute
 

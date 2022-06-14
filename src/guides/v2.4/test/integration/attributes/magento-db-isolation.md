@@ -19,8 +19,8 @@ When the `DbIsolation` is enabled, the ITF:
 ```
 
 ### Parameters
- - **state**
-   - Enables or disables database isolation.
+-  **state**
+   -  Enables or disables database isolation.
 
 ## Test class attribute
 

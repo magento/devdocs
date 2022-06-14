@@ -15,14 +15,14 @@ To set Magento configuration values for individual tests and revert them after t
 
 ### Parameters
 
-- **path**
-  - The XPath to the configuration option. See [configuration reference][] for available options.
-- **value**
-  - A fixture value for the configuration option.
-- **scopeType**
-  - The scope to use to set config value. Allowed values: default, store, group and website. Default value: default.
-- **scopeValue**
-  - The code of the scope to be configured. If "default" scope is provided, this parameter can be omitted. If the scope type is store, group or website, the default value of this parameter is the current value of the specified scope.
+-  **path**
+   -  The XPath to the configuration option. See [configuration reference][] for available options.
+-  **value**
+   -  A fixture value for the configuration option.
+-  **scopeType**
+   -  The scope to use to set config value. Allowed values: default, store, group and website. Default value: default.
+-  **scopeValue**
+   -  The code of the scope to be configured. If "default" scope is provided, this parameter can be omitted. If the scope type is store, group or website, the default value of this parameter is the current value of the specified scope.
 
 ## Principles
 

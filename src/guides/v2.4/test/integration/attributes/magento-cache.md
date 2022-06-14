@@ -15,10 +15,10 @@ Enable or disable a [cache type][] using the `Cache` attribute.
 
 ### Parameters
 
-- **type**
-  - The cache type. Or "all" to change the status of all cache types.
-- **status**
-  - Accepts TRUE or FALSE to enable or disable cache respectively.
+-  **type**
+   -  The cache type. Or "all" to change the status of all cache types.
+-  **status**
+   -  Accepts TRUE or FALSE to enable or disable cache respectively.
 
 ## Principles
 

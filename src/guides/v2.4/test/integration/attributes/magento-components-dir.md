@@ -16,8 +16,8 @@ It enables you to register all the components at a specified directory recursive
 
 ### Parameters
 
-- **path**
-  - A path to the directory with fixture components. Each component must be registered using `registration.php` file.
+-  **path**
+   -  A path to the directory with fixture components. Each component must be registered using `registration.php` file.
 
 ## Test class attribute
 
