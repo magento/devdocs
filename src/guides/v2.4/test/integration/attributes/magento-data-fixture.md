@@ -8,7 +8,7 @@ redirect_from:
 
 ## Overview
 
-Parameterized data fixture is a dynamic and scalable data fixture that accepts parameters directly from the fixture declaration. It eliminates the need to create almost identical fixtures every time you need a slight change.
+Data fixture is a dynamic and scalable data fixture that accepts parameters directly from the fixture declaration. It eliminates the need to create almost identical fixtures every time you need a slight change.
 
 A data fixture is a PHP script that sets data you want to reuse in your test.
 Use data fixtures to prepare a database for tests. The Integration Testing Framework (ITF) reverts the database to its initial state automatically.
@@ -31,13 +31,11 @@ To set up a date fixture, use the `DataFixture` attribute.
  - **as**
    - The fixture alias that will be used as a reference to retrieve the data returned by the fixture and also as a reference in other fixtures parameters.
 
-## Fixture Alias
-
-You can give [Parameterized Data Fixture][parameterizedDataFixture] an alias using the `as` directive. The fixture alias is used as a reference to retrieve the data returned by the fixture and also as a reference in other fixtures parameters.
+## Fixture Usage
 
 ### Retrieve fixture data in the test
 
-A test can retrieve data that was returned by a [Parameterized Data Fixture][parameterizedDataFixture] using `Magento\TestFramework\Fixture\DataFixtureStorageManager` and the fixture alias.
+A test can retrieve data that was returned by a Data Fixture using `Magento\TestFramework\Fixture\DataFixtureStorageManager` and the fixture alias.
 
 The following example shows how to retrieve data that was returned by the fixtures:
 
@@ -59,7 +57,7 @@ class ProductsList extends \PHPUnit\Framework\TestCase
 }
 ```
 
-## Supply data to parameterized data fixture as a variable
+### Supply data to data fixture as a variable
 
 It is possible to supply data as a variable from one fixture to another using the fixture alias in one of the following formats:
 
@@ -81,7 +79,7 @@ class QuoteTest extends \PHPUnit\Framework\TestCase
 }
 ```
 
-## Test case and test method scopes
+### Test class and test method scopes
 
 The `DataFixture` can be specified for a particular test or for an entire test case.
 The basic rules for fixture attribute at different levels are:
@@ -98,13 +96,13 @@ The integration testing framework interacts with a database to revert the applie
 
 ### Principles
 
-1. Parameterized Data Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance, a fixture that creates an entity (for example, product).
-1. Parameterized Data Fixture class MUST be placed in the `<ModuleName>/Test/Fixture` folder of the corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (for example, `Magento\Catalog\Test\Fixture`).
-1. Parameterized Data Fixture class SHOULD follow single responsibility principle.
-1. Parameterized Data Fixture class MUST depend only on services from modules that are declared in the `require` section of its module's composer.json.
-1. Parameterized Data Fixture MUST NOT depend on another fixture.
-1. Parameterized Data Fixture SHOULD be implemented using service APIs.
-1. Parameterized Data Fixture SHOULD have dynamic default data to allow generating unique fixtures.
+1. Data Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance, a fixture that creates an entity (for example, product).
+1. Data Fixture class MUST be placed in the `<ModuleName>/Test/Fixture` folder of the corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (for example, `Magento\Catalog\Test\Fixture`).
+1. Data Fixture class SHOULD follow single responsibility principle.
+1. Data Fixture class MUST depend only on services from modules that are declared in the `require` section of its module's composer.json.
+1. Data Fixture MUST NOT depend on another fixture.
+1. Data Fixture SHOULD be implemented using service APIs.
+1. Data Fixture SHOULD have dynamic default data to allow generating unique fixtures.
 
 ### Dynamic default data
 
@@ -136,16 +134,9 @@ logic beyond the "create product" API capabilities, such logic should be impleme
 ### Fixture rollback
 
 A fixture that contains database transactions only, are reverted automatically.
-Otherwise, when a fixture creates files or performs any actions other than database transaction, provide the corresponding rollback logic.
+Otherwise, when a fixture creates files or performs any actions other than database transaction, provide the corresponding rollback logic,
+in the `revert()` method of the revertible data fixture.
 Rollbacks are run after reverting all the fixtures related to database transactions.
-
-Rollback methods must be of the same class as the corresponding fixture and suffixed with `Rollback`.
-
-Examples:
-
-| Fixture/Rollback | Fixture name                                         | Rollback name                                                |
-|------------------|------------------------------------------------------|--------------------------------------------------------------|
-| Method           | `\Magento\Catalog\Model\ProductTest::prepareProduct` | `\Magento\Catalog\Model\ProductTest::prepareProductRollback` |
 
 ### Restrictions
 

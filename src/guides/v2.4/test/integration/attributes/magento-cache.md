@@ -28,18 +28,16 @@ Enable or disable a [cache type][] using the `Cache` attribute.
 1. A test method attribute completely overrides a test class attribute.
 1. All cache types are disabled by default.
 
-## Test class annotation
+## Test class attribute
 
 `Cache` attribute at the test case level is applied to all tests.
 
-## Test method annotation
+## Test method attribute
 
 `Cache` attribute at a test method level configures the test method only.
 It completely overrides the attribute specified for the test class.
 
 ## Example
-
-Cache attributes example:
 
 ```php
 <?php
