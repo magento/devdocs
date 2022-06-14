@@ -135,8 +135,11 @@ logic beyond the "create product" API capabilities, such logic should be impleme
 
 A fixture that contains database transactions only, are reverted automatically.
 Otherwise, when a fixture creates files or performs any actions other than database transaction, provide the corresponding rollback logic,
-in the `revert()` method of the revertible data fixture.
+in the `revert` method of the revertible data fixture.
 Rollbacks are run after reverting all the fixtures related to database transactions.
+
+{:.bs-callout-info}
+Please refer to [`Magento\Catalog\Test\Fixture\Product`][] fixture to see the example.
 
 ### Restrictions
 
