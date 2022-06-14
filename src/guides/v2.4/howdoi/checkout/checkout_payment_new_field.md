@@ -10,7 +10,7 @@ menu_order: 101
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/add-payment-field/
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-payment-field/
 layout: migrated
 ---
 

@@ -8,7 +8,7 @@ menu_order: 2
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/customize-view/
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/customize-view/
 layout: migrated
 ---
 

@@ -8,7 +8,7 @@ menu_order: 3
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/custom-checkout/add-payment-method/
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-payment-method/
 layout: migrated
 ---
 
