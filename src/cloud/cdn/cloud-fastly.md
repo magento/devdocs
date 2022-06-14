@@ -30,17 +30,17 @@ Fastly provides the following services to optimize and secure content delivery o
 
 -  **Security**—After you set up your {{ site.data.var.ece }} project to use the Fastly CDN, additional security features are available to protect your sites and network:
 
-   -  [Web Application Firewall (WAF)](https://devdocs.magento.com/cloud/cdn/fastly-waf-service.html)—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. The WAF service is available on Pro and Starter Production environments only.
+   -  [Web Application Firewall (WAF)]—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. The WAF service is available on Pro and Starter Production environments only.
 
-   -  [Distributed Denial of Service (DDoS) protection](#ddos-protection)—Built-in DDoS protection against common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.
+   -  [Distributed Denial of Service (DDoS) protection](#ddos-protection)-Built-in DDoS protection against common attacks like Ping of Death, Smurf attacks, and other ICMP-based flood attacks.
 
-   -  [SSL/TLS certificates]({{site.baseurl}}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates)–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. {{site.data.var.ee}} provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. {{site.data.var.ee}} completes domain validation and certificate provisioning during the Fastly set up process.
+   -  [SSL/TLS certificates]–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. {{site.data.var.ee}} provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. {{site.data.var.ee}} completes domain validation and certificate provisioning during the Fastly set up process.
 
-   -  **Origin cloaking**–Prevents traffic from bypassing the Fastly WAF and hides the IP addresses of your origin servers to protect them from direct access and DDoS attacks. Origin cloaking is enabled by default on {{ site.data.var.ece }} Pro Production projects. To enable origin cloaking on {{ site.data.var.ece }} Starter Production projects, submit a [{{site.data.var.ee}} support ticket](https://support.magento.com/hc/en-us/articles/360019088251).  If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache]({{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin.html).
+   -  **Origin cloaking**–Prevents traffic from bypassing the Fastly WAF and hides the IP addresses of your origin servers to protect them from direct access and DDoS attacks. Origin cloaking is enabled by default on {{ site.data.var.ece }} Pro Production projects. To enable origin cloaking on {{ site.data.var.ece }} Starter Production projects, submit a [{{site.data.var.ee}} support ticket]. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
 
--  [Image optimization]({{site.baseurl}}/cloud/cdn/fastly-image-optimization.html)—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently.
+-  [Image optimization]-Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently.
 
--  **Fastly CDN and WAF logs**–For {{ site.data.var.ece }} Pro projects, you can use the New Relic Logs service to review and analyze Fastly CDN and WAF log data. See [New Relic](https://devdocs.magento.com/cloud/project/new-relic.html#new-relic-logs).
+-  [Fastly CDN and WAF logs]-For {{ site.data.var.ece }} Pro projects, you can use the New Relic Logs service to review and analyze Fastly CDN and WAF log data.
 
 ## Fastly CDN module for Magento 2
 
@@ -124,12 +124,13 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [How to block malicious traffic]: https://support.magento.com/hc/en-us/articles/360039447892-How-to-block-malicious-traffic-for-Magento-Commerce-Cloud-on-Fastly-level
 [{{site.data.var.ee}} support ticket]: https://support.magento.com/hc/en-us/articles/360019088251
 [New Relic]: {{site.baseurl}}/cloud/project/new-relic.html
+[Fastly CDN and WAF logs]: {{site.baseurl}}/cloud/project/new-relic.html#new-relic-logs
 [Project Web UI environment configuration variables]: {{site.baseurl}}/cloud/project/projects.html#environment-configuration-variables
 [purge options]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-purge-options
 [set up Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html
 [Test the new credential]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
-[TLS and Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates
+[SSL/TLS certificates]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates
 [Upgrade Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade
-[Web Application Firewall]: {{site.baseurl}}/cloud/cdn/fastly-waf-service.html
+[Web Application Firewall (WAF)]: {{site.baseurl}}/cloud/cdn/fastly-waf-service.html
 [Working with Domains]: https://docs.fastly.com/en/guides/working-with-domains
 [test the Fastly credentials]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
