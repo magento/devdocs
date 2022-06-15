@@ -178,10 +178,21 @@
         {% endfor %}
     </tr>
     <tr>
-      <td>AWS ElasticSearch</td>
+      <td>AWS Elasticsearch</td>
         {% for requirement in requirements %}
-      <td>{% if requirement[1]['AWS ElasticSearch'] %}
-            {{requirement[1]['AWS ElasticSearch']}}
+      <td>{% if requirement[1]['AWS Elasticsearch'] %}
+            {{requirement[1]['AWS Elasticsearch']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>AWS OpenSearch</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['AWS OpenSearch'] %}
+            {{requirement[1]['AWS OpenSearch']}}
           {% else %}
           --
           {% endif %}

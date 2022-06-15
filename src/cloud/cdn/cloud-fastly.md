@@ -12,7 +12,7 @@ To maintain PCI compliance for {{site.data.var.ee}} sites deployed on the Cloud 
 
 Fastly provides the following services to optimize and secure content delivery operations for your {{ site.data.var.ece }} projects. These services are included with your {{ site.data.var.ece }} subscription at no additional cost.
 
--  **Content delivery network (CDN)**—Varnish-based service that caches your site pages, assets, CSS, and more in backend data centers you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster. The CDN service provides the following features:
+-  **Content Delivery Network (CDN)**—Varnish-based service that caches your site pages, assets, CSS, and more in backend data centers you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster. The CDN service provides the following features:
 
    -  Cache your site pages, assets, CSS, and more in back-end data centers that you set up to reduce bandwidth load and costs
 
@@ -28,24 +28,25 @@ Fastly provides the following services to optimize and secure content delivery o
 
    -  Create [custom error response pages]
 
--  **Security**—After you set up your {{ site.data.var.ece }} project to use the Fastly CDN, additional security features are available to protect your sites and network.
-   -  [**DDoS protection**](#ddos-protection)—Built-in protection against common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.
+-  **Security**—After you set up your {{ site.data.var.ece }} project to use the Fastly CDN, additional security features are available to protect your sites and network:
 
-   -  **[Web Application Firewall]**—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. The WAF service is available on Pro and Starter Production environments only.
+   -  [Web Application Firewall (WAF)]—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. The WAF service is available on Pro and Starter Production environments only.
 
-   -  **SSL/TLS certificates**–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. {{site.data.var.ee}} provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. {{site.data.var.ee}} completes domain validation and certificate provisioning during the Fastly set up process. See [TLS and Fastly].
+   -  [Distributed Denial of Service (DDoS) protection](#ddos-protection)-Built-in DDoS protection against common attacks like Ping of Death, Smurf attacks, and other ICMP-based flood attacks.
 
-   -  **Origin cloaking**–Adobe can enable Origin Cloaking for all {{ site.data.var.ece }} projects. This option hides the IP addresses of your origin servers to protect them from direct access. When this feature is enabled, all traffic to your Cloud infrastructure must route through the Fastly CDN or another secure channel. Any traffic sent directly to the Origin servers is blocked. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
+   -  [SSL/TLS certificates]–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. {{site.data.var.ee}} provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. {{site.data.var.ee}} completes domain validation and certificate provisioning during the Fastly set up process.
 
--  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization].
+   -  **Origin cloaking**–Prevents traffic from bypassing the Fastly WAF and hides the IP addresses of your origin servers to protect them from direct access and DDoS attacks. Origin cloaking is enabled by default on {{ site.data.var.ece }} Pro Production projects. To enable origin cloaking on {{ site.data.var.ece }} Starter Production projects, submit a [{{site.data.var.ee}} support ticket]. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
 
--  **Fastly CDN and WAF logs**–For {{ site.data.var.ece }} Pro projects, you can use the New Relic Logs service to review and analyze Fastly CDN and WAF log data. See [New Relic].
+-  [Image optimization]-Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently.
+
+-  [Fastly CDN and WAF logs]-For {{ site.data.var.ece }} Pro projects, you can use the New Relic Logs service to review and analyze Fastly CDN and WAF log data.
 
 ## Fastly CDN module for Magento 2
 
 Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2] installed in the following environments: Pro Staging and Production, Starter Production (`master` branch).
 
-On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module in your Staging and Production environments. When Fastly releases module updates, you receive notifications in the Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly].
+On initial provisioning or upgrade of your {{ site. data.var.ece }} project, Adobe installs the latest version of the Fastly CDN module in your Staging and Production environments. When Fastly releases module updates, you receive notifications in the Admin UI for your environments. Adobe recommends that you update your environments to use the latest release. See [Upgrade Fastly].
 
 ## Fastly service account and credentials
 
@@ -115,7 +116,7 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [Fastly CDN module for Magento 2]: https://github.com/fastly/fastly-magento2
 [Fastly credentials configuration]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
 [Fastly custom VCL snippets]: {{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html
-[Fastly image optimization]: {{site.baseurl}}/cloud/cdn/fastly-image-optimization.html
+[Image optimization]: {{site.baseurl}}/cloud/cdn/fastly-image-optimization.html
 [Fastly support ticket]: https://docs.fastly.com/products/support-description-and-sla#support-requests
 [Force unencrypted requests over to TLS]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#force-tls
 [GeoIP service support]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-geoip-handling
@@ -123,12 +124,13 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [How to block malicious traffic]: https://support.magento.com/hc/en-us/articles/360039447892-How-to-block-malicious-traffic-for-Magento-Commerce-Cloud-on-Fastly-level
 [{{site.data.var.ee}} support ticket]: https://support.magento.com/hc/en-us/articles/360019088251
 [New Relic]: {{site.baseurl}}/cloud/project/new-relic.html
+[Fastly CDN and WAF logs]: {{site.baseurl}}/cloud/project/new-relic.html#new-relic-logs
 [Project Web UI environment configuration variables]: {{site.baseurl}}/cloud/project/projects.html#environment-configuration-variables
 [purge options]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-purge-options
 [set up Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html
 [Test the new credential]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
-[TLS and Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates
+[SSL/TLS certificates]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates
 [Upgrade Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade
-[Web Application Firewall]: {{site.baseurl}}/cloud/cdn/fastly-waf-service.html
+[Web Application Firewall (WAF)]: {{site.baseurl}}/cloud/cdn/fastly-waf-service.html
 [Working with Domains]: https://docs.fastly.com/en/guides/working-with-domains
 [test the Fastly credentials]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
