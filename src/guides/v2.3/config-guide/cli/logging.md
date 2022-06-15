@@ -65,6 +65,7 @@ By default, Magento writes database activity logs to the `var/debug/db.log` file
 
    ```bash
    bin/magento app:config:import
+   ```
 
 1. Flush the cache.
 
