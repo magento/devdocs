@@ -8,9 +8,10 @@ redirect_from:
 
 ## Overview
 
-Data fixture is a dynamic and scalable data fixture that accepts parameters directly from the fixture declaration. It eliminates the need to create almost identical fixtures every time you need a slight change.
+Data fixture attribute applies fixtures that implement `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
+It takes two more optional parameters alongside the fixture class name.
+The second parameter is the data that is used to customize the fixture and the third parameter is the alias (ID) of the fixture that is used to retrieve the data returned by the fixture and also as a reference in other fixtures parameters.
 
-A data fixture is a PHP script that sets data you want to reuse in your test.
 Use data fixtures to prepare a database for tests. The Integration Testing Framework (ITF) reverts the database to its initial state automatically.
 To set up a date fixture, use the `DataFixture` attribute.
 
