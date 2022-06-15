@@ -25,7 +25,7 @@ To set up a date fixture, use the `DataFixture` attribute.
 ### Parameters
 
 -  **type**
-   -  The fully qualified name of a class that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
+   -  Name of a class that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
 -  **data**
    -  The optional array of data passed on to the fixture.
 -  **as**
@@ -93,7 +93,7 @@ The basic rules for fixture attribute at different levels are:
 The integration testing framework interacts with a database to revert the applied fixtures.
 
 ## Creating the fixture
-
+Data Fixture is a PHP class that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`. Its main purpose is to seed the database with the data needed to run a test.
 ### Principles
 
 1. Data Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance, a fixture that creates an entity (for example, product).
