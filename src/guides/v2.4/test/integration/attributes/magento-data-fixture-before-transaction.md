@@ -43,6 +43,8 @@ class CategoryTest extends TestCase
 
     }
 }
+```
+
 <!-- LINK DEFINITIONS -->
 
 [Data Fixture attribute]: {{ page.baseurl }}/test/integration/attributes/magento-data-fixture.html
