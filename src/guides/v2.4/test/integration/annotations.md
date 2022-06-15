@@ -7,7 +7,7 @@ DocBlock annotations help to declare context in your code. In addition to built-
 , the Integration testing framework provides custom annotations described in this topic.
 
 {:.bs-callout-info}
-Native PHP8 Attributes can be used instead or together with DocBlock annotations. This new method offers more flexibility and improve readability of the code. See the [Attributes section][] to find out more. This feature is currently only available for Magento Open Source contributors. It will be released for general use with Magento Open Source 2.4.5.
+Native PHP8 Attributes can be used instead or together with DocBlock annotations. This new method offers more flexibility and improves readability of the code. See the [Attributes][] to learn more. This feature is currently only available for {{site.data.var.ce}} contributors. It will be released for general use with {{site.data.var.ce}} 2.4.5.
 
 ### Quick overview
 

@@ -4,11 +4,11 @@ title: Database isolation attribute
 ---
 
 To isolate database changes between tests, the Integration testing framework (ITF) implements the `DbIsolation` attribute.
-When the `DbIsolation` is enabled, the ITF:
+When the `DbIsolation` attribute is enabled, the ITF:
 
--  starts a database transaction before the test/test case.
--  avoids a database commit during the test/test case.
--  restores the database after the test/test case.
+-  Starts a database transaction before the test/test case.
+-  Avoids a database commit during the test/test case.
+-  Restores the database after the test/test case.
 
 ## Format
 
@@ -74,7 +74,7 @@ class Some\EntityTest extends \PHPUnit\Framework\TestCase
 
 ## Test method attribute
 
-To isolate changes made to database by a single test, enable the `DbIsolation` for the test method.
+To isolate changes made to the database by a single test, enable the `DbIsolation` attribute for the test method.
 
 ```php?start_inline=1
 #[

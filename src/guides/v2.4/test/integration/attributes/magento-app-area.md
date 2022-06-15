@@ -36,7 +36,7 @@ Configure a test environment in scope of the particular [application area][] wit
 A test class attribute enables the specified application area for all tests in the test class.
 
 {:.bs-callout-info}
-Test class attribute override test method attribute.
+Test class attributes override test method attributes.
 
 Example:
 
@@ -72,7 +72,7 @@ class ClassToTest extends \PHPUnit\Framework\TestCase
 ## Test method attribute
 
 A test method attribute is used to configure the environment in scope of the specified application area for the test method.
-Magento is reinitialized in the corresponding scope each time you specify a different area.
+The application is reinitialized in the corresponding scope each time you specify a different area.
 
 Example:
 

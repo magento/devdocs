@@ -30,11 +30,11 @@ Enable or disable a [cache type][] using the `Cache` attribute.
 
 ## Test class attribute
 
-`Cache` attribute at the test case level is applied to all tests.
+The `Cache` attribute at the test case level is applied to all tests.
 
 ## Test method attribute
 
-`Cache` attribute at a test method level configures the test method only.
+The `Cache` attribute at a test method level configures the test method only.
 It completely overrides the attribute specified for the test class.
 
 ## Example
@@ -86,7 +86,7 @@ class BarTest extends \PHPUnit\Framework\TestCase
 -  `testOne()` is run with all cache types enabled.
 -  `testTwo()` is run with all cache types disabled.
 
-   The `Cache('config', false)` completely overrides the test method attribute. The test method attribute wasn't applied in this case. By default, all cache types are disabled. Thus disabling any attributes does not make much sense here.
+   The `Cache('config', false)` completely overrides the test method attribute. The test method attribute wasn't applied in this case. By default, all cache types are disabled, so disabling attributes does not make much sense here.
 -  `testThree()` is run with all but `config` cache type enabled.
 -  `testFour()` is run with all the cache types enabled.
 

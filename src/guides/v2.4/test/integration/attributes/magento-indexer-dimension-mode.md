@@ -31,11 +31,11 @@ Sets the indexer dimension mode for the test run.
 
 ## Test class attribute
 
-`IndexerDimensionMode` attribute at the test case level is applied to all tests.
+An `IndexerDimensionMode` attribute at the test case level is applied to all tests.
 
 ## Test method attribute
 
-`IndexerDimensionMode` attribute at a test method level configures the test method only.
+An `IndexerDimensionMode` attribute at the test method level configures the test method only.
 It completely overrides the attribute specified for the test class.
 
 ## Example

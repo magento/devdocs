@@ -8,9 +8,9 @@ redirect_from:
 
 ## Overview
 
-Data fixture attribute applies fixtures that implement `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
+Data fixture attributes apply fixtures that implement `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
 It takes two more optional parameters alongside the fixture class name.
-The second parameter is the data that is used to customize the fixture and the third parameter is the alias (ID) of the fixture that is used to retrieve the data returned by the fixture and also as a reference in other fixtures parameters.
+The second parameter is the data that is used to customize the fixture and the third parameter is the alias (ID) of the fixture that is used to retrieve the data returned by the fixture and also as a reference in other fixture parameters.
 
 Use data fixtures to prepare a database for tests. The Integration Testing Framework (ITF) reverts the database to its initial state automatically.
 To set up a date fixture, use the `DataFixture` attribute.
@@ -83,11 +83,11 @@ class QuoteTest extends \PHPUnit\Framework\TestCase
 ### Test class and test method scopes
 
 The `DataFixture` can be specified for a particular test or for an entire test case.
-The basic rules for fixture attribute at different levels are:
+The basic rules for fixture attributes at different levels are:
 
--  `DataFixture` at a test case level, makes the framework to apply the declared fixtures to each test in the test case.
+-  `DataFixture` at a test case level makes the framework apply the declared fixtures to each test in the test case.
    When the final test is complete, all class-level fixtures are reverted.
--  `DataFixture` for a particular test, signals the framework to revert the fixtures declared on a test case level and applies the fixtures declared at a test method level instead.
+-  `DataFixture` for a particular test signals the framework to revert the fixtures declared on a test case level and applies the fixtures declared at a test method level instead.
    When the test is complete, the ITF reverts the applied fixtures.
 
 {:.bs-callout-info}
@@ -102,14 +102,14 @@ Data Fixture is a PHP class that implements `Magento\TestFramework\Fixture\DataF
 1. Data Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance, a fixture that creates an entity (for example, product).
 1. Data Fixture class MUST be placed in the `<ModuleName>/Test/Fixture` folder of the corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (for example, `Magento\Catalog\Test\Fixture`).
 1. Data Fixture class SHOULD follow single responsibility principle.
-1. Data Fixture class MUST depend only on services from modules that are declared in the `require` section of its module's composer.json.
+1. Data Fixture class MUST depend only on services from modules that are declared in the `require` section of its module's composer.json file.
 1. Data Fixture MUST NOT depend on another fixture.
 1. Data Fixture SHOULD be implemented using service APIs.
 1. Data Fixture SHOULD have dynamic default data to allow generating unique fixtures.
 
 ### Dynamic default data
 
-In order to generate multiple fixtures of the same type without having to manually configure unique fields, you can use the placeholder `%uniqid%` in the default value of unique fields and `Magento\TestFramework\Fixture\Data\ProcessorInterface` to substitute the placeholder with unique sequence.
+In order to generate multiple fixtures of the same type without having to manually configure unique fields, you can use the placeholder `%uniqid%` in the default value of unique fields and `Magento\TestFramework\Fixture\Data\ProcessorInterface` to substitute the placeholder with a unique sequence.
 
 [`Magento\Catalog\Test\Fixture\Product`][] demonstrates the usage of `%uniqid%` (`sku`: `simple-product%uniqid%`) in the fixture default data.
 
@@ -131,22 +131,22 @@ class ProductsListTest extends \PHPUnit\Framework\TestCase
 ### Decoupling fixtures
 
 Fixtures must be written in the way that they only use one API to generate data. For example, the fixture that creates
-a product should only invoke "Create Product" API and return the product created. This fixture should not add any extra
+a product should only invoke the "Create Product" API and return the product created. This fixture should not add any extra
 logic beyond the "create product" API capabilities, such logic should be implemented in a separate fixture.
 
 ### Fixture rollback
 
-A fixture that contains database transactions only, are reverted automatically.
-Otherwise, when a fixture creates files or performs any actions other than database transaction, provide the corresponding rollback logic,
+A fixture that contains database transactions only are reverted automatically.
+Otherwise, when a fixture creates files or performs any actions other than a database transaction, provide the corresponding rollback logic,
 in the `revert` method of the revertible data fixture.
 Rollbacks are run after reverting all the fixtures related to database transactions.
 
 {:.bs-callout-info}
-Please refer to [`Magento\Catalog\Test\Fixture\Product`][] fixture to see the example.
+See the [`Magento\Catalog\Test\Fixture\Product`][] fixture for an example.
 
 ### Restrictions
 
-Do not rely on and do not modify an application state from within a fixture, because [application isolation attribute][magentoAppIsolation] can reset the application state at any time.
+Do not rely on and do not modify an application state from within a fixture. The [application isolation attribute][magentoAppIsolation] can reset the application state at any time.
 
 <!-- Link definitions -->
 

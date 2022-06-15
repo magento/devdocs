@@ -5,7 +5,7 @@ title: Data fixture before transaction attribute
 
 ## Overview
 
-Data fixture before transaction attribute is an extension of [Data Fixture attribute][] that applies fixtures before the transaction and reverts applied fixtures after the transaction. With disabled Db isolation, this attribute is identical to  [Data Fixture attribute][]
+The data fixture before transaction attribute is an extension of [Data Fixture attribute][] that applies fixtures before the transaction and reverts applied fixtures after the transaction. With disabled DB isolation, this attribute is identical to the [Data Fixture attribute][]
 
 ## Format
 
@@ -26,7 +26,7 @@ Data fixture before transaction attribute is an extension of [Data Fixture attri
 
 ### Example
 
-In the following example, we fixtures supplied to `DataFixtureBeforeTransaction` attribute are applied before the transaction whereas fixtures supplied to `DataFixture` attribute are applied within the transaction
+In the following example, the fixtures supplied to the `DataFixtureBeforeTransaction` attribute are applied before the transaction, whereas fixtures supplied to the `DataFixture` attribute are applied within the transaction.
 
 ```php?start_inline=1
 class CategoryTest extends TestCase

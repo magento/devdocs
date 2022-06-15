@@ -3,7 +3,7 @@ group: testing
 title: Configuration fixture attribute
 ---
 
-To set Magento configuration values for individual tests and revert them after the test execution, use the `Config` attribute.
+To set configuration values for individual tests and revert them after the test execution, use the `Config` attribute.
 
 ## Format
 
@@ -20,9 +20,9 @@ To set Magento configuration values for individual tests and revert them after t
 -  **value**
    -  A fixture value for the configuration option.
 -  **scopeType**
-   -  The scope to use to set config value. Allowed values: default, store, group and website. Default value: default.
+   -  The scope to use to set configuration value. Allowed values: default, store, group and website. Default value: default.
 -  **scopeValue**
-   -  The code of the scope to be configured. If "default" scope is provided, this parameter can be omitted. If the scope type is store, group or website, the default value of this parameter is the current value of the specified scope.
+   -  The code of the scope to be configured. If "default" scope is provided, this parameter can be omitted. If the scope type is store, group, or website, the default value of this parameter is the current value of the specified scope.
 
 ## Principles
 
