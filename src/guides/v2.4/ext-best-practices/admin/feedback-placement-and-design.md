@@ -1,1 +1,30 @@
-../../../v2.3/ext-best-practices/admin/feedback-placement-and-design.md
+---
+title: Feedback for Admin Panel Placement and Design
+group: extension-best-practices
+menu_title: Feedback for Admin Panel Placement and Design
+menu_order: 1
+functional_areas:
+  - Standards
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/admin/placement-and-design/
+layout: migrated
+---
+
+Please provide feedback for the article: [Admin Panel Placement and Design]({{ page.baseurl }}/ext-best-practices/admin/placement-and-design.html) on this page via GitHub.
+
+You can leave high-level feedback for specific sections by clicking the Edit icon above, and adding comments beneath the relevant section name below.
+
+For more detailed comments, please create a Pull Request on the specific page.
+
+### Article Sections
+
+*  Overview
+*  Things to Avoid
+   *  Icons in the Primary Navigation
+   *  Advertising in Navigation
+*  Placement guidelines for [extension](https://glossary.magento.com/extension) types
+   *  Standard Connector
+   *  Store Feature Connector
+   *  Connector with additional features
+   *  Feature Extensions
+   *  Integrated Extensions
+   *  Codebase Extensions

@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Routing
+migrated_to: https://developer.adobe.com/commerce/php/development/components/routing/
+layout: migrated
 ---
 
 In web applications, such as Magento, routing is the act of providing data from a URL request to the appropriate class for processing.

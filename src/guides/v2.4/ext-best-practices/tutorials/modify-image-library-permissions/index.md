@@ -1,6 +1,8 @@
 ---
 group: extension-best-practices
 title: Modify Media Library folder permissions
+migrated_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/modify-image-library-permissions/
+layout: migrated
 ---
 
 The media gallery gives admins the ability to upload image files in specific folders. The Storage class for images in the CMS module manages image file uploads, file retrievals, and directory creation.
