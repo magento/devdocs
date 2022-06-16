@@ -96,7 +96,7 @@ The client's browser will use a session cookie if the server provides one. Prior
 
 Browser-based applications that make GraphQL calls can continue implementing these cookies without changing the default setting. If you use cookies, avoid specifying Authorization headers to prevent problems caused by using two different authorization methods.
 
-Adobe recommends that you do not use session cookies when developing a Commerce-based application. If you adhere to this best practice, you should configure GraphQL so that the server doesn't generate them. Disabling cookies also prevents the system file locks and racing conditions on server resources. These problems cause slower HTTP GET request throughputs under peak traffic conditions.
+Adobe recommends that you do not use session cookies when developing a Commerce-based application. If you adhere to this best practice, you should configure GraphQL so that the server doesn't generate them. Disabling cookies also prevents system file locks and race conditions on server resources. These problems cause slower HTTP GET request throughputs under peak traffic conditions.
 
 Run the following command to disable session cookies for GraphQL:
 
@@ -104,4 +104,4 @@ Run the following command to disable session cookies for GraphQL:
 
 To re-enable these cookies, run:
 
-`bin/magento config:set graphql/session/disable 1`
+`bin/magento config:set graphql/session/disable 0`
