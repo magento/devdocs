@@ -47,7 +47,6 @@ define(['jquery'], function($) {
       },
       $.mage.__('Please enter exactly five words')
     )
-    
     return targetWidget;
   }
 });
