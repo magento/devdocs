@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Commerce B2B Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/b2b/release-notes.html
+layout: migrated
 ---
 
 The release notes for the B2B extension captures additions and bug fixes that Magento has added during a release cycle.
