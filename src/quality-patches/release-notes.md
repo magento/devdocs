@@ -266,7 +266,7 @@ For information about quality patches created by the Community for {{site.data.v
 -  **MDVA-36615** _(for Magento `2.4.2`)_-Fixes the issue with incorrect product count in admin product grid.
 -  **MDVA-36464** _(for Magento `>=2.4.0 <=2.4.2`)_-Fixes the issue where the email notification configuration is not working at store-view level.
 -  **MDVA-36138** _(for Magento `^2.3.2`)_-Fixes the issue where the shipping price is not adjusted and full shipping price is shown to customers if not all items in the cart qualify for the free shipping cart rule.
--  **MDVA-36424** _(for Magento `>=1.3.0 <=1.3.3-p1 || >=2.0.0 <2.2.0`)_-Fixes the issue where media images, attached to page builder elements, disappear when the content is being edited repeatedly, if the backend base URL is different from the storefront base URL.
+-  **MDVA-36424** _(for Magento `>=2.3.0 <=2.3.3-p1 || >=2.0.0 <2.2.0`)_-Fixes the issue where media images, attached to page builder elements, disappear when the content is being edited repeatedly, if the backend base URL is different from the storefront base URL.
 -  **MDVA-35984** _(for Magento `^2.4.0`)_-Fixes the issue with incorrect product quantity and sellable quantity, after creating multiple concurrent shipments for the same product.
 
 ## v1.0.20

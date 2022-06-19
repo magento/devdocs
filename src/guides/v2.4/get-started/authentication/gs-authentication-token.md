@@ -3,6 +3,8 @@ group: web-api
 title: Token-based authentication
 functional_areas:
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token/
+layout: migrated
 ---
 
 To make a web [API](https://glossary.magento.com/api) call from a client such as a mobile application, you must supply an *access token* on the call. The token acts like an electronic key that lets you access the API.
