@@ -12,7 +12,7 @@ Composer reads a `composer.json` file in Magento's root directory to download th
 We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
 
  {:.bs-callout-info}
-Magento does not support the [`path`][3] repository.
+Magento does not support the [`path`][3] repository pointing to a folder outside of the Magento root.
 
 ## composer.json
 
