@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Creating an Access Control List (ACL) rule
 contributor_name: Ziffity
 contributor_link: https://www.Ziffity.com/
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/create-access-control-list-rule/
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/backend/create-access-control-list-rule/
 layout: migrated
 ---
 
