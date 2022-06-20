@@ -59,4 +59,4 @@ pages:
       children:
 
         - label: Web Api
-          url: /get-started/bk-get-started-api.html
+          url: /architecture/archi_perspectives/webapi-vision.html

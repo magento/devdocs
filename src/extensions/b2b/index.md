@@ -4,6 +4,8 @@ title: Install B2B
 ee_only: true
 redirect_from:
  - guides/v2.3/comp-mgr/install-extensions/b2b-installation.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/b2b/install.html
+layout: migrated
 ---
 
 {:.bs-callout-warning}
@@ -74,23 +76,19 @@ After installing the {{site.data.var.b2b}} extension, follow these instructions 
 
 ### Start message consumers
 
-The {{site.data.var.b2b}} extension uses MySQL for message queue management. If you want to enable the B2B **Shared Catalog** feature, you must start the corresponding message consumers after installation.
+The {{site.data.var.b2b}} extension uses MySQL for message queue management. The following table describes the required message consumers that you must start to use [B2B features]({{ site.user_guide_url }}/stores/b2b-features.html):
 
-1. List the available message consumers:
-
-   ```bash
-   bin/magento queue:consumers:list
-   ```
-
-   You should see the following consumers:
-
-   ```terminal
-   sharedCatalogUpdatePrice
-   sharedCatalogUpdateCategoryPermissions
-   quoteItemCleaner
-   inventoryQtyCounter
-   async.operations.all
-   ```
+| Consumer                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `sharedCatalogUpdatePrice`               | Updates price for each product in a shared catalog. Required when the [**Shared Catalogs**]({{ site.user_guide_url }}/catalog/catalog-shared.html) option is enabled in the Admin system configuration settings.                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `sharedCatalogUpdateCategoryPermissions` | Updates categories assigned to a shared catalog category. Required when the [**Shared Catalogs**]({{ site.user_guide_url }}/catalog/catalog-shared.html) option is enabled in the Admin system configuration settings.                                                                                                                                                                                                                                                                                                                                                                                             |
+| `negotiableQuotePriceUpdate`             | Updates prices for negotiable quotes. Required when the [**Quotes**]({{ site.user_guide_url }}/sales/quotes.html) option is enabled in the Admin system configuration settings.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `purchaseorder.toorder`                  | Converts purchase order to [order]({{ site.user_guide_url }}/stores/b2b-purchase-order-flow.html#approval-rules). Required when the [**Purchase Order**]({{ site.user_guide_url }}/payments/purchase-order.html) option is enabled in the Admin system configuration settings.                                                                                                                                                                                                                                                                                                                                     |
+| `purchaseorder.transactional.email`      | Send purchase order emails. Required when the [**Purchase Order**]({{ site.user_guide_url }}/payments/purchase-order.html) option is enabled in the Admin system configuration settings.                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `purchaseorder.validation`               | Validates purchase order against relevant [approval rules]({{ site.user_guide_url }}/customers/account-dashboard-approval-rules.html). Required when the [**Purchase Order**]({{ site.user_guide_url }}/payments/purchase-order.html) option is enabled in the Admin system configuration settings.                                                                                                                                                                                                                                                                                                                |
+| `quoteItemCleaner`                       | Deletes invalid or inactive price quotes when a product is deleted from the catalog or removed from the cart. Required when the [**Quotes**]({{ site.user_guide_url }}/sales/quotes.html) option is enabled in the Admin system configuration settings.                                                                                                                                                                                                                                                                                                                                                            |
+| `inventoryQtyCounter`                    | Asynchronously corrects the stock index after an order is placed or a product is removed. Required when the [**Use deferred stock update**]({{ site.user_guide_url }}/configuration/catalog/inventory.html#product-stock-options) option is enabled in the Admin configuration settings. See [Performance Best Practices](https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/configuration.html#deferred-stock-update).                                                                                                                                                        |
+| `async.operations.all`                   | Creates messages for each individual task of a [bulk operation](https://developer.adobe.com/commerce/php/development/components/message-queues/bulk-operations/), such as importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse. Required when the [**Admin bulk operations**]({{ site.user_guide_url }}/configuration/catalog/inventory.html?#admin-bulk-operations) option is set to **Run asynchronously** in the Admin system configuration settings. |
 
 1. Start each consumer separately:
 

@@ -4,8 +4,189 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon May 16 14:38:43 2022
+updated: Mon Jun 13 14:38:46 2022
 entries:
+- description: Clarified notes throughout the Cloud guide about updating configurations
+    in Pro projects. See [Configure environments](https://devdocs.magento.com/cloud/env/environments.html)
+    as an example.
+  versions: 2.x
+  type: Technical
+  date: June 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3007
+  merge_commit: 16b2bb8e7c6a152e87b191f6b1388135e47d2e1b
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: The [Extension Developer Best Practices Guide](https://devdocs.magento.com/guides/v2.4/ext-best-practices/bk-ext-best-practices.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/best-practices/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: June 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2996
+  merge_commit: 2e00f287e51463a4ee32efe66b8943b9f7971928
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Module reference guide](https://devdocs.magento.com/guides/v2.4/mrg/intro.html)
+    has moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/module-reference/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Technical
+  date: June 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2999
+  merge_commit: d73fc1686f4bcb99d042361e2ed0391554b928b8
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
+- description: 'Cloud guide: updated the [CRON_CONSUMERS_RUNNER](https://devdocs.magento.com/cloud/env/variables-deploy.html#cron_consumers_runner)
+    deploy variable to show an example of an empty array that runs all consumers.'
+  versions: 2.x
+  type: Technical
+  date: June 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3002
+  merge_commit: 8709c3516cbb3c1db60ff04b871ffeeda148d298
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.15 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: June 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3000
+  merge_commit: 25fb4ad8863972827bbc4d623bfc8d3e980767e4
+  contributor: katmoon
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added missing versions for Amazon Web Services on the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    page.
+  versions: 2.4.x
+  type: Technical
+  date: June 3, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2989
+  merge_commit: bf13a57daa910a8e3fa6953c4d3f74589726b0d1
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
+- description: Added descriptions of B2B [message queue consumers](https://devdocs.magento.com/extensions/b2b/#start-message-consumers).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: June 3, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2982
+  merge_commit: e3b399bd80df81a7e09f73c99427859d2d29ec1f
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Updated the product [roadmap](https://devdocs.magento.com/release/roadmap.html)
+    with items for the second half of 2022.
+  versions: 2.4.x
+  type: Major Update
+  date: June 3, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2990
+  merge_commit: b7431cbb627bbf652969ee644f44dedbc710e821
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: The [PHP Developer Guide](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/development/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: June 1, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2984
+  merge_commit: 43e38bd962d38b9a1a82f96aa3679583059b24fb
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Updated the [Xdebug topic](https://devdocs.magento.com/cloud/howtos/debug.html#pro-debug)
+    to clarify that Xdebug is available and enabled in Pro Staging and Production
+    environments.
+  versions: 2.x
+  type: Technical
+  date: May 27, 2022
+  link: https://github.com/magento/devdocs/pull/9444
+  merge_commit: b6db38031215b0b1e3b816008edc47cd008b1327
+  contributor: BarnyShergold
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+  - 'Progress: done'
+- description: Added descriptions of Inventory Management [message queue consumers](https://devdocs.magento.com/guides/v2.4/inventory/index.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: May 25, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2977
+  merge_commit: dd5afa9ec491d084c322ba49027dc7cf8f3f1191
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Updated the [Adobe Commerce 2.4.4](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-4.html)
+    and [Magento Open Source 2.4.4](https://devdocs.magento.com/guides/v2.4/release-notes/open-source-2-4-4.html)
+    release notes with information about changes to Composer allow-listing of plugins
+    effective July 2022.
+  versions: 2.4.4
+  type: Major Update
+  date: May 20, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2966
+  merge_commit: bdc6b1e9324b58c4927baf9369cd592d71b59100
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Updated the Magento PHPStorm plugin section with a new [installation](https://devdocs.magento.com/guides/v2.4/ext-best-practices/phpstorm/installation.html)
+    topic.
+  versions: 2.4.x
+  type: New Topic
+  date: May 19, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2965
+  merge_commit: 58b7709cb7ee85f7bafb3f84cbe2c56d2db27297
+  contributor: loginesta
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.x
+- description: The [Architecture Guide](https://devdocs.magento.com/guides/v2.4/architecture/bk-architecture.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/architecture/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: May 17, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2963
+  merge_commit: e648e6a324b70875dbe3c28a2911d88ee924cfd2
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: Update the [Released versions](https://devdocs.magento.com/release/released-versions.html)
     topic:<br/>- Add 2.4.4, 2.4.3-p2, 2.3.7-p3<br/>- Update the end of support date
     for 2.4.0-2.4.3

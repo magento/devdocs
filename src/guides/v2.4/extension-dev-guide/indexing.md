@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Indexing overview
+migrated_to: https://developer.adobe.com/commerce/php/development/components/indexing/
+layout: migrated
 ---
 
 Indexing is how Magento transforms data such as products and categories, to improve the performance of your [storefront](https://glossary.magento.com/storefront). As data changes, the transformed data must be updated or reindexed. Magento has a very sophisticated architecture that stores lots of merchant data (including [catalog](https://glossary.magento.com/catalog) data, prices, users, and stores) in many database tables. To optimize storefront performance, Magento accumulates data into special tables using indexers.

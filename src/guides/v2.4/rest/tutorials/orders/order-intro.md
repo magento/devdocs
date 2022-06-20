@@ -30,7 +30,7 @@ Complete the following prerequisites:
 
 *  Set up [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html). This tutorial assumes Google Authenticator is your 2FA solution.
 
-*  Know how to construct a REST call in Magento. See [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html) for details.
+*  Know how to construct a REST call in Magento. See [Construct a request](https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request.html) for details.
 
 *  Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/redoc/{{page.guide_version}}/) or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
 
