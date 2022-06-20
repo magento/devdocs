@@ -48,6 +48,10 @@ The release notes include:
 
 -  {:.fix} Compatibility issues with PHP 7.4 have been resolved. <!--- AC-3192-->
 
+-  {:.fix} The performance of save operations that include bundle products that contain many options (several hundred) has been improved. Previously, saving these large bundle products took several minutes and sometimes resulted in timeouts in deployments with Inventory services enabled. [GitHub-34732](https://github.com/magento/magento2/issues/34732) <!--- AC-1901-->
+
+-  {:.fix} The product bulk action tool (**Catalog** > **Products** > **Select Products** > **Actions** > **Assign Inventory Source**) now works as expected when assigning inventory source to multiple products when SKUs are duplicate with the exception of a leading 0 (for example, 01234 and 1234). Previously, only one product was assigned an Inventory source. [GitHub-35171](https://github.com/magento/magento2/issues/35171) <!--- AC-2584-->
+
 ### v1.2.4
 
 {{site.data.var.im}} 1.2.4 (module version: `magento/inventory-metapackage = 1.2.4`) is supported with version 2.4.4 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.

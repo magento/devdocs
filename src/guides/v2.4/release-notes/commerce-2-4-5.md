@@ -24,7 +24,7 @@ Look for the following highlights in this release.
 
 ### Security enhancements
 
-This release includes  security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ee }} 2.4.3-p3 and {{ site.data.var.ee }} 2.3.7-p4.
+This release includes 20 security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ee }} 2.4.3-p3 and {{ site.data.var.ee }} 2.3.7-p4.
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts:
 
@@ -40,13 +40,13 @@ See Adobe Security Bulletin for the latest discussion of these fixed issues.
 
 Security improvements for this release improve compliance with the latest security best practices, including:
 
-*  reCAPTCHA support has been added to the Wish List Sharing, Create New Customer Account, and Gift Card forms.
+*  reCAPTCHA support has been added to the Wish List Sharing, Create New Customer Account, and Gift Card forms. <!--- AC-1144-->
 
-*  ACL resources have been added to Inventory.
+*  ACL resources have been added to Inventory. <!--- AC-1622-->
 
 *  Inventory template security has been enhanced.
 
-*  The `MaliciousCode` filter has been upgraded to use the `HtmlPurifier` library.
+*  The `MaliciousCode` filter has been upgraded to use the `HtmlPurifier` library. <!--- AC-1498-->
 
 ### Platform enhancements
 
@@ -56,11 +56,15 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Elasticsearch (~7.17.0 with constraint) <!--- AC-2425-->
 
-*  TinyMCE (5.10.2) <!--- AC-2039 1784-->
+*  TinyMCE (5.10.2). Earlier versions of TinyMCE  (v5.9.2 or earlier) allowed arbitrary JavaScript execution when a specially crafted URL or an image with a specially crafted URL was updated. <!--- AC-2039 1784 1789-->
 
 *  jQueryUI (1.13.1) <!--- AC-2544-->
 
-*  `PHPStan` (^1.5.7 with constraint) <!--- AC-2876-->
+*  `PHPStan` (^1.5.7 with constraint) [GitHub-35315](https://github.com/magento/magento2/issues/35315)<!--- AC-2876-->
+
+*  DHL Integration schema has been updated from v6.0 to v6.2. DHL is deprecated v6.0 <!--- AC-3022-->
+
+Outdated JavaScript libraries have been updated to their latest versions, and outdated dependencies have been removed. These changes are backward compatible. <!--- AC-2036-->
 
 #### Composer dependency updates
 
@@ -68,28 +72,28 @@ Security improvements for this release improve compliance with the latest securi
 
 The following Composer dependencies have been updated to the latest versions with constraint:
 
-`colinmollenhour/credis`  (1.13.0 or 1.12.2)? <!--- AC-2732-->
-`guzzlehttp/guzzle` (^7.4.2)
-`laminas/laminas-captcha` (updated with a constraint ^2.12) <!--- AC-2625-->
-`laminas/laminas-db`   (^2.15.0)
-`laminas/laminas-di` (^3.4.0)
-`laminas/laminas-escaper` (~2.10.0)
-`laminas/laminas-eventmanager`  (^3.5.0)
-`laminas/laminas-feed`   (^2.17.0)
-`laminas/laminas-mail` (^2.16.0)
-`laminas/laminas-mvc`  (^3.3.3)
-`laminas/laminas-server` (^2.11.1)
-`laminas/laminas-servicemanager`  (^3.11.0)
-`laminas/laminas-session` (^2.12.1)
-`laminas/laminas-validator` (^2.17.0)
-`league/fly`  (2.4.3) <!--- AC-2744-->
-`monolog/monolog`  (^2.5)
-`phpmd/phpmd`   (^2.12.0)
-`phpstan/phpstan`  (^1.5.7)
-`phpunit/phpunit`  (~9.5.20)
-`phpunit/phpunit` (^9.4) <!--- AC-443-->
-`php-cs-fixer` (^3.4.0) <!--- AC-2259-->
-`webonyx/graphql-php`  (14.11.6)
+*  `colinmollenhour/credis`  (1.13.0 or 1.12.2)? <!--- AC-2732-->
+*  `guzzlehttp/guzzle` (^7.4.2)
+*  `laminas/laminas-captcha` (updated with a constraint ^2.12) <!--- AC-2625-->
+*  `laminas/laminas-db`   (^2.15.0)
+*  `laminas/laminas-di` (^3.4.0)
+*  `laminas/laminas-escaper` (~2.10.0)
+*  `laminas/laminas-eventmanager`  (^3.5.0)
+*  `laminas/laminas-feed`   (^2.17.0)
+*  `laminas/laminas-mail` (^2.16.0)
+*  `laminas/laminas-mvc`  (^3.3.3)
+*  `laminas/laminas-server` (^2.11.1)
+*  `laminas/laminas-servicemanager`  (^3.11.0)
+*  `laminas/laminas-session` (^2.12.1)
+*  `laminas/laminas-validator` (^2.17.0)
+*  `league/fly`  (2.4.3) <!--- AC-2744-->
+*  `monolog/monolog`  (^2.5)
+*  `phpmd/phpmd`   (^2.12.0)
+*  `phpstan/phpstan`  (^1.5.7)
+*  `phpunit/phpunit`  (~9.5.20)
+*  `phpunit/phpunit` (^9.4) <!--- AC-443-->
+*  `php-cs-fixer` (^3.4.0) <!--- AC-2259-->
+*  `webonyx/graphql-php`  (14.11.6)
 
 The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view` dependencies have been removed. <!--- AC-2598-->
 
@@ -123,6 +127,10 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 Performance enhancements in this release:
 
+#### Price indexer optimization
+
+To improve performance of product price indexation, the number of primary indexes has been reduced from 3 to 1 for the `catalog_product_index_price_tmp`  table. As a result,  the indexation time of the product price index has been significantly reduced.  <!--- MC-43342-->
+
 ### GraphQL
 
 This release includes these GraphQL enhancements:
@@ -133,23 +141,65 @@ This release includes these GraphQL enhancements:
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
+### Adobe Sign Extension
+
+The Adobe Commerce check out workflow now supports the inclusion of an esignature agreement page powered by Adobe Sign.
+
 ### B2B
 
 This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html)
 
+**Reduced eSKU multiplication with Shared Catalogs (Customer Groups)**. The new **Enabled Shared Catalog direct product price assigning** configuration option improves product price indexer performance when enabled. <!--- MCP-946-->
+
+### Channel Manager
+
+Channel Manager can now trigger refunds from Adobe Commerce. Merchants can now manage the entire order workflow from within Adobe Commerce, including these tasks:
+
+*  Process refunds from Adobe Commerce
+*  Refund shoppers using the origin form of payment
+
+Requests are now automatically synced back to the Walmart Marketplace.
+
 ### PWA Studio
 
-PWA Studio v.12.x.x is compatible with {{ site.data.var.ee }} 2.4.5. It includes support for . For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
+PWA Studio v.12.x.x is compatible with {{ site.data.var.ee }} 2.4.5.
 
+New features for this release include:
+
+*  Shopper behavior data is collected on PWA Studio storefront for web analytics services.  Merchants can now subscribe and extend these events as needed.
+
+*  Merchants can now select a service to deploy from the Admin (Beacon or Google Tag Manager).
+
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
 ### PayPal Payment enhancements
+
+Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
+
+### Braintree
 
 ### Live Search
 
+This release introduces support for B2B customer groups and custom pricing.
+
 ### Accessibility updates
 
-This release brings increased conformance to standard accessibility guidelines.
+This release includes enhancements to the Admin UI that improve the experience of users with vision limitations and increase conformance to standard accessibility guidelines. These enhancements include:
+
+*  The screen reader now summarizes search results
+*  Screen readers are now informed when a new page loads
+*  Contrast and keyboard accessibility have been improved
 
 ### Page Builder
+
+Page Builder column layout includes these enhancements: <!--- PB-547-->
+
+*  Columns are now exposed, permitting users to control column settings on the storefront.
+
+*  Column resizing now supports wrapping triggered by user actions.
+
+### Branding and style changes
+
+The Admin has been updated to align with Adobe’s branch strategy. Changes affect headers, footers, data grid color updates, and navigation elements.
 
 ## Fixed issues
 
@@ -168,6 +218,12 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 <!--- AC-1480-->
 
 *  Merchants can now successfully upgrade from an {{ site.data.var.ee }} 2.4.2 deployment with Klarna to {{ site.data.var.ee }} 2.4.3. [GitHub-33760](https://github.com/magento/magento2/issues/33760)
+
+<!--- AC-734-->
+
+<!--- AC-2662-->
+
+<!--- AC-735-->
 
 ### Accessibility
 
@@ -295,6 +351,10 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 *  Merchants can now create a credit memo in which  **Refund Shipping (Incl. Tax)** is set to -0.01 and can now set this amount to 0. Previously, the credit memo could not be created under these conditions.
 
+<!--- AC-959-->
+
+<!--- AC-2385-->
+
 ### Cart price rule
 
 <!--- ACP2E-680-->
@@ -414,6 +474,14 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- ACP2E-807-->
 
 *  The EAV indexer now processes product IDs as type `int` to prevent possible performance issues.
+
+<!--- AC-1736-->
+
+<!--- AC-1456-->
+
+<!--- AC-2777-->
+
+<!--- AC-2597-->
 
 ### Catalog rule
 
@@ -539,6 +607,32 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 *  Magento no longer triggers a `trim(): Passing null to parameter #1 ($string) of type string is deprecated` error when the AMPQ connection is configured without SSL configuration.
 
+<!--- AC-2414-->
+
+<!--- AC-1526-->
+
+<!--- AC-2505-->
+
+<!--- AC-1480-->
+
+<!--- AC-7319394-->
+
+<!--- AC-2511-->
+
+<!--- AC-2013-->
+
+<!--- AC-2101-->
+
+<!--- AC-2507-->
+
+<!--- AC-2508-->
+
+<!--- AC-2247-->
+
+<!--- AC-2055-->
+
+<!--- AC-2079-->
+
 ### General fixes
 
 <!--- AC-2883-->
@@ -608,6 +702,14 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- ACP2E-798-->
 
 *  Magento no longer throws the following error during the creation of a catalog rule in the Admin after upgrade: `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`.
+
+<!--- AC-2445-->
+
+<!--- AC-1178-->
+
+<!--- AC-2019-->
+
+<!--- AC-1806-->
 
 ### Gift cards
 
@@ -817,6 +919,8 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 *  Added validation for category names during import. Previously, {{ site.data.var.ee }} did not validate category names, which lead to errors when category names exceeded 255 characters.
 
+<!--- AC-2096-->
+
 ### Index
 
 ### Infrastructure
@@ -832,6 +936,8 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 <!--- ACP2E-2039-->
 
 *  The TinyMCE editor toolbar-related logic in the Page Builder module has been updated as a result of introducing `delayedRender` logic for the toolbar in TinyMCE.
+
+<!--- MC-42655-->
 
 #### Library removals and deprecations
 
@@ -857,9 +963,15 @@ The **Shopping bag** button now provides a programmatic or textual indication of
 
 Repetitive actions have been replaced with action groups in these tests:
 
+`AdminConfigurableProductChildrenOutOfStockTest` [GitHub-32378](https://github.com/magento/magento2/issues/32378)
+`AdminCreateStoreViewTest` [GitHub-34631](https://github.com/magento/magento2/issues/34631)
+
 #### New tests
 
+`StorefrontNewsletterSubscriptionWithEnabledNeedToConfirmConfigTest` [GitHub-33344](https://github.com/magento/magento2/issues/33344)
 #### Refactored tests
+
+`AdminCancelTheCreatedOrderWithCashOnDeliveryPaymentMethodTest` [GitHub-33692](https://github.com/magento/magento2/issues/33692)
 
 ### Newsletter
 
@@ -917,6 +1029,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Magento now displays correct order status during checkout when customer store credit is used.
 
+<!--- AC-2570-->
+
+<!--- AC-1778-->
+
 ### Payment methods
 
 <!--- ACP2E-25-->
@@ -926,6 +1042,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-2093-->
 
 *  Payment Review page in the checkout workflow now displays the correct payment method name when payment is made with Venmo, PayPal Later, or PayPal.
+
+<!--- AC-2606-->
+
+<!--- AC-1195-->
 
 #### PayPal
 
@@ -947,6 +1067,8 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The new `Grid Filter Condition Type` customer/customer address attribute controls how an attribute filter is matched against the attribute values in the database, Options include `Partial Match`, `Prefix Match`, and `Full Match`.
 
+<!--- AC-1136-->
+
 ### Pricing
 
 <!--- ACP2E-445-->
@@ -956,6 +1078,12 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ACP2E-313-->
 
 *  The price listed on the product detail page is now the same as the price listed in the checkout workflow for tier prices that differ by quantity selected (for example, a product priced differently based on buying 2 items versus 5 items). Previously, the checkout price reflected the price for the lowest product quantity.
+
+### Product
+
+<!--- AC-712-->
+
+<!--- AC-1671-->
 
 ### ProductAlert
 
@@ -967,9 +1095,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The **Times Used** value for a discount is no longer incremented twice when a guest customer places an order with a discount and subsequently registers an account.
 
+<!--- AC-2561-->
+
 ### ReCAPTCHA
 
 *  The **Submit** button on the Login and Create an Account pages is now inactive until ReCaptcha is fully loaded.
+
+### Reports
+
+<!--- AC-2410-->
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -1027,6 +1161,8 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Filtering products by color swatch in the layered navigation now displays the correct product images. Previously, the layered navigation `PageCache` key did not include filter parameters for configurable products.
 
+<!--- AC-2051-->
+
 ### Shipping
 
 <!--- AC-2052-->
@@ -1040,6 +1176,8 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ACP2E-209-->
 
 *  Table rate shipping rates with zero price are now displayed correctly in the checkout workflow Order Summary block for orders that have had a discount coupon applied. Previously, the shipping method was not displayed.
+
+<!--- AC-716-->
 
 ### Staging
 
@@ -1126,6 +1264,8 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ACP2E-651-->
 
 *  Web API requests for order data (`rest/V1/orders/`) no longer returns negative values for row totals.
+
+<!--- AC-1829-->
 
 ### Test
 
@@ -1229,6 +1369,14 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  You can now switch between store views when website restrictions are enabled. Previously, problems with the store view switcher prevented switching store views.
 
+<!--- AC-2536-->
+
+<!--- AC-2042-->
+
+<!--- AC-2009-->
+
+<!--- AC-1957-->
+
 ### URL rewrites
 
 <!--- AC-2535-->
@@ -1282,6 +1430,12 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-763-->
 
 *  The Bulk Rest API now works with the `bySku` option for configurable products. Previously, it returned a 500 error.
+
+<!--- AC-985-->
+
+<!--- AC-2529-->
+
+<!--- AC-2530-->
 
 ### Wish list
 
