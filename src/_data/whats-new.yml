@@ -32,9 +32,9 @@ entries:
   - Major Update
   - 2.4.x
   - migration
-- description: "`<br/>Added [config import command point](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html#to-enable-database-logging)
+- description: Added [config import command point](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html#to-enable-database-logging)
     to the [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html)
-    topic."
+    topic.
   versions: 2.x
   type: Technical
   date: June 15, 2022
