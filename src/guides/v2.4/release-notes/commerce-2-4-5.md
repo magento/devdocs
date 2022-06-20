@@ -50,11 +50,13 @@ Security improvements for this release improve compliance with the latest securi
 
 ### Platform enhancements
 
+*  **Adobe Commerce on-premises deployments**: Adobe Commerce 2.4.5 has been tested and confirmed to be compatible with Elasticsearch 7.17 (~7.17.0 with constraint). Merchants hosting Adobe Commerce on-premises can use either Elasticsearch or OpenSearch. <!--- AC-2425-->
+
+*  **Adobe Commerce cloud-hosted deployments**: ElasticSearch 7.11 or later is not supported on Adobe Commerce 2.4.5 cloud-hosted deployments. OpenSearch is the default search engine for Adobe Commerce 2.4.5 cloud deployments.
+
 {{ site.data.var.ee }} 2.4.5 now supports
 
 *  Composer 2.2  <!--- AC-2033-->
-
-*  Elasticsearch (~7.17.0 with constraint) <!--- AC-2425-->
 
 *  TinyMCE (5.10.2). Earlier versions of TinyMCE  (v5.9.2 or earlier) allowed arbitrary JavaScript execution when a specially crafted URL or an image with a specially crafted URL was updated. <!--- AC-2039 1784 1789-->
 
@@ -99,6 +101,8 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 #### Other upgrades and replacements
 
+*  DHL Integration schema has been updated from v6.0 to v6.2. (DHL is deprecating the v6.0 schema mid-2022.) <!--- AC-3022-->
+
 *  The default Gateway URL for USPS shipping has been updated to use `https` instead of `http`. <!--- AC-2426-->
 
 *  The `Froogaloop` library has been replaced with the Vimeo `Player.js` library (2.16.4). <!--- AC-2527 2262-->
@@ -119,7 +123,7 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 *  The library `jquery/jquery-cookie` has been replaced with `js-cookie/js-cookie`. <!--- AC-2626-->
 
-*  The  `jarallax.js` and `jaralax-video.js` libraries have been updated to the latest versions (2.0.3). <!--- AC-2590-->
+*  The `jarallax.js` and `jaralax-video.js` libraries have been updated to use the latest version of the Vimeo REST API. See [The Basics]( https://developer.vimeo.com/api/guides/start). <!--- AC-2590-->
 
 ### Performance and scalability enhancements
 
@@ -129,7 +133,7 @@ Performance enhancements in this release:
 
 #### Price indexer optimization
 
-To improve performance of product price indexation, the number of primary indexes has been reduced from 3 to 1 for the `catalog_product_index_price_tmp`  table. As a result,  the indexation time of the product price index has been significantly reduced.  <!--- MC-43342-->
+Primary index performance has been improved by reducing the number of primary indexes from 3 to 1 for the `catalog_product_index_price_tmp` table. This enhancement reduced the number of records created in the price index by reducing eSKU multiplication that resulted from shared catalogs. Indexing time has been significantly reduced. <!--- MCP-653 MC-43342-->
 
 ### GraphQL
 
