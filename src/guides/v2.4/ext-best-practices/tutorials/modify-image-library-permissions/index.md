@@ -1,7 +1,7 @@
 ---
 group: extension-best-practices
 title: Modify Media Library folder permissions
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/modify-image-library-permissions/
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/backend/modify-image-library-permissions/
 layout: migrated
 ---
 

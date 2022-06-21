@@ -4,8 +4,62 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jun 13 14:38:46 2022
+updated: Mon Jun 20 14:38:46 2022
 entries:
+- description: The following PHP tutorials moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/best-practices/)
+    and will be redirected soon:<br/>- [Custom attributes](https://devdocs.magento.com/guides/v2.4/howdoi/custom-attributes/introduction.html)<br/>-
+    [Customize product creation form](https://devdocs.magento.com/guides/v2.4/howdoi/customize_product.html)<br/>-
+    [Customize checkout](https://devdocs.magento.com/guides/v2.4/howdoi/checkout/checkout_overview.html)<br/>-
+    [Customize the Admin Design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html)<br/>-
+    [Copy fieldsets](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/copy-fieldsets.html)<br/>-
+    [Serialized to JSON data upgrade](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)<br/>-
+    [Modify image library folder permissions](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/modify-image-library-permissions/)<br/>-
+    [Creating an Admin page](https://devdocs.magento.com/guides/v2.4/ext-best-practices/extension-coding/example-module-adminpage.html)<br/>-
+    [Creating a dynamic row config](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/dynamic-row-system-config.html)<br/>-
+    [Creating a custom import entity](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/custom-import-entity.html)<br/>-
+    [Creating a custom widget](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/custom-widget.html)<br/>-
+    [Creating an access control list (ACL) rule](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/create-access-control-list-rule.html)<br/>-
+    [Creating an integration with an external API](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/create-integration-with-api.html)<br/>-
+    [Create a custom REST API](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/create-custom-rest-api.html)
+  versions: 2.4.x
+  type: Major Update
+  date: June 20, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3003
+  merge_commit: 6e7f71f325d588e046fc8fe07f96d9bf74391e9b
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Added [config import command point](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html#to-enable-database-logging)
+    to the [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html)
+    topic.
+  versions: 2.x
+  type: Technical
+  date: June 15, 2022
+  link: https://github.com/magento/devdocs/pull/9467
+  merge_commit: cfdd4ea65539ff27d573663b4be5641dcce2c290
+  contributor: guentur
+  membership: false
+  labels:
+  - 2.x
+  - Technical
+  - 'Progress: done'
+- description: The [Get Started with our Web APIs](https://devdocs.magento.com/guides/v2.4/get-started/bk-get-started-api.html)
+    guide moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/webapi/get-started/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: June 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2988
+  merge_commit: b9460c32fa7236dd7cb44c5fc5724126fa5a5bb6
+  contributor: jhadobe
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: Clarified notes throughout the Cloud guide about updating configurations
     in Pro projects. See [Configure environments](https://devdocs.magento.com/cloud/env/environments.html)
     as an example.

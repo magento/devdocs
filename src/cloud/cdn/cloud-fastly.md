@@ -32,15 +32,15 @@ Fastly provides the following services to optimize and secure content delivery o
 
    -  [Web Application Firewall (WAF)]—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. The WAF service is available on Pro and Starter Production environments only.
 
-   -  [Distributed Denial of Service (DDoS) protection](#ddos-protection)-Built-in DDoS protection against common attacks like Ping of Death, Smurf attacks, and other ICMP-based flood attacks.
+   -  [Distributed Denial of Service (DDoS) protection](#ddos-protection)—Built-in DDoS protection against common attacks like Ping of Death, Smurf attacks, and other ICMP-based flood attacks.
 
-   -  [SSL/TLS certificates]–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. {{site.data.var.ee}} provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. {{site.data.var.ee}} completes domain validation and certificate provisioning during the Fastly set up process.
+   -  [SSL/TLS certificates]—The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. {{site.data.var.ee}} provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. {{site.data.var.ee}} completes domain validation and certificate provisioning during the Fastly set up process.
 
-   -  **Origin cloaking**–Prevents traffic from bypassing the Fastly WAF and hides the IP addresses of your origin servers to protect them from direct access and DDoS attacks. Origin cloaking is enabled by default on {{ site.data.var.ece }} Pro Production projects. To enable origin cloaking on {{ site.data.var.ece }} Starter Production projects, submit a [{{site.data.var.ee}} support ticket]. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
+   -  **Origin cloaking**—Prevents traffic from bypassing the Fastly WAF and hides the IP addresses of your origin servers to protect them from direct access and DDoS attacks. Origin cloaking is enabled by default on {{ site.data.var.ece }} Pro Production projects. To enable origin cloaking on {{ site.data.var.ece }} Starter Production projects, submit a [{{site.data.var.ee}} support ticket]. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
 
--  [Image optimization]-Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently.
+-  [Image optimization]—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently.
 
--  [Fastly CDN and WAF logs]-For {{ site.data.var.ece }} Pro projects, you can use the New Relic Logs service to review and analyze Fastly CDN and WAF log data.
+-  [Fastly CDN and WAF logs]—For {{ site.data.var.ece }} Pro projects, you can use the New Relic Logs service to review and analyze Fastly CDN and WAF log data.
 
 ## Fastly CDN module for Magento 2
 
@@ -69,7 +69,7 @@ To change the Fastly API token credential:
 
 1. [Test the new credential].
 
-1. After you have updated the credentials, submit a support ticket to delete the old API token.
+1. After you have updated the credential, submit a [{{site.data.var.ee}} support ticket] to delete the old API token.
 
 ### Multiple Fastly accounts and assigned domains {#domain}
 
