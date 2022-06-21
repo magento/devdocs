@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Email templates
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/email/
+layout: migrated
 ---
 
 {:.bs-callout-warning}

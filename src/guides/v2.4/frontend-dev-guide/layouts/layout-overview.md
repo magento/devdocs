@@ -3,7 +3,10 @@ group: frontend-developer-guide
 title: Layout overview
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/
+layout: migrated
 ---
+
 ## What's in this topic
 
 This article describes the basic concepts you need to know to create layouts for your custom [theme](https://glossary.magento.com/theme).

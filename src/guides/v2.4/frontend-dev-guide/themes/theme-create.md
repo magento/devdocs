@@ -4,6 +4,8 @@ title: Create a new storefront theme
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/create-storefront/
+layout: migrated
 ---
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.

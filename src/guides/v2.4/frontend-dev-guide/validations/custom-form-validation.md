@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Custom form validation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/custom-form/
+layout: migrated
 ---
 
 This tutorial shows you how to create custom form validations, using the `mage/validation` library, before submitting it to the server.

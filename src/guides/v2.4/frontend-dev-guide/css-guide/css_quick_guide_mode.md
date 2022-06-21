@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Simple style changes with client-side LESS compilation vs. server-side
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/quickstart/compilation-mode/
+layout: migrated
 ---
 
 After you [create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html), you need to decide which LESS compilation mode to use before changing styles. You can choose between [two modes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html):

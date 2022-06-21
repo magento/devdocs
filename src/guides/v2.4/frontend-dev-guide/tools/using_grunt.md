@@ -4,6 +4,8 @@ title: Using Grunt
 functional_areas:
   - Frontend
   - Tools
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/tools/grunt/
+layout: migrated
 ---
 
 The topic describes how to install and configure [Grunt JavaScript task runner](http://gruntjs.com/).

@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Templates overview
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/
+layout: migrated
 ---
 
 ## Introduction to customizing a theme using templates

@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Translate theme strings
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/theory/
+layout: migrated
 ---
 
 This topic describes how to add theme strings so that the i18n tool can collect and add the strings to the dictionary.

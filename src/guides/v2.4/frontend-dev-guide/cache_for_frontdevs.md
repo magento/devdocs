@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Cache overview
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/caching/
+layout: migrated
 ---
 
 {% include cache/page-cache-overview.md%}

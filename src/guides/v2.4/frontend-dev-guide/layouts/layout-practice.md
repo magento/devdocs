@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Customizing layout illustration
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/practice/
+layout: migrated
 ---
 
 ## What's in this topic

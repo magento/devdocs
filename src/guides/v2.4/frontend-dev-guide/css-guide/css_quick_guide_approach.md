@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Simple ways to customize a theme's styles
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/quickstart/customize-styles/
+layout: migrated
 ---
 ## What's in this topic
 

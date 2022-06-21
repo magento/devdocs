@@ -4,6 +4,8 @@ title: Theme inheritance
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/inheritance/
+layout: migrated
 ---
 
 ## What's in this topic {#theme-inherit-over}

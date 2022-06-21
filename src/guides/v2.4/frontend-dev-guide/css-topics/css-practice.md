@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Customizing styles illustration
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/practice/
+layout: migrated
 ---
 
 ## What is in this topic   {#practice_over}

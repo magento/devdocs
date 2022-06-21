@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Quick start guide to working with styles for a new theme
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/quickstart/
+layout: migrated
 ---
 
 This chapter combines the topics aiming to help you to quickly start working with styles of your custom theme:

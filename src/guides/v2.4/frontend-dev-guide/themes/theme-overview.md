@@ -4,6 +4,8 @@ title: Themes overview
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/
+layout: migrated
 ---
 
 ## Themes overview

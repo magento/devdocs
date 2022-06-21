@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Create a new layout
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/create/
+layout: migrated
 ---
 
 ## Create a new page layout in custom theme

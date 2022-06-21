@@ -4,6 +4,8 @@ title: Theme development workflow
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/workflow/
+layout: migrated
 ---
 
 Continue From:

@@ -4,6 +4,8 @@ title: Uninstall a storefront theme
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/uninstall/
+layout: migrated
 ---
 
 ## What's in this topic

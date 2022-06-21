@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Compile LESS using Grunt
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/debug/
+layout: migrated
 ---
 
 The topic describes how to install, configure, and use [Grunt JavaScript task runner](http://gruntjs.com/) to compile `.less` files in Magento 2.

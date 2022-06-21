@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Layout file types
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/types/
+layout: migrated
 ---
 
 ## What's in this topic

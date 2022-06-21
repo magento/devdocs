@@ -4,6 +4,8 @@ title: Include CSS
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/themes/
+layout: migrated
 ---
 
 ## In this topic {#fedg_css-in-themes_overview}

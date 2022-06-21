@@ -4,6 +4,8 @@ title: Use translation dictionary to customize strings
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/dictionary/
+layout: migrated
 ---
 
 Modify default strings in your custom [theme](https://glossary.magento.com/theme) to load and use [translation dictionaries]. Learn more about locales, modifying strings, and how Magento searches and applies translations.

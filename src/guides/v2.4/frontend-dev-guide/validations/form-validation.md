@@ -5,6 +5,8 @@ contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/
+layout: migrated
 ---
 
 The Magento application provides various ways to validate your form inputs. This implementation is based, and extends, [jQuery Validation](https://jqueryvalidation.org/documentation).

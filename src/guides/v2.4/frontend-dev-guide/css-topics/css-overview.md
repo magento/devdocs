@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Cascading style sheets (CSS)
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/
+layout: migrated
 ---
 
 ## Overview
