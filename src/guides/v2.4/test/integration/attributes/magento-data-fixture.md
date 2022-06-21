@@ -134,6 +134,53 @@ Fixtures must be written in the way that they only use one API to generate data.
 a product should only invoke the "Create Product" API and return the product created. This fixture should not add any extra
 logic beyond the "create product" API capabilities, such logic should be implemented in a separate fixture.
 
+### Examples
+
+Example 1:
+
+```php?start_inline=1
+class QuoteTest extends \PHPUnit\Framework\TestCase
+{
+
+    #[
+        DataFixture(ProductFixture::class, as: 'p'),
+        DataFixture(GuestCartFixture::class, as: 'cart'),
+        DataFixture(AddProductToCartFixture::class, ['cart_id' => '$cart.id$', 'product_id' => '$p.id$', 'qty' => 2]),
+        DataFixture(SetBillingAddressFixture::class, ['cart_id' => '$cart.id$']),
+        DataFixture(SetShippingAddressFixture::class, ['cart_id' => '$cart.id$']),
+    ]
+    public function testCollectTotals(): void
+    {
+    }
+}
+```
+
+Example 2:
+
+```php?start_inline=1
+class PriceTest extends \PHPUnit\Framework\TestCase
+{
+    #[
+        DataFixture(ProductFixture::class, ['sku' => 'simple1', 'price' => 10], 'p1'),
+        DataFixture(ProductFixture::class, ['sku' => 'simple2', 'price' => 20], 'p2'),
+        DataFixture(ProductFixture::class, ['sku' => 'simple3', 'price' => 30], 'p3'),
+        DataFixture(BundleSelectionFixture::class, ['sku' => '$p1.sku$', 'price' => 10, 'price_type' => 0], 'link1'),
+        DataFixture(BundleSelectionFixture::class, ['sku' => '$p2.sku$', 'price' => 25, 'price_type' => 1], 'link2'),
+        DataFixture(BundleSelectionFixture::class, ['sku' => '$p3.sku$', 'price' => 25, 'price_type' => 0], 'link3'),
+        DataFixture(BundleOptionFixture::class, ['product_links' => ['$link1$', '$link2$', '$link3$']], 'opt1'),
+        DataFixture(
+            BundleProductFixture::class,
+            ['sku' => 'bundle1','price' => 50,'price_type' => 1,'_options' => ['$opt1$']],
+            'bundle1'
+        ),
+    ]
+    public function testBundleWithFixedPrice(): void
+    {
+
+    }
+}
+```
+
 ### Fixture rollback
 
 A fixture that contains database transactions only are reverted automatically.
