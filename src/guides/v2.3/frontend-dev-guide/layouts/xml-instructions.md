@@ -58,6 +58,9 @@ Blocks employ templates to generate HTML. Examples of blocks include a [category
 {:.bs-callout-info}
 We recommend always adding a `name` to blocks. Otherwise, it is given a random name.
 
+{:.bs-callout-warning}
+If you are going to make the block non-cached, a `name` is required.
+
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | A fully-qualified class name, such as `Vendor\Module\Block\Class`. Defaults to `Magento\Framework\View\Element\Template`. | no |
