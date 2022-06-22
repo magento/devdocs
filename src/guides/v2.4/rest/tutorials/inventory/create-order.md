@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 9. Create an order
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/create-order/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-order/
 subtitle: Order processing with Inventory Management
 menu_title: Step 9. Create an order
 menu_order: 90

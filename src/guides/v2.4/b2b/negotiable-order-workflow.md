@@ -14,7 +14,7 @@ This topic describes how REST calls can be used to place items in a shopping car
 
 ## Prepare the order
 
-The steps in this section are similar to those in the [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-intro.html), except that different products are added to the cart.
+The steps in this section are similar to those in the [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/), except that different products are added to the cart.
 
 ### Create a shopping cart
 
@@ -1000,7 +1000,7 @@ Authorization Bearer <admin token>
 
 ## Related information
 
-*  [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-intro.html)
+*  [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/)
 *  [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
 *  [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
 *  [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)

@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Create a bundle product tutorial
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bundle-product-intro/
+
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---

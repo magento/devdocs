@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Asynchronous web endpoints
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/asynchronous-web-endpoints/
+
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
 functional_areas:
@@ -32,7 +32,7 @@ PUT /async/V1/products/:sku
 
 {{site.data.var.ce}} and {{site.data.var.ee}} installations support asynchronous web endpoints.
 
-The [REST API documentation](https://developer.adobe.com/commerce/webapi/rest/bk-rest.html) provides a list of all current synchronous Magento API routes.
+The [REST API documentation](https://developer.adobe.com/commerce/webapi/rest/) provides a list of all current synchronous Magento API routes.
 
 The response of an asynchronous request contains the following fields:
 

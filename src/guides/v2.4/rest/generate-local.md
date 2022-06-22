@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Generate a local REST reference
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/generate-local/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/generate-local/
 functional_areas:
   - Integration
 ---

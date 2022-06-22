@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 1. Plan the product
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/plan-product/
+
 subtitle: Create a configurable product using bulk APIs
 menu_title: Step 1. Plan the product
 menu_order: 10

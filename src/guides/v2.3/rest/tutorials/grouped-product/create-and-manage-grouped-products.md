@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Create and manage grouped products tutorial
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/create-and-manage-grouped-products/
+
 functional_areas:
   - Integration
 ---
@@ -16,7 +16,7 @@ This tutorial describes how you can use the Magento REST API to create and manag
 
 *  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
-*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
+*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/) for more information.
 
 ### Other resources
 
@@ -217,7 +217,7 @@ You also can use the `DELETE` endpoint to delete a simple product from the group
 
 Customers can now add this grouped products to their carts, as shown below.
 
-Refer to the [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-intro.html) for more information about how to add items to a cart with REST.
+Refer to the [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/) for more information about how to add items to a cart with REST.
 
 ### Endpoint
 

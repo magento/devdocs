@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 2. Create sources
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/create-sources/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-sources/
 subtitle: Order processing with Inventory Management
 menu_title: Step 2. Create sources
 menu_order: 20
@@ -23,7 +23,7 @@ This step guides you through the process of creating sources for your inventory,
 For more information about sources, see [Inventory Management overview]({{ page.baseurl }}/inventory/index.html).
 
 {:.bs-callout-info}
-This step requires an admin token. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
+This step requires an admin token. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/) for more information.
 
 ## Create the first source
 

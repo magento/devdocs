@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 11. Run the Source Selection Algorithms
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/run-ssa/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/run-ssa/
 subtitle: Order processing with Inventory Management
 menu_title: Step 11. Run the Source Selection Algorithms
 menu_order: 110
@@ -60,7 +60,7 @@ Not applicable
 
 ## Run an SSA
 
-The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algorithm defined by the `algorithmCode` attribute to calculate the recommended sources and quantities for each item defined in the `items` array. In this example, we'll select the `priority` SSA. [Manage source selection algorithms](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/manage-source-selection.html) includes an example using the `distance` priority.
+The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algorithm defined by the `algorithmCode` attribute to calculate the recommended sources and quantities for each item defined in the `items` array. In this example, we'll select the `priority` SSA. [Manage source selection algorithms](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/) includes an example using the `distance` priority.
 
 This tutorial does not consider complications, such as selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (40 items of product `24-WB01` and 20 items of product `24-WB03`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
 

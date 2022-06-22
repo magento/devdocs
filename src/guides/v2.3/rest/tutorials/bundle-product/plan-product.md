@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 1. Plan the product
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/plan-product/
+
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---

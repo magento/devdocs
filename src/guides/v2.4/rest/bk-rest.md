@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: REST API Overview
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/bk-rest/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/
 functional_areas:
   - Integration
 ---

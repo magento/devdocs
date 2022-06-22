@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Bulk endpoints
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/bulk-endpoints/
+
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
 functional_areas:

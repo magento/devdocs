@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 4. Link stocks and sources
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/assign-source-to-stock/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/assign-source-to-stock/
 subtitle: Order processing with Inventory Management
 menu_title: Step 4. Link stocks and sources
 menu_order: 40

@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Link and unlink stocks and sources
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/link-stocks-sources/
+
 
 ---
 
@@ -147,7 +147,7 @@ None
 
 ## Get sources assigned to a stock
 
-The `GET /V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/:stock_id` endpoint returns details about each source that is assigned to the specified stock. [Manage sources](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/manage-sources.html) provides definitions for each attribute returned.
+The `GET /V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/:stock_id` endpoint returns details about each source that is assigned to the specified stock. [Manage sources](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/) provides definitions for each attribute returned.
 
 **Sample Usage:**
 

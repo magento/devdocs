@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Create a configurable product tutorial
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/config-product-intro/
+
 menu_title: Initial tasks
 menu_order: 0
 level3_subgroup: configurable-product-tutorial
@@ -27,7 +27,7 @@ This **5-step tutorial** generally takes **45 minutes**.
 
 *  [Install and configure RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html), which is the default message broker for bulk API endpoints.
 
-*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
+*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/) for more information.
 
 ### Other resources
 

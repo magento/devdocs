@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: REST tutorials
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/index/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/
 functional_areas:
   - Integration
   - Orders
@@ -10,15 +10,15 @@ functional_areas:
 
 The REST tutorials provide an introduction to Magento web APIs. In general, the tutorials guide you through commonly-performed complex tasks:
 
-*  The [**order processing** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-intro.html) demonstrates the lifecycle of an order. Major steps include creating a quote, converting it to an order, issuing an invoice, and shipping the order.
+*  The [**order processing** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/) demonstrates the lifecycle of an order. Major steps include creating a quote, converting it to an order, issuing an invoice, and shipping the order.
 
 *  The [**order processing with Inventory Management**](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/index.html) tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Inventory Management features.
 
-*  The [**configurable product** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/config-product-intro.html) helps you plan then create a configurable product and its component simple products.
+*  The [**configurable product** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/.html) helps you plan then create a configurable product and its component simple products.
 
-*  The [**bulk API configurable product** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/config-product-intro.html) demonstrates how to create configurable products using bulk APIs.
+*  The [**bulk API configurable product** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/.html) demonstrates how to create configurable products using bulk APIs.
 
-*  The [**grouped products** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/grouped-product/create-and-manage-grouped-products.html) demonstrates how to create and manage grouped products.
+*  The [**grouped products** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/grouped-product/) demonstrates how to create and manage grouped products.
 
 ## Complete these prerequisites
 

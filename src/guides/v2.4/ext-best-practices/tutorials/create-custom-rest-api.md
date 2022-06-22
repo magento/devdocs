@@ -513,7 +513,7 @@ class ProductRepository implements ProductRepositoryInterface
 ## Step 6. Test your custom endpoint
 
 *  You can use any REST client to send calls. [Postman](https://www.getpostman.com/) is recommended.
-*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
+*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/) for more information.
 
 ### Test the GET endpoint
 

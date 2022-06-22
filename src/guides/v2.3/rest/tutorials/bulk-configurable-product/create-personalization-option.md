@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 4. Create the personalization option
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/create-personalization-option/
+
 subtitle: Create a configurable product using bulk APIs
 menu_title: Step 4. Create the personalization option
 menu_order: 40
@@ -77,4 +77,4 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 {:.ref-header}
 Related topic
 
-[Order Processing with REST APIs Tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-intro.html)
+[Order Processing with REST APIs Tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/)
