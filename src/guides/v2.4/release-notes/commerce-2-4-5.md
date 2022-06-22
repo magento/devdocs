@@ -50,7 +50,7 @@ Security improvements for this release improve compliance with the latest securi
 
 ### Platform enhancements
 
-*  **Adobe Commerce on-premises deployments**: Adobe Commerce 2.4.5 has been tested and confirmed to be compatible with Elasticsearch 7.17 (~7.17.0 with constraint). Merchants hosting Adobe Commerce on-premises can use either Elasticsearch or OpenSearch. <!--- AC-2425-->
+*  **Adobe Commerce on-premises deployments**: Adobe Commerce 2.4.5 has been tested and confirmed to be compatible with Elasticsearch 7.17 (~7.17.0 with constraint). Merchants hosting Adobe Commerce on-premises can use either Elasticsearch or OpenSearch 1.2. <!--- AC-2425-->
 
 *  **Adobe Commerce cloud-hosted deployments**: ElasticSearch 7.11 or later is not supported on Adobe Commerce 2.4.5 cloud-hosted deployments. OpenSearch is the default search engine for Adobe Commerce 2.4.5 cloud deployments.
 
@@ -233,7 +233,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2786-->
 
-The **Shopping bag** button now provides a programmatic or textual indication of its state. Screen reader users are informed that clicking this button will expand other content, or that the associated content is expanded or collapsed. Previously, this button did not provide a programmatic or textual indication of its state.
+*  The **Shopping bag** button now provides a programmatic or textual indication of its state. Screen reader users are informed that clicking this button will expand other content, or that the associated content is expanded or collapsed. Previously, this button did not provide a programmatic or textual indication of its state.
 
 <!--- AC-2496-->
 
