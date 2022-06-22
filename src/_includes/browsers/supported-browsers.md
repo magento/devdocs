@@ -1,6 +1,6 @@
 Storefront and Admin:
 
-*  Internet Explorer 11 or later, Microsoft Edge, latest and previous major version
+*  Microsoft Edge, latest and previous major version
 *  Firefox latest, latest and previous major version (any operating system)
 *  Chrome latest, latest and previous major version (any operating system)
 *  Safari latest, latest and previous major version (Mac OS only)
