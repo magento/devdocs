@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Restricting access to anonymous web APIs
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/anonymous-api-security/
 ---
 
 Magento 2 allows some web APIs to be accessed by unauthenticated (anonymous) users. Many of these APIs allow a customer to have a robust shopping experience on the [website](https://glossary.magento.com/website) without having to log in.

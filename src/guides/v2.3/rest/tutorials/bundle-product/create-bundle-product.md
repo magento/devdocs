@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 3. Create the bundle product 
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/create-bundle-product/
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---
@@ -296,15 +297,15 @@ POST http://domain.com/rest/default/V1/products
 
 1. On the Luma storefront page, search for `Desktop Computer`. There should be one result.
 
-    ![Search]({{ page.baseurl }}/rest/tutorials/bundle-product/images/search-desktop-computer.png)
+    ![Search](https://developer.adobe.com/commerce/webapi/rest/tutorials/bundle-product/images/search-desktop-computer.png)
 
 1. Click on the Desktop Computer product.
 
-    ![Product]({{ page.baseurl }}/rest/tutorials/bundle-product/images/site-desktop-computer.png)
+    ![Product](https://developer.adobe.com/commerce/webapi/rest/tutorials/bundle-product/images/site-desktop-computer.png)
 
 1. Customize Desktop Computer and add it to the shopping cart.
 
-    ![Shopping Cart]({{ page.baseurl }}/rest/tutorials/bundle-product/images/shopping-cart-desktop-computer.png)
+    ![Shopping Cart](https://developer.adobe.com/commerce/webapi/rest/tutorials/bundle-product/images/shopping-cart-desktop-computer.png)
 
  {:.bs-callout-info}
 If you do not see the bundle product on the frontend, you can try reindexing and clearing the cache.

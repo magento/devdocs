@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Order Processing with Inventory Management
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/index/
 menu_title: Initial tasks
 menu_order: 0
 level3_subgroup: msi-tutorial
@@ -14,7 +15,7 @@ functional_areas:
 
 ### Before you begin
 
-This tutorial builds upon the workflow described in the [Order Processing with REST APIs tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html). The Order Processing with Inventory Management tutorial provides additional steps that detail how to create stocks and sources, assign products to a custom source, and run the Source Selection Algorithms to recommend shipping options.
+This tutorial builds upon the workflow described in the [Order Processing with REST APIs tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-intro.html). The Order Processing with Inventory Management tutorial provides additional steps that detail how to create stocks and sources, assign products to a custom source, and run the Source Selection Algorithms to recommend shipping options.
 
 For more information about key inventory features, see [Inventory Management overview]({{ page.baseurl }}/inventory/index.html).
 
@@ -28,8 +29,8 @@ This **14-step tutorial** generally takes **1 hour**.
 
 *  Know how to construct a REST call in Magento. See [Construct a request](https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request.html) for details.
 
-*  Obtain an admin authorization token. Multiple calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
+*  Obtain an admin authorization token. Multiple calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
 ### Other resources
 
-*  Magento uses [Swagger](https://swagger.io) to provide REST API documentation on local instances of Magento. See [Generate a local API reference]({{ page.baseurl }}/rest/generate-local.html) for more information. You can view the [static REST API documentation]({{site.baseurl}}/redoc/{{page.guide_version}}/), which displays reference information using ReDoc.
+*  Magento uses [Swagger](https://swagger.io) to provide REST API documentation on local instances of Magento. See [Generate a local API reference](https://developer.adobe.com/commerce/webapi/rest/generate-local.html) for more information. You can view the [static REST API documentation]({{site.baseurl}}/redoc/{{page.guide_version}}/), which displays reference information using ReDoc.

@@ -44,7 +44,7 @@ $filter
 This filter will find all urls with the suffix of "magento.com".
 
 {:.bs-callout-info}
-A full list of condition types can be found in the [Rest API Reference]({{ page.baseurl }}/rest/performing-searches.html).
+A full list of condition types can be found in the [Rest API Reference](https://developer.adobe.com/commerce/webapi/rest/performing-searches.html).
 
 ### Filter Group
 

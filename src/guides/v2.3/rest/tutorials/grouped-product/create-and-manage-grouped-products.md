@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Create and manage grouped products tutorial
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/create-and-manage-grouped-products/
 functional_areas:
   - Integration
 ---
@@ -15,11 +16,11 @@ This tutorial describes how you can use the Magento REST API to create and manag
 
 *  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
-*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
+*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
 ### Other resources
 
-*  [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
+*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
 
 ## 1. Create an empty grouped product
 
@@ -210,13 +211,13 @@ You also can use the `DELETE` endpoint to delete a simple product from the group
 1. Select **Catalog > Products**.
 1. Click on the **New Grouped Product** grouped product and expand the **Grouped Products** section.
 
-  ![New grouped product]({{ page.baseurl }}/rest/images/new-grouped-product.png)
+  ![New grouped product](https://developer.adobe.com/commerce/webapi/rest/images/new-grouped-product.png)
 
 ## Add a grouped product to a cart
 
 Customers can now add this grouped products to their carts, as shown below.
 
-Refer to the [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) for more information about how to add items to a cart with REST.
+Refer to the [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-intro.html) for more information about how to add items to a cart with REST.
 
 ### Endpoint
 

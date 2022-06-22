@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Asynchronous web endpoints
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/asynchronous-web-endpoints/
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
 functional_areas:
@@ -31,7 +32,7 @@ PUT /async/V1/products/:sku
 
 {{site.data.var.ce}} and {{site.data.var.ee}} installations support asynchronous web endpoints.
 
-The [REST API documentation]({{page.baseurl}}/rest/bk-rest.html) provides a list of all current synchronous Magento API routes.
+The [REST API documentation](https://developer.adobe.com/commerce/webapi/rest/bk-rest.html) provides a list of all current synchronous Magento API routes.
 
 The response of an asynchronous request contains the following fields:
 
@@ -64,7 +65,7 @@ PUT <host>/rest/<store_code>/async/V1/products/24-MB01
 
 ## Response
 
-Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status]({{ page.baseurl }}/rest/operation-status-endpoints.html) of your request.
+Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status](https://developer.adobe.com/commerce/webapi/rest/operation-status-endpoints.html) of your request.
 
 ```json
 {

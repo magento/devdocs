@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Manage stocks
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/manage-stocks/
 ---
 
 Stocks map your sources to sales channels, providing a direct link to salable quantities and inventories.
@@ -149,7 +150,7 @@ Magento returns an empty array.
 
 The following call returns all stocks whose name contains the string `Stock`.
 
-See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage:**
 

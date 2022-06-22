@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 4. Create the personalization option
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/create-personalization-option/
 subtitle: Create a configurable product using bulk APIs
 menu_title: Step 4. Create the personalization option
 menu_order: 40
@@ -61,11 +62,11 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
 *  Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Customizable Options** section.
 
-   ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/options-section.png)
+   ![Product page with configurable and simple products](https://developer.adobe.com/commerce/webapi/rest/images/options-section.png)
 
 *  On the Luma storefront page, search for `Champ`. Then click on the Champ Tee product.
 
-   ![Search results]({{ page.baseurl }}/rest/images/add-your-name.png)
+   ![Search results](https://developer.adobe.com/commerce/webapi/rest/images/add-your-name.png)
 
    {:.bs-callout-info}
    If the personalization option is not displayed, go to the **Champ Tee** configuration product page in Admin and set  **Stock Status** to **In Stock**.
@@ -76,4 +77,4 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 {:.ref-header}
 Related topic
 
-[Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
+[Order Processing with REST APIs Tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-intro.html)

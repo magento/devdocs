@@ -2,12 +2,13 @@
 layout: tutorial
 group: rest-api
 title: Step 2. Create the simple products
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/create-simple-products/
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---
 
 {:.bs-callout-info}
-Before you run the code, please verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute set]({{ page.baseurl }}/rest/tutorials/bundle-product/plan-product.html#get-attributes) for more information.
+Before you run the code, please verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute set](https://developer.adobe.com/commerce/webapi/rest/tutorials/bundle-product/plan-product.html#get-attributes) for more information.
 
 We will create four simple products: `RAM 12GB`, `RAM 24GB`, `Monitor 15"` and `Monitor 17"`.
 
@@ -569,7 +570,7 @@ POST http://domain.com/rest/default/V1/products
 
 *  Log in to the Adobe Commerce Admin Panel and select <b>Catalog > Products</b> and confirm that your products appear in the grid.
 
-  ![Simple products]({{ page.baseurl }}/rest/tutorials/bundle-product/images/simple-products-admin-grid.png)
+  ![Simple products](https://developer.adobe.com/commerce/webapi/rest/tutorials/bundle-product/images/simple-products-admin-grid.png)
 
  {:.bs-callout-info}
 If you do not see your products in the catalog, you can try reindexing and clearing the cache.

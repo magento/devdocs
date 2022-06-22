@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 3. Define configurable product options
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/define-config-product-options/
 subtitle: Create a configurable product using bulk APIs
 menu_title: Step 3. Define configurable product options
 menu_order: 30
@@ -22,7 +23,7 @@ contributor_link: http://comwrap.com/
  The `POST async/bulk/V1/configurable-products/bySku/options` call assigns the specified `attribute_id` to be the configurable attribute.
 
 {:.bs-callout-warning}
- The `attribute_id` and its value may be different on your installation. Check the values carefully before using them in your calls. To get the correct `attribute_id`, see [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+ The `attribute_id` and its value may be different on your installation. Check the values carefully before using them in your calls. To get the correct `attribute_id`, see [Get the list of attributes defined in an attribute searchCriteria](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 
  The value assigned to the `value_index` must be unique within the system.
 
@@ -72,7 +73,7 @@ Now that you have set the configurable attribute to be `sku`, you can link all s
  **Endpoint:**
 
  {:.bs-callout-info}
-Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  You must replace input parameters with a string that begins with `by` and ends with the input parameter name, such as `bySku`. See [`bulk endpoints`]({{ page.baseurl }}/rest/bulk-endpoints.html) for more information.
+Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  You must replace input parameters with a string that begins with `by` and ends with the input parameter name, such as `bySku`. See [`bulk endpoints`](https://developer.adobe.com/commerce/webapi/rest/bulk-endpoints.html) for more information.
 
  `POST <host>/rest/default/async/bulk/V1/configurable-products/bySku/child`
 
@@ -126,11 +127,11 @@ Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  Yo
 
 *  Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Configurations** section.
 
-   ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/configurations-section.png)
+   ![Product page with configurable and simple products](https://developer.adobe.com/commerce/webapi/rest/images/configurations-section.png)
 
 *  On the Luma storefront page, search for `Champ`.
 
-   ![Search results]({{ page.baseurl }}/rest/images/search-results.png)
+   ![Search results](https://developer.adobe.com/commerce/webapi/rest/images/search-results.png)
 
 *  Call `GET <host>/rest/default/V1/products/MS-Champ`. The response includes the `configurable_product_options` and `configurable_product_links` arrays.
 

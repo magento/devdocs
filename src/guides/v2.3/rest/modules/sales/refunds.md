@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Refunds
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/refunds/
 functional_areas:
   - Integration
   - Catalog

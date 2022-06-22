@@ -513,7 +513,7 @@ class ProductRepository implements ProductRepositoryInterface
 ## Step 6. Test your custom endpoint
 
 *  You can use any REST client to send calls. [Postman](https://www.getpostman.com/) is recommended.
-*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
+*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
 ### Test the GET endpoint
 
@@ -558,6 +558,6 @@ The example uses Magento sample data for `product_id: 1` and the endpoint ```htt
 
 ### Related Topic
 
-*  [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html)
+*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/index.html)
 *  [Configure a web API]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
 *  [Access Control List (ACL)]({{ page.baseurl }}/ext-best-practices/tutorials/create-access-control-list-rule.html)

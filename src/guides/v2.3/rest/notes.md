@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: REST usage notes
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/notes/
 functional_areas:
   - Integration
 ---
@@ -160,4 +161,4 @@ The following sample code creates a bundle product. The `price_type` attribute c
 {:.ref-header}
 Related topics
 
-[Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html)
+[Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/performing-searches.html)

@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 2. Create the configurable and simple products
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/create-configurable-simple-products/
 subtitle: Create a configurable product using bulk APIs
 menu_title: Step 2. Create the configurable and simple products
 menu_order: 20
@@ -38,7 +39,7 @@ Some notes about the configurable product payload example:
  Although it's not required, the simple product payload also includes `stock_item` information. By default, the Luma store hides out-of-stock items, so adding stock will make the Champ Tee visible on the website.
 
  {:.bs-callout-info}
-Before you use this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+Before you use this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 
  {:.bs-callout-info}
 The payload contains both the configurable product and the simple products.
@@ -307,12 +308,12 @@ The payload contains both the configurable product and the simple products.
 ```
 
  {:.bs-callout-info}
-For information about response fields, see the [Bulk API]({{ page.baseurl }}/rest/bulk-endpoints.html) section. To check the status of operations, see the API for [Bulk operation status endpoints]({{ page.baseurl }}/rest/operation-status-endpoints.html).
+For information about response fields, see the [Bulk API](https://developer.adobe.com/commerce/webapi/rest/bulk-endpoints.html) section. To check the status of operations, see the API for [Bulk operation status endpoints](https://developer.adobe.com/commerce/webapi/rest/operation-status-endpoints.html).
 
 ## Verify this step
 
 *  Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
 
-   ![Product page with configurable product]({{ page.baseurl }}/rest/images/products-page.png)
+   ![Product page with configurable product](https://developer.adobe.com/commerce/webapi/rest/images/products-page.png)
 
 *  On the Luma storefront page, search for `Champ`. No results are returned.
