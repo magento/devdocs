@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Create a custom REST API
 contributor_name: Nitish Ranjan
 contributor_link: https://github.com/nitish-ranjan05
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/create-custom-rest-api/
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/backend/create-custom-rest-api/
 layout: migrated
 ---
 

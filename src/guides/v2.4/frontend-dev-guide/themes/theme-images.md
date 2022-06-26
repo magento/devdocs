@@ -4,6 +4,8 @@ title: Configure theme properties
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/configure/
+layout: migrated
 ---
 
 ## What's in this topic

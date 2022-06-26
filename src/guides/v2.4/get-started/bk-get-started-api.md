@@ -8,7 +8,7 @@ menu_order: 1
 menu_node: parent
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/bk-get-started-api/
+migrated_to: https://developer.adobe.com/commerce/webapi/get-started/
 layout: migrated
 ---
 

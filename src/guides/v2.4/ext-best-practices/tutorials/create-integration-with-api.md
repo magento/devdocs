@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Creating an integration with an external API
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/create-api-integration/
+migrated_to: https://developer.adobe.com/commerce/php/tutorials/backend/create-api-integration/
 layout: migrated
 ---
 
