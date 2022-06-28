@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Catalog module
-
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/catalog/
 functional_areas:
   - Integration
   - Catalog

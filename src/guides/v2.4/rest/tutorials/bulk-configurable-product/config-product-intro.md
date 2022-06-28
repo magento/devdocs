@@ -13,6 +13,7 @@ functional_areas:
   - Integration
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/
 ---
 
 A system integrator can use Magento REST bulk APIs to perform actions on a large scale; such as, creating multiple customers and products, changing prices across an inventory, and assigning large groups of products to a specific warehouse, all within a single call.

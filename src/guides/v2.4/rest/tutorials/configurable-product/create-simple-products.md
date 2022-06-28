@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 3. Create the simple products
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/create-simple-products/
 
 subtitle: Create a configurable product tutorial
 menu_title: Step 3. Create the simple products

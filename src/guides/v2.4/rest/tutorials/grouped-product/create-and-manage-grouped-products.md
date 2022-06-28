@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Create and manage grouped products tutorial
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/grouped-product/
 
 functional_areas:
   - Integration

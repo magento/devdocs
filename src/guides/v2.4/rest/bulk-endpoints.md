@@ -6,6 +6,7 @@ contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
 functional_areas:
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/use_rest/bulk-endpoints/
 ---
 
 Bulk API endpoints differ from other REST endpoints in that they combine multiple calls of the same type into an array and execute them as a single request. The endpoint handler splits the array into individual entities and writes them as separate messages to the message queue.

@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 9. Create a shipment
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-create-shipment/
 
 subtitle: Order processing tutorial
 return_to:

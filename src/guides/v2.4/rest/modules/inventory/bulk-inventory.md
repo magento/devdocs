@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Inventory mass actions
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/bulk-inventory/
 
 ---
 
