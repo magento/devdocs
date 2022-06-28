@@ -149,7 +149,6 @@ services:
           - 'OS_PLUGINS=opensearch-asynchronous-search'
 ```
 
-
 ## FPM container
 
 **Container name**: fpm<br/>
