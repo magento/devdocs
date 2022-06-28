@@ -33,7 +33,7 @@ Complete the following prerequisites:
 
 *  Know how to construct a REST call in Magento. See [Construct a request](https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request.html) for details.
 
-*  Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/redoc/{{page.guide_version}}/) or [generate a local API reference](https://developer.adobe.com/commerce/webapi/rest/generate-local.html).
+*  Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/redoc/{{page.guide_version}}/) or [generate a local API reference](https://developer.adobe.com/commerce/webapi/quick_reference/rest/generate-local.html).
 
 *  Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}} 2.1]({{ site.user_guide_url }}/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
 
