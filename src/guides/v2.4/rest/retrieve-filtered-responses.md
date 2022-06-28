@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Retrieve filtered responses for REST endpoints
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/use_rest/retrieve-filtered-responses/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/retrieve-filtered-responses/
 ---
 
 Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST requests that return partial responses.
@@ -141,7 +141,7 @@ The following POST operation and payload creates a [catalog](https://glossary.ma
 
 ## Using with searchCriteria
 
-The [`searchCriteria` query parameter](https://developer.adobe.com/commerce/webapi/rest/performing-searches.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
+The [`searchCriteria` query parameter](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
 
 The following query returns only the `sku` and `name` parameters for product items whose `category_gear` attribute includes the value `86`.
 
@@ -192,4 +192,4 @@ The following query returns only the `sku` and `name` parameters for product ite
 {:.ref-header}
 Related topics
 
-*  [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/performing-searches.html)
+*  [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html)

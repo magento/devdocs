@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Generate a local REST reference
-migrated_to: https://developer.adobe.com/commerce/webapi/quick_reference/rest/generate-local/
+migrated_to: https://developer.adobe.com/commerce/webapi/quick-reference/rest/generate-local/
 functional_areas:
   - Integration
 ---
@@ -85,5 +85,5 @@ You may also use web server rewrite rules to redirect users trying to access the
 {:.ref-header}
 Related topics
 
-[Restricting access to anonymous web APIs](https://developer.adobe.com/commerce/webapi/rest/anonymous-api-security.html)
+[Restricting access to anonymous web APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/anonymous-api-security.html)
 [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token.html)

@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Protected endpoints
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/protected-endpoints/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/protected-endpoints/
 functional_areas:
   - Integration
 ---

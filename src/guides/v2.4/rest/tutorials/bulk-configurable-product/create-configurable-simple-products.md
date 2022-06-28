@@ -309,7 +309,7 @@ The payload contains both the configurable product and the simple products.
 ```
 
  {:.bs-callout-info}
-For information about response fields, see the [Bulk API](https://developer.adobe.com/commerce/webapi/rest/bulk-endpoints.html) section. To check the status of operations, see the API for [Bulk operation status endpoints](https://developer.adobe.com/commerce/webapi/rest/operation-status-endpoints.html).
+For information about response fields, see the [Bulk API](https://developer.adobe.com/commerce/webapi/rest/use-rest/bulk-endpoints.html) section. To check the status of operations, see the API for [Bulk operation status endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-endpoints.html).
 
 ## Verify this step
 

@@ -6,7 +6,7 @@ contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/use_rest/asynchronous-web-endpoints/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/asynchronous-web-endpoints/
 ---
 
 An asynchronous web endpoint intercepts messages to a Web API and writes them to the message queue. Each time the system accepts such an API request, it generates a UUID identifier. Magento includes this UUID when it adds the message to the queue. Then, a consumer reads the messages from the queue and executes them one-by-one.
@@ -66,7 +66,7 @@ PUT <host>/rest/<store_code>/async/V1/products/24-MB01
 
 ## Response
 
-Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status](https://developer.adobe.com/commerce/webapi/rest/operation-status-endpoints.html) of your request.
+Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status](https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-endpoints.html) of your request.
 
 ```json
 {

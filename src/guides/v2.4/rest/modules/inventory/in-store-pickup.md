@@ -55,7 +55,7 @@ Name | Type | Description
 `[sort][0][field]=` | String | Specifies the field to sort on.
 `[sort][0][direction]=` | String | Specifies whether to return results in ascending (`ASC`) or descending (`DESC`) order. The default is `DESC`.
 
-[Search using REST endpoints](https://developer.adobe.com/commerce/webapi/rest/performing-searches.html) provides a full list of supported condition types.
+[Search using REST endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) provides a full list of supported condition types.
 
 **Sample Usage:**
 
