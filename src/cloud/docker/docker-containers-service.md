@@ -140,26 +140,26 @@ If your Cloud project uses {{site.data.var.ee}} version 2.4.4 or earlier with My
 
 There is a list of OpenSearch plugins: https://opensearch.org/docs/latest/opensearch/install/plugins/
 
-The following plugins are installed by default and can not be skipped:
+The following plugins are installed by default and can **not** be skipped:
 
-- OpenSearch 1.1:
-  - opensearch-notebooks
-- OpenSearch 1.2:
-   - opensearch-observability
-- OpenSearch 1.1 and 1.2:
-   - analysis-icu
-   - analysis-phonetic
-   - opensearch-alerting
-   - opensearch-anomaly-detection
-   - opensearch-asynchronous-search
-   - opensearch-cross-cluster-replication
-   - opensearch-index-management
-   - opensearch-job-scheduler
-   - opensearch-knn
-   - opensearch-performance-analyzer
-   - opensearch-reports-scheduler
-   - opensearch-security
-   - opensearch-sql
+-  OpenSearch 1.1:
+   -  opensearch-notebooks
+-  OpenSearch 1.2:
+   -  opensearch-observability
+-  OpenSearch 1.1 and 1.2:
+   -  analysis-icu
+   -  analysis-phonetic
+   -  opensearch-alerting
+   -  opensearch-anomaly-detection
+   -  opensearch-asynchronous-search
+   -  opensearch-cross-cluster-replication
+   -  opensearch-index-management
+   -  opensearch-job-scheduler
+   -  opensearch-knn
+   -  opensearch-performance-analyzer
+   -  opensearch-reports-scheduler
+   -  opensearch-security
+   -  opensearch-sql
 
 The following example adds the `opensearch-asynchronous-search` plugin to the Docker environment.
 
