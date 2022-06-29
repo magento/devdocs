@@ -15,7 +15,7 @@ This tutorial describes how you can use the Magento REST API to create and manag
 
 *  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
-*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/) for more information.
+*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
 ### Other resources
 
@@ -216,7 +216,7 @@ You also can use the `DELETE` endpoint to delete a simple product from the group
 
 Customers can now add this grouped products to their carts, as shown below.
 
-Refer to the [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/) for more information about how to add items to a cart with REST.
+Refer to the [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) for more information about how to add items to a cart with REST.
 
 ### Endpoint
 

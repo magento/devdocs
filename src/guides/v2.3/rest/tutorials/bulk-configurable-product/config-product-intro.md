@@ -26,7 +26,7 @@ A system integrator can use Magento REST bulk APIs to perform actions on a large
 
 *  Install a Magento 2.3 (or later) instance with sample data. The sample data defines a functional store, called Luma, that sells fitness clothing and accessories.
 *  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
-*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/) for more information.
+*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 *  Use the `bin/magento queue:consumers:start async.operations.all` command to enable bulk endpoint processing.
 
 ### Other resources
