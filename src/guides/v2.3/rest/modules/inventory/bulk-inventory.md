@@ -111,7 +111,7 @@ An empty array
 
 Use the `POST /V1/inventory/bulk-product-source-assign` endpoint to add one or more sources to your products. This endpoint helps when creating and assigning custom sources to your default or custom stocks and preparing new locations and inventory.
 
-After adding new custom sources, you can add inventory quantities per product or for multiple products using the `POST V1/inventory/source-items` endpoint. [Assign products to a source]({{ page.baseurl }}/rest/modules/inventory/#assign) describes this endpoint.
+After adding new custom sources, you can add inventory quantities per product or for multiple products using the `POST V1/inventory/source-items` endpoint. [Assign products to a source]({{ page.baseurl }}/rest/modules/inventory/manage-source-items.html#assign) describes this endpoint.
 
 The sources are added to the products with an inventory quantity of 0. You can add inventory amounts as available per source.
 

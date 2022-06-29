@@ -31,7 +31,7 @@ PUT /async/V1/products/:sku
 
 {{site.data.var.ce}} and {{site.data.var.ee}} installations support asynchronous web endpoints.
 
-The [REST API documentation]({{ page.baseurl }}/rest/bk-rest.html) provides a list of all current synchronous Magento API routes.
+The [REST API documentation]({{page.baseurl}}/rest/bk-rest.html) provides a list of all current synchronous Magento API routes.
 
 The response of an asynchronous request contains the following fields:
 
