@@ -117,28 +117,49 @@ To permanently update the system setting for `vm.max_map_count`:
    sysctl vm.max_map_count
    ```
 
-## Opensearch container
+## OpenSearch container
 
 **Container name**: opensearch<br/>
 **Docker base image**: [magento/magento-cloud-docker-opensearch](https://hub.docker.com/r/magento/magento-cloud-docker-opensearch)<br/>
 **Ports exposed**: `9200`, `9300`<br/>
 
-The Opensearch container for {{site.data.var.mcd-prod}} is a standard Opensearch container with required plugins and configurations for {{site.data.var.ee}}.
+The OpenSearch container for {{site.data.var.mcd-prod}} is a standard OpenSearch container with required plugins and configurations for {{site.data.var.ee}}.
 
-Use the `--os-env-var` option to customize the Opensearch container when you generate the Docker Compose configuration file. You can set Opensearch options and specify the environment variables to apply when the container starts, such as the heap size for JVM.
+Use the `--os-env-var` option to customize the OpenSearch container when you generate the Docker Compose configuration file. You can set OpenSearch options and specify the environment variables to apply when the container starts, such as the heap size for JVM.
 
 ```bash
 php vendor/bin/ece-docker build:compose --os-env-var=OPENSEARCH_JAVA_OPTS="-Xms512m -Xmx512m" --os-env-var=bootstrap.memory_lock=true
 ```
 
-See [Important Opensearch configuration] in the Opensearch documentation for details about available configuration options.
+See [Important OpenSearch configuration] in the OpenSearch documentation for details about available configuration options.
 
 {:.bs-callout-info}
-If your Cloud project uses {{site.data.var.ee}} version 2.4.4 or earlier with MySQL or Elasticsearch search, add the `--no-os` option to skip the Opensearch container configuration when you generate the Docker Compose configuration file: `ece-docker build:compose --no-os`.
+If your Cloud project uses {{site.data.var.ee}} version 2.4.4 or earlier with MySQL or Elasticsearch search, add the `--no-os` option to skip the OpenSearch container configuration when you generate the Docker Compose configuration file: `ece-docker build:compose --no-os`
 
-### Opensearch plugins
+### OpenSearch plugins
 
-There is a list of Opensearch plugins: https://opensearch.org/docs/latest/opensearch/install/plugins/
+There is a list of OpenSearch plugins: https://opensearch.org/docs/latest/opensearch/install/plugins/
+
+The following plugins are installed by default and can not be skipped:
+
+- OpenSearch 1.1:
+  - opensearch-notebooks
+- OpenSearch 1.2:
+   - opensearch-observability
+- OpenSearch 1.1 and 1.2:
+   - analysis-icu
+   - analysis-phonetic
+   - opensearch-alerting
+   - opensearch-anomaly-detection
+   - opensearch-asynchronous-search
+   - opensearch-cross-cluster-replication
+   - opensearch-index-management
+   - opensearch-job-scheduler
+   - opensearch-knn
+   - opensearch-performance-analyzer
+   - opensearch-reports-scheduler
+   - opensearch-security
+   - opensearch-sql
 
 The following example adds the `opensearch-asynchronous-search` plugin to the Docker environment.
 
@@ -369,7 +390,7 @@ The latest Zookeeper version is installed by default from Docker Hub. You can ad
 [Docker override file]: https://docs.docker.com/compose/extends/
 [FPM]: https://php-fpm.org
 [Important Elasticsearch configuration]: https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html
-[Important Opensearch configuration]: https://opensearch.org/docs/latest/opensearch/install/important-settings/
+[Important OpenSearch configuration]: https://opensearch.org/docs/latest/opensearch/install/important-settings/
 [mailhog]: https://hub.docker.com/u/mailhog
 [MailHog service]: https://github.com/mailhog/MailHog
 [Manage the database]: {{site.baseurl}}/cloud/docker/docker-manage-database.html
