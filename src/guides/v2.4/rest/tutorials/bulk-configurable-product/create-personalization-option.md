@@ -2,7 +2,6 @@
 layout: tutorial
 group: rest-api
 title: Step 4. Create the personalization option
-
 subtitle: Create a configurable product using bulk APIs
 menu_title: Step 4. Create the personalization option
 menu_order: 40

@@ -72,11 +72,11 @@ The call to link a simple (child) product to the configurable product accepts on
 
 *  Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Configurations** section.
 
-![Product page with configurable and simple products](https://developer.adobe.com/commerce/webapi/rest/images/configurations-section.png)
+![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/configurations-section.png)
 
 *  On the Luma storefront page, search for `Champ`.
 
-![Search results](https://developer.adobe.com/commerce/webapi/rest/images/search-results.png)
+![Search results]({{ page.baseurl }}/rest/images/search-results.png)
 
 *  Call `GET /V1/products/MS-Champ`. The response includes the `configurable_product_options` and `configurable_product_links` arrays.
 

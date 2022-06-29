@@ -30,7 +30,7 @@ Visibility | Code
 `Catalog, Search` | 4
 
 {:.bs-callout-info}
-Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 
 **Endpoint:**
 
@@ -217,6 +217,6 @@ Before you using this code sample, verify that the attribute values are the same
 
 *  Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
 
-  ![Product page with configurable product](https://developer.adobe.com/commerce/webapi/rest/images/products-page.png)
+  ![Product page with configurable product]({{ page.baseurl }}/rest/images/products-page.png)
 
 *  On the Luma storefront page, search for `Champ`. No results are returned.

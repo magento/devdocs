@@ -40,6 +40,6 @@ Complete the following prerequisites:
 
 ### Other resources
 
--  [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/) shows a system integrator how REST APIs are used in the lifecycle of an order, including configuring a store and creating a customer; creating quotes, orders, invoices, and shipments; preparing for checkout; and more order-related tasks.
+-  [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/) shows a system integrator how REST APIs are used in the lifecycle of an order, including configuring a store and creating a customer; creating quotes, orders, invoices, and shipments; preparing for checkout; and more order-related tasks.
 
--  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
+-  [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.

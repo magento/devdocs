@@ -4,7 +4,6 @@ group: rest-api
 subgroup:
 title: Step 6. Prepare for checkout
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-prepare-checkout/
-
 subtitle: Order Processing tutorial
 return_to:
   title: REST tutorials

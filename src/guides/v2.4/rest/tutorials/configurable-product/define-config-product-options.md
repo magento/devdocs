@@ -3,7 +3,6 @@ layout: tutorial
 group: rest-api
 title: Step 4. Define configurable product options
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/define-config-product-options/
-
 subtitle: Create a configurable product tutorial
 menu_title: Step 4. Define configurable product options
 menu_order: 40

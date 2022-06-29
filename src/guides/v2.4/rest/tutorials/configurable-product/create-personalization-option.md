@@ -3,7 +3,6 @@ layout: tutorial
 group: rest-api
 title: Step 5. Create the personalization option
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/create-personalization-option/
-
 subtitle: Create a configurable product tutorial
 menu_title: Step 5. Create the personalization option
 menu_order: 50

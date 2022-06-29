@@ -2,7 +2,6 @@
 layout: tutorial
 group: rest-api
 title: Create a configurable product using bulk APIs
-
 menu_title: Initial tasks
 menu_order: 0
 level3_subgroup: bulk-configurable-product-tutorial

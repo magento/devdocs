@@ -242,7 +242,7 @@ None
 
 The following call returns all companies that are located in California (`region_id` = `12`)
 
-See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs]({{ page.baseurl }}/rest/use-rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage:**
 
