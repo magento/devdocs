@@ -22,8 +22,8 @@ Refer to the [System Requirements][] for specific version information.
 
 We recommend the following:
 
-*  [Configure nginx and Elasticsearch][]
-*  [Configure Apache and Elasticsearch][]
+*  [Configure nginx for your search engine][]
+*  [Configure Apache for your search engine][]
 
 ## Installation location {#es-host}
 

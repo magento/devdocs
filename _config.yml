@@ -127,7 +127,7 @@ defaults:
       path: guides/v2.4/mrg
     values:
       group: module-reference-guide-2_4
-      github_link: false
+      layout: migrated
 
   -
     scope:

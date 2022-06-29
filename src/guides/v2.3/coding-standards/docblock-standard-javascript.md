@@ -388,7 +388,7 @@ new Date()</pre></td>
       <td>An array of numbers</td>
    </tr>
    <tr>
-      <td>Array.<Array.&lt;string>></td>
+      <td>Array.&lt;Array.&lt;string>></td>
       <td><pre>[['one', 'two', 'three'], ['foo', 'bar']]</pre></td>
       <td>Array of arrays of strings</td>
    </tr>
@@ -404,7 +404,7 @@ new Date()</pre></td>
       <td>An object. In the object, the values are strings.</td>
    </tr>
    <tr>
-      <td>Object.<number, string></td>
+      <td>Object.&lt;number, string></td>
       <td><pre>var obj = {};
 obj[1] = 'bar';</pre></td>
       <td>An object. In the object, the keys are numbers and the values are strings.

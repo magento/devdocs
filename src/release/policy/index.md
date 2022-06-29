@@ -45,7 +45,7 @@ With security patch releases, you can keep your site more secure without app
 
 Each security patch release is based on the prior full patch release, hence it contains quality and security fixes from prior patch release and security fixes created between the prior full patch release and the security patch release.
 
-With the announcement of our [new release strategy and updated lifecycle policy](https://magento.com/blog/accelerating-innovation-through-simplified-release-strategy) (9/16/2021), our security patch releases are differentiated based on whether they are applicable to the latest-supported minor release or a part of a still-supported previous minor release line:
+With the announcement of our [new release strategy and updated lifecycle policy](https://business.adobe.com/blog/how-to/accelerating-innovation-through-simplified-release-strategy) (9/16/2021), our security patch releases are differentiated based on whether they are applicable to the latest-supported minor release or a part of a still-supported previous minor release line:
 
 -  **Security patch releases for the latest-supported minor release**:
 

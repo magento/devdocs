@@ -10,7 +10,7 @@
   Redis: '6.0'
   Varnish: '6.5'
   Apache: '2.4'
-  nginx: '1.8'
+  nginx: '1.18'
 2.3.7:
   Composer: '1'
   Elasticsearch: '7.9'
@@ -21,7 +21,7 @@
   Redis: '6.0'
   Varnish: '6.5'
   Apache: '2.4'
-  nginx: '1.8'
+  nginx: '1.18'
 2.3.6:
   Composer: '1'
   Elasticsearch: '7.7'
@@ -32,7 +32,7 @@
   Redis: '5.0'
   Varnish: '6.4'
   Apache: '2.4'
-  nginx: '1.8'
+  nginx: '1.18'
 2.3.5:
   Composer: '1'
   Elasticsearch: '7.6'
@@ -43,7 +43,7 @@
   Redis: '5.0'
   Varnish: '6.3'
   Apache: '2.4'
-  nginx: '1.8'
+  nginx: '1.18'
 2.3.4:
   Composer: '1'
   Elasticsearch: '5, 6'
@@ -54,7 +54,7 @@
   Redis: '5.0'
   Varnish: '4, 5, 6.2'
   Apache: '2.4'
-  nginx: '1.8'
+  nginx: '1.18'
 2.3.3:
   Composer: '1'
   Elasticsearch: '5, 6'
@@ -65,7 +65,7 @@
   Redis: '5.0'
   Varnish: '6.2'
   Apache: '2.4'
-  nginx: '1.8'
+  nginx: '1.18'
 2.3.2:
   Composer: '1'
   Elasticsearch: '5, 6'
@@ -76,7 +76,7 @@
   Redis: '5.0'
   Varnish: '4, 5'
   Apache: '2.4'
-  nginx: '1.8'
+  nginx: '1.18'
 2.3.1:
   Composer: '1'
   Elasticsearch: '5, 6'
@@ -87,7 +87,7 @@
   Redis: '5.0'
   Varnish: '4, 5'
   Apache: '2.4'
-  nginx: '1.8'
+  nginx: '1.18'
 2.3.0:
   Composer: '1'
   Elasticsearch: '2, 5'
@@ -98,4 +98,4 @@
   Redis: '5'
   Varnish: '4, 5'
   Apache: '2.4'
-  nginx: '1.8'
+  nginx: '1.18'

@@ -48,6 +48,7 @@ module Jekyll
         )
         mrg_topic.content = metadata['content']
         mrg_topic.data['title'] = metadata['title']
+        mrg_topic.data['migrated_to'] = 'https://developer.adobe.com/commerce/php/module-reference/' + mrg_topic.url.split('/').pop.sub('.html', '/')
         mrg_topic.process("#{mod}.md")
 
         # Add the newly constructed page object to the rest of pages

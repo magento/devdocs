@@ -356,7 +356,7 @@ pages:
           url: /config-guide/mq/manage-message-queues.html
 
         - label: Using AWS Message Queues
-          url: /config-guide/mq/manage-message-queues.html
+          url: /config-guide/mq/aws-mq.html
           exclude_versions: ["2.3"]
 
     - label: Split database performance solution (Adobe Commerce only)

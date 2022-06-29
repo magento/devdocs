@@ -12,10 +12,14 @@ The following demonstrates how to manage redirection rules on your {{site.data.v
 
 {% include cloud/note-route-all-placeholder.md %}
 
+## Updates to Pro environments
+
+{% include cloud/note-pro-missing-self-service-options.md %}
+
 {:.bs-callout-warning}
 For {{ site.data.var.ece }} projects, configuring large numbers of non-regex redirects and rewrites in the `routes.yaml` file can cause performance issues. If your `routes.yaml` file is 32KB or larger, offload your non-regex redirects and rewrites to Fastly. See [Offload non-regex redirects to Fastly instead of Nginx (routes)](https://support.magento.com/hc/en-us/articles/360035192891-Offload-non-regex-redirects-to-Fastly-instead-of-Nginx-routes-) in the _{{site.data.var.ee}} Help Center_.
 
-## Whole-route redirects {#cloud-route-whole}
+## Whole-route redirects
 
 Using whole-route redirects, you can define simple routes using the `routes.yaml` file. For example, you can redirect from an apex domain to a `www` subdomain as follows:
 
@@ -25,7 +29,7 @@ http://{default}/:
     to: http://www.{default}/
 ```
 
-## Partial-route redirects {#cloud-route-partial}
+## Partial-route redirects
 
 In the [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html) file, you can also add partial redirect rules to existing routes based on pattern matching:
 
@@ -59,11 +63,11 @@ Two keys are available under `redirects`:
    `code`    | Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8), and [`308`](https://tools.ietf.org/html/rfc7238). Defaults to `302`.
    `expires`| Optional, specifies the amount of time to cache the redirect in the browser. Defaults to the `expires` value defined directly under the `redirects` key, but at this level you can fine-tune the cache expiration for individual partial redirects.
 
-### Examples
+## Examples of partial-route redirects
 
 The following examples show how to specify partial-route redirects in the `routes.yaml` file using various `paths` configuration options.
 
-#### Regular expression pattern matching {#redirect-with-regex}
+### Regular expression pattern matching
 
 Use the following format to configure redirect requests based on a regular expression.
 
@@ -77,7 +81,7 @@ http://{default}/:
 
 This configuration filters request paths against a regular expression and redirects matching requests to `https://example.com`. For example, a request to `https://example.com/regexp/a/b/c/match` redirects to `https://example.com/a/b/c`.
 
-#### Prefix pattern matching {#redirect-with-prefix}
+### Prefix pattern matching
 
 Use the following format to configure redirect requests for paths that begin with a specified prefix pattern.
 
@@ -97,7 +101,7 @@ This configuration works as follows:
 
 -  If you change the `prefix` property to `false`, requests that match the pattern  `/from` trigger a redirect, but requests that match the pattern `/from/another/path` does not.
 
-#### Suffix pattern matching {#redirect-with-suffix}
+### Suffix pattern matching
 
 Use the following format to configure redirect requests which append the path suffix from the request to the target destination.
 
@@ -114,7 +118,7 @@ This configuration works as follows:
 
 -  If you change the `append_suffix` property to `true`, then requests that match `/from/path/suffix`  redirect to the path `https://{default}/to/path/suffix`.
 
-#### Path-specific cache configuration {#redirect-with-custom-cache}
+### Path-specific cache configuration
 
 Use the following format to customize the time to cache a redirect from a specific path:
 
@@ -130,6 +134,6 @@ http://{default}/:
 
 This configuration works as follows:
 
--  Redirects from the first path (`/from`) are cached for 1 day.
+-  Redirects from the first path (`/from`) are cached for one day.
 
--  Redirects from the second path (`/here`) are cached for 2 weeks.
+-  Redirects from the second path (`/here`) are cached for two weeks.
