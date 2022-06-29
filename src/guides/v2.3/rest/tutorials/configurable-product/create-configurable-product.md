@@ -2,7 +2,6 @@
 layout: tutorial
 group: rest-api
 title: Step 2. Create the configurable product
-
 subtitle: Create a configurable product tutorial
 menu_title: Step 2. Create the configurable product
 menu_order: 20

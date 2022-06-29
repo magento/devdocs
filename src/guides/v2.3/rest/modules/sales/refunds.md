@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Refunds
-
 functional_areas:
   - Integration
   - Catalog

@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Retrieve filtered responses for REST endpoints
-
 ---
 
 Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST requests that return partial responses.

@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Create and manage grouped products tutorial
-
 functional_areas:
   - Integration
 ---

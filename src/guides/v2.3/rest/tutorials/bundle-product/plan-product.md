@@ -2,7 +2,6 @@
 layout: tutorial
 group: rest-api
 title: Step 1. Plan the product
-
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---

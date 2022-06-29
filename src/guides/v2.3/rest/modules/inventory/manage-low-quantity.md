@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Manage low-quantity notifications
-
 ---
 
 Low stock notification alert the merchant that the salable quantity of a stock has reached a critical threshold. The Admin allows the merchant to configure low-quantity notifications from several locations:

@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Manage prices for multiple products
-
 functional_areas:
   - Integration
 ---

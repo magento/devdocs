@@ -2,7 +2,6 @@
 layout: tutorial
 group: rest-api
 title: Step 7. Create an order
-
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials

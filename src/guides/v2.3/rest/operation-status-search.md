@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Search for the status of a bulk operation
-
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com
 functional_areas:

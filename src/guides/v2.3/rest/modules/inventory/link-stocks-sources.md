@@ -1,8 +1,6 @@
 ---
 group: rest-api
 title: Link and unlink stocks and sources
-
-
 ---
 
 In Admin, you can assign (link) sources to a stock when you create the stock. In REST, creating a stock and assigning sources to it are separate steps.

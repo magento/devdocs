@@ -2,7 +2,6 @@
 layout: tutorial
 group: rest-api
 title: Create a bundle product tutorial
-
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---

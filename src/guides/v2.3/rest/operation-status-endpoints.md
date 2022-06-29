@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Bulk operation status endpoints
-
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com/
 functional_areas:

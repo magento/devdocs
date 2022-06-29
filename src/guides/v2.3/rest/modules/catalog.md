@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Catalog module
-
 functional_areas:
   - Integration
   - Catalog

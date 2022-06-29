@@ -3,7 +3,6 @@ layout: tutorial
 group: rest-api
 subgroup:
 title: Step 6. Prepare for checkout
-
 subtitle: Order Processing tutorial
 return_to:
   title: REST tutorials

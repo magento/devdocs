@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Search for products with the /search endpoint
-
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com/
 ---

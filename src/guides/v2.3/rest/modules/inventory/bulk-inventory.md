@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Inventory mass actions
-
 ---
 
 Magento provides several endpoints that allow Multi Source merchants to make quick updates across multiple products. This is helpful for transferring inventory between sources and removing a source without editing each product individually.

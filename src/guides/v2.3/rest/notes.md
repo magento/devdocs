@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: REST usage notes
-
 functional_areas:
   - Integration
 ---
