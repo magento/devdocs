@@ -574,8 +574,8 @@ The `AddProductsToCartOutput` object contains the `Cart` object.
 
 | Attribute     | Data Type                                  | Description                                                    |
 |---------------|--------------------------------------------|----------------------------------------------------------------|
-| `user_errors` | [CartUserInputError!](#CartUserInputError) | An array of errors encountered while adding products to a cart |
 | `cart`        | [Cart!](#CartObject)                       | Describes the contents of the specified shopping cart          |
+| `user_errors` | [CartUserInputError!](#CartUserInputError) | An array of errors encountered while adding products to a cart |
 
 ### Cart object {#CartObject}
 
