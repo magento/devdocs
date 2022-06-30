@@ -1,10 +1,10 @@
 ---
 group: shared-services
-title: Storefront Events SDK
+title: Adobe Commerce Event SDK
 ee_only: True
 ---
 
-This package serves as the foundation for eventing on an [{{site.data.var.ee}}](https://business.adobe.com/products/magento/magento-commerce.html) storefront. It provides access to a common data layer, and an event publishing and subscription service. Handling these events is up to you, but we provide the [Storefront Event Collector]({{ site.baseurl }}/shared-services/storefront-event-collector.html) package that can listen for events and send them to {{site.data.var.ee}} for processing.
+This package serves as the foundation for eventing on an [{{site.data.var.ee}}](https://business.adobe.com/products/magento/magento-commerce.html) storefront. It provides access to a common data layer, and an event publishing and subscription service. Handling these events is up to you, but we provide the [Adobe Commerce Event Collector]({{ site.baseurl }}/shared-services/storefront-event-collector.html) package that can listen for events and send them to {{site.data.var.ee}} for processing.
 
 ## Installation
 
