@@ -1,6 +1,6 @@
 ---
 group: shared-services
-title: Context - Events SDK Reference
+title: Context - Adobe Commerce Event SDK Reference
 ee_only: True
 ---
 
