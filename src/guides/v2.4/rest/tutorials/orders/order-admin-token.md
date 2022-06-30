@@ -2,6 +2,8 @@
 layout: tutorial
 group: rest-api
 title: Step 2. Get the admin token
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-admin-token/
+layout: migrated
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials
