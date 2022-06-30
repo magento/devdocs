@@ -1,10 +1,10 @@
 ---
 group: shared-services
-title: Storefront Event Collector
+title: Adobe Commerce Event Collector
 ee_only: True
 ---
 
-This package listens for and handles events sent from the [{{site.data.var.ee}} Storefront Events SDK]({{ site.baseurl }}/shared-services/storefront-events-sdk.html). It runs as a side effect and is meant to be a convenience for users who want to send events to {{site.data.var.ee}} for processing.
+This package listens for and handles events sent from the [{{site.data.var.ee}} Adobe Commerce Event SDK]({{ site.baseurl }}/shared-services/storefront-events-sdk.html). It runs as a side effect and is meant to be a convenience for users who want to send events to {{site.data.var.ee}} for processing.
 
 ## Installation
 
