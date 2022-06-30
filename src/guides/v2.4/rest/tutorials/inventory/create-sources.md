@@ -3,6 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 2. Create sources
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-sources/
+layout: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 2. Create sources
 menu_order: 20

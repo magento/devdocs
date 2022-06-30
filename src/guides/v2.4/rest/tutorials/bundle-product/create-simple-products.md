@@ -3,6 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 2. Create the simple products
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bundle-product/create-simple-products/
+layout: migrated
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---

@@ -2,6 +2,7 @@
 group: rest-api
 title: Manage source selection algorithms
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/manage-source-selection/
+layout: migrated
 ---
 
 Inventory Management uses the Source Selection Algorithm (SSA) to track the salable quantities of product inventory across all sources and make recommendations for partial and full shipments.

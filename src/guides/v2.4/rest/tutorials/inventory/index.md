@@ -3,6 +3,7 @@ layout: tutorial
 group: rest-api
 title: Order Processing with Inventory Management
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/
+layout: migrated
 menu_title: Initial tasks
 menu_order: 0
 level3_subgroup: msi-tutorial

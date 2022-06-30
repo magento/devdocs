@@ -2,6 +2,7 @@
 group: rest-api
 title: In-Store Pickup
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/in-store-pickup/
+layout: migrated
 contributor_name: Oleksandr Kravchuk
 contributor_link: https://github.com/swnsma
 ---

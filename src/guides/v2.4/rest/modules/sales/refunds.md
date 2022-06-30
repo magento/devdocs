@@ -2,6 +2,7 @@
 group: rest-api
 title: Refunds
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/sales/
+layout: migrated
 
 functional_areas:
   - Integration

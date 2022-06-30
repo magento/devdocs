@@ -14,6 +14,7 @@ functional_areas:
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/create-personalization-option/
+layout: migrated
 ---
 
 Let's add a text box to the product page that allows the customer to add his name (up to 15 characters) to the back of the shirt.

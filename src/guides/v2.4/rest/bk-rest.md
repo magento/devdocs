@@ -2,6 +2,7 @@
 group: rest-api
 title: REST API Overview
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/
+layout: migrated
 functional_areas:
   - Integration
 ---

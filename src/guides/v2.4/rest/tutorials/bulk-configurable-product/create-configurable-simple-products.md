@@ -14,6 +14,7 @@ functional_areas:
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/create-configurable-simple-products/
+layout: migrated
 ---
 
 By providing configurable and simple product information, you can use the bulk API to create all necessary products with a single call.

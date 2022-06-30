@@ -2,6 +2,7 @@
 group: rest-api
 title: Generate the admin token
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/
+layout: migrated
 functional_areas:
   - Integration
   - Orders

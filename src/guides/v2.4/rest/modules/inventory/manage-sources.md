@@ -2,6 +2,7 @@
 group: rest-api
 title: Manage sources
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/
+layout: migrated
 ---
 
 Sources represent locations storing and shipping available product stock. Any location with available stock and capable of order fulfillment can be added as a source. These locations can include warehouses, brick-and-mortar stores, distribution centers, and drop shippers.

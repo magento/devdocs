@@ -2,6 +2,7 @@
 group: rest-api
 title: Search for the status of a bulk operation
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-search
+layout: migrated
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com
 functional_areas:

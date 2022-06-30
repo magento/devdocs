@@ -3,6 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 1. Configure the store
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-config-store/
+layout: migrated
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials

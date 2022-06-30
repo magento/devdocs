@@ -3,6 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 10. Create an invoice
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-invoice/
+layout: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 10. Create an invoice
 menu_order: 100

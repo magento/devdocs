@@ -3,6 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 1. Plan the product
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/plan-product/
+layout: migrated
 subtitle: Create a configurable product tutorial
 menu_title: Step 1. Plan the product
 menu_order: 10
