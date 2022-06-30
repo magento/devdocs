@@ -15,7 +15,7 @@ The following events are not specific to Product Recommendations, but are requir
 -  `add-to-cart`
 -  `place-order`
 
-The [Storefront Events Collector]({{ site.baseurl }}/shared-services/storefront-event-collector.html#quick-start) lists all the events deployed to your storefront. From that list, however, there is a subset of events specific to Product Recommendations. These events collect data when shoppers interact with recommendation units on the storefront and power the metrics used to help you analyze how well your recommendations are performing.
+The [Adobe Commerce Storefront Event Collector]({{ site.baseurl }}/shared-services/storefront-event-collector.html#quick-start) lists all the events deployed to your storefront. From that list, however, there is a subset of events specific to Product Recommendations. These events collect data when shoppers interact with recommendation units on the storefront and power the metrics used to help you analyze how well your recommendations are performing.
 
 Event | Description | [Used for metrics?]({{ site.user_guide_url }}/recommendations/workspace.html)
 --- | --- | ---
