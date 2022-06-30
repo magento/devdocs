@@ -142,7 +142,7 @@ mutation {
     user_errors {
       code
       message
-    }    
+    }
   }
 }
 ```
@@ -217,7 +217,7 @@ mutation {
     user_errors {
       code
       message
-    } 
+    }
   }
 }
 ```
@@ -305,7 +305,7 @@ mutation {
     user_errors {
       code
       message
-    }    
+    }
   }
 }
 ```
@@ -408,7 +408,7 @@ mutation {
     user_errors {
       code
       message
-    }    
+    }
   }
 }
 ```
@@ -544,7 +544,7 @@ mutation {
     user_errors {
       code
       message
-    }    
+    }
   }
 }
 ```
