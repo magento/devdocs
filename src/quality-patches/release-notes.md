@@ -21,6 +21,17 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.16
+
+- **MDVA-44703** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where order totals in the Orders report are miscalculated for the restricted admin user.
+- **MDVA-44940** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the SQL error that occurs while saving the category from admin.
+- **MDVA-44562** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.2-p2`)_-Fixes the issue where the non-default store id for quote items is overridden by the default store id, despite the GraphQL request originating from the non-default store view.
+- **MDVA-43167** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where admin order grid mass action doesn't apply for multi-page when admin user selects all orders.
+- **MDVA-44044** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.2-p2`)_-Fixes the issue where a product is not displayed on the category page after it is assigned to a new website.
+- **MDVA-42509** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.4`)_-Fixes the issue where a CSV could not be uploaded for a quick order resulting in an 'Unable to send the cookie' error.
+- Updated patches: MDVA-41061, MDVA-42584.
+- The prefix for the new QPT patches will be changed from "MDVA" to "ACSD" due to internal process changes.
+
 ## v1.1.15
 
 -  **MDVA-40961** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where an additional item can't be added to the cart when the minimum qty of the item is already in the cart.
