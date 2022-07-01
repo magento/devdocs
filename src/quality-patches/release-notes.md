@@ -30,7 +30,7 @@ For information about quality patches created by the Community for {{site.data.v
 - **MDVA-44044** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.2-p2`)_-Fixes the issue where a product is not displayed on the category page after it is assigned to a new website.
 - **MDVA-42509** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.4`)_-Fixes the issue where a CSV could not be uploaded for a quick order resulting in an 'Unable to send the cookie' error.
 - Updated patches: MDVA-41061, MDVA-42584.
-- The prefix for the new QPT patches will be changed from "MDVA" to "ACSD" due to internal process changes.
+- The prefix for the new Quality Patches Tool patches will be changed from "MDVA" to "ACSD" due to internal process changes.
 
 ## v1.1.15
 
