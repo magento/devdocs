@@ -26,11 +26,11 @@ The release notes include:
 
 -  {:.fix} The default inventory stock status of bundle and grouped products is now updated as expected when a merchant creates a shipment from the Admin. Previously, the status of these products remained unchanged after a shipment was created. <!--- ACP2E-418-->
 
--  {:.fix} Configurable products are now returned back to stock when one of these conditions is met: the parent product has at least one saved child in stock, or the configurable product itself was updated and set as **in stock** and had at least one child in stock <!--- ACP2E-443-->
+-  {:.fix} Configurable products are now returned back to stock when one of these conditions is met: the parent product has at least one saved child in stock, or the configurable product itself was updated and set as **in stock** and had at least one child in stock. <!--- ACP2E-443-->
 
 -  {:.fix} Inventory changes implemented through the REST API are now reflected as expected on product detail pages. The cache for catalog products is now cleaned after comparing the last and current stock statuses. Previously, omitting the callback function resulted in the incorrect evaluation of stock status changes, which did not trigger the necessary cache cleaning. As a result, the storefront did not reflect the inventory changes. <!--- ACP2E-161-->
 
--  {:.fix} Products that are assigned to default stock and that were previously out of stock are now visible on the storefront after updating the source item using `V1/inventory/source-items’. Previously, this REST API endpoint set the wrong 'stock_status`. <!--- ACP2E-562-->
+-  {:.fix} Products that are assigned to default stock and that were previously out of stock are now visible on the storefront after updating the source item using `V1/inventory/source-items`. Previously, this REST API endpoint set the wrong 'stock_status`. <!--- ACP2E-562-->
 
 -  {:.fix} Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicates with the exception of a leading zero (for example, `01234` and `1234`). Previously, Magento did not unassign inventory sources and threw an error. <!--- ACP2E-2641-->
 
@@ -50,7 +50,7 @@ The release notes include:
 
 -  {:.fix} The performance of save operations that include bundle products that contain many options (several hundred) has been improved. Previously, saving these large bundle products took several minutes and sometimes resulted in timeouts in deployments with Inventory services enabled. [GitHub-34732](https://github.com/magento/magento2/issues/34732) <!--- AC-1901-->
 
--  {:.fix} The product bulk action tool (**Catalog** > **Products** > **Select Products** > **Actions** > **Assign Inventory Source**) now works as expected when assigning inventory source to multiple products when SKUs are duplicate with the exception of a leading 0 (for example, 01234 and 1234). Previously, only one product was assigned an Inventory source. [GitHub-35171](https://github.com/magento/magento2/issues/35171) <!--- AC-2584-->
+-  {:.fix} The product bulk action tool (**Catalog** > **Products** > **Select Products** > **Actions** > **Assign Inventory Source**) now works as expected when assigning inventory source to multiple products when SKUs are duplicated with the exception of a leading 0 (for example, 01234 and 1234). Previously, only one product was assigned an Inventory source. [GitHub-35171](https://github.com/magento/magento2/issues/35171) <!--- AC-2584-->
 
 ### v1.2.4
 

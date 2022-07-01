@@ -9,13 +9,13 @@ These release notes can include:
 -  {:.new} New features
 -  {:.fix} Fixes and improvements
 
-## {{ site.data.var.ee }} B2B - Adobe Commerce 2.4.5
+## {{ site.data.var.ee }} B2B 1.3.4 - Adobe Commerce 2.4.5
 
 -  {:.fix} <!--- ACP2E-453--> {{ site.data.var.ee }} no longer sends email notifications each time an existing Company is updated by an API call. Emails are now sent only when a company is created.
 
 -  {:.fix} <!--- ACP2E-406--> {{ site.data.var.ee }} now correctly calculates a negotiable quote grand total when the **Enable Cross Border Trade** tax calculation setting is enabled.
 
--  {:.fix} <!--- ACP2E-322--> Configurable products are now moved to the last position in the product listing after stock is updated when the **Move out of stock to the bottom** setting is enabled. A new custom database query has been implemented to negate Elasticsearch index sort order, which disregards Admin-enabled sort order. Previously, configurable products and their child products were not moved to the bottom of the list when this setting was enabled.
+-  {:.fix} <!--- ACP2E-322--> Configurable products are now moved to the last position in the product listing after stock is updated when the **Move out of stock to the bottom** setting is enabled. A new custom database query has been implemented to ensure Elasticsearch index sort order now honors the Admin-enabled sort order. Previously, configurable products and their child products were not moved to the bottom of the list when this setting was enabled.
 
 -  {:.fix} <!--- ACP2E-308--> Purchase Order email now honors the email sending setting of each website in a multi-site deployment. A check for the **Disable Email Communications** setting has been added to the custom logic for email queues. Previously, {{ site.data.var.ee }} did not honor the email sending setting of the secondary website.
 
@@ -25,9 +25,9 @@ These release notes can include:
 
 -  {:.fix} <!--- ACP2E-1753--> The **Account Created in** field for a company administrator now retains its value as expected after you save the company.
 
--  {:.fix} <!--- ACP2E-722 --> customer queries to retrieve customer requisition lists that are filtered by `uid` no longer return empty results.
+-  {:.fix} <!--- ACP2E-722 --> The `customer` query no longer returns empty results when it retrieves requisition lists that are filtered by `uid`.
 
--  {:.fix} <!--- ACP2E-210 --> Added a plugin before the `collectQuoteTotals` call to ensure that store credits are  applied only once.
+-  {:.fix} <!--- ACP2E-210 --> Added a plugin before the `collectQuoteTotals` call to ensure that store credits are applied only once.
 
 -  {:.fix} <!--- ACP2E-665 -->  Customers are now redirected to the login page when their account is deleted by an administrator from the Admin. Previously, {{ site.data.var.ee }} threw an error.  The plugin (`SessionPlugin`) code block is now inside the `try…catch` block. Previously, this code was not wrapped inside the generic exception handling block.
 
@@ -141,7 +141,7 @@ These release notes can include:
 
 ### Requisition lists
 
--  {:.fix} <!--- MC-40426--> Merchants can now use the POST `rest/all/V1/requisition_lists` endpoint to create a requisition list for a customer. Previously, {{ site.data.var.ee }} threw this 400 error when you tried to create a requisition list: `Could not save Requisition List`.
+-  {:.fix} <!--- MC-40426--> Merchants can now use the POST `/all/V1/requisition_lists` endpoint to create a requisition list for a customer. Previously, {{ site.data.var.ee }} threw this 400 error when you tried to create a requisition list: `Could not save Requisition List`.
 
 -  {:.fix} <!--- MC-41123--> The **Add to Requisition List** button now appears for a shopping cart’s in-stock products when the cart also contains out-of-stock products. Previously, if a cart contained two products, one of which was out-of-stock, the **Add to Requisition List** button did not appear for either products.
 
@@ -209,7 +209,7 @@ These release notes can include:
 
 -  {:.fix} Custom customer address attribute fields that are associated with a shopper’s non-default address are now saved as expected in the storefront checkout workflow. <!--- MC-36630-->
 
--  {:.fix} Orders for products that belong to a store’s default shared catalog can now be placed for shoppers through the Admin REST API (`rest/V1/carts/{{CART_ID}}/items`) as expected. {{ site.data.var.ee }} now checks if the product was assigned to a public catalog before shared catalog permissions validation in `\Magento\SharedCatalog\Plugin\Quote\Api\ValidateAddProductToCartPlugin::beforeSave`. Previously, {{ site.data.var.ee }} did not add the product to the shopper’s cart and threw this error: `No such shared catalog entity`. <!--- MC-36535-->
+-  {:.fix} Orders for products that belong to a store’s default shared catalog can now be placed for shoppers through the Admin REST API (`POST /V1/carts/{{CART_ID}}/items`) as expected. {{ site.data.var.ee }} now checks if the product was assigned to a public catalog before shared catalog permissions validation in `\Magento\SharedCatalog\Plugin\Quote\Api\ValidateAddProductToCartPlugin::beforeSave`. Previously, {{ site.data.var.ee }} did not add the product to the shopper’s cart and threw this error: `No such shared catalog entity`. <!--- MC-36535-->
 
 -  {:.fix} {{ site.data.var.ee }} now sends new company user registration emails from the {{ site.data.var.ee }} store's address. Previously, this email was sent from the company administrator’s address. <!--- MC-36480-->
 
@@ -273,13 +273,13 @@ This release includes improvements to order approvals, shipping methods, shoppin
 
 -  {:.fix} A company can now be updated using the REST API PUT `/V1/company/:companyId` request without specifying the `region_id` when state is configured as **not required**. Previously, even though `region_id` was not required, {{ site.data.var.ee }} threw an error if it was not specified. <!--- MC-35304-->
 
--  {:.fix} When you create or update a B2B Company using the REST API (`http://magento.local/rest/V1/company/2`, where `2` represents the company ID), the response now includes the settings for `applicable_payment_method` or `available_payment_methods` as expected. <!--- MC-35248-->
+-  {:.fix} When you create or update a B2B Company using the REST API (`POST or PUT /V1/company/2`, where `2` represents the company ID), the response now includes the settings for `applicable_payment_method` or `available_payment_methods` as expected. <!--- MC-35248-->
 
 -  {:.fix} {{ site.data.var.ee }} no longer displays a 404 page when a merchant uses the **Enter** button instead of clicking the **Save** button when creating a requisition list on the storefront.<!--- MC-35094-->
 
 -  {:.fix} Category permissions no longer change when a new product is assigned to a public shared catalog. Previously, category permissions were duplicated. <!--- MC-34386-->
 
--  {:.fix} The REST API endpoint PUT `rest/default/V1/company/{id}`, which is used to update Company email, is no longer case-sensitive. <!--- MC-34308-->
+-  {:.fix} The REST API endpoint `PUT /V1/company/{id}`, which is used to update Company email, is no longer case-sensitive. <!--- MC-34308-->
 
 -  {:.fix} Disabling reward modules no longer affects B2B features on customer accounts. Previously, when reward modules were disabled, the following B2B-related tabs were not displayed: Company Profile, Company Users, and Roles and Permissions.<!--- MC-34191-->
 
