@@ -1,6 +1,6 @@
 ---
 group: shared-services
-title: Unsubscribe - Events SDK Reference
+title: Unsubscribe - Adobe Commerce Event SDK Reference
 ee_only: True
 ---
 
