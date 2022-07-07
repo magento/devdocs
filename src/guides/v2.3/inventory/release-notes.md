@@ -52,6 +52,8 @@ The release notes include:
 
 -  {:.fix} The product bulk action tool (**Catalog** > **Products** > **Select Products** > **Actions** > **Assign Inventory Source**) now works as expected when assigning inventory source to multiple products when SKUs are duplicated with the exception of a leading 0 (for example, 01234 and 1234). Previously, only one product was assigned an Inventory source. [GitHub-35171](https://github.com/magento/magento2/issues/35171) <!--- AC-2584-->
 
+-  {:.fix} `only_x_left_in_stock` now returns 0 if inventory is 0. Previously, it returned null. [GitHub-29932](https://github.com/magento/magento2/issues/29932) <!--- AC-1806-->
+
 ### v1.2.4
 
 {{site.data.var.im}} 1.2.4 (module version: `magento/inventory-metapackage = 1.2.4`) is supported with version 2.4.4 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.

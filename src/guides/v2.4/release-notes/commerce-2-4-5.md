@@ -217,15 +217,9 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 *  Merchants can now successfully upgrade from an {{ site.data.var.ee }} 2.4.2 deployment with Klarna to {{ site.data.var.ee }} 2.4.3. [GitHub-33760](https://github.com/magento/magento2/issues/33760)
 
-<!--- AC-734-->
-
-<!--- AC-2662-->
-
-<!--- AC-735-->
-
 <!--- AC-2905-->
 
-*  The path to Magento Analytics is no longer hardcoded. Previously, this hardcoded path resulted in conflicts when multiple Magento instances were installed on one server. [GitHub-29373](https://github.com/magento/magento2/issues/29373)
+*  The path to {{ site.data.var.ee }} Analytics is no longer hardcoded. Previously, this hardcoded path resulted in conflicts when multiple {{ site.data.var.ee }} instances were installed on one server. [GitHub-29373](https://github.com/magento/magento2/issues/29373)
 
 ### Accessibility
 
@@ -257,15 +251,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 *  Screen reader users are informed when a new page view is rendered. Previously, when a page title changed, the title change was not announced.
 
-### AdminGWS
-
 ### Adobe Stock
 
 <!--- AC-2926-->
 
 *  Users can now successfully sign out of Adobe Stock.
-
-### Backend
 
 ### Bundle products
 
@@ -281,7 +271,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-684-->
 
-*  Full page cache is no longer shown as disabled in the Admin when the Magento cache is flushed and `use_stale_cache` is enabled.
+*  Full page cache is no longer shown as disabled in the Admin when the {{ site.data.var.ee }} cache is flushed and `use_stale_cache` is enabled.
 
 <!--- AC-2410-->
 
@@ -323,7 +313,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-42-->
 
-*  The `cart` query no longer return null responses when a product is out of stock. A new `errors` element containing the error message was introduced to the response. Previously, when you ran a query with an out-of-stock product, Magento displayed a `null` value under the `items` section in the response. See [cart query](https://devdocs.magento.com/guides/v2.4/graphql/queries/cart.html).
+*  The `cart` query no longer return null responses when a product is out of stock. A new `errors` element containing the error message was introduced to the response. Previously, when you ran a query with an out-of-stock product, {{ site.data.var.ee }} displayed a `null` value under the `items` section in the response. See [cart query](https://devdocs.magento.com/guides/v2.4/graphql/queries/cart.html).
 
 <!--- ACP2E-38-->
 
@@ -353,9 +343,9 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 *  Merchants can now create a credit memo in which  **Refund Shipping (Incl. Tax)** is set to -0.01 and can now set this amount to 0. Previously, the credit memo could not be created under these conditions.
 
-<!--- AC-959-->
-
 <!--- AC-2385-->
+
+*  Coupons that are set for one-time use can now be redeemed only once as expected. [GitHub-35077](https://github.com/magento/magento2/issues/35077)
 
 ### Cart price rule
 
@@ -477,25 +467,15 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 *  The EAV indexer now processes product IDs as type `int` to prevent possible performance issues.
 
-<!--- AC-1736-->
-
-<!--- AC-1456-->
-
-<!--- AC-2777-->
-
 <!--- AC-2597-->
 
 *  A new product cache is now successfully generated after you add a new image with a name that  contains '.'  to a product, then save the product and clean the image cache. [GitHub-32699](https://github.com/magento/magento2/issues/32699)
-
-<!--- AC-2508-->
 
 <!--- AC-1205-->
 
 *  {{ site.data.var.ee }} now displays an error message as expected when you try to create an attribute from the product page without completing the Admin field. [GitHub-33099](https://github.com/magento/magento2/issues/33099)
 
 *  Product ratings are now correct on all catalog product lists when the home page contains multiple catalog lists. [GitHub-33867](https://github.com/magento/magento2/issues/33867)
-
-### Catalog rule
 
 ### CMS content
 
@@ -542,6 +522,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 *  {{ site.data.var.ee }} now correctly displays a configurable product’s stock status, available configurations, and displayed price when the availability of one of the configurable product’s child product is changed by a scheduled update. Previously, when a configurable product had two children and the availability of one child product was disabled with a scheduled update, the parent product’s stock status was incorrectly displayed as **Out of Stock** when the update was active, After the update completed, the displayed price and the availability of its configurations was miscalculated.
 
 *  You can now re-order configurable products with optional custom options. Previously, re-order attempts failed, and meant displayed this error:  `Some of the selected options are not currently available`. [GitHub-35409](https://github.com/magento/magento2/issues/35409)
+
+<!--- AC-959-->
+
+*  The addConfigurableProductsToCart mutation now works as expected with multiple products. Previously, incorrect product information was returned, or an invalid error message was returned. [GitHub-30948](https://github.com/magento/magento2/issues/30948)
 
 ### Customer
 
@@ -623,7 +607,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-847-->
 
-*  Magento no longer triggers a `trim(): Passing null to parameter #1 ($string) of type string is deprecated` error when the AMPQ connection is configured without SSL configuration.
+*  {{ site.data.var.ee }} no longer triggers a `trim(): Passing null to parameter #1 ($string) of type string is deprecated` error when the AMPQ connection is configured without SSL configuration.
 
 <!--- AC-2414-->
 
@@ -643,7 +627,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2511-->
 
-*  [GitHub-35150](https://github.com/magento/magento2/issues/35150)
+*  `.htpasswd` has been added to banned locations in the `nginx` configuration file. [GitHub-35150](https://github.com/magento/magento2/issues/35150)
 
 <!--- AC-2013-->
 
@@ -651,18 +635,23 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2101-->
 
+*  The `ProductRepository.php:get` method now returns cache keys once. Previously, they were returned twice. [GitHub-34958](https://github.com/magento/magento2/issues/34958)
+
 <!--- AC-2507-->
 
-Added an error message to a new exception that was created in the exception handler for cron jobs.
-[GitHub-34941](https://github.com/magento/magento2/issues/34941)
-
-<!--- AC-2508-->
+*  Added an error message to a new exception that was created in the exception handler for cron jobs. [GitHub-34941](https://github.com/magento/magento2/issues/34941)
 
 <!--- AC-2247-->
 
+*  The ReadMe files for the GraphQl-GroupedProductGraphQl modules have been updated. [GitHub-34951](https://github.com/magento/magento2/issues/34951)
+
 <!--- AC-2055-->
 
+*  [GitHub-34430](https://github.com/magento/magento2/issues/34430)
+
 <!--- AC-2079-->
+
+*  The storefront print order/invoice/credit memo pages no longer display the default Luma logo instead of the logo that has been specified for display on the website. [GitHub-34942](https://github.com/magento/magento2/issues/34942)
 
 ### General fixes
 
@@ -736,11 +725,11 @@ Added an error message to a new exception that was created in the exception hand
 
 <!--- AC-2445-->
 
-<!--- AC-1178-->
+*  {{ site.data.var.ee }} no longer throws an error when you activate the  **Check here to link an RSS feed to your Wish List** checkbox before clicking on **Share Wish list**. [GitHub-34998](https://github.com/magento/magento2/issues/34998)
 
 <!--- AC-2019-->
 
-<!--- AC-1806-->
+*  The title of the **Show Password** checkbox (Customer Login, Customer Registration, Customer Edit (Change Password section),  and Customer Set New Password forms) is now translatable. [GitHub-34857](https://github.com/magento/magento2/issues/34857)
 
 <!--- ENGCOM-9062-->
 
@@ -778,7 +767,7 @@ Added an error message to a new exception that was created in the exception hand
 
 *  The `getCartDetails` query now returns only one payment methods for free orders. Previously, all active payment methods were returned in the query response. [GitHub-34036](https://github.com/magento/magento2/issues/34036)
 
-<!--- AC-2364-->
+<!--- AC-2364 1456-->
 
 *  The `categories` query no longer throws an exception when fetching a list of categories one of which contains an image that can’t be found on the filesystem. Previously, {{ site.data.var.ee }} threw this exception: Category image not found`. [GitHub-34266](https://github.com/magento/magento2/issues/34266)
 
@@ -790,7 +779,7 @@ Added an error message to a new exception that was created in the exception hand
 
 *  The `updateCartItems` query now removes products as expected when the product stock has reached the maximum stock amount. [GitHub-30220](https://github.com/magento/magento2/issues/30220)
 
-<!--- AC-2366-->
+<!--- AC-2366 734 MC-42964 -->
 
 *  The `urlResolver` query now resolves the path delimiter (/) correctly when multiple homepages have the same identifier. Previously, the query did not resolve the delimiter and returned null. [GitHub-33615](https://github.com/magento/magento2/issues/33615)
 
@@ -912,7 +901,13 @@ Added an error message to a new exception that was created in the exception hand
 
 <!--- AC-1169-->
 
-*  The `V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**.  [GitHub-30132](https://github.com/magento/magento2/issues/30132)
+*  The `V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**. [GitHub-30132](https://github.com/magento/magento2/issues/30132)
+
+### Google Analytics
+
+<!--- AC-2574 2685-->
+
+*  The Google Tag module has been added to the codebase, which supports the transition to Google Analytics 4 in July 2023.  You can currently use and collect new data in your Google Universal Analytics properties, but Google Universal will reach end-of-life in July 2023. [GitHub-35204](https://github.com/magento/magento2/issues/35204), [GitHub-35376](https://github.com/magento/magento2/issues/35376)
 
 ### Image
 
@@ -948,7 +943,7 @@ Added an error message to a new exception that was created in the exception hand
 
 <!--- AC-2096-->
 
-### Index
+*  Existing records in the `catalog_url_rewrite_product_category` table are now deleted before inserting new ones. Previously, the following error occurred during multi-store product import: `SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '74583' for key 'PRIMARY', query was: INSERT INTO catalog_url_rewrite_product_category (url_rewrite_id,category_id,product_id) VALUES (?, ?, ?)`. [GitHub-34210](https://github.com/magento/magento2/issues/34210)
 
 ### Infrastructure
 
@@ -978,11 +973,13 @@ Added an error message to a new exception that was created in the exception hand
 
 *  Observers placed on `sales_order_state_change_before` now support the retrieval of data from the order object. The `sales_order_state_change_before` `event` argument has been updated. [GitHub-26789](https://github.com/magento/magento2/issues/26789)
 
+<!--- AC-2239-->
+
+*  `indexer:reset` has been refactored to call `$indexer->invalidate()`. [GitHub-34988](https://github.com/magento/magento2/issues/34988)
+
 #### Library removals and deprecations
 
 #### Library upgrades
-
-### Invoice
 
 ### Logging
 
@@ -991,8 +988,6 @@ Added an error message to a new exception that was created in the exception hand
 *  Customer, customer address, and order actions are now logged correctly in the Admin action report. Previously, {{ site.data.var.ee }} did not log actions if the `postDispatch` handler had not been specified in configuration settings.
 
 ### {{ site.data.var.ee }} coding standard
-
-### Media Gallery
 
 ### MFTF
 
@@ -1007,7 +1002,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 #### New tests
 
+`AdminUnlockAdminUserEntityTest` [GitHub-34836](https://github.com/magento/magento2/issues/34836)
+
 `StorefrontNewsletterSubscriptionWithEnabledNeedToConfirmConfigTest` [GitHub-33344](https://github.com/magento/magento2/issues/33344)
+
 #### Refactored tests
 
 `AdminCancelTheCreatedOrderWithCashOnDeliveryPaymentMethodTest` [GitHub-33692](https://github.com/magento/magento2/issues/33692)
@@ -1021,6 +1019,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-2102-->
 
 *  The newsletter subscription confirmation email now has the correct, store-specific email address in the **From** field if the customer is assigned to a non-default store and subscribed or unsubscribed from the Admin. Previously, the customer received an email with default email in **From** header. [GitHub-34963](https://github.com/magento/magento2/issues/34963)
+
+<!--- AC-2509-->
+
+*  The unsubscribe URL in the newsletter email template now works as expected. [GitHub-33310](https://github.com/magento/magento2/issues/33310)
 
 ### Order
 
@@ -1062,11 +1064,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-740-->
 
-*  Magento now displays correct order status during checkout when customer store credit is used.
-
-<!--- AC-2570-->
+*  {{ site.data.var.ee }} now displays correct order status during checkout when customer store credit is used.
 
 <!--- AC-1778-->
+
+*  The `increment_id` column in the `sales_order` table has been increased. Previously, third-party modules that assumed that `sales_order.increment_id` had a length of 50 characters saved only the first 32 characters of an `increment_id`. [GitHub-34521](https://github.com/magento/magento2/issues/34521)
 
 ### Payment methods
 
@@ -1078,15 +1080,19 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Payment Review page in the checkout workflow now displays the correct payment method name when payment is made with Venmo, PayPal Later, or PayPal.
 
-<!--- AC-2606-->
-
 <!--- AC-1195-->
+
+*  The `getCartDetails` query no longer returns all active payment methods for free orders. [GitHub-34036](https://github.com/magento/magento2/issues/34036)
 
 #### PayPal
 
 <!--- ACP2E-296-->
 
 *  {{ site.data.var.ee }} now shows the correct customer name in a guest order paid for with PayPal. Previously, the customer name was displayed as Guest.
+
+<!--- AC-2606-->
+
+*  The PaypalExpressToken resolver has been updated to use correct input from the GraphQL schema. Previously, adding the `use_paypal_credit` input that is defined in `etc/schema.graphqls` to `createPaypalExpressToken` requests has no effect because the code was incorrectly checking for the presence of `paypal_credit` rather than `use_paypal_credit`. [GitHub-35180](https://github.com/magento/magento2/issues/35180)
 
 ### Performance
 
@@ -1104,6 +1110,8 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-1136-->
 
+*  The Catalog Search fulltext indexer has been relocated outside the stores loop, which streamlines re-indexing. [GitHub-33984](https://github.com/magento/magento2/issues/33984)
+
 <!--- AC-2508-->
 
 *  Fixed issue with `array_merge` in loops. [GitHub-33929](https://github.com/magento/magento2/issues/33929)
@@ -1118,31 +1126,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The price listed on the product detail page is now the same as the price listed in the checkout workflow for tier prices that differ by quantity selected (for example, a product priced differently based on buying 2 items versus 5 items). Previously, the checkout price reflected the price for the lowest product quantity.
 
-### Product
-
-<!--- AC-712-->
-
-<!--- AC-1671-->
-
-### ProductAlert
-
-### Product video
-
 ### Promotions
 
 <!--- ACP2E-690-->
 
 *  The **Times Used** value for a discount is no longer incremented twice when a guest customer places an order with a discount and subsequently registers an account.
 
-<!--- AC-2561-->
-
 ### ReCAPTCHA
 
 *  The **Submit** button on the Login and Create an Account pages is now inactive until ReCaptcha is fully loaded.
-
-### Reports
-
-<!--- AC-2410-->
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -1153,8 +1145,6 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ACP2E-247-->
 
 *  The **Use Default** checkbox, which is used to enable RMA on the product edit page, now works as expected for Default Store. Previously, the checkbox was cleared immediately after the product was saved.
-
-### Reviews
 
 ### Rewards
 
@@ -1172,11 +1162,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ### Roles
 
-*  The **Store** >  **Configuration** > **Services** page now displays Magento Web API information as expected when Resource Access is set to  **Custom** on the Role Resources tab. [GitHub-35506](https://github.com/magento/magento2/issues/35506)
-
-### Sales
-
-### Sales Rule
+*  The **Store** >  **Configuration** > **Services** page now displays {{ site.data.var.ee }} Web API information as expected when Resource Access is set to  **Custom** on the Role Resources tab. [GitHub-35506](https://github.com/magento/magento2/issues/35506)
 
 ### Search
 
@@ -1206,6 +1192,8 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-2051-->
 
+*  Fixed PHP errors on the `catalogsearch/advanced/result` and  `catalogsearch/advanced/index` pages.  Previously,  {{ site.data.var.ee }} displayed this error  when an array was passed in any  advanced search string :  `Warning: trim() expects parameter 1 to be string, array given | magento/module-catalog-search`. [GitHub-33586](https://github.com/magento/magento2/issues/33586)
+
 ### Shipping
 
 <!--- AC-2052-->
@@ -1219,8 +1207,6 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ACP2E-209-->
 
 *  Table rate shipping rates with zero price are now displayed correctly in the checkout workflow Order Summary block for orders that have had a discount coupon applied. Previously, the shipping method was not displayed.
-
-<!--- AC-716-->
 
 ### Staging
 
@@ -1272,8 +1258,6 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Problems with DHL domestic shipping in deployments running PHP 8.1 have been resolved by requiring dutiable tags for international shipments only.
 
-### Store
-
 ### Tax
 
 <!--- ACP2E-735-->
@@ -1308,8 +1292,6 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Web API requests for order data (`GET/V1/orders/`) no longer returns negative values for row totals.
 
-<!--- AC-1829-->
-
 ### Test
 
 <!--- AC-2004-->
@@ -1321,10 +1303,6 @@ Repetitive actions have been replaced with action groups in these tests:
 *  The `testCreateProductOnStoreLevel` integration test no longer causes a nested transaction on the database.
 
 *  The following exception no longer occurs when running WebAPI tests for the Send Friend feature when product image has not set on PHP 8.1:  `exception main.ERROR: /var/www/html/lib/internal/Magento/Framework/DataObject.php:131 strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated`. [GitHub-34864](https://github.com/magento/magento2/issues/34864)
-
-#### Unit tests
-
-### Theme
 
 ### Translations and locales
 
@@ -1351,6 +1329,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ACP2E-752-->
 
 *  Search Synonyms now respect their assigned store scope. Previously, a synonym assigned to a specific store was searchable on any other store.
+
+<!--- AC-1178-->
+
+*  Problems with the Filipino (Philippines) locale has been resolved. [GitHub-33996](https://github.com/magento/magento2/issues/33996)
 
 ### UI
 
@@ -1414,19 +1396,17 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  You can now switch between store views when website restrictions are enabled. Previously, problems with the store view switcher prevented switching store views.
 
-<!--- AC-2536-->
-
 <!--- AC-2042-->
 
-*  The favicon icon upload form now supports `.ico` file types. Previously, when you tried to upload a favicon file with this extension type in the Admin, Magento displayed this error: `Warning: imagecreatefromstring(): one parameter to a memory allocation multiplication is negative or zero, failing operation gracefully in /var/www/html/vendor/magento/module-media-storage/Model/File/Validator/Image.php on line 64`. [GitHub-34858](https://github.com/magento/magento2/issues/34858)
-
-<!--- AC-2009-->
-
-<!--- AC-1957-->
+*  The favicon icon upload form now supports `.ico` file types. Previously, when you tried to upload a favicon file with this extension type in the Admin, {{ site.data.var.ee }} displayed this error: `Warning: imagecreatefromstring(): one parameter to a memory allocation multiplication is negative or zero, failing operation gracefully in /var/www/html/vendor/magento/module-media-storage/Model/File/Validator/Image.php on line 64`. [GitHub-34858](https://github.com/magento/magento2/issues/34858)
 
 <!--- AC-3122-->
 
 *  Corrected display issues with the drop-down Select menu in the Admin grid. [GitHub-35386](https://github.com/magento/magento2/issues/35386)
+
+<!--- AC-2055-->
+
+*  [GitHub-34430](https://github.com/magento/magento2/issues/34430)
 
 ### URL rewrites
 
@@ -1482,19 +1462,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The Bulk Rest API now works with the `bySku` option for configurable products. Previously, it returned a 500 error.
 
-<!--- AC-985-->
-
-<!--- AC-2529-->
-
-<!--- AC-2530-->
-
 ### Wish list
 
 <!--- ACP2E-459-->
 
-*  Updating an item quantity from the wishlist page now updates the quantity on the product detail page as expected. {{ site.data.var.ee }} now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
+*  Updating an item quantity from the wish list page now updates the quantity on the product detail page as expected. {{ site.data.var.ee }} now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
 
 ## Known issues
+
+**Issue**: {{ site.data.var.ee }} displays the following message when an administrator logs in: `Invalid security or form key. Please refresh the page`. **Workaround**: Refresh the page. To permanent remove this error occurrence,  you can lengthen the session lifetime from the command line ( for example, `bin/magento config:set admin/security/session_lifetime 10800`).  [GitHub-33749](https://github.com/magento/magento2/issues/33749) <!--- AC-734-->
 
 ## Community contributions
 
