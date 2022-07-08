@@ -30,7 +30,7 @@ The release notes include:
 
 -  {:.fix} Inventory changes implemented through the REST API are now reflected as expected on product detail pages. The cache for catalog products is now cleaned after comparing the last and current stock statuses. Previously, omitting the callback function resulted in the incorrect evaluation of stock status changes, which did not trigger the necessary cache cleaning. As a result, the storefront did not reflect the inventory changes. <!--- ACP2E-161-->
 
--  {:.fix} Products that are assigned to default stock and that were previously out of stock are now visible on the storefront after updating the source item using `V1/inventory/source-items`. Previously, this REST API endpoint set the wrong 'stock_status`. <!--- ACP2E-562-->
+-  {:.fix} Products that are assigned to default stock and that were previously out of stock are now visible on the storefront after updating the source item using `/V1/inventory/source-items`. Previously, this REST API endpoint set the wrong `stock_status`. <!--- ACP2E-562-->
 
 -  {:.fix} Unassigning inventory sources through bulk action (**Catalog** > **Products** > **Select Products** > **Actions - Unassign Inventory Source**) now works as expected when sources include SKUs that are duplicates with the exception of a leading zero (for example, `01234` and `1234`). Previously, Magento did not unassign inventory sources and threw an error. <!--- ACP2E-2641-->
 
@@ -52,7 +52,7 @@ The release notes include:
 
 -  {:.fix} The product bulk action tool (**Catalog** > **Products** > **Select Products** > **Actions** > **Assign Inventory Source**) now works as expected when assigning inventory source to multiple products when SKUs are duplicated with the exception of a leading 0 (for example, 01234 and 1234). Previously, only one product was assigned an Inventory source. [GitHub-35171](https://github.com/magento/magento2/issues/35171) <!--- AC-2584-->
 
--  {:.fix} `only_x_left_in_stock` now returns 0 if inventory is 0. Previously, it returned null. [GitHub-29932](https://github.com/magento/magento2/issues/29932) <!--- AC-1806-->
+-  {:.fix} The `ProductInterface.only_x_left_in_stock` field now returns 0 if inventory is 0. Previously, it returned null. [GitHub-29932](https://github.com/magento/magento2/issues/29932) <!--- AC-1806-->
 
 ### v1.2.4
 

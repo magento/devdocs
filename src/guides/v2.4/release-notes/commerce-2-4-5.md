@@ -99,7 +99,7 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 #### Other upgrades and replacements
 
-*  DHL Integration schema has been updated from v6.0 to v6.2. (DHL is deprecating the v6.0 schema mid-2022.) <!--- AC-3022-->
+*  DHL Integration schema has been updated from v6.0 to v6.2. (DHL will deprecate the v6.0 schema mid-2022.) <!--- AC-3022-->
 
 *  The default Gateway URL for USPS shipping has been updated to use `https` instead of `http`. <!--- AC-2426-->
 
@@ -525,7 +525,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-959-->
 
-*  The addConfigurableProductsToCart mutation now works as expected with multiple products. Previously, incorrect product information was returned, or an invalid error message was returned. [GitHub-30948](https://github.com/magento/magento2/issues/30948)
+*  The `addConfigurableProductsToCart` mutation now works as expected with multiple products. Previously, incorrect product information was returned, or an invalid error message was returned. [GitHub-30948](https://github.com/magento/magento2/issues/30948)
 
 ### Customer
 
@@ -599,7 +599,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2855-->
 
-*  {{ site.data.var.ee }} no longer throws the following error when you create a plugin for any method of class `vendor/magento/module-backend/Model/Menu.php`: `Error: Call to undefined method ReflectionUnionType::getName(). [GitHub-35292](https://github.com/magento/magento2/issues/35292)
+*  {{ site.data.var.ee }} no longer throws the following error when you create a plugin for any method of class `vendor/magento/module-backend/Model/Menu.php`: `Error: Call to undefined method ReflectionUnionType::getName()`. [GitHub-35292](https://github.com/magento/magento2/issues/35292)
 
 <!--- AC-1518-->
 
@@ -737,7 +737,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ENGCOM-8600-->
 
-*  Removed unneeded csp_whitelist.xml files. [GitHub-30607](https://github.com/magento/magento2/issues/30607)
+*  Removed unneeded `csp_whitelist.xml` files. [GitHub-30607](https://github.com/magento/magento2/issues/30607)
 
 ### Gift cards
 
@@ -877,7 +877,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2797-->
 
-*  Customers added or updates with the `createCustomer`, `createCustomerV2`, `updateCustomer`, or `updateCustomerV2` mutation are now added with active newsletter subscriptions. Previously, customers were unsubscribed from newsletters even when the request contained proper input parameters. [GitHub-33599](https://github.com/magento/magento2/issues/33599)
+*  Customers added or updated with the `createCustomer`, `createCustomerV2`, `updateCustomer`, or `updateCustomerV2` mutation are now added with active newsletter subscriptions. Previously, customers were unsubscribed from newsletters even when the request contained proper input parameters. [GitHub-33599](https://github.com/magento/magento2/issues/33599)
 
 <!--- AC-1883-->
 
@@ -901,7 +901,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-1169-->
 
-*  The `V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**. [GitHub-30132](https://github.com/magento/magento2/issues/30132)
+*  The `/V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**. [GitHub-30132](https://github.com/magento/magento2/issues/30132)
 
 ### Google Analytics
 
@@ -943,7 +943,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2096-->
 
-*  Existing records in the `catalog_url_rewrite_product_category` table are now deleted before inserting new ones. Previously, the following error occurred during multi-store product import: `SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '74583' for key 'PRIMARY', query was: INSERT INTO catalog_url_rewrite_product_category (url_rewrite_id,category_id,product_id) VALUES (?, ?, ?)`. [GitHub-34210](https://github.com/magento/magento2/issues/34210)
+*  Existing records in the `catalog_url_rewrite_product_category` table are now deleted before inserting new ones. Previously, the following error occurred during multi-store product import: `SQLSTATE[23000]: Integrity constraint violation`. [GitHub-34210](https://github.com/magento/magento2/issues/34210)
 
 ### Infrastructure
 
@@ -1082,7 +1082,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-1195-->
 
-*  The `getCartDetails` query no longer returns all active payment methods for free orders. [GitHub-34036](https://github.com/magento/magento2/issues/34036)
+*  The `cart` query no longer returns all active payment methods for free orders. [GitHub-34036](https://github.com/magento/magento2/issues/34036)
 
 #### PayPal
 
@@ -1092,7 +1092,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-2606-->
 
-*  The PaypalExpressToken resolver has been updated to use correct input from the GraphQL schema. Previously, adding the `use_paypal_credit` input that is defined in `etc/schema.graphqls` to `createPaypalExpressToken` requests has no effect because the code was incorrectly checking for the presence of `paypal_credit` rather than `use_paypal_credit`. [GitHub-35180](https://github.com/magento/magento2/issues/35180)
+*  The resolver for the createPaypalExpressToken mutation has been updated to correctly use the value specified in the use_paypal_credit input field. Previously, it attempted to use an invalid `paypal_credit` field. [GitHub-35180](https://github.com/magento/magento2/issues/35180)
 
 ### Performance
 
@@ -1290,7 +1290,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-651-->
 
-*  Web API requests for order data (`GET/V1/orders/`) no longer returns negative values for row totals.
+*  Web API requests for order data (`GET /V1/orders/`) no longer returns negative values for row totals.
 
 ### Test
 
@@ -1470,7 +1470,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ## Known issues
 
-**Issue**: {{ site.data.var.ee }} displays the following message when an administrator logs in: `Invalid security or form key. Please refresh the page`. **Workaround**: Refresh the page. To permanent remove this error occurrence,  you can lengthen the session lifetime from the command line ( for example, `bin/magento config:set admin/security/session_lifetime 10800`).  [GitHub-33749](https://github.com/magento/magento2/issues/33749) <!--- AC-734-->
+**Issue**: {{ site.data.var.ee }} displays the following message when an administrator logs in: `Invalid security or form key. Please refresh the page`. **Workaround**: Refresh the page. To permanently remove this error occurrence,  you can lengthen the session lifetime from the command line (for example, `bin/magento config:set admin/security/session_lifetime 10800`).  [GitHub-33749](https://github.com/magento/magento2/issues/33749) <!--- AC-734-->
 
 ## Community contributions
 

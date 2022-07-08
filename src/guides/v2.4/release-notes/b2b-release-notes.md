@@ -141,7 +141,7 @@ These release notes can include:
 
 ### Requisition lists
 
--  {:.fix} <!--- MC-40426--> Merchants can now use the POST `/all/V1/requisition_lists` endpoint to create a requisition list for a customer. Previously, {{ site.data.var.ee }} threw this 400 error when you tried to create a requisition list: `Could not save Requisition List`.
+-  {:.fix} <!--- MC-40426--> Merchants can now use the POST `/V1/requisition_lists` endpoint to create a requisition list for a customer. Previously, {{ site.data.var.ee }} threw this 400 error when you tried to create a requisition list: `Could not save Requisition List`.
 
 -  {:.fix} <!--- MC-41123--> The **Add to Requisition List** button now appears for a shopping cart’s in-stock products when the cart also contains out-of-stock products. Previously, if a cart contained two products, one of which was out-of-stock, the **Add to Requisition List** button did not appear for either products.
 
