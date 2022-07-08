@@ -33,6 +33,10 @@ These release notes can include:
 
 -  {:.fix} <!--- ACP2E-661 --> Pressing **Enter**  on the Quick Order page in mobile mode after entering a valid product name or SKU now takes the shopper to the next field as expected.
 
+-  {:.fix} <!--- ACP2E-607 --> Company name is now visible as expected in the billing and shipping address sections of the checkout workflow.
+
+-  {:.fix} <!--- ACP2E-375 --> Store credit is now unavailable when the Zero Subtotal Checkout payment method is disabled. Previously, the Store Credit checkbox was not functional during order placement from Admin. {{ site.data.var.ce }} did not place the order with the store credit and displayed this error: `The requested Payment Method is not available`.
+
 ## {{ site.data.var.ee }} B2B - Adobe Commerce 2.4.4
 
 -  {:.fix} <!--- MC-41985--> The time required to upgrade from {{ site.data.var.ee }} 2.3.x to {{ site.data.var.ee }} 2.4.x in deployments with more than 100,000 company roles has been substantially reduced.

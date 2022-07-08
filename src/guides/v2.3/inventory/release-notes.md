@@ -54,6 +54,12 @@ The release notes include:
 
 -  {:.fix} The `ProductInterface.only_x_left_in_stock` field now returns 0 if inventory is 0. Previously, it returned null. [GitHub-29932](https://github.com/magento/magento2/issues/29932) <!--- AC-1806-->
 
+-  {:.fix} You can now edit default stock from Admin **Stores** > **Inventory** > **Stocks**. Previously, a JavaScript error was displayed in the console when you tried to add or remove sources from default stock, although you could assign websites to default stock. <!--- ACP2E-545-->
+
+-  {:.fix} <!--- ACP2E-274--> The category list product count is now correct when using inventory single-source mode with the **Display Out-Of-Stock Products** setting enabled. A new plugin now uses `AreProductsSalableInterface` and `StockConfigurationInterface` to determine the total number of products. Previously, the category product list returned the wrong product quantity.
+
+-  {:.fix} <!--- ACP2E-322--> Configurable products are now moved to the last position in the product listing after stock is updated when the **Move out of stock to the bottom** setting is enabled. A new custom database query has been implemented to negate Elasticsearch index sort order, which disregards Admin-enabled sort order. Previously, configurable products and their child products were not moved to the bottom of the list when this setting was enabled.
+
 ### v1.2.4
 
 {{site.data.var.im}} 1.2.4 (module version: `magento/inventory-metapackage = 1.2.4`) is supported with version 2.4.4 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
