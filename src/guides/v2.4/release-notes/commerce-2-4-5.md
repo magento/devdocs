@@ -64,7 +64,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  `PHPStan` (^1.5.7 with constraint) [GitHub-35315](https://github.com/magento/magento2/issues/35315)<!--- AC-2876-->
 
-*  DHL Integration schema has been updated from v6.0 to v6.2. DHL has deprecated v6.0 <!--- AC-3022-->
+*  DHL Integration schema has been updated from v6.0 to v6.2. DHL has deprecated v6.0. This upgrade will not result in a change in product behavior.  <!--- AC-3022-->
 
 Outdated JavaScript libraries have been updated to their latest versions, and outdated dependencies have been removed. These changes are backward compatible. <!--- AC-2036-->
 
@@ -178,7 +178,13 @@ New features for this release include:
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
 ### PayPal Payment enhancements
 
-Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
+*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
+
+*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, minicart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
+
+#### Braintree
+
+The KOUNT integration has been removed due to discontinuation by Braintree.
 
 ### Live Search
 
@@ -746,7 +752,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2364 1456-->
 
-*  The `categories` query no longer throws an exception when fetching a list of categories one of which contains an image that cannot be found on the filesystem. Previously, {{ site.data.var.ee }} threw this exception: Category image not found`. [GitHub-34266](https://github.com/magento/magento2/issues/34266)
+*  The `categories` query no longer throws an exception when fetching a list of categories one of which contains an image that cannot be found on the filesystem. Previously, {{ site.data.var.ee }} threw this exception: `Category image not found`. [GitHub-34266](https://github.com/magento/magento2/issues/34266)
 
 <!--- AC-2368-->
 
@@ -754,7 +760,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2373-->
 
-*  The `updateCartItems` query now removes products as expected when the product stock has reached the maximum stock amount. [GitHub-30220](https://github.com/magento/magento2/issues/30220)
+*  The `updateCartItems` mutation now removes products as expected when the product stock has reached the maximum stock amount. [GitHub-30220](https://github.com/magento/magento2/issues/30220)
 
 <!--- AC-2366 734 MC-42964 -->
 
@@ -1253,7 +1259,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-785-->
 
-*  Added a grave accent [ ` ] character to the name validator so that customer account can be created for first or last names that include this accent.
+*  Added a grave accent [ \` ] character to the name validator so that customer account can be created for first or last names that include this accent.
 
 <!--- ACP2E-682-->
 

@@ -537,7 +537,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 
 <!--- AC-2364 1456-->
 
-*  The `categories` query no longer throws an exception when fetching a list of categories one of which contains an image that cannot be found on the filesystem. Previously, {{ site.data.var.ce }} threw this exception: Category image not found`. [GitHub-34266](https://github.com/magento/magento2/issues/34266)
+*  The `categories` query no longer throws an exception when fetching a list of categories one of which contains an image that cannot be found on the filesystem. Previously, {{ site.data.var.ce }} threw this exception: `Category image not found`. [GitHub-34266](https://github.com/magento/magento2/issues/34266)
 
 <!--- AC-2368-->
 
@@ -545,7 +545,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 
 <!--- AC-2373-->
 
-*  The `updateCartItems` query now removes products as expected when the product stock has reached the maximum stock amount. [GitHub-30220](https://github.com/magento/magento2/issues/30220)
+*  The `updateCartItems` mutation now removes products as expected when the product stock has reached the maximum stock amount. [GitHub-30220](https://github.com/magento/magento2/issues/30220)
 
 <!--- AC-2366 734 MC-42964 -->
 
@@ -947,7 +947,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-785-->
 
-*  Added a grave accent [ ` ] character to the name validator so that customer account can be created for first or last names that include this accent.
+*  Added a grave accent [ \` ] character to the name validator so that customer account can be created for first or last names that include this accent.
 
 <!--- ACP2E-682-->
 
