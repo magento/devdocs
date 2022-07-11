@@ -1041,7 +1041,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-2251-->
 
-*  You can now set a Vimeo video to run in the background in a `banner` element when CSP is set to `restrict mode`. Previously, {{ site.data.var.ce }} threw this JavaScript error when you tried to save the element: `Refused to connect to 'https://vimeo.com/api/v2/video/76979871.json&#39; because it violates the following Content Security Policy directive`.
+*  You can now set a Vimeo video to run in the background in a `banner` element when CSP is set to `restrict mode`. Previously, {{ site.data.var.ce }} threw a JavaScript error.
 
 ### Web API framework
 
