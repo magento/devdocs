@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Translations overview
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/
+layout: migrated
 ---
 
 The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.

@@ -4,6 +4,8 @@ title: JavaScript coding standard
 landing-page: Coding standards
 functional_areas:
   - Standards
+migrated_to: https://developer.adobe.com/commerce/php/coding-standards/js/
+layout: migrated
 ---
 
 Use Magento's [ESLint Rules][eslint-rules] to make sure your code adheres to Magento's coding standards.

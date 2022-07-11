@@ -21,6 +21,28 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.16
+
+-  **MDVA-44703** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where order totals in the Orders report are miscalculated for the restricted admin user.
+-  **MDVA-44940** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the SQL error that occurs while saving the category from admin.
+-  **MDVA-44562** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.2-p2`)_-Fixes the issue where the non-default store id for quote items is overridden by the default store id, despite the GraphQL request originating from the non-default store view.
+-  **MDVA-43167** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where admin order grid mass action doesn't apply for multi-page when admin user selects all orders.
+-  **MDVA-44044** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.2-p2`)_-Fixes the issue where a product is not displayed on the category page after it is assigned to a new website.
+-  **MDVA-42509** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.4`)_-Fixes the issue where a CSV could not be uploaded for a quick order resulting in an 'Unable to send the cookie' error.
+-  Updated patches: MDVA-41061, MDVA-42584.
+-  The prefix for the new Quality Patches Tool patches will be changed from "MDVA" to "ACSD" due to internal process changes.
+
+## v1.1.15
+
+-  **MDVA-40961** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where an additional item can't be added to the cart when the minimum qty of the item is already in the cart.
+-  **MDVA-44887** _(for Adobe Commerce and Magento Open Source `>=2.4.4 <2.4.5`)_-Fixes the "Uncaught SyntaxError: Unexpected token 'const'" error in the Admin panel.
+-  **MDVA-43718** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes "The consumer isn't authorized to access %resources." error that appears when accessing a shared catalog from a custom integration.
+-  **MDVA-44660** _(for Adobe Commerce and Magento Open Source `>=2.4.2-p1 <2.4.5`)_-Fixes the issue where the grave accent character [ ` ] could not be used for a customer's first and last name.
+-  **MDVA-40896** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the "Error: TypeError: Argument 3 passed to Magento" error in async product bulk API.
+-  **MDVA-38559** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.3`)_-Fixes the /V1/customers/search API error for customers with more than one subscription.
+-  **MDVA-44533** _(for Adobe Commerce and Magento Open Source `>=2.3.1 <2.4.4`)_-Fixes the issue where the discount is wrongly applied to a bundle child product.
+-  Updated patches: MDVA-41061, MDVA-42269.
+
 ## v1.1.14
 
 -  **MDVA-43983** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where products 'Not Visible Individually' still appear in Catalog Advanced Search Results.
@@ -255,7 +277,7 @@ For information about quality patches created by the Community for {{site.data.v
 -  **MDVA-36615** _(for Magento `2.4.2`)_-Fixes the issue with incorrect product count in admin product grid.
 -  **MDVA-36464** _(for Magento `>=2.4.0 <=2.4.2`)_-Fixes the issue where the email notification configuration is not working at store-view level.
 -  **MDVA-36138** _(for Magento `^2.3.2`)_-Fixes the issue where the shipping price is not adjusted and full shipping price is shown to customers if not all items in the cart qualify for the free shipping cart rule.
--  **MDVA-36424** _(for Magento `>=1.3.0 <=1.3.3-p1 || >=2.0.0 <2.2.0`)_-Fixes the issue where media images, attached to page builder elements, disappear when the content is being edited repeatedly, if the backend base URL is different from the storefront base URL.
+-  **MDVA-36424** _(for Magento `>=2.3.0 <=2.3.3-p1 || >=2.0.0 <2.2.0`)_-Fixes the issue where media images, attached to page builder elements, disappear when the content is being edited repeatedly, if the backend base URL is different from the storefront base URL.
 -  **MDVA-35984** _(for Magento `^2.4.0`)_-Fixes the issue with incorrect product quantity and sellable quantity, after creating multiple concurrent shipments for the same product.
 
 ## v1.0.20

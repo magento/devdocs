@@ -2,6 +2,8 @@
 layout: tutorial
 group: rest-api
 title: Step 2. Get the admin token
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-admin-token/
+layout: migrated
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials
@@ -52,7 +54,7 @@ Your request must specify the admin user's `username`, `password` and `otp` (one
 
 By default, an admin token is valid for 4 hours. To change this value, log in to Admin and go to **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration** > **Admin Token Lifetime (hours)**.
 
-See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information about authorization tokens.
+See [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token.html) for more information about authorization tokens.
 
 **Endpoint:**
 

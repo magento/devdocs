@@ -64,12 +64,13 @@ After successfully creating and testing the local installation to use multiple s
 {:.bs-callout-tip}
 You can also use a local {{site.data.var.mcd-prod}} environment to set up multiple websites or stores. See the Cloud Docker instructions to [Set up multiple websites or stores]({{site.baseurl}}/cloud/docker/docker-multi-website.html).
 
+### Configuration updates to Pro environments
+
+{% include cloud/note-pro-missing-self-service-options.md %}
+
 ### Configure routes for separate domains {#routes}
 
 Routes define how to process incoming URLs. Multiple stores with unique domains require you to define each domain in the `routes.yaml` file. The way you configure routes depends on how you want your site to operate.
-
-{:.bs-callout-info}
-For Pro, if your route configurations are not setting properly, you can create a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) and include "enable self-service routes" in your request.
 
 {:.procedure}
 To configure routes in an integration environment:

@@ -1,10 +1,10 @@
 ---
 group: shared-services
-title: Events SDK Reference
+title: Adobe Commerce Event SDK Reference
 ee_only: True
 ---
 
-The Storefront Events SDK functions are organized into the following sections:
+The Adobe Commerce Event SDK functions are organized into the following sections:
 
 -  [Context]({{ site.baseurl }}/shared-services/storefront-events-api-ref-context.html)
 -  [Publish]({{ site.baseurl }}/shared-services/storefront-events-api-ref-publish.html)

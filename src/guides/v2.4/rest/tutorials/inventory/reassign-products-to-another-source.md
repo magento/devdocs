@@ -2,6 +2,8 @@
 layout: tutorial
 group: rest-api
 title: Step 5. Reassign products to custom sources
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/reassign-products-to-another-source/
+layout: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 5. Reassign products to custom sources
 menu_order: 50

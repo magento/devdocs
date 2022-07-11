@@ -3,6 +3,8 @@ group: php-developer-guide
 title: Searching with Repositories
 functional_areas:
   - Search
+migrated_to: https://developer.adobe.com/commerce/php/development/components/searching-with-repositories/
+layout: migrated
 ---
 
 ## What is a repository? {#m2devgde-repository-intro}
@@ -42,7 +44,7 @@ $filter
 This filter will find all urls with the suffix of "magento.com".
 
 {:.bs-callout-info}
-A full list of condition types can be found in the [Rest API Reference]({{ page.baseurl }}/rest/performing-searches.html).
+A full list of condition types can be found in the [Rest API Reference](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html).
 
 ### Filter Group
 

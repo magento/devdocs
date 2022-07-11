@@ -37,6 +37,9 @@ pages:
       url: /ext-best-practices/phpstorm/introduction.html
       children:
 
+          - label: Installation
+            url: /ext-best-practices/phpstorm/installation.html
+
           - label: Code generation
             url: /ext-best-practices/phpstorm/code-generation.html
 
