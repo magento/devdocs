@@ -121,7 +121,7 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 *  The library `jquery/jquery-cookie` has been replaced with `js-cookie/js-cookie`. <!--- AC-2626-->
 
-*  The `jarallax.js` and `jaralax-video.js` libraries have been updated to use the latest version of the Vimeo REST API. See [The Basics]( https://developer.vimeo.com/api/guides/start). <!--- AC-2590-->
+*  The `jarallax.js` and `jaralax-video.js` libraries have been updated to use the latest version of the Vimeo REST API. <!--- AC-2590-->
 
 ### Performance and scalability enhancements
 
