@@ -1,6 +1,6 @@
 ---
 group: shared-services
-title: Subscribe - Events SDK Reference
+title: Subscribe - Adobe Commerce Event SDK Reference
 ee_only: True
 ---
 ## Functions
