@@ -135,7 +135,11 @@ Primary index performance has been improved by reducing the number of primary in
 
 ### GraphQL
 
-This release includes these GraphQL enhancements:
+GraphQL performance hs been improved by these enhancements:
+
+*  **Optimized creation of unified GraphQL schemas**. Rebuilding a GraphQL schema after flushing a Commerce instance’s cache can consume many resources, particularly during heavy site traffic. The time required to rebuild a schema has been reduced significantly.
+
+*  **Improved authorization processing** through the use of JSON Web Tokens (JWT) and session-less GraphQL API.
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -158,6 +162,9 @@ Channel Manager can now trigger refunds from Adobe Commerce. Merchants can now m
 
 Requests are now automatically synced back to the Walmart Marketplace.
 
+### Google Analytics
+
+See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).
 ### PWA Studio
 
 PWA Studio v.12.x.x is compatible with {{ site.data.var.ee }} 2.4.5.
@@ -172,8 +179,6 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 ### PayPal Payment enhancements
 
 Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
-
-### Braintree
 
 ### Live Search
 
@@ -198,6 +203,18 @@ Page Builder column layout includes these enhancements: <!--- PB-547-->
 ### Branding and style changes
 
 The Admin has been updated to align with Adobe’s branch strategy. Changes affect headers, footers, data grid color updates, and navigation elements.
+
+### Upgrade Compatibility Tool
+
+New enhancements include:
+
+*  Method signature validation now identifies incompatible changes within a method or a constructor signature. <!--- AC-2632-->
+
+*  Database schema validation now identifies schema changes and incompatibilities. <!--- AC-58-->
+
+*  DI configuration validation now verifies references to removed or deprecated non-API core classes in `di.xml` and preferences for core classes and interfaces.  <!--- AC-438-->
+
+*  UCT now identifies code deprecations and provides specific recommendations for resolving each issue.  <!--- AC-3147-->
 
 ## Fixed issues
 
