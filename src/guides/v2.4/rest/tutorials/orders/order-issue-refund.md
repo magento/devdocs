@@ -2,6 +2,8 @@
 layout: tutorial
 group: rest-api
 title: Step 10. Issue a partial refund
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-issue-refund/
+layout: migrated
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials
@@ -82,6 +84,6 @@ Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Credi
 Related topics
 
 *  [Getting Started with Magento Web APIs](https://developer.adobe.com/commerce/webapi/get-started/bk-get-started-api.html)
-*  [Create a configurable product Tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html)
-*  [REST API Reference Overview]({{ page.baseurl }}/rest/bk-rest.html)
+*  [Create a configurable product Tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/)
+*  [REST API Reference Overview](https://developer.adobe.com/commerce/webapi/rest/)
 *  [REST API documentation]({{site.baseurl}}/redoc/{{page.guide_version}}/)

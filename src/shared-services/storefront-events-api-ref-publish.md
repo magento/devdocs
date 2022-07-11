@@ -1,6 +1,6 @@
 ---
 group: shared-services
-title: Publish - Events SDK Reference
+title: Publish - Adobe Commerce Event SDK Reference
 ee_only: True
 ---
 
