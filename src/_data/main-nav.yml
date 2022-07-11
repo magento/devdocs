@@ -105,6 +105,11 @@
 
         - label: Module Reference Guide
           url: /mrg/intro.html
+          include_versions: ["2.3"]
+
+        - label: Module Reference Guide
+          url: https://developer.adobe.com/commerce/php/module-reference/
+          include_versions: ["2.4"]
 
         - label: Coding Standards
           url: /coding-standards/bk-coding-standards.html

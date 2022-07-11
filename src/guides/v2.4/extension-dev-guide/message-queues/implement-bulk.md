@@ -3,6 +3,8 @@ group: php-developer-guide
 title: Example bulk operations implementation
 functional_areas:
   - Services
+migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/bulk-operations-example/
+layout: migrated
 ---
 
 This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:
@@ -325,7 +327,11 @@ The `queue_consumer.xml` file defines the relationship between a queue and its c
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+<<<<<<< HEAD
     <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" handler="<Consumer_Class>::<Consumer_method>"/>
+=======
+    <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="<Consumer_Class>::<Consumer_method>"/>
+>>>>>>> master
 </config>
 ```
 
@@ -336,7 +342,11 @@ The `queue_publisher.xml` file defines the exchange where a topic is published. 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
     <publisher topic="<topic_name>">
+<<<<<<< HEAD
         <connection name="amqp" exchange="<exchange_name>" />
+=======
+        <connection name="amqp" exchange="<exchange>" />
+>>>>>>> master
     </publisher>
 </config>
 ```

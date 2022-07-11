@@ -6,6 +6,9 @@ title: Using DocBlock Annotations
 DocBlock annotations help to declare context in your code. In addition to built-in [PHPUnit annotations][]
 , the Integration testing framework provides custom annotations described in this topic.
 
+{:.bs-callout-info}
+Native PHP8 Attributes can be used instead or together with DocBlock annotations. This new method offers more flexibility and improves readability of the code. See the [Attributes][] to learn more. This feature is currently only available for {{site.data.var.ce}} contributors. It will be released for general use with {{site.data.var.ce}} 2.4.5.
+
 ### Quick overview
 
 The following annotations are available in integration tests:
@@ -44,4 +47,5 @@ This order is necessary to meet the requirement of setting up the store-scoped c
 
 <!-- LINK DEFINITIONS -->
 
-[PHPUnit annotations]: https://phpunit.readthedocs.io/en/9.1/annotations.html
+[PHPUnit annotations]: https://phpunit.readthedocs.io/en/9.5/annotations.html
+[Attributes section]: {{ page.baseurl }}/test/integration/attributes.html

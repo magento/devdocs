@@ -1,6 +1,8 @@
 ---
 group: rest-api
 title: Generate a local REST reference
+migrated_to: https://developer.adobe.com/commerce/webapi/quick-reference/rest/generate-local/
+layout: migrated
 functional_areas:
   - Integration
 ---
@@ -10,6 +12,10 @@ The REST documentation on the Magento devdocs [website](https://glossary.magento
 Magento provides two ways to get detailed information about the structure of the REST endpoints, as described below.
 
 ## Generate a full REST reference locally
+
+{:.bs-callout-info}
+For improved application security, starting from Magento 2.4.4, Swagger UI does not function if the operation mode is set to Production. It only functions in Developer mode.
+See how to switch operation mode [here]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode).
 
 The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include {{site.data.var.ee}} modules, third-party modules, and [extension](https://glossary.magento.com/extension) attributes that have been installed on your system. To view this documentation, go to:
 
@@ -25,7 +31,7 @@ To view the Swagger documentation for a specific store view, use this URL:
 -  The assigned store code
 -  `all`. This value only applies to the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the API call affects all the merchant's stores.
 
-By default, Magento returns documentation for resources available to anonymous users across all stores. If you specify a valid customer or admin token in the `api_key` text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the `POST /V1/integration/customer/token` endpoint or a 2FA endpoint such as `POST /V1/tfa/provider/google/authenticate` with the appropriate payload, as directed in [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
+By default, Magento returns documentation for resources available to anonymous users across all stores. If you specify a valid customer or admin token in the `api_key` text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the `POST /V1/integration/customer/token` endpoint or a 2FA endpoint such as `POST /V1/tfa/provider/google/authenticate` with the appropriate payload, as directed in [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token.html).
 
 The generated Swagger documentation provides the capability to test REST requests. A user can enter a sample request, then press the **Try it out!** button, and Swagger returns information such as a `curl` command, a request URL, a response body, a response code, and the response header. The **Try it out!** button will not work unless a bearer [authorization](https://glossary.magento.com/authorization) token has been specified.
 
@@ -52,7 +58,7 @@ To return information about all services:
 `http://<magento_host>/rest/<store_code>/schema`
 
 {:.bs-callout-info}
-You must specify an authorization token for an [admin](https://glossary.magento.com/admin) user to return information for most endpoints. See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information.
+You must specify an authorization token for an [admin](https://glossary.magento.com/admin) user to return information for most endpoints. See [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token.html) for more information.
 
 ## Return the complete JSON schema
 
@@ -80,5 +86,5 @@ You may also use web server rewrite rules to redirect users trying to access the
 {:.ref-header}
 Related topics
 
-[Restricting access to anonymous web APIs]({{ page.baseurl }}/rest/anonymous-api-security.html)
-[Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html)
+[Restricting access to anonymous web APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/anonymous-api-security.html)
+[Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token.html)
