@@ -3,9 +3,7 @@ group: release-notes
 title: Adobe Commerce 2.4.5 Release Notes
 ---
 
-{{ site.data.var.ee }} 2.4.5 introduces support for
-
-This release includes almost 240 quality fixes and enhancements.
+This release includes over 400 quality fixes and enhancements.
 
 {:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.5 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
@@ -50,9 +48,9 @@ Security improvements for this release improve compliance with the latest securi
 
 ### Platform enhancements
 
-*  **Adobe Commerce on-premises deployments**: Adobe Commerce 2.4.5 has been tested and confirmed to be compatible with Elasticsearch 7.17 (~7.17.0 with constraint). Merchants hosting Adobe Commerce on-premises can use either Elasticsearch or OpenSearch 1.2. <!--- AC-2425-->
+*  **{{ site.data.var.ee }} on-premises deployments**: {{ site.data.var.ee }} 2.4.5 has been tested and confirmed to be compatible with Elasticsearch 7.17 (~7.17.0 with constraint). Merchants hosting {{ site.data.var.ee }} on-premises can use either Elasticsearch or OpenSearch 1.2. <!--- AC-2425-->
 
-*  **Adobe Commerce cloud-hosted deployments**: ElasticSearch 7.11 or later is not supported on Adobe Commerce 2.4.5 cloud-hosted deployments. OpenSearch is the default search engine for Adobe Commerce 2.4.5 cloud deployments.
+*  **{{ site.data.var.ee }} cloud-hosted deployments**: ElasticSearch 7.11 or later is not supported on {{ site.data.var.ee }} 2.4.5 cloud-hosted deployments. OpenSearch is the default search engine for {{ site.data.var.ee }} 2.4.5 cloud deployments.
 
 {{ site.data.var.ee }} 2.4.5 now supports
 
@@ -64,7 +62,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  `PHPStan` (^1.5.7 with constraint) [GitHub-35315](https://github.com/magento/magento2/issues/35315)<!--- AC-2876-->
 
-*  DHL Integration schema has been updated from v6.0 to v6.2. DHL has deprecated v6.0. This upgrade will not result in a change in product behavior.  <!--- AC-3022-->
+The DHL Integration schema has been updated from v6.0 to v6.2. DHL has deprecated v6.0. This upgrade will not result in a change in product behavior.  <!--- AC-3022-->
 
 Outdated JavaScript libraries have been updated to their latest versions, and outdated dependencies have been removed. These changes are backward compatible. <!--- AC-2036-->
 
@@ -99,7 +97,7 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 #### Other upgrades and replacements
 
-*  DHL Integration schema has been updated from v6.0 to v6.2. (DHL will deprecate the v6.0 schema mid-2022.) <!--- AC-3022-->
+*  The DHL Integration schema has been updated from v6.0 to v6.2. (DHL will deprecate the v6.0 schema mid-2022.) <!--- AC-3022-->
 
 *  The default Gateway URL for USPS shipping has been updated to use `https` instead of `http`. <!--- AC-2426-->
 
@@ -125,70 +123,9 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 ### Performance and scalability enhancements
 
-{{ site.data.var.ee }} performance enhancements
-
-Performance enhancements in this release:
-
 #### Price indexer optimization
 
 Primary index performance has been improved by reducing the number of primary indexes from 3 to 1 for the `catalog_product_index_price_tmp` table. This enhancement reduced the number of records created in the price index by reducing eSKU multiplication that resulted from shared catalogs. Indexing time has been significantly reduced. <!--- MCP-653 MC-43342-->
-
-### GraphQL
-
-GraphQL performance hs been improved by these enhancements:
-
-*  **Optimized creation of unified GraphQL schemas**. Rebuilding a GraphQL schema after flushing a Commerce instance’s cache can consume many resources, particularly during heavy site traffic. The time required to rebuild a schema has been reduced significantly.
-
-*  **Improved authorization processing** through the use of JSON Web Tokens (JWT) and session-less GraphQL API.
-
-See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
-
-### Adobe Sign Extension
-
-The Adobe Commerce check out workflow now supports the inclusion of an esignature agreement page powered by Adobe Sign.
-
-### B2B
-
-This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html)
-
-**Reduced eSKU multiplication with Shared Catalogs (Customer Groups)**. The new **Enabled Shared Catalog direct product price assigning** configuration option improves product price indexer performance when enabled. <!--- MCP-946-->
-
-### Channel Manager
-
-Channel Manager can now trigger refunds from Adobe Commerce. Merchants can now manage the entire order workflow from within Adobe Commerce, including these tasks:
-
-*  Process refunds from Adobe Commerce
-*  Refund shoppers using the origin form of payment
-
-Requests are now automatically synced back to the Walmart Marketplace.
-
-### Google Analytics
-
-See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).
-### PWA Studio
-
-PWA Studio v.12.x.x is compatible with {{ site.data.var.ee }} 2.4.5.
-
-New features for this release include:
-
-*  Shopper behavior data is collected on PWA Studio storefront for web analytics services.  Merchants can now subscribe and extend these events as needed.
-
-*  Merchants can now select a service to deploy from the Admin (Beacon or Google Tag Manager).
-
-For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
-### PayPal Payment enhancements
-
-*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
-
-*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, minicart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
-
-#### Braintree
-
-The KOUNT integration has been removed due to discontinuation by Braintree.
-
-### Live Search
-
-This release introduces support for B2B customer groups and custom pricing.
 
 ### Accessibility updates
 
@@ -198,7 +135,76 @@ This release includes enhancements to the Admin UI that improve the experience o
 *  Screen readers are now informed when a new page loads
 *  Contrast and keyboard accessibility have been improved
 
+### Adobe Sign Extension
+
+The {{ site.data.var.ee }} checkout workflow now supports the inclusion of an esignature agreement page powered by Adobe Sign.
+
+### Branding and style changes
+
+The Admin has been updated to align with Adobe’s branch strategy. Changes affect headers, footers, data grid color updates, and navigation elements.
+
+### B2B
+
+**Reduced eSKU multiplication with Shared Catalogs (Customer Groups)**. The new **Enabled Shared Catalog direct product price assigning** configuration option improves product price indexer performance when enabled. <!--- MCP-946-->
+
+This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
+
+### Channel Manager
+
+Channel Manager can now trigger refunds from {{ site.data.var.ee }}. Merchants can now manage the entire order workflow from within {{ site.data.var.ee }}, including these tasks:
+
+*  Process refunds from {{ site.data.var.ee }}
+*  Refund shoppers using the origin form of payment
+
+Requests are now automatically synced back to the Walmart Marketplace.
+
+### Google Analytics
+
+See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).
+
+### GraphQL
+
+GraphQL performance enhancements include:
+
+*  **Optimized creation of unified GraphQL schemas**. Rebuilding a GraphQL schema after flushing a Commerce instance’s cache can consume many resources, particularly during heavy site traffic. The time required to rebuild a schema has been reduced significantly.
+
+*  **Improved authorization processing** through the use of JSON Web Tokens (JWT) and session-less GraphQL API.
+
+See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
+
+### Inventory
+
+Inventory template security has been enhanced.
+
+### PWA Studio
+
+PWA Studio v.12.5.x is compatible with {{ site.data.var.ee }} 2.4.5.
+
+New features for this release include:
+
+*  Shopper behavior data is collected on PWA Studio storefront for web analytics services.  Merchants can now subscribe and extend these events as needed.
+
+*  Merchants can now select a service to deploy from the Admin (Beacon or Google Tag Manager).
+
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
+
+### PayPal Payment enhancements
+
+*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
+
+*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, minicart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
+
+#### Braintree
+
+Braintree has discontinued the KOUNT integration and it has been removed from the codebase.
+
+### Live Search
+
+This release introduces support for B2B customer groups and custom pricing.
+
 ### Page Builder
+
+Page Builder v.1.7.2 is compatible with {{ site.data.var.ee }} 2.4.5.
 
 Page Builder column layout includes these enhancements: <!--- PB-547-->
 
@@ -206,13 +212,9 @@ Page Builder column layout includes these enhancements: <!--- PB-547-->
 
 *  Column resizing now supports wrapping triggered by user actions.
 
-### Branding and style changes
-
-The Admin has been updated to align with Adobe’s branch strategy. Changes affect headers, footers, data grid color updates, and navigation elements.
-
 ### Upgrade Compatibility Tool
 
-New enhancements include:
+Enhancements include:
 
 *  Method signature validation now identifies incompatible changes within a method or a constructor signature. <!--- AC-2632-->
 
@@ -920,21 +922,13 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 *  `indexer:reset` has been refactored to call `$indexer->invalidate()`. [GitHub-34988](https://github.com/magento/magento2/issues/34988)
 
-#### Library removals and deprecations
-
-#### Library upgrades
-
 ### Logging
 
 <!--- ACP2E-203-->
 
 *  Customer, customer address, and order actions are now logged correctly in the Admin action report. Previously, {{ site.data.var.ee }} did not log actions if the `postDispatch` handler had not been specified in configuration settings.
 
-### {{ site.data.var.ee }} coding standard
-
 ### MFTF
-
-#### New action groups
 
 #### Action groups
 
