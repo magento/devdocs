@@ -3,9 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.5 Release Notes
 ---
 
-{{ site.data.var.ce }} 2.4.5 introduces
-
-This release includes almost  quality fixes and enhancements.
+This release includes over 290 quality fixes and enhancements.
 
 {:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ce }} 2.4.5 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
@@ -16,7 +14,7 @@ Although code for these features is bundled with quarterly releases of the {{ si
 
 ### Hotfixes included in this release
 
-{{ site.data.var.ce }} 2.4.4 includes resolution of all issues that were addressed by the following hotfixes, which were provided for {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.4, 2.4.3-p2, and 2.3.7-p3:
+{{ site.data.var.ce }} 2.4.5 includes resolution of all issues that were addressed by the following hotfixes, which were provided for {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.4, 2.4.3-p2, and 2.3.7-p3:
 
 ## {{ site.data.var.ce }} 2.4.5 highlights
 
@@ -40,25 +38,146 @@ See Adobe Security Bulletin for the latest discussion of these fixed issues.
 
 Security improvements for this release improve compliance with the latest security best practices, including:
 
+*  reCAPTCHA support has been added to the Wish List Sharing, Create New Customer Account, and Gift Card forms. <!--- AC-1144-->
+
+*  ACL resources have been added to Inventory. <!--- AC-1622-->
+
+*  Inventory template security has been enhanced.
+
+*  The `MaliciousCode` filter has been upgraded to use the `HtmlPurifier` library. <!--- AC-1498-->
+
 ### Platform enhancements
 
 {{ site.data.var.ce }} 2.4.5 now supports
 
+*  Composer 2.2  <!--- AC-2033-->
+
+*  TinyMCE (5.10.2). Earlier versions of TinyMCE  (v5.9.2 or earlier) allowed arbitrary JavaScript execution when a specially crafted URL or an image with a specially crafted URL was updated. <!--- AC-2039 1784 1789-->
+
+*  jQueryUI (1.13.1) <!--- AC-2544-->
+
+*  `PHPStan` (^1.5.7 with constraint) [GitHub-35315](https://github.com/magento/magento2/issues/35315)<!--- AC-2876-->
+
+The DHL Integration schema has been updated from v6.0 to v6.2. DHL has deprecated v6.0. This upgrade will not result in a change in product behavior.  <!--- AC-3022-->
+
+Outdated JavaScript libraries have been updated to their latest versions, and outdated dependencies have been removed. These changes are backward compatible. <!--- AC-2036-->
+
+#### Composer dependency updates
+
+<!--- AC-2876 2744 2912 2577-->
+
+The following Composer dependencies have been updated to the latest versions with constraint:
+
+*  `colinmollenhour/credis`  (1.13.0)? <!--- AC-2732-->
+*  `guzzlehttp/guzzle` (^7.4.2)
+*  `laminas/laminas-captcha` (updated with a constraint ^2.12) <!--- AC-2625-->
+*  `laminas/laminas-db`   (^2.15.0)
+*  `laminas/laminas-di` (^3.7.0)
+*  `laminas/laminas-escaper` (~2.10.0)
+*  `laminas/laminas-eventmanager`  (^3.5.0)
+*  `laminas/laminas-feed`   (^2.17.0)
+*  `laminas/laminas-mail` (^2.16.0)
+*  `laminas/laminas-mvc`  (^3.3.3)
+*  `laminas/laminas-server` (^2.11.1)
+*  `laminas/laminas-servicemanager`  (^3.11.0)
+*  `laminas/laminas-validator` (^2.17.0)
+*  `league/fly`  (2.4.3) <!--- AC-2744-->
+*  `monolog/monolog`  (^2.5)
+*  `phpmd/phpmd`   (^2.12.0)
+*  `phpstan/phpstan`  (^1.5.7)
+*  `phpunit/phpunit`  (~9.5.20)
+*  `php-cs-fixer` (^3.4.0) <!--- AC-2259-->
+*  `webonyx/graphql-php`  (14.11.6)
+
+The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view` dependencies have been removed. <!--- AC-2598-->
+
+#### Other upgrades and replacements
+
+*  The DHL Integration schema has been updated from v6.0 to v6.2. (DHL will deprecate the v6.0 schema mid-2022.) <!--- AC-3022-->
+
+*  The default Gateway URL for USPS shipping has been updated to use `https` instead of `http`. <!--- AC-2426-->
+
+*  The `Froogaloop` library has been replaced with the Vimeo `Player.js` library (2.16.4). <!--- AC-2527 2262-->
+
+*  The `grunt-eslint` (NPM) library has been upgraded to the latest version. <!--- AC-2700-->
+
+*  The `jQuery Storage` libraries have been replaced with `julien-maurel/js-storage`. <!--- AC-2627-->
+
+*  The `php-cs-fixer` and `phpcs` static code analysis tools are now compatible with PHP 8.x. <!--- AC-2259-->
+
+*  `glob.js` dependency (upgraded with constraint to ~7.2.0) <!--- AC-2547-->
+
+*  `serve-static.js` dependency (upgraded with constraint ~1.14.2) <!--- AC-2548-->
+
+*  `underscore.js` dependency (NPM) (1.14.2) <!--- AC-2546 2549-->
+
+*  `moment-timezone-with-data.js` (0.5.34) <!--- AC-2545-->
+
+*  The library `jquery/jquery-cookie` has been replaced with `js-cookie/js-cookie`. <!--- AC-2626-->
+
+*  The `jarallax.js` and `jaralax-video.js` libraries have been updated to use the latest version of the Vimeo REST API. <!--- AC-2590-->
+
 ### GraphQL
 
-This release includes these GraphQL enhancements:
+GraphQL performance enhancements include:
 
-*  **Performance improvements**:
+*  **Optimized creation of unified GraphQL schemas**. Rebuilding a GraphQL schema after flushing a Commerce instance’s cache can consume many resources, particularly during heavy site traffic. The time required to rebuild a schema has been reduced significantly.
+
+*  **Improved authorization processing** through the use of JSON Web Tokens (JWT) and session-less GraphQL API.
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
+### Channel Manager
+
+Channel Manager can now trigger refunds from {{ site.data.var.ce }}. Merchants can now manage the entire order workflow from within {{ site.data.var.ce }}, including these tasks:
+
+*  Process refunds from {{ site.data.var.ce }}
+*  Refund shoppers using the origin form of payment
+
+Requests are now automatically synced back to the Walmart Marketplace.
+
+### Inventory
+
+Inventory template security has been enhanced.
+
+### PWA Studio
+
+PWA Studio v.12.5.x is compatible with {{ site.data.var.ce }} 2.4.5.
+
+New features for this release include:
+
+*  Shopper behavior data is collected on PWA Studio storefront for web analytics services.  Merchants can now subscribe and extend these events as needed.
+
+*  Merchants can now select a service to deploy from the Admin (Beacon or Google Tag Manager).
+
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
+
 ### PayPal Payment enhancements
 
+*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
+
+*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, minicart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
+
+#### Braintree
+
+Braintree has discontinued the KOUNT integration and it has been removed from the codebase.
 ### Accessibility updates
 
-This release brings enhanced conformance to standard accessibility guidelines.
+This release includes enhancements to the Admin UI that improve the experience of users with vision limitations and increase conformance to standard accessibility guidelines. These enhancements include:
+
+*  The screen reader now summarizes search results
+*  Screen readers are now informed when a new page loads
+*  Contrast and keyboard accessibility have been improved
 
 ### Page Builder
+
+Page Builder v.1.7.2 is compatible with {{ site.data.var.ee }} 2.4.5.
+
+Page Builder column layout includes these enhancements: <!--- PB-547-->
+
+*  Columns are now exposed, permitting users to control column settings on the storefront.
+
+*  Column resizing now supports wrapping triggered by user actions.
 
 ## Fixed issues
 
@@ -704,10 +823,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 <!--- AC-2239-->
 
 *  `indexer:reset` has been refactored to call `$indexer->invalidate()`. [GitHub-34988](https://github.com/magento/magento2/issues/34988)
-
-#### Library removals and deprecations
-
-#### Library upgrades
 
 ### Logging
 
