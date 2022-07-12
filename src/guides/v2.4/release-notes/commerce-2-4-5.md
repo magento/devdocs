@@ -141,7 +141,7 @@ The {{ site.data.var.ee }} checkout workflow now supports the inclusion of an es
 
 ### Branding and style changes
 
-The Admin has been updated to align with Adobe’s branch strategy. Changes affect headers, footers, data grid color updates, and navigation elements.
+The Admin has been updated to align with Adobe’s brand strategy. Changes affect headers, footers, data grid color updates, and navigation elements.
 
 ### B2B
 
