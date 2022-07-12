@@ -2,7 +2,7 @@
 group: inventory
 title: Inventory Management overview
 landing-page: Inventory
-migrated_to: https://developer-stage.adobe.com/commerce/webapi/rest/modules/inventory/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/
 layout: migrated
 ---
 
