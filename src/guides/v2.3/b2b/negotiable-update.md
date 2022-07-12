@@ -5,6 +5,8 @@ ee_only: true
 functional_areas:
   - B2B
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/negotiable-update
+layout: migrated
 ---
 
 Sellers and buyers can edit a negotiable quote at various times during the quote's lifecycle. Both use the `PUT /V1/negotiableQuote/:quoteId` call to update the quote. This call is defined in the

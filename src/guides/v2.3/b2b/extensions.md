@@ -8,6 +8,8 @@ menu_node: parent
 ee_only: True
 functional_areas:
   - B2B
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/extensions
+layout: migrated
 ---
 
 See [Module Reference Guide]({{ page.baseurl }}/mrg/intro.html) for information about each {{site.data.var.b2b}} module.

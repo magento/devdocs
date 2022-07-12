@@ -10,6 +10,8 @@ ee_only: True
 functional_areas:
   - B2B
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/
+layout: migrated
 ---
 
 Unlike the standard business-to-consumer model, {{site.data.var.b2b}} (Business to Business) is designed to meet the needs of sellers (Magento merchants) whose customers are primarily companies—possibly with complex organizational structures and multiple users with various roles and levels of permission.

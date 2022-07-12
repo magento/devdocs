@@ -5,6 +5,8 @@ ee_only: true
 functional_areas:
   - B2B
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/company-users
+layout: migrated
 ---
 
 A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with {{site.data.var.ce}} and {{site.data.var.ee}}, to create the user. After the user is created, you can use the `PUT /V1/customers/:customer_id` call to set their company data with the `company_attributes` extended attributes.

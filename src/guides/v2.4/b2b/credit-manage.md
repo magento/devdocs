@@ -5,6 +5,8 @@ ee_only: true
 functional_areas:
   - B2B
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/credit-manage
+layout: migrated
 ---
 
 The company credit entity operates with the following attributes:

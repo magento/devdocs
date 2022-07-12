@@ -10,6 +10,8 @@ level3_subgroup: company
 functional_areas:
   - B2B
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/company-object
+layout: migrated
 ---
 
 ## Manage company objects
