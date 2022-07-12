@@ -1,6 +1,8 @@
 ---
 group: extensions
 title: Introduction
+migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/start/resources/commerce-marketplace.html
+layout: migrated
 ---
 
 Extensions allow you to add custom features, functionality, services, and integrations to your Admin and storefront. Extension developers package and install custom code as extensions, modules, components, addons, etc. You can design and develop extensions or purchase and install extensions from the Commerce Marketplace or third-party providers.
