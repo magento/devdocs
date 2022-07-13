@@ -10,8 +10,6 @@ level3_subgroup: nq
 functional_areas:
   - B2B
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/negotiable-quote
-layout: migrated
 ---
 
 Negotiable quotes are a mechanism that allows a company user (buyer) and a seller (admin user) to negotiate product and/or shipping prices before the company user places an order. Its functionality is available for companies only.

@@ -6,8 +6,6 @@ functional_areas:
   - B2B
   - Catalog
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/shared-cat-company
-layout: migrated
 ---
 
 A shared catalog must be assigned to one or more companies before it can be accessed by the company users.

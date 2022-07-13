@@ -6,8 +6,6 @@ functional_areas:
   - B2B
   - Catalog
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/shared-cat-product-assign
-layout: migrated
 ---
 
 The shared catalog configuration process includes assigning categories and products to the shared catalog. To assign these items to a shared catalog, the following conditions must be met:

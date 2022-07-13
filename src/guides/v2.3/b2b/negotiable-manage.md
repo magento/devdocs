@@ -10,8 +10,6 @@ level3_subgroup: nq
 functional_areas:
   - B2B
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/negotiable-manage
-layout: migrated
 ---
 
 This topic describes the calls required to initiate a negotiable quote and to prepare it to be converted to an order.

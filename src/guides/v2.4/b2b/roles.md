@@ -5,7 +5,7 @@ menu_title: Manage company roles
 ee_only: True
 functional_areas:
   - B2B
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/roles
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/roles
 layout: migrated
 ---
 

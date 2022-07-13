@@ -8,7 +8,7 @@ menu_node: parent
 ee_only: True
 functional_areas:
   - B2B
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/extensions
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/extensions
 layout: migrated
 ---
 

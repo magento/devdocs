@@ -5,7 +5,7 @@ ee_only: true
 functional_areas:
   - B2B
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/company-structures
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/company-structures
 layout: migrated
 ---
 

@@ -6,7 +6,7 @@ functional_areas:
   - B2B
   - Catalog
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/shared-cat-product-assign
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/shared-cat-product-assign
 layout: migrated
 ---
 

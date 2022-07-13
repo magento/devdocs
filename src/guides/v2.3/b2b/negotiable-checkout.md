@@ -5,8 +5,6 @@ ee_only: true
 functional_areas:
   - B2B
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/negotiable-checkout
-layout: migrated
 ---
 
 When the seller and buyer user agree on the quoted products and their prices, the negotiated quote is ready to be converted to an order.

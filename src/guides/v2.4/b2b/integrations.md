@@ -9,7 +9,7 @@ ee_only: True
 functional_areas:
   - B2B
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/b2b/integrations
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/integrations
 layout: migrated
 ---
 
