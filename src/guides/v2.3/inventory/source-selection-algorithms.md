@@ -1,6 +1,8 @@
 ---
 group: inventory
 title: Source selection algorithms
+migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/basics/selection-reservations.html
+layout: migrated
 ---
 
 The **Source Selection Algorithm (SSA)** recommends how to fulfill partial and full shipments. The merchant decides which business needs take precedence when deciding which shipping method to use:
