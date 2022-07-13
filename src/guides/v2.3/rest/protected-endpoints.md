@@ -10,7 +10,7 @@ If CAPTCHA or reCAPTCHA is enabled on pages requiring shopper input, then in mos
 The HTTP `X-Captcha` and `X-ReCaptcha` headers:
 
 *  Cannot be received by an automated script or a non-UI API call. They are captured and returned by the UI Web form only.
-*  Is optional in protected mutation API calls that provide **_integration authorization_** tokens only. It cannot be skipped when you provide an Admin or Bearer token.
+*  Are optional in protected mutation API calls that provide **_integration authorization_** tokens only. They cannot be skipped when you provide an Admin or Bearer token.
 
 ## CAPTCHA
 
