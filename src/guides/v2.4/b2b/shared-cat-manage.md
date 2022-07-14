@@ -6,6 +6,8 @@ functional_areas:
   - B2B
   - Catalog
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/shared-cat-manage
+layout: migrated
 ---
 
 ## Manage custom shared catalogs
