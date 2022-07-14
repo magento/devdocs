@@ -112,7 +112,7 @@ Route definitions contain a trailing slash to indicate a folder or directory; ho
 ```text
 https://www.example.com/blog/
 
-https://www.example1.com/blog
+https://www.example.com/blog
 ```
 {:.no-copy}
 
