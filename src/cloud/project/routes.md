@@ -107,7 +107,7 @@ If your Cloud project supports multiple stores, follow the route configuration i
 
 ### Trailing slash
 
-Route definitions contain a trailing slash to indicate a folder or directory; however, the same content can be served with or without a trailing slash. The following URLs resolve the same but can be seen as _two different_ URLs:
+Route definitions contain a trailing slash to indicate a folder or directory; however, the same content can be served with or without a trailing slash. The following URLs resolve the same but can be interpreted as _two different_ URLs:
 
 ```text
 https://www.example.com/blog/
