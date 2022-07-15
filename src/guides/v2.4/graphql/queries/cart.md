@@ -269,7 +269,6 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
 
 If other promotions or price adjustments are applied to the cart through either store credit or gift cards, these will reflect under "discounts" with the appropriate label.
 
-
 **Request:**
 
 ```graphql
