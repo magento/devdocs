@@ -117,11 +117,14 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 *  The `jarallax.js` and `jaralax-video.js` libraries have been updated to use the latest version of the Vimeo REST API. <!--- AC-2590-->
 
+### Google Analytics
+
+Google has updated the tracking and integration mechanisms of AdWords and Analytics in web applications through integration with GTag. This integration of Google functionality into website pages extends opportunities to track and manage content through Google Services. Adobe Commerce has a set of built-in modules including Google AdWords, Analytics, Optimizer, and TagManager that leverage the former API for integration with Google services.  In this release,  we have re-implemented this integration using the GTag approach.​ See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).​ See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).
 ### GraphQL
 
 GraphQL performance enhancements include:
 
-*  **Optimized creation of unified GraphQL schemas**. Rebuilding a GraphQL schema after flushing a Commerce instance’s cache can consume many resources, particularly during heavy site traffic. The time required to rebuild a schema has been reduced significantly.
+*  **Optimized creation of unified GraphQL schemas**. Shoppers and administrators no longer experience decreased product performance when a merchant rebuilds their GraphQL schema. Previously, page load speeds were significantly increased when the GraphQL schema was rebuilt. The number and size of files that are required to rebuild the GraphQL schema has been reduced, which lessens the load on {{ site.data.var.ee }}.
 
 *  **Improved authorization processing** through the use of JSON Web Tokens (JWT) and session-less GraphQL API.
 
@@ -160,7 +163,10 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 #### Braintree
 
-Braintree has discontinued the KOUNT integration and it has been removed from the codebase.
+*  Braintree has discontinued the KOUNT fraud protection integration. It has been removed from the {{ site.data.var.ee }} codebase.
+
+*  The **Always request 3DS** option has been added to the Admin.
+
 ### Accessibility updates
 
 This release includes enhancements to the Admin UI that improve the experience of users with vision limitations and increase conformance to standard accessibility guidelines. These enhancements include:
@@ -824,6 +830,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 
 *  `indexer:reset` has been refactored to call `$indexer->invalidate()`. [GitHub-34988](https://github.com/magento/magento2/issues/34988)
 
+<!--- AC-2055-->
+
+*  You can now use use the colon symbol in an `htmlClass` attribute value, which supports the use of additional components such as the Tailwind UI. [GitHub-34430](https://github.com/magento/magento2/issues/34430)
+
 ### Logging
 
 <!--- ACP2E-203-->
@@ -909,6 +919,12 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-1195-->
 
 *  The `cart` query no longer returns all active payment methods for free orders. [GitHub-34036](https://github.com/magento/magento2/issues/34036)
+
+#### Braintree
+
+<!--- BUNDLE-3088-->
+
+*  Merchants can now submit a partial refund for orders paid with Apple Pay through Braintree. This was a known issue in {{ site.data.var.ee }} 2.4.4.
 
 #### PayPal
 
