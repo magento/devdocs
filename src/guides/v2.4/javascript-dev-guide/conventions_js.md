@@ -1,6 +1,8 @@
 ---
 group: javascript-developer-guide
 title: Conventional notations used in this Guide
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/conventions/
+layout: migrated
 ---
 
 ## Conventional notations for paths to modules and themes

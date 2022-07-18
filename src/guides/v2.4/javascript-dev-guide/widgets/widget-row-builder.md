@@ -3,6 +3,8 @@ group: javascript-developer-guide
 title: RowBuilder widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/row-builder/
+layout: migrated
 ---
 
 The RowBuilder [widget](https://glossary.magento.com/widget/) allows you to build a container with rows.

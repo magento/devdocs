@@ -3,6 +3,8 @@ group: javascript-developer-guide
 title: RequireJS in Commerce
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/requirejs/
+layout: migrated
 ---
 
 This topic describes general concepts of how the [RequireJS library](http://requirejs.org) is used in Magento, with examples. Please refer to official RequireJS documentation for in-depth explanation.

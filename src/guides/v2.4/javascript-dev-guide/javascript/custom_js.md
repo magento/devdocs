@@ -1,6 +1,8 @@
 ---
 group: javascript-developer-guide
 title: Use custom JavaScript
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/custom/
+layout: migrated
 ---
 
 This topic discusses how to use custom [JavaScript](https://glossary.magento.com/javascript) components with the components provided by Magento or custom replacement implementations.

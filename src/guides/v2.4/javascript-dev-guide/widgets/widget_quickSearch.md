@@ -4,6 +4,8 @@ subgroup: 3_Widgets
 title: QuickSearch widget
 functional_areas:
   - Search
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/quick-search/
+layout: migrated
 ---
 
 The quickSearch [widget](https://glossary.magento.com/widget) is an autocomplete widget that populates a list of suggested search terms for a given field.

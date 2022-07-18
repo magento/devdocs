@@ -2,6 +2,8 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Alert widget
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/alert/
+layout: migrated
 ---
 
 The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the [Magento confirmation widget] which in turn extends the [Magento modal widget].

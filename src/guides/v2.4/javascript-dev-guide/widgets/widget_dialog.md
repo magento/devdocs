@@ -2,6 +2,8 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: DropdownDialog widget
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/dialog/
+layout: migrated
 ---
 
 Magento dropdownDialog [widget](https://glossary.magento.com/widget) is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/). As extra functionality it implements the following:

@@ -4,6 +4,8 @@ subgroup: 1_Javascript
 title: JavaScript Logger
 menu_title: JavaScript Logger
 menu_order: 20
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/logger/
+layout: migrated
 ---
 
 ## Logger overview

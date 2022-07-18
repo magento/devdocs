@@ -5,6 +5,8 @@ title: Dropdown widget
 functional_areas:
  - Frontend
  - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/dropdown/
+layout: migrated
 ---
 
 Use the dropdown widget to display custom content on the storefront.

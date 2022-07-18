@@ -2,6 +2,8 @@
 group: javascript-developer-guide
 title: JavaScript Developer Guide
 landing-page: JavaScript Developer Guide
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/
+layout: migrated
 ---
 
 ## Introduction {#overview-introduction}

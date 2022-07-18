@@ -2,6 +2,8 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Collapsible widget
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/collapsible/
+layout: migrated
 ---
 
 The Magento collapsible widget converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.

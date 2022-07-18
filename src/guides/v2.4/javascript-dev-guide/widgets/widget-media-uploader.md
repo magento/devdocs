@@ -3,6 +3,8 @@ group: javascript-developer-guide
 title: MediaUploader widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/media-uploader/
+layout: migrated
 ---
 
 This [widget](https://glossary.magento.com/widget/) allows multiple media files uploading with Ajax.

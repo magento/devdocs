@@ -2,6 +2,8 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: PasswordStrengthIndicator widget
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/password-strength-indicator/
+layout: migrated
 ---
 
 The Magento password strength indicator [widget](https://glossary.magento.com/widget) provides immediate feedback on the validity and strength of a password while it is being typed.

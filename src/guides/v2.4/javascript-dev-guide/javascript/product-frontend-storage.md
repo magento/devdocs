@@ -4,6 +4,8 @@ subgroup: 1_Javascript
 title: Use the Frontend Product Repository
 menu_title: Use the Frontend Product Repository
 menu_order: 10
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/frontend-product-repository/
+layout: migrated
 ---
 
 The frontend product repository is a storage service that uses the local cache to get product information without making additional requests to the server.

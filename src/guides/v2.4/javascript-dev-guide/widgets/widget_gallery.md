@@ -2,6 +2,8 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Gallery widget
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/gallery/
+layout: migrated
 ---
 
 The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks.

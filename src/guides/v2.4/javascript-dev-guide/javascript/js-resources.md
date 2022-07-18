@@ -2,6 +2,8 @@
 group: javascript-developer-guide
 subgroup: 1_Javascript
 title: JavaScript resources in Commerce
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/resources/
+layout: migrated
 ---
 
 ## Overview {#m2devgde-js-resources-intro}

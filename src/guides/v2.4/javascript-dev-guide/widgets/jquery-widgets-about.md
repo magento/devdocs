@@ -1,6 +1,8 @@
 ---
 group: javascript-developer-guide
 title: jQuery widgets
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/
+layout: migrated
 ---
 
 The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.

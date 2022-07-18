@@ -1,6 +1,8 @@
 ---
 group: javascript-developer-guide
 title: JavaScript mixins
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/mixins/
+layout: migrated
 ---
 
 A [mixin] is a class whose methods are added to, or mixed in, with another class.
