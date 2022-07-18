@@ -22,7 +22,7 @@ extensions:
         name: 4.4.3
         support:
           2.4.5: supported
-          2.2.4: supported
+          2.4.4: supported
           2.4.3: supported
           2.4.2: supported
           2.4.1: supported
