@@ -16,10 +16,16 @@ To create the Commerce crontab:
 
 Use `--force` to rewrite an existing Magento crontab.
 
- {:.bs-callout-info}
+{%
+include note.html
+type='info'
+content='
 
-*  `magento cron:install` does not rewrite an existing crontab inside `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.
-*  `magento cron:install --force` has no effect on any cron jobs outside the Magento comments.
+*  `bin/magento cron:install` does not rewrite an existing crontab inside `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.
+
+*  `bin/magento cron:install --force` has no effect on any cron jobs outside the Magento comments.
+
+'%}
 
 To view the crontab, enter the following command as the file system owner:
 
@@ -31,7 +37,7 @@ A sample follows:
 
 ```terminal
 #~ MAGENTO START c5f9e5ed71cceaabc4d4fd9b3e827a2b
-* * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /var/www/html/magento2/var/log/magento.cron.log
+* * * * * /usr/bin/php<php_version> <install_directory>/bin/magento cron:run 2>&1 | grep -v "Ran jobs by schedule" >> <install_directory>/var/log/magento.cron.log
 #~ MAGENTO END c5f9e5ed71cceaabc4d4fd9b3e827a2b
 ```
 
