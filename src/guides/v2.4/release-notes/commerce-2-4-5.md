@@ -143,7 +143,9 @@ The Admin has been updated to align with Adobe’s brand strategy. Changes affec
 
 ### B2B
 
-We have optimized the normalized database data that is needed to implement the Shared Catalogs feature. This reduction in eSKU multiplication results in a performance boost as fewer database rows must be stored. Enabling the new **Enabled Shared Catalog direct product price assigning** configuration option also improves product price indexer performance. <!--- MCP-946-->
+We have optimized the normalized database data that is needed to implement the Shared Catalogs feature. This reduction in eSKU multiplication results in a performance boost as fewer database rows must be stored. Previously, {{ site.data.var.ee }} duplicated every SKU in the catalog for each Shared Catalog. {{ site.data.var.ee }} now creates unique eSKUs for those directly assigned to a Shared Catalog.
+
+Enabling the new **Enabled Shared Catalog direct product price assigning** configuration option also improves product price indexer performance. <!--- MCP-946-->
 
 This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
