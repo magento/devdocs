@@ -3,6 +3,8 @@ group: release-notes
 title: Magento Open Source 2.4.5 Release Notes
 ---
 
+{{ site.data.var.ce }} introduces improvements to platform quality, payment methods, GraphQL caching performance, and accessibility. It includes updates to integrated Google modules.
+
 This release includes over 290 quality fixes and enhancements.
 
 {:.bs-callout-info}
@@ -22,7 +24,7 @@ Look for the following highlights in this release.
 
 ### Security enhancements
 
-This release includes  security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ce }} 2.4.4-p1 and {{ site.data.var.ce }} 2.3.7-p4.
+This release includes 20 security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ce }} 2.4.4-p1 and {{ site.data.var.ce }} 2.3.7-p4.
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts:
 
@@ -117,18 +119,13 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 *  The `jarallax.js` and `jaralax-video.js` libraries have been updated to use the latest version of the Vimeo REST API. <!--- AC-2590-->
 
-### Google Analytics
+### Accessibility updates
 
-Google has updated the tracking and integration mechanisms of AdWords and Analytics in web applications through integration with GTag. This integration of Google functionality into website pages extends opportunities to track and manage content through Google Services. Adobe Commerce has a set of built-in modules including Google AdWords, Analytics, Optimizer, and TagManager that leverage the former API for integration with Google services.  In this release,  we have re-implemented this integration using the GTag approach.​ See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).​ See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).
-### GraphQL
+This release includes enhancements to the Admin UI that improve the experience of users with vision limitations and increase conformance to standard accessibility guidelines. These enhancements include:
 
-GraphQL performance enhancements include:
-
-*  **Optimized creation of unified GraphQL schemas**. Shoppers and administrators no longer experience decreased product performance when a merchant rebuilds their GraphQL schema. Previously, page load speeds were significantly increased when the GraphQL schema was rebuilt. The number and size of files that are required to rebuild the GraphQL schema has been reduced, which lessens the load on {{ site.data.var.ee }}.
-
-*  **Improved authorization processing** through the use of JSON Web Tokens (JWT) and session-less GraphQL API.
-
-See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
+*  The screen reader now summarizes search results
+*  Screen readers are now informed when a new page loads
+*  Contrast and keyboard accessibility have been improved
 
 ### Channel Manager
 
@@ -139,9 +136,52 @@ Channel Manager can now trigger refunds from {{ site.data.var.ce }}. Merchants c
 
 Requests are now automatically synced back to the Walmart Marketplace.
 
+### Google Analytics
+
+Google has updated the tracking and integration mechanisms of AdWords and Analytics in web applications through integration with GTag. This integration of Google functionality into website pages extends opportunities to track and manage content through Google Services. Adobe Commerce has a set of built-in modules including Google AdWords, Analytics, Optimizer, and TagManager that leverage the former API for integration with Google services.  In this release,  we have re-implemented this integration using the GTag approach.​ See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).​ See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).
+### GraphQL
+
+GraphQL performance enhancements include:
+
+*  Developers and administrators experience faster rebuilding of the unified storefront GraphQL schema on deployment or when changing attributes in production. Shoppers also experience significantly faster page load speeds when the GraphQL schema must be rebuilt for any reason.
+
+*  Added capability to consume the expiration date/time of the authorization token through the use of JSON Web Tokens (JWT) in the GraphQL API.
+
+*  The `bin/magento config:set graphql/session/disable 1` command allows merchants of Adobe Commerce to to completely disable the creation of session cookies for all GraphQL operations. By default, Adobe Commerce creates these cookies and relies on them for authorization, which affects performance. Going forward, the only form of authorization we recommend for GraphQL requests is authorization tokens that should not used in combination with cookies. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
+
+*  Session cookies are now launched in GraphQL operations using class proxies only when needed. <!--- B2B-2217--->
+
+*  Session usage has been removed from `http` header processors in GraphQL such as store, customer or currency. <!--- B2B-2224--->
+
+See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
+
 ### Inventory
 
 Inventory template security has been enhanced.
+
+### Page Builder
+
+Page Builder v.1.7.2 is compatible with {{ site.data.var.ee }} 2.4.5.
+
+Page Builder column layout includes these enhancements: <!--- PB-547-->
+
+*  Columns are now exposed, permitting users to control column settings on the storefront.
+
+*  Column resizing now supports wrapping triggered by user actions.
+
+### Payments
+
+#### PayPal
+
+*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
+
+*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, minicart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
+
+#### Braintree
+
+*  Braintree has discontinued the KOUNT fraud protection integration. It has been removed from the {{ site.data.var.ee }} codebase.
+
+*  The **Always request 3DS** option has been added to the Admin.
 
 ### PWA Studio
 
@@ -154,36 +194,6 @@ New features for this release include:
 *  Merchants can now select a service to deploy from the Admin (Beacon or Google Tag Manager).
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
-
-### PayPal Payment enhancements
-
-*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
-
-*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, minicart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
-
-#### Braintree
-
-*  Braintree has discontinued the KOUNT fraud protection integration. It has been removed from the {{ site.data.var.ee }} codebase.
-
-*  The **Always request 3DS** option has been added to the Admin.
-
-### Accessibility updates
-
-This release includes enhancements to the Admin UI that improve the experience of users with vision limitations and increase conformance to standard accessibility guidelines. These enhancements include:
-
-*  The screen reader now summarizes search results
-*  Screen readers are now informed when a new page loads
-*  Contrast and keyboard accessibility have been improved
-
-### Page Builder
-
-Page Builder v.1.7.2 is compatible with {{ site.data.var.ee }} 2.4.5.
-
-Page Builder column layout includes these enhancements: <!--- PB-547-->
-
-*  Columns are now exposed, permitting users to control column settings on the storefront.
-
-*  Column resizing now supports wrapping triggered by user actions.
 
 ## Fixed issues
 

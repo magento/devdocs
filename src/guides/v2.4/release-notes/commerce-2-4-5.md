@@ -3,6 +3,8 @@ group: release-notes
 title: Adobe Commerce 2.4.5 Release Notes
 ---
 
+{{ site.data.var.ee }} introduces improvements to platform quality, payment methods, GraphQL caching performance, and accessibility. It includes updates to integrated Google modules and the Upgrade Compatibility Tool and introduces Live Search B2B support.
+
 This release includes over 400 quality fixes and enhancements.
 
 {:.bs-callout-info}
@@ -22,7 +24,7 @@ Look for the following highlights in this release.
 
 ### Security enhancements
 
-This release includes 20 security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ee }} 2.4.3-p3 and {{ site.data.var.ee }} 2.3.7-p4.
+This release includes 20 security fixes and platform security improvements. This security fix has been backported to {{ site.data.var.ee }} 2.4.3-p3 and {{ site.data.var.ee }} 2.3.7-p4.
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts:
 
@@ -141,15 +143,7 @@ The Admin has been updated to align with Adobe’s brand strategy. Changes affec
 
 ### B2B
 
-**Reduced eSKU multiplication with Shared Catalogs (Customer Groups)**. The new **Enabled Shared Catalog direct product price assigning** configuration option improves product price indexer performance when enabled. <!--- MCP-946-->
-
-B2B-related GraphQL performance enhancements:
-
-*  Session class proxies is now used in constructors for classes that depend upon session. Using session proxy delays the lock start time, and can consequently reduce lock duration. <!--- B2B-2217--->
-
-*  Session has been removed from and is not longer stored in `Magento\DirectoryGraphQl\Controller\HttpHeaderProcessor\CurrencyProcessor`.  <!--- B2B-2224--->
-
-*  Administrators can now toggle between enabling and disabling session support for GraphQL tasks. <!--- B2B-2204--->
+We have optimized the normalized database data that is needed to implement the Shared Catalogs feature. This reduction in eSKU multiplication results in a performance boost as fewer database rows must be stored. Enabling the new **Enabled Shared Catalog direct product price assigning** configuration option also improves product price indexer performance. <!--- MCP-946-->
 
 This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
@@ -170,39 +164,21 @@ Google has updated the tracking and integration mechanisms of AdWords and Analyt
 
 GraphQL performance enhancements include:
 
-*  **Optimized creation of unified GraphQL schemas**. Shoppers and administrators no longer experience decreased product performance when a merchant rebuilds their GraphQL schema. Previously, page load speeds were significantly increased when the GraphQL schema was rebuilt. The number and size of files that are required to rebuild the GraphQL schema has been reduced, which lessens the load on {{ site.data.var.ee }}.
+*  Developers and administrators experience faster rebuilding of the unified storefront GraphQL schema on deployment or when changing attributes in production. Shoppers also experience significantly faster page load speeds when the GraphQL schema must be rebuilt for any reason.
 
-*  **Improved authorization processing** through the use of JSON Web Tokens (JWT) and session-less GraphQL API.
+*  Added capability to consume the expiration date/time of the authorization token through the use of JSON Web Tokens (JWT) in the GraphQL API.
+
+*  The `bin/magento config:set graphql/session/disable 1` command allows merchants of Adobe Commerce to to completely disable the creation of session cookies for all GraphQL operations. By default, Adobe Commerce creates these cookies and relies on them for authorization, which affects performance. Going forward, the only form of authorization we recommend for GraphQL requests is authorization tokens that should not used in combination with cookies. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
+
+*  Session cookies are now launched in GraphQL operations using class proxies only when needed. <!--- B2B-2217--->
+
+*  Session usage has been removed from `http` header processors in GraphQL such as store, customer or currency. <!--- B2B-2224--->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
 ### Inventory
 
 Inventory template security has been enhanced.
-
-### PWA Studio
-
-PWA Studio v.12.5.x is compatible with {{ site.data.var.ee }} 2.4.5.
-
-New features for this release include:
-
-*  Shopper behavior data is collected on PWA Studio storefront for web analytics services.  Merchants can now subscribe and extend these events as needed.
-
-*  Merchants can now select a service to deploy from the Admin (Beacon or Google Tag Manager).
-
-For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
-
-### PayPal Payment enhancements
-
-*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
-
-*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, minicart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
-
-#### Braintree
-
-*  Braintree has discontinued the KOUNT fraud protection integration. It has been removed from the {{ site.data.var.ee }} codebase.
-
-*  The **Always request 3DS** option has been added to the Admin.
 
 ### Live Search
 
@@ -217,6 +193,32 @@ Page Builder column layout includes these enhancements: <!--- PB-547-->
 *  Columns are now exposed, permitting users to control column settings on the storefront.
 
 *  Column resizing now supports wrapping triggered by user actions.
+
+### Payments
+
+#### PayPal
+
+*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
+
+*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, minicart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
+
+#### Braintree
+
+*  Braintree has discontinued the KOUNT fraud protection integration. It has been removed from the {{ site.data.var.ee }} codebase.
+
+*  The **Always request 3DS** option has been added to the Admin.
+
+### PWA Studio
+
+PWA Studio v.12.5.x is compatible with {{ site.data.var.ee }} 2.4.5.
+
+New features for this release include:
+
+*  Shopper behavior data is collected on PWA Studio storefront for web analytics services.  Merchants can now subscribe and extend these events as needed.
+
+*  Merchants can now select a service to deploy from the Admin (Beacon or Google Tag Manager).
+
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
 
 ### Upgrade Compatibility Tool
 
