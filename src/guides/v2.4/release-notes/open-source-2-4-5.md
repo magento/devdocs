@@ -14,10 +14,6 @@ Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ce }}
 
 Although code for these features is bundled with quarterly releases of the {{ site.data.var.ce }} core code, several of these projects are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
-### Hotfixes included in this release
-
-{{ site.data.var.ce }} 2.4.5 includes resolution of all issues that were addressed by the following hotfixes, which were provided for {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.4, 2.4.3-p2, and 2.3.7-p3:
-
 ## {{ site.data.var.ce }} 2.4.5 highlights
 
 Look for the following highlights in this release.
@@ -60,7 +56,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  `PHPStan` (^1.5.7 with constraint) [GitHub-35315](https://github.com/magento/magento2/issues/35315)<!--- AC-2876-->
 
-The DHL Integration schema has been updated from v6.0 to v6.2. DHL has deprecated v6.0. This upgrade will not result in a change in product behavior.  <!--- AC-3022-->
+The DHL Integration schema has been updated from v6.0 to v6.2. This upgrade will not result in a change in product behavior.  <!--- AC-3022-->
 
 Outdated JavaScript libraries have been updated to their latest versions, and outdated dependencies have been removed. These changes are backward compatible. <!--- AC-2036-->
 
@@ -95,7 +91,7 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 #### Other upgrades and replacements
 
-*  The DHL Integration schema has been updated from v6.0 to v6.2. (DHL will deprecate the v6.0 schema mid-2022.) <!--- AC-3022-->
+*  The DHL Integration schema has been updated from v6.0 to v6.2. <!--- AC-3022-->
 
 *  The default Gateway URL for USPS shipping has been updated to use `https` instead of `http`. <!--- AC-2426-->
 
@@ -121,10 +117,10 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 ### Accessibility updates
 
-This release includes enhancements to the Admin UI that improve the experience of users with vision limitations and increase conformance to standard accessibility guidelines. These enhancements include:
+The focus of this release has been on creating a storefront experience on Venia (PWA) that is more perceivable, operable, understandable, and robust. These enhancements include:
 
-*  The screen reader now summarizes search results
-*  Screen readers are now informed when a new page loads
+*  Search results summary information is now announced to screen reader users
+*  Screen readers are now informed when a new page view loads
 *  Contrast and keyboard accessibility have been improved
 
 ### Channel Manager
@@ -138,7 +134,8 @@ Requests are now automatically synced back to the Walmart Marketplace.
 
 ### Google Analytics
 
-Google has updated the tracking and integration mechanisms of AdWords and Analytics in web applications through integration with GTag. This integration of Google functionality into website pages extends opportunities to track and manage content through Google Services. Adobe Commerce has a set of built-in modules including Google AdWords, Analytics, Optimizer, and TagManager that leverage the former API for integration with Google services.  In this release,  we have re-implemented this integration using the GTag approach.​ See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).​
+Google has updated the tracking and integration mechanisms of AdWords and Analytics in web applications through integration with GTag. This integration of Google functionality into website pages extends opportunities to track and manage content through Google Services. Adobe Commerce has a set of built-in modules including Google AdWords, Analytics, Optimizer, and TagManager that leverage the former API for integration with Google services.  In this release,  we have re-implemented this integration using the GTag approach.​ See [Migrate from analytics.js to gtag.js (Universal Analytics)](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs).
+
 ### GraphQL
 
 GraphQL performance enhancements include:
@@ -151,7 +148,7 @@ GraphQL performance enhancements include:
 
 *  Session cookies are now launched in GraphQL operations using class proxies only when needed. <!--- B2B-2217--->
 
-*  Session usage has been removed from `http` header processors in GraphQL such as store, customer or currency. <!--- B2B-2224--->
+*  Session usage has been removed from `http` header processors in GraphQL such as store, customer, or currency. <!--- B2B-2224--->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -170,6 +167,8 @@ Page Builder column layout includes these enhancements: <!--- PB-547-->
 *  Column resizing now supports wrapping triggered by user actions.
 
 ### Payments
+
+Apple Pay is now available to all merchants running deployments with Payment Services enabled. This payment method does not require shoppers to enter their credit or debit card details. Apple Pay is available on the product details page, mini cart, shopping cart, and checkout workflow. Merchants can toggle on this feature.
 
 #### PayPal
 
@@ -191,15 +190,14 @@ New features for this release include:
 
 *  Shopper behavior data is collected on PWA Studio storefront for web analytics services.  Merchants can now subscribe and extend these events as needed.
 
-*  Merchants can now select a service to deploy from the Admin (Beacon or Google Tag Manager).
+*  Merchants can now select a service to deploy from the Admin (Google Tag Manager).
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
 
 ## Fixed issues
 
-<!--- AC-1589-->
+We have fixed hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 
-We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 ### Installation, upgrade, deployment
 
 <!--- ACP2E-49-->
