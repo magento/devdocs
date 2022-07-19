@@ -3,6 +3,8 @@ group: release-notes
 title: Adobe Commerce 2.4.5 Release Notes
 ---
 
+{{ site.data.var.ee }} introduces improvements to platform quality, payment methods, GraphQL caching performance, and accessibility. It includes updates to integrated Google modules and the Upgrade Compatibility Tool and introduces Live Search B2B support.
+
 This release includes over 400 quality fixes and enhancements.
 
 {:.bs-callout-info}
@@ -14,7 +16,11 @@ Although code for these features is bundled with quarterly releases of the {{ si
 
 ### Hotfixes included in this release
 
-{{ site.data.var.ee }} 2.4.5 includes resolution of all issues that were addressed by the following hotfixes, which were provided for {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.4, 2.4.3-p2, and 2.3.7-p3:
+{{ site.data.var.ee }} 2.4.5 includes resolution of all issues that were addressed by the following hotfixes, which were provided for {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.4:
+
+*  `Braintree_disabled_partial_capture_for_applepay_googlepay.zip`. This patch addresses the inability of users to create partial invoices when using either Apple Pay or Google Pay through Braintree as a payment method. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.
+
+*  `AC-2655_2.4.4.patch.zip`. This patch addresses an issue where shoppers cannot add a product to their cart when the Allow Countries option is unselected. See the [Users not able to add product to cart if nothing selected in Allow Countries](https://support.magento.com/hc/en-us/articles/5377681213325-Users-not-able-to-add-product-to-cart-if-nothing-selected-in-Allow-Countries) Knowledge Base article.
 
 ## {{ site.data.var.ee }} 2.4.5 highlights
 
@@ -22,7 +28,7 @@ Look for the following highlights in this release.
 
 ### Security enhancements
 
-This release includes 20 security fix and platform security improvements. This security fix has been backported to {{ site.data.var.ee }} 2.4.3-p3 and {{ site.data.var.ee }} 2.3.7-p4.
+This release includes 20 security fixes and platform security improvements. This security fix has been backported to {{ site.data.var.ee }} 2.4.3-p3 and {{ site.data.var.ee }} 2.3.7-p4.
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts:
 
@@ -62,7 +68,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  `PHPStan` (^1.5.7 with constraint) [GitHub-35315](https://github.com/magento/magento2/issues/35315)<!--- AC-2876-->
 
-The DHL Integration schema has been updated from v6.0 to v6.2. DHL has deprecated v6.0. This upgrade will not result in a change in product behavior.  <!--- AC-3022-->
+The DHL Integration schema has been updated from v6.0 to v6.2. This upgrade will not result in a change in product behavior.  <!--- AC-3022-->
 
 Outdated JavaScript libraries have been updated to their latest versions, and outdated dependencies have been removed. These changes are backward compatible. <!--- AC-2036-->
 
@@ -97,7 +103,7 @@ The `laminas/laminas-session`, `laminas/laminas-text`, and `laminas/laminas-view
 
 #### Other upgrades and replacements
 
-*  The DHL Integration schema has been updated from v6.0 to v6.2. (DHL will deprecate the v6.0 schema mid-2022.) <!--- AC-3022-->
+*  The DHL Integration schema has been updated from v6.0 to v6.2. <!--- AC-3022-->
 
 *  The default Gateway URL for USPS shipping has been updated to use `https` instead of `http`. <!--- AC-2426-->
 
@@ -129,15 +135,15 @@ Primary index performance has been improved by reducing the number of primary in
 
 ### Accessibility updates
 
-This release includes enhancements to the Admin UI that improve the experience of users with vision limitations and increase conformance to standard accessibility guidelines. These enhancements include:
+The focus of this release has been on creating a storefront experience on Venia (PWA) that is more perceivable, operable, understandable, and robust. These enhancements include:
 
-*  The screen reader now summarizes search results
-*  Screen readers are now informed when a new page loads
+*  Search results summary information is now announced to screen reader users
+*  Screen readers are now informed when a new page view loads
 *  Contrast and keyboard accessibility have been improved
 
-### Adobe Sign Extension
+### Adobe Sign
 
-The {{ site.data.var.ee }} checkout workflow now supports the inclusion of an esignature agreement page powered by Adobe Sign.
+Merchants can now include an esignature agreement page powered by Adobe Sign in the {{ site.data.var.ee }} checkout.
 
 ### Branding and style changes
 
@@ -145,7 +151,9 @@ The Admin has been updated to align with Adobe’s brand strategy. Changes affec
 
 ### B2B
 
-**Reduced eSKU multiplication with Shared Catalogs (Customer Groups)**. The new **Enabled Shared Catalog direct product price assigning** configuration option improves product price indexer performance when enabled. <!--- MCP-946-->
+We have optimized the normalized database data that is needed to implement the Shared Catalogs feature. This reduction in eSKU multiplication results in a performance boost as fewer database rows must be stored. Previously, {{ site.data.var.ee }} duplicated every SKU in the catalog for each Shared Catalog. {{ site.data.var.ee }} now creates unique eSKUs for those directly assigned to a Shared Catalog.
+
+Enabling the new **Enabled Shared Catalog direct product price assigning** configuration option also improves product price indexer performance. <!--- MCP-946-->
 
 This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
@@ -160,15 +168,21 @@ Requests are now automatically synced back to the Walmart Marketplace.
 
 ### Google Analytics
 
-See [Migrate from analytics.js to gtag.js (Universal Analytics) ](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs​https://support.google.com/google-ads/answer/7548399?hl=en).
+Google has updated the tracking and integration mechanisms of AdWords and Analytics in web applications through integration with GTag. This integration of Google functionality into website pages extends opportunities to track and manage content through Google Services. Adobe Commerce has a set of built-in modules including Google AdWords, Analytics, Optimizer, and TagManager that leverage the former API for integration with Google services.  In this release,  we have re-implemented this integration using the GTag approach.​ See [Migrate from analytics.js to gtag.js (Universal Analytics)](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs).
 
 ### GraphQL
 
 GraphQL performance enhancements include:
 
-*  **Optimized creation of unified GraphQL schemas**. Rebuilding a GraphQL schema after flushing a Commerce instance’s cache can consume many resources, particularly during heavy site traffic. The time required to rebuild a schema has been reduced significantly.
+*  Developers and administrators experience faster rebuilding of the unified storefront GraphQL schema on deployment or when changing attributes in production. Shoppers also experience significantly faster page load speeds when the GraphQL schema must be rebuilt for any reason.
 
-*  **Improved authorization processing** through the use of JSON Web Tokens (JWT) and session-less GraphQL API.
+*  Added capability to consume the expiration date/time of the authorization token through the use of JSON Web Tokens (JWT) in the GraphQL API.
+
+*  The `bin/magento config:set graphql/session/disable 1` command allows merchants of Adobe Commerce to to completely disable the creation of session cookies for all GraphQL operations. By default, Adobe Commerce creates these cookies and relies on them for authorization, which affects performance. Going forward, the only form of authorization we recommend for GraphQL requests is authorization tokens that should not used in combination with cookies. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
+
+*  Session cookies are now launched in GraphQL operations using class proxies only when needed. <!--- B2B-2217--->
+
+*  Session usage has been removed from `http` header processors in GraphQL such as store, customer, or currency. <!--- B2B-2224--->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -176,31 +190,9 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 
 Inventory template security has been enhanced.
 
-### PWA Studio
-
-PWA Studio v.12.5.x is compatible with {{ site.data.var.ee }} 2.4.5.
-
-New features for this release include:
-
-*  Shopper behavior data is collected on PWA Studio storefront for web analytics services.  Merchants can now subscribe and extend these events as needed.
-
-*  Merchants can now select a service to deploy from the Admin (Beacon or Google Tag Manager).
-
-For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
-
-### PayPal Payment enhancements
-
-*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
-
-*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, minicart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
-
-#### Braintree
-
-Braintree has discontinued the KOUNT integration and it has been removed from the codebase.
-
 ### Live Search
 
-This release introduces support for B2B customer groups and custom pricing.
+This release introduces support for B2B customer groups and custom pricing. Livesearch now respects product assignments to customer groups and the pricing that is set for a specific customer group/shared catalog.
 
 ### Page Builder
 
@@ -211,6 +203,34 @@ Page Builder column layout includes these enhancements: <!--- PB-547-->
 *  Columns are now exposed, permitting users to control column settings on the storefront.
 
 *  Column resizing now supports wrapping triggered by user actions.
+
+### Payments
+
+Apple Pay is now available to all merchants running deployments with Payment Services enabled. This payment method does not require shoppers to enter their credit or debit card details. Apple Pay is available on the product details page, mini cart, shopping cart, and checkout workflow. Merchants can toggle on this feature.
+
+#### PayPal
+
+*  Merchants in Spain and Italy can now offer PayPal Pay Later to shoppers.  <!--- AC-2521-->
+
+*  Previews of the PayPal, Credit and Pay Later buttons are now available in the Admin for the checkout, mini cart, cart, and product pages. Previews reveal how these buttons will look when they are enabled and rendered on the storefront.
+
+#### Braintree
+
+*  Braintree has discontinued the KOUNT fraud protection integration. It has been removed from the {{ site.data.var.ee }} codebase.
+
+*  The **Always request 3DS** option has been added to the Admin.
+
+### PWA Studio
+
+PWA Studio v.12.5.x is compatible with {{ site.data.var.ee }} 2.4.5.
+
+New features for this release include:
+
+*  Shopper behavior data is collected on PWA Studio storefront for web analytics services.  Merchants can now subscribe and extend these events as needed.
+
+*  Merchants can now select a service to deploy from the Admin (Google Tag Manager).
+
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
 
 ### Upgrade Compatibility Tool
 
@@ -226,7 +246,7 @@ Enhancements include:
 
 ## Fixed issues
 
-We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
+We have fixed hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 ### Installation, upgrade, deployment
 
@@ -922,6 +942,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 *  `indexer:reset` has been refactored to call `$indexer->invalidate()`. [GitHub-34988](https://github.com/magento/magento2/issues/34988)
 
+<!--- AC-2055-->
+
+*  You can now use use the colon symbol in an `htmlClass` attribute value, which supports the use of additional components such as the Tailwind UI. [GitHub-34430](https://github.com/magento/magento2/issues/34430)
+
 ### Logging
 
 <!--- ACP2E-203-->
@@ -1016,6 +1040,12 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-1195-->
 
 *  The `cart` query no longer returns all active payment methods for free orders. [GitHub-34036](https://github.com/magento/magento2/issues/34036)
+
+#### Braintree
+
+<!--- BUNDLE-3088-->
+
+*  Merchants can now submit a partial refund for orders paid with Apple Pay through Braintree. This was a known issue in {{ site.data.var.ee }} 2.4.4.
 
 #### PayPal
 
