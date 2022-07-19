@@ -14,7 +14,7 @@ functional_areas:
 ## Set up a proxy {#es-nginx-proxy}
 
 {:.bs-callout-info}
-OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. See [Migrate ElasticSearch to OpenSearch](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/opensearch-migration.html) for more information.
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. See [Migrate ElasticSearch to OpenSearch](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/opensearch-migration.html) for more information.
 
 This section discusses how to configure nginx as an *unsecure* proxy so that {{ site.data.var.ee }} or {{ site.data.var.ce }} can use a search engine running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
 
@@ -81,7 +81,7 @@ This section discusses how to specify who can access the [nginx](https://glossar
 
 ## Secure communication with nginx {#es-ws-secure-nginx}
 
-This section discusses how to set up [HTTP Basic authentication](https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html) with your secure proxy. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your {{ site.data.var.ee }} or {{ site.data.var.ce }} server.
+This section discusses how to set up [HTTP Basic authentication](https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html) with your secure proxy. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch/OpenSearch or with your {{ site.data.var.ee }} or {{ site.data.var.ce }} server.
 
 Because nginx natively supports HTTP Basic authentication, we recommend it over, for example, [Digest authentication](https://www.nginx.com/resources/wiki/modules/auth_digest/), which isn't recommended in production.
 

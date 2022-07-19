@@ -1,4 +1,5 @@
-This section discusses the minimum settings you must choose to test Elasticsearch or OpenSearch with {{ site.data.var.ee }} and {{ site.data.var.ce }}. As of versions 2.4.4 and 2.4.3-p2, all fields labeled **Elasticsearch** also apply to OpenSearch.
+This section discusses the minimum settings you must choose to test Elasticsearch or OpenSearch with {{ site.data.var.ee }} and {{ site.data.var.ce }}. As of versions 2.4.5, 2.4.4 and 2.4.3-p2, all fields labeled **Elasticsearch** also apply to OpenSearch.
+Starting with version 2.4.6 OpenSearch Engine has its own fields in the settings.
 
 For additional details about configuring your search engine, see the [User Guide]({{ site.user_guide_url }}/catalog/search-elasticsearch.html).
 
@@ -8,17 +9,17 @@ To configure your system to use Elasticsearch or OpenSearch:
 
 1. Log in to the Admin as an administrator.
 1. Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
-1. From the **Search Engine** list, select the corresponding version of your search engine If you are using OpenSearch, you must select Elasticsearch7.
+1. From the **Search Engine** list, select the corresponding version of your search engine.
 
    The following table lists the required configuration options to configure and test the connection with Magento.
    Unless you changed the server settings of your search engine, the defaults should work. Skip to the next step.
 
-   |Option|Description|
-   |--- |--- |
-   |**Elasticsearch Server Hostname**|Enter the fully qualified hostname or IP address of the machine running Elasticsearch or OpenSearch. <br/> {{site.data.var.ece}}: Get this value from your integration system.|
-   |**Elasticsearch Server Port**|Enter the web server proxy port. The default is 9200.<br/>{{site.data.var.ece}}: Get this value from your integration system.|
-   |**Elasticsearch Index Prefix**|Enter the search engine index prefix. If you use a single instance for more than one Commerce installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.|
-   |**Enable Elasticsearch HTTP Auth**|Click **Yes** only if you enabled authentication for your search engine server. If so, provide a username and password in the provided fields.|
+   |OS Option|ES Option|Description|
+   |--- |--- |--- |
+   |**OpenSearch Server Hostname**|**Elasticsearch Server Hostname**|Enter the fully qualified hostname or IP address of the machine running Elasticsearch or OpenSearch. <br/> {{site.data.var.ece}}: Get this value from your integration system.|
+   |**OpenSearch Server Port**|**Elasticsearch Server Port**|Enter the web server proxy port. The default is 9200.<br/>{{site.data.var.ece}}: Get this value from your integration system.|
+   |**OpenSearch Index Prefix**|**Elasticsearch Index Prefix**|Enter the search engine index prefix. If you use a single instance for more than one Commerce installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.|
+   |**Enable OpenSearch HTTP Auth**|**Enable Elasticsearch HTTP Auth**|Click **Yes** only if you enabled authentication for your search engine server. If so, provide a username and password in the provided fields.|
 
 {:start="4"}
 
@@ -43,8 +44,8 @@ If so, try the following:
 *  If the server is on a different host from Commerce, log in to the Commerce server and ping the search engine host. Resolve network connectivity issues and test the connection again.
 *  Examine the command window in which you started Elasticsearch or OpenSearch for stack traces and exceptions. You must resolve those before you continue. In particular, make sure you started your search engine as a user with `root` privileges.
 *  Make sure that [UNIX firewall and SELinux]({{ page.baseurl }}/install-gde/prereq/elasticsearch.html#firewall-selinux) are both disabled, or set up rules to enable your search engine and Commerce to communicate with each other.
-*  Verify the value of the **Elasticsearch Server Hostname** field. Make sure the server is available. You can try the server's IP address instead.
-*  Use the `netstat -an | grep <listen-port>` command to verify that the port specified in the **Elasticsearch Server Port** field is not being used by another process.
+*  Verify the value of the **OpenSearch (or Elasticsearch) Server Hostname** field. Make sure the server is available. You can try the server's IP address instead.
+*  Use the `netstat -an | grep <listen-port>` command to verify that the port specified in the **OpenSearch (or Elasticsearch) Server Port** field is not being used by another process.
 
   For example, to see if your search engine is running on its default port, use the following command:
 

@@ -138,9 +138,9 @@ To install {{site.data.var.ee}} using the command line:
      --timezone=America/Chicago \
      --language=en_US \
      --use-rewrites=1 \
-     --search-engine=elasticsearch7 \
-     --elasticsearch-host=es-host.example.com \
-     --elasticsearch-port=9200
+     --search-engine=opensearch \
+     --opensearch-host=os-host.example.com \
+     --opensearch-port=9200
    ```
 
 ## Post-install configurations

@@ -100,6 +100,7 @@ To install or upgrade MySQL, see [MySQL]({{page.baseurl}}/install-gde/prereq/mys
 
 ``` bash
 curl -XGET '<elasticsearch-hostname>:<elasticsearch-port>'
+# curl -XGET '<opensearch-hostname>:<opensearch-port>'
 ```
 
 For example:

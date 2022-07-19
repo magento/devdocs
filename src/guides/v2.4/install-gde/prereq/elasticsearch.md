@@ -10,7 +10,7 @@ functional_areas:
 As of {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4, all installations must be configured to use [Elasticsearch][] or [OpenSearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
 
 {:.bs-callout-info}
-OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. [Migrate from Elasticsearch to OpenSearch][] provides guidance on switching to OpenSearch.
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. [Migrate from Elasticsearch to OpenSearch][] provides guidance on switching to OpenSearch.
 
 ## Supported versions {#es-spt-versions}
 
@@ -57,7 +57,7 @@ Search requests are processed as follows:
 
 1. The search engine processes the request.
 
-1. Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
+1. Communication returns along the same route, with the Elasticsearch/OpenSearch web server acting as a secure reverse proxy.
 
 ## Prerequisites {#es-prereq}
 
@@ -65,8 +65,8 @@ The tasks discussed in this section require the following:
 
 *  [Firewall and SELinux](#firewall-selinux)
 *  [Install the Java Software Development Kit (JDK)](#prereq-java)
-*  [Install Elasticsearch](#es-install-es7)
-*  [Upgrading Elasticsearch](#es-upgrade6)
+*  [Install Search engine](#es-install-es7)
+*  [Upgrading Search engine](#es-upgrade6)
 
 {% include config/solr-elastic-selinux.md %}
 
@@ -107,12 +107,12 @@ Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Develop
 
 ## Additional resources {#es-resources}
 
-For additional information, see [Elasticsearch documentation][]
+For additional information, see [Elasticsearch documentation][], [OpenSearch documentation][]
 
 ### Next
 
 *  [Configure nginx for your search engine][]
-*  [Configure nginx for your search engine][]
+*  [Configure Apache for your search engine][]
 
 <!-- Link Definitions -->
 [Configure nginx for your search engine]: {{page.baseurl}}/install-gde/prereq/es-config-nginx.html

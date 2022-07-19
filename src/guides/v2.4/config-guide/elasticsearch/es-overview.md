@@ -24,7 +24,7 @@ After you install and integrate your search engine with {{ site.data.var.ee }}, 
 
 ## Additional resources {#es-resources}
 
-For additional information, see the [Elasticsearch documentation][]
+For additional information, see the [Elasticsearch documentation][] / [OpenSearch documentation][]
 
 <!-- Link Definitions -->
 [Search engine prerequisites]: {{page.baseurl}}/install-gde/prereq/elasticsearch.html
@@ -36,3 +36,4 @@ For additional information, see the [Elasticsearch documentation][]
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 [Install the Magento software]: {{page.baseurl}}/install-gde/install/cli/install-cli-install.html
 [OpenSearch]: https://opensearch.org/docs/latest/opensearch/install/index/
+[OpenSearch documentation]: https://opensearch.org/docs/latest/

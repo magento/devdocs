@@ -14,7 +14,7 @@ The [OpenSearch](https://www.opensearch.org) service is an open-source fork of E
 OpenSearch enables you to take data from any source, any format, and search and visualize it in real time.
 
 -  Quick and advanced searches on products in the product catalog
--  Elasticsearch Analyzers support multiple languages
+-  OpenSearch Analyzers support multiple languages
 -  Supports stop words and synonyms
 -  Indexing does not impact customers until the reindex operation completes
 
