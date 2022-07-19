@@ -40,7 +40,7 @@ By default, Magento uses the `var` directories to store the cache, logs, and com
 
 ## Display the current mode {#config-mode-show}
 
-The easiest way to do that is to run this command as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html). If you have shared hosting, this is the user your provider gives you to log in to the server. If you have a private server, it's typically a local user account on the Magento server.
+The easiest way to do that is to run this command as the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html). If you have shared hosting, this is the user your provider gives you to log in to the server. If you have a private server, it's typically a local user account on the Magento server.
 
 Command usage:
 
@@ -68,7 +68,7 @@ bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 
 where:
 
--  **`{mode}`** is required; it can be either `developer` or `production`
+-  **`{mode}`** is required; it can be either `default`, `developer`, or `production`
 
 -  **`--skip-compilation`** is an optional parameter you can use to skip [code compilation]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) when you change to production mode.
 

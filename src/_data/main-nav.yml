@@ -1,3 +1,4 @@
+---
 - label: Cloud
   children:
 
@@ -83,6 +84,10 @@
     - label: Command-line Tools Reference
       url: /reference/cli/magento.html
 
+    - label: Tools
+      url: /quality-patches/tool.html
+      versionless: true
+
 - label: Development
   children:
 
@@ -100,12 +105,21 @@
 
         - label: Module Reference Guide
           url: /mrg/intro.html
+          include_versions: ["2.3"]
+
+        - label: Module Reference Guide
+          url: https://developer.adobe.com/commerce/php/module-reference/
+          include_versions: ["2.4"]
 
         - label: Coding Standards
           url: /coding-standards/bk-coding-standards.html
 
         - label: Contributor Guide
           url: /contributor-guide/contributing.html
+          versionless: true
+
+        - label: Contribution Resources
+          url: /community/resources.html
           versionless: true
 
     - label: Frontend
@@ -127,7 +141,7 @@
           url: /design-styleguide/bk-styleguide.html
 
         - label: PWA Documentation Site
-          url: https://magento.github.io/pwa-studio/
+          url: https://developer.adobe.com/commerce/pwa-studio/
 
         - label: Page Builder Developer Guide
           url: /page-builder/docs/index.html
@@ -156,7 +170,6 @@
           url: /mbi/docs/getting-started.html
           versionless: true
 
-
 - label: Testing
   children:
 
@@ -179,6 +192,8 @@
     - label: Web API Functional Testing
       url: /get-started/web-api-functional-testing.html
 
+- separator: true
+
 - label: Functional Areas
   children:
 
@@ -191,12 +206,20 @@
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Magento Marketplace
+    - label: Inventory Management
+      url: /inventory/index.html
+
+    - label: Live Search
+      url: /live-search/overview.html
+      versionless: true
+
+    - label: Commerce Marketplace
       url: /marketplace/sellers/getting-started.html
       versionless: true
 
-    - label: Inventory Management
-      url: /inventory/index.html
+    - label: Payment Services
+      url: /payment-services/index.html
+      versionless: true
 
     - label: Order Management
       url: http://omsdocs.magento.com/en/
@@ -216,6 +239,10 @@
       url: /security/security-and-compliance.html
       versionless: true
 
+    - label: Shared Services
+      url: /shared-services/storefront-events-sdk.html
+      versionless: true
+
     - label: Staging
       url: /extension-dev-guide/staging.html
 
@@ -224,6 +251,9 @@
 
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
+
+    - label: Custom Attributes
+      url: /howdoi/custom-attributes/introduction.html
 
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html

@@ -73,7 +73,7 @@ php vendor/bin/ece-docker build:compose --es-env-var=ES_JAVA_OPTS="-Xms512m -Xmx
 See [Important Elasticsearch configuration] in the Elasticsearch documentation for details about available configuration options.
 
 {:.bs-callout-info}
-If your Cloud project uses Magento version 2.3.5 or earlier with MySQL search, add the `--no-es` option to skip the Elasticsearch container configuration when you generate the Docker Compose configuration file: `ece-docker build:compose --no-es`.
+If your Cloud project uses {{site.data.var.ee}} version 2.3.5 or earlier with MySQL search, add the `--no-es` option to skip the Elasticsearch container configuration when you generate the Docker Compose configuration file: `ece-docker build:compose --no-es`.
 
 ### Elasticsearch plugins
 
@@ -117,6 +117,59 @@ To permanently update the system setting for `vm.max_map_count`:
    sysctl vm.max_map_count
    ```
 
+## OpenSearch container
+
+**Container name**: opensearch<br/>
+**Docker base image**: [magento/magento-cloud-docker-opensearch](https://hub.docker.com/r/magento/magento-cloud-docker-opensearch)<br/>
+**Ports exposed**: `9200`, `9300`<br/>
+
+The OpenSearch container for {{site.data.var.mcd-prod}} is a standard OpenSearch container with required plugins and configurations for {{site.data.var.ee}}.
+
+Use the `--os-env-var` option to customize the OpenSearch container when you generate the Docker Compose configuration file. You can set OpenSearch options and specify the environment variables to apply when the container starts, such as the heap size for JVM.
+
+```bash
+php vendor/bin/ece-docker build:compose --os-env-var=OPENSEARCH_JAVA_OPTS="-Xms512m -Xmx512m" --os-env-var=bootstrap.memory_lock=true
+```
+
+See [Important OpenSearch configuration] in the OpenSearch documentation for details about available configuration options.
+
+{:.bs-callout-info}
+If your Cloud project uses {{site.data.var.ee}} version 2.4.4 or earlier with MySQL or Elasticsearch search, add the `--no-os` option to skip the OpenSearch container configuration when you generate the Docker Compose configuration file: `ece-docker build:compose --no-os`
+
+### OpenSearch plugins
+
+There is a list of OpenSearch plugins: https://opensearch.org/docs/latest/opensearch/install/plugins/
+
+The following plugins are installed by default and can **not** be skipped:
+
+-  OpenSearch 1.1:
+   -  opensearch-notebooks
+-  OpenSearch 1.2:
+   -  opensearch-observability
+-  OpenSearch 1.1 and 1.2:
+   -  analysis-icu
+   -  analysis-phonetic
+   -  opensearch-alerting
+   -  opensearch-anomaly-detection
+   -  opensearch-asynchronous-search
+   -  opensearch-cross-cluster-replication
+   -  opensearch-index-management
+   -  opensearch-job-scheduler
+   -  opensearch-knn
+   -  opensearch-performance-analyzer
+   -  opensearch-reports-scheduler
+   -  opensearch-security
+   -  opensearch-sql
+
+The following example adds the `opensearch-asynchronous-search` plugin to the Docker environment.
+
+```yaml
+services:
+    opensearch:
+        environment:
+          - 'OS_PLUGINS=opensearch-asynchronous-search'
+```
+
 ## FPM container
 
 **Container name**: fpm<br/>
@@ -139,12 +192,12 @@ The FPM container includes the following volumes:
 
 ### Customize PHP settings
 
-You can customize PHP service settings for PHP-FPM and CLI containers by adding a `php.ini` file to the root directory of your Magento project.
+You can customize PHP service settings for PHP-FPM and CLI containers by adding a `php.ini` file to the root directory of your {{site.data.var.ee}} project.
 
-The Cloud Docker deploy process copies the `php.ini` file to the Docker environment after applying the default Docker and Magento extension configurations and applies the settings to the FPM and CLI containers.
+The Cloud Docker deploy process copies the `php.ini` file to the Docker environment after applying the default Docker and extension configurations and applies the settings to the FPM and CLI containers.
 
 {:.bs-callout-warning}
-If you use the `docker-sync` or `mutagen` file synchronization options, the `php.ini` file is available only after the file synchronization completes.
+If you use the `mutagen` file synchronization tools, the `php.ini` file is available only after the file synchronization completes.
 
 ### Customize PHP extensions
 
@@ -202,7 +255,7 @@ docker-compose run --rm redis redis-cli -h redis
 **Docker base image**: [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome), based on the [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome/h) Docker image<br/>
 **Ports exposed**: `4444`<br/>
 
-The Selenium container enables the [Magento Functional Testing Framework (MFTF)](https://devdocs.magento.com/mftf/docs/introduction.html) for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
+The Selenium container enables the [Magento Functional Testing Framework (MFTF)]({{ site.baseurl }}/mftf/docs/introduction.html) for application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
 
 ## Test container
 
@@ -210,7 +263,7 @@ The Selenium container enables the [Magento Functional Testing Framework (MFTF)]
 **Docker base image**: [magento/magento-cloud-docker-php][php-cloud], based on the [magento/magento-cloud-docker-php][php-cloud] Docker image<br/>
 **Ports exposed**: None<br/>
 
-The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] Docker image, has a writable file system and is used for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
+The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] Docker image, has a writable file system and is used for application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
 
 ## TLS container
 
@@ -245,7 +298,7 @@ To increase the timeout on this container, add the following code to the  `docke
 
 The Varnish container simulates Fastly and is useful for testing VCL snippets.
 
-The **Varnish** service is installed by default. When deployment completes, Magento is configured to use Varnish for full page caching (FPC) for Magento version 2.2.0 or later. The configuration process preserves any custom FPC configuration settings that already exist.
+The **Varnish** service is installed by default. When deployment completes, {{site.data.var.ee}} is configured to use Varnish for full page caching (FPC) for {{site.data.var.ee}} version 2.2.0 or later. The configuration process preserves any custom FPC configuration settings that already exist.
 
 In some cases, you might require a Docker environment without Varnish, for example to debug or run performance tests. You can generate the Docker Compose configuration without Varnish by adding the `--no-varnish` option to the `ece-docker build:compose` command.
 
@@ -274,7 +327,7 @@ This container provides two NGINX configuration options for building the Docker 
 -  `--nginx-worker-processes` to set the number of worker processes for NGINX. The default is `1`.
 -  `--nginx-worker-connections` to set the maximum number of connections that each worker process can handle simultaneously. The default is `1024`.
 
-The NGINX configuration for this container is the standard Magento [nginx config], which includes the configuration to auto-generate NGINX certificates for the container. You can customize the NGINX configuration by mounting a new configuration file using a volume.
+The NGINX configuration for this container is the standard {{site.data.var.ee}} [nginx config], which includes the configuration to auto-generate NGINX certificates for the container. You can customize the NGINX configuration by mounting a new configuration file using a volume.
 
 {:.procedure}
 To mount the custom NGINX configuration file using volumes:
@@ -307,6 +360,27 @@ To mount the custom index.php file using volumes:
         - ./pub/index.php:/app/pub/index.php:ro
 ```
 
+## Zookeeper container
+
+**Container name**: Zookeeper<br/>
+**Docker base image**:  [zookeeper/latest/](https://hub.docker.com/_/zookeeper)<br/>
+**Ports exposed**: 2181<br/>
+
+Developers can use Zookeeper to manage locks to prevent the launch of duplicate cron jobs and cron groups for {{ site.data.var.ee }} and {{ site.data.var.ce }} projects running on servers with multiple nodes.
+
+For {{ site.data.var.ee }} projects on Adobe cloud infrastructure, lock provider settings are configured automatically during provisioning. See [Cloud variables]({{ site.baseurl }}/cloud/env/variables-cloud.html).
+
+For projects hosted on other infrastructure, developers can add the Zookeeper container to the Docker environment and [configure the service][Configure the lock provider].
+
+```bash
+./vendor/bin/ece-docker build:compose --php <version> --with-zookeeper
+```
+
+The latest Zookeeper version is installed by default from Docker Hub. You can add the following options to customize the installation:
+
+-  `--zookeeper-version` – Specify a specific version to install from [Docker Hub](https://hub.docker.com/_/zookeeper).
+-  `--zookeeper-image`  – Specify the Zookeeper image name to install from a custom image.
+
 <!--Link definitions-->
 
 [centos]: https://hub.docker.com/_/centos
@@ -316,13 +390,14 @@ To mount the custom index.php file using volumes:
 [Docker override file]: https://docs.docker.com/compose/extends/
 [FPM]: https://php-fpm.org
 [Important Elasticsearch configuration]: https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html
+[Important OpenSearch configuration]: https://opensearch.org/docs/latest/opensearch/install/important-settings/
 [mailhog]: https://hub.docker.com/u/mailhog
 [MailHog service]: https://github.com/mailhog/MailHog
 [Manage the database]: {{site.baseurl}}/cloud/docker/docker-manage-database.html
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
 [mariadb]: https://hub.docker.com/_/mariadb
 [nginx config]: https://github.com/magento-dockerhub/magento-cloud-docker/blob/master/images/nginx/1.9/etc/vhost.conf
-[nginx configs]: https://github.com/magento/magento-cloud-docker/tree/develop/images/nginx/1.9/etc
+[nginx configs]: https://github.com/magento/magento-cloud-docker/tree/develop/images/nginx/1.19/etc
 [nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
 [PHP extensions]: {{site.baseurl}}/cloud/project/magento-app-php-application.html#php-extensions
 [php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
@@ -333,3 +408,4 @@ To mount the custom index.php file using volumes:
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 [web config]: https://github.com/magento/docker
+[Configure the lock provider]: {{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-lock.html#instgde-cli-lockconfig

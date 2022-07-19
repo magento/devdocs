@@ -1,8 +1,8 @@
 ---
 group: admin-pattern-library
-title: Iconography in Magento Admin Pattern Library
+title: Iconography in Admin Pattern Library
 ---
-Icons are used throughout the [Magento Admin](https://glossary.magento.com/magento-admin) interface, often as a controls to initiate a function (such as "Filter"), or to direct the user to section (such as "Account").
+Icons are used throughout the [Admin](https://glossary.magento.com/magento-admin) interface, often as a controls to initiate a function (such as "Filter"), or to direct the user to section (such as "Account").
 
 Icons are meant to provide a visual representation of functionality or content and should therefore bear some conceptual resemblance to them. Icons should be able to communicate their "use" to the user without the assistance of a text label, though labels should be used in the UI whenever possible to minimize ambiguity.
 
@@ -62,7 +62,7 @@ Efforts should be made to optimize icons and/or icon fonts for assistive technol
 Use "aria-hidden" attribute:
 Modern versions of assistive technologies will announce CSS generated content, as well as specific Unicode characters. To avoid unintended and confusing output in screen readers hide them with the aria-hidden="true" attribute.
 
-From: [http://getbootstrap.com/components/](http://getbootstrap.com/components/){:target="_blank"}
+From: [http://getbootstrap.com/components/](http://getbootstrap.com/components/)
 
 ### Example of "aria-hidden" attribute
 
@@ -74,7 +74,7 @@ From: [http://getbootstrap.com/components/](http://getbootstrap.com/components/)
 <span><span class="icon-star" aria-hidden="true"></span>Favorite</span>
 ```
 
-From: [http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html](http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html){:target="_blank"}
+From: [http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html](http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html)
 
 ### How to make your icon font accessible in three easy steps
 
@@ -83,7 +83,3 @@ Icons, if in fonts or not, should be very descriptive, especially if they stand 
 1. Don’t ever use "regular letters" for icons. Use a service like Icomoon and use the private use area (PUA) of the font. Those areas are specifically made for this usage and don’t have any letters attached to it. Screen readers won’t read letters in the PUA.
 1. Use colors with enough contrast for your icons.
 1. Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.
-
-## Additional resources
-
-*  [https://yatil.net/the-best-way-to-use-icon-fonts/](https://yatil.net/the-best-way-to-use-icon-fonts/){:target="_blank"}

@@ -83,7 +83,7 @@ Where a `handle ID` is defined by the name of the corresponding layout file, and
 {:.ref-header}
 Related topics
 
-*  [Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html){:target="_blank"}
-*  [XML instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html){:target="_blank"}
-*  [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html){:target="_blank"}
-*  [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html){:target="_blank"}
+*  [Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html)
+*  [XML instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
+*  [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html)
+*  [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html)

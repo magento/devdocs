@@ -11,7 +11,7 @@ functional_areas:
 This topic discusses technical implementation details about pipeline deployment in Magento 2.2 and later. Improvements can be divided into the following areas:
 
 *  [Configuration management](#config-deploy-configman)
-*  [Changes in the Magento Admin](#config-deploy-admin)
+*  [Changes in the Admin](#config-deploy-admin)
 *  [cron installation and removal](#config-deploy-cron)
 
 This topic also discusses the [recommended workflow](#config-deploy-workflow) for pipeline deployment and provides some examples to help you understand how it works.
@@ -35,13 +35,13 @@ As the diagram shows, we get configuration values in the following order:
 
 The shared configuration is stored in `app/etc/config.php`, which should be in source control.
 
-Set the shared configuration in the Magento Admin in your development (or {{site.data.var.ece}} _integration_) system and write the configuration to `config.php` using the [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
+Set the shared configuration in the Admin in your development (or {{site.data.var.ece}} _integration_) system and write the configuration to `config.php` using the [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 
 ### Manage the system-specific configuration
 
 The system-specific configuration is stored in `app/etc/env.php`, which should _not_ be in source control.
 
-Set the system-specific configuration in the Magento Admin in your development (or {{site.data.var.ece}} integration) system and write the configuration to `env.php` using the [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
+Set the system-specific configuration in the Admin in your development (or {{site.data.var.ece}} integration) system and write the configuration to `env.php` using the [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 
 This command also writes sensitive settings to `env.php`.
 
@@ -54,14 +54,14 @@ You can manage the sensitive configuration in any of the following ways:
 *  Environment variables
 *  Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 
-### Configuration settings locked in the Magento Admin
+### Configuration settings locked in the Admin
 
-Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin.
+Any configuration settings in `config.php` or `env.php` are locked in the Admin; that is, those settings cannot be changed in the Admin.
 Use the [`magento config:set` or `magento config:set --lock`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set) command to change the settings in the `config.php` or `env.php` files.
 
-## Changes in the Magento Admin {#config-deploy-admin}
+## Changes in the Admin {#config-deploy-admin}
 
-We changed the following behavior in the Magento Admin in production mode:
+We changed the following behavior in the Admin in production mode:
 
 *  You cannot enable or disable cache types in the Admin
 *  Developer settings are unavailable (**Stores** > Settings > **Configuration** > Advanced > **Developer**), including:
@@ -97,13 +97,13 @@ The following diagram shows how we recommend you use pipeline deployment to mana
 
 ### Development system
 
-On your development system, you make configuration changes in the Magento Admin and generate the shared configuration, `app/etc/config.php` and the system-specific configuration, `app/etc/env.php`. Check Magento code and the shared configuration into source control and push it to the build server.
+On your development system, you make configuration changes in the Admin and generate the shared configuration, `app/etc/config.php` and the system-specific configuration, `app/etc/env.php`. Check Magento code and the shared configuration into source control and push it to the build server.
 
 You should also install extensions and customize Magento code on the development system.
 
 On your development system:
 
-1. Set the configuration in the Magento Admin.
+1. Set the configuration in the Admin.
 
 1. Use the `magento app:config:dump` command to write the configuration to the file system.
 
@@ -159,10 +159,10 @@ On your production system:
 
 We provide the following commands to help you manage the configuration:
 
-*  [`magento app:config:dump`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to write Magento Admin configuration settings to `config.php` and `env.php` (except for sensitive settings)
+*  [`magento app:config:dump`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to write Admin configuration settings to `config.php` and `env.php` (except for sensitive settings)
 *  [`magento config:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of system-specific settings on the production system.
 
-   Use the optional `--lock` option to lock the option in the Magento Admin (that is, make the setting uneditable). If a setting is already locked, use the `--lock` option to change the setting.
+   Use the optional `--lock` option to lock the option in the Admin (that is, make the setting uneditable). If a setting is already locked, use the `--lock` option to change the setting.
 
 *  [`magento config:sensitive:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of sensitive settings on the production system.
 *  [`magento app:config:import`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import configuration changes from `config.php` and `env.php` to the production system.
@@ -173,7 +173,7 @@ This section shows examples of managing the configuration so you can see how cha
 
 ### Change the default locale
 
-This section shows the change made to `config.php` when you change the default weight unit using the Magento Admin (**Stores** > Settings > **Configuration** > General > **General** > **Locale Options**).
+This section shows the change made to `config.php` when you change the default weight unit using the Admin (**Stores** > Settings > **Configuration** > General > **General** > **Locale Options**).
 
 After you make the change in the Admin, run `bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
 
@@ -204,7 +204,7 @@ After you make the change in the Admin, run `bin/magento app:config:dump` on you
 `config.php` contains:
 
 *  Changes to the website, store, and store view.
-*  Non-system-specific Elasticsearch settings
+*  Non-system-specific search engine settings
 *  Non-sensitive PayPal settings
 *  Comments that inform you of sensitive settings that were omitted from `config.php`
 
@@ -300,9 +300,9 @@ File permissions and ownership must be consistent across development, build, and
 
 *  All of the following:
 
-   *  Set up the same [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) username on all systems
+   *  Set up the same [file system owner](https://glossary.magento.com/magento-file-system-owner) username on all systems
    *  Make sure the web server runs as the same user on all systems
-   *  Make sure the Magento file system owner is in the web server group on all systems
+   *  Make sure the file system owner is in the web server group on all systems
 
 *  Change Magento file system permissions and ownership on each system as necessary using the following guidelines:
 
@@ -310,7 +310,7 @@ File permissions and ownership must be consistent across development, build, and
    *  Production: [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html)
 
     {:.bs-callout-info}
-   If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the Magento file system owner or web server user are different on your build system).
+   If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the file system owner or web server user are different on your build system).
 
 {:.ref-header}
 Related topics

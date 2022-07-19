@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Commerce B2B Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/b2b/release-notes.html
+layout: migrated
 ---
 
 The release notes for the B2B extension captures additions and bug fixes that Magento has added during a release cycle.
@@ -8,6 +10,142 @@ These release notes can include:
 
 -  {:.new} New features
 -  {:.fix} Fixes and improvements
+
+## Magento B2B - Adobe Commerce 2.4.4
+
+-  {:.fix} <!--- MC-41985--> The time required to upgrade from {{ site.data.var.ee }} 2.3.x to {{ site.data.var.ee }} 2.4.x in deployments with more than 100,000 company roles has been substantially reduced.
+
+-  {:.fix} <!--- MC-42153--> The POST `V1/order/:orderId/invoice` request now supports the creation of partial invoices when the **Payment on Account** payment method is enabled. Previously, {{ site.data.var.ee }} threw this error: `An invoice for partial quantities cannot be issued for this order. To continue, change the specified quantity to the full quantity`. [GitHub-32428](https://github.com/magento/magento2/issues/32428)
+
+-  {:.fix} <!--- MC-41975--> PayPal PayFlow Pro now works as expected with B2B negotiable quote when the customer’s cart contains other products. {{ site.data.var.ee }} now successfully processes the order and sends an email to the customer as expected. Previously, {{ site.data.var.ee }} threw a fatal error and sent a confirmation email to the customer that contained zero values.
+
+-  {:.fix} <!--- MC-41819--> Pagination is now correctly displayed on catalog search result page after excluding some products in shared catalog.
+
+-  {:.fix} <!--- MC-42886--> Customer custom attributes are now saved as expected when creating or saving a company user in the Admin.
+
+-  {:.fix} <!--- MC-42927--> The **Submit** button on the Create New Company form is now disabled after one click to prevent multiple form submissions. Previously, you could submit this form multiple times by clicking on this button repeatedly, which generated an error.
+
+-  {:.fix} <!--- MC-42787--> {{ site.data.var.ee }} no longer displays the reorder link on the storefront when a shopper logs into a store for which reorders have been disabled. {{ site.data.var.ee }} now uses the Admin configuration settings (Admin **Reorder** > **Stores** > **Configuration** > **Sales** > **Allow Reorder** set to **no**).
+
+-  {:.fix} <!--- MC-43115--> Quick Order search by SKU is now case-insensitive when shared catalog is enabled.
+
+-  {:.fix} <!--- MC-42203--> You can now update a file for a customer attribute when creating a company. Previously, when you tried to create a company with an attachment of type `File`, {{ site.data.var.ee }} did not create the company and logged this error in the exception log: `Something went wrong while saving file`.
+
+-  {:.fix} <!--- MC-42242--> You can now create a company with a customer account that has a custom attribute with a (`File`) or (`Image`) type. Previously, if the account had one of these customizable options, the Company edit page loader did not resolve, which prevented the editing of company details.
+
+-  {:.fix} <!--- MC-42268--> The `products` query now returns an accurate `total_count` field when shared catalog is enabled.
+
+-  {:.fix} <!--- MC-42203-->  You can now update a file for a customer attribute when creating a company. Previously, when you tried to create a company with an attachment of type `File`, Magento did not create the company and logged this error in the exception log: `Something went wrong while saving file`.
+
+-  {:.fix} <!--- MC-43178--> The Company Configuration and Create Company pages now work as expected after you disable an online shipping method. Verification has been added to prevent the attempted processing of disabled Shipping modules. Previously, Magento displayed this error: `Type Error occurred when creating object: Magento\CompanyShipping\Model\Source\ShippingMethod, Too few arguments to function Magento\CompanyShipping\Model\Source\ShippingMethod::__construct(), 1 passed in /var/www/html/elmtup/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 and exactly 2 expected`.
+
+-  {:.fix} <!--- MC-42214--> The Category page now displays consistent product data while permissions are being generated during partial indexing. A new partial indexer for directory permissions has been added to this process. Previously, the data displayed while the indexer ran was incorrect.
+
+-  {:.fix} <!--- MC-42567--> The `categoryList` query now returns the correct number of products when catalog permissions are used and products are assigned to a shared catalog.
+
+-  {:.fix} <!--- MC-42528--> The `categoryList` query now respects category permissions and returns only permitted categories. Previously, it returned all assigned and unassigned categories.
+
+-  {:.fix} <!--- MC-42399--> `rest/V1/company/{id}` now returns `is_purchase_order_enabled` attribute values as expected.
+
+-  {:.fix} <!--- ACP2E-128--> Custom customer attributes are now displayed as expected in the Company Admin tab.
+
+-  {:.fix} <!--- ACP2E-130--> The My Wish List block on the My Account page is now displayed as expected for Company Admins and Company Users.
+
+-  {:.fix} <!--- ACP2E-133--> Quick Order errors are no longer displayed in the shopping cart. Previously, {{ site.data.var.ee }} displayed this error in the shopping cart when the SKU was not found in the catalog:  `The SKU was not found in the catalog`.
+
+-  {:.fix} <!--- ACP2E-194--> Shared catalog save operations have been optimized to execute faster. Previously, saving a shared catalog with many customer groups could take several minutes.
+
+-  {:.fix} <!--- MC-42240--> Magento now deletes all subcategory permissions from the `sharedcatalog_category_permissions` table when the parent category is deleted. Previously, only the parent category data was removed.
+
+## Magento B2B - Version 1.3.2
+
+-  {:.fix} <!--- MC-39862--> Magento now successfully sends update emails about expired negotiable quotes. Previously, when a negotiable quote expired, Magento did not send update emails.
+
+-  {:.fix} <!--- MC-40682--> Magento now successfully sends update emails about soon-to-expire and expired negotiable quotes when a `cron` job is missing.
+
+### Company
+
+-  {:.fix} <!--- MC-41542--> The Create New Company Account page country dropdown field no longer lists empty option values. Previously, the first two option values and the country code `AN` were empty.
+
+-  {:.fix} <!--- MC-41260--> Clicking on the **Return** button for an order that was created by a company user now redirects an administrative user to the Create Return page as expected. Previously, the administrator was redirected to the Order History page.
+
+-  {:.fix} <!--- MC-40798--> Magento no longer fails with an out-of-memory error when executing the `app/code/Magento/PurchaseOrder/Setup/Patch/Data/InitPermissions.php::apply` method during `bin/magento setup:upgrade`.  Previously, Magento did not use batch size for collection when initializing permissions, but instead loaded a collection of all company roles.
+
+-  {:.fix} <!--- MC-40551--> Company users can now edit and update customer custom attribute values. Previously, these attributes did not bind properly with the create and edit user form. A company user could enter different attribute values, but Magento did not save these values correctly.
+
+-  {:.fix} <!--- MC-32653--> The resource tree for company role permissions can now be translated as expected. Previously, the permissions tree was not translated even though valid translation files were present.
+
+-  {:.fix} <!--- MC-40358--> Magento now saves custom customer attribute values for B2B users as expected. Previously, creating a company account that contained custom customer attributes triggered a template error, and Magento did not successfully load the form. Adding an argument to the layout of `company_create_account` resolved this issue.
+
+-  {:.fix} <!--- MC-41721--> Company user filters such as Show All Users, Show Active Users, and Show Inactive Users now work as expected. Previously, filtering actions on the company user page caused a JavaScript error.
+
+### Company credit
+
+-  {:.fix} <!--- MC-41551--> Administrators with restricted accounts that include only website-level privileges can now create a company that uses a different currency than the website.
+
+-  {:.fix} <!--- MC-41523--> Magento now sends company emails from the correct `from` email address and scope. Previously, Magento did not consider website scope when sending company credit assignment or update email.
+
+### Quick Order
+
+-  {:.fix} <!--- MC-42104--> Creating an order using Quick Order from a CSV file now works as expected with nonexistent SKUs.
+
+-  {:.fix} <!--- MC-40268--> Using Quick Order to search on multiple SKUs now works as expected. Previously, results included duplicate entries.
+
+-  {:.fix} <!--- MC-40261--> The Added Product list display now treats SKUs entered in lowercase and uppercase the same when you use SKUs to select multiple products during Quick Order.
+
+-  {:.fix} <!--- MC-40225--> Using Quick Order now adds products in the quantity specified by the shopper. Previously, Magento added one product only even when a shopper specified quantities that exceeded one.
+
+-  {:.fix} <!--- MC-41283--> The Quick Order autocomplete feature now works with partial SKUs.
+
+-  {:.fix} <!--- MC-41299--> Magento now displays products that have been configured as **Not visible individually** on the Quick Order page’s auto-suggest list and search results.
+
+-  {:.fix} <!--- MC-42402--> Shoppers can now use the Quick Order form to add multiple products by SKUs that include upper-case characters. Previously, only the first product was added.
+
+### Negotiable quote
+
+-  {:.fix} <!--- MC-41232--> Shoppers are now redirected to the negotiable quote page after pasting the link to a negotiable quote in the URL field and successfully logging in. Previously, shoppers were redirected to the My Account page.
+
+-  {:.fix} <!--- MC-39317--> Reordering now works as expected for orders that contain a product with a Date Customizable Option for a customer account that was created during checkout. Previously, Magento did not process the reorder and displayed this error: `The product has required options. Enter the options and try again`.
+
+-  {:.fix} <!--- MC-39063--> The shipping address for a negotiable quote is no longer editable during checkout when the Purchase Order module is disabled. This behavior resulted from a previous fix in which `isQuoteAddressLocked` was removed from the negotiable quote checkout renderer.
+
+-  {:.fix} <!--- MC-38967--> Merchants can now add products to a negotiable quote from the Admin.
+
+### Purchase orders
+
+-  {:.fix} <!--- MC-39983--> Magento now displays an informative error message as expected when you place a purchase order using Paypal Express Checkout when the **Name Prefix** attribute is set to **required**. Previously, Magento did not place the order or display an error message. [GitHub-552](https://github.com/magento/partners-magento2b2b/issues/552)
+
+-  {:.fix} <!--- MC-39620--> The UI component for the billing address in the Purchase Order module now uses quote address correctly when Google Tag Manager is enabled. Previously, a JavaScript error occurred on the payment page.
+
+### Requisition lists
+
+-  {:.fix} <!--- MC-40426--> Merchants can now use the POST `rest/all/V1/requisition_lists` endpoint to create a requisition list for a customer. Previously, Magento threw this 400 error when you tried to create a requisition list: `Could not save Requisition List`.
+
+-  {:.fix} <!--- MC-41123--> The **Add to Requisition List** button now appears for a shopping cart’s in-stock products when the cart also contains out-of-stock products. Previously, if a cart contained two products, one of which was out-of-stock, the **Add to Requisition List** button did not appear for either products.
+
+-  {:.fix} <!--- MC-40877--> You can now use the REST API to add a product to a requisition list.
+
+-  {:.fix} <!--- MC-40155--> Requisition list **Latest Activity Date** values now adhere to locale format.
+
+-  {:.fix} <!--- MC-39580--> Magento no longer throws a fatal error when you edit a bundle product from a requisition list.
+
+-  {:.fix} <!--- MC-40454--> Magento now displays the correct product price when you add a product with a customizable option `(File)` to a wish list from a requisition list. The link to the uploaded file is also visible as expected. Previously, Magento displayed incorrect product prices and did not display the link to the file.
+
+-  {:.fix} <!--- MC-36383--> Products with a customizable option `(File)` can now be added to a shopping cart from a requisition list. [GitHub-377](https://github.com/magento/partners-magento2b2b/issues/377)
+
+### Shared catalog
+
+-  {:.fix} <!--- MC-40497--> An administrator with a role limited to a specific website can now create, view, and edit a shared catalog. Previously, Magento threw a fatal error when an administrator with a limited role tried to create a shared catalog.
+
+-  {:.fix} <!--- MC-41337--> Layered navigation results now include an accurate count of products with filtered attributes, and shoppers can now apply multiple filters. Previously, only one filter could be applied, and Magento displayed an inaccurate product count in layered navigation.
+
+-  {:.fix} <!--- MC-40779--> Magento now correctly displays product counts in layered navigation filters in search results. Previously, a plugin for the Search Results page did not use ElasticSearch but issued a new query to the database.
+
+-  {:.fix} <!--- MC-39978--> Magento no longer deletes tier prices when a merchant deletes all products from a default shared catalog.
+
+-  {:.fix} <!--- MC-39802--> Filters are now filtered by the current category and displayed correctly on all pages when shared catalogs are enabled. Previously, filters were wrongly calculated for the current page only and were not filtered by the current category.
+
+-  {:.fix} <!--- MC-39522--> The GraphQL `products` query no longer returns  a product’s price range and category for products that are not assigned to a shared catalog when shared catalog is enabled. Previously, the query returned the product’s aggregations, even though the product itself was not returned in the `items` array.
 
 ## Magento B2B - Version 1.3.1
 
@@ -138,6 +276,12 @@ This release includes improvements to order approvals, shipping methods, shoppin
 -  {:.fix} Notification emails that are sent to sales representatives assigned to a company now include the assigned corporate logo. Previously, the notification email included the default LUMA logo, not the uploaded corporate logo. <!--- MC-33232-->
 
 -  {:.fix} A requisition list now includes all grouped products and quantities that have been added to the list. Previously, when a merchant navigated to a requisition list after adding products to it from a product detail page, Magento displayed this error: `1 product(s) require your attention - Options were updated. Please review available configurations`. <!--- MC-32877-->
+
+-  {:.fix} The `products` query now returns an accurate `total_count` field when shared catalog is enabled. <!--- MC-42268-->
+
+-  {:.fix} The Company Configuration and Create Company pages now work as expected after you disable an online shipping method. Verification has been added to prevent the attempted processing of disabled Shipping modules. Previously, Magento displayed this error: `Type Error occurred when creating object: Magento\CompanyShipping\Model\Source\ShippingMethod, Too few arguments to function Magento\CompanyShipping\Model\Source\ShippingMethod::__construct(), 1 passed in /var/www/html/elmtup/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 and exactly 2 expected`. <!--- MC-43178-->
+
+-  {:.fix} Integration test memory consumption has been reduced, which improves test performance and reduces the time required for test completion. <!--- AC-266-->
 
 ## Magento B2B - Version 1.2.0
 

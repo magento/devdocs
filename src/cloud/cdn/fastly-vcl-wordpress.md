@@ -10,7 +10,7 @@ functional_areas:
 
 The following procedure describes how to reroute incoming requests from a {{ site.data.var.ee }} store to a separate WordPress site using the Fastly edge module _Other CMS/backend integration_ with an Edge dictionary.  You can follow a similar process to reroute requests to other CMS backends.
 
-Edge modules help you create and upload custom VCL code from the Magento Admin UI instead of manually writing the VCL code and uploading it using the Fastly API.
+Edge modules help you create and upload custom VCL code from the Admin UI instead of manually writing the VCL code and uploading it using the Fastly API.
 
  {:.bs-callout-info}
 We recommend adding custom VCL configurations to a Staging environment where you can test them before updating the Fastly service configuration in the Production environment.
@@ -25,9 +25,9 @@ To reroute requests from {{ site.data.var.ee }} to WordPress:
 
 1. Enable Fastly Edge Modules in the Staging or Production environment.
 
-   -  Log in to the Magento Admin.
+   -  Log in to the Admin.
 
-   -  Navigate to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Full Page Cache** > **Fastly Configuration** > **Advanced**.
+   -  Navigate to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Full Page Cache** > **Fastly Configuration** > **Advanced Configuration**.
 
    -  Set the value for **Fastly Edge Modules** to **Yes**.
 

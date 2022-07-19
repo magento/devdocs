@@ -51,7 +51,7 @@ The following example shows a PHTML file using the script:
 </script>
 ```
 
-For details about how to initialize the widget in a`.phtml` template, refer to the [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html){:target="_blank"} topic.
+For details about how to initialize the widget in a`.phtml` template, refer to the [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html) topic.
 
 ## Options {#password_strength_indicator_options}
 

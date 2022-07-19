@@ -4,9 +4,11 @@ subgroup: Security
 title: XSS prevention strategies
 menu_title: XSS prevention strategies
 menu_order: 1100
+migrated_to: https://developer.adobe.com/commerce/php/development/security/cross-site-scripting/
+layout: migrated
 ---
 
-[Cross-site scripting][]{:target="_blank"}, or XSS, is a security vulnerability that can be found in web applications. This vulnerability allows attackers to inject malicious code/styles into a web page viewed by users. Magento [extension](https://glossary.magento.com/extension) developers should be aware of these vulnerabilities to avoid introducing them in their code.
+[Cross-site scripting][], or XSS, is a security vulnerability that can be found in web applications. This vulnerability allows attackers to inject malicious code/styles into a web page viewed by users. Magento [extension](https://glossary.magento.com/extension) developers should be aware of these vulnerabilities to avoid introducing them in their code.
 
 There are three main types of XSS vulnerabilities:
 

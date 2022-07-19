@@ -82,10 +82,6 @@ This topic describes the basic elements used in XML configuration files for decl
       to the old structure used in Magento 2.1.x and earlier. In
       Magento 2.2.x and later only use for options that are not
       described in XSD.
-      <p class="q">
-        which XSD?<br />
-        UiComponent - is it a class or what?
-      </p>
     </td>
   </tr>
   <tr>

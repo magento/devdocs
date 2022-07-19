@@ -66,8 +66,10 @@ Then put the following code into it:
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-<module name="Learning_FirstUnit" setup_version="0.0.1"> <sequence>
-<module name="Magento_Catalog"/> </sequence>
+    <module name="Learning_FirstUnit" setup_version="0.0.1">
+        <sequence>
+            <module name="Magento_Catalog"/>
+        </sequence>
     </module>
 </config>
 ```
@@ -84,9 +86,18 @@ Each module must have this file, which tells Magento how to locate the module. C
 `app/code/Learning/FirstUnit/registration.php`. Then put the following content into it:
 
 ```php
-<?php \Magento\Framework\Component\ComponentRegistrar::register(
-\Magento\Framework\Component\ComponentRegistrar::MODULE, 'Learning_FirstUnit',
-__DIR__
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'Learning_FirstUnit',
+    __DIR__
 );
 ```
 

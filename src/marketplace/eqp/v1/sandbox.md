@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Sandbox
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/sandbox/
+layout: migrated
 ---
 
 {:.bs-callout-info}
@@ -22,7 +24,7 @@ The following list highlights some of the key differences between the sandbox an
    -  Most, but not all, automated tools are run on your submissions. The [Copy/Paste Detector](test-results.html#cpd) tool is not run.
    -  No technical QA reviews happen for your submissions.
    -  Only automated marketing reviews are run on your submissions.
--  There is no associated Magento Marketplace store for the **sandbox**. As a result, the various [reports](reports.html) endpoints will typically return an empty set of data.
+-  There is no associated Commerce Marketplace store for the **sandbox**. As a result, the various [reports](reports.html) endpoints will typically return an empty set of data.
 -  On the user interface, the **sandbox** is marked with a banner at the top of every page.
   ![]({{ site.baseurl }}/marketplace/eqp/v1/images/sandbox-landing-page.png){: .zoom}
   _Landing page for the Sandbox Marketplace Developer Portal_

@@ -7,7 +7,7 @@ redirect_from:
 
 The `customer` query returns information about the logged-in customer, store credit history and customer's wishlist.
 
-To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
+To return or modify information about a customer, we recommend you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
 ## Syntax
 
@@ -66,7 +66,7 @@ The following call returns information about the logged-in customer. Provide the
          "region": {
            "region_code": "MI",
            "region": "Michigan"
-         }
+         },
          "postcode": "78758",
          "country_code": "US",
          "telephone": "512 555-1212"

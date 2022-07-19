@@ -5,7 +5,7 @@ title: Magento Open Source 2.3.3 Release Notes
 
 *Patch code and release notes published on October 8, 2019 and last updated on June 3, 2020.*
 
-Magento Open Source 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
+{{site.data.var.ce}} 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
 This release includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -15,7 +15,7 @@ Merchants can now install time-sensitive security fixes without applying the hun
 
 **If you have already upgraded to the pre-release version of this patch (2.3.2-p1), we strongly recommend that you upgrade to 2.3.2-p2 as soon as possible.**  Patch 2.3.2-p2 contains the critical security fixes that are included in Magento  2.3.3, 2.2.10, 1.9.4.3, and 1.14.4.3, but that are not included in patch 2.3.2-p1.
 
-For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).
+For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html#get-the-metapackage).
 
 ## Other release information
 
@@ -27,13 +27,13 @@ This hotfix addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bi
 
 ## Apply the Catalog pagination issue on Elasticsearch 6.x patch to resolve a critical search result pagination issue
 
-This patch resolves issues that users of Magento 2.3.3 experience in deployments where  Elasticsearch 6.x is used as the catalog search engine. Users who attempt to navigate past the first page of search results are unsuccessful, and Magento displays an error message. After this patch is installed, users will be able to page through all search results. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the 'Catalog pagination issue on Elasticsearch 6.x' patch associated with the version of Magento you are running.
+This patch resolves issues that users of Magento 2.3.3 experience in deployments where  Elasticsearch 6.x is used as the catalog search engine. Users who attempt to navigate past the first page of search results are unsuccessful, and Magento displays an error message. After this patch is installed, users will be able to page through all search results. See [Applying patches](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/overview.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the 'Catalog pagination issue on Elasticsearch 6.x' patch associated with the version of Magento you are running.
 
 ## Apply the EmailMessageInterface backward compatibility issue patch to resolve an email interface backward-incompatibility issue
 
 This patch addresses backward-incompatibility issues that extension developers may have experienced after the introduction of `Magento\Framework\Mail\EmailMessageInterface`,  which was released in Magento 2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and core modules are changed back to rely on `MessageInterface`. **Merchants should apply this patch as soon as possible, especially if their deployments include extensions or customizations that use the mail interface**.
 
-See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the EmailMessageInterface backward compatibility issue  patch associated with the version of Magento you are running.
+See [Applying patches](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/overview.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the EmailMessageInterface backward compatibility issue  patch associated with the version of Magento you are running.
 
 ## Apply the Method chaining fix for product collection patch to resolve an issue with broken method chaining in some extensions
 
@@ -67,10 +67,10 @@ This release contains the following major PSD-related changes:
 
 #### Security enhancements and fixes to core code
 
-*  **75 security enhancements** that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.3) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
+*  **75 security enhancements** that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{ page.baseurl }}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.3) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
 
 {:.bs-callout-info}
-Starting with the release of Magento Open Source 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Open Source to more easily identify unaddressed vulnerabilities in their deployment.
+Starting with the release of {{site.data.var.ce}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of {{site.data.var.ce}} to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
 
@@ -100,7 +100,7 @@ The following upgrades to core platform components boost platform security and s
 
 <!--- MC-16887-->
 
-*  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages. Magento recommends that module developers update custom storefront code to remove the `jquery/ui` dependency. Otherwise, a performance degradation warning message might be displayed in the console.
+*  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages. We recommend that module developers update custom storefront code to remove the `jquery/ui` dependency. Otherwise, a performance degradation warning message might be displayed in the console.
 
 <!--- MC-16046-->
 
@@ -120,7 +120,7 @@ As part of our efforts to better understand the Admin user experience and improv
 
 ### Inventory Management enhancements
 
-Fixes to multiple  bugs. See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
+Fixes to multiple  bugs. See [Inventory Management release notes]({{ page.baseurl }}/inventory/release-notes.html).
 
 ### GraphQL
 
@@ -131,7 +131,7 @@ Expanded GraphQL functionality and improved coverage for PayPal payment integrat
 *  Update shopping carts for guest users to apply or remove gift cards and check card balance
 *  Add configurable products to cart
 
-See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
+See [Release notes]({{ page.baseurl }}/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### PWA Studio
 
@@ -189,11 +189,11 @@ See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
 
 #### Yotpo
 
-The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Magento Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.
+The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.
 
 ## Backward-incompatible Changes
 
-This release introduces a new, immutable `EmailMessageInterface` that supports the sending of multi-part MIME-type content in email. The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to use this new `EmailMessageInterface` instead of `MessageInterface`, which was previously used. If you are a Magento extension developer and rely on `\Magento\Email\Model\Transport::getMessage()` or `\Magento\Framework\Mail\TransportInterface::getMessage()`, those methods will now return the new `EmailMessageInterface`.
+This release introduces a new, immutable `EmailMessageInterface` that supports the sending of multi-part MIME-type content in email. The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to use this new `EmailMessageInterface` instead of `MessageInterface`, which was previously used. If you are an extension developer and rely on `\Magento\Email\Model\Transport::getMessage()` or `\Magento\Framework\Mail\TransportInterface::getMessage()`, those methods will now return the new `EmailMessageInterface`.
 
 ## Fixed issues
 
@@ -257,7 +257,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MC-17275-->
 
-*  The Magento Admin now loads without issue after you change the store domain or set cookies to a different domain. Previously, the page did not redirect as expected.
+*  The Admin now loads without issue after you change the store domain or set cookies to a different domain. Previously, the page did not redirect as expected.
 
 <!--- MC-17675-->
 
@@ -1113,7 +1113,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- MC-16887-->
 
-*  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages. Magento recommends that module developers update custom storefront code to remove the `jquery/ui` dependency. Otherwise, a performance degradation warning message might be displayed in the console.
+*  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages. We recommend that module developers update custom storefront code to remove the `jquery/ui` dependency. Otherwise, a performance degradation warning message might be displayed in the console.
 
 <!--- MC-16046-->
 
@@ -1311,7 +1311,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- MC-16887-->
 
-*  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages. Magento recommends that module developers update custom storefront code to remove the `jquery/ui` dependency. Otherwise, a performance degradation warning message might be displayed in the console.
+*  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages. We recommend that module developers update custom storefront code to remove the `jquery/ui` dependency. Otherwise, a performance degradation warning message might be displayed in the console.
 
 <!--- MC-17922-->
 
@@ -1499,9 +1499,9 @@ The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newslet
 **Workaround**: In deployments that include third-party customizations, the old `MessageInterface` might still be instantiated. How you prevent this instantiation depends upon the particular usage of `MessageInterface` in your code. See the Magento forum DevBlog post [Backward-incompatible Changes in the Mail Library for Magento 2.3.3](https://community.magento.com/t5/Magento-DevBlog/Backward-incompatible-Changes-in-the-Mail-Library-for-Magento-2/ba-p/144787) for more information. **This issue has been addressed in the EmailMessageInterface backward compatibility issue patch, which was released on October 14, 2019. Merchants should apply this patch as soon as possible, especially if their deployments include extensions or customizations that use the Mail interface.**
 
 **Issue**:
-Method chaining does not work as expected in extensions and customizations that are based on a product collection entity. Many extensions rely on product collection entities, which represent a list of products that satisfy search and filtering criteria. In the process of refactoring the `addAttributeToFilter` method, method chaining as it was implemented in Magento versions earlier than 2.3.3 was broken. **Workaround**: Apply the Method chaining fix for product collection patch. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. You can find this patch [here](https://magento.com/tech-resources/download#download2335).
+Method chaining does not work as expected in extensions and customizations that are based on a product collection entity. Many extensions rely on product collection entities, which represent a list of products that satisfy search and filtering criteria. In the process of refactoring the `addAttributeToFilter` method, method chaining as it was implemented in Magento versions earlier than 2.3.3 was broken. **Workaround**: Apply the Method chaining fix for product collection patch. See [Applying patches](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/overview.html) for specific instructions on downloading and applying Magento patches. You can find this patch [here](https://magento.com/tech-resources/download#download2335).
 
-**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Commerce Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in {{site.data.var.ee}} 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

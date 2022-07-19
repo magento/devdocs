@@ -9,17 +9,17 @@ redirect_from:
   - /cloud/reference/docker-config.html
 ---
 
-You can create the Docker Compose configuration to build and deploy the Docker containers for your Magento project from the following sources:
+You can create the Docker Compose configuration to build and deploy the Docker containers for your {{site.data.var.ee}} project from the following sources:
 
 -  [{{site.data.var.ece}} project configuration files](#magento-commerce-cloud-configuration) for Cloud projects
 -  [Unified configuration](#unified-configuration) (`.magento.docker.yml`) for On-premises projects
 -  [CLI configuration](#cli-configuration) using `ece-docker build:compose` command options
--  [Custom Docker Compose configuration file](#build-a-custom-docker-compose-configuration) supports Magento installation for both Cloud and On-premises projects
+-  [Custom Docker Compose configuration file](#build-a-custom-docker-compose-configuration) supports installation for both Cloud and On-premises projects
 
 {:.bs-callout-info}
 When you build the Docker Compose configuration file, the `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save customizations for the Docker Compose configuration in a `docker-compose.override.yml` file.  If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration. See [Override configuration].
 
-## Magento Commerce Cloud configuration
+## Cloud configuration for Commerce
 
 You need the following {{site.data.var.ece}} project configuration files to emulate a Cloud project in the Docker environment.
 
@@ -53,7 +53,7 @@ services:
 ```
 
 -  `services` can include `php`, `mysql`, `redis`, `elasticsearch`, `rabbitmq`, `cron` and so on
--  `version` specifies a [supported service version][Service configuration options]. The version must be compatible with the Magento version you deploy.
+-  `version` specifies a [supported service version][Service configuration options]. The version must be compatible with the {{site.data.var.ee}} version you deploy.
 -  `enabled` defaults to `true` if not set
 
 #### PHP service
@@ -344,10 +344,10 @@ services:
 
 <!--Link definitions-->
 
-[hooks]: https://devdocs.magento.com/cloud/project/magento-app-properties.html#hooks
+[hooks]: {{ site.baseurl }}/cloud/project/magento-app-properties.html#hooks
 [.magento.app.yaml]: {{site.baseurl}}/cloud/project/magento-app.html
 [services.yaml]: {{site.baseurl}}/cloud/project/services.html
-[mounts]: https://devdocs.magento.com/cloud/project/magento-app-properties.html#mounts
-[available services]: {{site.baseurl}}/cloud/project/services.html#service-versions
+[mounts]: {{ site.baseurl }}/cloud/project/magento-app-properties.html#mounts
+[available services]: {{site.baseurl}}/guides/v2.4/install-gde/system-requirements.html
 [Override configuration]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html#override-configuration
 [Service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options

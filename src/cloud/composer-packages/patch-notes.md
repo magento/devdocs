@@ -1,13 +1,13 @@
 ---
 group: cloud-guide
-title: Magento Commerce Cloud package updates
+title: Cloud package updates for Commerce
 functional_areas:
   - Cloud
   - Setup
   - Configuration
 ---
 
-The release information in this section relates to [Composer packages]({{ site.baseurl }}/cloud/reference/cloud-composer.html) used by {{site.data.var.ece}} only. For general release information, refer to the main Magento [v2.3 Release Notes]({{ site.baseurl }}/guides/v2.3/release-notes/bk-release-notes.html) page.
+The release information in this section relates to [Composer packages]({{ site.baseurl }}/cloud/reference/cloud-composer.html) used by {{site.data.var.ece}} only. For general release information, refer to the main {{site.data.var.ee}} [v2.3 Release Notes]({{ site.baseurl }}/guides/v2.3/release-notes/bk-release-notes.html) page.
 
 Use this section to learn about updates to the following Composer packages:
 

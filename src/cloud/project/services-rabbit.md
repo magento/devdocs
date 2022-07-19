@@ -65,7 +65,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
 
 ### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
 
-1. Log in to the Magento Cloud CLI and project:
+1. Log in to the `magento-cloud` CLI and project:
 
    ```bash
    magento-cloud login
@@ -116,13 +116,13 @@ For debugging purposes, it is useful to directly connect to a service instance i
 1. Enable local port forwarding to RabbitMQ.
 
    ```bash
-   ssh -L <port-number>:mq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
+   ssh -L <port-number>:rabbitmq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
    An example for accessing the RabbitMQ management web interface at `http://localhost:15672` is:
 
    ```bash
-   ssh -L 15672:localhost:15672 <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
+   ssh -L 15672:rabbitmq.internal:15672 <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
 1. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber>` using the port number, username, and password information from the MAGENTO_CLOUD_RELATIONSHIPS variable.

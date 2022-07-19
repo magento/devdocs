@@ -1,13 +1,15 @@
 ---
 group: marketplace-sellers
 title: Themes
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/themes/
+layout: migrated
 ---
 
 A theme is a collection of files that determines the visual presentation and interactions that customers experience when they visit the store. A theme typically includes layout files, template files, CSS, and JavaScript. To learn more about Magento theme development, see the [Frontend Developer Guide]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html)
 
 The Themes tab shows the status of each theme you have submitted, and provides access to the profile and version history of each. You can also use the workspace controls to sort and filter the list.
 
-The process to submit a theme to Magento Marketplace is basically the same as [submitting an extension]({{ site.baseurl }}/marketplace/sellers/submit-for-review.html). The only difference is that it takes place from the Themes tab.
+The process to submit a theme to Commerce Marketplace is basically the same as [submitting an extension]({{ site.baseurl }}/marketplace/sellers/submit-for-review.html). The only difference is that it takes place from the Themes tab.
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/themes.png){: .zoom}
 _Themes_

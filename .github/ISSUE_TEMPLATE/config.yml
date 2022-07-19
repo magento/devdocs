@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Help Center
+    url: https://support.magento.com/hc/en-us
+    about: Find help with issues unrelated to documentation here.
+  - name: Community resources
+    url: https://developer.adobe.com/open/magento
+    about: Find more resources here.
+  - name: Contact the team
+    url: https://magentocommeng.slack.com/messages/CAN932A3H
+    about: Ask and answer questions directly with the team.

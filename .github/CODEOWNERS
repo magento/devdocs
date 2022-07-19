@@ -24,8 +24,8 @@
 
 /docker-compose.yaml @hguthrie
 
-LICENSE.txt @jeff-matthews
+LICENSE.txt @leslietilling
 
-COPYING.txt @jeff-matthews
+COPYING.txt @leslietilling
 
-CODEOWNERS @jeff-matthews @dshevtsov
+CODEOWNERS @leslietilling @dshevtsov

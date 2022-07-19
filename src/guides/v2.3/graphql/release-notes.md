@@ -5,10 +5,10 @@ title: Release Notes
 
 *Release notes published January 2020.*
 
-GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://github.com/magento/pwa-studio) (PWA), and mobile apps for Magento.
+GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://developer.adobe.com/commerce/pwa-studio/) (PWA), and mobile apps for Magento.
 
 The **[Magento GraphQL](https://github.com/magento/graphql-ce) project** is a Magento Community Engineering special project open to contributors.
-To take part and contribute, see the [Magento GraphQL](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://opensource.magento.com/slack)) to discuss the project.
+To take part and contribute, see the [Magento GraphQL](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/archives/C8076E0KS) channel (or [self signup](https://opensource.magento.com/slack)) to discuss the project.
 
 These release notes can include:
 
@@ -17,7 +17,7 @@ These release notes can include:
 
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.5
 
--  {:.new} **The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign.** These queries require an admin authorization token. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) for details.
+-  {:.new} **The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign.** These queries require an admin authorization token. See [Using queries]({{ page.baseurl }}/graphql/queries/index.html#staging) for details.
 -  {:.fix} Custom attributes used in layered navigation no longer require the **Use in Search**, **Visible in Advanced Search**, and **Use in Search Results Layered Navigation** fields be set to Yes.
 -  {:.fix} Added the `position` and `disabled` attributes to the `MediaGalleryInterface`.
 -  {:.fix} When you apply a gift card to a cart, an exception is no longer thrown when the last product is removed from the cart.

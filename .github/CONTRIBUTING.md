@@ -8,10 +8,9 @@ DevDocs staff members and [Community Maintainers](https://devdocs.magento.com/co
 
 ## Rewards for contributions
 
-DevDocs works with Magento Community Engineering teams and projects.
-As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.com/contributor-guide/contributing.html#points).
-
 If you write and contribute a full topic, we will add your name (or your company's name) at the top of the DevDocs page and link it to your blog or website!
+
+If you contribute a new topic or a major update to a topic, your GitHub username will be added to a description of the update in our [What's New topic](https://devdocs.magento.com/whats-new.html).
 
 ## Get started
 
@@ -148,7 +147,7 @@ You can provide feedback using the following options:
 
 Have a question? Need help? Magento DevDocs, Maintainers, and other Contributors are available through:
 
--  [Slack](https://magentocommeng.slack.com/messages/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
--  [Twitter @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
+-  [Slack](https://magentocommeng.slack.com/archives/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
+-  [Twitter @AdobeCommrcDocs](https://twitter.com/AdobeCommrcDocs)
 
 Thank you for contributing your brilliance to Magento DevDocs!!

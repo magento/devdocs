@@ -1,6 +1,8 @@
 ---
 group: rest-api
 title: Manage source items
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/manage-source-items/
+layout: migrated
 ---
 
 If Magento is configured to manage inventory, Magento assigns all existing products to the default source. Currently, Magento also assigns newly-created products to the default source. Single Source merchants do not need to manage source items, but Multi Source merchants may need to move products from the default source to a custom source, or move products from one custom source to another.
@@ -35,7 +37,7 @@ status |  Indicates whether the product is out of stock (0) or in stock (1) | In
 Use the `POST V1/inventory/source-items-delete` endpoint to unassign one or more products from the specified source. The `sku` and `source_code` attributes are required for each product.
 
 {:.bs-callout-warning}
-Unassigning a source clears all quantity data. For this example, this is OK, because the default source did not contain any quantity data. Reassigning a source that contains real quantity data can potentially cause havoc with pending orders with reservations and affect the salable quantity counts. See the [merchant documentation](https://docs.magento.com/user-guide/catalog/inventory-bulk-transfer-inventory.html) for more details.
+Unassigning a source clears all quantity data. For this example, this is OK, because the default source did not contain any quantity data. Reassigning a source that contains real quantity data can potentially cause havoc with pending orders with reservations and affect the salable quantity counts. See the [merchant documentation]({{ site.user_guide_url }}/catalog/inventory-bulk-transfer-inventory.html) for more details.
 
 **Sample usage:**
 
@@ -116,7 +118,7 @@ Magento returns an empty array.
 
 The following call returns all source items for `sku` = `new_product2`.
 
-See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage:**
 

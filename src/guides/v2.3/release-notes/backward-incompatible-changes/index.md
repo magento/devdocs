@@ -5,6 +5,29 @@ title: Magento 2.3 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
+### Removal of deprecated email variable usage in 2.3.7-p3
+
+Email variable usage was deprecated back in 2.3.4 as part of a security risk mitigation in favor of a more strict variable syntax. This legacy behavior has been fully removed in this release as a continuation of that security risk mitigation.
+
+As a result, email or newsletter templates that worked in previous versions of Magento may not work correctly after upgrading to Adobe Commerce 2.4.4 or Magento Open Source 2.4.4. Affected templates include admin overrides, themes, child themes, and templates from custom modules or third-party extensions. Your deployment may still be affected even after using the [Upgrade compatibility tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html?lang=en) to fix deprecated usages. See [Migrating custom email templates]({{page.baseurl}}/frontend-dev-guide/templates/template-email-migration.html) for information about potential effects and guidelines for migrating affected templates.
+## Media Gallery folders
+
+Version 2.3.7-p2 introduced a configuration option for Media Gallery content that denotes which folders can contain Media gallery files.
+
+The new configuration path `system/media_storage_configuration/media_storage/allowed_resource/media_gallery_image_folders` is used to define the "Media Gallery Allowed" folders in 'config.xml'.
+
+The initial values are the `wysiwyg` and `catalog/category` folders.
+
+These can be extended by adding a new value in `config.xml`.
+
+### Issue
+
+Any Media Gallery files within `pub/media`, or in a folder outside a "Media Gallery Allowed" folder will not be accessible to the Media Gallery after the patch is installed.
+
+### Workaround
+
+Copy any Media Gallery files to `pub/media/wysiwyg` or one of the specified "Media Gallery Allowed" folders, or add a new entry under `system/media_storage_configuration/media_storage/allowed_resource/media_gallery_image_folders`.
+
 ## API changes
 
 ### StoreManager instead of StoreResolver

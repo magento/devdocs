@@ -1,11 +1,13 @@
 ---
 group: extensions
 title: Amazon Sales Channel Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-channels/amazon/release-notes.html
+layout: migrated
 ---
-{:.bs-callout .bs-callout-warning}
-Amazon Sales Channel versions 4.0.0 and 4.1.0 are only supported for Magento 2.3.x versions.<br/>Amazon Sales Channel version 4.2.0 is compatible with Magento 2.3.x versions but is only supported for Magento 2.4.x versions.
+{: .bs-callout-warning }
+Amazon Sales Channel versions 4.0.0 and 4.1.0 are only supported for {{site.data.var.ee}} 2.3.x versions.<br/>Amazon Sales Channel version 4.2.0 is compatible with {{site.data.var.ee}} 2.3.x versions but is only supported for {{site.data.var.ee}} 2.4.x versions.
 
-**Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x and 2.4.x. We no longer support the extension on Magento 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
+**Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x and 2.4.x. We no longer support the extension on {{site.data.var.ee}} 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
 
 See the following documentation:
 
@@ -19,15 +21,32 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
-See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, support, and compatibility.
+See [Upcoming Releases]({{ site.baseurl }}/release/) for versioning, support, and compatibility.
+
+### v4.4.2
+
+Amazon Sales Channel 4.4.2 is compatible with {{site.data.var.ee}} versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+This version of Amazon Sales Channel includes the following fixes.
+
+-  {:.fix}Updated dependencies to support other updated extensions.
+-  {:.fix}Added support for PHP 8.1.
+
+### v4.4.1
+
+Amazon Sales Channel 4.4.1 is compatible with {{site.data.var.ee}} versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+This version of Amazon Sales Channel includes the following fix.
+
+-  {:.fix}Changed the way {{site.data.var.ee}} receives the _User Name_ field from Amazon. Previously, there was an error during order creation when the _User Name_ field contained special characters. {{site.data.var.ee}} now receives the _User Name_ data and filters out the special characters so the order can be created successfully.
 
 ### v4.4.0
 
-Amazon Sales Channel 4.4.0 is compatible with versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 4.4.0 is compatible with {{site.data.var.ee}} versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 This version of Amazon Sales Channel includes the following improvements and fixes.
 
--  {:.new}Added support for Read-Only Mode to the configuration. See [Global Settings](https://docs.magento.com/user-guide/configuration/sales-channels/global-settings.html).
+-  {:.new}Added support for Read-Only Mode to the configuration. See [Global Settings]({{ site.user_guide_url }}/configuration/sales-channels/global-settings.html).
 
 -  {:.fix}Changed the data flow so that multiple copies of the same instance can fetch updates simultaneously.
 
@@ -41,7 +60,7 @@ This version of Amazon Sales Channel includes the following improvements and fix
 
 ### v4.3.0
 
-Amazon Sales Channel 4.3.0 is compatible with versions 2.3.x and 2.4.0, but only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 4.3.0 is compatible with {{site.data.var.ee}} versions 2.3.x and 2.4.0, but only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 This version of Amazon Sales Channel includes the following improvements and fixes.
 
@@ -49,7 +68,7 @@ This version of Amazon Sales Channel includes the following improvements and fix
 
 -  {:.fix}In the _Marketing_ menu in the Admin, the name has been changed from _Amazon_ to _Amazon Sales Channel_.
 
--  {:.bug}**Important**: Known issues with Magento 2.4.0 compatibility are resolved in the Magento 2.4.1 release.
+-  {:.bug}**Important**: Known issues with {{site.data.var.ee}} 2.4.0 compatibility are resolved in the {{site.data.var.ee}} 2.4.1 release.
 
    -  Amazon cron processes in `error` state
 
@@ -59,17 +78,17 @@ This version of Amazon Sales Channel includes the following improvements and fix
 
 ### v4.2.0
 
-Amazon Sales Channel 4.2.0 is compatible with versions 2.3.x but only supported for versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. If you have a previous Amazon Sales Channel version installed and attempt to update your Magento to version 2.4.0, you will be prompted to update the extension before you can complete the Magento update.
+Amazon Sales Channel 4.2.0 is compatible with {{site.data.var.ee}} versions 2.3.x but only supported for versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. If you have a previous Amazon Sales Channel version installed and attempt to update your {{site.data.var.ee}} to version 2.4.0, you will be prompted to update the extension before you can complete the {{site.data.var.ee}} update.
 
 This version of Amazon Sales Channel includes a new feature along with improvements and fixes.
 
--  {:.bug}When Amazon Sales Channel 4.2.0 is integrated with Magento 2.4.0 and [Inventory Management](https://docs.magento.com/user-guide/catalog/inventory.html) (MSI) is enabled, there is a known issue that prevents the addition of products in your Magento catalog. This issue will be addressed in a future Magento release.
+-  {:.bug}When Amazon Sales Channel 4.2.0 is integrated with Magento 2.4.0 and [Inventory Management]({{ site.user_guide_url }}/catalog/inventory.html) (MSI) is enabled, there is a known issue that prevents the addition of products in your Magento catalog. This issue will be addressed in a future Magento release.
 
--  {:.new}Amazon Sales Channel has been enhanced to accept text-based address data and match it to standardized address formats, including city, state, and zip code. This enables order and shipping data to synchvronize (sync) with Amazon without address errors.<br/>For example, a shopper inputs the city, state, zip code as `Escondido, californiA 92025-1501`. Amazon Sales Channel imports and matches the data to the standard format as `Escondido, CA 92025`, and then syncs it back to Amazon in this standardized format.
+-  {:.new}Amazon Sales Channel has been enhanced to accept text-based address data and match it to standardized address formats, including city, state, and zip code. This enables order and shipping data to synchronize (sync) with Amazon without address errors.<br/>For example, a shopper inputs the city, state, zip code as `Escondido, californiA 92025-1501`. Amazon Sales Channel imports and matches the data to the standard format as `Escondido, CA 92025`, and then syncs it back to Amazon in this standardized format.
 
 -  {:.new}Added support for PHP 7.4.
 
--  {:.new}<!--CHAN-4334-->Added support for Magento 2.4.x. Previous versions may be compatible with Magento 2.4.x, but are not supported. See [Upcoming releases](https://devdocs.magento.com/release/) for version compatibility. Amazon Sales Channel must be updated to 4.2.0 before the Magento 2.4.0 update can be completed.
+-  {:.new}<!--CHAN-4334-->Added support for {{site.data.var.ee}} 2.4.x. Previous versions may be compatible with Magento 2.4.x, but are not supported. See [Upcoming releases]({{ site.baseurl }}/release/) for version compatibility. Amazon Sales Channel must be updated to 4.2.0 before the {{site.data.var.ee}} 2.4.0 update can be completed.
 
 -  {:.fix}<!--CHAN-4431-->Corrected an issue that caused an _Access Denied_ error for UK customers.
 
@@ -87,7 +106,7 @@ This version of Amazon Sales Channel includes a new feature along with improveme
 
 ### v4.1.0
 
-Amazon Sales Channel 4.1.0 is compatible with versions 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes user-interface enhancements, along with minor bug fixes.
+Amazon Sales Channel 4.1.0 is compatible with {{site.data.var.ee}} 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes user-interface enhancements, along with minor bug fixes.
 
 -  {:.new}<!--4247, 4230-->Changed the order import process to align with Magento order requirements. These changes correct issues that prevented Magento from creating the corresponding order for an imported order. See [Manage Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html) for information on order blockers and solutions.
 
@@ -115,10 +134,10 @@ Amazon Sales Channel 4.1.0 is compatible with versions 2.3.x of {{site.data.var.
 
 ### v4.0.0
 
-Amazon Sales Channel 4.0.0 is compatible with versions 2.3.0, 2.3.1, 2.3.2, 2.3.3, and 2.3.4 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
+Amazon Sales Channel 4.0.0 is compatible with {{site.data.var.ee}} versions 2.3.0, 2.3.1, 2.3.2, 2.3.3, and 2.3.4 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
 
-{:.bs-callout .bs-callout-warning}
-Amazon Sales Channel 4.0.0 is not supported for Magento 2.3.5. For support with Magento 2.3.5, upgrade to Amazon Sales Channel 4.1.0.
+{: .bs-callout-warning }
+Amazon Sales Channel 4.0.0 is not supported for {{site.data.var.ee}} 2.3.5. For support with {{site.data.var.ee}} 2.3.5, upgrade to Amazon Sales Channel 4.1.0.
 
 -  {:.new}Introduced a new [Amazon Sales Channel](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-sales-channel-home.html) home page with improved "card view" for your store information.
 
@@ -130,7 +149,7 @@ Amazon Sales Channel 4.0.0 is not supported for Magento 2.3.5. For support with 
 
 ### v3.0.1
 
-Amazon Sales Channel 3.0.1 is compatible with versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 3.0.1 is compatible with {{site.data.var.ee}} versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix}**Numerical Field Settings**: <!--CHAN-3779-->Fields that require a numeric-based value have been updated to only accept numeric characters. Example: Pricing Rule Settings > Adjustment Amount field
 
@@ -140,7 +159,7 @@ Amazon Sales Channel 3.0.1 is compatible with versions 2.2.4+ and 2.3.x of {{sit
 
 ### v3.0.0
 
-Amazon Sales Channel 3.0.0 is compatible with versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 3.0.0 is compatible with {{site.data.var.ee}} versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.new}**Amazon UK Marketplace Now Available**: Users can choose the United Kingdom marketplace when [creating and integrating](https://docs.magento.com/m2/ee/user_guide/sales-channels/amazon/store-integration.html) an Amazon Sales Channel store. This UK upgrade includes additional support for:
 
@@ -158,18 +177,18 @@ Amazon Sales Channel 3.0.0 is compatible with versions 2.2.4+ and 2.3.x of {{sit
 
 ### v2.0.0
 
-Amazon Sales Channel 2.0.0 is compatible with version 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 2.0.0 is compatible with {{site.data.var.ee}} version 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
  {:.bs-callout-info}
 Version 1.0.0 was available in limited release only.
 
--  {:.new} **Simplified Onboarding and Maintenance**: Add and integrate with your Amazon Seller account through a step-by-step process with detailed instructions available through the Magento Admin. Maintain your stores, accounts, and listed products through one dashboard.
+-  {:.new} **Simplified Onboarding and Maintenance**: Add and integrate with your Amazon Seller account through a step-by-step process with detailed instructions available through the Admin. Maintain your stores, accounts, and listed products through one dashboard.
 
--  {:.new} **Multiple Account Support**: Manage and monitor multiple Amazon brands and marketplace regions through the Magento Admin.
+-  {:.new} **Multiple Account Support**: Manage and monitor multiple Amazon brands and marketplace regions through the Admin.
 
 -  {:.new} **Intelligent Pricing**: Set automated repricing rules to increase your chances for the coveted Buy Box. Set prices to dynamically adjust to the current Buy Box price, or lowest competitor pricing. Set limits to repricing to protect your margin.
 
--  {:.new} **Listing Management**: Automate product listings and sync your Magento catalog to the Amazon Marketplace using listing rules. Add specific overrides to finely control your offerings. Monitor and manage all your listings directly from the Magento Admin.
+-  {:.new} **Listing Management**: Automate product listings and sync your Magento catalog to the Amazon Marketplace using listing rules. Add specific overrides to finely control your offerings. Monitor and manage all your listings directly from the Admin.
 
 -  {:.new} **Consistent Inventory Management**: Keep your Magento and Amazon inventory quantities in constant synchronization.
 

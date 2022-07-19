@@ -7,9 +7,9 @@ functional_areas:
 
 
 {:.bs-callout-warning}
-Always perform comprehensive testing before deploying any custom patch.
+To apply official quality patches, use the [Quality Patches Tool]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html). Always perform comprehensive testing before deploying any custom patch.
 
-{.:procedure}
+{:.procedure}
 To apply a custom patch using Composer:
 
 1. Open your command line application and navigate to your project directory.

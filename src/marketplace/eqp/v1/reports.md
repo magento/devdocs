@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Reports
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/reports/
+layout: migrated
 ---
 
 ## User Reports
@@ -9,7 +11,7 @@ See the related section under [users](users.html#user-reports) for more informat
 
 ## Product Submission Reports
 
-Products go through several reviews before being released on the Magento Marketplace.  The results of these reviews typically contain detailed reports.  See the section on [test results](test-results.html).
+Products go through several reviews before being released on the Commerce Marketplace.  The results of these reviews typically contain detailed reports.  See the section on [test results](test-results.html).
 
 ## Marketplace Reports
 

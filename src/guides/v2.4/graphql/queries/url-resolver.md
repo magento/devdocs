@@ -3,6 +3,9 @@ group: graphql
 title: urlResolver query
 ---
 
+{:.bs-callout-warning}
+The `urlResolver` query has been deprecated. Use the [route]({{page.baseurl}}/graphql/queries/route.html) query instead.
+
 A merchant can reconfigure (rewrite) the URL to any product, category, or CMS page. When the rewrite goes into effect, any links that point to the previous URL are redirected to the new address.
 
 The `urlResolver` query returns the canonical URL for a specified product, category, or CMS page. An external app can render a page by a URL without any prior knowledge about the landing page.
@@ -51,7 +54,7 @@ The `urlResolver` query contains the following attribute.
 
 Attribute | Type | Description
 --- | --- | ---
-`url` | String | The requested URL. To query for product and category pages, the `url` value must contain the URL key and suffix. For CMS page queries, the `url` value must contain the URL key only.
+`url` | String! | The requested URL. To query for product and category pages, the `url` value must contain the URL key and suffix. For CMS page queries, the `url` value must contain the URL key only.
 
 ## Output attributes
 

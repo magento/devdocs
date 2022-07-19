@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: REST API
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/rest-api/
+layout: migrated
 ---
 
  {:.bs-callout-info}
@@ -19,7 +21,7 @@ These resources are managed by a set of REST API endpoints.
 | files          | Manage your profile avatar, ZIP files, image files, PDF documents |
 | packages       | Initiate and manage your submissions                        |
 | test results   | Receive information about automated and manual reviews      |
-| reports        | Get information about your sales, as well as your Magento Marketplace web pages |
+| reports        | Get information about your sales, as well as your Commerce Marketplace web pages |
 | API callbacks  | Request notification as specific workflow activities happen |
 
 ## General concepts

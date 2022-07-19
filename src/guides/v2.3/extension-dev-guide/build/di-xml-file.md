@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: 03_Build
 title: The di.xml file
-menu_title: The di.xml file
-menu_order: 1
 ---
 
 ## Overview
@@ -27,6 +24,7 @@ The areas are:
 
 *  adminhtml
 *  frontend
+*  graphql
 *  webapi_rest
 *  webapi_soap
 *  crontab
@@ -35,11 +33,30 @@ During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstr
 
 **Examples:**
 
-*  In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the [URL](https://glossary.magento.com/url).
+In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php) class loads the area based on the front-name provided in the [URL](https://glossary.magento.com/url).
 
-*  In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
+```php
+$areaCode = $this->_areaList->getCodeByFrontName($this->_request->getFrontName());
+$this->_state->setAreaCode($areaCode);
+$this->_objectManager->configure($this->_configLoader->load($areaCode));
+```
 
-*  In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
+In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php) class also loads the area based on the URL in the request.
+
+```php
+$path = $this->request->get('resource');
+$params = $this->parsePath($path);
+$this->state->setAreaCode($params['area']);
+$this->objectManager->configure($this->configLoader->load($params['area']));
+```
+
+In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php) class always loads the `crontab` area.
+
+```php
+$this->_state->setAreaCode(Area::AREA_CRONTAB);
+$configLoader = $this->objectManager->get(\Magento\Framework\ObjectManager\ConfigLoaderInterface::class);
+$this->objectManager->configure($configLoader->load(Area::AREA_CRONTAB));
+```
 
 ## Type configuration
 
@@ -150,7 +167,7 @@ Node Format:
 
 : `<argument xsi:type="number">{numericValue}</argument>`
 
-Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:target="_blank"}.
+Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric).
 
 ---
 
@@ -265,20 +282,20 @@ The `preference` node specifies the default implementation:
 ```xml
 <!--  File: app/etc/di.xml -->
 <config>
-    <preference for="Magento\Core\Model\UrlInterface" type="Magento\Core\Model\Url" />
+    <preference for="Magento\Framework\UrlInterface" type="Magento\Framework\Url" />
 </config>
 ```
 
-This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\Core\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the global scope.
+This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\Framework\Url` implementation class wherever there is a request for the `Magento\Framework\UrlInterface` in the global scope.
 
 ```xml
 <!-- File: app/code/Magento/Backend/etc/adminhtml/di.xml -->
 <config>
-    <preference for="Magento\Core\Model\UrlInterface" type="Magento\Backend\Model\Url" />
+    <preference for="Magento\Framework\UrlInterface" type="Magento\Backend\Model\UrlInterface" />
 </config>
 ```
 
-This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the [admin](https://glossary.magento.com/admin) area.
+This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\UrlInterface` implementation class wherever there is a request for the `Magento\Framework\UrlInterface` in the [admin](https://glossary.magento.com/admin) area.
 
 ### Override a method using 'preference' nodes
 
@@ -295,24 +312,36 @@ Here is an example of overriding a method from a core file:
 The example below overrides the `isVisible` method from the `Magento\Checkout\Block\Onepage\Success` block class.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace ExampleCorp\OverrideExample\Block\Onepage;
 
-class Success extends \Magento\Checkout\Block\Onepage\Success
+use Magento\Checkout\Block\Onepage\Success as MagentoSuccess;
+use Magento\Framework\View\Element\Template\Context;
+use Magento\Checkout\Model\Session;
+use Magento\Sales\Model\Order\Config;
+use Magento\Framework\App\Http\Context as HttpContext;
+
+class Success extends MagentoSuccess
 {
     /**
      * Constructor Modification
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Checkout\Model\Session $checkoutSession
-     * @param \Magento\Sales\Model\Order\Config $orderConfig
-     * @param \Magento\Framework\App\Http\Context $httpContext
+     * @param Context $context
+     * @param Session $checkoutSession
+     * @param Config $orderConfig
+     * @param HttpContext $httpContext
      * @param array $data
      */
     public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
-        \Magento\Checkout\Model\Session $checkoutSession,
-        \Magento\Sales\Model\Order\Config $orderConfig,
-        \Magento\Framework\App\Http\Context $httpContext,
+        Context $context,
+        Session $checkoutSession,
+        Config $orderConfig,
+        HttpContext $httpContext,
         array $data = []
     ) {
         parent::__construct(
@@ -353,7 +382,7 @@ Any descendant can override the parameters configured for its supertype; that is
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Framework\View\Element\Context">
         <arguments>
-            <argument name="urlBuilder" xsi:type="object">Magento\Core\Model\Url</argument>
+            <argument name="urlBuilder" xsi:type="object">Magento\Framework\Url</argument>
         </arguments>
     </type>
     <type name="Magento\Backend\Block\Context">
@@ -364,11 +393,11 @@ Any descendant can override the parameters configured for its supertype; that is
 </config>
 ```
 
-In the preceding example, [`Magento\Backend\Block\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Block/Context.php){:target="_blank"} is a descendant of [`Magento\Framework\View\Element\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/Context.php){:target="_blank"}.
+In the preceding example, [`Magento\Backend\Block\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Block/Context.php) is a descendant of [`Magento\Framework\View\Element\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/Context.php).
 
-The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Core\Model\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url.php){:target="_blank"} as `$urlBuilder` in their constructors.
+The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Framework\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url.php) as `$urlBuilder` in their constructors.
 
-The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Url.php){:target="_blank"} as the `$urlBuilder` instead.
+The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Url.php) as the `$urlBuilder` instead.
 
 ## Object lifestyle configuration
 
@@ -404,7 +433,7 @@ For multi-system deployments, such as the [pipeline deployment model]({{ page.ba
 
 The following code sample is a template for specifying values as sensitive or system-specific:
 
-```php
+```xml
 <type name="Magento\Config\Model\Config\TypePool">
    <arguments>
       <argument name="VALUE_TYPE" xsi:type="array">

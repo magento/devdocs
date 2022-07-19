@@ -9,7 +9,7 @@
 
 <!-- **Compatible**{: .status-light.compatible } – independent release version that has not been fully tested by Magento, but is confirmed to be compatible. -->
 
-**Not supported**{: .status-light.not-supported } - version that is not compatible with an Adobe Commerce or Magento Open Source release.
+**Not supported**{: .status-light.not-supported } - version that is not compatible with an {{site.data.var.ee}} or {{site.data.var.ce}} release.
 
 <table class="compatibility-table">
   <thead>

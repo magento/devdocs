@@ -39,13 +39,13 @@ When used in your server block that defines your site, the `nginx.conf.sample` c
 
 ## Before you begin
 
-To complete this tutorial, you will need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack:
+To complete this tutorial, you will need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) stack:
 
 -  Linux
 -  Apache (2.4+)
 -  MySQL (5.7+)
 -  PHP (7.4)
--  Elasticsearch (7.x)
+-  Elasticsearch (7.x) or OpenSearch (1.2)
 -  Magento (2.4+)
 
 {:.bs-callout-info}

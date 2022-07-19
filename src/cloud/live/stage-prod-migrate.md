@@ -81,7 +81,7 @@ You can use the [Magento Cloud CLI commands]({{ site.baseurl }}/cloud/reference/
 1. Add, commit, and push changes to the environment.
 
    ```bash
-   git add -A && git commit -m "Commit message" && git push magento <environment-ID>
+   git add -A && git commit -m "Commit message" && git push origin <environment-ID>
    ```
 
 1. Complete site testing.
@@ -289,7 +289,7 @@ To migrate a database:
    The following example references the gzip file created by the database dump operation:
 
    ```bash
-   zcat /tmp/database.sql.gz | mysql -h database.internal -u user main
+   zcat /tmp/database.sql.gz | mysql -h database.internal -u user -ppassword main
    ```
 
 ### Troubleshooting the database migration

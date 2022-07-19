@@ -35,7 +35,7 @@ The Commerce Marketplace does not support the Composer `source` and `dist` prope
 
 ### Using metapackages {#package-metapackage}
 
-Metapackages allow you to group an [extension](https://glossary.magento.com/extension) that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a [metapackage](https://glossary.magento.com/metapackage) as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage `composer.json` file.
+Metapackages allow you to group an [extension](https://glossary.magento.com/extension) that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a [metapackage](https://glossary.magento.com/metapackage) as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Commerce Marketplace should be a .zip file containing only the metapackage `composer.json` file.
 
  {:.bs-callout-info}
 We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.

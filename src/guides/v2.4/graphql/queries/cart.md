@@ -57,7 +57,6 @@ The following query shows the status of a cart that is ready to be converted int
         label
       }
       telephone
-      pickup_location_code
       available_shipping_methods {
         amount {
           currency
@@ -160,7 +159,6 @@ The following query shows the status of a cart that is ready to be converted int
             "label": "US"
           },
           "telephone": "(555) 229-3326",
-          "pickup_location_code": "txspeqs",
           "available_shipping_methods": [
             {
               "amount": {
@@ -659,7 +657,7 @@ Attribute |  Data Type | Description
 `postcode` | String | The postal code for the billing address
 `region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
 `street` | [String!]! | The street for the billing address
-`telephone` | String! | The telephone number for the billing address
+`telephone` | String | The telephone number for the billing address
 
 ### CartAddressRegion object {#CartAddressRegion}
 
@@ -799,8 +797,8 @@ Attribute |  Data Type | Description
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | Deprecated. Use `cart_items_v2` instead
 `cart_items_v2` | [CartItemInterface] | An array that lists the items in the cart
 `items_weight` | Float | Deprecated. This attribute is not applicable for GraphQL
-`selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 `pickup_location_code` | String | The code of the in-store pickup location where the customer will receive the order
+`selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 
 ## Related topics
 

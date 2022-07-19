@@ -29,7 +29,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 ## Recommended reading
 
-*  [Checklist of modules]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento){:target="_blank"}
+*  [Checklist of modules]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento)
 *  [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ## Create a theme directory
@@ -81,13 +81,13 @@ After you create a directory for your theme, you must create `theme.xml` contain
    </theme>
    ```
 
-If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
 
 ## Make your theme a Composer package {#fedg_create_theme_composer}
 
-Magento default themes are distributed as [Composer](https://getcomposer.org/){:target="_blank"} packages.
+Magento default themes are distributed as [Composer](https://getcomposer.org/) packages.
 
-To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is [https://packagist.org/](https://packagist.org/){:target="_blank"}.
+To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is [https://packagist.org/](https://packagist.org/).
 
 The `composer.json` file provides theme dependency information. Refer to a current `theme.xml` file for the correct dependencies and their versions. If your parent theme is something other than `Magento/blank`, you may need additional modules in the `"require"` section.
 
@@ -138,7 +138,7 @@ ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/<Vendor>/<them
 
 Where `<Vendor>` is your vendor name and `<theme>` is the theme code.
 
-For illustration, see the [registration.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/registration.php){:target="_blank"} file in the Magento Luma theme.
+For illustration, see the [registration.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/registration.php) file in the Magento Luma theme.
 
 ## Configure images {#fedg_create_theme_how-to-images}
 
@@ -146,7 +146,7 @@ Product image sizes and other properties used on the [storefront](https://glossa
 
 If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add `view.xml` using the following steps:
 
-1. Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
+1. Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
 
 1. Create the `etc` directory in your theme folder.
 
@@ -271,7 +271,7 @@ Running this command with the `-f` argument can fix issues regarding deployment 
 
 ### Theme registration {#register_theme}
 
-After adding your theme files to the file system and opening the Magento Admin (or reloading any Magento Admin page), your theme gets registered and added to the database. If a theme is removed, the default theme will automatically be used, but the theme's database record is not automatically removed.
+After adding your theme files to the file system and opening the Admin (or reloading any Admin page), your theme gets registered and added to the database. If a theme is removed, the default theme will automatically be used, but the theme's database record is not automatically removed.
 
 ### Applying a theme
 

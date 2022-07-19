@@ -3,11 +3,11 @@ group: release-notes
 title: Adobe Commerce 2.3.7 Release Notes
 ---
 
-Magento Commerce 2.3.7 offers significant platform upgrades, 40 security enhancements, and 10 functional fixes for the core product.
+{{site.data.var.ee}} 2.3.7 offers significant platform upgrades, 40 security enhancements, and 10 functional fixes for the core product.
 
 {:.bs-callout-info}
 
-PHP 7.3 reaches end of support in December 2021, and Adobe Commerce 2.3.x reaches end of support in April 2022. **We strongly recommend planning your upgrade now to Adobe Commerce 2.4.x and PHP 7.4.x to help maintain PCI compliance**.
+PHP 7.3 reached end of support in December 2021, and {{site.data.var.ee}} 2.3.x reaches end of support in April 2022. **We strongly recommend planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance**.
 
 ## Backward-Incompatible Changes (BiCs)
 
@@ -36,25 +36,25 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 This release includes 40 security fixes and platform security improvements. The copy-to-clipboard feature has also been disabled for all storefront credit card fields. <!--- MC-38985-->
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Platform upgrades
 
-*  **PHP 7.4 support**. Magento 2.3.7 introduces support for PHP 7.4. Magento Marketplace extension vendors must confirm that new versions of their extensions are compatible with PHP 7.4. All unit and integration tests should be run using PHPUnit 9. See the [PHP 7.4 support for Magento 2.3.x release line](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) DevBlog post.
+*  **PHP 7.4 support**. Magento 2.3.7 introduces support for PHP 7.4. Commerce Marketplace extension vendors must confirm that new versions of their extensions are compatible with PHP 7.4. All unit and integration tests should be run using PHPUnit 9. See the [PHP 7.4 support for Magento 2.3.x release line](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) DevBlog post.
 
 *  **PHP 7.3 is now deprecated.**  We do not recommend running Magento 2.3.7 with PHP 7.3. Merchants can run Magento 2.3.7 with PHP 7.3, but this configuration has not been tested. Adobe will continue to perform compatibility testing but not full functional testing with PHP 7.3. PHP 7.3 reaches end-of-life on December 6, 2021, and after that date, all deployments running PHP 7.3 will be vulnerable to security exploits.
 
 *  **Removal of PHP 7.1 and 7.2 compatibility**. You cannot run Magento 2.3.7 on PHP 7.1 or 7.2.
 
-*  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all unit and integration tests have been configured to be run with PHPUnit 9.
+*  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Commerce Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all unit and integration tests have been configured to be run with PHPUnit 9.
 
-*  [Elasticsearch 7.9.x is now supported](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html). Although we recommend running Elasticsearch 7.9.3, Magento 2.3.x remains compatible with Elasticsearch 7.4.x.
+*  [Elasticsearch 7.9.x is now supported]({{ page.baseurl }}/install-gde/system-requirements.html). Although we recommend running Elasticsearch 7.9.3, Magento 2.3.x remains compatible with Elasticsearch 7.4.x.
 
 *  Varnish 6.5.1 is now supported on 2.3.x.
 
 *  Magento 2.3.7 is now compatible with Composer 2.x. We recommend that merchants migrate to Composer 2.x. Although you can install this release using Composer 1.x, Composer 1.x will soon reach end-of-life. For an overview of Composer 2.x features, see [Deprecating Packagist.org support for Composer 1.x](https://blog.packagist.com/deprecating-composer-1-support/).
 
-*  [Redis 6.x is now supported](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html). Magento 2.3.x remains compatible with Redis 5.x.
+*  [Redis 6.x is now supported]({{ page.baseurl }}/install-gde/system-requirements.html). Magento 2.3.x remains compatible with Redis 5.x.
 
 *  The `endroid/qr-code` library dependency has been updated to the latest version (4.x).
 
@@ -66,7 +66,7 @@ Interactive In-Product Guidance provides merchants with usage tips and informati
 
 *  The Vimeo Simple API has been replaced with Vimeo [oEmbed](https://developer.vimeo.com/api/oembed) API. <!--- MC-40510-->
 
-*  The Web Set Up Wizard has been deprecated and removed. You must use the command line to install or upgrade Magento 2.3.7. See [Install Magento](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli.html). <!--- MC-40598-->
+*  The Web Set Up Wizard has been deprecated and removed. You must use the command line to install or upgrade Magento 2.3.7. See [Install Magento]({{ page.baseurl }}/install-gde/install/cli/install-cli.html). <!--- MC-40598-->
 
 ### Vendor-developed extension enhancements
 

@@ -10,9 +10,9 @@ functional_areas:
 {{site.data.var.mcd-prod}} provides an option to deploy {{site.data.var.ee}} to a Docker environment for development, testing, and automation tasks. It includes the following features:
 
 -  **Cross-platform support**–Supports Linux, macOS and Windows with WSL2
--  **Magento Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
--  **{{site.data.var.ee}} development**–Creates a local development environment for Magento On-premises projects
--  **Multiple sync options**–Provides three file synchronization options (native, mutagen and docker-sync) for best performance
+-  **Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
+-  **{{site.data.var.ee}} development**–Creates a local development environment for On-premises projects
+-  **Multiple sync options**–Provides three file synchronization options: `native`, `mutagen`, and `manual-native`. The `manual-native` option provides the best performance on macOS and Windows.
 -  **Extensibility**–Use a standard Docker configuration file to extend and customize your development environment
 
 {:.bs-callout-info}
@@ -26,7 +26,7 @@ The Cloud Docker environment supports Linux, macOS, and Windows operating system
 
 -  [Git] for interaction between your local system and {{site.data.var.ece}} source repositories
 -  [Docker] for Mac 2.2.0.0 or later or Docker for Linux
--  Developer mode on MacOS systems might require [mutagen] or [docker-sync] for file synchronization
+-  Developer mode on macOS systems might require the [Mutagen] option for file synchronization.
 
 ### Docker engine
 
@@ -52,10 +52,10 @@ The script option settings determine the PHP version and {{site.data.var.mcd-pro
 
 > `init-docker.sh` options
 
-{: .install-script-options}
+{:.fixed}
 Option | Description
 :----- | :------
-`-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker envrionment. Defaults to `7.2`
+`-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker environment.
 `-i`, `--image` |  {{site.data.var.mcd-prod}} image version (for installing dependencies). Defaults to `1.1`
 `--host` | Domain name to add to the `/etc/hosts` file. Defaults to `magento2.docker`
 `--add-host` | Add domain name to `/etc/hosts` file. Defaults to true (`yes`)
@@ -92,17 +92,17 @@ If you start your Docker environment with Apache running, the following error di
 
 Prior to setting up a local workspace, gather the following credentials and account information:
 
--  **Magento authentication keys (Composer keys)**
+-  **Authentication keys (Composer keys)**
 
-    Magento authentication keys are 32-character authentication tokens that provide secure access to the Magento 2 Composer repository (repo.magento.com), and any other Git services required for Magento development such as GitHub. Your account can have multiple Magento authentication keys. For the workspace setup, start with one specific key for your code repository. If you do not have any keys, contact the Account Owner to create them, or create the [Magento authentication keys] yourself.
+    Authentication keys are 32-character authentication tokens that provide secure access to the {{site.data.var.ee}} Composer repository (repo.magento.com), and any other Git services required for development such as GitHub. Your account can have multiple authentication keys. For the workspace setup, start with one specific key for your code repository. If you do not have any keys, contact the Account Owner to create them, or create the [authentication keys] yourself.
 
 -  **(Optional) Cloud Project account**
 
    The License Owner or Technical Admin (Super User) should invite you to the {{site.data.var.ece}} project. When you receive the e-mail invitation, click the link and follow the prompts to create your account. See [Set up an account] for details.
 
--  **(Optional) Magento Encryption Key**
+-  **(Optional) Encryption Key**
 
-   When importing an existing Magento instance, capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]
+   When importing an existing {{site.data.var.ee}} instance, capture the encryption key used to protect your access and data for the {{site.data.var.ee}} database. For details on this key, see [Resolve issues with encryption key]
 
 <!--Link definitions-->
 
@@ -110,19 +110,12 @@ Prior to setting up a local workspace, gather the following credentials and acco
 [Docker Compose]: https://docs.docker.com/compose/
 [Docker]: https://www.docker.com/get-started
 [Docker desktop]: https://docs.docker.com/desktop/#configure-docker-desktop
-[docker-sync]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [init-docker.sh]: https://github.com/magento/magento-cloud-docker/blob/develop/bin/init-docker.sh
-[mutagen]: https://mutagen.io/documentation/introduction/installation
-[Magento authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
+[Mutagen]: https://mutagen.io/documentation/introduction/installation
+[authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [Magento Cloud template]: https://github.com/magento/magento-cloud
 [Set up an account]: {{site.baseurl}}/cloud/before/before-workspace.html#newaccount
-[Resolve issues with encryption key]: {{site.baseurl}}/cloud/trouble/trouble-crypt-key-variable.html
+[Resolve issues with encryption key]: https://support.magento.com/hc/en-us/articles/360033978652
 [Update the hosts file and install dependencies]: {{site.baseurl}}/cloud/docker/docker-installation.html#update-the-hosts-file-and-install-dependencies
 [{{site.data.var.mcd-package}} GitHub repository]: https://github.com/magento/magento-cloud-docker
 [Get support for {{site.data.var.mcd-prod}}]: {{site.baseurl}}/cloud/docker/docker-troubleshooting.html
-
-<style>
-table.install-script-options td:nth-child(1) {
-  width: 200px;
-}
-</style>

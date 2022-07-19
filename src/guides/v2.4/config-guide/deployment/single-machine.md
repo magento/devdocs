@@ -23,7 +23,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 ## Deployment steps
 
-1. Log in to your production server as, or switch to, the [Magento file system owner][10].
+1. Log in to your production server as, or switch to, the [file system owner][10].
 
 1. Change directory to the Magento base directory:
 
@@ -40,7 +40,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 1. Apply updates to Magento or its components using the following command pattern:
 
    ```bash
-   composer require <package> <version> --no-update
+   composer require-commerce <package> <version> --no-update
    ```
 
    **package**: The name of the package you want to update.
@@ -100,7 +100,7 @@ Related topics
 *  [Update Magento][2]
 
 [0]: {{ page.baseurl }}/
-[1]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
+[1]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/implementation/perform-upgrade.html
 [2]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [4]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode

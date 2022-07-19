@@ -238,7 +238,7 @@ class EntityRepository
 
         //Returning deferred that will find all requested entities
         //and return the one with $id
-        return $this->proxyDefferedFactory->createFor(
+        return $this->proxyDeferredFactory->createFor(
             Entity::class,
             new CallbackDeferred(
                 function () use ($id) {

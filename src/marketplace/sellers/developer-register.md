@@ -2,6 +2,8 @@
 group: marketplace-sellers
 title: Register as a Developer
 redirect_from: /marketplace/sellers/register-as-a-developer.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/developer-register/
+layout: migrated
 ---
 
 Follow these steps to create a new developer account, or to register as a developer with your existing Magento account.
@@ -16,7 +18,7 @@ Follow these steps to create a new developer account, or to register as a develo
 If you don’t yet have a Magento account, do one of the following:
 
 -  Go to the [Magento Developer][1] page, and click <span class="btn">Create  Account</span>. Then, click <span class="btn">Register</span>.
--  In the upper-right corner of [Magento Marketplace][2], click **Sign In**. Then, click <span class="btn">Register</span>.
+-  In the upper-right corner of [Commerce Marketplace][2], click **Sign In**. Then, click <span class="btn">Register</span>.
 -  From [Magento.com][3], click **My Account**. Then under **New Customers**, click <span class="btn">Register</span>.
 
 If you already have a Magento account, log in as a registered user.
@@ -25,7 +27,7 @@ If you already have a Magento account, log in as a registered user.
 
 1. Under _Personal Information_, enter your **First Name**, **Last Name**, **Email Address**, and **Country**.
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info}
     If there is already a Magento account with this email address, click the link to access your account.
 
 1. Under _My Company Primarily_, choose the best description of your company’s primary focus. Then, set **My Role** to the option that best describes what you do for the company.
@@ -38,7 +40,7 @@ If you already have a Magento account, log in as a registered user.
 
 ## Step 2: Agree to the terms of service
 
-Read the following documents that describe Magento Marketplace [terms of service][4].
+Read the following documents that describe Commerce Marketplace [terms of service][4].
 
 -  Xcelerate & Marketplace Master Terms
 -  Xcelerate & Marketplace Development Terms
@@ -52,7 +54,7 @@ If you agree with the terms of use, select the checkbox and click <span class="b
 
 ## Step 3: Select the type of account
 
-Your Magento Marketplace developer account can be set up as an individual or company. All extensions and themes that are developed by a single company should be managed under the same account.
+Your Commerce Marketplace developer account can be set up as an individual or company. All extensions and themes that are developed by a single company should be managed under the same account.
 
 When prompted, select the type of account you want to create, and click <span class="btn">Choose</span>. Then, follow the appropriate instructions to complete the profile for the account.
 

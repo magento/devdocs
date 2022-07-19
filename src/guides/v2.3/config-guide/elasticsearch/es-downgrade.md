@@ -18,8 +18,8 @@ If you need to work with Elasticsearch 7.x, run the following command, specifyin
 composer require "elasticsearch/elasticsearch:~7.1"
 ```
 
-Then configure Elasticsearch within [Magento Admin][].
+Then configure Elasticsearch within [Admin][].
 
 <!-- Link Definitions -->
 
-[Magento Admin]: https://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html
+[Admin]: https://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html

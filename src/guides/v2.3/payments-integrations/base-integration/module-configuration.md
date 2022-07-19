@@ -10,7 +10,8 @@ functional_areas:
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate [module](https://glossary.magento.com/module).
 
-You can use the [sample Magento_SamplePaymentGateway module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) files as basis for your custom module structure and files.
+{:.bs-callout-info}
+You can use the [sample Magento_SamplePaymentGateway module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) files as the basis for your custom module structure and files. However, be aware that this code is NOT supported.
 
 ## Specify your module dependencies
 

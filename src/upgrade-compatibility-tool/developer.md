@@ -6,15 +6,17 @@ redirect_from:
   - /safe-upgrade-tool/developer.html
 functional_areas:
   - Upgrade
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html
+layout: migrated
 ---
 
-This topic contains information for developers who want to know more technical information about the Upgrade Compatibility Tool ALPHA. It is focused on developers who work closely with the Magento source code. You can use this knowledge to customize the tool's components.
+This topic contains information for developers who work closely with the {{site.data.var.ee}} code and want to learn detailed information about the {{site.data.var.uct}}. You can use this knowledge to customize the tool's components.
 
-## Magento API index integration
+## {{site.data.var.ee}} API index integration
 
-Magento API index integration is an internal integration solution that comprehends a set of tools to explore Magento Extensions developed by Magento, an Adobe Company, Magento Partners and 3rd party vendors based on static code analysis.
+{{site.data.var.ee}} API index integration is an internal integration solution that encompasses a set of tools to explore {{site.data.var.ee}} extensions developed by Adobe, {{site.data.var.ee}} Partners, and third-party vendors based on static code analysis.
 
-The integration with Magento API index is done through:
+The integration with the {{site.data.var.ee}} API index is done through:
 
 `sut\Domain\MRay\MRayInterface`
 
@@ -26,7 +28,7 @@ Edit this file to customize the response according to your installation. Just re
 
 `sut\Domain\MRay\MRayInterface : "@sut_mray_mock"`
 
-In the previous example, the Upgrade Compatibility Tool uses `@sut_mray_mock` as the `MRayInterface` implementation. The responses from the `api()` and `modules()` methods come from the following files:
+In the previous example, the {{site.data.var.uct}} uses `@sut_mray_mock` as the `MRayInterface` implementation. The responses from the `api()` and `modules()` methods come from the following files:
 
 *  `dev/mray_mock_files/api.json`
 *  `dev/mray_mock_files/modules.json`
@@ -51,43 +53,53 @@ To run the integration tests, execute one of the following commands:
 
 ## Acceptance testing
 
-1. Before executing acceptance tests, you must set the Magento URL in the `phpunit` configuration file.
+1. Before executing acceptance tests, you must set the {{site.data.var.ee}} URL in the `phpunit` configuration file.
 1. Copy the default `tests/acceptance/phpunit.xml` file (without the .dist suffix).
-1. Change the `TESTS_BASE_URL` value to point to the Magento URL that you want to test.
+1. Change the `TESTS_BASE_URL` value to point to the {{site.data.var.ee}} URL that you want to test.
 1. To run the acceptance tests, execute one of the following commands:
 
    *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
    *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
 
-## JS unit testing for GraphQL
+## GraphQL unit testing and ESLint code analysis
 
-The [Jest](https://jestjs.io/docs/en/getting-started.html) framework was used to create these JS unit tests:
+### Requirements
 
 {:.bs-callout-info}
-To run JS unit tests for GraphQL, you must have Node.js installed.
+You must have Node.js on your system, see the [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
 
-### Node.js
+The following instructions are for macOS systems:
 
-To install Node.js on your system, see the Node.js [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
-
-The following instructions are for MacOS systems:
-
-1. Open a terminal and navigate to the `graphql-schema-compatibility/` directory.
+1. Open a terminal and navigate to the root directory of the project.
 1. Install project dependencies:
 
    ```bash
    npm install
    ```
 
-1. Run unit tests or `jest`:
+### GraphQL unit testing
+
+The [Jest](https://jestjs.io/docs/en/getting-started.html) framework was used to create these JS unit tests:
+
+The tests are inside `dev/tests/Js`.
+
+The string schemas for testing are inside `dev/tests/Acceptance/_files/graphql_schemas`.
+
+Run unit tests or `jest` as follows:
 
    ```bash
-   npm run unit-test
+  ./node_modules/.bin/jest --verbose --rootDir=dev/tests/Js/
    ```
+### ESLint code analysis
 
-The tests are inside `graphql-schema-compatibility/test/js/unit`.
+[ESLint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
 
-The string schemas for testing are inside `dev/graphql_schemas`.
+Run `eslint` code analysis as follows:
+
+   ```bash
+   npm run eslint -- path/to/analyse
+   ./node_modules/.bin/eslint -c dev/tests/Static/.eslintrc --rulesdir vendor/magento/magento-coding-standard/eslint/rules path/to/analyse
+   ```
 
 ## Complexity score
 
@@ -101,11 +113,11 @@ This score is based on the results extracted from the analysis:
 *  Number of issues identified
 *  Severity of issues identified
 
-The Upgrade Compatibility Tool calculates this score according to the following formula:
+The {{site.data.var.uct}} calculates this score according to the complexity score formula below.
 
 ### Complexity score formula
 
-`Complexity Score = 2 * (# of errors) + 1 * (# of warnings)`
+`Complexity Score = (Critical issues * 3) + (Errors * 2) + Warnings`
 
 {:.bs-callout-warning}
 These are absolute values.

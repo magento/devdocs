@@ -40,6 +40,6 @@ module LinkChecker
   def self.file_name
     prefix = 'broken-links-in-'
     timestamp = Time.now.strftime('_%m-%d_%H-%M-%S')
-    prefix + current_branch + timestamp + '.md'
+    "#{prefix}#{current_branch}#{timestamp}.md"
   end
 end

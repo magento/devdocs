@@ -17,11 +17,11 @@ Previous step
 
 After testing and completing your launch checklist, you can start the final steps to launch. These steps include entering tickets, cutting over access, and finally testing your store(s) when live.
 
-Magento support staff work with you through the process, checking status, and helping if any questions or issues occur. All issues should be tracked with tickets to best capture what happened and how it was resolved. When you begin continuous iterations deploying updates to your launched store, you may have similar issues occur again. These tickets can help pinpoint the issues and help adjust your deployment tasks.
+Adobe support staff work with you through the process, checking status, and helping if any questions or issues occur. All issues should be tracked with tickets to best capture what happened and how it was resolved. When you begin continuous iterations deploying updates to your launched store, you may have similar issues occur again. These tickets can help pinpoint the issues and help adjust your deployment tasks.
 
-## Contact Magento to launch your site {#contact}
+## Contact Adobe to launch your site {#contact}
 
-Contact Magento support and update any site launch (go live) tickets with the intended date and time to switch over and launch your store(s).
+Contact {{site.data.var.ee}} support and update any site launch (go live) tickets with the intended date and time to switch over and launch your store(s).
 
 ## Switch DNS to the new site {#dns}
 
@@ -41,6 +41,6 @@ Complete a few UAT tests in your live store to confirm everything is loading and
 
 ## Post-Launch {#postlaunch}
 
-Magento will activate checks and monitor the site to ensure all services and access are in the green. We remain on hand as needed to walk-through and check all system logs, services, caching, and functions are working as you and your customers need.
+Adobe will activate checks and monitor the site to ensure all services and access are in the green. We remain on hand as needed to walk-through and check all system logs, services, caching, and functions are working as you and your customers need.
 
 If any issues occur, create and track issues with Support. Include as much information as possible including date/time, specific feature with a problem, symptoms and odd behaviors, extensions, and so on. We will investigate the logs, the issue, and work with you to resolve quickly as possible.

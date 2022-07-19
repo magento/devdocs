@@ -13,6 +13,7 @@ It implements the following interfaces:
 -  [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html)
 -  [PhysicalProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html#PhysicalProductInterface)
 -  [CustomizableProductInterface]({{page.baseurl}}/graphql/interfaces/customizable-option-interface.html)
+-  [RoutableInterface]({{page.baseurl}}/graphql/interfaces/routable-interface.html)
 
 ## GiftCardProduct object
 

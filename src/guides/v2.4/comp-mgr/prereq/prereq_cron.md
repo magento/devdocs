@@ -3,6 +3,8 @@ group: software-update-guide
 title: Set up cron for update and upgrade
 functional_areas:
   - Upgrade
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
+layout: migrated
 ---
 
 To enable us to update or upgrade your system, you must have two cron jobs. Each cron job should run every minute.

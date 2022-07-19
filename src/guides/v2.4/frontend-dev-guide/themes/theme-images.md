@@ -4,6 +4,8 @@ title: Configure theme properties
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/configure/
+layout: migrated
 ---
 
 ## What's in this topic
@@ -76,19 +78,19 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
       <td>
         The type of the images defined by the specified <code>id</code>. Allowed values:
         <ul>
-        <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
-        <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
-        <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
-        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the [Magento Admin](https://glossary.magento.com/magento-admin).</li>
-        <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
+        <li><code>image</code> - corresponds to the Base Image role in the Admin</li>
+        <li><code>small_image</code> - corresponds to the Small Image role in the Admin</li>
+        <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Admin</li>
+        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the [Admin](https://glossary.magento.com/magento-admin).</li>
+        <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Admin</li>
         </ul>
       </td>
     </tr>
 </tbody>
 </table>
 
-The following picture illustrates how image roles for product images are specified in the Magento Admin:
-![Setting image role in Magento Admin]({{ site.baseurl }}/common/images/fdg_theme_bck.png)
+The following picture illustrates how image roles for product images are specified in the Admin:
+![Setting image role in Admin]({{ site.baseurl }}/common/images/fdg_theme_bck.png)
 
 Image properties are defined by the corresponding elements, for example:
 

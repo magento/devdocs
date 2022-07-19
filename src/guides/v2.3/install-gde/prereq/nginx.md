@@ -6,19 +6,20 @@ functional_areas:
   - Setup
 ---
 
-Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="_blank"}). You must also install the latest version of `php-fpm`.
+Magento supports nginx 1.18 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline)). You must also install the latest version of `php-fpm`.
 
 Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for information.
 
-## Ubuntu 16
+## Ubuntu
 
-The following section describes how to install Magento 2.x on Ubuntu 16 using nginx, PHP, and MySQL.
+The following section describes how to install Magento 2.x on Ubuntu using nginx, PHP, and MySQL.
 
 ### Install nginx
 
 ```bash
-apt-get -y install nginx
+sudo apt -y install nginx
 ```
+You can also [build nginx from source](https://www.armanism.com/blog/install-nginx-on-ubuntu)
 
 After completing the following sections and [installing Magento]({{page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-ubuntu), we will use a sample configuration file to [configure nginx]({{page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-ubuntu).
 
@@ -80,7 +81,7 @@ There are several ways to download the Magento software, including:
 
 For this example, we'll install using Composer and the command line.
 
-1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
+1. As the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
 1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 
@@ -150,7 +151,11 @@ For this example, we'll install using Composer and the command line.
    --language=en_US \
    --currency=USD \
    --timezone=America/Chicago \
-   --use-rewrites=1
+   --use-rewrites=1 \
+   --search-engine=elasticsearch7 \
+   --elasticsearch-host=es-host.example.com \
+   --elasticsearch-port=9200
+
    ```
 
 1. Switch to developer mode:
@@ -354,7 +359,7 @@ There are several ways to download the Magento software, including:
 
 For this example, we'll install using Composer and the command line.
 
-1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
+1. As the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
 1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 

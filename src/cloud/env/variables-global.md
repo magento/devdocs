@@ -19,7 +19,7 @@ stage:
 ### `MIN_LOGGING_LEVEL`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Overrides the minimum logging level for all output streams without making changes to the code. This helps when troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Log levels]({{ site.baseurl }}/cloud/env/log-handlers.html#log-levels). The `min_level` value in Logging handlers overwrites this setting.
 
@@ -29,13 +29,13 @@ stage:
     MIN_LOGGING_LEVEL: debug
 ```
 
-{: .bs-callout .bs-callout-warning }
+{: .bs-callout-warning }
 The setting for the `MIN_LOGGING_LEVEL` variable does not change the log level configuration for the file handler, which is set to `debug` by default.
 
 ### `SCD_ON_DEMAND`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Enable generation of static content when requested by a user (SCD). This is ideal for the development and testing workflow, because it decreases the deployment time.
 
@@ -61,11 +61,11 @@ return array(
 ### `SCD_MAX_EXECUTION_TIME`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.2.0 and later
+-  **Version**—{{site.data.var.ee}} 2.2.0 and later
 
 Allows you to increase the maximum expected execution time for static content deployment.
 
-By default, Magento Commerce sets the maximum expected execution to 900 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+By default, {{ site.data.var.ee }} sets the maximum expected execution to 900 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
 
 ```yaml
 stage:
@@ -78,7 +78,7 @@ stage:
 ### `SCD_NO_PARENT`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.4.2 and later
+-  **Version**—{{site.data.var.ee}} 2.4.2 and later
 
 Set to `true` to prevent generating static content for parent themes during the build and deployment phases. When this option is set to `true`, less static content is generated, which improves your overall build and deployment times.
 
@@ -91,9 +91,9 @@ stage:
 ### `SCD_USE_BALER`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.3.0 and later
+-  **Version**—{{site.data.var.ee}} 2.3.0 and later
 
-[Baler](https://github.com/magento/baler) is a Magento module that scans your generated JavaScript code and creates an optimized JavaScript bundle. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
+[Baler](https://github.com/magento/baler) is a module that scans your generated JavaScript code and creates an optimized JavaScript bundle. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
 
 Set to `true` to run Baler after performing static content deployment.
 
@@ -111,7 +111,7 @@ You must install and configure the Baler module before using this feature. Becau
 -  **Default**:
    -  `true`—for `{{site.data.var.ct}}` 2002.0.13 and later
    -  `false`—for earlier versions of `{{site.data.var.ct}}`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Enables or disables copying static view files to the `<magento_root>/init/` directory at the end of the build stage. If set to `true` files are not copied and HTML minification is available on request. Set this value to `true` to reduce downtime when deploying to Staging and Production environments.
 
@@ -129,15 +129,15 @@ stage:
 ### `X_FRAME_CONFIGURATION`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Use the `X_FRAME_CONFIGURATION` variable to change the [`X-Frame-Options`]({{ site.baseurl }}/guides/v2.3/config-guide/secy/secy-xframe.html) header configuration for your {{ site.data.var.ee }} site. This configuration controls how the browser renders a page in a `<frame>`, `<iframe>`, or `<object>`. Use one of the following options:
 
 -  `DENY`—Page cannot be displayed in a frame.
--  `SAMEORIGIN`—(The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.
+-  `SAMEORIGIN`—(The default {{site.data.var.ee}} setting.) Page can be displayed only in a frame on the same origin as the page itself.
 
 {:.bs-callout-warning}
-The `ALLOW-FROM <uri>` option has been deprecated because Magento-supported browsers no longer support it. See [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
+The `ALLOW-FROM <uri>` option has been deprecated because {{site.data.var.ee}}-supported browsers no longer support it. See [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
 
 Add the `X_FRAME_CONFIGURATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
 

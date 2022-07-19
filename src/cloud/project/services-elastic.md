@@ -9,7 +9,11 @@ redirect_from:
   - /cloud/project/project-conf-files_services-elastic.html
 ---
 
-[Elasticsearch](https://www.elastic.co) is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
+[Elasticsearch](https://www.elastic.co) is an open-source product that enables you to take data from any source, any format, and search and visualize it in real time.
+
+{%include cloud/note-elasticsearch.md%}
+
+For {{ site.data.var.ee }} version 2.4.4 and later, see [Set up OpenSearch service](/cloud/project/services-opensearch.html).
 
 -  Elasticsearch performs quick and advanced searches on products in the product catalog
 -  Elasticsearch Analyzers support multiple languages
@@ -19,7 +23,7 @@ redirect_from:
 {% include cloud/service-config-integration-starter.md %}
 
 {:.bs-callout-tip}
-Magento recommends that you always set up Elasticsearch for your {{ site.data.var.ece }} project even if you plan to configure a third-party search tool for your {{ site.data.var.ee }} application. Setting up Elasticsearch provides a fallback option in the event that the third-party search tool fails.
+Adobe recommends that you always set up Elasticsearch for your {{ site.data.var.ece }} project even if you plan to configure a third-party search tool for your {{ site.data.var.ee }} application. Setting up Elasticsearch provides a fallback option in case the third-party search tool fails.
 
 {:.procedure}
 To enable Elasticsearch:
@@ -32,9 +36,7 @@ To enable Elasticsearch:
        disk: 1024
    ```
 
-   For Pro projects, you must submit a Magento Support ticket to change the Elasticsearch version.
-
-   For details on determining the correct version to install, see [Elasticsearch software compatibility](#elasticsearch-software-compatibility).
+   For Pro projects, you must submit a {{site.data.var.ee}} Support ticket to change the Elasticsearch version in the Staging and Production environments.
 
 1. Set the `relationships` property in the `.magento.app.yaml` file.
 
@@ -73,9 +75,7 @@ When you install or upgrade your {{ site.data.var.ece }} project, always check f
 
 -  **First time setup**–Confirm that the Elasticsearch version specified in the `services.yaml` file is compatible with the Elasticsearch PHP client configured for {{ site.data.var.ee }}.
 
--  **Project upgrade**–Verify that the Elasticsearch PHP client in the new Magento version is compatible with the Elasticsearch service version installed on the Cloud infrastructure.
-
-{% include cloud/cloud-elasticsearch-client-compatibility.md %}
+-  **Project upgrade**–Verify that the Elasticsearch PHP client in the new application version is compatible with the Elasticsearch service version installed on the Cloud infrastructure.
 
 {%include cloud/note-cloud-services-compatibility.md%}
 
@@ -174,13 +174,13 @@ To check Elasticsearch software compatibility:
 
 ## Restart the Elasticsearch service
 
-If you need to restart the [Elasticsearch](https://www.elastic.co) service, you must contact Magento support.
+If you need to restart the [Elasticsearch](https://www.elastic.co) service, you must contact {{site.data.var.ee}} support.
 
 ## Additional search configuration
 
 -  By default, the search configuration for Cloud environments regenerates each time you deploy. You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#search_configuration).
 
--  After you set up the Elasticsearch service for your project, use the Magento Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
+-  After you set up the Elasticsearch service for your project, use the Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
 
 ### Add plugins for Elasticsearch
 
@@ -200,9 +200,11 @@ If you use the ElasticSuite third-party plugin, you must [update the `{{site.dat
 When setting up ElasticSuite, add the configuration settings to the `ELASTICSUITE_CONFIGURATION` deploy variable. This configuration saves the settings across deployments.
 
 ### Remove plugins for Elasticsearch
-Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` does not uninstall or disable them as you might expect. You must take the additional step of reindexing your Elasticsearch data. This behavior is intentional to prevent possible loss or corruption of data that depends on these plugins.
 
-**To remove Elasticsearch plugins:**
+Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` does not uninstall or disable them as you might expect. You must reindex your Elasticsearch data. This behavior is intentional to prevent possible loss or corruption of data that depends on these plugins.
+
+{.:procedure}
+To remove Elasticsearch plugins:
 
 1. Remove the Elasticsearch plugin entries from your `.magento/services.yaml` file.
 1. Add, commit, and push your code changes.
@@ -233,11 +235,11 @@ Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` do
     ```
 
 {:.bs-callout-tip}
-For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
+For details on using or troubleshooting the Elasticsuite plugin with {{site.data.var.ee}}, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
 
 ## Troubleshooting
 
-See the following Magento Support articles for help troubleshooting Elasticsearch problems:
+See the following {{site.data.var.ee}} Support articles for help with troubleshooting Elasticsearch problems:
 
 -  [Elasticsearch 5 is configured, but search page does not load with "Fielddata is disabled..." error](https://support.magento.com/hc/en-us/articles/360027356612-Elasticsearch-5-is-configured-but-search-page-does-not-load-with-Fielddata-is-disabled-error)
 -  [Catalog pagination doesn't work when Elasticsearch 6.x is used](https://support.magento.com/hc/en-us/articles/360035142371)

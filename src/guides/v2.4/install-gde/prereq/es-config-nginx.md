@@ -1,5 +1,5 @@
 ---
-title: Configure nginx and Elasticsearch
+title: Configure nginx for your search engine
 redirect_from: 
   - guides/v2.4/config-guide/elasticsearch/es-config-nginx.html
 functional_areas:
@@ -13,7 +13,10 @@ functional_areas:
 
 ## Set up a proxy {#es-nginx-proxy}
 
-This section discusses how to configure nginx as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
+{:.bs-callout-info}
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. See [Migrate ElasticSearch to OpenSearch](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/opensearch-migration.html) for more information.
+
+This section discusses how to configure nginx as an *unsecure* proxy so that {{ site.data.var.ee }} or {{ site.data.var.ce }} can use a search engine running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
 
  {:.bs-callout-info}
 The reason the proxy is not secured in this example is that it is easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure server block configuration.
@@ -78,7 +81,7 @@ This section discusses how to specify who can access the [nginx](https://glossar
 
 ## Secure communication with nginx {#es-ws-secure-nginx}
 
-This section discusses how to set up [HTTP Basic authentication](http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html) with your secure proxy. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
+This section discusses how to set up [HTTP Basic authentication](http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html) with your secure proxy. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your {{ site.data.var.ee }} or {{ site.data.var.ce }} server.
 
 Because nginx natively supports HTTP Basic authentication, we recommend it over, for example, [Digest authentication](https://www.nginx.com/resources/wiki/modules/auth_digest/), which isn't recommended in production.
 
@@ -92,12 +95,12 @@ See the following sections for more information:
 
 *  [Step 1: Create passwords](#es-ws-secure-nginx-pwd)
 *  [Step 2: Set up access to nginx](#es-ws-secure-nginx-access)
-*  [Step 3: Set up a restricted context for Elasticsearch](#es-ws-secure-nginx-context)
+*  [Step 3: Set up a restricted context for the search engine](#es-ws-secure-nginx-context)
 *  [Verify communication is secure](#es-ws-secure-verify)
 
 ### Step 1: Create a password {#es-ws-secure-nginx-pwd}
 
-We recommend you use the Apache `htpasswd` command to encode passwords for a user with access to Elasticsearch (named `magento_elasticsearch` in this example).
+We recommend you use the Apache `htpasswd` command to encode passwords for a user with access to Elasticsearch or OpenSearch (named `magento_elasticsearch` in this example).
 
 To create a password:
 
@@ -174,11 +177,11 @@ server {
 ```
 
  {:.bs-callout-info}
-The Elasticsearch listen port shown in the preceding example are examples only. For security reasons, we recommend you use a non-default listen port for Elasticsearch.
+The search engine listen port shown in the preceding example are examples only. For security reasons, we recommend you use a non-default listen port.
 
-### Step 4: Set up a restricted context for Elasticsearch {#es-ws-secure-nginx-context}
+### Step 4: Set up a restricted context for the search engine {#es-ws-secure-nginx-context}
 
-This section discusses how to specify who can access the Elasticsearch server.
+This section discusses how to specify who can access the search engine server.
 
 1. Enter the following command to create a new directory to store the authentication configuration:
 
@@ -212,4 +215,4 @@ This section discusses how to specify who can access the Elasticsearch server.
 {:.ref-header}
 Related topic
 
-[Configure Elasticsearch stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)
+[Configure search stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)

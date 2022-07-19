@@ -8,7 +8,7 @@ title: JavaScript resources in Commerce
 
 This topic describes general concepts of how [JavaScript](https://glossary.magento.com/javascript) (JS) components are organized in Magento.
 
-To address the problem of slow page loads, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){:target="_blank"}.
+To address the problem of slow page loads, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org).
 
 RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, it enables asynchronous JavaScript loading.
 
@@ -105,7 +105,7 @@ To be available for the entire Magento instance, RequireJS library is included i
    ```xml
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
         <head>
-            <title>Magento Admin</title>
+            <title>Admin</title>
             <meta name="viewport" content="width=1024"/>
             <meta name="format-detection" content="telephone=no"/>
             <!-- Here's the library included -->

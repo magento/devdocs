@@ -73,7 +73,7 @@ pages:
         - label: Package a component
           url: /extension-dev-guide/package/package_module.html
 
-        - label: Upload your component to the Magento Marketplace
+        - label: Upload your component to the Commerce Marketplace
           url: /extension-dev-guide/package/package_mktpl.html
 
     - label: Validate
@@ -122,7 +122,7 @@ pages:
 
         - label: Asynchronous/deferred operations
           url: /extension-dev-guide/async-operations.html
-          
+
         - label: Service contracts
           url: /extension-dev-guide/service-contracts/service-contracts.html
 
@@ -140,6 +140,11 @@ pages:
 
         - label: Events and observers
           url: /extension-dev-guide/events-and-observers.html
+          children:
+          
+          - label: List of events
+            url: /extension-dev-guide/event-list.html
+            include_versions: ["2.4"]
 
         - label: Factories
           url: /extension-dev-guide/factories.html
@@ -166,7 +171,7 @@ pages:
               url: /extension-dev-guide/indexing.html
 
             - label: Indexer optimization
-              url: /extension-dev-guide/indexer-batch.html
+              url: /extension-dev-guide/indexer-optimization.html
 
             - label: Adding a custom indexer
               url: /extension-dev-guide/indexing-custom.html
@@ -214,7 +219,7 @@ pages:
               url: /extension-dev-guide/message-queues/implement-bulk.html
 
             - label: Handling outdated in-memory object states
-              url: /extension-dev-guide/message-queues/refresh-config.html              
+              url: /extension-dev-guide/message-queues/refresh-config.html
 
             - label: Message queues overview
               url: /extension-dev-guide/message-queues/message-queues.html
@@ -227,7 +232,7 @@ pages:
 
         - label: Adding extension attributes to entity
           url: /extension-dev-guide/extension_attributes/adding-attributes.html
-         
+
         - label: Adding an admin grid
           url: /extension-dev-guide/admin-grid.html
 
@@ -293,6 +298,30 @@ pages:
 
         - label: XSS Prevention
           url: /extension-dev-guide/xss-protection.html
+
+        - label: Sensitive Information
+          url: /extension-dev-guide/security/sensitive-information.html
+
+        - label: Denial of Service (DoS) attacks
+          url: /extension-dev-guide/security/dos.html
+
+        - label: Mass assignment
+          url: /extension-dev-guide/security/mass-assignment.html
+
+        - label: Avoiding SSRF
+          url: /extension-dev-guide/security/ssrf.html
+
+        - label: Authorization
+          url: /extension-dev-guide/security/authorization.html
+
+        - label: Brute force attacks
+          url: /extension-dev-guide/security/anti-brute-force.html
+
+        - label: CSRF
+          url: /extension-dev-guide/security/csrf.html
+
+        - label: Working with files
+          url: /extension-dev-guide/security/uploads.html
 
     - label: Versioning
       url: /extension-dev-guide/versioning/

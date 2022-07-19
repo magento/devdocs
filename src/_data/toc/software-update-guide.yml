@@ -43,6 +43,13 @@ pages:
           url: /upgrade-compatibility-tool/developer.html
           versionless: true
 
+        - label: Error message reference
+          url: /upgrade-compatibility-tool/errors.html
+          versionless: true
+
+    - label: Upgrade best practices
+      url: /comp-mgr/upgrade-best-practices.html
+
     - label: Upgrade Commerce
       url: /comp-mgr/cli/cli-upgrade.html
       children:
@@ -66,14 +73,6 @@ pages:
       url: /comp-mgr/patching.html
       children:
 
-       - label: Commerce Quality Patches
-         url: /comp-mgr/patching/mqp.html
-         children:
-
-           - label: MQP release notes
-             url: /quality-patches/release-notes.html
-             versionless: true
-
        - label: Command Line
          url: /comp-mgr/patching/command-line.html
          children:
@@ -81,10 +80,6 @@ pages:
        - label: Composer
          url: /comp-mgr/patching/composer.html
          children:
-
-    - label: Update the updater application
-      url: /comp-mgr/updater/update-updater.html
-      include_versions: ["2.3"]
 
     - label: Troubleshooting
       children:

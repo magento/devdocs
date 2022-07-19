@@ -12,7 +12,7 @@ functional_areas:
 
 ## First steps {#config-cli-before}
 
-1. Log in to the Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to the Magento server as, or switch to, the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Change to the following directory:
 
    ```bash

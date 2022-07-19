@@ -1,0 +1,34 @@
+---
+title: Newsletter
+content: "This module allows clients to subscribe for information about new promotions
+  and discounts and allows store administrators to send newsletters to clients subscribed
+  for them.\n\n## Installation\n\nBefore installing this module, note that the Magento_Newsletter
+  is dependent on the following modules:\n- `Magento_Store`\n- `Magento_Customer`\n-
+  `Magento_Eav`\n- `Magento_Widget`\n\nBefore disabling or uninstalling this module,
+  note that the following modules depends on this module:\n- `Magento_NewsletterGraphQl`\n\nThis
+  module creates the following tables in the database:\n- `newsletter_subscriber`\n-
+  `newsletter_template`\n- `newsletter_queue`\n- `newsletter_queue_link`\n- `newsletter_queue_store_link`\n-
+  `newsletter_problem`\n\nFor information about a module installation in Magento 2,
+  see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_Newsletter module.
+  For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_Newsletter module.\n\nA
+  lot of functionality in the module is on JavaScript, use [mixins](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/js_mixins.html)
+  to extend it.\n\n### Layouts\n\nThis module introduces the following layouts in
+  the `view/frontend/layout` and `view/adminhtml/layout` directories:\n- `view/adminhtml/layout`:\n
+  \   - `newsletter_problem_block`\n    - `newsletter_problem_grid`\n    - `newsletter_problem_index`\n
+  \   - `newsletter_queue_edit`\n    - `newsletter_queue_grid`\n    - `newsletter_queue_grid_block`\n
+  \   - `newsletter_queue_index`\n    - `newsletter_queue_preview`\n    - `newsletter_queue_preview_popup`\n
+  \   - `newsletter_subscriber_block`\n    - `newsletter_subscriber_exportcsv`\n    -
+  `newsletter_subscriber_exportxml`\n    - `newsletter_subscriber_grid`\n    - `newsletter_subscriber_index`\n
+  \   - `newsletter_template_edit`\n    - `newsletter_template_preview`\n    - `newsletter_template_preview_popup`\n
+  \   - `preview`\n    \n- `view/frontend/layout`:\n    - `customer_account`\n    -
+  `customer_account_create`\n    - `newsletter_manage_index`\n    - `default`\n\nFor
+  more information about a layout in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  UI components\n\nThis module extends customer form ui component the configuration
+  file located in the `view/base/ui_component` directory:\n- `customer_form`\n\nFor
+  information about a UI component in Magento 2, see [Overview of UI components](http://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n##
+  Additional information\n\n[Learn more about newsletter](https://docs.magento.com/user-guide/marketing/newsletters.html).\n\n###
+  Cron options\n\nCron group configuration can be set at `etc/crontab.xml`:\n- `newsletter_send_all`
+  - schedules newsletter sending\n\n[Learn how to configure and run cron in Magento.](http://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html)."

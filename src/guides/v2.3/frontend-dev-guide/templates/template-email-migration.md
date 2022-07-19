@@ -6,8 +6,27 @@ functional_areas:
 ---
 
 {% raw %}
-With the release of Magento 2.3.4, we made some changes to custom email templates and how they access data and methods for email content.
-This topic describes the changes and provides instructions on how to convert your existing custom email templates.
+
+## Remove the legacy variable resolver
+
+With the release of Magento 2.3.7-p3, `\Magento\Framework\Filter\VariableResolver\LegacyResolver` and `\Magento\Framework\Filter\VariableResolver\StrategyResolver` have been removed and any legacy templates in the database will only be resolved using strict mode. Database templates can be checked using cli commands to verify
+compatibility with strict mode.
+
+## Verify compatibility with strict mode
+
+The following command scans all database email templates overridden using the Magento admin **Marketing** > Communications > **Email Templates** > **Add New Template** area for potential variable usage compatibility issues.
+
+```bash
+bin/magento dev:email:override-compatibility-check
+```
+
+To scan email templates overriden using a custom [theme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html#customize-email-theme), please consider using the [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/install.html).
+
+The following command scans newsletter templates for any potential variable usage compatibility issues.
+
+```bash
+bin/magento dev:email:newsletter-compatibility-check
+```
 
 ## Changes to the custom email template workflow
 
@@ -146,7 +165,7 @@ In this example, we will create and pass a `lifetime_spend` custom value.
     }
    ```
 
-   and save the file to <Vendor>/<module>/Model.
+   and save the file to `<Vendor>/<module>/Model`.
 
 1. Add the new directive to the pool by adding this block to `di.xml`.
 

@@ -1,25 +1,25 @@
 Complete the following tasks in the order shown:
 
 -  [About the shared group](#mage-owner-about-group)
--  [Step 1: Create the Magento file system owner and give the user a strong password](#mage-owner-create-user)
+-  [Step 1: Create the file system owner and give the user a strong password](#mage-owner-create-user)
 -  [Step 2: Find the web server user's group](#install-update-depend-user-findgroup)
--  [Step 3: Put the Magento file system owner in the web server's group](#install-update-depend-user-add2group)
+-  [Step 3: Put the file system owner in the web server's group](#install-update-depend-user-add2group)
 -  [Step 4: Get the Magento software](#perms-get-software)
 -  [Step 5: Set ownership and permissions for the shared group](#perms-set-two-users)
 -  [Next step](#next-step)
 
 ### About the shared group {#mage-owner-about-group}
 
-To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner, both users must be in the same group. This is necessary so both users can share access to Magento files (including files created using the Magento Admin or other web-based utilities).
+To enable the web server to write files and directories in the file system but to also maintain *ownership* by the file system owner, both users must be in the same group. This is necessary so both users can share access to files (including files created using the Admin or other web-based utilities).
 
-This section discusses how to create a new Magento file system owner and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
+This section discusses how to create a new file system owner and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
 
 {:.bs-callout-info}
 Skip to [step 2](#install-update-depend-user-findgroup) if you plan on using an existing user account.
 
-### Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}
+### Step 1: Create the file system owner and give the user a strong password {#mage-owner-create-user}
 
-This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the *command-line user*.)
+This section discusses how to create the file system owner. (file system owner is another term for the *command-line user*.)
 
 To create a user on CentOS or Ubuntu, enter the following command as a user with `root` privileges:
 
@@ -36,7 +36,7 @@ passwd <username>
 Follow the prompts on your screen to create a password for the user.
 
 {:.bs-callout-warning}
-If you don't have `root` privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with [Put the Magento file system owner in the web server group](#install-update-depend-user-add2group).
+If you don't have `root` privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with [Put the file system owner in the web server group](#install-update-depend-user-add2group).
 
 For example, to create a user named `magento_user` and give the user a password, enter:
 
@@ -73,9 +73,9 @@ Typically, the user and group name are both `apache`.
 
 Typically, the username and the group name are both `www-data`.
 
-### Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}
+### Step 3: Put the file system owner in the web server's group {#install-update-depend-user-add2group}
 
-To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
+To put the file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
 -  CentOS: `usermod -a -G apache <username>`
 -  Ubuntu: `usermod -a -G www-data <username>`
@@ -120,7 +120,7 @@ If you have not done so already, get the Magento software in one of the followin
 
 To set ownership and permissions before you install the Magento software:
 
-1. Log in to your Magento server as, or switch to, the Magento file system owner.
+1. Log in to your Magento server as, or switch to, the file system owner.
 1. Enter the following commands in the order shown:
 
    ```bash

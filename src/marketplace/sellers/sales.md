@@ -1,11 +1,13 @@
 ---
 group: marketplace-sellers
 title: Manage Sales
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/sales/
+layout: migrated
 ---
 
-Magento Marketplace is a full-featured digital commerce site with integrated payments, where you can offer your products for free, or for sale. Purchases can be paid by credit card or PayPal.
+Commerce Marketplace is a full-featured digital commerce site with integrated payments, where you can offer your products for free, or for sale. Purchases can be paid by credit card or PayPal.
 
-Developers are not charged a fee to submit or list products or services on Magento Marketplace. All product sales are subject to a [revenue share]({{ site.baseurl }}/marketplace/sellers/revenue-share.html), with 70% of the revenue for the developer, and 30% for Magento. This business model allows us to invest in marketing and promotions to grow the businesses of participating developers.
+Developers are not charged a fee to submit or list products or services on Commerce Marketplace. All product sales are subject to a [revenue share]({{ site.baseurl }}/marketplace/sellers/revenue-share.html), with 85% of the revenue for the developer, and 15% for Adobe. This business model allows us to invest in marketing and promotions to grow the businesses of participating developers.
 
 Buyers have twenty-five (25) days after the date of purchase to request a refund. Magento reviews all refund requests and if approved, issues the appropriate refund.
 
@@ -23,6 +25,8 @@ At the time of transaction, you will receive an email notification that identifi
 
 Sales and refund information is available in your Marketplace dashboard, and it is also sent by email.
 
+Subscription payments are displayed as individual transactions.
+
 In the Marketplace Developer portal, in the top navigation, go to **Reports** > **Sales**.
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/reports-sales.png){: .zoom}
@@ -34,7 +38,7 @@ _Marketplace Sales Performance_
 | Free Purchases | The number of free products you have transacted. |
 | Paid Purchases | The number of paid products you have transacted. |
 | Installations | The number of your products that have been installed. |
-| Refunds | Magento Marketplace allows buyers up to 25 days after the date of purchase to request a refund. Requests for refunds are reviewed by the Magento Marketplace administrator. If approved, credited to the PayPal account of the purchaser. |
+| Refunds | Commerce Marketplace allows buyers up to 25 days after the date of purchase to request a refund. Requests for refunds are reviewed by the Commerce Marketplace administrator. If approved, credited to the PayPal account of the purchaser. |
 
 |Tab|Description|
 |--- |--- |

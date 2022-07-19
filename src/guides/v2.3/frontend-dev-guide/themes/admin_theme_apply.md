@@ -8,7 +8,7 @@ functional_areas:
 
 ## What's in this topic {#favicon-intro}
 
-This topic describes how to apply your custom [theme](https://glossary.magento.com/theme) for [Magento Admin](https://glossary.magento.com/magento-admin).
+This topic describes how to apply your custom [theme](https://glossary.magento.com/theme) for [Admin](https://glossary.magento.com/magento-admin).
 
 ## Prerequisites
 

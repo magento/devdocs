@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/software.html
+layout: migrated
 ---
 
 We require the following software for production instances of Magento:
@@ -12,7 +14,7 @@ We require the following software for production instances of Magento:
 *  [PHP]({{page.baseurl}}/install-gde/system-requirements.html)
 *  Nginx and [PHP-FPM](https://php-fpm.org/)
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-*  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
+*  [Elasticsearch or OpenSearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
 
 For multi-server deployments, or for merchants planning on scaling their business, we recommend the following:
 
@@ -43,9 +45,8 @@ Magento fully supports PHP 7.3 and 7.4. There are several factors to account for
 
 ### PHP extensions
 
-We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:
+We recommend limiting the list of active PHP extensions to those that are required for Magento functionality.
 
-<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Adding more extensions increases library load times.
@@ -77,19 +78,19 @@ realpath_cache_ttl=7200
 
 To get maximum speed out of Magento 2 on PHP 7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
 
-```bash
-  opcache.memory_consumption=512MB
-  opcache.max_accelerated_files=60000
-  opcache.consistency_checks=0
-  opcache.validate_timestamps=0
-  opcache.enable_cli=1
+```text
+opcache.memory_consumption=512
+opcache.max_accelerated_files=60000
+opcache.consistency_checks=0
+opcache.validate_timestamps=0
+opcache.enable_cli=1
 ```
 
 When you fine-tune the memory allocation for opcache, take into account the size of Magento’s code base and all your extensions. Magento’s performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.
 
 If you have a low-memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
-```bash
+```text
 opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 ```

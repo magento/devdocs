@@ -19,29 +19,20 @@ For all of the static configuration installations below involving the PHPStorm P
 
 ## Javascript Code Style check
 
+{:.bs-callout-warning}
+[JSCS package has been deprecated](https://www.npmjs.com/package/jscs) and [merged with ESLint](https://eslint.org/blog/2016/04/welcoming-jscs-to-eslint).
+
+### ESLint
+
 {:.bs-callout-info}
-JSCS is deprecated in PHPStorm 2020.2. You must install the JSCS plugin.
-
-{:.procedure}
-To install the JSCS plugin:
-
-1. Go to PHPStorm preferences > Languages & Frameworks > JavaScript > Code Quality Tools > JSCS.
-1. Check **Enable**, if it is unchecked.
-1. Enter the path to your node binary (the result of outputting `which node` in your terminal).
-1. Enter the path to your JSCS package: `[magento_root]/node_modules/jscs`
-1. Click **Configuration File** and in the adjacent input field enter the path to the JSCS file Magento uses, which is located in: `dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc`
-
-![JSCS config]({{site.baseurl}}/common/images/static-jscs.png)
-
-To verify it works, in any JS file add `snake_case: [],` to any object literal, and you should see a warning about not using camel case for the object key.
-
-## ESLint
+Javascript code analysis is done through [ESLint]({{site.baseurl}}/guides/v2.4/coding-standards/code-standard-javascript.html#eslint-code-analysis).
+The ESLint rules are set up in `magento-coding-standard`, which is installed on Magento2 via `composer` since it's a development dependency.
 
 1. Go to PHPStorm preferences > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint.
 1. Click **Manual ESLint configuration**.
 1. Fill in the adjacent input fields with the path to your node binary (the result of outputting `which node` in your terminal).
 1. Enter the path to your ESLint package: `[magento_root]/node_modules/eslint`
-1. Click **Configuration File** and in the adjacent input field enter the path to the ESLint file Magento uses, which is located in `dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento`.
+1. Click **Configuration File** and in the adjacent input field enter the path to the ESLint file Magento uses, which is located in `vendor/magento/magento-coding-standard/eslint/.eslintrc-magento`.
 
 See the image below for example configuration:
 

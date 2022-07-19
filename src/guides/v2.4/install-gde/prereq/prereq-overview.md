@@ -62,7 +62,7 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 
 ### PHP
 
-See [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of PHP and [PHP][] for PHP requirements.
+See [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of PHP and [PHP] for PHP requirements.
 
 ### MySQL
 
@@ -90,13 +90,13 @@ affiliates. Other names may be trademarks of their respective
 owners.
 ```
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type `help` or `\h` for help. Type `\c` to clear the current input statement.
 
 Enter `exit` at the `mysql>` prompt to exit.
 
 To install or upgrade MySQL, see [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
-### Elasticsearch
+### Elasticsearch or OpenSearch
 
 ``` bash
 curl -XGET '<elasticsearch-hostname>:<elasticsearch-port>'

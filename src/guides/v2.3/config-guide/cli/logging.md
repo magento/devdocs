@@ -61,6 +61,12 @@ By default, Magento writes database activity logs to the `var/debug/db.log` file
    bin/magento dev:query-log:disable
    ```
 
+1. In the [production mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#config-mode-show), run the command for [import configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html), because the `bin/magento dev:query-log:disable` command adds settings to the `app/etc/env.php` file:
+
+   ```bash
+   bin/magento app:config:import
+   ```
+
 1. Flush the cache.
 
    ```bash
@@ -79,7 +85,7 @@ By default, Magento writes `cron` info to `<install_directory>/var/log/cron.log`
 
 By default, Magento writes _syslog_ logs to the operating system `syslog` file.
 As of Magento 2.3.1, you must use the `magento` command to enable or disable the syslog.
-The setting in the Magento Admin has been removed.
+The setting in the Admin has been removed.
 
 ### To enable syslog logging
 

@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `addProductsToCart` mutation adds any type of product to the shopping cart. It streamlines the process of adding products by allowing you to specify multiple product types in a single call. Magento recommends using this mutation to add products to the cart instead of the single-purpose mutations, such as `addSimpleProductsToCart` and `addConfigurableProductsToCart`.
+The `addProductsToCart` mutation adds any type of product to the shopping cart. It streamlines the process of adding products by allowing you to specify multiple product types in a single call. We recommend using this mutation to add products to the cart instead of the single-purpose mutations, such as `addSimpleProductsToCart` and `addConfigurableProductsToCart`.
 
 You must specify the Cart ID along with the list of SKU and quantity pairs as parameters to add the products to the shopping cart.
 
@@ -76,6 +76,10 @@ mutation {
         quantity
       }
     }
+    user_errors {
+      code
+      message
+    }
   }
 }
 ```
@@ -96,7 +100,8 @@ mutation {
             "quantity": 1
           }
         ]
-      }
+      },
+      "user_errors": []
     }
   }
 }
@@ -134,6 +139,10 @@ mutation {
         quantity
       }
     }
+    user_errors {
+      code
+      message
+    }
   }
 }
 ```
@@ -163,7 +172,8 @@ mutation {
             "quantity": 1
           }
         ]
-      }
+      },
+      "user_errors": []
     }
   }
 }
@@ -171,7 +181,7 @@ mutation {
 
 #### Specify the SKU with selected options
 
-In this example, the mutation specifies the size and color as selected options. The first option specifies the color, while the second option specifies the size.
+In this example, the mutation specifies the size and color as selected options. The first option specifies the color, while the second option specifies the size. The [`products` query]({{page.baseurl}}/graphql/queries/products.html#variant-uid) shows how to obtain the values specified in the `selected_options` array.
 
 **Request:**
 
@@ -203,6 +213,10 @@ mutation {
         }
         quantity
       }
+    }
+    user_errors {
+      code
+      message
     }
   }
 }
@@ -238,7 +252,8 @@ mutation {
             "quantity": 1
           }
         ]
-      }
+      },
+      "user_errors": []
     }
   }
 }
@@ -287,6 +302,10 @@ mutation {
         quantity
       }
     }
+    user_errors {
+      code
+      message
+    }
   }
 }
 ```
@@ -320,7 +339,8 @@ mutation {
             "quantity": 1
           }
         ]
-      }
+      },
+      "user_errors": []
     }
   }
 }
@@ -384,6 +404,10 @@ mutation {
           }
         }
       }
+    }
+    user_errors {
+      code
+      message
     }
   }
 }
@@ -460,7 +484,8 @@ mutation {
             ]
           }
         ]
-      }
+      },
+      "user_errors": []
     }
   }
 }
@@ -516,6 +541,10 @@ mutation {
         }
       }
     }
+    user_errors {
+      code
+      message
+    }
   }
 }
 ```
@@ -543,15 +572,20 @@ The `CartItemInput` object must contain the following attributes:
 
 The `AddProductsToCartOutput` object contains the `Cart` object.
 
-Attribute |  Data Type | Description
---- | --- | ---
-`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart
+| Attribute     | Data Type                                  | Description                                                    |
+|---------------|--------------------------------------------|----------------------------------------------------------------|
+| `cart`        | [Cart!](#CartObject)                       | Describes the contents of the specified shopping cart          |
+| `user_errors` | [CartUserInputError!](#CartUserInputError) | An array of errors encountered while adding products to a cart |
 
 ### Cart object {#CartObject}
 
 {% include graphql/cart-object.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+### CartUserInputError attributes {#CartUserInputError}
+
+{% include graphql/cart-user-input-errors.md %}
 
 ## Errors
 

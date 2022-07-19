@@ -36,11 +36,11 @@ If a [module](https://glossary.magento.com/module) is self-contained, then you c
 
 ### Rich product ecosystem
 
-The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit [Magento Marketplace][] for an overview of the many modules and themes available for download and to buy modules and [theme](https://glossary.magento.com/theme) packages, which offer more possibilities for extending your [storefront](https://glossary.magento.com/storefront).
+The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit [Commerce Marketplace][] for an overview of the many modules and themes available for download and to buy modules and [theme](https://glossary.magento.com/theme) packages, which offer more possibilities for extending your [storefront](https://glossary.magento.com/storefront).
 
 ### Open-source software to create and manage extensions
 
-Magento is built on open-source technologies, created for the development community. For example, it uses [Composer](https://glossary.magento.com/composer) to manage dependencies. See [Technology Stack]({{page.baseurl}}/architecture/tech-stack.html) for a complete list of technologies used.
+Magento is built on open-source technologies, created for the development community. For example, it uses [Composer](https://glossary.magento.com/composer) to manage dependencies. See [Technology Stack]({{page.baseurl}}/install-gde/system-requirements.html) for a complete list of technologies used.
 
 ### Coding standards
 
@@ -58,7 +58,7 @@ See [Getting Started with Magento Web APIs][] for more information.
 
 ### Flexible attribute types
 
-You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Magento Admin, and the storefront  displays them.
+You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Admin, and the storefront  displays them.
 
 |Attribute type|Displayed by storefront?|
 |--- |--- |
@@ -69,7 +69,7 @@ You can enhance your storefront by adding unique attributes to the default produ
 
 Attribute types fall into three general categories:
 
-*  **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).
+*  **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Admin](https://glossary.magento.com/magento-admin).
 
 *  **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/catalog) modules use EAV attributes.
 
@@ -108,7 +108,7 @@ Related topics
 
 <!-- Link definitions -->
 [PHP Developer Guide]: {{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html
-[Magento Marketplace]: https://marketplace.magento.com/
+[Commerce Marketplace]: https://marketplace.magento.com/
 [Technology Stack]: {{page.baseurl}}/install-gde/system-requirements.html
 [Plug-ins]: {{page.baseurl}}/extension-dev-guide/plugins.html
 [Service layer]: {{page.baseurl}}/architecture/archi_perspectives/service_layer.html

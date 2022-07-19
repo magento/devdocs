@@ -20,20 +20,23 @@ on:
 ###############
 # Set the Job #
 ###############
+permissions:
+  contents: read
+
 jobs:
   mdl:
     name: mdl
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.6
-    - name: Install mdl gem
-      run: gem install mdl
-    - name: Run mdl
-      run: mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+      - name: Install mdl gem
+        run: gem install mdl
+      - name: Run mdl
+        run: mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .
   super-lint:
     # Set the agent to run on
     runs-on: ubuntu-latest
@@ -55,11 +58,20 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
-        uses: github/super-linter@v3
+        uses: github/super-linter/slim@v4.9.2
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
-          VALIDATE_HTML: false
-          VALIDATE_JSCPD: false
-          VALIDATE_OPENAPI: false
+          VALIDATE_BASH: true
+          VALIDATE_BASH_EXEC: true
+          VALIDATE_CSS: true
+          VALIDATE_DOCKERFILE_HADOLINT: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_GITLEAKS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          VALIDATE_MARKDOWN: true
           MARKDOWN_CONFIG_FILE: .markdownlint.json
+          VALIDATE_RUBY: true
+          VALIDATE_SHELL_SHFMT: true
+          VALIDATE_YAML: true

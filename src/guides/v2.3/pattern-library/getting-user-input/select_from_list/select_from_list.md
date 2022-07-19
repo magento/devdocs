@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Select From List
 ---
-In the Magento Admin, user will often times need to select item(s) from a list of items. This pattern address the variations of list pattern.
+In the Admin, user will often times need to select item(s) from a list of items. This pattern address the variations of list pattern.
 
 ## When to Use
 

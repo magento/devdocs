@@ -11,7 +11,7 @@ Because you deploy static assets and compile code on a machine separate from you
 We use the following terms to describe the systems involved with deployment.
 
 Development system
-: Machine on which developers work to customize code; and install extensions, themes, and language packages from Magento Marketplace. In addition, you make all configuration changes on your development system. You can have many development systems.
+: Machine on which developers work to customize code; and install extensions, themes, and language packages from Commerce Marketplace. In addition, you make all configuration changes on your development system. You can have many development systems.
 
 Build system
 : One system on which you deploy static assets and compile code for your production system. Because you build these assets on a system not in production, your production system's downtime is minimized.

@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Routing
+migrated_to: https://developer.adobe.com/commerce/php/development/components/routing/
+layout: migrated
 ---
 
 In web applications, such as Magento, routing is the act of providing data from a URL request to the appropriate class for processing.
@@ -71,7 +73,7 @@ define the `match()` function in this class to use your own route matching logic
 
 If you need route configuration data, use the Route [`Config`] class.
 
-To add your custom router to the list of routers for the `FrontController`, add the following entry in your module's `di.xml` file:
+To add your custom router to the list of routers for the `FrontController`, add the following entry in your module's `frontend/di.xml` file:
 
 ```xml
 <type name="Magento\Framework\App\RouterList">
@@ -220,6 +222,8 @@ Name | Description
 
 Declaring a new route:
 
+**File:** `ExampleCorp/RoutingExample/etc/frontend/routes.xml`
+
 ```xml
 <?xml version="1.0"?>
 
@@ -234,6 +238,8 @@ Declaring a new route:
 ```
 
 Declaring the layout handler for our new route:
+
+**File:** `ExampleCorp/RoutingExample/view/frontend/layout/routing_index_index.xml`
 
 ```xml
 <?xml version="1.0"?>
@@ -252,6 +258,8 @@ Declaring the layout handler for our new route:
 
 Defining a new custom router:
 
+**File:** `ExampleCorp/RoutingExample/etc/frontend/di.xml`
+
 ```xml
 <type name="Magento\Framework\App\RouterList">
     <arguments>
@@ -267,6 +275,8 @@ Defining a new custom router:
 ```
 
 Creating the controller that will handle the `routing` route and will get the parameters passed by our router.
+
+**File:** `ExampleCorp/RoutingExample/Controller/Index/Index.php`
 
 ```php
 <?php
@@ -319,6 +329,8 @@ class Index implements HttpGetActionInterface
 ```
 
 In the end, let's create the router class, that will match the custom route name `learning` with the existing `routing` route.
+
+**File:** `ExampleCorp/RoutingExample/Controller/Router.php`
 
 ```php
 <?php

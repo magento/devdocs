@@ -13,7 +13,7 @@ Two-Factor Authentication gives you the ability to:
 -  Manage and configure authenticator settings globally.
 -  Reset authenticators for users.
 
-## Magento Admin Workflows
+## Admin Workflows
 
 A Magento _Admin_ user can perform the following 2FA workflows:
 
@@ -24,7 +24,7 @@ See [Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores
 
 ## Install 2FA
 
-The 2FA extension installs when you install or upgrade to Magento Open Source or Commerce 2.4.X. The extension installs like a Core Bundled Extension (CBE).
+The 2FA extension installs when you install or upgrade to {{site.data.var.ce}} or {{site.data.var.ee}} 2.4.x. The extension installs like a Core Bundled Extension (CBE).
 
 ## Configure and manage 2FA
 
@@ -58,7 +58,7 @@ The 2FA provider for Magento Headless can be selected with the `config:set` comm
 
 Two-Factor Authentication is implemented for Magento Web APIs with the following changes:
 
--  `AdminTokenServiceInterface::createAdminAccessToken()` throws an exception when the _Admin_ user doesn’t have personal 2FA configured, and also indicates that the confirmationh email has been sent.
+-  `AdminTokenServiceInterface::createAdminAccessToken()` throws an exception when the _Admin_ user doesn’t have personal 2FA configured, and also indicates that the confirmation email has been sent.
 -  `AdminTokenServiceInterface::createAdminAccessToken()` throws an exception that indicates which provider is configured for the user and suggests a provider-specific login endpoint.
 -  2FA provider-specific endpoints allow each _Admin_ user to configure a personal 2FA and provides tokens for username, password, and OTP (2FA code).
 
@@ -67,7 +67,7 @@ Two-Factor Authentication is implemented for Magento Web APIs with the following
 
 ## Magento Functional Testing Framework
 
-MFTF uses Google Authenticator to execute tests with 2FA enabled. The following steps summarize how to configure MFTF with an encoded shared secret. For more information, see [Configuring MFTF for Two-Factor Authentication (2FA)](({{ page.baseurl }}/security/two-factor-authentication.html#magento-functional-testing-framework).
+MFTF uses Google Authenticator to execute tests with 2FA enabled. The following steps summarize how to configure MFTF with an encoded shared secret.
 
 1. Select Google Authenticator as the 2FA provider:
 
@@ -81,7 +81,7 @@ MFTF uses Google Authenticator to execute tests with 2FA enabled. The following 
    bin/magento config:set twofactorauth/google/otp_window 60
    ```
 
-1. Generate a Base32-encoded string for the shared secret value.  For example, encoding the string `abcd` with the online [Base32 Encode](https://emn178.github.io/online-tools/base32_encode.html) tool returns the value `MFRGGZDF`. Use the following key to add the encoded value to the MFTF `.credentials` file:
+1. Generate a Base32-encoded string for the shared secret value.  For example, encoding the string `abcde` with the online [Base32 Encode](https://emn178.github.io/online-tools/base32_encode.html) tool returns the value `MFRGGZDF`. Use the following key to add the encoded value to the MFTF `.credentials` file:
 
    ```bash
    magento/tfa/OTP_SHARED_SECRET=MFRGGZDF
@@ -95,7 +95,15 @@ MFTF uses Google Authenticator to execute tests with 2FA enabled. The following 
 
 ## Troubleshooting
 
-The extension supports command line options to revoke and reset authenticators. Use these commands when you cannot access the Magento _Admin_.
+The extension supports command-line options to revoke and reset authenticators. Use these commands when you cannot access the Magento _Admin_.
+
+### List all available 2FA providers
+
+If you need to know all the available 2FA providers, enter the following command.
+
+```bash
+bin/magento security:tfa:providers
+```
 
 ### Reset authenticator per account
 
@@ -103,6 +111,16 @@ If you need to manually reset a single user configuration, enter the following c
 
 ```bash
 bin/magento security:tfa:reset <user> <provider>
+```
+
+For example:
+
+```bash
+bin/magento security:tfa:reset admin google
+```
+
+```bash
+bin/magento security:tfa:reset admin u2fkey
 ```
 
 ### Advanced emergency steps

@@ -5,13 +5,15 @@ functional_areas:
   - Upgrade
 redirect_from:
   - guides/v2.4/install-gde/install/cli/dev_update-magento.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/git-installs.html
+layout: migrated
 ---
 
-This topic discusses how a contributing developer can update Magento without reinstalling it. To perform an upgrade if you are *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
+This topic discusses how a contributing developer can update Magento without reinstalling it. To perform an upgrade if you are *not* a contributing developer, see [Updating the Magento application and components](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
 
 To update the Magento software if you are a contributing developer:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as, or switch to, the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Save any changes you made to `composer.json` because the following steps will overwrite it:
 
    ```bash

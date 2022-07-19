@@ -21,7 +21,7 @@ You can have one build system that meets the following requirements:
 
 -  Must have a compatible PHP version installed
 -  Must have Composer installed
--  It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems][].
+-  It has file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems][].
 -  The build system does not need Magento to be installed, but the code must be available to it.
 
 {:.bs-callout-warning}
@@ -46,7 +46,7 @@ Install PHP on [CentOS] or [Ubuntu][].
 
 To set up the build system:
 
-1. Log in to the build system as, or switch to, the Magento file system owner.
+1. Log in to the build system as, or switch to, the file system owner.
 1. Retrieve the Magento code from source control.
 
    If you use Git, use the following command:

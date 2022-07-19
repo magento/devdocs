@@ -8,13 +8,13 @@ functional_areas:
   - Integration
 ---
 
-As a customer, you log in to the Magento [storefront](https://glossary.magento.com/storefront) with your customer credentials. As an admin, you log in to the [Magento Admin](https://glossary.magento.com/magento-admin) with your [admin](https://glossary.magento.com/admin) credentials.
+As a customer, you log in to the Magento [storefront](https://glossary.magento.com/storefront) with your customer credentials. As an admin, you log in to the [Admin](https://glossary.magento.com/magento-admin) with your [admin](https://glossary.magento.com/admin) credentials.
 
 The Magento web [API](https://glossary.magento.com/api) framework uses your logged-in session information to verify your identity and authorize access to the requested resource.
 
 Customers can access resources that are configured with `anonymous` or `self`  permission in the `webapi.xml` configuration file.
 
-Admins can access resources that are assigned to their Magento Admin profile.
+Admins can access resources that are assigned to their Admin profile.
 
  {:.bs-callout-info}
 The Magento [web API](https://glossary.magento.com/web-api) framework enables guest users to access resources that are configured with `anonymous` permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.
@@ -23,7 +23,7 @@ For example, if a customer is logged in to the Magento storefront and the [JavaS
 
 `GET /rest/V1/customers/me`
 
-Similarly, if an admin is logged in to the Magento Admin and the JavaScript widget invokes the `Magento_Customer::group` API, details for the logged-in admin are fetched. The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the `Magento_Customer::group` resource.
+Similarly, if an admin is logged in to the Admin and the JavaScript widget invokes the `Magento_Customer::group` API, details for the logged-in admin are fetched. The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the `Magento_Customer::group` resource.
 
 {:.bs-callout-warning}
 Admin session-based authentication is not currently possible for API endpoints.

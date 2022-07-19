@@ -11,6 +11,7 @@ Now that you've finished installing the Magento application, you need to configu
 ## Set up cron {#post-install-cron}
 
 cron---the UNIX task scheduler---is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on. A *crontab* is a cron configuration.
+You must install Magento services in the *crontab*, or some core functionality (as well as some third-party extensions) will not function properly.
 
 {% include config/setup-cron_how-to.md %}
 
@@ -78,11 +79,11 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 *  Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org))
 *  Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04), [Ubuntu documentation](https://help.ubuntu.com/community/MailServer))
 
-### Refine Elasticsearch for enhanced performance:
+### Refine the search engine for enhanced performance:
 
-Elasticsearch is required for all installations as of 2.4.0.
+Elasticsearch or OpenSearch is required for all installations as of 2.4.0.
 
-*  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
+*  [Install and configure the search engine]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
 ### Set up an message queue
 

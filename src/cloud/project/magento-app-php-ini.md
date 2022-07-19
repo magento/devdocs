@@ -18,7 +18,7 @@ Configuring PHP settings improperly can cause issues. We recommend only advanced
 
 To increase the PHP memory limit, add the following setting to the `php.ini` file:
 
-```php
+```ini
 memory_limit = 1G
 ```
 
@@ -26,7 +26,7 @@ For debugging, increase the value to 2G.
 
 ## Optimize realpath_cache configuration
 
-Set the following `realpath_cache` settings to improve Magento performance.
+Set the following `realpath_cache` settings to improve application performance.
 
 ```conf
 ;
@@ -43,7 +43,7 @@ realpath_cache_ttl = 7200
 These settings allow PHP processes to cache paths to files instead of looking them up each time a page loads. See [Performance Tuning](https://www.php.net/manual/en/ini.core.php) in the PHP documentation.
 
 {:.bs-callout-info}
-For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}/guides/v2.4/install-gde/prereq/php-settings.html).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}{{ site.gdeurl }}/install-gde/prereq/php-settings.html).
 
 ## Check custom php.ini settings
 

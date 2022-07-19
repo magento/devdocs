@@ -4,6 +4,8 @@ title: Backward compatible development
 redirect_from:
 - guides/v2.3/contributor-guide/backward-compatible-development/index.html
 - guides/v2.4/contributor-guide/backward-compatible-development/index.html
+migrated_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/backward-compatibility-policy/
+layout: migrated
 ---
 This page describes rules and best practices for backward compatible development.
 
@@ -136,6 +138,14 @@ Prefix the type name with a question mark when declaring a parameter with a `nul
 {% collapsible Example Code %}
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\App\ObjectManager;
+
 class ExistingClass
 {
     /** @var \New\Dependency\Interface */
@@ -145,10 +155,10 @@ class ExistingClass
         \Old\Dependency\Interface $oldDependency,
         $oldRequiredConstructorParameter,
         $oldOptionalConstructorParameter = null,
-        ?\New\Dependency\Interface $newDependency = null
+        \New\Dependency\Interface $newDependency = null
     ) {
         ...
-        $this->newDependency = $newDependency ?: \Magento\Framework\App\ObjectManager::getInstance()->get(\New\Dependency\Interface::class);
+        $this->newDependency = $newDependency ?: ObjectManager::getInstance()->get(\New\Dependency\Interface::class);
     }
 
     public function existingFunction()

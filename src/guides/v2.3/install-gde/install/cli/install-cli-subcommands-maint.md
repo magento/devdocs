@@ -10,7 +10,7 @@ functional_areas:
   - Setup
 ---
 
-The following guide refers to a standard Magento maintenance mode page. If you need to use a custom maintenance page, see [Create the custom maintenance page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create) topic.
+The following guide refers to a standard Magento maintenance mode page. If you need to use a custom maintenance page, see [Create the custom maintenance page](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/maintenance-mode-options.html) topic.
 
 Magento uses [maintenance mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#maintenance-mode) to disable bootstrapping. Disabling bootstrapping is helpful while you are maintaining, upgrading, or reconfiguring your site.
 
@@ -86,7 +86,10 @@ bin/magento maintenance:allow-ips <ip address> .. <ip address> [--none]
 
 ## Multi-store setups
 
-If you want to set up multiple stores, each with a different layout and localized content, pass the `$_GET['skin']` parameter to the intended processor.
+To set up multiple stores, each with a different layout and localized content, create a skin for each and put it into `pub/errors/{name}` where `{name}` is the store code. To distinguish between stores and websites with the same instance, use `pub/errors/{type}-{name}` where `{type}` is either `store` or `website` and matches the `MAGE_RUN_TYPE` in your server configuration.
+
+Another option is to pass the `$_GET['skin']` parameter to the intended processor. This method requires a specific configuration on your server.
+
 In the following example, we are using a `503` type error template file, which requires localized content.
 
 The constructor of the `Error_Processor` class accepts a `skin` GET parameter to change the layout:

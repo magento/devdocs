@@ -41,7 +41,7 @@ pages:
           url: /cloud/reference/cloud-composer.html
           versionless: true
 
-        - label: Cloud CLI for Commerce
+        - label: magento-cloud CLI 
           url: /cloud/reference/cli-ref-topic.html
           versionless: true
 
@@ -404,7 +404,6 @@ pages:
         - label: Build and deploy
           url: /cloud/project/magento-env-yaml.html
           versionless: true
-
           children:
             - label: Set up notifications
               url: /cloud/env/setup-notifications.html
@@ -444,6 +443,10 @@ pages:
 
             - label: Set up Elasticsearch service
               url: /cloud/project/services-elastic.html
+              versionless: true
+
+            - label: Set up OpenSearch service
+              url: /cloud/project/services-opensearch.html
               versionless: true
 
             - label: Set up RabbitMQ service
@@ -486,7 +489,6 @@ pages:
               url: /cloud/env/working-with-variables.html
               versionless: true
 
-
     - label: Configuration management for store settings
       url: /cloud/live/sens-data-over.html
       versionless: true
@@ -518,6 +520,7 @@ pages:
         - label: Smart wizards
           url: /cloud/deploy/smart-wizards.html
           versionless: true
+
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html
       versionless: true
@@ -559,7 +562,7 @@ pages:
       versionless: true
       children:
         - label: Launch checklist
-          url: /cloud/live/go-live-checklist.html
+          url: /cloud/live/site-launch-checklist.html
           versionless: true
 
         - label: Launch steps
@@ -571,51 +574,19 @@ pages:
       versionless: true
       children:
 
-        - label: Troubleshoot deployment
-          url: /cloud/trouble/troubleshoot-deployment.html
-          versionless: true
-
-        - label: Incorrect credentials
-          url: /cloud/trouble/trouble_ce-creds.html
-          versionless: true
-
-        - label: Resolve issues with a new project
-          url: /cloud/trouble/trouble_proj-startover.html
-          versionless: true
-
         - label: Component deployment failure
           url: /cloud/trouble/trouble_comp-deploy-fail.html
-          versionless: true
-
-        - label: Resolve issues with encryption key
-          url: /cloud/trouble/trouble-crypt-key-variable.html
-          versionless: true
-
-        - label: Resolve issues with HTML minification
-          url: /cloud/trouble/trouble-error-html-minification.html
-          versionless: true
-
-        - label: Resolve issues with Google Analytics during deployment
-          url: /cloud/trouble/trouble-google-analytics-deploy.html
-          versionless: true
-
-        - label: Site availability
-          url: /cloud/trouble/site-availability.html
           versionless: true
 
         - label: Add site map and search engine robots
           url: /cloud/trouble/robots-sitemap.html
           versionless: true
 
-        - label: Theme troubleshooting
-          url: /cloud/trouble/theme-troubleshooting.html
-          versionless: true
-
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       versionless: true
       children:
-        - label: Update ece-tools version
+        - label: Update ece-tools
           url: /cloud/project/ece-tools-update.html
           versionless: true
 
@@ -627,7 +598,7 @@ pages:
           url: /cloud/project/project-upgrade.html
           versionless: true
 
-        - label: Upgrade to use ece-tools
+        - label: Upgrade project
           url: /cloud/project/ece-tools-upgrade-project.html
           versionless: true
 

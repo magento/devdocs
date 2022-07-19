@@ -1,0 +1,18 @@
+---
+title: OfflinePayments
+content: "This module implements the payment methods which do not require interaction
+  with a payment gateway (so called offline methods). \nThese methods are the following:\n-
+  Bank transfer\n- Cash on delivery\n- Check / Money Order\n- Purchase order\n\n##
+  Installation\n\nBefore installing this module, note that the Magento_OfflinePayments
+  is dependent on the following modules:\n- `Magento_Store`\n- `Magento_Catalog`\n\nFor
+  information about a module installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_OfflinePayments
+  module. For more information about the Magento extension mechanism, see [Magento
+  plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_OfflinePayments module.\n\nA
+  lot of functionality in the module is on JavaScript, use [mixins](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/js_mixins.html)
+  to extend it.\n\n### Layouts\n\nThis module introduces the following layouts in
+  the `view/frontend/layout` directory:\n- `checkout_index_index`\n- `multishipping_checkout_billing`\n\nFor
+  more information about a layout in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n##
+  Additional information\n\n[Learn how to configure Offline Payment Methods](https://docs.magento.com/user-guide/payment/offline-payment-methods.html)."

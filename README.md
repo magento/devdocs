@@ -2,6 +2,14 @@
 
 Welcome! This site contains the latest Adobe Commerce and Magento Open Source developer documentation for ongoing releases of both products. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
 
+> **Important update**
+>
+> The developer documentation for Adobe Commerce and Magento Open Source is moving to the [Adobe Developer](developer.adobe.com/commerce) and [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce.html) sites. After a topic is moved, use the link in the topic header to find the new location.
+>
+>![Example of a topic header](https://user-images.githubusercontent.com/6391769/166058975-15c288d6-b266-4f1d-8b52-08ada3ca026f.png)
+>
+> To track relocated topics by guide, see [Migrated Topics](https://devdocs.magento.com/migrated.html).
+
 ## Contributors
 
 Our goal is to provide the Commerce and Open Source communities with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving the documentation.
@@ -167,5 +175,6 @@ Find guidelines for building the site locally in the checked out README.
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
+-  [Slack](https://magentocommeng.slack.com/archives/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
 -  [Visit our wiki](https://github.com/magento/devdocs/wiki)
--  <a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
+-  <a href="https://twitter.com/AdobeCommrcDocs" class="twitter-follow-button" data-show-count="false">Twitter @AdobeCommrcDocs</a>

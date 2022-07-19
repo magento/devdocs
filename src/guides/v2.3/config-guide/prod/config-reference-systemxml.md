@@ -29,7 +29,7 @@ If you want instant *XSD validation in your IDE, you can run `bin/magento dev:ur
 In the `system.xml` file, it is possible to define four different types of entities, which are related to each other. The following section describes the relationship between tabs, sections, groups, and fields. The following screenshot displays the Magento 2 System Configuration in the Admin backend.
 The red squares mark the different types that are defined in the `system.xml` file:
 
-![Screenshot displaying a configured section in the Magento Admin.](img/magento2-system-configuration.png)
+![Screenshot displaying a configured section in the Admin.](img/magento2-system-configuration.png)
 
 Tabs are used to split different configuration areas semantically. Each tab can contain one or more sections, which can also be referenced as submenus. A section contains one or more groups.
 Each group lists one or more fields. You can also use a group to add a general description for the following fields. As mentioned, each group can have one or more fields. Fields are the smallest entity
@@ -281,7 +281,7 @@ A `<field>`-Tag can have the following children:
 | `backend_model`             | Specifies a different backend model to modify the configured values.                                                                                                                      | `typeModel`      |
 | `source_model`              | Specifies a different source model that provides a specific set of values.                                                                                                                | `typeModel`      |
 | `config_path`               | Can be used to overwrite the generic config path of a field.                                                                                                                              | `typeConfigPath` |
-| `validate`                  | Define different validation rules (comma separated). Full reference list of available validation rules is listed below.                                                                   | `string`         |
+| `validate`                  | Define different validation rules (space separated). Full reference list of available validation rules is listed below.                                                                   | `string`         |
 | `can_be_empty`              | Used when `type` is `multiselect` to specify that a field can be empty.                                                                                                                   | `int`            |
 | `if_module_enabled`         | Used to display a field only when a given module is enabled.                                                                                                                              | `typeModule`     |
 | `base_url`                  | Used in combination with `upload_dir` for file uploads.                                                                                                                                   | `typeUrl`        |

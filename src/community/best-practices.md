@@ -3,6 +3,8 @@ group: community
 title: Community contributed best practices
 redirect_from: 
   - /community/resources/best-practices.html
+migrated_to: https://developer.adobe.com/commerce/contributor/community/best-practices/
+layout: migrated
 ---
 
 This section covers a broad scope of Community contributed best and leading practices, common solutions, and recommendations for Magento.
@@ -23,15 +25,16 @@ They are available in DevDocs because the content has been well received within 
 
 The DevDocs and Magento teams verified and provide the following best practices and recommendations:
 
-*  [Best Practices and Benchmarking]({{ site.baseurl }}/guides/v2.3/migration/migration-overview-practices.html) for Migration
-*  [Best Practices for Extension Development]({{ site.baseurl }}/guides/v2.3/ext-best-practices/bk-ext-best-practices.html)
+*  [Best Practices and Benchmarking]({{ site.baseurl }}/guides/v2.4/migration/migration-overview-practices.html) for Migration
+*  [Best Practices for Extension Development]({{ site.baseurl }}/guides/v2.4/ext-best-practices/bk-ext-best-practices.html)
+*  [Upgrade Best Practices]({{ site.baseurl }}/guides/v2.4/comp-mgr/upgrade-best-practices.html)
 
-   We also recommend the [Magento Marketplace Help Center](https://marketplacesupport.magento.com/hc/en-us) for extension questions.
+   We also recommend the [Commerce Marketplace Help Center](https://marketplacesupport.magento.com/hc/en-us) for extension questions.
 
-*  [Programming Best Practices]({{ site.baseurl }}/guides/v2.3/ext-best-practices/extension-coding/common-programming-bp.html)
-*  [Observers Best Practices]({{ site.baseurl }}/guides/v2.3/ext-best-practices/extension-coding/observers-bp.html)
-*  [Theme Development Best Practices]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/theme-best-practice.html)
-*  [Performance Best Practices]({{ site.baseurl }}/guides/v2.3/performance-best-practices/)
+*  [Programming Best Practices]({{ site.baseurl }}/guides/v2.4/ext-best-practices/extension-coding/common-programming-bp.html)
+*  [Observers Best Practices]({{ site.baseurl }}/guides/v2.4/ext-best-practices/extension-coding/observers-bp.html)
+*  [Theme Development Best Practices]({{ site.baseurl }}/guides/v2.4/frontend-dev-guide/theme-best-practice.html)
+*  [Performance Best Practices]({{ site.baseurl }}/guides/v2.4/performance-best-practices/introduction.html)
 *  [Best Practices for Store Configuration]({{ site.baseurl }}/cloud/configure/configure-best-practices.html) for {{ site.data.var.ece }}
 *  [Deployment Process]({{ site.baseurl }}/cloud/reference/discover-deploy.html) for {{ site.data.var.ece }}
 
@@ -41,4 +44,4 @@ You can [contribute](https://github.com/magento/devdocs/blob/master/.github/CONT
 
 Some PRs may require architectural and internal development reviews to verify and approve the contributed best practices. These reviews may require more time to complete before merging content.
 
-If you have any questions, contact us through [#DevDocs Slack](https://magentocommeng.slack.com/messages/CAN932A3H) (or [join us](https://t.co/9HImUyCmyh)) or Twitter [@MagentoDevDocs](https://twitter.com/MagentoDevDocs).
+If you have any questions, contact us through [#DevDocs Slack](https://magentocommeng.slack.com/archives/CAN932A3H) (or [join us](https://t.co/9HImUyCmyh)) or Twitter [@AdobeCommrcDocs](https://twitter.com/AdobeCommrcDocs).

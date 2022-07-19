@@ -5,7 +5,8 @@ functional_areas:
   - Cloud
   - Storage
 ---
-You can find the total storage capacity for your Cloud project in your {{site.data.var.ece}} contract and on your [Magento account page](https://accounts.magento.cloud/user). Each project card in your account shows the number of _environments_, the _storage_ capacity in GB, and the number of _users_.
+
+You can find the total storage capacity for your Cloud project in your {{site.data.var.ece}} contract and on your [account page](https://accounts.magento.cloud/user). Each project card in your account shows the number of _environments_, the _storage_ capacity in GB, and the number of _users_.
 
 ## Check Integration environment
 
@@ -62,7 +63,7 @@ df -h
 
 The `-h` option displays the report using a human-readable format (KB, MB, or GB).
 
-In the following sample response, the `/data/exports/` mount shows the disk space for media and `/data/mysql/` mount shows disk space for the database:
+In the following sample response, the `/mnt/shared` mount shows the disk space for media and `/data/mysql/` mount shows disk space for the database:
 
 ```terminal
 Filesystem                                    Size  Used Avail Use% Mounted on
@@ -100,11 +101,11 @@ Filesystem                                    Size  Used Avail Use% Mounted on
 Two configuration files control the allocation of disk space in the Cloud environments: the `.magento.app.yaml` file and the `.magento/services.yaml` file. Each file contains the `disk` property, which defines the disk size value in MB for the respective configuration.
 
 {:.bs-callout-info}
-You can change disk space allocation on Pro Integration and Starter environments only. You must submit a Magento support ticket to change disk space allocation on Pro Production and Staging environments.
+You can change disk space allocation on Pro Integration and Starter environments only. You must submit an support ticket to change disk space allocation on Pro Production and Staging environments.
 
 ### Application disk space
 
-The `.magento.app.yaml` file controls the [persistent disk space][disk-key] available to the Magento application.
+The `.magento.app.yaml` file controls the [persistent disk space][disk-key] available to the application.
 
 {:.procedure}
 To increase disk space for your application:
@@ -122,7 +123,7 @@ To increase disk space for your application:
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A && git commit -m "Increase disk space for application" && git push magento <branch-name>
+   git add -A && git commit -m "Increase disk space for application" && git push origin <branch-name>
    ```
 
    The changes take effect after you push the updated YAML file to the remote environment.
@@ -134,7 +135,7 @@ The `.magento/services.yaml` file controls the disk space available to each serv
 {:.procedure}
 To increase disk space for a service:
 
-1. In your local development environment, open the `.magento/service.yaml` configuration file.
+1. In your local development environment, open the `.magento/services.yaml` configuration file.
 
 1. Add or find a service in the file. See [more about configuring services]({{ site.baseurl }}/cloud/project/services.html).
 
@@ -151,7 +152,7 @@ To increase disk space for a service:
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A && git commit -m "Increase disk space for service" && git push magento <branch-name>
+   git add -A && git commit -m "Increase disk space for service" && git push origin <branch-name>
    ```
 
    The changes take effect after you push the updated YAML file to the remote environment.

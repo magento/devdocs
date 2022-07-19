@@ -1,0 +1,52 @@
+name: Site bug
+description: Something isn't working on devdocs.magento.com or when building the website locally.
+labels: ["bug"]
+assignees:
+  - dshevtsov
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report this issue!
+        This bug report should only relate to the devdocs website itself or non-content issues such as when building locally or running rake commands.
+        If you are having an issue with the actual product (as opposed to the docs), search the [Help Center](https://support.magento.com/hc/en-us) or report it as a [codebase issue](https://devdocs.magento.com/contributor-guide/contributing.html#report).
+        Issues that do not comply with our Code of Conduct or do not contain enough information may be closed at the maintainers' discretion.
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: textarea
+    attributes:
+      label: Current behavior
+      description: |
+        Tell us what happened. Include error messages and issues.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: |
+        Tell us what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: |
+        Provide a set of clear steps to reproduce this bug.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Environment
+      description: |
+        Describe your environment.
+        Provide all the details that will help us to reproduce the bug.
+      value: |
+        - Browser:
+        - OS:
+    validations:
+      required: true

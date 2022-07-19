@@ -30,7 +30,7 @@ Contains an array of modules and their states. If module is enabled, value is 1.
 ]
 ```
 
-Learn more about [Modules](https://devdocs.magento.com/videos/fundamentals/create-a-new-module/)
+Learn more about [Modules]({{ site.baseurl }}/videos/fundamentals/create-a-new-module/)
 
 ## scopes
 
@@ -55,7 +55,7 @@ Contains an array of scope configuration values. It has the following subnodes:
     ]
   ],
   'groups' => [
-    [
+    0 => [
       'group_id' => '0',
       'website_id' => '0',
       'code' => 'default',
@@ -78,7 +78,7 @@ Contains an array of scope configuration values. It has the following subnodes:
 ]
 ```
 
-Learn more about [Magento Scopes](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html)
+Learn more about [Magento Scopes]({{ site.user_guide_url }}/configuration/scope.html)
 
 ## system
 
@@ -96,7 +96,7 @@ Contains an array of system field configuration values.
 ]
 ```
 
-Learn more about [System Specific Configuration](https://devdocs.magento.com/guides/v2.3/config-guide/prod/config-reference-sens.html)
+Learn more about [System Specific Configuration]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 
 ## themes
 
@@ -116,4 +116,4 @@ Contains an array of values for theme configuration.
 ]
 ```
 
-Learn more about [Themes](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/theme-create.html)
+Learn more about [Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html)

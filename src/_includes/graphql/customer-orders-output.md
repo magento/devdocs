@@ -247,6 +247,7 @@ Attribute | Data type | Description
 `shipping_handling` | [ShippingHandling](#ShippingHandling) | The shipping and handling costs for the order
 `subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
 `taxes` | [[TaxItem]](#TaxItem)! | An array containing information about taxes on individual orders
+`total_giftcard` | Money | The gift card balance applied to the order
 `total_shipping` | Money! | The shipping costs for the order
 `total_tax` | Money! | The amount of tax applied to the order
 

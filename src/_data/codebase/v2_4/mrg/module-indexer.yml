@@ -1,0 +1,49 @@
+---
+title: Indexer
+content: "This module provides Magento Indexing functionality.\nIt allows to:\n -
+  read indexers configuration\n - represent indexers in admin\n - regenerate indexes
+  by cron schedule\n - regenerate indexes from console\n - view and reset indexer
+  state from console\n - view and set indexer mode from console\n\n## Installation\n\nThe
+  Magento_Indexer module is one of the base Magento 2 modules. You cannot disable
+  or uninstall this module.\n\nThis module is dependent on the following modules:\n\n-
+  `Magento_Store`\n- `Magento_AdminNotification`\n\nThe Magento_Indexer module creates
+  the following tables in the database:\n- `indexer_state`\n- `mview_state`\n\nFor
+  information about a module installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Structure\n\n`App/` - the directory that contains launch application entry point.\n\nFor
+  information about a typical file structure of a module in Magento 2, see [Module
+  file structure](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_Indexer module.
+  For more information about the Magento extension mechanism, see [Magento plugins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_Indexer module.\n\n###
+  Events\n\nThe module dispatches the following events:\n\n#### Model\n\n- `clean_cache_by_tags`
+  event in the `\\Magento\\Indexer\\Model\\Indexer\\CacheCleaner::cleanCache` method.
+  Parameters:\n    - `object` is a `cacheContext` object (`Magento\\Framework\\Indexer\\CacheContext`
+  class)\n\n#### Plugin \n\n- `clean_cache_after_reindex` event in the `\\Magento\\Indexer\\Model\\Processor\\CleanCache::afterUpdateMview`
+  method. Parameters:\n    - `object` is a `context` object (`Magento\\Framework\\Indexer\\CacheContext`
+  class)\n\n- `clean_cache_by_tags` event in the `\\Magento\\Indexer\\Model\\Processor\\CleanCache::afterReindexAllInvalid`
+  method. Parameters:\n    - `object` is a `context` object (`Magento\\Framework\\Indexer\\CacheContext`
+  class)\n\nFor information about an event in Magento 2, see [Events and observers](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/events-and-observers.html#events).\n\n###
+  Layouts\n\nThis module introduces the following layout handles in the `view/adminhtml/layout`
+  directory:\n- `indexer_indexer_list`\n- `indexer_indexer_list_grid`\n\nFor more
+  information about layouts in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n##
+  Additional information\n\n### Indexer modes\n\nThere are 2 modes of the Indexers:\n\n-
+  Update on Save - index tables are updated immediately after the dictionary data
+  is changed\n- Update by Schedule - index tables are updated by cron job according
+  to the configured schedule\n\n### Console commands\n\nMagento_Indexers provides
+  console commands:\n- `bin/magento indexer:info` - view a list of all indexers\n-
+  `bin/magento indexer:status [indexer]` - view index status\n- `bin/magento indexer:reindex
+  [indexer]` - run reindex\n- `bin/magento indexer:reset [indexer]` - reset indexers\n-
+  `bin/magento indexer:show-mode [indexer]` - view the current indexer configuration\n-
+  `bin/magento indexer:set-mode {realtime|schedule} [indexer]` - specify the indexer
+  configuration\n- `bin/magento indexer:set-dimensions-mode [indexer]` - set indexer
+  dimension mode\n- `bin/magento indexer:show-dimensions-mode [indexer]` - set indexer
+  dimension mode\n\n### Cron options\n\nCron group configuration can be set at `etc/crontab.xml`:\n-
+  `indexer_reindex_all_invalid` - regenerate indexes for all invalid indexers\n- `indexer_update_all_views`
+  - update indexer views\n- `indexer_clean_all_changelogs` - clean indexer view changelogs\n\n[Learn
+  how to configure and run cron in Magento.](http://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html).\n\nMore
+  information can get at articles:\n- [Learn more about indexing](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/indexing.html)\n-
+  [Learn more about Indexer optimization](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/indexer-batch.html)\n-
+  [Learn more how to add custom indexer](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/indexing-custom.html)\n-
+  [Learn how to manage indexers](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html)\n-
+  [Learn more about Index Management](https://docs.magento.com/user-guide/system/index-management.html)"

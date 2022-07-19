@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Installation & Varnish Tests
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/installation-and-varnish-tests/
+layout: migrated
 ---
 
 ## Overview
@@ -9,11 +11,11 @@ The Installation and Varnish tests are automated EQP checks to ensure that the s
 
 ## What testing is for
 
-Magento is a complex, highly extensible platform. To ensure that third-party extensions are production-ready, the Installation and Varnish tests verify successful installation with the extension included, ability to switch to Magento  [production mode](https://devdocs.magento.com/guides/v2.4/config-guide/bootstrap/magento-modes.html), and that the extension does not affect the caching mechanism for the most critical scenarios. The caching check ensures that the Magento storefront provides a high performance customer experience.
+Magento is a complex, highly extensible platform. To ensure that third-party extensions are production-ready, the Installation and Varnish tests verify successful installation with the extension included, ability to switch to Magento  [production mode]({{ site.baseurl }}/guides/v2.4/config-guide/bootstrap/magento-modes.html), and that the extension does not affect the caching mechanism for the most critical scenarios. The caching check ensures that the Magento storefront provides a high performance customer experience.
 
 ## When testing is done
 
-All extension submissions must pass the mandatory Installation and Varnish tests, regardless of extension type and scope of changes. Only extensions that have passed these tests can be listed in the [Magento Marketplace](https://marketplace.magento.com/).
+All extension submissions must pass the mandatory Installation and Varnish tests, regardless of extension type and scope of changes. Only extensions that have passed these tests can be listed in the [Commerce Marketplace](https://marketplace.magento.com/).
 
 ## What is being checked
 
@@ -23,10 +25,10 @@ The Installation and Varnish tests complete the following checks:
 
    -  Verify ability to add the extension to the Magento project with [Composer](https://getcomposer.org/).
    -  After adding and enabling the extension, verify successful Magento installation.
-   -  Verify that you can [compile Magento code](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-compiler.html).
-   -  Verify that you can [deploy static content](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-static-view.html).
-   -  Verify that you can [enable Magento Production mode](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html).
-   -  Check that you can [reindex all data](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) with the installed extension.
+   -  Verify that you can [compile Magento code]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-compiler.html).
+   -  Verify that you can [deploy static content]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-static-view.html).
+   -  Verify that you can [enable Magento Production mode]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html).
+   -  Check that you can [reindex all data]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) with the installed extension.
 
 1. Check availability of critical pages and correct cache processing–This check includes the following steps:
 
@@ -36,13 +38,13 @@ The Installation and Varnish tests complete the following checks:
 
 ## Tools and environments used
 
-The Magento test infrastructure follows the recommended setup for the Magento installation. The Installation and Varnish tests always runs on the most up-to-date version of software compatible with the Magento release. You can use [Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html) to create a similar environment.
+The Magento test infrastructure follows the recommended setup for the Magento installation. The Installation and Varnish tests always runs on the most up-to-date version of software compatible with the Magento release. You can use [Magento Cloud Docker]({{ site.baseurl }}/cloud/docker/docker-development.html) to create a similar environment.
 
 The Installation and Varnish tests always use the latest patch version for the Magento release line that the submitted extension claims to support. For each supported release line, the entire test suite is performed on all compatible PHP versions.
 
 ### Additional Magento Configuration
 
-The Varnish test requires [Varnish as a caching application](https://devdocs.magento.com/guides/v2.4/config-guide/varnish/config-varnish-magento.html). The test checks for the presence of the **X-EQP-Cache** HTTP header set by Varnish and analyzes its value on page loads. To complete this check, the following additional instruction must be added to the **vcl_deliver** function:
+The Varnish test requires [Varnish as a caching application]({{ site.baseurl }}/guides/v2.4/config-guide/varnish/config-varnish-magento.html). The test checks for the presence of the **X-EQP-Cache** HTTP header set by Varnish and analyzes its value on page loads. To complete this check, the following additional instruction must be added to the **vcl_deliver** function:
 
 ```vcl
 sub vcl_deliver {
@@ -55,7 +57,7 @@ sub vcl_deliver {
 }
 ```
 
-The Varnish test also uses the [setup:performance:generate-fixtures command](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-perf-data.html) to install sample products to run the test against:
+The Varnish test also uses the [setup:performance:generate-fixtures command]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-perf-data.html) to install sample products to run the test against:
 
 ```bash
 magento setup:performance:generate-fixtures ./varnish-config/profile.xml

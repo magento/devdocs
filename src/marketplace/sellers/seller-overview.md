@@ -2,6 +2,8 @@
 group: marketplace-sellers
 title: Seller Overview
 redirect_from: /marketplace/sellers/overview.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/seller-overview/
+layout: migrated
 ---
 
 As an extension seller, your process starts with the extension development and testing. During this phase, be sure to follow the [Best Practices for Extension Developers][1].
@@ -12,6 +14,6 @@ As an extension seller, your process starts with the extension development and t
 [![]({{ site.baseurl }}/marketplace/sellers/images/assets/code-review.png)]({{ site.baseurl }}/marketplace/sellers/submit-for-review.html)|[**Submit for Review**]({{ site.baseurl }}/marketplace/sellers/submit-for-review.html) - After completing development, testing, and creating a new extension entry, submit your extension for technical and marketing review.|
 [![]({{ site.baseurl }}/marketplace/sellers/images/assets/sales-data.png)]({{ site.baseurl }}/marketplace/sellers/sales.html)|[**Manage Your Sales**]({{ site.baseurl }}/marketplace/sellers/sales.html) - Use the Sales and Analytics reports to view and manage your extension sales information.|
 
-Although you are not prevented from listing and selling your products and services on your own site, we believe that Magento Marketplace presents the greatest opportunity to drive sales for your Magento-related products and services.
+Although you are not prevented from listing and selling your products and services on your own site, we believe that Commerce Marketplace presents the greatest opportunity to drive sales for your Magento-related products and services.
 
-[1]: https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html
+[1]: {{ site.baseurl }}/guides/v2.3/ext-best-practices/bk-ext-best-practices.html

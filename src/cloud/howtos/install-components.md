@@ -8,7 +8,7 @@ functional_areas:
   - Module
 ---
 
-You can extend your Magento application capabilities by adding an extension from the [Magento Marketplace][]. For example, you can add a theme to change the look and feel of your storefront, or you can add a language package to localize your storefront and Admin panel.
+You can extend your {{site.data.var.ee}} application capabilities by adding an extension from the [Commerce Marketplace][]. For example, you can add a theme to change the look and feel of your storefront, or you can add a language package to localize your storefront and Admin panel.
 
 {% include cloud/tip-creating-branches.md %}
 
@@ -74,7 +74,7 @@ To install an extension:
    Module is enabled
    ```
 
-   If you encounter deployment errors, see [extension deployment failure][trouble].
+   If you encounter deployment errors, see [extension deployment failure][].
 
 ## Manage extensions
 
@@ -160,12 +160,12 @@ To update an extension:
    git push origin <branch-names>
    ```
 
-If you encounter errors, see [extension deployment failure][].
+If you encounter errors, see [extension deployment failure][trouble].
 
 <!-- link definitions -->
 
 [branching]: {{ site.baseurl }}/cloud/env/environments-start.html#getstarted
 [config]: {{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html
 [extensions]: {{ site.baseurl }}/extensions/
-[Magento Marketplace]: https://marketplace.magento.com
-[trouble]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html
+[Commerce Marketplace]: https://marketplace.magento.com
+[extension deployment failure]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html

@@ -5,17 +5,17 @@ title: Private content
 
 Since private content is specific to individual users, it is reasonable to handle it on the client (i.e., web browser).
 
-Use our [customer-data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/web/js/customer-data.js){:target="_blank"} JS library to store private data in local storage, invalidate private data using customizable rules, and synchronize data with the backend.
+Use our [customer-data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/web/js/customer-data.js) JS library to store private data in local storage, invalidate private data using customizable rules, and synchronize data with the backend.
 
-This example displays a customer's name on a cacheable page.
+This example displays a product comparison on a cacheable page.
 
 ## Create a section source {#config-cache-priv-how-source}
 
-The section source class is responsible for retrieving data for the section. As a best practice, Magento recommends that you put your code within the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface.
+The section source class is responsible for retrieving data for the section. As a best practice, we recommend that you put your code within the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php) interface.
 
 The public method `getSectionData` must return an array with data for a private block.
 
-[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/CustomerData/CompareProducts.php#L61-L70){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/CustomerData/CompareProducts.php#L61-L70)
 
 Add the following to your component's [dependency injection](https://glossary.magento.com/dependency-injection) configuration (`di.xml`):
 
@@ -36,7 +36,7 @@ To render private content, create a block and a template to display user-agnosti
 {:.bs-callout-info}
 Do not use the `$_isScopePrivate` property in your blocks. This property is obsolete and will not work properly.
 
-Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your [layout](https://glossary.magento.com/layout).
+Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html) syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your [layout](https://glossary.magento.com/layout).
 
 Initialize the component as follows:
 
@@ -46,17 +46,24 @@ Initialize the component as follows:
 </script>
 ```
 
-[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L50-L52){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L50-L52)
 
 ## Configure a UI component {#config-cache-priv-how-ui}
 
-The UI component renders block data on the Magento [storefront](https://glossary.magento.com/storefront). To initialize the UI component, you must call the initialization method `_super()`.
+The UI component renders block data on the [storefront](https://glossary.magento.com/storefront). To initialize the UI component, you must trigger the parent initialization method by calling the `_super()` method and defining a property to store customer data. The `customerData.get()` method returns a [Knockout's observable](https://glossary.magento.com/ui-component).
 
-[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js){:target="_blank"}
+```javascript
+initialize: function () {
+    this._super();
+    this.compareProducts = customerData.get('compare-products');
+}
+```
 
-All properties are available in the template.
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js#L32-L33)
 
-[Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L35){:target="_blank"}
+All properties are available in the template where the UI component initialized.
+
+[Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L55-L61)
 
 ## Invalidate private content
 
@@ -72,7 +79,7 @@ The are some exception cases:
 {: .bs-callout-info }
 Product information will not be simultaneously updated in customer cart (product name, price, product enabled/disabled). Information will be updated after what comes first: `section_data_lifetime` time passed or an action that the update cart triggered.
 
-The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/etc/frontend/sections.xml){:target="_blank"} so you can see what the code is doing.
+The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/etc/frontend/sections.xml) so you can see what the code is doing.
 
 ```xml
 <?xml version="1.0"?>
@@ -121,12 +128,12 @@ This tells Magento to invalidate all sections. But if you have declared sections
 ```
 
 {:.bs-callout-warning}
-Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and do not expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html){:target="_blank"}.
+Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and do not expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html).
 
 Other examples:
 
--  [Checkout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Checkout/etc/frontend/sections.xml){:target="_blank"}
--  [Customer]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/frontend/sections.xml){:target="_blank"}
+-  [Checkout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Checkout/etc/frontend/sections.xml)
+-  [Customer]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/frontend/sections.xml)
 
 ## Version private content {#config-priv-vers}
 

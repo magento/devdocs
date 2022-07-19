@@ -18,6 +18,7 @@ The `CartItemInterface` and all of its implementations can contain the following
 
 Attribute |  Data Type | Description
 --- | --- | ---
+`errors` | [CartItemError!](#CartItemError) | An array of errors encountered while loading the cart item. PWA Studio only.
 `id` | String | Deprecated. Use `uid` instead. The ID of the item
 `prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | Contains attributes that are common to all types of products
@@ -31,10 +32,20 @@ The `CartItemPrices` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `discounts`| [Discount] | An array of discounts to be applied to the cart item
-`price` | Money! | The price of the item before any discounts were applied
+`fixed_product_taxes` | [[FixedProductTax]]({{page.baseurl}}/graphql/interfaces/product-interface.html#FixedProductTax) | The fixed product taxes to be applied to the cart item
+`price` | Money! | The price of the item before any discounts were applied. The price that might include tax, depending on the configured display settings for cart
 `row_total` | Money! | The value of the `price` multiplied by the quantity of the item
 `row_total_including_tax` | Money! | The value of `row_total` plus the tax applied to the item
 `total_item_discount` | Money | The total of all discounts applied to the item
+
+### CartItemError object {#CartItemError}
+
+The CartItemError object is only available in PWA Studio.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | CartItemErrorType! | An error code that describes the error encountered. One of `ITEM_QTY`, `ITEM_INCREMENTS`, or `UNDEFINED`
+`message` | String! | A localized error message
 
 ### SelectedCustomizableOption attributes {#SelectedCustomizableOption}
 
@@ -102,6 +113,7 @@ The `ConfigurableCartItem` object adds the following attributes to the `CartItem
 Attribute | Data type | Description
 --- | --- | ---
 `configurable_options` | [[SelectedConfigurableOption!]!](#SelectedConfigurableOption) | An array of configurable options
+`configured_variant` | [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) | Returns details about a child configurable product that are different than the parent product. This attribute always returns child information, including the child product image, even if the `storeConfig.configurable_thumbnail_source` attribute is set to `parent`
 `customizable_options` | [[SelectedCustomizableOption]](#SelectedCustomizableOption) | An array of customizable options the shopper chose for the configurable product
 
 ### SelectedConfigurableOption attributes {#SelectedConfigurableOption}
@@ -218,6 +230,7 @@ mutation {
   }
 }
 ```
+
 **Response:**
 
 ```json

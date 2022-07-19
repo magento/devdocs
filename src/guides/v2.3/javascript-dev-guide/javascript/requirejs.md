@@ -5,7 +5,7 @@ contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 ---
 
-This topic describes general concepts of how the [RequireJS library](http://requirejs.org){:target="_blank"} is used in Magento, with examples. Please refer to official RequireJS documentation for in-depth explanation.
+This topic describes general concepts of how the [RequireJS library](http://requirejs.org) is used in Magento, with examples. Please refer to official RequireJS documentation for in-depth explanation.
 
 RequireJS is a JavaScript file and module loader. It improves perceived page load times because it allows JavaScript to load in the background. In particular, it enables asynchronous JavaScript loading.
 
@@ -98,7 +98,7 @@ In this example, the `max-length` value of the text-box in the `adminhtml` is al
     };
     ```
 
-1. Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/` and copy the contents of the `input.html` file from the `module_ui` template file.
+1. Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/element/` and copy the contents of the `input.html` file from the `module_ui` template file.
 1. Change the maxlength value to `512`, which was originally set to `256`.
 1. Upgrade the Magento application:
 

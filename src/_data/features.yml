@@ -17,6 +17,14 @@ features:
           2.3: false
           2.4: true
       -
+        name: Live Search powered by Adobe Sensei
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
         name: Product Recommendations powered by Adobe Sensei
         support:
           2.0: false
@@ -40,6 +48,14 @@ features:
           2.2: false
           2.3: true
           2.4: true
+      -
+        name: Payment Services flexible payment options
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true 
       -
         name: PayPal Smart Buttons
         support:
@@ -171,6 +187,14 @@ features:
           2.2: true
           2.3: true
           2.4: true
+      -
+        name: Payment Services reporting and reconciliation dashboard
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true 
   -
     name: Platform, performance, and security enhancements
     versions:

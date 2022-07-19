@@ -1,18 +1,30 @@
 label: Release Information
 pages:
 
+  - label: Roadmap
+    url: /release/roadmap.html
+    versionless: true
+
   - label: Upcoming releases
     url: /release/
     versionless: true
 
+  - label: Beta program
+    url: /release/beta-program.html
+    versionless: true
+
+  - label: Released versions
+    url: /release/released-versions.html
+    versionless: true
+
   - label: Release policy
-    url: /release/policy
+    url: /release/policy/
     versionless: true
   
   - label: Lifecycle policy
     url: /release/lifecycle-policy.html
     versionless: true
-  
+
   - label: Availability
     url: /release/availability.html
     versionless: true

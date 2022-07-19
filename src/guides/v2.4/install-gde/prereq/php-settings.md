@@ -36,9 +36,8 @@ On CentOS, [additional steps may be required][].
 
 ## Verify installed extensions
 
-Magento requires a set of extensions to be installed:
+Magento requires a set of extensions to be installed.
 
-<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 {:.procedure}
@@ -51,7 +50,6 @@ To verify installed extensions:
    ```
 
 1. Verify that all required extensions are installed.
-
 1. Add any missing modules using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.4 modules can be added with:
 
    ```bash
@@ -59,6 +57,9 @@ To verify installed extensions:
    ```
 
 ## Check PHP settings
+
+{:.bs-callout-warning}
+If you are using PHP 7.4.20, set `pcre.jit=0` in your `php.ini` file. This will get around a PHP [bug](https://bugs.php.net/bug.php?id=81101) that prevents CSS from loading.
 
 -  Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
@@ -83,9 +84,9 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
 
    These settings allow PHP processes to cache paths to files instead of looking them up each time a page loads. See [Performance Tuning](https://www.php.net/manual/en/ini.core.php) in the PHP documentation.
 
--  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments){:target="_blank"}, which is required for Magento 2.1 and later.
+-  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments), which is required for Magento 2.1 and later.
 
-   We recommend you enable the [PHP OPcache](https://www.php.net/manual/en/book.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
+   We recommend you enable the [PHP OPcache](https://www.php.net/manual/en/book.opcache.php) for performance reasons. The OPcache is enabled in many PHP distributions.
 
    Magento 2.1 and later use PHP code comments for code generation.
 
@@ -138,7 +139,7 @@ If you have more than one `opcache.ini`, modify all of them.
 To set PHP options:
 
 1. Open a `php.ini` in a text editor.
-1. Locate your server's time zone in the available [time zone settings](https://php.net/manual/en/timezones.php){:target="_blank"}
+1. Locate your server's time zone in the available [time zone settings](https://php.net/manual/en/timezones.php)
 1. Locate the following setting and uncomment it if necessary:
 
    ```conf
@@ -194,7 +195,7 @@ To set `opcache.ini` options:
 
 ## Troubleshooting
 
-See the following Magento Support articles for help troubleshooting PHP problems:
+See the following {{site.data.var.ee}} Support articles for help troubleshooting PHP problems:
 
 -  [PHP version error or 404 error when accessing Magento in browser](https://support.magento.com/hc/en-us/articles/360033117152-PHP-version-error-or-404-error-when-accessing-Magento-in-browser)
 -  [PHP settings errors](https://support.magento.com/hc/en-us/articles/360034599631-PHP-settings-errors)

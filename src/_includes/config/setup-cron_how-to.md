@@ -6,7 +6,7 @@ The Commerce crontab is inside `#~ MAGENTO START` and `#~ MAGENTO END` comments 
 
 To create the Commerce crontab:
 
-1. Log in as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in as, or switch to, the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Change to your Magento installation directory.
 1. Enter the following command:
 
@@ -21,7 +21,7 @@ Use `--force` to rewrite an existing Magento crontab.
 *  `magento cron:install` does not rewrite an existing crontab inside `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.
 *  `magento cron:install --force` has no effect on any cron jobs outside the Magento comments.
 
-To view the crontab, enter the following command as the Magento file system owner:
+To view the crontab, enter the following command as the file system owner:
 
 ```bash
 crontab -l

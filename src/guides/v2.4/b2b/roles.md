@@ -5,6 +5,8 @@ menu_title: Manage company roles
 ee_only: True
 functional_areas:
   - B2B
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/roles
+layout: migrated
 ---
 
 Within a company, customers may have different job roles, levels of responsibility, and access to information about their company. {{site.data.var.b2b}} defines several types of system resources, and the Company Admin (or an integration that operates on the behalf of the Company Admin) grants or denies access to these resources using company roles. The Company Admin has access to all resources.
@@ -650,7 +652,7 @@ None
 
 The following call returns all roles that have been created for a company  (`company_id` = `2`).
 
-See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage:**
 

@@ -4,11 +4,11 @@ title: createCustomer mutation
 ---
 
 {:.bs-callout-warning}
-Magento recommends using the [createCustomerV2 mutation]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) to create a customer.
+We recommend using the [createCustomerV2 mutation]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) to create a customer.
 
 The `createCustomer` mutation creates a new customer.
 
-To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
+To return or modify information about a customer, we recommend you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-session.html).
 
 ## Syntax
 

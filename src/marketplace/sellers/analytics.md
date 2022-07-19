@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Analytics
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/analytics/
+layout: migrated
 ---
 
 You can view data about the performance of your extension in the marketplace.

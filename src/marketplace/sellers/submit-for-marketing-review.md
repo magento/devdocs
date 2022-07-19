@@ -1,6 +1,8 @@
 ---
 group: marketplace-sellers
 title: Submit for Marketing Review
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-marketing-review/
+layout: migrated
 ---
 
 When you have completed the code, you can submit your extension for marketing review. You can submit your product for both technical and marketing review at the same time. The review process is the same for both extensions and themes.
@@ -15,7 +17,7 @@ During marketing review, your submission is examined to ensure that it meets Mar
 
 Before submitting an extension or theme for marketing review, conduct your own internal review of the content to make sure that it is ready for publication.
 
--  Review the [marketing]({{ site.baseurl }}/marketplace/sellers/marketing-review-guidelines.html) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
+-  Review the [marketing]({{ site.baseurl }}/marketplace/sellers/marketing-review-guidelines.html) guidelines to ensure that your extension meets Commerce Marketplace and Magento development requirements.
 -  Spell-check and review all text fields in your extension, product documentation, and marketing materials.
 -  Read the text out loud to make sure that the tone is conversational, and with no missing or transposed words.
 -  Get a second opinion. Ask a friend or colleague to review the profile, screenshots, and any supplemental documentation.
@@ -117,7 +119,7 @@ You must provide a thumbnail and at least two high-quality images for the image 
 
 ### Extension support (Optional)
 
-Customers are advised to contact you directly for support, using the information that you provide. For support issues related to Magento Marketplace, see the [Marketplace Help Center][1].
+Customers are advised to contact you directly for support, using the information that you provide. For support issues related to Commerce Marketplace, see the [Marketplace Help Center][1].
 
 1. Under **Marketing Submission**, click <span class="btn">Extension Support</span>.
 
@@ -156,7 +158,7 @@ Customers are advised to contact you directly for support, using the information
 
 ### Documentation and resources
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info}
 While you can add documentation PDF files during this review, the content is tested during the [Technical Review]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html).
 
 1. On the extension status page, on the left side, under **Marketing Submission**, click <span class="btn">Documentation and Resources</span>.

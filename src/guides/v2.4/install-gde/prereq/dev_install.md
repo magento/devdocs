@@ -4,6 +4,8 @@ functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://developer.adobe.com/commerce/contributor/guides/install/clone-repository/
+layout: migrated
 ---
 
 You can clone the latest code from the [Magento GitHub repository][gh-repo], and use code from a release branch or a development branch.
@@ -43,7 +45,7 @@ To create an authentication file:
                "username": "<public-key>",
                "password": "<private-key>"
            }
-       }
+       },
        "github-oauth": {
            "github.com": "<personal-access-token>"
        }

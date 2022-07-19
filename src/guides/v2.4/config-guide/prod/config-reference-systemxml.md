@@ -29,7 +29,7 @@ If you want instant *XSD validation in your IDE, you can run `bin/magento dev:ur
 In the `system.xml` file, it is possible to define four different types of entities, which are related to each other. The following section describes the relationship between tabs, sections, groups, and fields. The following screenshot displays the Magento 2 System Configuration in the Admin backend.
 The red squares mark the different types that are defined in the `system.xml` file:
 
-![Screenshot displaying a configured section in the Magento Admin.](img/magento2-system-configuration.png)
+![Screenshot displaying a configured section in the Admin.](img/magento2-system-configuration.png)
 
 Tabs are used to split different configuration areas semantically. Each tab can contain one or more sections, which can also be referenced as submenus. A section contains one or more groups.
 Each group lists one or more fields. You can also use a group to add a general description for the following fields. As mentioned, each group can have one or more fields. Fields are the smallest entity
@@ -273,7 +273,7 @@ A `<field>`-Tag can have the following children:
 | Node                        | Description                                                                                                                                                                               | Type             |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
 | `label`                     | Defines the label that is displayed in the frontend.                                                                                                                                      | `string`         |
-| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`         |
+| `comment`                   | Adds a comment below the field label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`         |
 | `tooltip`                   | Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.                                        | `string`         |
 | `hint`                      | Displays additional information. Only available with specific `frontend_model`.                                                                                                           | `string`         |
 | `frontend_class`            | Adds a defined CSS class to the rendered section HTML element.                                                                                                                            | `string`         |
@@ -281,7 +281,7 @@ A `<field>`-Tag can have the following children:
 | `backend_model`             | Specifies a different backend model to modify the configured values.                                                                                                                      | `typeModel`      |
 | `source_model`              | Specifies a different source model that provides a specific set of values.                                                                                                                | `typeModel`      |
 | `config_path`               | Can be used to overwrite the generic config path of a field.                                                                                                                              | `typeConfigPath` |
-| `validate`                  | Define different validation rules (comma separated). Full reference list of available validation rules is listed below.                                                                   | `string`         |
+| `validate`                  | Define different validation rules (space separated). Full reference list of available validation rules is listed below.                                                                   | `string`         |
 | `can_be_empty`              | Used when `type` is `multiselect` to specify that a field can be empty.                                                                                                                   | `int`            |
 | `if_module_enabled`         | Used to display a field only when a given module is enabled.                                                                                                                              | `typeModule`     |
 | `base_url`                  | Used in combination with `upload_dir` for file uploads.                                                                                                                                   | `typeUrl`        |
@@ -409,3 +409,39 @@ The following validation rules are available:
 | `validate-xml-identifier`       | Allows a valid XML-identifier. For example, something_1, block5, id-4.                                                  |
 | `validate-zip-us`               | Allows a valid (US) ZIP code. For example, 90602 or 90602-1234.                                                         |
 | `vinUS`                         | Allows (US) vehicle identification number (VIN) value.                                                                  |
+
+### Default Values
+
+Default values for fields may be set in the module's `etc/config.xml` file by specifying the default value in the `section/group/field_ID` node.
+
+#### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID` (Default scope)
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <A_UNIQUE_SECTION_ID>
+            <A_UNIQUE_GROUP_ID>
+                <ANOTHER_UNIQUE_FIELD_ID>This is the default value</ANOTHER_UNIQUE_FIELD_ID>
+            </A_UNIQUE_GROUP_ID>
+        </A_UNIQUE_SECTION_ID>
+    </default>
+</config>
+```
+
+#### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID` (Website scope)
+
+Using the `websites` tag, specify the default value for a specific website.
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <websites>
+        <WEBSITE_CODE>
+            <A_UNIQUE_SECTION_ID>
+                <A_UNIQUE_GROUP_ID>
+                    <ANOTHER_UNIQUE_FIELD_ID>This is the default value</ANOTHER_UNIQUE_FIELD_ID>
+                </A_UNIQUE_GROUP_ID>
+            </A_UNIQUE_SECTION_ID>
+        </WEBSITE_CODE>
+    </websites>
+</config>
+```

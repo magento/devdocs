@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The Cloud Docker development environment provides MySQL services through a MariaDB (default) or MySQL database deployed to the [Docker database container][]. You connect to the database using `docker-compose` commands. You can also import data from an existing Magento project into the database container using the `magento-cloud db:dump` command.
+The Cloud Docker development environment provides MySQL services through a MariaDB (default) or MySQL database deployed to the [Docker database container][]. You connect to the database using `docker-compose` commands. You can also import data from an existing {{site.data.var.ece}} project into the database container using the `magento-cloud db:dump` command.
 
 ## Connect to the database
 
@@ -47,7 +47,6 @@ return [
             ],
         ],
 ```
-{:.no-copy}
 
 {:.procedure}
 To connect to the database using Docker commands:
@@ -84,7 +83,6 @@ To connect to the database using Docker commands:
    | 10.0.38-MariaDB-1~xenial |
    +--------------------------+
    ```
-   {:.no-copy}
 
 {:.procedure}
 To connect to the database port:
@@ -108,7 +106,6 @@ To connect to the database port:
    magento-cloud_db-sales_1    docker-entrypoint.sh mysqld      Up       0.0.0.0:32874->3306/tcp
 
    ```
-   {:.no-copy}
 
 1. Connect to the database with port information from the previous step.
 
@@ -140,14 +137,13 @@ To connect to the database port:
    | 10.0.38-MariaDB-1~xenial |
    +--------------------------+
    ```
-   {: .no-copy}
 
 [db-image]: https://hub.docker.com/_/mariadb
 
 ## Import a database dump
 
 {:.bs-callout-warning}
-Before you import a database from an existing Magento installation into a new {{ site.data.var.ece }} environment, you must add the encryption key from the remote environment to the new environment, and then deploy the changes. See [Add the Magento encryption key][].
+Before you import a database from an existing {{site.data.var.ee}} installation into a new {{ site.data.var.ece }} environment, you must add the encryption key from the remote environment to the new environment, and then deploy the changes. See [Add the encryption key][].
 
 {:.procedure}
 To import a database dump into the Docker environment:
@@ -158,7 +154,7 @@ To import a database dump into the Docker environment:
    magento-cloud db:dump
    ```
 
-   {: .bs-callout-note }
+   {: .bs-callout-info }
    The `magento-cloud db:dump` command runs the [mysqldump][] command with the `--single-transaction` flag, which allows you to back up your database without locking the tables.
 
 1. Place the resulting SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
@@ -192,7 +188,7 @@ See [Docker service containers][Docker database container] for details about the
 
 <!--Link definitions-->
 
-[Add the Magento encryption key]: {{ site.baseurl}}/cloud/setup/first-time-setup-import-import.html#encryption-key
-[Docker database container]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html#database-container
+[Add the encryption key]: {{ site.baseurl}}/cloud/setup/first-time-setup-import-import.html#encryption-key
+[Docker database container]: {{ site.baseurl }}/cloud/docker/docker-containers-service.html#database-container
 [mysqldump]: https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
 [Service configuration options]: {{ site.baseurl }}/cloud/docker/docker-containers.html#service-configuration-options
