@@ -11,34 +11,6 @@ These release notes can include:
 -  {:.new} New features
 -  {:.fix} Fixes and improvements
 
-## {{ site.data.var.ee }} B2B 1.3.4 - Adobe Commerce 2.4.5
-
--  {:.fix} <!--- ACP2E-453--> {{ site.data.var.ee }} no longer sends email notifications each time an existing Company is updated by an API call. Emails are now sent only when a company is created.
-
--  {:.fix} <!--- ACP2E-406--> {{ site.data.var.ee }} now correctly calculates a negotiable quote grand total when the **Enable Cross Border Trade** tax calculation setting is enabled.
-
--  {:.fix} <!--- ACP2E-322--> Configurable products are now moved to the last position in the product listing after stock is updated when the **Move out of stock to the bottom** setting is enabled. A new custom database query has been implemented to ensure Elasticsearch index sort order now honors the Admin-enabled sort order. Previously, configurable products and their child products were not moved to the bottom of the list when this setting was enabled.
-
--  {:.fix} <!--- ACP2E-308--> Purchase Order email now honors the email sending setting of each website in a multi-site deployment. A check for the **Disable Email Communications** setting has been added to the custom logic for email queues. Previously, {{ site.data.var.ee }} did not honor the email sending setting of the secondary website.
-
--  {:.fix} <!--- ACP2E-302--> The title of the SKU field of the Quick Order page has been edited for clarity.
-
--  {:.fix} <!--- ACP2E-543--> {{ site.data.var.ee }} now displays a more informative error message when a shopper enters an invalid SKU in the **Enter SKU or Product Name** field.
-
--  {:.fix} <!--- ACP2E-1753--> The **Account Created in** field for a company administrator now retains its value as expected after you save the company.
-
--  {:.fix} <!--- ACP2E-722 --> The `customer` query no longer returns empty results when it retrieves requisition lists that are filtered by `uid`.
-
--  {:.fix} <!--- ACP2E-210 --> Added a plugin before the `collectQuoteTotals` call to ensure that store credits are applied only once.
-
--  {:.fix} <!--- ACP2E-665 -->  Customers are now redirected to the login page when their account is deleted by an administrator from the Admin. Previously, {{ site.data.var.ee }} threw an error.  The plugin (`SessionPlugin`) code block is now inside the `try…catch` block. Previously, this code was not wrapped inside the generic exception handling block.
-
--  {:.fix} <!--- ACP2E-661 --> Pressing **Enter**  on the Quick Order page in mobile mode after entering a valid product name or SKU now takes the shopper to the next field as expected.
-
--  {:.fix} <!--- ACP2E-607 --> Company name is now visible as expected in the billing and shipping address sections of the checkout workflow.
-
--  {:.fix} <!--- ACP2E-375 --> Store credit is now unavailable when the Zero Subtotal Checkout payment method is disabled. Previously, the Store Credit checkbox was not functional during order placement from Admin. {{ site.data.var.ce }} did not place the order with the store credit and displayed this error: `The requested Payment Method is not available`.
-
 ## {{ site.data.var.ee }} B2B - Adobe Commerce 2.4.4
 
 -  {:.fix} <!--- MC-41985--> The time required to upgrade from {{ site.data.var.ee }} 2.3.x to {{ site.data.var.ee }} 2.4.x in deployments with more than 100,000 company roles has been substantially reduced.
