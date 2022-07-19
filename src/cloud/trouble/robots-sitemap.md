@@ -116,4 +116,4 @@ To activate `robots.txt` customizations, you must enable the **Indexing by searc
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}/common/images/cloud/cloud_project-robots-indexing-by-search-engine.png)
 
 {:.bs-callout-info}
-If you are using PWA and are unable to access your configured robots.txt file, please add `robots.txt` into the [Front Name Allowlist](https://github.com/magento/magento2-upward-connector#front-name-allowlist) at Stores > Configuration > General > Web > UPWARD PWA Configuration.
+If you are using PWA Studio and are unable to access your configured `robots.txt` file, add `robots.txt` to the [Front Name Allowlist](https://github.com/magento/magento2-upward-connector#front-name-allowlist) at **Stores** > Configuration > **General** > **Web** > UPWARD PWA Configuration.
