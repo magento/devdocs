@@ -2,6 +2,8 @@
 group: b2b-developer-guide
 title: Place a negotiable quote order
 ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/negotiable-order-workflow
+layout: migrated
 ---
 
 This topic describes how REST calls can be used to place items in a shopping cart, initiate and complete the process of negotiating a quote, and reimbursing the buyer's credit upon receipt of payment.
