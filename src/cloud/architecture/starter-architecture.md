@@ -17,7 +17,7 @@ You can use any development and branching methodology you like. When you get ini
 
 The following diagram shows the hierarchical relationships of the Starter environments.
 
-![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud/cloud_arch-starter.png)
+![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud/cloud_arch-starter.svg)
 
 ## Production environment {#cloud-arch-prod}
 
