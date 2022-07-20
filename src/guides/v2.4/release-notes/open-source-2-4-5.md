@@ -1249,4 +1249,3 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 ## Installation and upgrade instructions
 
 You can install {{site.data.var.ce}} 2.4.5 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
-
