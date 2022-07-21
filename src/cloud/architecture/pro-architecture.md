@@ -72,7 +72,7 @@ Adobe also provides the {{site.data.var.mcd-prod}} solution for deploying to a l
 
 Your project is a single Git repository with three, main environment branches for Integration, Staging, and Production. The following diagram shows the hierarchical relationship of the environments:
 
-![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture.png)
+![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture.svg)
 
 ## Integration environment {#cloud-arch-int}
 
