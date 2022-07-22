@@ -72,7 +72,7 @@ Adobe also provides the {{site.data.var.mcd-prod}} solution for deploying to a l
 
 Your project is a single Git repository with three, main environment branches for Integration, Staging, and Production. The following diagram shows the hierarchical relationship of the environments:
 
-![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture.svg)
+![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture.png)
 
 ## Integration environment {#cloud-arch-int}
 
@@ -179,7 +179,7 @@ Weeks 12 to 22 | One backup per month
 -  **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
 {:.bs-callout-tip}
-On Pro Staging and Production environments, you must submit a support ticket to restore an environment from an automatic backup. You can backup the database and code for your Production and Staging environments using CLI commands. See [Dump your database]({{site.baseurl}}/cloud/project/project-webint-snap.html#db-dump) and [bin/magento setup:backup]({{site.baseurl }}/guides/v2.4/reference/cli/magento-commerce.html#setupbackup). For Integration environments, we highly recommend that you create a snapshot as a first step after accessing your {{site.data.var.ece}} project and before applying any major changes. See [Snapshots and backup management]({{site.baseurl}}/cloud/project/project-webint-snap.html).
+On Pro Staging and Production environments, you must [Submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) to restore an environment from an automatic backup. You can backup the database and code for your Production and Staging environments using `magento-cloud` CLI commands. See [Dump your database]({{site.baseurl}}/cloud/project/project-webint-snap.html#db-dump) and [bin/magento setup:backup]({{site.baseurl }}/guides/v2.4/reference/cli/magento-commerce.html#setupbackup). For Integration environments, we highly recommend that you create a snapshot as a first step after accessing your {{site.data.var.ece}} project and before applying any major changes. See [Snapshots and backup management]({{site.baseurl}}/cloud/project/project-webint-snap.html).
 
 ### Production technology stack
 
