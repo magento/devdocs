@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Tab component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/tab/
+layout: migrated
 ---
 
 The Tab component implements a tab content area.

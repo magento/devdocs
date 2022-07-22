@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: ColorPicker component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/color-picker/
+layout: migrated
 ---
 
 The ColorPicker component uses the [Spectrum](https://bgrins.github.io/spectrum/) and [tinycolor.js](https://bgrins.github.io/TinyColor/) libraries to make it easier to choose and implement color values.

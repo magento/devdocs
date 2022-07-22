@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Radioset component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/radio-set/
+layout: migrated
 ---
 
 The Radioset component is a shortcut for [Checkboxset]({{ page.baseurl }}/ui_comp_guide/components/ui-checkboxset.html), with the input type set to the radio button.

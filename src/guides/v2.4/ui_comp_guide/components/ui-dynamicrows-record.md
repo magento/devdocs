@@ -3,6 +3,8 @@ group: ui-components-guide
 title: DynamicRowsRecord component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/dynamic-rows-record/
+layout: migrated
 ---
 
 The DynamicRowsRecord component is a container of record fields. The DynamicRowsRecord should be used as a child of the [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html) component.

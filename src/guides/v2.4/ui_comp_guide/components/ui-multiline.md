@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Multiline component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/multiline/
+layout: migrated
 ---
 
 The Multiline component is a collection of form elements that displays multiple fields of the same type. For example, the **Street Address** fields.

@@ -4,6 +4,8 @@ subgroup: concepts
 title: uiRegistry
 menu_title: uiRegistry
 menu_order: 110
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/registry/
+layout: migrated
 ---
 
 `uiRegistry` is a in-memory storage, plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.

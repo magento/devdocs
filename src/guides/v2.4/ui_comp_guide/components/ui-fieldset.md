@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Fieldset component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/fieldset/
+layout: migrated
 ---
 
 The Fieldset component implements a container for visually-grouped form elements, such as buttons and form fields.

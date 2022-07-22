@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Textarea component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/text-area/
+layout: migrated
 ---
 
 The Textarea component implements the `<textarea>` form field.

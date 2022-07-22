@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Text component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/text/
+layout: migrated
 ---
 
 The Text component displays text data in the components like [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) and [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html).

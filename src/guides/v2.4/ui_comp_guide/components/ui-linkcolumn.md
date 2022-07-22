@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: LinkColumn component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/link-column/
+layout: migrated
 ---
 
 ## Overview

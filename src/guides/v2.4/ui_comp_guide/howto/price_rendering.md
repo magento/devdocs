@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Render prices on the frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/price-rendering/
+layout: migrated
 ---
 
 This article shows how templates and UI components work together to render the price for any product listing(e.g. category, widget, etc).

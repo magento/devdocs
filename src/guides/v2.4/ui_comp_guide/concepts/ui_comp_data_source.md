@@ -3,6 +3,8 @@ group: ui-components-guide
 title: The DataSource Component
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/data-source/
+layout: migrated
 ---
 
 ## Overview

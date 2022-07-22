@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Button component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/button/
+layout: migrated
 ---
 
 The Button component allows user to perform a list of predefined actions by clicking on the corresponding button. Its default display mode is the [HTML](https://glossary.magento.com/html) `<button>` element, which be configured to display a link.

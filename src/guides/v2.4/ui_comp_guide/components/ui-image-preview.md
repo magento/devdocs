@@ -3,6 +3,8 @@ group: ui-components-guide
 title: ImagePreview Component
 contributor_name: Shankar Konar
 contributor_link: https://github.com/konarshankar07
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/image-preview/
+layout: migrated
 ---
 
 The ImagePreview component implements an inline preview of an image, which is typically used in conjunction with a grid of image search results. Users can expand a more detailed preview of an image in-line with other image search results, and they have the ability to click on "next" or "previous" arrows to navigate to another image's detailed preview.

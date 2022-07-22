@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: MassActions component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/mass-actions/
+layout: migrated
 ---
 
 The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).

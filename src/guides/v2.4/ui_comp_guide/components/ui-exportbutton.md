@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: ExportButton component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/export-button/
+layout: migrated
 ---
 
 The ExportButton component implements the ability to export grid data to the specified data format (csv, xml, and so on).

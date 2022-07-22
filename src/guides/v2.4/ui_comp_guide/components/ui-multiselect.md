@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Multiselect component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/multiselect/
+layout: migrated
 ---
 
 The Multiselect component provides the interface for a list or a data set. Multiselect allows selecting multiple items.

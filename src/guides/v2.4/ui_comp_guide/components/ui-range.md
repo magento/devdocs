@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Range component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/range/
+layout: migrated
 ---
 
 The Range component implements the range for filtering rows in a grid. Visually, this component represents two input fields of `date` or `text` type, for entering the "from" and "to" range limits.

@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Checkboxset component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/checkbox-set/
+layout: migrated
 ---
 
 The Checkboxset component implements a group of `<input type="checkbox">` or `<input type="radio">` selection elements.

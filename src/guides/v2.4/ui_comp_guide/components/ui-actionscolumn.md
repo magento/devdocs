@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: ActionsColumn component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/actions-column/
+layout: migrated
 ---
 
 The ActionsColumns component implements a table's column responsible for displaying and performing a list of record-related actions.

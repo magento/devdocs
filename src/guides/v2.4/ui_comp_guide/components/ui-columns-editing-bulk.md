@@ -3,6 +3,8 @@ group: ui-components-guide
 title: ColumnsEditingBulk component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-editing-bulk/
+layout: migrated
 ---
 
 The ColumnsEditingBulk [UI component](https://glossary.magento.com/ui-component) is an [extension](https://glossary.magento.com/extension) for the [ColumnsEditor]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/grid/editing/editor.js) component. It provides the bulk update functionality.

@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Using the new structure in UI components XML configuration
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/semantic-configuration/
+layout: migrated
 ---
 
 Magento 2.2.0 introduces a new structure for [UI components XML configuration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics.

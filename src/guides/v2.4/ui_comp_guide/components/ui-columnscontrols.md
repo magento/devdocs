@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: ColumnsControls component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-controls/
+layout: migrated
 ---
 
 The ColumnsControls component is a collection of columns. It provides an interface for showing and hiding columns. The interface contains:

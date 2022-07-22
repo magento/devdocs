@@ -3,6 +3,8 @@ group: ui-components-guide
 title: Masonry (grid) component
 contributor_name: Shankar Konar
 contributor_link: https://github.com/konarshankar07
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/masonry/
+layout: migrated
 ---
 
 The Masonry component is a collection of columns. It renders the masonry grid layout in the Ui component.

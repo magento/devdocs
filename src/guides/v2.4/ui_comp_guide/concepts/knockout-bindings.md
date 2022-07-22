@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Custom Knockout.js bindings
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/knockout-bindings/
+layout: migrated
 ---
 
 This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used in the core Magento files. These bindings can also be used by third-party developers.

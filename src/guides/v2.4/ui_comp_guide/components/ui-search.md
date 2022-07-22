@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Search component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/search/
+layout: migrated
 ---
 
 The Search component allows searching through the grid records. It is a generic tool for filtering content that aggregates all other filter elements.

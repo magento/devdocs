@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: HtmlContent component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/html-content/
+layout: migrated
 ---
 
 The HtmlContent [UI component](https://glossary.magento.com/ui-component) provides the ability to process and render a [layout](https://glossary.magento.com/layout) structure or a Magento block directly inside a UI component configuration. Processing and rendering is executed on the [server side](https://glossary.magento.com/server-side).

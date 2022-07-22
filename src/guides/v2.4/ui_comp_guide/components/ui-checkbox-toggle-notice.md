@@ -3,6 +3,8 @@ group: ui-components-guide
 title: CheckboxToggleNotice component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/checkbox-toggle-notice/
+layout: migrated
 ---
 
 The CheckboxToggleNotice component implements the [`Checkbox`]({{ page.baseurl }}/ui_comp_guide/components/ui-checkbox.html) component with the ability to switch notice according to the selected option.

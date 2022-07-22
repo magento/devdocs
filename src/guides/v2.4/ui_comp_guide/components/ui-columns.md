@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Columns component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns/
+layout: migrated
 ---
 
 The Columns component is a collection of columns. It renders the `<table>` element and displays the records of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) in this table.

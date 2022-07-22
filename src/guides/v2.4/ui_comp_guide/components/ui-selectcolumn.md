@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: SelectColumn component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/select-column/
+layout: migrated
 ---
 
 The SelectColumn component receives an array of values and displays the column with corresponding labels. The value-label correspondence is set in the component's configuration.

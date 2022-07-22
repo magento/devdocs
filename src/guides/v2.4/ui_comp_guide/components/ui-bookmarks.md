@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Bookmarks component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/bookmarks/
+layout: migrated
 ---
 
 The Bookmarks component stores active and changed state of a grid implemented using [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html). It includes the state of filters, columns position, applied sorting, pagination, and so on.

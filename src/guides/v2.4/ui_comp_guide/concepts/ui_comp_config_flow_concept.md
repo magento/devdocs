@@ -4,6 +4,8 @@ subgroup: concepts
 title: Configuration flow of UI components
 menu_title: Configuration flow of UI components
 menu_order: 10
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/configuration-flow/
+layout: migrated
 ---
 
 ## Overview
