@@ -50,89 +50,35 @@ Header | Description
 
 The following query returns details about a simple product.
 
+<!--- Note to reviewer: Nothing is returned from `SimpleProductView`. I will replace the code sample when it does. -->
+
 **Request:**
 
 ```graphql
-{
-  "data": {
-    "products": [
-      {
-        "id": "TWpRdFRVSXdNZwBaR1ZtWVhWc2RBAE16UmxNamMwTUdFdE56UTNNeTAwWXpnNUxUZzNNekF0TlRjME1ETm1ZMlV5TjJGbABiV0ZwYmw5M1pXSnphWFJsWDNOMGIzSmwAWW1GelpRAFRVRkhVMVJITURBMU5UYzVNRE00",
-        "sku": "24-MB02",
-        "name": "Fusion Backpack 567890",
-        "url": "http://master-7rqtwti-ima6q5tyxltfe.eu-4.magentosite.cloud/fusion-backpack.html",
-        "description": "<p>With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.</p>\r\n<ul>\r\n<li>Durable nylon construction.</li>\r\n<li>2 main zippered compartments.</li>\r\n<li>1 exterior zippered pocket.</li>\r\n<li>Mesh side pouches.</li>\r\n<li>Padded, adjustable straps.</li>\r\n<li>Top carry handle.</li>\r\n<li>Dimensions: 18\" x 10\" x 6\".</li>\r\n</ul>",
-        "shortDescription": "",
-        "attributes": [
-          {
-            "name": "activity",
-            "label": "Activity",
-            "value": [
-              "Hiking",
-              "School",
-              "Yoga"
-            ],
-            "roles": [
-              "visible in PDP",
-              "visible in compare list",
-              "visible in Search"
-            ]
-          },
-          {
-            "name": "features_bags",
-            "label": "Features",
-            "value": [
-              "Hydration Pocket",
-              "Audio Pocket",
-              "Waterproof",
-              "Lightweight"
-            ],
-            "roles": [
-              "visible in PDP",
-              "visible in Search"
-            ]
-          },
-          {
-            "name": "material",
-            "label": "Material",
-            "value": [
-              "Burlap",
-              "Nylon",
-              "Polyester"
-            ],
-            "roles": [
-              "visible in PDP",
-              "visible in Search"
-            ]
-          },
-          {
-            "name": "strap_bags",
-            "label": "Strap/Handle",
-            "value": [
-              "Adjustable",
-              "Double",
-              "Padded"
-            ],
-            "roles": [
-              "visible in PDP",
-              "visible in Search"
-            ]
-          },
-          {
-            "name": "style_bags",
-            "label": "Style Bags",
-            "value": [
-              "Backpack",
-              "Laptop"
-            ],
-            "roles": [
-              "visible in PDP",
-              "visible in Search"
-            ]
+query {
+  products(skus: ["24-MB02"]) {
+    id
+    sku
+    name
+    url
+    description
+    shortDescription
+    attributes(roles: ["visible in Search"]) {
+      name
+      label
+      value
+      roles
+    }
+    ... on SimpleProductView {
+      price {
+        regular {
+          amount {
+            value
+            currency
           }
-        ]
+        }
       }
-    ]
+    }
   }
 }
 ```
