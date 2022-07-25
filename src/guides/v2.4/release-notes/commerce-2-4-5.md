@@ -1421,7 +1421,55 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ## Known issues
 
-**Issue**: {{ site.data.var.ee }} displays the following message when an administrator logs in: `Invalid security or form key. Please refresh the page`. **Workaround**: Refresh the page. To permanently remove this error occurrence,  you can lengthen the session lifetime from the command line (for example, `bin/magento config:set admin/security/session_lifetime 10800`).  [GitHub-33749](https://github.com/magento/magento2/issues/33749) <!--- AC-734-->
+**Issue**: {{ site.data.var.ee }} adds a `Can not resolve reCAPTCHA parameter` error to the `var/log/exception.log` file repeatedly after enabling reCAPTCHA for the Admin, quickly increasing the size of the log file.  **Workaround**: Disable both **Enable for Login** and **Enable for Forgot Password** for the Admin. [GitHub-34975](https://github.com/magento/magento2/issues/34975) <!--- AC-3179-->
+
+**Issue**: `.gitignore` files are overridden during Composer installation. [GitHub-32888](https://github.com/magento/magento2/issues/32888) <!--- AC-1377-->
+
+**Issue**: {{ site.data.var.ee }} displays the following message when an administrator logs in: `Invalid security or form key. Please refresh the page`. **Workaround**: Refresh the page. To permanently remove this error occurrence,  you can lengthen the session lifetime from the command line (for example, `bin/magento config:set admin/security/session_lifetime 10800`). [GitHub-33749](https://github.com/magento/magento2/issues/33749) <!--- AC-734-->
+
+**Issue**: Removing all websites under **Product in Websites** on the product edit page and clicking **Save** triggers an `SQLSTATE[42000]:  Syntax error or access violation` exception. [GitHub-35133](https://github.com/magento/magento2/issues/35133)  <!--- AC-2567-->
+
+**Issue**: Diacritics are not fully supported in email addresses. [GitHub-12075](https://github.com/magento/magento2/issues/12075)  <!--- AC-2903-->
+
+**Issue**: The `getFilteredTimerIds` method (class `Magento\Framework\Profiler\Driver\Standard\Stat`) throws the following error on deployments running PHP 8.1: `(Exception): Deprecated Functionality: strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in /var/www/html/vendor/magento/framework/Profiler/Driver/Standard/Stat.php on line 213`. [GitHub-35307](https://github.com/magento/magento2/issues/35307)  <!--- AC-2882-->
+
+**Issue**: {{ site.data.var.ee }} throws the following error and does not start the consumer when using `bin/magento queue:consumer:start` to start RabbitMQ consumers in deployments running PHP 8.1: `Deprecated Functionality: trim(): Passing null to parameter #1 ($string) of type string is deprecated in .../vendor/magento/framework-amqp/Config.php on line 143`. [GitHub-35434](https://github.com/magento/magento2/issues/35434)  <!--- AC-2943-->
+
+**Issue**: This occurs when a bundle product is created with a special price. When you try to filter products to display bundle products, Magento displays this error:  `Something went wrong with processing the default view and we have restored the filter to its original state`. [GitHub-35704](https://github.com/magento/magento2/issues/35704)  <!--- AC-3769-->
+
+**Issue**: [GitHub-35339](https://github.com/magento/magento2/issues/35339)  <!--- AC-3052-->
+
+**Issue**: {{ site.data.var.ee }} throws the following error when you click on the **Reports**  >  **Braintree Settlement** grid on a deployment running PHP 8.1:  `Error: Undefined constant Braintree\PaymentInstrumentType::ANDROID_PAY_CARD in /var/www/html/vendor/paypal/module-braintree-core/Ui/Component/Report/Listing/Column/PaymentType.php:49`. [GitHub-35339](https://github.com/magento/magento2/issues/35339)  <!--- AC-3030-->
+
+**Issue**: Bulk API requests throw an error when items to be returned exceed 20 in deployments where Inventory is enabled. [GitHub-34154](https://github.com/magento/magento2/issues/34154)  <!--- AC-1330-->
+
+**Issue**: The `cart` query does not include tax when returning the value of the selected shipping method. [GitHub-31206](https://github.com/magento/magento2/issues/31206)  <!--- AC-2363-->
+
+**Issue**: The `products` query returns only IDs for dropdown and multi-select fields but no labels. [GitHub-28200](https://github.com/magento/magento2/issues/28200)  <!--- AC-2796-->
+
+**Issue**: GraphQL queries that send a `Content-Currency` header that contains a value different from the default currency do not update cart totals correctly. [GitHub-29994](https://github.com/magento/magento2/issues/29994)  <!--- AC-2799-->
+
+**Issue**: GraphQL requests add bundle products to quotes without defining required options. [GitHub-25676](https://github.com/magento/magento2/issues/25676)  <!--- AC-2793-->
+
+**Issue**: The `products` query does not return correct `attribute_code` and `label` values  in `aggregations` data.[GitHub-28878](https://github.com/magento/magento2/issues/28878)  <!--- AC-2798-->
+
+**Issue**: Shoppers cannot place an order after applying a discount code in the Review & Payment step of the checkout workflow if the discount code affects the previously selected shipping method. [GitHub-33697](https://github.com/magento/magento2/issues/33697)  <!--- AC-937-->
+
+**Issue**: Customer who exceed the maximum number of permitted login failures cannot log back in after resetting their password. [GitHub-34981](https://github.com/magento/magento2/issues/34981)  <!--- AC-2235-->
+
+**Issue**: Cart Price rules default to Free Shipping set to **No** despite merchant setting. [GitHub-34981](https://github.com/magento/magento2/issues/34981), [GitHub-35013](https://github.com/magento/magento2/issues/35013)  <!--- AC-2235 2242-->
+
+**Issue**: Braintree payment methods with stored cards are not saved on the store level as expected. [GitHub-34253](https://github.com/magento/magento2/issues/34253)  <!--- AC-2901-->
+
+**Issue**: Magento does not apply coupons as expected to orders for In-Store pickup in deployments with Inventory enabled. [GitHub-35334](https://github.com/magento/magento2/issues/35334)  <!--- AC-2897-->
+
+**Issue**: {{ site.data.var.ee }} displays an error message when a shopper tries to add a product to their cart from the product details page that exceeds the minimum quantity allowed in the shopping cart. [GitHub-33955](https://github.com/magento/magento2/issues/33955)  <!--- AC-1116-->
+
+**Issue**: Checkout does not complete for orders being shipped to multiple addresses when a cart price rule is applied. <!--- AC-2106-->
+
+**Issue**: {{ site.data.var.ee }} throws this error when a module that contains `db_schema` has a constraint on another module in which the table is created via `Install/Upgrade Schema`: `Notice: Undefined index: {{table_name}} in /var/www/html/vendor/magento/framework/Setup/Declaration/Schema/Declaration/SchemaBuilder.php on line 354`. [GitHub-35339](https://github.com/magento/magento2/issues/35339)  <!--- AC-3052-->
+
+**Issue**:  <!--- AC-5916-->
 
 ## Community contributions
 
