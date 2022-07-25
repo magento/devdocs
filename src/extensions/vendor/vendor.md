@@ -5,6 +5,8 @@ permalink: extensions/vendor/
 redirect_from:   
   - /extensions/vendor/yotpo/release-notes.html
   - /extensions/vendor/dotdigital/release-notes.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/modules/upgrade.html
+layout: migrated
 ---
 
 {:.bs-callout-warning}
