@@ -265,6 +265,8 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
     octokit (4.21.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -312,6 +314,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-21
 
 DEPENDENCIES
   devdocs!

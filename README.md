@@ -1,12 +1,6 @@
-# What's this fork about
+# Archived DevDocs
 
-**Do not refer to <https://dshevtsov.github.io/devdocs/> as to official documentation.**
-
-For official documentation, refer to <https://devdocs.magento.com/>.
-
-This project is a personal effort to help the Community with missing docs.
-
-This fork deploys archived Magento documentation for the following versions:
+This branch contains the archived Magento documentation for the following versions:
 
 - 1.8 CE, 1.13 EE
 - 1.9 CE, 1.14 EE
@@ -15,9 +9,14 @@ This fork deploys archived Magento documentation for the following versions:
 - 2.2.7
 - 2.3.0
 
-The branch that contains the deployed content is `archived-docs`.
+## View online
 
-To build locally, you need Ruby 2, Bundler, and the following commands:
+The branch is built and pushed to the gh-pages branch manually.
+The gh-pages branch is deployed through GitHub pages to <http://magento.github.io/devdocs/>.
+
+## Build locally
+
+To build locally, you need Ruby 2, Bundler 1, and the following commands:
 
 - to set up the project:
 
