@@ -1,0 +1,9 @@
+label: Catalog Service
+pages:
+  - label: Overview
+    url: /catalog-service/index.html
+    versionless: true
+
+  - label: products query
+    url: /catalog-service/products.html
+    versionless: true 

@@ -213,6 +213,9 @@
       url: /live-search/overview.html
       versionless: true
 
+    - label: Catalog Service
+      url: /catalog-service/index.html
+
     - label: Commerce Marketplace
       url: /marketplace/sellers/getting-started.html
       versionless: true
