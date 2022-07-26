@@ -9,7 +9,7 @@ search across multiple objects return detailed information about individual obje
 This document lists the PHP, REST, and SOAP calls that indicate they return detailed information, but might not. It also provides the call that returns the detailed data.
 
 {:.bs-callout-info}
-If the attribute is not required(is_required = false) and having null value then the attribute is excluded from the REST/SOAP response.
+If the attribute is not required (is_required = false) and has a null value, then the attribute is excluded from the REST/SOAP response.
 
 ## Customer module {#Customer}
 
