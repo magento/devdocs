@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Show or Hide Password Checkbox
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/show-hide-password-checkbox/
+layout: migrated
 ---
 
 This topic describes how you can implement the "show or hide" password checkbox functionality in custom forms.
