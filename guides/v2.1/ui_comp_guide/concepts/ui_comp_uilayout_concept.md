@@ -4,7 +4,7 @@ title: The uiLayout service object
 ---
 
 The `uiLayout` service object is a JavaScript function object used for initializing and configuring UI components.
-This object is defined in the [`layout.js`]({{ site.mage2300url }}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js) file in the UI module.
+This object is defined in the [`layout.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js) file in the UI module.
 
 ## `run()` method
 

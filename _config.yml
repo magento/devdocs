@@ -14,7 +14,7 @@ baseurl: ''
 
 # Parameters for the version switcher. Numeric values must be in quotes.
 #
-version: "2.3"
+version: "2.2"
 versions:
   -
     name: "1.x"
@@ -29,9 +29,9 @@ versions:
   -
     name: "2.2"
     url: /guides/v2.2/
-  -
-    name: "2.3"
-    url: /guides/v2.3/
+  # -
+  #   name: "2.3"
+  #   url: /guides/v2.3/
 
 collections:
   videos:
@@ -67,19 +67,19 @@ defaults:
       functional_areas:
         - Test
 
-  -
-    scope:
-      path: mftf/2.3
-    values:
-      group: magento-functional-testing-framework-guide-2_3
-      functional_areas:
-        - Test
+  # -
+  #   scope:
+  #     path: mftf/2.3
+  #   values:
+  #     group: magento-functional-testing-framework-guide-2_3
+  #     functional_areas:
+  #       - Test
 
-  -
-    scope:
-      path: guides/v2.3/mrg
-    values:
-      group: module-reference-guide-2_3
+  # -
+  #   scope:
+  #     path: guides/v2.3/mrg
+  #   values:
+  #     group: module-reference-guide-2_3
 
 ##########################
 # Plugins and extensions #
@@ -113,16 +113,6 @@ kramdown:
 #
 livereload: true
 
-# Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
-#
-algolia:
-  application_id: E642SEDTHL
-  index_name: devdocs
-  api_key: d2d0f33ab73e291ef8d88d8b565e754c
-
-google:
-  analytics: UA-66243208-1
-
 # Toggles the _plugin/html-check-hook.rb script that checks links in the generated HTML
 #
 check_links: true
@@ -152,9 +142,8 @@ gdeurl22: /guides/v2.2/
 mage2200url: https://github.com/magento/magento2/blob/2.2/
 
 # 2.3 variables
-gdeurl23: /guides/v2.3/
-mage2300url: https://github.com/magento/magento2/blob/2.3/
-
+# gdeurl23: /guides/v2.3/
+# mage2300url: https://github.com/magento/magento2/blob/2.3/
 
 ##########
 # Ignore #
@@ -178,3 +167,6 @@ exclude:
   - rakelib
   - README.md
   - _plugins
+  - guides/v2.3
+  - mftf/2.3
+  - src
