@@ -100,7 +100,7 @@ If you already had Magento installed and you want to connect it to RabbitMQ, add
   ),
 ```
 
-RabbitMQ configuration values can also be set via `bin/magento setup:config:set` CLI command:
+You can also set RabbitMQ configuration values using the `bin/magento setup:config:set` command:
 
 ```bash
 bin/magento setup:config:set --amqp-host="rabbitmq.example.com" --amqp-port="11213" --amqp-user="magento" --amqp-password="magento" --amqp-virtualhost="/"
