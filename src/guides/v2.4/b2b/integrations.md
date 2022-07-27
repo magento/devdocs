@@ -9,6 +9,8 @@ ee_only: True
 functional_areas:
   - B2B
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/integrations
+layout: migrated
 ---
 
 This topic lists the REST endpoints and services that are provided with {{site.data.var.b2b}}.

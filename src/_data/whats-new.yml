@@ -4,8 +4,106 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jul 4 14:38:45 2022
+updated: Mon Jul 25 17:25:21 2022
 entries:
+- description: The [Vendor Bundled Extensions (VBEs)](https://devdocs.magento.com/extensions/vendor/)
+    and [Extensions Introduction](https://devdocs.magento.com/extensions/) topics
+    moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/modules/upgrade.html)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: July 22, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3048
+  merge_commit: c54ae179381e8a0dab609a06280e9f047c309e76
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Updated the [Configure routes topic](https://devdocs.magento.com/cloud/project/routes.html)
+    in the _Commerce Cloud_ guide to advise about the use of trailing slashes.
+  versions: 2.x
+  type: Technical
+  date: July 21, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3052
+  merge_commit: a6dfee382c7e8a63ce537e486295802136f95360
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: The [JavaScript Developer Guide](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/frontend-core/javascript/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: July 19, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3058
+  merge_commit: 5c4cb30e36d5d763087fb82d19f802a5db959b4c
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Reservations](https://devdocs.magento.com/guides/v2.4/inventory/reservations.html),
+    [Source selection algorithms](https://devdocs.magento.com/guides/v2.4/inventory/source-selection-algorithms.html),
+    and [CLI reference](https://devdocs.magento.com/guides/v2.4/inventory/inventory-cli-reference.html)
+    Inventory Management topics moved to Experience League and will be redirected
+    soon.
+  versions: 2.4.x
+  type: Major Update
+  date: July 15, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3050
+  merge_commit: 8a4022b1e00f636a69c27a04688e9da4812b8d2f
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Added clarification of the usage of the HTTP `X-Captcha` and `X-ReCaptcha`
+    headers in conjunction with integration, admin, and customer authentication tokens
+    for [REST](https://developer.adobe.com/commerce/webapi/rest/use-rest/protected-endpoints/)
+    and [GraphQL](https://devdocs.magento.com/guides/v2.4/graphql/protected-mutations.html).
+  versions: ''
+  type: Technical
+  date: July 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3042
+  merge_commit: 985853f7de2777e5ff07357ff328e8fd9a110279
+  contributor: vkolesny
+  membership: true
+  labels:
+  - Technical
+- description: The [B2B Developer Guide](https://devdocs.magento.com/guides/v2.4/b2b/bk-b2b.html)
+    has moved to the [Adobe Developer documentation](https://developer-stage.adobe.com/commerce/webapi/rest/b2b/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: July 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3051
+  merge_commit: 0a7d1a19aa8a120aa223fed925843f0dadfd5ab6
+  contributor: jhadobe
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Inventory Management overview](https://devdocs.magento.com/guides/v2.4/inventory/index.html)
+    topic moved to the [Adobe Developer documentation](https://developer-stage.adobe.com/commerce/webapi/rest/modules/inventory/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: July 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3046
+  merge_commit: 4dafc641eaa077d2752e4e2295cb664c81aa7691
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.1.16 Quality Patches Tool (QPT) package release.
   versions: 2.3.x, 2.4.x

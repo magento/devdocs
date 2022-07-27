@@ -13,9 +13,9 @@ functional_areas:
 
 You can run the following types of reports:
 
--  [**Module**](https://glossary.magento.com/module) dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft.
+-  [**Module**](https://glossary.magento.com/module) **dependencies:** Shows the total number of dependencies between modules and whether the dependencies are hard or soft.
 -  **Circular dependencies:** Shows the total number of dependency chains and the number and list of circular dependencies for each module.
--  **Framework dependencies:** Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library).
+-  [**Framework**](https://glossary.magento.com/framework) **dependencies:** Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library).
 
 A dependency in a comment is also a dependency.
 
@@ -39,11 +39,11 @@ The following table explains this command's options, parameters, and values.
 
 If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:
 
-| Command                                           | Filename                            |
-| ------------------------------------------------- | ----------------------------------- |
-| `magento info:dependencies:show-modules`          | `modules-dependencies.csv`          |
-| `magento info:dependencies:show-modules-circular` | `modules-circular-dependencies.csv` |
-| `magento info:dependencies:show-framework`        | `framework-dependencies.csv`        |
+| Command                                               | Filename                            |
+| ----------------------------------------------------- | ----------------------------------- |
+| `bin/magento info:dependencies:show-modules`          | `modules-dependencies.csv`          |
+| `bin/magento info:dependencies:show-modules-circular` | `modules-circular-dependencies.csv` |
+| `bin/magento info:dependencies:show-framework`        | `framework-dependencies.csv`        |
 
 ### Sample module dependencies report
 
