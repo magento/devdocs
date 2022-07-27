@@ -8,9 +8,9 @@ The Catalog Service for Adobe Commerce `products` query returns details about th
 
 The Catalog Service query requires one or more SKU values as input. The query is primarily designed to retrieve information to render the following types of content:
 
-*  Product detail pages. You can provide full details about the product identified by the specified SKU.
+*  Product detail pages - You can provide full details about the product identified by the specified SKU.
 
-*  Product compare pages. You can retrieve selected information about multiple products, such as the name, price and image.
+*  Product compare pages - You can retrieve selected information about multiple products, such as the name, price and image.
 
 {:.bs-callout-tip}
 Use the Live Search [`productSearch` query]({{site.baseurl}}/live-search/product-search.html) to return product list page content.
@@ -438,7 +438,7 @@ Field | Data Type | Description
 
 ### ProductViewOption type
 
-Product options provide a way to configure products by making selections of particular option values. Selecting one or many options will point to a  specific simple product.
+Product options provide a way to configure products by making selections of particular option values. Selecting one or many options will point to a specific simple product.
 
 Field | Data Type | Description
 --- | --- | ---
