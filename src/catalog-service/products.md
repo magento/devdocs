@@ -35,8 +35,6 @@ products (skus [String]) [ProductView]
 
 You must specify the following HTTP headers to run this query.
 
-<!--- Note to reviewer: I made up the description for `Magento-Customer-Group`. No one answered the question in Slack. -->
-
 Header | Description
 --- | ---
 `Magento-Customer-Group` | For storefront clients, this value will be available at the storefront in the `dataservices_customer_group` cookie.
