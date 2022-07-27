@@ -4,7 +4,7 @@ title: products query
 ee_only: True
 ---
 
-The Catalog Service for Adobe Commerce `products` query returns details about the SKUs specified as input. Although this query has the same name as  the [`products` query]({{site.baseurl}}/guides/v2.4/graphql/queries/products.html) that is provided with core Adobe Commerce and Magento Open Source, it works differently.
+The Catalog Service for Adobe Commerce `products` query returns details about the SKUs specified as input. Although this query has the same name as  the [`products` query]({{site.baseurl}}/guides/v2.4/graphql/queries/products.html) that is provided with core Adobe Commerce and Magento Open Source, there are some differences.
 
 The Catalog Service query requires one or more SKU values as input. The query is primarily designed to retrieve information to render the following types of content:
 
@@ -13,7 +13,7 @@ The Catalog Service query requires one or more SKU values as input. The query is
 *  Product compare pages - You can retrieve selected information about multiple products, such as the name, price and image.
 
 {:.bs-callout-tip}
-Use the Live Search [`productSearch` query]({{site.baseurl}}/live-search/product-search.html) to return product list page content.
+Use the Live Search [`productSearch` query]({{site.baseurl}}/live-search/product-search.html) to return product listing page content.
 
 The `ProductView` output object is significantly different than the core `products` query `Products` output object. Key differences include:
 
