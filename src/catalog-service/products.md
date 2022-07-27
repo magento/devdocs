@@ -21,7 +21,7 @@ The `ProductView` output object is significantly different than the core `produc
 
 *  Merchant-defined attributes are exposed in a top-level container and indicate their storefront roles. Roles include Show on PDP, Show on PLP, and Show on Search Results.
 
-*  Images are also accessible as a top-level container and can be filtered by roles.
+*  Images are also accessible as a top-level container and can be filtered by their role. An image can have a base, small, or thumbnail role.
 
 <!--- Cross-reference provides full details about Catalog Service capabilities. -->
 
@@ -40,7 +40,7 @@ You must specify the following HTTP headers to run this query.
 Header | Description
 --- | ---
 `Magento-Customer-Group` | A hard-coded value.
-`Magento-Environment-Id` | This value is displayed at **Stores** > **Configuration** > **Services** > **Magento Services** > **SaaS Environment** or can be obtained by running the `bin/magento config:show services_connector/services_id/environment_id` command.
+`Magento-Environment-Id` | This value is displayed at **System** > **Commerce Services Connector** > **SaaS Identifier** > **Data Space ID** or can be obtained by running the `bin/magento config:show services_connector/services_id/environment_id` command.
 `Magento-Store-Code`| The code assigned to the store associated with the active store view. For example, `main_website_store`.
 `Magento-Store-View-Code`| The code assigned to the active store view. For example, `default`.
 `Magento-Website-Code`| The code assigned to the website associated with the active store view. For example, `base`.
@@ -399,7 +399,7 @@ Field | Data Type | Description
 
 ### PriceAdjustment type
 
-The `PriceAdjustment` type specifies the amount and type of price adjustment.
+The `PriceAdjustment` type specifies the amount and type of a price adjustment. An example code value is `weee`.
 
 Field | Data Type | Description
 --- | --- | ---
