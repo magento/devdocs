@@ -106,7 +106,7 @@ You can also set RabbitMQ configuration values using the `bin/magento setup:conf
 bin/magento setup:config:set --amqp-host="rabbitmq.example.com" --amqp-port="11213" --amqp-user="magento" --amqp-password="magento" --amqp-virtualhost="/"
 ```
 
-After  the running the command or updating the `<install_directory>/app/etc/env.php` file with AMQP configuration values, run `bin/magento setup:upgrade` to apply the changes and create the required queues and exchanges in RabbitMQ.
+After the running the command or updating the `<install_directory>/app/etc/env.php` file with AMQP configuration values, run `bin/magento setup:upgrade` to apply the changes and create the required queues and exchanges in RabbitMQ.
 
 ## Configure SSL
 
