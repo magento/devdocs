@@ -100,7 +100,13 @@ If you already had Magento installed and you want to connect it to RabbitMQ, add
   ),
 ```
 
-Then, run `bin/magento setup:upgrade` to apply the changes and create the required queues in RabbitMQ.
+You can also set RabbitMQ configuration values using the `bin/magento setup:config:set` command:
+
+```bash
+bin/magento setup:config:set --amqp-host="rabbitmq.example.com" --amqp-port="11213" --amqp-user="magento" --amqp-password="magento" --amqp-virtualhost="/"
+```
+
+After the running the command or updating the `<install_directory>/app/etc/env.php` file with AMQP configuration values, run `bin/magento setup:upgrade` to apply the changes and create the required queues and exchanges in RabbitMQ.
 
 ## Configure SSL
 
