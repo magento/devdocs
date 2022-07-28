@@ -157,15 +157,6 @@ Enabling the new **Enabled Shared Catalog direct product price assigning** con
 
 This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
-### Channel Manager
-
-Channel Manager can now trigger refunds from {{ site.data.var.ee }}. Merchants can now manage the entire order workflow from within {{ site.data.var.ee }}, including these tasks:
-
-*  Process refunds from {{ site.data.var.ee }}
-*  Refund shoppers using the origin form of payment
-
-Requests are now automatically synced back to the Walmart Marketplace.
-
 ### Google Analytics
 
 Google has updated the tracking and integration mechanisms of AdWords and Analytics in web applications through integration with GTag. This integration of Google functionality into website pages extends opportunities to track and manage content through Google Services. Adobe Commerce has a set of built-in modules including Google AdWords, Analytics, Optimizer, and TagManager that leverage the former API for integration with Google services.  In this release,  we have re-implemented this integration using the GTag approach.​ See [Migrate from analytics.js to gtag.js (Universal Analytics)](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs).
