@@ -1419,9 +1419,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Updating an item quantity from the wish list page now updates the quantity on the product detail page as expected. {{ site.data.var.ee }} now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
 
-## Known issues
+## Known issue
 
-**Issue**: {{ site.data.var.ee }} displays the following message when an administrator logs in: `Invalid security or form key. Please refresh the page`. **Workaround**: Refresh the page. To permanently remove this error occurrence,  you can lengthen the session lifetime from the command line (for example, `bin/magento config:set admin/security/session_lifetime 10800`).  [GitHub-33749](https://github.com/magento/magento2/issues/33749) <!--- AC-734-->
+**Issue**: RabbitMQ infrastructure elements (exchanges, queues) may be not initialized after a fresh installation (not upgrade) of {{ site.data.var.ee }} 2.4.5. This incorrect configuration of RabbitMQ may result in a fatal error when asynchronous operations are executed or a performance profile is generated.
+
+**Workarounds**:
+
+Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 for Cloud must run `bin/magento setup:upgrade --keep-generated` using ssh or redeploy on Cloud without uninstalling {{ site.data.var.ee }} 2.4.5. (Redeploy automatically runs `setup:upgrade`.) We will release an upgrade to `ece-tools` before {{ site.data.var.ee }} 2.4.5 General Availability that will resolve this issue.
+
+Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 on-premises should run `bin/magento setup:upgrade --keep-generated` after using `bin/magento setup:config:set` to configure RabbitMQ or install {{ site.data.var.ee }} by passing RabbitMQ configuration options to the `setup:install` command. See [RabbitMQ](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/install-rabbitmq.html).
 
 ## Community contributions
 
