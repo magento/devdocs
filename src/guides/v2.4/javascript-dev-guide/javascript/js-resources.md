@@ -10,7 +10,7 @@ layout: migrated
 
 This topic describes general concepts of how [JavaScript](https://glossary.magento.com/javascript) (JS) components are organized in Magento.
 
-To address the problem of slow page loads, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org).
+To address the problem of slow page loads, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](https://requirejs.org).
 
 RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, it enables asynchronous JavaScript loading.
 
@@ -73,7 +73,7 @@ Relative paths are also used in for [mapping and setting `paths` in requirejs-co
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
-To build a dependency on the third-party plugin, specify a [shim](http://requirejs.org/docs/api.html#config-shim) in the following configuration files:
+To build a dependency on the third-party plugin, specify a [shim](https://requirejs.org/docs/api.html#config-shim) in the following configuration files:
 
 *  `requirejs-config.js`
 
@@ -228,6 +228,6 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 Related reading
 
 *  [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
-*  [RequireJS library](http://requirejs.org)
+*  [RequireJS library](https://requirejs.org)
 *  [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)
-*  [shim](http://requirejs.org/docs/api.html#config-shim)
+*  [shim](https://requirejs.org/docs/api.html#config-shim)

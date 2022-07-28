@@ -184,7 +184,7 @@ Or you can test it by pushing a simple change to your GitLab repository.
 
 ## Create a Cloud branch
 
-Use the `magento-cloud` CLI `environment:push` command to create and activate a new environment. See [Create a new Cloud branch]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#create-a-new-cloud-branch).
+Use the `magento-cloud` CLI `environment:push` command to create and activate a new environment. See [Create a new Cloud branch]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html).
 
 ## Remove the integration
 

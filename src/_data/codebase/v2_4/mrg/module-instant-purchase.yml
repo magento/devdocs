@@ -9,7 +9,7 @@ content: "## Magento_InstantPurchase module\n\nThis module allows the Customer t
   Structure\n\n`PaymentMethodsIntegration` - directory contains interfaces and basic
   implementation of integration vault payment method to the instant purchase.\n\nFor
   information about a typical file structure of a module in Magento 2, see [Module
-  file structure](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n\n##
+  file structure](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n\n##
   Extensibility\n\nExtension developers can interact with the Magento_InstantPurchase
   module. For more information about the Magento extension mechanism, see [Magento
   plugins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
@@ -26,7 +26,7 @@ content: "## Magento_InstantPurchase module\n\nThis module allows the Customer t
   \   - checks if payment method may be used for instant purchase\n    \n- `\\Magento\\InstantPurchase\\PaymentMethodIntegration\\PaymentAdditionalInformationProviderInterface`\n
   \   - provides additional information part specific for payment method\n\n- `\\Magento\\InstantPurchase\\PaymentMethodIntegration\\PaymentTokenFormatterInterface`\n
   \   - provides mechanism to create string presentation of token for payment method\n\nFor
-  information about a public API in Magento 2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
+  information about a public API in Magento 2, see [Public interfaces & APIs](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
   Additional information\n\n### Instant purchase customization\n\nAlmost all aspects
   of instant purchase may be customized. See comments to classes and interfaces marked
   with `@api` tag.\n\nAll payments created for instant purchase also have `'instant-purchase'

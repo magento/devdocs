@@ -25,6 +25,6 @@ content: "The Magento_MediaGalleryApi module serves as application program inter
   \   - save media gallery assets to the database\n\n- `\\Magento\\MediaGalleryApi\\Api\\SaveAssetsKeywordsInterface`:\n
   \   - save keywords related to assets to the database\n  \n- `\\Magento\\MediaGalleryApi\\Api\\SearchAssetsInterface`:\n
   \   - search media gallery assets\n\nFor information about a public API in Magento
-  2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2./extension-dev-guide/api-concepts.html).\n\n##
+  2, see [Public interfaces & APIs](https://devdocs.magento.com/guides/v2./extension-dev-guide/api-concepts.html).\n\n##
   Additional information\n\nFor information about significant changes in patch releases,
   see [2.4.x Release information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)."

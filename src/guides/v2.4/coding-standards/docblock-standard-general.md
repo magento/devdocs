@@ -14,7 +14,7 @@ Some parts of Magento code might not comply with this standard, but we are worki
 
 Following these standards is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.
 
-Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."
+Use [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."
 
 ## Scope of the standard {#scope}
 
@@ -170,7 +170,7 @@ interface MetadataObjectInterface
 
 ## Code structural elements {#code-elements}
 
-A structural element is defined in [phpDocumentor](http://phpdoc.org/) as part of the imperative source code, such as PHP or JavaScript, or procedural SQL.
+A structural element is defined in [phpDocumentor](https://phpdoc.org/) as part of the imperative source code, such as PHP or JavaScript, or procedural SQL.
 For example:
 
 *  namespace
@@ -662,7 +662,7 @@ The `@api` tag can be applied to a constant, a method, or to the entire class/in
 If the `@api` tag is applied at the file level, then all methods within the file are part of the public [API](https://glossary.magento.com/api).
 You do not need to annotate each method individually.
 
-See [Semantic Versioning 2.0.0](http://semver.org/) for information about changing and updating code while maintaining backward compatibility.
+See [Semantic Versioning 2.0.0](https://semver.org/) for information about changing and updating code while maintaining backward compatibility.
 
 ### @deprecated tag {#deprecated}
 

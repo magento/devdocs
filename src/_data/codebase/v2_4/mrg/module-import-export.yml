@@ -10,7 +10,7 @@ content: "This module provides a framework and basic functionality for importing
   in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
   Structure\n\n`Files/` - the directory that contains sample import files.\n\nFor
   information about a typical file structure of a module in Magento 2, see [Module
-  file structure](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n\n##
+  file structure](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n\n##
   Extensibility\n\nExtension developers can interact with the Magento_ImportExport
   module. For more information about the Magento extension mechanism, see [Magento
   plugins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
@@ -20,16 +20,16 @@ content: "This module provides a framework and basic functionality for importing
   directory:\n\n- `adminhtml_export_getfilter`\n- `adminhtml_export_index`\n- `adminhtml_history_grid_block`\n-
   `adminhtml_history_index`\n- `adminhtml_import_busy`\n- `adminhtml_import_index`\n-
   `adminhtml_import_start`\n- `adminhtml_import_validate`\n\nFor more information
-  about a layout in Magento 2, see the [Layout documentation](http://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  about a layout in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
   UI components\n\nYou can extend an export updates using the configuration files
   located in the `view/adminhtml/ui_component` directory:\n\n- `export_grid` \n\nFor
-  information about a UI component in Magento 2, see [Overview of UI components](http://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n###
+  information about a UI component in Magento 2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n###
   Public APIs\n\n- `Magento\\ImportExport\\Api\\Data\\ExportInfoInterface`\n    -
   getter and setter interface with data needed for export\n\n- `Magento\\ImportExport\\Api\\Data\\ExtendedExportInfoInterface`\n
   \   - extends `Magento\\ImportExport\\Api\\Data\\ExportInfoInterface`. Contains
   data for skipped attributes\n\n- `\\Magento\\ImportExport\\Api\\ExportManagementInterface`\n
   \   - Executing actual export and returns export data\n\nFor information about a
-  public API in Magento 2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
+  public API in Magento 2, see [Public interfaces & APIs](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
   Additional information\n\n#### Message Queue Consumer\n\n- `exportProcessor` - consumer
   to run export process\n\n[Learn how to manage Message Queues](https://devdocs.magento.com/guides/v2.4/config-guide/mq/manage-message-queues.html).\n\n####
   Create custom import entity\n\n1. Declare the new import entity in `etc/import.xml`\n2.

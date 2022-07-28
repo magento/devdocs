@@ -108,4 +108,4 @@ Related topics
 [5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [6]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/git-installs.html
 [8]: {{ page.baseurl }}/install-gde/composer.html
-[10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
+[10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html

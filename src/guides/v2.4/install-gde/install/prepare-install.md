@@ -10,7 +10,7 @@ layout: migrated
 
 ## Introduction to Magento installation dependencies {#install-update-depend}
 
-We now use [Composer](http://getcomposer.org) to resolve dependencies before you install the Magento software and extensions.
+We now use [Composer](https://getcomposer.org/) to resolve dependencies before you install the Magento software and extensions.
 
 [Composer](https://glossary.magento.com/composer) is a separate application that manages [PHP](https://glossary.magento.com/php) dependencies. Before you can install the Magento software, you must perform the following tasks in the order shown:
 

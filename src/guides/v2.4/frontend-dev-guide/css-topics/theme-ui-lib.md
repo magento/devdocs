@@ -246,7 +246,7 @@ The generated Magento UI library documentation is provided in a convenient [HTML
 [embedded documentation]: #docs
 [inherits]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
 
-[Less]: http://lesscss.org/
+[Less]: https://lesscss.org/
 
 [Magento naming convention for the Less variables]: {{ page.baseurl }}/coding-standards/code-standard-less.html#naming
 

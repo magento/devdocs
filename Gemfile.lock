@@ -35,7 +35,7 @@ GEM
     filesize (0.2.0)
     forwardable-extended (2.6.0)
     fspath (3.1.2)
-    html-proofer (4.3.0)
+    html-proofer (4.3.1)
       addressable (~> 2.3)
       mercenary (~> 0.3)
       nokogiri (~> 1.13)

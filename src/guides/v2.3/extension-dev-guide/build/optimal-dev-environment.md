@@ -42,7 +42,7 @@ The following is a list of optimizations you can make on your local development 
 
 *  We recommend installing and using the latest supported version of [PHP](https://glossary.magento.com/php) 7 to increase performance.
 *  Replace your MySQL database with [Percona](https://www.percona.com/software/mysql-database/percona-server).
-*  Make sure you install and enable [PHP OPcache](http://php.net/manual/en/intro.opcache.php).
+*  Make sure you install and enable [PHP OPcache](https://php.net/manual/en/intro.opcache.php).
 *  Xdebug is off by default. Enable this feature only when you need it because it requires a lot of memory and degrades performance.
    The `xdebug.max_nesting_level` configuration needs to be set to 200 or greater for Magento.
    You can increase the memory available to PHP to get an increase in performance with Xdebug on.
@@ -50,5 +50,5 @@ The following is a list of optimizations you can make on your local development 
 *  To speed up frontend development, [turn off merging of CSS and JavaScript]({{ site.user_guide_url }}/system/file-optimization.html).
 *  Make sure [caching]({{ page.baseurl }}/config-guide/cache.html) is turned on (this is the default behavior).
    Generally, only page [cache](https://glossary.magento.com/cache) and block cache should be turned off for development and turned back on when testing.
-*  [Opcache timestamp validation](http://php.net/manual/en/opcache.configuration.php#ini.opcache.validate-timestamps) should always be on for development.
+*  [Opcache timestamp validation](https://php.net/manual/en/opcache.configuration.php#ini.opcache.validate-timestamps) should always be on for development.
    Development is impossible with opcache on and revalidation off because any PHP modification would require a cache reset.

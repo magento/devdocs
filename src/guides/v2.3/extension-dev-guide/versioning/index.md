@@ -74,7 +74,7 @@ Related Topics
 
 [version-dependencies]: {{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
 [codebase-changes]: {{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html
-[semantic-versioning]: http://semver.org/
+[semantic-versioning]: https://semver.org/
 [composer-versioning]: https://getcomposer.org/doc/04-schema.md#version
-[php-version-compare]: http://php.net/version_compare
+[php-version-compare]: https://php.net/version_compare
 [composer-json]: {{ page.baseurl }}/extension-dev-guide/build/composer-integration.html
