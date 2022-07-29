@@ -169,7 +169,7 @@ GraphQL performance enhancements include:
 
 *  Added capability to consume the expiration date/time of the authorization token through the use of JSON Web Tokens (JWT) in the GraphQL API.
 
-*  The `bin/magento config:set graphql/session/disable 1` command allows merchants of Adobe Commerce to to completely disable the creation of session cookies for all GraphQL operations. By default, Adobe Commerce creates these cookies and relies on them for authorization, which affects performance. Going forward, the only form of authorization we recommend for GraphQL requests is authorization tokens that should not used in combination with cookies. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
+*  The `bin/magento config:set graphql/session/disable 1` command allows merchants of {{ site.data.var.ee }} to completely disable the creation of session cookies for all GraphQL operations. By default, {{ site.data.var.ee }} creates these cookies and relies on them for authorization, which affects performance. Going forward, we recommend using tokens as the only form of authorization for GraphQL requests. We do not recommend using session cookies alone or in conjunction with authorization tokens. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
 
 *  Session cookies are now launched in GraphQL operations using class proxies only when needed. <!--- B2B-2217--->
 

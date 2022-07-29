@@ -135,11 +135,11 @@ GraphQL performance enhancements include:
 
 *  Added capability to consume the expiration date/time of the authorization token through the use of JSON Web Tokens (JWT) in the GraphQL API.
 
-*  The `bin/magento config:set graphql/session/disable 1` command allows merchants of Adobe Commerce to to completely disable the creation of session cookies for all GraphQL operations. By default, Adobe Commerce creates these cookies and relies on them for authorization, which affects performance. Going forward, the only form of authorization we recommend for GraphQL requests is authorization tokens that should not used in combination with cookies. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
+*  The `bin/magento config:set graphql/session/disable 1` command allows merchants of {{ site.data.var.ce }} to completely disable the creation of session cookies for all GraphQL operations. By default, {{ site.data.var.ce }} creates these cookies and relies on them for authorization, which affects performance. Going forward, we recommend using tokens as the only form of authorization for GraphQL requests. We do not recommend using session cookies alone or in conjunction with authorization tokens. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
 
 *  Session cookies are now launched in GraphQL operations using class proxies only when needed. <!--- B2B-2217--->
 
-*  Session usage has been removed from `http` header processors in GraphQL such as store, customer, or currency. <!--- B2B-2224--->
+*  Session usage has been removed from `http` header processors in GraphQL such as store, customer, or currency. <!--- B2B-2224---
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -149,7 +149,7 @@ Inventory template security has been enhanced.
 
 ### Page Builder
 
-Page Builder v.1.7.2 is compatible with {{ site.data.var.ee }} 2.4.5.
+Page Builder v.1.7.2 is compatible with {{ site.data.var.ce }} 2.4.5.
 
 Page Builder column layout includes these enhancements: <!--- PB-547-->
 
@@ -169,7 +169,7 @@ Apple Pay is now available to all merchants running deployments with Payment Ser
 
 #### Braintree
 
-*  Braintree has discontinued the KOUNT fraud protection integration. It has been removed from the {{ site.data.var.ee }} codebase.
+*  Braintree has discontinued the KOUNT fraud protection integration. It has been removed from the {{ site.data.var.ce }} codebase.
 
 *  The **Always request 3DS** option has been added to the Admin.
 
@@ -183,7 +183,7 @@ New features for this release include:
 
 *  Merchants can now select a service to deploy from the Admin (Google Tag Manager).
 
-For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ce }} core versions.
 
 ## Fixed issues
 
@@ -923,7 +923,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- BUNDLE-3088-->
 
-*  Merchants can now submit a partial refund for orders paid with Apple Pay through Braintree. This was a known issue in {{ site.data.var.ee }} 2.4.4.
+*  Merchants can now submit a partial refund for orders paid with Apple Pay through Braintree. This was a known issue in {{ site.data.var.ce }} 2.4.4.
 
 #### PayPal
 
