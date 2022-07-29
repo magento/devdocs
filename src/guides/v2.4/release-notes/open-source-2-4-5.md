@@ -135,11 +135,11 @@ GraphQL performance enhancements include:
 
 *  Added capability to consume the expiration date/time of the authorization token through the use of JSON Web Tokens (JWT) in the GraphQL API.
 
-*  The `bin/magento config:set graphql/session/disable 1` command allows merchants of {{ site.data.var.ce }} to completely disable the creation of session cookies for all GraphQL operations. By default, {{ site.data.var.ce }} creates these cookies and relies on them for authorization, which affects performance. Going forward, we recommend using tokens as the only form of authorization for GraphQL requests. We do not recommend using session cookies alone or in conjunction with authorization tokens. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
+*  The `bin/magento config:set graphql/session/disable 1` command allows merchants to completely disable the creation of session cookies for all GraphQL operations. By default, {{ site.data.var.ce }} creates these cookies and relies on them for authorization, which affects performance. Going forward, we recommend using tokens as the only form of authorization for GraphQL requests. We do not recommend using session cookies alone or in conjunction with authorization tokens. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
 
 *  Session cookies are now launched in GraphQL operations using class proxies only when needed. <!--- B2B-2217--->
 
-*  Session usage has been removed from `http` header processors in GraphQL such as store, customer, or currency. <!--- B2B-2224---
+*  Session usage has been removed from `http` header processors in GraphQL such as store, customer, or currency. <!--- B2B-2224--->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -719,10 +719,6 @@ We have fixed hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 
 *  Added a plugin before the `collectQuoteTotals` call to ensure store credits are not applied multiple times.
 
-<!--- AC-441-->
-
-*  Creating a new special price schedule with the `POST /V1/products/special-price` endpoint now works as expected. Previously, the endpoint returned this error: `Future Update already exists in this time range. Set a different range and try again`.
-
 <!--- ACP2E-636-->
 
 *  The `generateCustomerTokenAsAdmin` mutation now retrieves customer tokens as expected. Previously, tokens were not returned, and this error was returned: `Customer email provided does not exist`.
@@ -754,10 +750,6 @@ We have fixed hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 <!--- AC-2063-->
 
 *  The `generateCustomerToken` mutation now creates an entry in the `customer_log` as expected after generating a customer token. [GitHub-33378](https://github.com/magento/magento2/issues/33378)
-
-<!--- AC-1169-->
-
-*  The `/V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**. [GitHub-30132](https://github.com/magento/magento2/issues/30132)
 
 ### Google Analytics
 
@@ -1206,6 +1198,14 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-763-->
 
 *  The Bulk Rest API now works with the `bySku` option for configurable products. Previously, it returned a 500 error.
+
+<!--- AC-441-->
+
+*  Creating a new special price schedule with the `POST /V1/products/special-price` endpoint now works as expected. Previously, the endpoint returned this error: `Future Update already exists in this time range. Set a different range and try again`.
+
+<!--- AC-1169-->
+
+*  The `/V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**. [GitHub-30132](https://github.com/magento/magento2/issues/30132)
 
 ### Wish list
 
