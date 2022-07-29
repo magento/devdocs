@@ -1,1 +1,0 @@
-../../../v2.3/config-guide/bootstrap/magento-modes.md

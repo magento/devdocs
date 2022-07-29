@@ -1,1 +1,0 @@
-../../../../v2.3/config-guide/deployment/pipeline/technical-details.md

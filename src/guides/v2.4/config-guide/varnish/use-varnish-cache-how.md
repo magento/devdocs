@@ -1,1 +1,0 @@
-../../../v2.3/config-guide/varnish/use-varnish-cache-how.md
