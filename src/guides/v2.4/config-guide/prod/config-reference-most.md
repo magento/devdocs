@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/config-reference-general.html
+layout: migrated
 ---
 
 This topic lists all configuration paths _except_ payment variables, sensitive values, and system-specific values. The [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.

@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/override-config-settings.html
+layout: migrated
 ---
 
 This topic discusses how to derive an environment variable name knowing a configuration path. You can override Adobe Commerce configuration settings using environment variables. For example, you can override the value of a payment processor's live URL on your production system.

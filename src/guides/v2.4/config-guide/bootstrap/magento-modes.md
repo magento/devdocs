@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/bootstrap/application-modes.html
+layout: migrated
 ---
 
 You can run Magento in any of the following *modes*:

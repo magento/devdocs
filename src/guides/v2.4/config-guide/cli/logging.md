@@ -1,11 +1,12 @@
 ---
 group: configuration-guide
 title: Logging
-
 functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/enable-logging.html
+layout: migrated
 ---
 
 {% include config/cli-intro.md %}

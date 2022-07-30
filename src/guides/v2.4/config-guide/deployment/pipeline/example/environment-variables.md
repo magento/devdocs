@@ -6,6 +6,8 @@ functional_areas:
   - Deploy
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/example-environment-variables.html
+layout: migrated
 ---
 
 This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, `config.php`, and PHP environment variables.

@@ -6,6 +6,8 @@ functional_areas:
   - System
 contributor_name: David Lambauer
 contributor_link: https://github.com/DavidLambauer
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/config-reference-systemxml.html
+layout: migrated
 ---
 
 The `system.xml` file allows you to manage the Magento system configuration. Use this topic as a general reference for the `system.xml` file. The `system.xml` file is located under `etc/adminhtml/system.xml` in a given Magento 2 extension.

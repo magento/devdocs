@@ -6,6 +6,8 @@ functional_areas:
   - Deploy
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/single-machine.html
+layout: migrated
 ---
 
 This topic provides instructions for deploying updates to Magento on a production server using the command line.

@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/cache-poisoning.html
+layout: migrated
 ---
 
 This topic discusses how to prevent [cache](https://glossary.magento.com/cache) poisoning if you use the Microsoft Internet Information Server (IIS) web server. *Cache poisoning* is a method of changing cache contents to include different pages from the same site. For example, it is possible to inject an HTTP 404 (Not Found) error page in place of some benign page (for example, the [storefront](https://glossary.magento.com/storefront) home page), which can lead to a potential denial-of-service (DoS). The malicious page URLs are cached by Varnish or Redis, hence the name *page cache poisoning*.

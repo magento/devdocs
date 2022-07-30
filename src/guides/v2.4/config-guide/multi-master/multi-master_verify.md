@@ -6,6 +6,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/split-db/multi-master-verify.html
+layout: migrated
 ---
 
 After configuration, the master databases are configured as follows:

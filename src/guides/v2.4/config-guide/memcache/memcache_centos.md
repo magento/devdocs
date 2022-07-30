@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/memechache-centos.html
+layout: migrated
 ---
 
 {% include config/php-memcache.md %}

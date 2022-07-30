@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/common-cli-commands.html
+layout: migrated
 ---
 
 ## Before you configure the Magento application {#config-install-cli-prereq}

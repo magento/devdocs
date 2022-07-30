@@ -6,6 +6,8 @@ functional_areas:
   - Deploy
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/overview.html
+layout: migrated
 ---
 
 {% include config/split-deploy/split-deploy-overview.md %}

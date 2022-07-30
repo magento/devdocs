@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/queues/manage-message-queues.html
+layout: migrated
 ---
 
 You can manage message queues from the command line using cron jobs or an external process manager to ensure that consumers are retrieving messages.

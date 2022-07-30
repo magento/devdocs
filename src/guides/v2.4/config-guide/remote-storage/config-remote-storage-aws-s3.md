@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/remote-storage/remote-storage-aws-s3.html
+layout: migrated
 ---
 
 The [Amazon Simple Storage Service (Amazon S3)][AWS S3] is an object storage service that offers industry-leading scalability, data availability, security, and performance. The AWS S3 service uses buckets, or containers, for data storage. This configuration requires you to create a _private_ bucket.

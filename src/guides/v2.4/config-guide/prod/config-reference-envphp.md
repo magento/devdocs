@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/config-reference-envphp.html
+layout: migrated
 ---
 
 The `env.php` file contains the following sections:

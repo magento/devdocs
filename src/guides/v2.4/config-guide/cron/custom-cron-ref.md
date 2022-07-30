@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cron/custom-cron-reference.html
+layout: migrated
 ---
 
 This topic helps you set up crontabs and optionally cron groups for custom modules. If your custom [module](https://glossary.magento.com/module) needs to schedule tasks periodically, you must set up a crontab for that module. A *crontab* is a cron job's configuration.

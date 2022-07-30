@@ -6,6 +6,8 @@ functional_areas:
   - Deploy
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/technical-details.html
+layout: migrated
 ---
 
 This topic discusses technical implementation details about pipeline deployment in Magento 2.2 and later. Improvements can be divided into the following areas:

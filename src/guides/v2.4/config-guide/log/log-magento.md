@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/logs/logger-interface.html
+layout: migrated
 ---
 
 ## Monolog {#config-log-monolog}

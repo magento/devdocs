@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/logs/database-activity.html
+layout: migrated
 ---
 
 The following example shows how to log database activity using the [`Magento\Framework\DB\LoggerInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/LoggerInterface.php), which has two implementations:

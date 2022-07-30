@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cron/custom-cron-tutorial.html
+layout: migrated
 ---
 
 This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample [module](https://glossary.magento.com/module). You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples).

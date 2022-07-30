@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/bootstrap/mage-directory.html
+layout: migrated
 ---
 
 ## Introduction to Magento base directory paths {#dirs-introduction}

@@ -3,6 +3,8 @@ group: configuration-guide
 title: Varnish ESI block
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/varnish/use-varnish-esi.html
+layout: migrated
 ---
 
 Edge Side Includes (ESI) are special directives that you can use to include web pages in other web pages.

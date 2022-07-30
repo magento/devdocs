@@ -6,6 +6,8 @@ functional_areas:
   - Deploy
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/production-system.html
+layout: migrated
 ---
 
 You can have one production system. All of the following must be true:

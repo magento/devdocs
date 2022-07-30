@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/deployment-files.html
+layout: migrated
 ---
 
 ## Purpose of the deployment configuration {#config-php-overview}

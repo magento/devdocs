@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-nginx.html
+layout: migrated
 ---
 
 ## Set up multiple websites with nginx {#ms-nginx-over}

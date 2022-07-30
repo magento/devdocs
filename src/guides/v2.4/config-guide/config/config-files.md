@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/module-files.html
+layout: migrated
 ---
 
 ## Overview of module configuration files {#config-files-overview}

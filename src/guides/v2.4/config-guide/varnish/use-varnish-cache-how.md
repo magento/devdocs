@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/varnish/config-varnish.html
+layout: migrated
 ---
 
 ## Overview of Varnish caching {#config-varnish-cache-over}

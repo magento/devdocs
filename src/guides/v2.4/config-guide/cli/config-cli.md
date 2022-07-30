@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/config-cli.html
+layout: migrated
 ---
 
 ## Introducing the Magento command-line interface (CLI) {#config-new-cli-intro}

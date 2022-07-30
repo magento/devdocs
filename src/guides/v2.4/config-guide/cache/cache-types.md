@@ -7,6 +7,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/cache-types.html
+layout: migrated
 ---
 
 ## Step 1: Define a cache frontend {#cache-mage-frontend}

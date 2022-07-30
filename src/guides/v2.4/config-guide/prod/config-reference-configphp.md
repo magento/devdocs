@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/config-reference-configphp.html
+layout: migrated
 ---
 
 The `config.php` file contains the following sections:
