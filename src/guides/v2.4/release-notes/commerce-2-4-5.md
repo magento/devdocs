@@ -143,7 +143,7 @@ The focus of this release has been on creating a storefront experience on Venia 
 
 ### Adobe Sign
 
-Merchants can now include an esignature agreement page powered by Adobe Sign in the {{ site.data.var.ee }} checkout.
+Merchants can now allow customers to electronically sign customized agreements, such as warranty documents, purchase agreements, and terms and conditions, during {{ site.data.var.ee }} checkout.
 
 ### Branding and style changes
 
@@ -183,7 +183,7 @@ Inventory template security has been enhanced.
 
 ### Live Search
 
-This release introduces support for B2B customer groups and custom pricing. Livesearch now respects product assignments to customer groups and the pricing that is set for a specific customer group/shared catalog.
+This release introduces support for B2B customer groups and custom pricing. Live Search now respects product assignments to customer groups and the pricing that is set for a specific customer group/shared catalog.
 
 ### Page Builder
 
