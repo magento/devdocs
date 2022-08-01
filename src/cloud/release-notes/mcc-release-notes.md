@@ -18,6 +18,12 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v1.0.11
+
+Release date: August 4, 2022
+
+-  {:.fix}Fixes for compatibility with Symfony 5.4.<!-- AC-3550 -->
+
 ## v1.0.10
 
 Release date: March 10, 2022
