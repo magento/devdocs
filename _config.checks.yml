@@ -20,3 +20,6 @@ html-proofer:
   :ignore_files:
     - !ruby/regexp /guides\/v2\.3\/mrg/
     - !ruby/regexp /guides\/v2\.4\/mrg/
+    - !ruby/regexp /mbi/
+    - !ruby/regexp /mftf/
+    - !ruby/regexp /page-builder/
