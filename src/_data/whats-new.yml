@@ -4,8 +4,49 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jul 25 17:25:21 2022
+updated: Mon Aug 1 14:39:11 2022
 entries:
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.17 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: July 29, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3084
+  merge_commit: ad83a6f3421322bf329cc188f87156e3e12cf21c
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: The [Admin Style Guide](https://devdocs.magento.com/guides/v2.4/design-styleguide/bk-styleguide.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/admin-developer/style-guide/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: July 27, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3078
+  merge_commit: cb086cbb486c54858420e46e751e2106b22a3849
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [UI Components Guide](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/frontend-core/javascript/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: July 26, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3067
+  merge_commit: 83d9c77729469dfa0ea5eef97e001f93f68ceb32
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: The [Vendor Bundled Extensions (VBEs)](https://devdocs.magento.com/extensions/vendor/)
     and [Extensions Introduction](https://devdocs.magento.com/extensions/) topics
     moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/modules/upgrade.html)
