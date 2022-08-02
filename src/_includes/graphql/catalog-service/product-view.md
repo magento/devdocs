@@ -16,7 +16,7 @@ Field | Data Type | Description
 
 ### ComplexProductView type {#ComplexProductView-type}
 
-The `ComplexProductView`type represents bundle, configurable, and group products. Complex product prices are returned as a price range, because price values can vary based on selected options. The type implements `ProductView`.
+The `ComplexProductView` type represents bundle, configurable, and group products. Complex product prices are returned as a price range, because price values can vary based on selected options. The type implements `ProductView`.
 
 Field | Data Type | Description
 --- | --- | ---
@@ -129,7 +129,7 @@ The `ProductViewPrice` type provides the base product price view, inherent for s
 Field | Data Type | Description
 --- | --- | ---
 `final` | Price | Price value after discounts, excluding personalized promotions.
-`regular` | Price | Base product price specified by the merchant.v
+`regular` | Price | Base product price specified by the merchant.
 
 ### ProductViewPriceRange type
 
