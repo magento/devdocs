@@ -29,8 +29,8 @@ Topics of this chapter describe the following:
 | *jQuery UI widget*                    | A JS component/widget provided by [jQuery UI library used in Magento]. |
 | *jQuery widget*                       | Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are jQuery widget. |
 
-[RequireJS file and module loader]: http://requirejs.org/
+[RequireJS file and module loader]: https://requirejs.org/
 [Configure JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js-resources.html
-[AMD module]: http://requirejs.org/docs/whyamd.html#amd
+[AMD module]: https://requirejs.org/docs/whyamd.html#amd
 [app/code/Magento/Ui/view]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view
 [jQuery UI library used in Magento]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/jquery-ui-1.9.2.js

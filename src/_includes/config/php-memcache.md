@@ -4,13 +4,13 @@ Because PHP has no native support for memcache, you must install an extension fo
 
 *  `memcache` (no *d*), an older but very popular extension that is not maintained regularly. The `memcache` extension currently *does not* work with PHP 7.
 
-   [PHP documentation for memcache](http://php.net/manual/en/book.memcache.php)
+   [PHP documentation for memcache](https://php.net/manual/en/book.memcache.php)
 
    The exact name is `php5-memcache` for Ubuntu and `php-pecl-memcache` for CentOS
 
 *  `memcached` (with a `d`), a newer and maintained extension that should be compatible with PHP 7.
 
-   [PHP documentation for memcached](http://php.net/memcached)
+   [PHP documentation for memcached](https://php.net/memcached)
 
    The exact name is `php5-memcached` for Ubuntu and `php-pecl-memcached` for CentOS
 

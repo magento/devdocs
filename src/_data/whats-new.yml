@@ -1329,7 +1329,7 @@ entries:
   - 2.3.x
   - 2.4.x
 - description: Updated the Cloud guide to [clarify log rotation tip](https://devdocs.magento.com/cloud/project/log-locations.html),
-    [delete custom VCL snippets](http://devdocs.magento.com/cloud/cdn/fastly-vcl-bypass-to-origin.html#delete-the-custom-vcl-snippet),
+    [delete custom VCL snippets](https://devdocs.magento.com/cloud/cdn/fastly-vcl-bypass-to-origin.html#delete-the-custom-vcl-snippet),
     and provide an additional example with multiple themes and locales for the [SCD_MATRIX
     build variable](https://devdocs.magento.com/cloud/env/variables-build.html#scd_matrix).
   versions: 2.x
@@ -2770,7 +2770,7 @@ entries:
   - Major Update
 - description: 'Published 2.3.7 dependencies reference: [OpenSource](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html),
     [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/packages-commerce.html),
-    [Cloud](http://devdocs.magento.com/guides/v2.3/release-notes/packages-cloud.html).'
+    [Cloud](https://devdocs.magento.com/guides/v2.3/release-notes/packages-cloud.html).'
   versions: 2.3.7
   type: Major Update
   date: May 11, 2021
@@ -3860,7 +3860,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8375
   contributor: Rykh
   profile: https://github.com/Rykh
-- description: Added an [explanation and example](http://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/requirejs.html)
+- description: Added an [explanation and example](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/requirejs.html)
     of passing parameters to JavaScript using the `data-mage-init` HTML attribute.
   versions: 2.3.x, 2.4.x
   type: Major Update
@@ -6084,7 +6084,7 @@ entries:
   type: Major update
   date: December 5, 2019
   link: https://github.com/magento/devdocs/pull/6086
-- description: Added a new topic for the [DynamicRowsDragAndDrop component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-dynamicrows-dnd.html)
+- description: Added a new topic for the [DynamicRowsDragAndDrop component](https://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-dynamicrows-dnd.html)
     in the _UI Components Guide_.
   versions: 2.2.x, 2.3.x
   type: New topic
@@ -6599,7 +6599,7 @@ entries:
   type: Major update
   date: September 18, 2019
   link: https://github.com/magento/devdocs/pull/5357
-- description: Added the [Sticky widget](http://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_sticky.html)
+- description: Added the [Sticky widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_sticky.html)
     topic to the _Javascript Developer Guide_.
   versions: 2.2.x, 2.3.x
   type: New topic
@@ -6657,7 +6657,7 @@ entries:
   type: Major update
   date: September 3, 2019
   link: https://github.com/magento/devdocs/pull/5307
-- description: Added information about how to use the REST API to [issue refunds](http://devdocs.magento.com/guides/v2.2/rest/modules/sales/refunds.html).
+- description: Added information about how to use the REST API to [issue refunds](https://devdocs.magento.com/guides/v2.2/rest/modules/sales/refunds.html).
   versions: 2.2.x, 2.3.x
   type: New topic
   date: August 30, 2019

@@ -50,7 +50,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  A **new Composer plugin** helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Releases New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
 
-*  **Rate limiting is now built in to Magento APIs** to prevent denial-of-service (DoS) attacks. Web APIs now impose restrictions on the size or number of resources (the default maximum is set to 20 and can be configured to a different value based on business need) that can be requested by a client. See [Rate limiting]({{page.baseurl}}/get-started/api-security.html#rate-limiting) for information about configuring these restrictions. <!--- MC-35358-->
+*  **Rate limiting is now built in to Magento APIs** to prevent denial-of-service (DoS) attacks. Web APIs now impose restrictions on the size or number of resources (the default maximum is set to 20 and can be configured to a different value based on business need) that can be requested by a client. See [Rate limiting]({{page.baseurl}}/get-started/api-security.html) for information about configuring these restrictions. <!--- MC-35358-->
 
 *  **ReCAPTCHA  coverage has been extended** to include:
 

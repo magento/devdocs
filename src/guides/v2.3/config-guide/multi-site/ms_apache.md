@@ -44,8 +44,8 @@ This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`
 
 For more information about `SetEnvIf`, see:
 
-*  [Apache 2.2](http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html)
-*  [Apache 2.4](http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html)
+*  [Apache 2.2](https://httpd.apache.org/docs/2.2/mod/mod_setenvif.html)
+*  [Apache 2.4](https://httpd.apache.org/docs/2.4/mod/mod_setenvif.html)
 
 {% collapsible To create Apache virtual hosts: %}
 
