@@ -27,7 +27,7 @@ Avoid using these functions in your code.
 
 ## Standard PHP library classes to avoid
 
-*  [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php) - Using `ArrayObject` class is not recommended because it contains `unserialize` method, which attackers can use to create an exploit.
+*  [`ArrayObject`](https://php.net/manual/en/class.arrayobject.php) - Using `ArrayObject` class is not recommended because it contains `unserialize` method, which attackers can use to create an exploit.
 
    If you need to use the `ArrayObject` class, override the `serialize`/`unserialize` methods so that they use secure logic.
    Convert objects into arrays to serialize them, and reconstruct the objects using arrays during unserialization.
@@ -38,16 +38,16 @@ Avoid using these functions in your code.
 
 *  [Serialize Library][12]
 
-[0]:http://php.net/manual/en/function.eval.php
+[0]:https://php.net/manual/en/function.eval.php
 [1]:https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#Code_Injection
-[2]:http://php.net/manual/en/function.serialize.php
-[3]:http://php.net/manual/en/function.unserialize.php
+[2]:https://php.net/manual/en/function.serialize.php
+[3]:https://php.net/manual/en/function.unserialize.php
 [4]:https://www.owasp.org/index.php/PHP_Object_Injection
-[5]:http://php.net/manual/en/function.md5.php
+[5]:https://php.net/manual/en/function.md5.php
 [6]:https://www.owasp.org/index.php/Guide_to_Cryptography#Hashes
-[7]:http://php.net/manual/en/function.srand.php
-[8]:http://programmers.stackexchange.com/questions/76229/predicting-the-output-of-phps-rand
-[9]:http://php.net/manual/en/function.mt-rand.php
-[10]:http://phpsecurity.readthedocs.io/en/latest/Insufficient-Entropy-For-Random-Values.html
-[11]:http://php.net/manual/en/class.arrayobject.php
+[7]:https://php.net/manual/en/function.srand.php
+[8]:https://softwareengineering.stackexchange.com/questions/76229/predicting-the-output-of-phps-rand
+[9]:https://php.net/manual/en/function.mt-rand.php
+[10]:https://phpsecurity.readthedocs.io/en/latest/Insufficient-Entropy-For-Random-Values.html
+[11]:https://php.net/manual/en/class.arrayobject.php
 [12]: {{ page.baseurl }}/extension-dev-guide/framework/serializer.html "Serialize Library"

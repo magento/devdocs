@@ -5,7 +5,7 @@ title: Factories
 menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
-contributor_link: http://www.classyllama.com/
+contributor_link: https://www.classyllama.com/
 ---
 
 ## Overview

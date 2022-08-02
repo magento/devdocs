@@ -28,7 +28,7 @@ content: "This module allows clients to subscribe for information about new prom
   more information about a layout in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
   UI components\n\nThis module extends customer form ui component the configuration
   file located in the `view/base/ui_component` directory:\n- `customer_form`\n\nFor
-  information about a UI component in Magento 2, see [Overview of UI components](http://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n##
+  information about a UI component in Magento 2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n##
   Additional information\n\n[Learn more about newsletter](https://docs.magento.com/user-guide/marketing/newsletters.html).\n\n###
   Cron options\n\nCron group configuration can be set at `etc/crontab.xml`:\n- `newsletter_send_all`
-  - schedules newsletter sending\n\n[Learn how to configure and run cron in Magento.](http://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html)."
+  - schedules newsletter sending\n\n[Learn how to configure and run cron in Magento.](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html)."

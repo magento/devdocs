@@ -75,7 +75,7 @@ Once all the steps above are complete, the maintainer can approve the contributo
 
 #### Set award labels
 
-We are thankful for all contributions, and we recognize our most active members. Contributors earn points in numerous ways with a focus on PRs in the backlog and special projects. We use labels to highlight the different types of achievements. We encourage maintainers to review all the [existing awards]({{ site.baseurl }}/contributor-guide/contributing.html#points) and based on the information provided decide which award is most suitable.
+We are thankful for all contributions, and we recognize our most active members. Contributors earn points in numerous ways with a focus on PRs in the backlog and special projects. We use labels to highlight the different types of achievements. We encourage maintainers to review all the [existing awards]({{ site.baseurl }}/contributor-guide/contributing.html) and based on the information provided decide which award is most suitable.
 
 ![Set Award Labels]({{ site.baseurl }}/contributor-guide/img/award-labels.png)
 

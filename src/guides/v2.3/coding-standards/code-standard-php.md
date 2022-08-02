@@ -35,7 +35,7 @@ Learn more about using rule sets with PHP CodeSniffer [ruleset]
 
 ### Literal Namespace Rule
 
-For class name resolution, use the [`::class`](http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class) [keyword](https://glossary.magento.com/keyword) instead of a string literal for every class name reference outside of that class.
+For class name resolution, use the [`::class`](https://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class) [keyword](https://glossary.magento.com/keyword) instead of a string literal for every class name reference outside of that class.
 This includes references to:
 
 *  Fully qualified class name
@@ -57,10 +57,10 @@ The [Coding standards overview] introduces Magento-specific practices for PHP, J
 
 <!-- LINKS -->
 
-[PHP_CodeSniffer]: http://pear.php.net/manual/en/package.php.php-codesniffer.faq.php
-[PSR-1]: http://www.php-fig.org/psr/psr-1/
-[PSR-2]: http://www.php-fig.org/psr/psr-2/
+[PHP_CodeSniffer]: https://pear.php.net/manual/en/package.php.php-codesniffer.faq.php
+[PSR-1]: https://www.php-fig.org/psr/psr-1/
+[PSR-2]: https://www.php-fig.org/psr/psr-2/
 [Coding standards overview]: {{ page.baseurl }}/coding-standards/bk-coding-standards.html
-[ruleset]: http://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php
+[ruleset]: https://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php
 [ruleset.xml]: https://github.com/magento/magento-coding-standard/blob/develop/Magento2/ruleset.xml
 [Magento Coding Standard]: https://github.com/magento/magento-coding-standard

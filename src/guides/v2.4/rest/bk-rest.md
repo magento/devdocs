@@ -20,4 +20,4 @@ For more information, see [Generate local REST API reference](generate-local.htm
 [REST API documentation]: https://magento.redoc.ly
 [ReDoc]: https://github.com/Rebilly/ReDoc
 [Open-API specification]: https://github.com/OAI/OpenAPI-Specification
-[Swagger]: http://swagger.io/
+[Swagger]: https://swagger.io/

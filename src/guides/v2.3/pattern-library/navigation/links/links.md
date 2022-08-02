@@ -20,7 +20,7 @@ When initiating an action or a process
 
 ## Accessibility
 
-Full Guideline Reference: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#links](http://www.w3.org/TR/WCAG10-HTML-TECHS/#links)
+Full Guideline Reference: [https://www.w3.org/TR/WCAG10-HTML-TECHS/#links](https://www.w3.org/TR/WCAG10-HTML-TECHS/#links)
 
 ### Links Text
 

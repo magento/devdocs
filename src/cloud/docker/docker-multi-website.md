@@ -36,6 +36,6 @@ After updating the `php.ini` file and adding subdomains, start the Docker enviro
 
 <!--Link definitions-->
 
-[Modify {{site.data.var.ee}} variables]: {{site.baseurl}}/cloud/project/project-multi-sites.html#modify-magento-variables
+[Modify {{site.data.var.ee}} variables]: {{site.baseurl}}/cloud/project/project-multi-sites.html
 [Understanding websites, stores, and store views]: {{site.baseurl}}/cloud/configure/configure-best-practices.html#sites
 [Set up websites, stores, and store views]: {{site.baseurl}}/guides/v2.4/config-guide/multi-site/ms_websites.html

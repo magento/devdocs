@@ -87,8 +87,8 @@ A clean Magento installation allows reaching enough good performance by splittin
 The following steps require you to install and have familiarity with the following tools:
 
 -  [nodejs](https://nodejs.org/en/download/)
--  [r.js](http://requirejs.org/docs/optimization.html#download)
--  [PhantomJS](http://phantomjs.org/) (optional)
+-  [r.js](https://requirejs.org/docs/optimization.html#download)
+-  [PhantomJS](https://phantomjs.org/) (optional)
 
 ### Sample code
 

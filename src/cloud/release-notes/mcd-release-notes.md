@@ -285,7 +285,7 @@ Release date: Feb 5, 2020
 
 -  {:.new}**Created a separate package to deliver `{{site.data.var.mcd-prod}}`**—Moved the source code to deliver {{site.data.var.mcd-prod}} from the `{{site.data.var.ct}}` repository to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.  The new package is a dependency for {{site.data.var.ct}} v2002.1.0 and later.
 
-   When you update {{site.data.var.ct}}, you also update the `{{site.data.var.mcd-package}}` package to version 1.0.0. If you used {{site.data.var.mcd-prod}} with an earlier `{{site.data.var.ct}}` release (2002.0.x), review the [backward incompatibilities]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#magento-cloud-docker-changes) and update your project as scripts, commands, and processes as needed.
+   When you update {{site.data.var.ct}}, you also update the `{{site.data.var.mcd-package}}` package to version 1.0.0. If you used {{site.data.var.mcd-prod}} with an earlier `{{site.data.var.ct}}` release (2002.0.x), review the [backward incompatibilities]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html) and update your project as scripts, commands, and processes as needed.
 
 -  {:.new}**Added versioning to the Docker images**—You must now update the `{{site.data.var.mcd-package}}` package to get the updated images.<!--MAGECLOUD-4737-->
 
@@ -362,7 +362,7 @@ Release date: Feb 5, 2020
    -  {:.new}Added a container health check to the Elasticsearch service to ensure that the service is ready before continuing with build and deploy processing. If the health check returns an error, the container restarts automatically.<!--MAGECLOUD-4456-->
 
 <!--Link definitions-->
-[Sharing project data]: {{site.baseurl}}/cloud/docker/docker-containers.html#sharing-magento-cloud-project-data
+[Sharing project data]: {{site.baseurl}}/cloud/docker/docker-containers.html
 [Database containers]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [developer]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [production]: {{site.baseurl}}/cloud/docker/docker-mode-production.html
