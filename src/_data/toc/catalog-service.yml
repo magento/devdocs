@@ -9,5 +9,5 @@ pages:
     versionless: true
 
   - label: refine query
-    url: /catalog-service/refine.html
+    url: /catalog-service/refine-product.html
     versionless: true
