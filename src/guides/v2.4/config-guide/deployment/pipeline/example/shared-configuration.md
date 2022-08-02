@@ -6,7 +6,7 @@ functional_areas:
   - Deploy
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/example-shared-configuration.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/examples/example-shared-configuration.html
 layout: migrated
 ---
 

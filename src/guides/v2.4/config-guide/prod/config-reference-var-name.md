@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/override-config-settings.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/override-config-settings.html
 layout: migrated
 ---
 

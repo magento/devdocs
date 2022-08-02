@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cron/custom-cron-tutorial.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/crons/custom-cron-tutorial.html
 layout: migrated
 ---
 

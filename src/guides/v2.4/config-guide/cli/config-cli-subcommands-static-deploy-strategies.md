@@ -6,7 +6,7 @@ functional_areas:
   - Deploy
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view-file-strategy.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-strategy.html
 layout: migrated
 ---
 

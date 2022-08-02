@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/disable-module-output.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/disable-module-output.html
 layout: migrated
 ---
 

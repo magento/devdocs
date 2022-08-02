@@ -1,7 +1,7 @@
 ---
 group: configuration-guide
 title: Using Amazon Message Queue
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/queues/aws-mq.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/aws-mq.html
 layout: migrated
 ---
 

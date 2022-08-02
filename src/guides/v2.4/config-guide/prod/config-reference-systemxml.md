@@ -6,7 +6,7 @@ functional_areas:
   - System
 contributor_name: David Lambauer
 contributor_link: https://github.com/DavidLambauer
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/config-reference-systemxml.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-systemxml.html
 layout: migrated
 ---
 

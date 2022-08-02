@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/module-files.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/module-files.html
 layout: migrated
 ---
 
@@ -30,6 +30,7 @@ Following are common terms used in this topic:
 This section discusses how configuration files are loaded and merged.
 
 ### How Magento loads configuration files {#config-files-load}
+
 Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):
 
 -  Primary configuration ([app/etc/di.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/etc/di.xml)). This file is used to bootstrap Magento.

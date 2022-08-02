@@ -6,9 +6,7 @@ functional_areas:
   - Deploy
   - System
   - Setup
-redirect_from:
-  - guides/v2.3/config-guide/deployment/pipeline/example/rsync.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/example-using-cli.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/examples/example-using-cli.html
 layout: migrated
 ---
 

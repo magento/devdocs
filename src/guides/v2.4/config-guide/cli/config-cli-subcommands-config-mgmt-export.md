@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/export-configuration.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/configuration-management/export-configuration.html
 layout: migrated
 ---
 

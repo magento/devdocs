@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/confog-reference-gitignore.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-gitignore.html
 layout: migrated
 ---
 

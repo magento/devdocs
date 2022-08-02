@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/reference/deployment-files.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/deployment-files.html
 layout: migrated
 ---
 
@@ -31,6 +31,7 @@ The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.
 Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
 
 ## Details about the deployment configuration {#config-php-contents}
+
 `config.php` and `env.php` are [PHP](https://glossary.magento.com/php) files that return a [multi-dimensional associative array](http://www.w3schools.com/php/php_arrays.asp), which is basically a hierarchical arrangement of configuration parameters and values.
 
 On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key---where both the key and its value are defined by the Magento framework.
@@ -45,6 +46,7 @@ The following sections discusses the structure and contents of the deployment co
 *  [System-specific configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html#app-etc-env-php)
 
 ## Manage installed modules {#config-php-contents-config-php}
+
 `config.php` lists your installed modules. Magento provides both command-line and web-based utilities to manage modules (install, uninstall, enable, disable, or upgrade).
 
 Examples:

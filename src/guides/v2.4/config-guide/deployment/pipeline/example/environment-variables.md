@@ -6,7 +6,7 @@ functional_areas:
   - Deploy
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/example-environment-variables.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/examples/example-environment-variables.html
 layout: migrated
 ---
 
