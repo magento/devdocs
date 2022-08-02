@@ -45,13 +45,7 @@ bin/magento indexer:status [indexer]
 
 Where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to view the status of all indexers.
 
-To list all indexers:
-
-```bash
-bin/magento indexer:info
-```
-
-A sample follows:
+To list status of all indexers:
 
 ```bash
 bin/magento indexer:status
@@ -92,13 +86,7 @@ bin/magento indexer:reindex [indexer]
 
 Where ```[indexer]``` is a space-separated list of indexers. Omit ```[indexer]``` to reindex all indexers.
 
-To view a list of all indexers:
-
-```bash
-bin/magento indexer:info
-```
-
-A sample follows:
+To reindex all indexers:
 
 ```bash
 bin/magento indexer:reindex
@@ -253,12 +241,6 @@ Where:
 -  **`realtime`** - Sets the selected indexers to update on save.
 -  **`schedule`** - Sets the specified indexers to save according to the cron schedule.
 -  **`indexer`** - Is a space-separated list of indexers. Omit `indexer` to configure all indexers the same way.
-
-To view the list of indexers:
-
-```bash
-bin/magento indexer:info
-```
 
 For example, to change only the category products and product categories indexers to update on schedule, enter:
 
