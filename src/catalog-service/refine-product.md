@@ -255,12 +255,12 @@ query {
 
 ## Input fields
 
-You must specify a SKU value and at least one option ID.
+You must specify a SKU value and at least one option ID as input.
 
 Field | Data type | Description
 --- | --- | ---
-`sku` | String! |  The SKU of a complex product.
 `optionIds` | [String!]! | A list of IDs assigned to the product options the shopper has selected, such specific colors and sizes.
+`sku` | String! |  The SKU of a complex product.
 
 ## Output fields
 
