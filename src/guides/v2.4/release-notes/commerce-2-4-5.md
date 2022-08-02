@@ -1412,11 +1412,9 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ## Known issue
 
-**Issue**: RabbitMQ infrastructure elements (exchanges, queues) may be not initialized after a fresh installation (not upgrade) of {{ site.data.var.ee }} 2.4.5. This incorrect configuration of RabbitMQ may result in a fatal error when asynchronous operations are executed or a performance profile is generated.
+**Issue**: RabbitMQ infrastructure elements (exchanges, queues) may be not initialized after a fresh installation (not upgrade) of {{ site.data.var.ee }} 2.4.5. This incorrect configuration of RabbitMQ may result in a fatal error when asynchronous operations are executed or a performance profile is generated. Cloud deployments are not affected.
 
-**Workarounds**:
-
-Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 for Cloud must run `bin/magento setup:upgrade --keep-generated` using ssh or redeploy on Cloud without uninstalling {{ site.data.var.ee }} 2.4.5. (Redeploy automatically runs `setup:upgrade`.) We will release an upgrade to `ece-tools` before {{ site.data.var.ee }} 2.4.5 General Availability that will resolve this issue.
+**Workaround**:
 
 Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 on-premises should run `bin/magento setup:upgrade --keep-generated` after using `bin/magento setup:config:set` to configure RabbitMQ or install {{ site.data.var.ee }} by passing RabbitMQ configuration options to the `setup:install` command. See [RabbitMQ](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/install-rabbitmq.html).
 
