@@ -229,7 +229,7 @@ To find the variable name for the shipping country origin:
 
 ## How to use environment variables
 
-Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php) associate array. You can set the values in any PHP script that runs when Commerce runs.
+Set configuration values as variables using PHP's [`$_ENV`](https://php.net/manual/en/reserved.variables.environment.php) associate array. You can set the values in any PHP script that runs when Commerce runs.
 
 {%
 include note.html

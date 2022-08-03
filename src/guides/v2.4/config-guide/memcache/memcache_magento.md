@@ -31,7 +31,7 @@ To configure Magento to use memcached:
    ),
    ```
 
-   memcached has an optional startup parameters that are beyond the scope of this guide. You can find more information about them in the [memcached](http://php.net/manual/en/memcached.sessions.php) documentation, source code, and changelogs.
+   memcached has an optional startup parameters that are beyond the scope of this guide. You can find more information about them in the [memcached](https://php.net/manual/en/memcached.sessions.php) documentation, source code, and changelogs.
 
 1. Continue with the next section.
 
