@@ -11,7 +11,7 @@ For more information on SSH keys, see the following:
 
 -  [Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
 -  [Manually generating your SSH key in Windows](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows)
--  [ssh-keygen man page](http://linux.die.net/man/1/ssh-keygen)
+-  [ssh-keygen man page](https://linux.die.net/man/1/ssh-keygen)
 
 ## Locate an existing SSH key pair {#existing}
 

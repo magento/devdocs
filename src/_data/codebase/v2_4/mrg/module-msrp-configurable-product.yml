@@ -12,8 +12,8 @@ content: "The **Magento_MsrpConfigurableProduct** module provides type and resol
   For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
   Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
   enables you to override the functionality of the Magento_Msrp module.\n\n### Layouts\n\nFor
-  more information about a layout in Magento 2, see the [Layout documentation](http://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  more information about a layout in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html).\n\n###
   UI components\n\nFor information about a UI component in Magento 2, see [Overview
-  of UI components](http://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html).\n\n##
+  of UI components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html).\n\n##
   Additional information\n\nFor information about significant changes in patch releases,
   see [2.4.x Release information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)."

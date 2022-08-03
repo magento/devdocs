@@ -2,7 +2,7 @@
 group: rest-api
 title: Bulk endpoints
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/
+contributor_link: https://www.comwrap.com/en.html
 functional_areas:
   - Integration
 ---

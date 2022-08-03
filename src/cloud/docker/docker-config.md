@@ -77,5 +77,5 @@ After you start the Docker environment, go to the following URL to access the Ma
 [Docker Hub PHP Image Tag]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
 [MailHog]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#mailhog-container
 [Override configuration]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html#override-configuration
-[{{site.data.var.ece}} project configuration files]: {{site.baseurl}}/cloud/docker/docker-config-sources.html#magento-commerce-cloud-configuration
+[{{site.data.var.ece}} project configuration files]: {{site.baseurl}}/cloud/docker/docker-config-sources.html#cloud-configuration-for-commerce
 [Unified configuration]: {{site.baseurl}}/cloud/docker/docker-config-sources.html#unified-configuration

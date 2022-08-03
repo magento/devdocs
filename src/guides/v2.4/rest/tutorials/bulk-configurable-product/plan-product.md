@@ -12,7 +12,7 @@ return_to:
 functional_areas:
   - Integration
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/
+contributor_link: https://www.comwrap.com/en.html
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/plan-product/
 layout: migrated
 ---

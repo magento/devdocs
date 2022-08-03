@@ -29,7 +29,7 @@ Visibility | Code
 `Catalog, Search` | 4
 
 {:.bs-callout-info}
-Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html) for more information.
 
 **Endpoint:**
 

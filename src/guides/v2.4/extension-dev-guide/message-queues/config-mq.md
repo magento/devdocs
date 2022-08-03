@@ -286,4 +286,4 @@ See [Migrate message queue configuration]({{page.baseurl}}/extension-dev-guide/m
 
 <!-- Link definitions -->
 [MySQL]: https://www.mysql.com/
-[RabbitMQ]: http://www.rabbitmq.com
+[RabbitMQ]: https://www.rabbitmq.com/

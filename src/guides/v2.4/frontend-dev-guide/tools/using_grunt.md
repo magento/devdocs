@@ -8,7 +8,7 @@ migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/tools/grun
 layout: migrated
 ---
 
-The topic describes how to install and configure [Grunt JavaScript task runner](http://gruntjs.com/).
+The topic describes how to install and configure [Grunt JavaScript task runner](https://gruntjs.com/).
 
 ## Overview
 
@@ -50,7 +50,7 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
    npm update
    ```
 
-1. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/) in your browser.
+1. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) in your browser.
 
 ## Grunt configuration file {#grunt_config}
 
