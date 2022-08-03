@@ -12,8 +12,10 @@ The Catalog Service query requires one or more SKU values as input. The query is
 
 *  Product compare pages - You can retrieve selected information about multiple products, such as the name, price and image.
 
+<!--->
 {:.bs-callout-tip}
 Use the Live Search [`productSearch` query]({{site.baseurl}}/live-search/product-search.html) to return product listing page content.
+<-->
 
 The `ProductView` output object is significantly different than the core `products` query `Products` output object. Key differences include:
 
@@ -42,8 +44,6 @@ You must specify the following HTTP headers to run this query.
 ### Return details about a simple product
 
 The following query returns details about a simple product.
-
-<!--- Note to reviewer: Nothing is returned from `SimpleProductView`. I will replace the code sample when it does. -->
 
 **Request:**
 
@@ -156,7 +156,15 @@ query {
               "visible in Search"
             ]
           }
-        ]
+        ],
+        "price": {
+          "regular": {
+            "amount": {
+              "value": 59,
+              "currency": "USD"
+            }
+          }
+        }
       }
     ]
   }
