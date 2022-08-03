@@ -7,7 +7,7 @@ contributor_link: https://www.goivvy.com/magento-optimization-service
 ---
 
 {:.bs-callout-info}
-Before you run the code, please verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute set]({{ page.baseurl }}/rest/tutorials/bundle-product/plan-product.html#get-attributes) for more information.
+Before you run the code, please verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute set]({{ page.baseurl }}/rest/tutorials/bundle-product/plan-product.html) for more information.
 
 We will create four simple products: `RAM 12GB`, `RAM 24GB`, `Monitor 15"` and `Monitor 17"`.
 

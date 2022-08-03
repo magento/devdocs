@@ -28,7 +28,7 @@ You need to set up the [file system owner](https://glossary.magento.com/magento-
 
 ## Recommended tools
 
-This guide assumes you're working on a UNIX system or in a UNIX shell environment. For MAC OS and Linux-based systems, feel free to use any CLI tools of choice for issuing commands. For Windows users, we recommend a UNIX environment like [Cygwin](https://www.cygwin.com/), [Putty](http://www.putty.org/), or Git Bash.
+This guide assumes you're working on a UNIX system or in a UNIX shell environment. For MAC OS and Linux-based systems, feel free to use any CLI tools of choice for issuing commands. For Windows users, we recommend a UNIX environment like [Cygwin](https://www.cygwin.com/), [Putty](https://www.putty.org/), or Git Bash.
 
 For development on your local workstation, use any development environment or tools you prefer. For recommendations, many {{site.data.var.ee}} developers use tools including [WebStorm](https://www.jetbrains.com/webstorm/), [PhpStorm](https://www.jetbrains.com/phpstorm/), and [Atom](https://atom.io/).
 

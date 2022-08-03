@@ -63,7 +63,7 @@ The following table explains this command's parameters and values.
     <tr>
         <td>&lt;languages&gt;</td>
         <td>
-            <p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes for which to output static view files. (Default is
+            <p>Space-separated list of <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes for which to output static view files. (Default is
                 <code>en_US</code>.)</p>
             <p>You can find the list by running <code>bin/magento info:language:list</code>.</p>
         </td>
@@ -74,7 +74,7 @@ The following table explains this command's parameters and values.
     <tr>
         <td>--language (-l)</td>
         <td>
-            <p>Generate files only for the specified languages. The default, with no option specified, is to generate files for all <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes. You can specify the name of one language code at a time. Default value is <b>all</b>.</p>
+            <p>Generate files only for the specified languages. The default, with no option specified, is to generate files for all <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes. You can specify the name of one language code at a time. Default value is <b>all</b>.</p>
             <p>For example, <code>--language en_US --language es_ES</code></p>
         </td>
         <td>
@@ -377,4 +377,4 @@ Use the following steps:
 
 When creating a custom implementation of the static content deployment tool, use only [atomic](https://en.wikipedia.org/wiki/Linearizability) file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content.
 
-One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php).
+One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see [https://php.net/manual/en/function.fwrite.php](https://php.net/manual/en/function.fwrite.php).

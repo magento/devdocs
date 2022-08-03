@@ -21,4 +21,4 @@ content: "This module enables product alerts, which allow customers to sign up f
   Additional information\n\nMore information can get at articles:\n- [Product Alerts](https://docs.magento.com/user-guide/catalog/inventory-product-alerts.html)\n-
   [Product Alert Run Settings](https://docs.magento.com/user-guide/catalog/inventory-product-alert-run-settings.html)\n\n###
   Cron options\n\nCron group configuration can be set at `etc/crontab.xml`:\n- `catalog_product_alert`
-  - send product alerts to customers\n\n[Learn how to configure and run cron in Magento.](http://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html)."
+  - send product alerts to customers\n\n[Learn how to configure and run cron in Magento.](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html)."

@@ -1,13 +1,13 @@
 ---
 group: rest-api
 title: Generate a local REST reference
-migrated_to: https://developer.adobe.com/commerce/webapi/quick-reference/rest/generate-local/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/quick-reference/generate-local/
 layout: migrated
 functional_areas:
   - Integration
 ---
 
-The REST documentation on the Magento devdocs [website](https://glossary.magento.com/website) is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2. However, the REST [API](https://glossary.magento.com/api) documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.
+The REST documentation on the Magento devdocs [website](https://glossary.magento.com/website) is generated with [Swagger UI](https://swagger.io) using a schema derived from the latest build of Magento 2. However, the REST [API](https://glossary.magento.com/api) documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.
 
 Magento provides two ways to get detailed information about the structure of the REST endpoints, as described below.
 
@@ -80,7 +80,7 @@ To ensure proper functionality, always test Magento instances after disabling mo
 
 You may also use web server rewrite rules to redirect users trying to access the endpoint:
 
--  [nginx rewrite module](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite)
+-  [nginx rewrite module](https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite)
 -  [apache mod_rewrite](https://httpd.apache.org/docs/2.4/rewrite/)
 
 {:.ref-header}
