@@ -51,7 +51,7 @@ Related topics
 [X-Frame-Options header]: {{page.baseurl}}/config-guide/secy/secy-xframe.html
 [Secure cron.php]: {{page.baseurl}}/config-guide/secy/secy-cron.html
 [Overview of ownership and permissions]: {{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html
-[umask]: http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
+[umask]: https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
 [Security measures against XSS attacks]: {{page.baseurl}}/extension-dev-guide/xss-protection.html
 [Configuration Guide]: {{page.baseurl}}/config-guide/bk-config-guide.html
 [Password Hashing]: ./hashing.html

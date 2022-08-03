@@ -142,4 +142,4 @@ Related topics
 -  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
 
 <!-- Link definitions -->
-[RabbitMQ]: http://www.rabbitmq.com
+[RabbitMQ]: https://www.rabbitmq.com

@@ -31,10 +31,10 @@ You don't need to do anything if you use the [`magento cron:run`]({{ page.baseur
 
 ## Secure cron with Apache
 
-This section discusses how to secure cron using [HTTP Basic authentication](http://tools.ietf.org/html/rfc2617") with Apache. These instructions are based on Apache 2.2 with CentOS 6. For more information, refer to one of the following resources:
+This section discusses how to secure cron using [HTTP Basic authentication](https://datatracker.ietf.org/doc/html/rfc2617") with Apache. These instructions are based on Apache 2.2 with CentOS 6. For more information, refer to one of the following resources:
 
--  [Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html)
--  [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html)
+-  [Apache 2.2 authentication and authorization tutorial](https://httpd.apache.org/docs/2.2/howto/auth.html)
+-  [Apache 2.4 authentication and authorization tutorial](https://httpd.apache.org/docs/2.4/howto/auth.html)
 
 ### Create a password file
 

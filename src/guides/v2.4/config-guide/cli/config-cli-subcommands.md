@@ -31,7 +31,7 @@ You can run the commands in any of the following ways:
 
 -  `php magento <command>`
 -  `./magento <command>`
--  `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<magento_root>/bin` to your system `PATH`)
+-  `magento <command>` (after [adding](https://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<magento_root>/bin` to your system `PATH`)
 
 ## Command summary {#config-cli-summary}
 

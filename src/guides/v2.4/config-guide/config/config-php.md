@@ -32,7 +32,7 @@ Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config
 
 ## Details about the deployment configuration {#config-php-contents}
 
-`config.php` and `env.php` are [PHP](https://glossary.magento.com/php) files that return a [multi-dimensional associative array](http://www.w3schools.com/php/php_arrays.asp), which is basically a hierarchical arrangement of configuration parameters and values.
+`config.php` and `env.php` are [PHP](https://glossary.magento.com/php) files that return a [multi-dimensional associative array](https://www.w3schools.com/php/php_arrays.asp), which is basically a hierarchical arrangement of configuration parameters and values.
 
 On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key---where both the key and its value are defined by the Magento framework.
 

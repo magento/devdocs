@@ -17,7 +17,7 @@ layout: migrated
 You can optionally use other deployment methods, including:
 
 *  Secure copying with SCP or rsync
-*  [Capistrano](http://capistranorb.com/documentation/overview/what-is-capistrano)
+*  [Capistrano](https://capistranorb.com/documentation/overview/what-is-capistrano)
 *  The [Deployer tool](https://deployer.org/)
 
 ## Manage the configuration
