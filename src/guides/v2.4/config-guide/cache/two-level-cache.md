@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Cache
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html
+layout: migrated
 ---
 
 Caching enables a reduction in network traffic between the remote cache storage and Magento. A standard Magento instance transfers around 300kb per request, and traffic may quickly grow to over ~1000 requests in some situations.

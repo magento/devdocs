@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/varnish/config-varnish-server.html
+layout: migrated
 ---
 
 ## Configure your web server {#config-varnish-config-web}
