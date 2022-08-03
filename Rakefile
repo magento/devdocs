@@ -39,25 +39,30 @@ end
 desc 'Build the entire website'
 task build_and_deploy: %w[clean] do
   print 'Building the site with Jekyll: $ '.magenta
+
   # Check for uncommitted messages
   abort "\nCannot checkout. The branch contains uncommitted messages.".red unless `git status --short`.empty?
 
   # Back up an environmental variable
   jekyll_env = ENV['JEKYLL_ENV']
   ENV['JEKYLL_ENV'] = 'production'
+  # Build the site
   jekyll('build --verbose --baseurl=/devdocs')
   # Restore the environmental variable
   ENV['JEKYLL_ENV'] = jekyll_env
 
   # Remember the SHA of the built commit
   commit = `git log --pretty=format:"%h" -1`
+
+  # Deploy the site
   `git checkout gh-pages`
   `cp -R _site/ ./`
   `git add --all`
   `git commit --message "Deploy #{commit}"`
-  # `git push public`
+  `git push public`
+  `git checkout -`
 
-  puts 'Built!'.green
+  puts 'Done!'.green
 end
 
 desc 'Checkout to the master branch'

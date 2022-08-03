@@ -2,6 +2,7 @@
 ######################
 /*.db
 .DS_Store
+.vscode
 
 # Config and output files #
 ###########################
