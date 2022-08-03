@@ -12,8 +12,10 @@ The Catalog Service query requires one or more SKU values as input. The query is
 
 *  Product compare pages - You can retrieve selected information about multiple products, such as the name, price and image.
 
+<!--->
 {:.bs-callout-tip}
 Use the Live Search [`productSearch` query]({{site.baseurl}}/live-search/product-search.html) to return product listing page content.
+<-->
 
 The `ProductView` output object is significantly different than the core `products` query `Products` output object. Key differences include:
 
@@ -42,8 +44,6 @@ You must specify the following HTTP headers to run this query.
 ### Return details about a simple product
 
 The following query returns details about a simple product.
-
-<!--- Note to reviewer: Nothing is returned from `SimpleProductView`. I will replace the code sample when it does. -->
 
 **Request:**
 
@@ -86,7 +86,7 @@ query {
         "id": "TWpRdFRVSXdNZwBaR1ZtWVhWc2RBAE16UmxNamMwTUdFdE56UTNNeTAwWXpnNUxUZzNNekF0TlRjME1ETm1ZMlV5TjJGbABiV0ZwYmw5M1pXSnphWFJsWDNOMGIzSmwAWW1GelpRAFRVRkhVMVJITURBMU5UYzVNRE00",
         "sku": "24-MB02",
         "name": "Fusion Backpack 567890",
-        "url": "http://example.com/fusion-backpack.html",
+        "url": "http://master-7rqtwti-ima6q5tyxltfe.eu-4.magentosite.cloud/fusion-backpack.html",
         "description": "<p>With the Fusion Backpack strapped on, every trek is an adventure - even a bus ride to work. That's partly because two large zippered compartments store everything you need, while a front zippered pocket and side mesh pouches are perfect for stashing those little extras, in case you change your mind and take the day off.</p>\r\n<ul>\r\n<li>Durable nylon construction.</li>\r\n<li>2 main zippered compartments.</li>\r\n<li>1 exterior zippered pocket.</li>\r\n<li>Mesh side pouches.</li>\r\n<li>Padded, adjustable straps.</li>\r\n<li>Top carry handle.</li>\r\n<li>Dimensions: 18\" x 10\" x 6\".</li>\r\n</ul>",
         "shortDescription": "",
         "attributes": [
@@ -156,7 +156,15 @@ query {
               "visible in Search"
             ]
           }
-        ]
+        ],
+        "price": {
+          "regular": {
+            "amount": {
+              "value": 59,
+              "currency": "USD"
+            }
+          }
+        }
       }
     ]
   }
