@@ -52,4 +52,10 @@
 	{% include layout/github-links.html %}
 	{% endunless %}
 
+  {% if page.url contains "catalog-service/" %}
+  <div class="message-banner">
+    Catalog Service for Adobe Commerce is for Beta users only. Contact your Adobe Commerce Beta program manager for assistance and questions.
+  </div>
+  {% endif %}
+
 </section>
