@@ -112,7 +112,6 @@ include note.html
 type='info'
 content='If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:
 
-*  [flatlinesecurity](http://flatlinesecurity.com/posts/varnish-4-selinux/)
 *  [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
 *  [CentOS documentation](https://www.centos.org)'
 
@@ -174,7 +173,7 @@ The preceding shows Varnish running on port 80 and Apache running on port 8080.
 
 If you do not see output for `varnishd`, make sure Varnish is running.
 
-[More information about netstat options](http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html)
+[More information about netstat options](https://tldp.org/LDP/nag2/x-087-2-iface.netstat.html)
 
 ## Install the Magento 2 software {#config-varnish-install}
 

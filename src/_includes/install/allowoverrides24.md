@@ -1,4 +1,4 @@
-Use this section to enable Apache 2.4 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html)
+Use this section to enable Apache 2.4 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](https://httpd.apache.org/docs/current/howto/htaccess.html)
 
 Magento uses server rewrites and `.htaccess` to provide directory-level instructions for Apache.
 
@@ -11,7 +11,7 @@ Failure to enable these settings typically results in no styles displaying on yo
    a2enmod rewrite
    ```
 
-1. To enable Magento to use the distributed `.htaccess` configuration file, see the guidelines in the [Apache 2.4 documentation](http://httpd.apache.org/docs/current/mod/mod_rewrite.html).
+1. To enable Magento to use the distributed `.htaccess` configuration file, see the guidelines in the [Apache 2.4 documentation](https://httpd.apache.org/docs/current/mod/mod_rewrite.html).
 
    Note that in Apache 2.4, the server's default site configuration file is `/etc/apache2/sites-available/000-default.conf`.
 

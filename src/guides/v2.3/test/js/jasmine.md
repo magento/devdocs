@@ -309,9 +309,9 @@ npm install
 
 [fontconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
 
-[Grunt]: http://gruntjs.com/
+[Grunt]: https://gruntjs.com/
 
-[Install grunt-cli]: http://gruntjs.com/getting-started
+[Install grunt-cli]: https://gruntjs.com/getting-started
 
 [Install Node.js]: https://nodejs.org/en/
 

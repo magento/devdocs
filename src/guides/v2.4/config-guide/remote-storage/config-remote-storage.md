@@ -86,7 +86,7 @@ The sync command only migrates files in the `pub/media` directory, _not_ the imp
 <!-- link definitions -->
 [AWS S3]: {{site.baseurl}}/guides/v2.4/config-guide/remote-storage/config-remote-storage-aws-s3.html
 [import-export]: {{ site.user_guide_url }}/system/data-scheduled-import-export.html
-[nginx-module]: http://nginx.org/en/docs/http/ngx_http_image_filter_module.html
+[nginx-module]: https://nginx.org/en/docs/http/ngx_http_image_filter_module.html
 [schema image]: {{site.baseurl}}/common/images/config-remote-storage-schema.png
 {:width="500px"}
 [setup]: {{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-deployment.html#instgde-cli-subcommands-configphp

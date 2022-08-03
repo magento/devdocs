@@ -13,7 +13,7 @@ All [gateway commands]({{ page.baseurl }}/payments-integrations/payment-gateway/
 
 ## Interface
 
-The basic interface for a command pool is [`\Magento\Payment\Gateway\Command\CommandPoolInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php). It implements the [Pool pattern](http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html)
+The basic interface for a command pool is [`\Magento\Payment\Gateway\Command\CommandPoolInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php). It implements the [Pool pattern](https://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html)
 
 ## Default implementation
 

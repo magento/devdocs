@@ -153,7 +153,7 @@ To launch the Docker environment in developer mode:
 <!--Link definitions-->
 
 [installation steps]: {{site.baseurl}}/cloud/docker/docker-installation.html
-[magento-creds]: {{site.baseurl}}/cloud/setup/first-time-setup-import-prepare.html#auth-json
+[magento-creds]: {{site.baseurl}}/cloud/setup/first-time-setup-import-prepare.html
 [mutagen-install]: https://mutagen.io/documentation/introduction/installation/
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options

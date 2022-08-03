@@ -7,7 +7,7 @@ migrated_to: https://developer.adobe.com/commerce/php/tutorials/backend/create-a
 layout: migrated
 ---
 
-This tutorial shows you how to create an integration with an external API using [GuzzleHttp](http://docs.guzzlephp.org/en/stable/quickstart.html) library, that is included into Magento package.
+This tutorial shows you how to create an integration with an external API using [GuzzleHttp](https://docs.guzzlephp.org/en/stable/quickstart.html) library, that is included into Magento package.
 
 Guzzle is a PHP HTTP client that makes it easy to create some integrations with some web services.
 Its implementation code is more simpler, cleaner and readable, in comparision with cURL.

@@ -16,7 +16,7 @@ In addition, the [magnifier widget]({{ page.baseurl }}/javascript-dev-guide/widg
 
 Gallery is displayed consistently across all supported browsers and is responsive --- it sizes correctly on mobile devices and desktops.
 
-The gallery widget uses the [Fotorama widget].
+The gallery widget uses the Fotorama widget.
 
 The important feature of the gallery widget implementation is the possibility to configure the widget options in the `view.xml` configuration file of a theme.
 
@@ -579,7 +579,6 @@ api.updateOptions([{
 }]);
 ```
 
-[Fotorama widget]: http://fotorama.io/
 [lib/web/mage/gallery/gallery.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
 [lib/web/magnifier/magnify.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/magnifier/magnify.js
 
