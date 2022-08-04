@@ -23,7 +23,7 @@ The `ProductView` output object is significantly different than the core `produc
 
 *  Images are also accessible as a top-level container and can be filtered by their role. An image can have a base, small, or thumbnail role.
 
-<!--- Cross-reference provides full details about Catalog Service capabilities. -->
+<!-- Cross-reference provides full details about Catalog Service capabilities. -->
 
 ## Syntax
 
