@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Cache Annotation
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-cache/
+layout: migrated
 ---
 
 Enable or disable a [cache type][] using the `@magentoCache` annotation.

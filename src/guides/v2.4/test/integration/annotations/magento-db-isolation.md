@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Database isolation annotation
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-db-isolation/
+layout: migrated
 ---
 
 To isolate database changes between tests, the Integration testing framework (ITF) implements the `@magentoDbIsolation` annotation.

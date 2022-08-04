@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Application Area Annotation in the Integration Testing Framework
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-app-area/
+layout: migrated
 ---
 
 Configure a test environment in scope of the particular [application area][] with the `@magentoAppArea` annotation.

@@ -6,6 +6,8 @@ contributor_link: https://vinaikopp.com/
 functional_areas:
   - Testing
   - test
+migrated_to: https://developer.adobe.com/commerce/testing/guide/unit/
+layout: migrated
 ---
 
 Executing the Magento 2 unit tests is straight forward.

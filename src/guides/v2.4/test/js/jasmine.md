@@ -4,6 +4,8 @@ title: JavaScript unit testing with Jasmine
 functional_areas:
   - Testing
   - test
+migrated_to: https://developer.adobe.com/commerce/testing/guide/js/
+layout: migrated
 ---
 
 Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for all tests, a theme, or a single test.

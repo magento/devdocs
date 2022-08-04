@@ -6,6 +6,8 @@ contributor_link: https://vinaikopp.com/
 functional_areas:
   - Testing
   - test
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/
+layout: migrated
 ---
 
 Integration tests require the Magento runtime environment, so they need a little preparation before they can be executed.

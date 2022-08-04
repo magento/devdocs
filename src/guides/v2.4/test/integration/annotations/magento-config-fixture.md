@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Configuration fixture annotation
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-config-fixture/
+layout: migrated
 ---
 
 To set Magento configuration values for individual tests and revert them after the test execution, use the `@magentoConfigFixture` annotation.

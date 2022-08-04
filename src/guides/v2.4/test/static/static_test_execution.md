@@ -4,6 +4,8 @@ title: Running Static Tests
 functional_areas:
   - Testing
   - test
+migrated_to: https://developer.adobe.com/commerce/testing/guide/static/
+layout: migrated
 ---
 
 Executing Magento 2 static tests is straightforward. They can be executed in several ways.

@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Data Provider Annotation
+migrated_to: https://developer.adobe.com/commerce/testing/guide/unit/annotations/
+layout: migrated
 ---
 
 A Data Provider allows you to define the test once and run it multiple times with different inputs, for checking multiple use cases.
