@@ -326,7 +326,7 @@ The modal widget is subscribed to the following events:
 
 You can listen to these events in two ways:
 
-Use jQuery's [`on`](http://api.jquery.com/on/) function:
+Use jQuery's [`on`](https://api.jquery.com/on/) function:
 
 ```javascript
 var modal = $('#modal_content').modal({...});

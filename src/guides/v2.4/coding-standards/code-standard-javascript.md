@@ -11,7 +11,7 @@ layout: migrated
 Use Magento's [ESLint Rules][eslint-rules] to make sure your code adheres to Magento's coding standards.
 Developers writing [JavaScript](https://glossary.magento.com/javascript) and [jQuery](https://glossary.magento.com/jquery) code for Magento must adhere to these guidelines and follow the standards listed in this document.
 
-Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
+Use [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
 Magento uses the [jQuery library][jquery] including standard and custom [jQuery widgets][jquery-widgets].
 For the jQuery widget coding standard, see [jQuery widget coding standard][jquery-widget-coding-standard].
@@ -365,9 +365,9 @@ These custom rules are included using the `rulePaths` setting in the [Eslint Gru
 The source code of the rules can be found in the [Eslint custom rules folder][eslint-custom-rules-folder].
 
 [jquery]: https://jquery.com/
-[jquery-widgets]: http://api.jqueryui.com/category/widgets
+[jquery-widgets]: https://api.jqueryui.com/category/widgets
 [jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
-[eslint]: http://eslint.org/
+[eslint]: https://eslint.org/
 [eslint-rules]: https://github.com/magento/magento-coding-standard/blob/develop/eslint/.eslintrc-magento
 [grunt-eslint-configuration]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tools/grunt/configs/eslint.json
 [eslint-custom-rules-folder]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/rules/

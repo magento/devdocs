@@ -43,7 +43,7 @@ The examples and instructions in the {{ site.data.var.ece }} documentation expla
 
 You can create and manage custom VCL snippets from the Admin UI or by using the Fastly API:
 
--  [Admin UI](#manage-custom-vcl-snippets-from-the-magento-admin-ui)—We recommend using the Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets added to the Fastly service configuration from the Admin UI.
+-  [Admin UI](#manage-custom-vcl-snippets-from-the-admin-ui)—We recommend using the Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets added to the Fastly service configuration from the Admin UI.
 
 {:.bs-callout-info}
 You must use the Fastly API to [delete custom VCL snippets]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vcl), or you can delete the contents of the snippet in the  Admin UI and upload an empty snippet. See [Delete a custom snippet]({{ site.baseurl }}/cloud/cdn/fastly-vcl-badreferer.html#delete-the-custom-vcl-snippet).
@@ -268,7 +268,7 @@ After you add a custom VCL snippet, Fastly inserts the snippet in the VCL versio
 These API request examples use exported environment variables to provide the credentials to authenticate with Fastly. For details on these commands, see the [Fastly API reference](https://docs.fastly.com/api/config#vcl).
 
  {:.bs-callout-info}
-Use these commands to manage snippets that you added using the Fastly API. If you added snippets from the Admin UI, see [Manage VCL snippets using the Admin UI](#manage-custom-vcl-snippets-from-the-magento-admin-ui).
+Use these commands to manage snippets that you added using the Fastly API. If you added snippets from the Admin UI, see [Manage VCL snippets using the Admin UI](#manage-custom-vcl-snippets-from-the-admin-ui).
 
 -  **Get active VCL version number**
 

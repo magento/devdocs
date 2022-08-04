@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Configure services as web APIs
 contributor_name: Classy Llama
-contributor_link: http://www.classyllama.com/
+contributor_link: https://www.classyllama.com/
 functional_areas:
   - Services
 ---

@@ -3,6 +3,8 @@ group: ui-components-guide
 subgroup: components
 title: WYSIWYG component
 menu_title: WYSIWYG component
+migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/wysiwyg/
+layout: migrated
 ---
 
 The WYSIWYG component is an [adapter](https://glossary.magento.com/adapter) for [TinyMCE](https://www.tiny.cloud/){:target="_blank"} that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete [widget](https://glossary.magento.com/widget) declaration in the `content` option, which should contain both [markup](https://glossary.magento.com/markup) and the script responsible for creating the editor's instance.

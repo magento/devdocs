@@ -198,7 +198,7 @@ flush_all
 quit
 ```
 
-[Additional information about the Telnet test](http://www.darkcoding.net/software/memcached-list-all-keys/)
+[Additional information about the Telnet test](https://www.darkcoding.net/software/memcached-list-all-keys/)
 
 {:.ref-header}
 Related topics

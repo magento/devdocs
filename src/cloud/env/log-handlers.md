@@ -15,14 +15,14 @@ The following example configures both of these handlers by adding the configurat
 log:
   syslog:
     ident: "<syslog-ident>"
-    facility: 8 # http://php.net/manual/en/network.constants.php
+    facility: 8 # https://php.net/manual/en/network.constants.php
     min_level: "info"
     logopts: <syslog-logopts>
 
   syslog_udp:
     host: "<syslog-host>"
     port: <syslog-port>
-    facility: 8  # http://php.net/manual/en/network.constants.php
+    facility: 8  # https://php.net/manual/en/network.constants.php
     ident: "<syslog-ident>"
     min_level: "info"
 

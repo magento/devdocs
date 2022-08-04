@@ -48,9 +48,3 @@ Use a Head2 (`## Heading`) as the highest-level heading in this topic.
 
 ## Congratulations! You've finished.
 {:.no_toc}
-
-{:.ref-header}
-Related topics
-
-*  [Title of linked topic](http://example.com/index.html)
-*  [Link and open new tab](http://example.com/index.html)

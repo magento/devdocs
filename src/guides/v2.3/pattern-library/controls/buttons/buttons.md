@@ -320,7 +320,7 @@ Left/Right margin spacing should not be less than 10px
 ## Accessibility
 
 *  [Keyboard shortcuts in Windows](https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts)
-*  [Mac keyboard shortcuts](http://support.apple.com/en-us/HT201236)
+*  [Mac keyboard shortcuts](https://support.apple.com/en-us/HT201236)
 
 (Keyboard shortcut same as checkbox)
 

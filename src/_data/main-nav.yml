@@ -222,7 +222,7 @@
       versionless: true
 
     - label: Order Management
-      url: http://omsdocs.magento.com/en/
+      url: https://omsdocs.magento.com/
 
     - label: Page Builder
       url: /page-builder/docs/index.html
