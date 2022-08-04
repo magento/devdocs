@@ -88,8 +88,8 @@ Service | Description
 --- | ---
 [``DefaultSourceProviderInterface``]({{ msi_blob_url }}/InventoryCatalogApi/Api/DefaultSourceProviderInterface.php) | Retrieves Default Source code
 [`DefaultStockProviderInterface`]({{ msi_blob_url }}/InventoryCatalogApi/Api/DefaultStockProviderInterface.php) | Retrieves Default Stock id
-[`BulkInventoryTransferInterface`]({{ msi_blob_url }}/InventoryCatalogApi/Api/BulkInventoryTransferInterface.php) | [Bulk transfers](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/bulk-inventory.html) the whole quantity of products from origin to destination source
-[`BulkPartialInventoryTransferInterface`]({{ msi_blob_url }}/InventoryCatalogApi/Api/BulkPartialInventoryTransferInterface.php) | Runs [bulk partial inventory transfer](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/bulk-inventory.html#bulk-partial-transfer) for specified items
+[`BulkInventoryTransferInterface`]({{ msi_blob_url }}/InventoryCatalogApi/Api/BulkInventoryTransferInterface.php) | [Bulk transfers](https://developer.adobe.com/commerce/webapi/rest/inventory/bulk-inventory.html) the whole quantity of products from origin to destination source
+[`BulkPartialInventoryTransferInterface`]({{ msi_blob_url }}/InventoryCatalogApi/Api/BulkPartialInventoryTransferInterface.php) | Runs [bulk partial inventory transfer](https://developer.adobe.com/commerce/webapi/rest/inventory/bulk-inventory.html#bulk-partial-transfer) for specified items
 
 ## Inventory Sales API
 

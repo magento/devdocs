@@ -19,10 +19,10 @@ content: "<h2>Magento_SalesRuleStaging module</h2>\n\n## Overview\n\nThe Magento
   as this `README` file.\n\n## Extension Points\n\nExtension points enable extension
   developers to interact with the Magento_SalesRuleStaging. However, the Magento_SalesRuleStaging
   module does not provide any specific extension points.\n\nFor more information about
-  Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).\n\n[Magento
-  dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html)
+  Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).\n\n[Magento
+  dependency injection mechanism](https://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html)
   enables you to override the functionality of the Magento_SalesRuleStaging module.\n\n##
   Additional information\n\nFor more Magento 2 developer documentation, see [Magento
-  2 Developer Documentation](http://devdocs.magento.com). Also, you can track there
+  2 Developer Documentation](https://devdocs.magento.com). Also, you can track there
   [backward incompatible changes made in a Magento EE mainline after the Magento 2.0
-  release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html)."
+  release](https://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html)."

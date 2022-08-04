@@ -9,7 +9,7 @@ layout: migrated
 
 ## What's in this topic
 
-This topic describes how to add a custom [CSS](https://glossary.magento.com/css) preprocessor. Adding [Sass](http://sass-lang.com/) support is used as an example.
+This topic describes how to add a custom [CSS](https://glossary.magento.com/css) preprocessor. Adding [Sass](https://sass-lang.com/) support is used as an example.
 
 ## Sample Sass module
 

@@ -90,12 +90,6 @@ To add a user and assign roles:
 
    After you add the user, Adobe sends an email to the specified address with instructions for accessing the {{ site.data.var.ece }} project.
 
-The following example changes the environment-level role that is assigned to a user:
-
-```bash
-magento-cloud user:role alice@example.com --level environment --environment development --role admin
-```
-
 {:.bs-callout-tip}
 The `magento-cloud list` command displays all the `magento-cloud` CLI commands.
 
@@ -152,25 +146,6 @@ Add a project-level user:
 
  {:.bs-callout-warning}
    Only **Super Users** can manage users in any environment. To grant a user access to the **Users** tab when configuring the environment, another **Super User** or the **Account Owner** must assign that user the **Super User** role.
-
-{:.procedure}
-Add an environment-level user:
-
-1. In the Project Web UI, select the environment. Then, click **Configure environment**.
-
-   ![Configure the environment]({{ site.baseurl }}/common/images/cloud/cloud_project-env.png){:width="550px"}
-
-1. Click the **Users** tab, and then click **Add User**.
-
-1. Complete the _Add User_ form:
-
-   ![Add the user]({{ site.baseurl }}/common/images/cloud/cloud_project-add-env-user.png){:width="550px"}
-
-   -  Enter the user email address.
-
-   -  Select the user role from the dropdown menu: _Admin_, _Contributor_, or _Reader_.
-
-   -  Click *Add User*.
 
 {%include cloud/note-prevent-site-availability-issues.md%}
 

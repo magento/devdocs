@@ -96,7 +96,7 @@ This time, we will add two Voyage Yoga Bags (`24-WB01`).
 
 ## Search for pickup locations
 
-The `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint searches for locations, given a city name or postal code and a radius, in kilometers. You must also specify the sales channel code to search in the `scopeCode` parameter. The endpoint is described in detail in the [In-Store Pickup](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/in-store-pickup.html) reference topic.
+The `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint searches for locations, given a city name or postal code and a radius, in kilometers. You must also specify the sales channel code to search in the `scopeCode` parameter. The endpoint is described in detail in the [In-Store Pickup](https://developer.adobe.com/commerce/webapi/rest/inventory/in-store-pickup.html) reference topic.
 
 In this example, we will search for locations within 50 km of New York, New York that are pickup locations for product `24-WB01`.
 

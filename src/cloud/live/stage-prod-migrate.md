@@ -195,7 +195,7 @@ This command uses the following options:
 -  `v`–verbose
 -  `P`–partial progress
 
-See the [rsync man page](http://linux.die.net/man/1/rsync).
+See the [rsync man page](https://linux.die.net/man/1/rsync).
 
 {:.bs-callout-info}
 To transfer media from remote-to-remote environments directly, you must enable SSH agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).

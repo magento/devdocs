@@ -7,7 +7,7 @@ migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/debug/
 layout: migrated
 ---
 
-The topic describes how to install, configure, and use [Grunt JavaScript task runner](http://gruntjs.com/) to compile `.less` files in Magento 2.
+The topic describes how to install, configure, and use [Grunt JavaScript task runner](https://gruntjs.com/) to compile `.less` files in Magento 2.
 
 ## Prerequisites
 
@@ -127,5 +127,5 @@ To change or override any of these variables, simply create a file in `<theme-di
 ```
 
 [inherits]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
-[LiveReload extension]: http://livereload.com/extensions/
+[LiveReload extension]: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en
 [node.js]: https://nodejs.org/en/download/package-manager/

@@ -56,7 +56,7 @@ Database Compare is a test that compares the database schema and data between a 
 
 Magento Component Health Index is a test that analyses Magento code quality and calculates a weighted health index (100 is great, lower is worse) for each Magento Component (module). The index is calculated based on three groups of indicators:
 
--  [General code quality indicators (GCQI)](http://pdepend.org/documentation/software-metrics/index.html)
+-  [General code quality indicators (GCQI)](https://pdepend.org/documentation/software-metrics/index.html)
 -  Magento-specific code quality indicators (MSCQ)
 -  Legacy API usage indicators (LAI)
 

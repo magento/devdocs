@@ -140,7 +140,7 @@ Related topics
 [magento-ui-link]: {{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html
 [css-preprocessing]: {{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html
 [theme-create]: {{page.baseurl}}/frontend-dev-guide/themes/theme-create.html
-[css3-media-queries-wiki]: http://en.wikipedia.org/wiki/Media_queries
+[css3-media-queries-wiki]: https://en.wikipedia.org/wiki/Media_queries
 [breakpoints-link]: {{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms
 [theme-inherit]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
 [rwd-breakpoints]: {{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html

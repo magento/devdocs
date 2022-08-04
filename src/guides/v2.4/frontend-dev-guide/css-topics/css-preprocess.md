@@ -150,7 +150,7 @@ See the [Compile LESS with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topi
 The client-side compilation flow is similar to [server-side](#server-side). The difference is in the set of files, published to `pub/static` on the last step. In the client-side mode, the following files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
 
 -  root source (.less) files with resolved `@magento_import` directive
--  [symlinks](http://en.wikipedia.org/wiki/Symbolic_link) to the root source file that do not contain `@magento_import`
+-  [symlinks](https://en.wikipedia.org/wiki/Symbolic_link) to the root source file that do not contain `@magento_import`
 -  symlinks to all other `.less` files imported recursively by the `@magento_import` and `@import` directives
 
 {:.bs-callout-info}
@@ -160,7 +160,7 @@ Symlink is not created, and a copy of the processed file is published to `pub/st
 
 Client-side LESS compilation is implemented using the native `less.js` library. The default configuration is set in `lib/web/less/config.less.js`; you can change it as needed.
 
-You can find the detailed information about the configuration and other options of the `less.js` used in a browser at [http://lesscss.org/usage/#using-less-in-the-browser](http://lesscss.org/usage/#using-less-in-the-browser).
+You can find the detailed information about the configuration and other options of the `less.js` used in a browser at [https://lesscss.org/usage/#using-less-in-the-browser](https://lesscss.org/usage/#using-less-in-the-browser).
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
 
@@ -179,7 +179,7 @@ To clear the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory, delete t
 
 ## The `@import` directive rules of usage {#fedg_css-import}
 
-You can import local and remote `.less` and `.css` files in your `.less` Magento stylesheets by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
+You can import local and remote `.less` and `.css` files in your `.less` Magento stylesheets by using the standard LESS [`@import` directive](https://lesscss.org/features/#import-directives-feature).
 According to the `@import` syntax, specifying the file extension for the imported file is not mandatory. For example, the following notation is allowed:
 
 ```less
@@ -282,7 +282,7 @@ Example of how `@magento_import` is used and processed in `<Magento_Blank_theme_
 <!-- Link definitions -->
 [production application mode]: {{page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode
 [LESS PHP library]: https://github.com/wikimedia/less.php
-[native `less.js` library]: http://lesscss.org/usage/#using-less-in-the-browser
+[native `less.js` library]: https://lesscss.org/usage/#using-less-in-the-browser
 [Magento fallback mechanism]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static
 [publication]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview
 [root source files]: {{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms
