@@ -12,8 +12,10 @@ The Catalog Service query requires one or more SKU values as input. The query is
 
 *  Product compare pages - You can retrieve selected information about multiple products, such as the name, price and image.
 
+<!--
 {:.bs-callout-tip}
 Use the Live Search [`productSearch` query]({{site.baseurl}}/live-search/product-search.html) to return product listing page content.
+-->
 
 The `ProductView` output object is significantly different than the core `products` query `Products` output object. Key differences include:
 
