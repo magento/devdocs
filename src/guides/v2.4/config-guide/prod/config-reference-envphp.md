@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-envphp.html
+layout: migrated
 ---
 
 The `env.php` file contains the following sections:
@@ -209,6 +211,7 @@ The Magento deploy mode can be configured in this node.
 ```conf
 'MAGE_MODE' => 'developer'
 ```
+
 Learn more about [Magento Modes][magento-modes].
 
 ## queue
@@ -247,6 +250,7 @@ Magento session related configurations are stoted in the `session` node.
   'save' => 'files'
 ],
 ```
+
 Learn more about session in [Session][session].
 
 ## x-frame-options

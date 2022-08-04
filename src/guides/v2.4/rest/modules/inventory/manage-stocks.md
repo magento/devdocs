@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Manage stocks
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/manage-stocks/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-stocks/
 layout: migrated
 ---
 
