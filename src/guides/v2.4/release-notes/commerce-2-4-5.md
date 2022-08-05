@@ -145,6 +145,10 @@ The focus of this release has been on creating a storefront experience on Venia 
 
 Merchants can now allow customers to electronically sign customized agreements, such as warranty documents, purchase agreements, and terms and conditions, during {{ site.data.var.ee }} checkout.
 
+### Adobe Commerce integration with Adobe IMS
+
+Adobe Commerce merchants who have an Adobe ID and want a streamlined login to Adobe Commerce and Adobe Business products can integrate Commerce authentication with the Adobe IMS authentication workflow. After this integration is enabled for your Commerce store, each Admin user must use their Adobe credentials — not their Commerce credentials — to log in.  See [Integrating Adobe Commerce with Adobe IMS overview](https://experienceleague.adobe.com/docs/commerce-admin/start/admin/IMS-integration-overview.html).
+
 ### Branding and style changes
 
 The Admin has been updated to align with Adobe’s brand strategy. Changes affect headers, footers, data grid color updates, and navigation elements.
@@ -1410,13 +1414,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Updating an item quantity from the wish list page now updates the quantity on the product detail page as expected. {{ site.data.var.ee }} now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
 
-## Known issue
+## Known issues
 
-**Issue**: RabbitMQ infrastructure elements (exchanges, queues) may be not initialized after a fresh installation (not upgrade) of {{ site.data.var.ee }} 2.4.5. This incorrect configuration of RabbitMQ may result in a fatal error when asynchronous operations are executed or a performance profile is generated. Cloud deployments are not affected.
+**Issue**: Admin users cannot create an order or reorder for customers from the Admin when Braintree is enabled. When the Admin user clicks either **Order** or **Reorder**, {{ site.data.var.ee }} does not submit the order, and the  `system.log` displays this error: `report.CRITICAL: Error: Call to a member function getMethodInstance() on null in /app/vendor/paypal/module-braintree-core/Block/Form.php:174`. **Workaround**: A hotfix will be released in the near future. <!--- AC-6222-->
 
-**Workaround**:
-
-Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 on-premises should run `bin/magento setup:upgrade --keep-generated` after using `bin/magento setup:config:set` to configure RabbitMQ or install {{ site.data.var.ee }} by passing RabbitMQ configuration options to the `setup:install` command. See [RabbitMQ](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/install-rabbitmq.html).
+**Issue**: RabbitMQ infrastructure elements (exchanges, queues) may be not initialized after a fresh installation (not upgrade) of {{ site.data.var.ee }} 2.4.5. This incorrect configuration of RabbitMQ may result in a fatal error when asynchronous operations are executed or a performance profile is generated. Cloud deployments are not affected. **Workaround**: Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 on-premises should run `bin/magento setup:upgrade --keep-generated` after using `bin/magento setup:config:set` to configure RabbitMQ or install {{ site.data.var.ee }} by passing RabbitMQ configuration options to the `setup:install` command. See [RabbitMQ](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/install-rabbitmq.html).
 
 ## Community contributions
 
