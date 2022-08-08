@@ -135,6 +135,8 @@ Field | Data Type | Description
 
 The `ProductViewPriceRange` type lists the minimum and maximum price of a complex product.
 
+Field | Data Type | Description
+--- | --- | ---
 `maximum` | ProductViewPrice | Maximum price.
 `minimum` | ProductViewPrice | Minimum price.
 
