@@ -147,7 +147,7 @@ Merchants can now allow customers to electronically sign customized agreements, 
 
 ### Adobe Commerce integration with Adobe IMS
 
-Adobe Commerce merchants who have an Adobe ID and want a streamlined login to Adobe Commerce and Adobe Business products can integrate Commerce authentication with the Adobe IMS authentication workflow. After this integration is enabled for your Commerce store, each Admin user must use their Adobe credentials — not their Commerce credentials — to log in.  See [Integrating Adobe Commerce with Adobe IMS overview](https://experienceleague.adobe.com/docs/commerce-admin/start/admin/IMS-integration-overview.html).
+Adobe Commerce merchants who have an Adobe ID and want a streamlined login to Adobe Commerce and Adobe Business products can integrate Commerce authentication with the Adobe IMS authentication workflow. After this integration is enabled for your Commerce store, each Admin user must use their Adobe credentials — not their Commerce credentials — to log in.  See [Integrating Adobe Commerce with Adobe IMS overview](https://experienceleague.adobe.com/docs/commerce-admin/start/admin/ims/adobe-ims-integration-overview.html).
 
 ### Branding and style changes
 
