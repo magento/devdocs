@@ -35,7 +35,7 @@ The following sections describe some of the differences between the two GraphQL 
 
 ### Schema management
 
-Since Catalog Service operates as a service, its schema abstracts developers from the version of Adobe Commerce. The syntax of the queries will be the same for all versions. The schema is consistent for all merchants. As a result, it will be easier to establish best practices, and increase reuse of storefront widgets significantly.
+Since Catalog Service operates as a service, integrators do not need to be concerned about the underlying version of Commerce. The syntax of the queries will be the same for all versions. In addition, the schema is consistent for all merchants. As a result, it will be easier to establish best practices, and increase reuse of storefront widgets significantly.
 
 ### Simplification of product types
 
