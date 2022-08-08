@@ -335,8 +335,8 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 [translation dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries
 [configures the translations]: {{ site.user_guide_url }}/stores/store-language-add.html?Highlight=translation
 [Learn more about language packages]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack
-[ISO 639-1]: http://www.iso.org/iso/home/standards/language_codes.htm
-[ISO 3166]: http://www.iso.org/iso/country_codes.htm
+[ISO 639-1]: https://www.iso.org/iso-639-language-codes.html
+[ISO 3166]: https://www.iso.org/iso-3166-country-codes.html
 [registers]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [`de_de`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/i18n/Magento/de_DE/registration.php
 [`composer.json`]: {{ page.baseurl }}/extension-dev-guide/build/composer-integration.html

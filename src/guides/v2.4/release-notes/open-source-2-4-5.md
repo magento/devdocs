@@ -30,8 +30,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 *  use of a unique location rather than `/admin`
 *  good password hygiene
 
-See Adobe Security Bulletin for the latest discussion of these fixed issues.
-
+See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb22-38.html) for the latest discussion of these fixed issues.
 #### Additional security enhancements
 
 Security improvements for this release improve compliance with the latest security best practices, including:
@@ -1213,7 +1212,9 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Updating an item quantity from the wish list page now updates the quantity on the product detail page as expected. {{ site.data.var.ce }} now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
 
-## Known Issues
+## Known issues
+
+**Issue**: Admin users cannot create an order or reorder for customers from the Admin when Braintree is enabled. When the Admin user clicks either **Order** or **Reorder**, {{ site.data.var.ce }} does not submit the order, and the  `system.log` displays this error: `report.CRITICAL: Error: Call to a member function getMethodInstance() on null in /app/vendor/paypal/module-braintree-core/Block/Form.php:174`. **Workaround**: A hotfix will be released in the near future. <!--- AC-6222-->
 
 ## Community contributions
 

@@ -6,7 +6,7 @@ functional_areas:
   - Setup
 ---
 
-Magento supports nginx 1.18 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline)). You must also install the latest version of `php-fpm`.
+Magento supports nginx 1.18 (or the [latest mainline version](https://nginx.org/en/linux_packages.html#mainline)). You must also install the latest version of `php-fpm`.
 
 Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for information.
 

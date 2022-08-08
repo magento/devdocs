@@ -4,8 +4,49 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jul 25 17:25:21 2022
+updated: Mon Aug 1 14:39:11 2022
 entries:
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.17 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: July 29, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3084
+  merge_commit: ad83a6f3421322bf329cc188f87156e3e12cf21c
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: The [Admin Style Guide](https://devdocs.magento.com/guides/v2.4/design-styleguide/bk-styleguide.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/admin-developer/style-guide/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: July 27, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3078
+  merge_commit: cb086cbb486c54858420e46e751e2106b22a3849
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [UI Components Guide](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/frontend-core/javascript/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: July 26, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3067
+  merge_commit: 83d9c77729469dfa0ea5eef97e001f93f68ceb32
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: The [Vendor Bundled Extensions (VBEs)](https://devdocs.magento.com/extensions/vendor/)
     and [Extensions Introduction](https://devdocs.magento.com/extensions/) topics
     moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/modules/upgrade.html)
@@ -1288,7 +1329,7 @@ entries:
   - 2.3.x
   - 2.4.x
 - description: Updated the Cloud guide to [clarify log rotation tip](https://devdocs.magento.com/cloud/project/log-locations.html),
-    [delete custom VCL snippets](http://devdocs.magento.com/cloud/cdn/fastly-vcl-bypass-to-origin.html#delete-the-custom-vcl-snippet),
+    [delete custom VCL snippets](https://devdocs.magento.com/cloud/cdn/fastly-vcl-bypass-to-origin.html#delete-the-custom-vcl-snippet),
     and provide an additional example with multiple themes and locales for the [SCD_MATRIX
     build variable](https://devdocs.magento.com/cloud/env/variables-build.html#scd_matrix).
   versions: 2.x
@@ -2729,7 +2770,7 @@ entries:
   - Major Update
 - description: 'Published 2.3.7 dependencies reference: [OpenSource](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html),
     [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/packages-commerce.html),
-    [Cloud](http://devdocs.magento.com/guides/v2.3/release-notes/packages-cloud.html).'
+    [Cloud](https://devdocs.magento.com/guides/v2.3/release-notes/packages-cloud.html).'
   versions: 2.3.7
   type: Major Update
   date: May 11, 2021
@@ -3819,7 +3860,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8375
   contributor: Rykh
   profile: https://github.com/Rykh
-- description: Added an [explanation and example](http://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/requirejs.html)
+- description: Added an [explanation and example](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/requirejs.html)
     of passing parameters to JavaScript using the `data-mage-init` HTML attribute.
   versions: 2.3.x, 2.4.x
   type: Major Update
@@ -6043,7 +6084,7 @@ entries:
   type: Major update
   date: December 5, 2019
   link: https://github.com/magento/devdocs/pull/6086
-- description: Added a new topic for the [DynamicRowsDragAndDrop component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-dynamicrows-dnd.html)
+- description: Added a new topic for the [DynamicRowsDragAndDrop component](https://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-dynamicrows-dnd.html)
     in the _UI Components Guide_.
   versions: 2.2.x, 2.3.x
   type: New topic
@@ -6558,7 +6599,7 @@ entries:
   type: Major update
   date: September 18, 2019
   link: https://github.com/magento/devdocs/pull/5357
-- description: Added the [Sticky widget](http://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_sticky.html)
+- description: Added the [Sticky widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_sticky.html)
     topic to the _Javascript Developer Guide_.
   versions: 2.2.x, 2.3.x
   type: New topic
@@ -6616,7 +6657,7 @@ entries:
   type: Major update
   date: September 3, 2019
   link: https://github.com/magento/devdocs/pull/5307
-- description: Added information about how to use the REST API to [issue refunds](http://devdocs.magento.com/guides/v2.2/rest/modules/sales/refunds.html).
+- description: Added information about how to use the REST API to [issue refunds](https://devdocs.magento.com/guides/v2.2/rest/modules/sales/refunds.html).
   versions: 2.2.x, 2.3.x
   type: New topic
   date: August 30, 2019

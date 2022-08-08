@@ -9,6 +9,6 @@ content: "**Magento_MysqlMq** provides message queue implementation based on MyS
   messages\n\n\nFor information about a module installation in Magento 2, see [Enable
   or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
   Additional information\n\nFor information about significant changes in patch releases,
-  see [2.3.x Release information](http://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).\n\n###
+  see [2.3.x Release information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).\n\n###
   cron options\n\ncron group configuration can be set in `etc/crontab.xml`.\n\n- `mysqlmq_clean_messages`
   - clean up old messages from database"

@@ -316,6 +316,6 @@ To fix the problem, you might need to add the SSH key to your current session, o
 [add public ssh key]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html#ssh-add-to-account
 [Cloud account page]: https://accounts.magento.cloud/user
 [Create an API token]: {{ site.baseurl }}/cloud/project/user-admin.html#create-an-api-token
-[Enable TFA]: {{ site.baseurl }}/cloud/project/user-admin.html#enable-tfa-for-cloud-accounts
+[Enable TFA]: {{ site.baseurl }}/cloud/project/user-admin.html
 [Manage user access]: {{ site.baseurl }}/cloud/project/user-admin.html
 [Unable to access projects without MFA]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html#unable-to-access-projects-without-mfa

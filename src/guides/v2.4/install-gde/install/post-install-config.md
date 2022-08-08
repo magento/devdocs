@@ -51,8 +51,8 @@ The UNIX `logrotate` utility enables you to administer systems that generate lar
 For more information, see one of the following:
 
 *  [HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](https://www.thegeekstuff.com/2010/07/logrotate-examples)
-*  [stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app)
-*  [logrotate man page](http://linuxconfig.org/logrotate-8-manual-page)
+*  [stackexchange](https://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app)
+*  [logrotate man page](https://linuxconfig.org/logrotate-8-manual-page)
 
 ### Set up iptables rules to enable various Magento services to communicate.
 
@@ -61,7 +61,7 @@ Whether you have one server or many, you must open ports in the firewall to enab
 More information:
 
 *  Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo).
-*  CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
+*  CentOS: [CentOS how-to](https://wiki.centos.org/HowTos/Network/IPTables).
 
 ### Security Enhanced Linux (SELinux) rules
 

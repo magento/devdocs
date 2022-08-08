@@ -9,7 +9,7 @@ The Payment Services extension for Adobe Commerce and Magento Open Source can be
 
 See [Get your authentication keys]({{ site.baseurl }}{{ site.gdeurl }}/install-gde/prereq/connect-auth.html) for more information about obtaining Composer keys.
 
-There are two ways to install this extension---for [{{site.data.var.ece}}](#magento-commerce-cloud) or [On-premises](#on-premises) installations. These methods require you to use the Command Line Interface (CLI).
+There are two ways to install this extension---for {{site.data.var.ece}} or [On-premises](#on-premises) installations. These methods require you to use the Command Line Interface (CLI).
 
 ## Update minimum-stability setting
 

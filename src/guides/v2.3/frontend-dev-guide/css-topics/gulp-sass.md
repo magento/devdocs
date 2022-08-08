@@ -6,9 +6,9 @@ functional_areas:
   - Tools
 ---
 
-By default, Magento uses [Less](http://lesscss.org/) for themes styling. But you can use other stylesheet languages that can be compiled (processed) to CSS. For example, Sass is a popular alternative.
+By default, Magento uses [Less](https://lesscss.org/) for themes styling. But you can use other stylesheet languages that can be compiled (processed) to CSS. For example, Sass is a popular alternative.
 
-If you decide not to use Less and the default [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html), you need to create your own theme from scratch and use an alternative preprocessor. This topic describes how to configure and use the [Gulp](http://gulpjs.com/) task runner and the gulp-sass package for the Sass preprocessor.
+If you decide not to use Less and the default [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html), you need to create your own theme from scratch and use an alternative preprocessor. This topic describes how to configure and use the [Gulp](https://gulpjs.com/) task runner and the gulp-sass package for the Sass preprocessor.
 
 For details about adding a custom preprocessor, see [Add custom CSS preprocessor]({{ page.baseurl }}/frontend-dev-guide/css-topics/custom_preprocess.html).
 

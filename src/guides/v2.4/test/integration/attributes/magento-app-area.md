@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Application Area attribute
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/app-area/
+layout: migrated
 ---
 
 Configure a test environment in scope of the particular [application area][] with the `AppArea` annotation.

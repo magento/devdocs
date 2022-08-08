@@ -2,11 +2,13 @@
 group: configuration-guide
 title: Configure the database profiler
 contributor_name: Atish Goswami
-contributor_link: http://atishgoswami.com
+contributor_link: https://atishgoswami.com/
 functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/db-profiler.html
+layout: migrated
 ---
 
 ## About the database profiler
