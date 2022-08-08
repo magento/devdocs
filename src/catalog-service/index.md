@@ -21,7 +21,7 @@ The two Adobe Commerce GraphQL systems are shown in the following diagram:
 
 ![Catalog architecture diagram](images/catalog-service-architecture.png)
 
-In the core GraphQL system, the PWA sends a request to the Commerce application, which receives each request, processes it, possibly sending a request through multiple subsystems, then returns a response to the storefront. This round trip can cause slow page load times, potentially leading to lower conversion rates.
+In the core GraphQL system, the frontend client sends a request to the Commerce application, which receives each request, processes it, possibly sending a request through multiple subsystems, then returns a response to the storefront. This round trip can cause slow page load times, potentially leading to lower conversion rates.
 
 Catalog Service sends queries to a separate GraphQL gateway. The service accesses a separate database that contains product details and related information, such as product attributes, variants, prices, and categories. The service keeps the database in sync with the Adobe Commerce through indexation. Because the service bypasses direct communication with the application, it is able to reduce the latency of the request and response cycle.
 
