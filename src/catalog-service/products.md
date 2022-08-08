@@ -19,13 +19,11 @@ Use the Live Search [`productSearch` query]({{site.baseurl}}/live-search/product
 
 The `ProductView` output object is significantly different than the core `products` query `Products` output object. Key differences include:
 
-*  Products are either simple or complex. Simple and virtual products map to `SimpleProductView`. All other product types map to `ComplexProductView`. Simple products have defined prices. Complex products have price ranges. Since complex products are comprised of multiple simple products, they have access to simple product prices.
+*  Products are either simple or complex. Simple, virtual, downloadable, and gift card products map to `SimpleProductView`. All other product types map to `ComplexProductView`. Simple products have defined prices. Complex products have price ranges. Since complex products are comprised of multiple simple products, they have access to simple product prices.
 
 *  Merchant-defined attributes are exposed in a top-level container and indicate their storefront roles. Roles include Show on PDP, Show on PLP, and Show on Search Results.
 
 *  Images are also accessible as a top-level container and can be filtered by their role. An image can have a base, small, or thumbnail role.
-
-<!-- Cross-reference provides full details about Catalog Service capabilities. -->
 
 ## Syntax
 
