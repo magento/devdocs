@@ -23,7 +23,7 @@ Magento supports Apache 2.4.x.
 
 ## Important: Apache rewrites and .htaccess {#apache-help-rewrite}
 
-This topic discusses how to enable Apache 2.4 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html).
+This topic discusses how to enable Apache 2.4 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](https://httpd.apache.org/docs/current/howto/htaccess.html).
 
 Magento uses server rewrites and `.htaccess` to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.
 
@@ -137,7 +137,7 @@ To upgrade to Apache 2.4:
    ```
 
    {:.bs-callout-info}
-   If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa).
+   If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa).
 
 1. Verify the installation.
 
@@ -299,7 +299,7 @@ If you encounter 403 Forbidden errors when trying to access the Magento site, yo
 
 ### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
 
-To enable website visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html).
+To enable website visitors to access your site, use one of the [Require directives](https://httpd.apache.org/docs/2.4/howto/access.html).
 
 For example:
 

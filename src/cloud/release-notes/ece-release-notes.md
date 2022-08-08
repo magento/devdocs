@@ -21,6 +21,14 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v2002.1.11
+
+Release date: August 4, 2022
+
+-  {:.fix}**ElasticSuite Validator and Opensearch**—Fixed ElasticSuite integrity check validator issue when Opensearch is installed.<!-- MCLOUD-8767 -->
+-  {:.fix}**Return types for deploy commands**—Fixed return types for deploy commands.<!-- AC-3208 -->
+-  {:.fix}**RabbitMQ issue with new Magento 2.4.5 installation**—Fixed RabbitMQ crash issue on new Magento 2.4.5. installation.<!-- MCLOUD-9059 -->
+
 ## v2002.1.10
 
 Release date: March 31, 2022

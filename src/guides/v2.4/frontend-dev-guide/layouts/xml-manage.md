@@ -755,7 +755,7 @@ Related topics
 [Extend a layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html
 [Plugins (interceptors)]: {{page.baseurl}}/extension-dev-guide/plugins.html
 [Locate templates, layouts, and styles]: {{page.baseurl}}/frontend-dev-guide/themes/debug-theme.html
-[Conditional comments]: http://en.wikipedia.org/wiki/Conditional_comment
+[Conditional comments]: https://en.wikipedia.org/wiki/Conditional_comment
 [`<referenceContainer>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref
 [`<block>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block
 [`<referenceBlock>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref

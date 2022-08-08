@@ -173,4 +173,4 @@ Extensions that claim to support Magento Page Builder are subject to the followi
 1. For big extensions, where functionality is not concentrated in one particular area we can switch to the unaffected area and continue to test it in order to provide more errors to the developer. At the same time, we can stop testing once we have found 2 blockers in separate areas of an extension.
 
 [3]: https://opensource.org/licenses/OSL-3.0
-[4]: http://rosenlaw.com/OSL3.0-explained.htm
+[4]: https://rosenlaw.com/OSL3.0-explained.htm

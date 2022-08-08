@@ -12,7 +12,7 @@ For each operation (authorization, capture and so on) of a certain payment provi
 
 ## Interface
 
-Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
+Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](https://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
 
 ## Basic implementation
 

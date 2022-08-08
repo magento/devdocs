@@ -5,15 +5,16 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/varnish/config-varnish-install.html
+layout: migrated
 ---
 
 ## Install Varnish {#config-varnish-install}
 
 Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:
 
-*  [installation wiki](http://wiki.mikejung.biz/Varnish)
 *  [Varnish installation guides](https://www.varnish-cache.org/docs)
-*  [How to install Varnish (Tecmint)](http://www.tecmint.com/install-varnish-cache-web-accelerator)
+*  [How to install Varnish (Tecmint)](https://www.tecmint.com/install-varnish-cache-web-accelerator/)
 
 {:.bs-callout-info}
 This topic is written for Varnish on CentOS and Apache 2.4. If you are setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.<br><br>If you intend to install Varnish modules (vmods), such as saint mode, you should install Varnish by compiling the code, rather than installing from a package. See [Saint mode]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html#saint) for more details.

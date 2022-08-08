@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/manage-message-queues.html
+layout: migrated
 ---
 
 You can manage message queues from the command line using cron jobs or an external process manager to ensure that consumers are retrieving messages.
@@ -28,7 +30,7 @@ The following example shows the Magento `crontab` configuration for running cons
 {:.bs-callout-info}
 How often you check message queues depends on your business logic and available system resources. In general, you'll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define `cron` schedules according to your business needs.<br><br>It can be configured in Admin Panel **Stores > Settings > Configuration > Advanced > System > Cron configuration options for group: consumers**<br><br>See [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) for more information about using `cron` with Magento.
 
-You can also use a process manager such as [Supervisor](http://supervisord.org/index.html) to monitor the status of processes. The manager can use the command line to restart the processes as needed.
+You can also use a process manager such as [Supervisor](https://supervisord.org/index.html) to monitor the status of processes. The manager can use the command line to restart the processes as needed.
 
 ### Configuration
 
