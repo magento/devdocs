@@ -157,15 +157,6 @@ Enabling the new **Enabled Shared Catalog direct product price assigning** con
 
 This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
-### Channel Manager
-
-Channel Manager can now trigger refunds from {{ site.data.var.ee }}. Merchants can now manage the entire order workflow from within {{ site.data.var.ee }}, including these tasks:
-
-*  Process refunds from {{ site.data.var.ee }}
-*  Refund shoppers using the origin form of payment
-
-Requests are now automatically synced back to the Walmart Marketplace.
-
 ### Google Analytics
 
 Google has updated the tracking and integration mechanisms of AdWords and Analytics in web applications through integration with GTag. This integration of Google functionality into website pages extends opportunities to track and manage content through Google Services. Adobe Commerce has a set of built-in modules including Google AdWords, Analytics, Optimizer, and TagManager that leverage the former API for integration with Google services.  In this release,  we have re-implemented this integration using the GTag approach.​ See [Migrate from analytics.js to gtag.js (Universal Analytics)](https://developers.google.com/analytics/devguides/migration/ua/analyticsjs-to-gtagjs).
@@ -178,7 +169,7 @@ GraphQL performance enhancements include:
 
 *  Added capability to consume the expiration date/time of the authorization token through the use of JSON Web Tokens (JWT) in the GraphQL API.
 
-*  The `bin/magento config:set graphql/session/disable 1` command allows merchants of Adobe Commerce to to completely disable the creation of session cookies for all GraphQL operations. By default, Adobe Commerce creates these cookies and relies on them for authorization, which affects performance. Going forward, the only form of authorization we recommend for GraphQL requests is authorization tokens that should not used in combination with cookies. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
+*  The `bin/magento config:set graphql/session/disable 1` command allows merchants to completely disable the creation of session cookies for all GraphQL operations. By default, {{ site.data.var.ee }} creates these cookies and relies on them for authorization, which affects performance. Going forward, we recommend using tokens as the only form of authorization for GraphQL requests. We do not recommend using session cookies alone or in conjunction with authorization tokens. See [GraphQL Authorization]({{page.baseurl}}/graphql/authorization-tokens.html). <!--- B2B-2204--->
 
 *  Session cookies are now launched in GraphQL operations using class proxies only when needed. <!--- B2B-2217--->
 
@@ -832,10 +823,6 @@ We have fixed hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 *  Added a plugin before the `collectQuoteTotals` call to ensure store credits are not applied multiple times.
 
-<!--- AC-441-->
-
-*  Creating a new special price schedule with the `POST /V1/products/special-price` endpoint now works as expected. Previously, the endpoint returned this error: `Future Update already exists in this time range. Set a different range and try again`.
-
 <!--- ACP2E-636-->
 
 *  The `generateCustomerTokenAsAdmin` mutation now retrieves customer tokens as expected. Previously, tokens were not returned, and this error was returned: `Customer email provided does not exist`.
@@ -867,10 +854,6 @@ We have fixed hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 <!--- AC-2063-->
 
 *  The `generateCustomerToken` mutation now creates an entry in the `customer_log` as expected after generating a customer token. [GitHub-33378](https://github.com/magento/magento2/issues/33378)
-
-<!--- AC-1169-->
-
-*  The `/V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**. [GitHub-30132](https://github.com/magento/magento2/issues/30132)
 
 ### Google Analytics
 
@@ -1413,15 +1396,29 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The Bulk Rest API now works with the `bySku` option for configurable products. Previously, it returned a 500 error.
 
+<!--- AC-1169-->
+
+*  The `/V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**. [GitHub-30132](https://github.com/magento/magento2/issues/30132)
+
+<!--- AC-441-->
+
+*  Creating a new special price schedule with the `POST /V1/products/special-price` endpoint now works as expected. Previously, the endpoint returned this error: `Future Update already exists in this time range. Set a different range and try again`.
+
 ### Wish list
 
 <!--- ACP2E-459-->
 
 *  Updating an item quantity from the wish list page now updates the quantity on the product detail page as expected. {{ site.data.var.ee }} now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
 
-## Known issues
+## Known issue
 
-**Issue**: {{ site.data.var.ee }} displays the following message when an administrator logs in: `Invalid security or form key. Please refresh the page`. **Workaround**: Refresh the page. To permanently remove this error occurrence,  you can lengthen the session lifetime from the command line (for example, `bin/magento config:set admin/security/session_lifetime 10800`).  [GitHub-33749](https://github.com/magento/magento2/issues/33749) <!--- AC-734-->
+**Issue**: RabbitMQ infrastructure elements (exchanges, queues) may be not initialized after a fresh installation (not upgrade) of {{ site.data.var.ee }} 2.4.5. This incorrect configuration of RabbitMQ may result in a fatal error when asynchronous operations are executed or a performance profile is generated.
+
+**Workarounds**:
+
+Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 for Cloud must run `bin/magento setup:upgrade --keep-generated` using ssh or redeploy on Cloud without uninstalling {{ site.data.var.ee }} 2.4.5. (Redeploy automatically runs `setup:upgrade`.) We will release an upgrade to `ece-tools` before {{ site.data.var.ee }} 2.4.5 General Availability that will resolve this issue.
+
+Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 on-premises should run `bin/magento setup:upgrade --keep-generated` after using `bin/magento setup:config:set` to configure RabbitMQ or install {{ site.data.var.ee }} by passing RabbitMQ configuration options to the `setup:install` command. See [RabbitMQ](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/install-rabbitmq.html).
 
 ## Community contributions
 

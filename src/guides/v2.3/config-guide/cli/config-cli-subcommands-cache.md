@@ -43,6 +43,7 @@ To view the status of the cache, enter
 A sample follows:
 
 ```terminal
+Current status:
                 config: 1
                 layout: 1
             block_html: 1
