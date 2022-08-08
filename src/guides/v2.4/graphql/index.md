@@ -4,7 +4,7 @@ title: GraphQL Overview
 landing-page: GraphQL Developer's Guide
 ---
 
-[GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
+[GraphQL](https://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
 
 ## How to access GraphQL
 

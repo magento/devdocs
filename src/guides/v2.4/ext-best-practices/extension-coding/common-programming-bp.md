@@ -17,9 +17,9 @@ Coding standards are a set of guidelines that describe how code should be writte
 
 [Magento's Coding Standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html) are based on the following:
 
-*  [Zend Coding standards](http://framework.zend.com/manual/1.12/en/coding-standard.html)
-*  [PSR2](http://www.php-fig.org/psr/psr-2/)
-*  [PSR4](http://www.php-fig.org/psr/psr-4/)
+*  [Zend Coding standards](https://framework.zend.com/manual/1.12/en/coding-standard.html)
+*  [PSR2](https://www.php-fig.org/psr/psr-2/)
+*  [PSR4](https://www.php-fig.org/psr/psr-4/)
 
 To help you stick to coding standards, we recommend using the [PHP_CodeSniffer tool](https://github.com/squizlabs/PHP_CodeSniffer).
 

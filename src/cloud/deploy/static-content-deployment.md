@@ -36,7 +36,7 @@ Generating static content requires access to themes and locales. {{site.data.var
 {:.procedure}
 To configure your project to generate SCD on build:
 
-1. Log in to your Cloud environment using SSH and move locales to the file system, then update the [`config.php` file]({{site.baseurl}}/cloud/project/project-upgrade.html#create-a-new-configphp-file).
+1. Log in to your Cloud environment using SSH and move locales to the file system, then update the [`config.php` file]({{site.baseurl}}/cloud/project/project-upgrade.html).
 
 1. The `.magento.env.yaml` configuration file should contain the following values:
 

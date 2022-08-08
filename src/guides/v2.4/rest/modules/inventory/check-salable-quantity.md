@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Check salable quantities
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/check-salable-quantity/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/check-salable-quantity/
 layout: migrated
 ---
 

@@ -45,7 +45,7 @@ To ensure that users with special needs – including the use of screen readers 
 
 For more guidance, see this summary of [Web Content Accessibility Guidelines (WCAG) 2.0 standards](https://www.w3.org/WAI/WCAG20/glance/).
 
-Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php), Admin content should score above 50, which is approximately high-school level.
+Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](https://www.readabilityformulas.com/free-readability-formula-tests.php), Admin content should score above 50, which is approximately high-school level.
 
 **Use correct terms and content style.**
 

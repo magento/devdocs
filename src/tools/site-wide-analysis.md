@@ -226,7 +226,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 
 ### Run the agent
 
-We recommend configuring the agent to run as a service. If you have limited access to your infrastructure and do not have root permissions, then you must use [cron](#run-with-cron) instead.
+We recommend configuring the agent to run as a service. If you have limited access to your infrastructure and do not have root permissions, then you must use cron instead.
 
 #### Service
 

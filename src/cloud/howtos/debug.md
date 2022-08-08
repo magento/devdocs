@@ -176,12 +176,12 @@ To troubleshoot the connection:
 
 #### Port forwarding on Windows {#portwindows}
 
-To set up port forwarding (SSH tunneling) on Windows, you must configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). You can use other applications such as Cygwin. For more information on other applications, see the vendor documentation provided with those applications.
+To set up port forwarding (SSH tunneling) on Windows, you must configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). You can use other applications such as Cygwin. For more information on other applications, see the vendor documentation provided with those applications.
 
 {:.procedure}
 To set up an SSH tunnel on Windows using Putty:
 
-1. If you have not already done so, download [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+1. If you have not already done so, download [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
 1. Start Putty.
 

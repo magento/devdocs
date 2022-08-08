@@ -11,7 +11,7 @@ redirect_from:
 
 You can create the Docker Compose configuration to build and deploy the Docker containers for your {{site.data.var.ee}} project from the following sources:
 
--  [{{site.data.var.ece}} project configuration files](#magento-commerce-cloud-configuration) for Cloud projects
+-  [{{site.data.var.ece}} project configuration files](#cloud-configuration-for-commerce) for Cloud projects
 -  [Unified configuration](#unified-configuration) (`.magento.docker.yml`) for On-premises projects
 -  [CLI configuration](#cli-configuration) using `ece-docker build:compose` command options
 -  [Custom Docker Compose configuration file](#build-a-custom-docker-compose-configuration) supports installation for both Cloud and On-premises projects

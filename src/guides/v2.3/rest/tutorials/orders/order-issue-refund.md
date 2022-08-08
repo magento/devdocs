@@ -84,4 +84,4 @@ Related topics
 *  [Getting Started with Magento Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
 *  [Create a configurable product Tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html)
 *  [REST API Reference Overview]({{ page.baseurl }}/rest/bk-rest.html)
-*  [REST API documentation]({{site.baseurl}}/redoc/{{page.guide_version}}/)
+*  [REST API documentation](https://magento.redoc.ly/)

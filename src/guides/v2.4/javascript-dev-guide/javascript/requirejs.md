@@ -7,7 +7,7 @@ migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/requi
 layout: migrated
 ---
 
-This topic describes general concepts of how the [RequireJS library](http://requirejs.org) is used in Magento, with examples. Please refer to official RequireJS documentation for in-depth explanation.
+This topic describes general concepts of how the [RequireJS library](https://requirejs.org) is used in Magento, with examples. Please refer to official RequireJS documentation for in-depth explanation.
 
 RequireJS is a JavaScript file and module loader. It improves perceived page load times because it allows JavaScript to load in the background. In particular, it enables asynchronous JavaScript loading.
 

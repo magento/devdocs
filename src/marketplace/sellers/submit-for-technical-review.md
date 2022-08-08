@@ -127,11 +127,11 @@ All products and services are subject to the same Commerce Marketplace terms and
 |[Shared Packages]({{ site.baseurl }}/marketplace/sellers/shared-packages.html)|If applicable, identifies each shared package that is required by this extension.|
 
 [1]: https://opensource.org/licenses/AFL-3.0
-[2]: http://www.apache.org/licenses/LICENSE-2.0
+[2]: https://www.apache.org/licenses/LICENSE-2.0
 [3]: https://opensource.org/licenses/BSD-2-Clause
-[4]: http://www.gnu.org/licenses/quick-guide-gplv3.html
+[4]: https://www.gnu.org/licenses/quick-guide-gplv3.html
 [5]: https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility
-[6]: http://www.gnu.org/licenses/lgpl-3.0.en.html
+[6]: https://www.gnu.org/licenses/lgpl-3.0.en.html
 [7]: https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility
 [8]: https://opensource.org/licenses/MIT
 [9]: https://www.mozilla.org/en-US/MPL/1.1/)

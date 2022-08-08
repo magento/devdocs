@@ -12,7 +12,7 @@ layout: migrated
 In Magento application templates are the part of the view layer. Templates define exactly how the content of [layout blocks]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) is presented on a page: order, [CSS](https://glossary.magento.com/css) classes, elements grouping, and so on.
 In most cases, templates do not contain any logic about whether they will or will not be rendered, this is typically handled by the [layout](https://glossary.magento.com/layout) files. Once a template is called in a layout, it will be displayed.
 
-Default Magento templates are [PHTML](https://glossary.magento.com/phtml) files. Also HTML templates are used for [Knockout JS](http://knockoutjs.com/index.html) scripts.
+Default Magento templates are [PHTML](https://glossary.magento.com/phtml) files. Also HTML templates are used for [Knockout JS](https://knockoutjs.com/index.html) scripts.
 
 {:.bs-callout-info}
 [The Magento template rendering subsystem]({{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html) supports multiple template engines, including the default PHP-based engine for processing PHTML templates.

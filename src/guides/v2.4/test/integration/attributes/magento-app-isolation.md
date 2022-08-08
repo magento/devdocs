@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Application isolation attribute
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/app-isolation/
+layout: migrated
 ---
 
 An application state can be changed during test execution.
