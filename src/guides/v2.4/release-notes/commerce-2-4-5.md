@@ -38,7 +38,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 *  Use of a unique location rather than `/admin`
 *  Good password hygiene
 
-See Adobe Security Bulletin for the latest discussion of these fixed issues.
+See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb22-38.html) for the latest discussion of these fixed issues.
 
 #### Additional security enhancements
 
@@ -143,7 +143,11 @@ The focus of this release has been on creating a storefront experience on Venia 
 
 ### Adobe Sign
 
-Merchants can now include an esignature agreement page powered by Adobe Sign in the {{ site.data.var.ee }} checkout.
+Merchants can now allow customers to electronically sign customized agreements, such as warranty documents, purchase agreements, and terms and conditions, during {{ site.data.var.ee }} checkout.
+
+### Adobe Commerce integration with Adobe IMS
+
+Adobe Commerce merchants who have an Adobe ID and want a streamlined login to Adobe Commerce and Adobe Business products can integrate Commerce authentication with the Adobe IMS authentication workflow. After this integration is enabled for your Commerce store, each Admin user must use their Adobe credentials — not their Commerce credentials — to log in.  See [Adobe Identity Management Service (IMS) Integration Overview](https://experienceleague.adobe.com/docs/commerce-admin/start/admin/ims/adobe-ims-integration-overview.html).
 
 ### Branding and style changes
 
@@ -183,7 +187,7 @@ Inventory template security has been enhanced.
 
 ### Live Search
 
-This release introduces support for B2B customer groups and custom pricing. Livesearch now respects product assignments to customer groups and the pricing that is set for a specific customer group/shared catalog.
+This release introduces support for B2B customer groups and custom pricing. Live Search now respects product assignments to customer groups and the pricing that is set for a specific customer group/shared catalog.
 
 ### Page Builder
 
@@ -1410,15 +1414,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Updating an item quantity from the wish list page now updates the quantity on the product detail page as expected. {{ site.data.var.ee }} now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
 
-## Known issue
+## Known issues
 
-**Issue**: RabbitMQ infrastructure elements (exchanges, queues) may be not initialized after a fresh installation (not upgrade) of {{ site.data.var.ee }} 2.4.5. This incorrect configuration of RabbitMQ may result in a fatal error when asynchronous operations are executed or a performance profile is generated.
+**Issue**: Admin users cannot create an order or reorder for customers from the Admin when Braintree is enabled. When the Admin user clicks either **Order** or **Reorder**, {{ site.data.var.ee }} does not submit the order, and the  `system.log` displays this error: `report.CRITICAL: Error: Call to a member function getMethodInstance() on null in /app/vendor/paypal/module-braintree-core/Block/Form.php:174`. **Workaround**: A hotfix will be released in the near future. <!--- AC-6222-->
 
-**Workarounds**:
-
-Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 for Cloud must run `bin/magento setup:upgrade --keep-generated` using ssh or redeploy on Cloud without uninstalling {{ site.data.var.ee }} 2.4.5. (Redeploy automatically runs `setup:upgrade`.) We will release an upgrade to `ece-tools` before {{ site.data.var.ee }} 2.4.5 General Availability that will resolve this issue.
-
-Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 on-premises should run `bin/magento setup:upgrade --keep-generated` after using `bin/magento setup:config:set` to configure RabbitMQ or install {{ site.data.var.ee }} by passing RabbitMQ configuration options to the `setup:install` command. See [RabbitMQ](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/install-rabbitmq.html).
+**Issue**: RabbitMQ infrastructure elements (exchanges, queues) may be not initialized after a fresh installation (not upgrade) of {{ site.data.var.ee }} 2.4.5. This incorrect configuration of RabbitMQ may result in a fatal error when asynchronous operations are executed or a performance profile is generated. Cloud deployments are not affected. **Workaround**: Merchants performing a fresh installation of {{ site.data.var.ee }} 2.4.5 on-premises should run `bin/magento setup:upgrade --keep-generated` after using `bin/magento setup:config:set` to configure RabbitMQ or install {{ site.data.var.ee }} by passing RabbitMQ configuration options to the `setup:install` command. See [RabbitMQ](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/install-rabbitmq.html).
 
 ## Community contributions
 
