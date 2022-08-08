@@ -4,8 +4,86 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 8 15:40:08 2022
+updated: Mon Aug 8 17:43:36 2022
 entries:
+- description: Added the Adobe Commerce 2.4.5 and Magento Open Source 2.4.5 release
+    notes. See [2.4.x Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.3.7, 2.4.5
+  type: Major Update
+  date: August 9, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3096
+  merge_commit: dc2b49b7d10f878648082f4b145007c7c6c7de7c
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.7
+  - 2.4.5
+- description: 'Added an architectural overview of the [Catalog Service](https://devdocs.magento.com/catalog-service/index.html)
+    along with two queries: [`products`](https://devdocs.magento.com/catalog-service/products.html)
+    and [`refineProduct`](https://devdocs.magento.com/catalog-service/refine-product.html)'
+  versions: 2.4.5
+  type: New Topic
+  date: August 9, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3097
+  merge_commit: e2270b30e60cd11199cfb0773b568aa430a94933
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.5
+- description: Added an example command to [RabbitMQ](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/install-rabbitmq.html)
+    that illustrates how to set RabbitMQ configuration values.
+  versions: 2.4.5
+  type: Technical
+  date: August 9, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3076
+  merge_commit: 22eb8a3de79ab8b9764a3f62d56d69af7ad3988d
+  contributor: adifucan
+  membership: true
+  labels:
+  - Technical
+  - 2.4.5
+- description: Updated the [availability](https://devdocs.magento.com/release/availability.html)
+    and compatibility of Adobe-developed extensions for Adobe Commerce and Magento
+    Open Source 2.4.5.
+  versions: 2.4.5
+  type: Major Update
+  date: August 9, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3059
+  merge_commit: f7910fa04f3f8bd0a46580f314ec7a90be25eddc
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.5
+- description: "[GraphQL Authorization](https://devdocs.magento.com/guides/v2.4/graphql/authorization-tokens.html)
+    now describes session cookies and includes a command to disable them."
+  versions: 2.4.5
+  type: Major Update
+  date: August 9, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3014
+  merge_commit: 14647c33fa8db79febfe1966f31a43e27210e568
+  contributor: keharper
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.5
+- description: The message broker is now defined dynamically, depending on the deployment
+    configuration of the `queue` section in the  `env.php` file. AMQP connections
+    are used if they are configured in the file. Otherwise, database connections are
+    used. See [Manage message queues](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/manage-message-queues.html)
+    for more information.
+  versions: 2.4.5
+  type: Major Update
+  date: August 9, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2764
+  merge_commit: bd5166881ed4db31f64ff025c4b1056dab2470ac
+  contributor: adifucan
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.5
 - description: "[Cloud Tools release 2002.1.11](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v2002111)."
   versions: 2.x
   type: Major Update
