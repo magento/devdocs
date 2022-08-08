@@ -4,8 +4,60 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 1 14:39:11 2022
+updated: Mon Aug 8 15:40:08 2022
 entries:
+- description: "[Cloud Tools release 2002.1.11](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v2002111)."
+  versions: 2.x
+  type: Major Update
+  date: August 4, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3087
+  merge_commit: 1115afadb0fca7d88f9e21133eb1dabbdb65e1ab
+  contributor: BaDos
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: The [Application Testing Guide](https://devdocs.magento.com/guides/v2.4/test/testing.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/testing/guide/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: August 4, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3094
+  merge_commit: a0be01dd327face4c20cf1525b31307133406e6e
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Configuration guide](https://devdocs.magento.com/guides/v2.4/config-guide/bk-config-guide.html)
+    has moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/overview.html).
+  versions: 2.4.x
+  type: Major Update
+  date: August 3, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3091
+  merge_commit: 4709b9eaeec4f4b3827c6d4c194546730b99edd3
+  contributor: hguthrie
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Admin Design Pattern Library](https://devdocs.magento.com/guides/v2.4/pattern-library/bk-pattern.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/admin-developer/pattern-library/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: August 2, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3090
+  merge_commit: 574707a94bba39d3f400d3ac113ba98eca63be9f
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.1.17 Quality Patches Tool (QPT) package release.
   versions: 2.3.x, 2.4.x
