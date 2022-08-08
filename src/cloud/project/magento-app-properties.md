@@ -64,7 +64,7 @@ dependencies:
 hooks:
     build: |
         set -e
-        composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
+        composer --no-dev --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 ```
 
 ## `access`
