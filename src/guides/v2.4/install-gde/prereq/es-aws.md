@@ -56,5 +56,5 @@ For additional information, see the [OpenSearch AWS documentation][].
 [Elasticdump]: https://www.npmjs.com/package/elasticdump
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 [Migrating to Amazon OpenSearch Service]: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/migration.html
-[OpenSearch AWS documentation]: https://github.com/magento/devdocs/edit/master/src/guides/v2.4/install-gde/prereq/es-aws.md
+[OpenSearch AWS documentation]: https://docs.aws.amazon.com/opensearch-service/index.html
 [Advanced Install]: {{ page.baseurl }}/install-gde/install/cli/install-cli.html
