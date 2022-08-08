@@ -8,7 +8,7 @@ ee_only: True
 Catalog Service for Adobe Commerce is in Beta release and is available to {{site.data.var.ece}} and {{site.data.var.ee}} customers only. See the Catalog Service [onboarding and installation](
 https://experienceleague.adobe.com/docs/commerce-merchant-services/catalog-service/overview.html) documentation for details about signing up for the program.
 
-The Catalog Service is an extension that uses GraphQL to provide rich view-model (read-only) catalog data to quickly and fully render product-related content, including product detail pages and product list pages. Catalog Service, along with [Live Search]({{site.baseurl}}/live-search/overview.html), each implement queries that return information that is not available to the [`products` query]({{site.baseurl}}/guides/v2.4/graphql/queries/products.html) on Adobe Commerce and Magento Open Source. For example, the Catalog Service [`products` query](products.html) treats all products as either simple or complex. Simple products have a single price, while complex products have a price range. The Live Search [`productSearch` query](../live-search/product-search.html) returns detailed facet information.
+The Catalog Service is a SaaS service exposed via GraphQL queries to provide rich view-model (read-only) catalog data to quickly and fully render product-related content on storefront, including product detail pages and product list pages. Catalog Service, along with [Live Search]({{site.baseurl}}/live-search/overview.html), each implement queries that return information that is not available to the [`products` query]({{site.baseurl}}/guides/v2.4/graphql/queries/products.html) on Adobe Commerce and Magento Open Source. For example, the Catalog Service [`products` query](products.html) treats all products as either simple or complex. Simple products have a single price, while complex products have a price range. The Live Search [`productSearch` query](../live-search/product-search.html) returns detailed facet information.
 
 You run these queries by sending them to a federated gateway. The URL is provided when you onboard.
 
@@ -21,9 +21,9 @@ The two Adobe Commerce GraphQL systems are shown in the following diagram:
 
 ![Catalog architecture diagram](images/catalog-service-architecture.png)
 
-In the core GraphQL system, the frontend client sends a request to the Commerce application, which receives each request, processes it, possibly sending a request through multiple subsystems, then returns a response to the storefront. This round trip can cause slow page load times, potentially leading to lower conversion rates.
+In the core GraphQL system, the frontend client sends a request to the Commerce application, which receives each request, processes it, possibly sending a request through multiple subsystems, then returns a response to the storefront. This round trip can cause slow page load times, potentially impacting conversion rates.
 
-Catalog Service sends queries to a separate GraphQL gateway. The service accesses a separate database that contains product details and related information, such as product attributes, variants, prices, and categories. The service keeps the database in sync with the Adobe Commerce through indexation. Because the service bypasses direct communication with the application, it is able to reduce the latency of the request and response cycle.
+Catalog Service sends queries to a separate GraphQL gateway. The service accesses a separate data store that contains product details and related information, such as product attributes, variants, prices, and categories. The service keeps the database in sync with the Adobe Commerce through indexation. Because the service bypasses direct communication with the application, it is able to reduce the latency of the request and response cycle.
 
 The core and service GraphQL systems do not directly communicate with each other. You access each system from a different URL, and calls require different header information. The two GraphQL systems are designed to be used together. The [!DNL Catalog Service] GraphQL system augments the core system to make product storefront experiences faster.
 
