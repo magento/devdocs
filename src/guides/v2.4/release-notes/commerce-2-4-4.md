@@ -1895,6 +1895,8 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 ## Known issues
 
+**Issue**: Merchants may notice package version downgrade notices during upgrade from {{ site.data.var.ee }} 2.4.4 to {{ site.data.var.ee }} 2.4.4-p1. These messages can be ignored. The discrepancy in package versions result from anomalies during package generation. No product functionality has been affected. See the [Packages downgraded after upgrading from 2.4.4 to 2.4.4-p1](https://support.magento.com/hc/en-us/articles/8214752983949)  Knowledge Base article for a discussion of affected scenarios and workarounds.
+
 **Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree. When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not  editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`. See the [Adobe Commerce 2.4.4: Unable to create partial invoices](https://support.magento.com/hc/en-us/articles/4487952754957-Adobe-Commerce-2-4-4-Unable-to-create-partial-invoices) Knowledge Base article.  <!--- BUNDLE-3088-->
 
 **Issue**: Shoppers cannot add a product to their cart when no options are selected in Admin **Store** >  **Configuration** > **General** > **Country Options** > **Allow Countries**. {{ site.data.var.ee }} instead displays this following console error: `Failed to load resource: the server responded with a status of 400 (Bad Request)`. <!--- AC-2564-->
