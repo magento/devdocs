@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Using PHP built-in attributes
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/
+layout: migrated
 ---
 
 [PHP built-in attributes][] help to declare context in your code. Attributes can be used alone or together with Annotations to help to declare context in your code.
