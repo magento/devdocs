@@ -520,10 +520,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} no longer modifies related product prices when the configurable product attributes are changed. Previously, the Minimum Advertised Price (MAP) for a configurable product overwrote the price of related products on the store front.
 
-<!--- MC-41796-->
-
-*  {{ site.data.var.ee }} no longer throws an exception when performing a mass attribute update action on the product grid when a product has a `datetime` attribute.
-
 <!--- MC-42659-->
 
 *  Administrators can now re-assign the last product remaining in a category and save the empty category.
