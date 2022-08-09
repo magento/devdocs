@@ -1677,6 +1677,8 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 ## Known Issues
 
+**Issue**: Merchants may notice package version downgrade notices during upgrade from {{ site.data.var.ee }} 2.4.4 to {{ site.data.var.ee }} 2.4.4-p1. These messages can be ignored. The discrepancy in package versions results from anomalies during package generation. No product functionality has been affected. See the [Packages downgraded after upgrading from 2.4.4 to 2.4.4-p1](https://support.magento.com/hc/en-us/articles/8214752983949)  Knowledge Base article for a discussion of affected scenarios and workarounds.
+
 **Issue**: Shoppers cannot add a product to their cart when no options are selected in Admin **Store** >  **Configuration** > **General** > **Country Options** > **Allow Countries**. {{ site.data.var.ce }} instead displays this following console error: `Failed to load resource: the server responded with a status of 400 (Bad Request)`. <!--- AC-2564-->
 
 **Issue**: The description of Dotdigital on **Find Partners and Extensions** > **Magento Marketplace** is outdated. Here is an updated description:
