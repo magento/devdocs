@@ -89,7 +89,8 @@ Use this environment variable to confirm message queues are running after a depl
 -  `multiple_processes`-A number specifying the number of processes to spawn for each consumer. Supported in Magento **2.4.4** or greater.
 
 {:.bs-callout-info}
-To return a list of message queue `consumers`, run the command `./bin/magento queue:consumers:list`.  
+
+To return a list of message queue `consumers`, run the command `./bin/magento queue:consumers:list`.
 
 Example array that runs specific `consumers` and the `multiple_processes` to spawn for each consumer:
 
