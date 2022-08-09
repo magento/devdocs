@@ -85,7 +85,13 @@ Use this environment variable to confirm message queues are running after a depl
 -  `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
 -  `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
 -  `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers.
+
 -  `multiple_processes`-A number specifying the number of processes to spawn for each consumer. Supported in Magento **2.4.4** or greater.
+
+{:.bs-callout-info}
+To return a list of message queue `consumers`, run the command `./bin/magento queue:consumers:list`.  
+
+Example array that runs specific `consumers` and the `multiple_processes` to spawn for each consumer:
 
 ```yaml
 stage:
@@ -101,7 +107,7 @@ stage:
         consumer2: 3
 ```
 
-Example of an empty array that runs all consumers:
+Example of an empty array that runs all `consumers`:
 
 ```yaml
 stage:
@@ -114,25 +120,19 @@ stage:
 
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-message-queues.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
-The following command returns a list of message queue consumers:
-
-```bash
-./bin/magento queue:consumers:list
-```
-
 ### `CONSUMERS_WAIT_FOR_MAX_MESSAGES`
 
 -  **Default**—`false`
 -  **Version**—{{site.data.var.ee}} 2.2.0 and later
 
-Configure how consumers process messages from the message queue by choosing one of the following options:
+Configure how `consumers` process messages from the message queue by choosing one of the following options:
 
 -  `false`—Consumers process available messages in the queue, close the TCP connection, and terminate. Consumers do not wait for additional messages to enter the queue, even if the number of processed messages is less than the `max_messages` value specified in the `CRON_CONSUMERS_RUNNER` deploy variable.
 
 -  `true`—Consumers continue to process messages from the message queue until reaching the maximum number of messages (`max_messages`) specified in the `CRON_CONSUMERS_RUNNER` deploy variable before closing the TCP connection and terminating the consumer process. If the queue empties before reaching `max_messages`, the consumer waits for more messages to arrive.
 
 {:.bs-callout-warning}
-If you use workers to run consumers instead of using a cron job, set this variable to true.
+If you use workers to run `consumers` instead of using a cron job, set this variable to true.
 
 ```yaml
 stage:
