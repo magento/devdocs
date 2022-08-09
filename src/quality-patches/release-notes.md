@@ -21,6 +21,18 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.17
+
+-  **ACSD-45241** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.4.4`)_-Fixes the issue where stock quantity for a virtual product is miscalculated after creating a credit memo.
+-  **ACSD-43887** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where incorrect details are displayed on the checkout payment page when Purchase Orders for companies are enabled.
+-  **ACSD-45143** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.5`)_-Fixes the issue where the setShippingAddressesOnCart mutation doesn't allow setting numeric region code as 'region'.
+-  **ACSD-44591** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.6`)_-Fixes the error that occurs when an order is placed without CAPTCHA confirmation.
+-  **ACSD-45520** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.6`)_-Fixes the issue where swatch options are not pre-selected on the product detail page when a user edits configurable products from the shopping cart.
+-  **ACSD-45169** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.6`)_-Fixes the issue where Visual Merchandiser doesn't display the correct stock and price for a configurable product after a staging update is applied.
+-  **ACSD-45424** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.6`)_-Fixes the issue where an incorrect reservation compensation is created after a partial refund (credit memo).
+-  **MDVA-42807** _(for Adobe Commerce and Magento Open Source `>=2.3.1 <2.4.6`)_-Fixes the issue where the custom currency sign is not displayed on the store front.
+-  Updated patches: MDVA-42689, AC-3022.
+
 ## v1.1.16
 
 -  **MDVA-44703** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where order totals in the Orders report are miscalculated for the restricted admin user.

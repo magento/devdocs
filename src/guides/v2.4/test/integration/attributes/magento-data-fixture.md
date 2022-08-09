@@ -4,6 +4,8 @@ title: Data fixture attribute
 redirect_from: 
   - /guides/v2.4/test/integration/annotations/magento-data-fixture-data-provider.html
   - /guides/v2.4/test/integration/parameterized_data_fixture.html
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/data-fixture/
+layout: migrated
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Manage source items
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/manage-source-items/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-source-items/
 layout: migrated
 ---
 

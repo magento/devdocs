@@ -15,7 +15,7 @@ These release notes describe the initial release of Payment Services and include
 
 *  {:.new}<!-- Issue PAY-2127 -->General availability release. [Payment Services](https://marketplace.magento.com/magento-payment-services.html) is now compatible with Adobe Commerce and Magento Open Source versions 2.4.0 to 2.4.3-p1.
 
-*  {:.new}<!-- Issue PAY-124 -->The Payment Services extension for Adobe Commerce and Magento Open Source can be installed either for [{{site.data.var.ece}}]({{site.baseurl}}/payment-services/install-payments.html#magento-commerce-cloud) or [On-premises]({{site.baseurl}}/payment-services/install-payments.html#on-premises) instances. These methods require the use of a Command Line Interface.
+*  {:.new}<!-- Issue PAY-124 -->The Payment Services extension for Adobe Commerce and Magento Open Source can be installed either for [{{site.data.var.ece}}]({{site.baseurl}}/payment-services/install-payments.html) or [On-premises]({{site.baseurl}}/payment-services/install-payments.html#on-premises) instances. These methods require the use of a Command Line Interface.
 
 *  {:.new}<!-- Issue PAY-1986 -->Payment Services supports a [sandbox account]({{site.user_guide_url}}/payment-services/onboard-payments.html#enable-sandbox-testing) that allows merchants to assess the extension in test mode.
 

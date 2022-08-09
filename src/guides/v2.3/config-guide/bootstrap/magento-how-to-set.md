@@ -37,7 +37,7 @@ For example, you can use the `MAGE_PROFILER` system environment variable to spec
 MAGE_PROFILER={firebug|csv|<custom value>}
 ```
 
-Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like [unix.stackexchange.com](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables).
+Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like [unix.stackexchange.com](https://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables).
 
 Bash shell example for CentOS:
 
@@ -95,7 +95,7 @@ To set a variable:
 
 The Apache web server supports setting the Magento mode using `mod_env` directives.
 
-The Apache `mod_env` directive is slightly different in [version 2.2](http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv) and [version 2.4](http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv).
+The Apache `mod_env` directive is slightly different in [version 2.2](https://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv) and [version 2.4](https://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv).
 
 The procedures that follows show how to set the Magento mode in an Apache virtual host. This is not the only way to use `mod_env` directives; consult the Apache documentation for details.
 
