@@ -175,7 +175,7 @@ To define web API components, set these attributes on these XML elements in the
                `ref`.
                   Required. Referenced resource. Valid values are `self`, `anonymous`, or a Magento resource, such as `Magento_Customer::group`.
                <strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with `anonymous` permission.
-                  Any user that the framework cannot authenticate through existing <a href="https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication.html">authentication
+                  Any user that the framework cannot authenticate through existing <a href="https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication">authentication
                      mechanisms</a> is considered a guest user.
             </li>
          </ul>

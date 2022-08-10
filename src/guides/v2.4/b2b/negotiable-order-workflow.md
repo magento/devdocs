@@ -12,7 +12,7 @@ This topic describes how REST calls can be used to place items in a shopping car
 
 *  You have [installed and enabled]({{ site.baseurl }}/extensions/b2b/) {{site.data.var.b2b}}.
 *  You have [created a company]({{ page.baseurl }}/b2b/company-object.html) and a [company user]({{ page.baseurl }}/b2b/company-object.html).
-*  You have an integration or [admin authorization token](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-admin-token.html) to make calls on behalf of seller, and a [customer token](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-create-customer.html#get-token) to make calls on behalf of the company user.
+*  You have an integration or [admin authorization token](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-admin-token.html) to make calls on behalf of seller, and a [customer token](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-create-customer#get-token) to make calls on behalf of the company user.
 
 ## Prepare the order
 

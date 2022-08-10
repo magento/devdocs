@@ -15,7 +15,7 @@ functional_areas:
   - Integration
 ---
 
-This step links the sources we created in [Step 2. Create sources](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-sources.html) with the stocks we created in [Step 3. Create stocks](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-stock.html).
+This step links the sources we created in [Step 2. Create sources](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-sources.html) with the stocks we created in [Step 3. Create stocks](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-stock).
 
 Each stock can be assigned one or more sources. Magento uses these associations to calculate the virtual aggregated inventory per product.
 

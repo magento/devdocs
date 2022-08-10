@@ -112,7 +112,7 @@ Configuration file|Description|Stage|Configuration object
 `validation.xml`| Module validation configuration file | global | [\Magento\Framework\Validator\Factory]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Validator/Factory.php)
 `view.xml`| Defines Vendor_Module view config values | global | [\Magento\Framework\View\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Config.php)
 `webapi.xml`| [Configures a web API]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html) | global | [\Magento\Webapi\Model\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/Model/Config.php)
-`webapi_async.xml`| [Defines REST custom routes]({{ page.baseurl }}/extension-dev-guide/webapi/custom-routes.html) | global | [\Magento\WebapiAsync\Model\ServiceConfig]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/WebapiAsync/Model/ServiceConfig.php)
+`webapi_async.xml`| [Defines REST custom routes]({{ page.baseurl }}/extension-dev-guide/webapi/custom-routes) | global | [\Magento\WebapiAsync\Model\ServiceConfig]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/WebapiAsync/Model/ServiceConfig.php)
 `widget.xml`| Defines widgets | global | [\Magento\Widget\Model\Config\Reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Widget/Model/Config/Reader.php)
 `zip_codes.xml`| Defines zip code format for each country | global | [\Magento\Directory\Model\Country\Postcode\Config\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Directory/Model/Country/Postcode/Config/Data.php)
 

@@ -32,4 +32,4 @@ This **5-step tutorial** generally takes **45 minutes**.
 
 ### Other resources
 
-*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
+*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/index) provides additional information about completing any Magento REST tutorial.
