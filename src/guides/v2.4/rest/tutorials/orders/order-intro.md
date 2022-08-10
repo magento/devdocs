@@ -40,4 +40,4 @@ Complete the following prerequisites:
 
 ### Other resources
 
-*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/index) provides additional information about completing any Magento REST tutorial.
+*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/) provides additional information about completing any Magento REST tutorial.

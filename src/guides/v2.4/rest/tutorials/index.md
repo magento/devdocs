@@ -13,7 +13,7 @@ The REST tutorials provide an introduction to Magento web APIs. In general, the 
 
 *  The [**order processing** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/) demonstrates the lifecycle of an order. Major steps include creating a quote, converting it to an order, issuing an invoice, and shipping the order.
 
-*  The [**order processing with Inventory Management**](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/index) tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Inventory Management features.
+*  The [**order processing with Inventory Management**](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/) tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Inventory Management features.
 
 *  The [**configurable product** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/) helps you plan then create a configurable product and its component simple products.
 
