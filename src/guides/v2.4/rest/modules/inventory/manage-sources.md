@@ -176,7 +176,7 @@ None
 
 The following call returns all sources that are located in the United States (`country_id` = `US`)
 
-See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches) for information about constructing a search query.
 
 **Sample Usage:**
 

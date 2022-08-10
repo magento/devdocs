@@ -66,7 +66,7 @@ PUT <host>/rest/<store_code>/async/V1/products/24-MB01
 
 ## Response
 
-Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status](https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-endpoints.html) of your request.
+Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status](https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-endpoints) of your request.
 
 ```json
 {

@@ -98,7 +98,7 @@ Magento returns empty array.
 
 The following call returns the link information for `stock_id = 4`.
 
-See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches) for information about constructing a search query.
 
 **Sample Usage:**
 
