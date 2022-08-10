@@ -5,6 +5,10 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
+## 2.4.5
+
+The `grunt-contrib-jasmine.js` library has been updated. The `toBeFalsy()` function does not work correctly with undefined values. Use the `toBeUndefined()` function instead to check results. <!--- AC-2840-->
+
 ## 2.4.4
 
 ### Removal of deprecated email variable usage

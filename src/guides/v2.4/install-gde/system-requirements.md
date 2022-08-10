@@ -94,20 +94,20 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 
 <!-- Link Definitions -->
 [Known issue with xdebug]: https://support.magento.com/hc/en-us/articles/360034242212
-[php_xdebug 2.5.x]: http://xdebug.org/download.php
+[php_xdebug 2.5.x]: https://xdebug.org/download
 [bash]: https://www.gnu.org/software/bash/
 [gzip]: https://www.gzip.org/
 [lsof]: https://linux.die.net/man/8/lsof
 [mysql]: https://www.mysql.com/
 [mysqldump]: https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
 [nice]: https://linux.die.net/man/1/nice
-[php]: http://www.php.net/
+[php]: https://www.php.net/
 [sed]: https://www.gnu.org/software/sed/manual/sed.html
 [tar]: https://linux.die.net/man/1/tar
 [PHP installation instructions]: prereq/php-settings.html
-[official PHP documentation]: http://php.net/manual/en/extensions.php
-[PHP OPcache]: http://php.net/manual/en/intro.opcache.php
+[official PHP documentation]: https://php.net/manual/en/extensions.php
+[PHP OPcache]: https://php.net/manual/en/intro.opcache.php
 [PHP documentation]: prereq/php-settings.html
-[PHP OPcache documentation]: http://php.net/manual/en/opcache.setup.php
+[PHP OPcache documentation]: https://php.net/manual/en/opcache.setup.php
 [Required PHP settings]: {{ page.baseurl }}/install-gde/prereq/php-settings.html
 [security certificate]: https://glossary.magento.com/security-certificate

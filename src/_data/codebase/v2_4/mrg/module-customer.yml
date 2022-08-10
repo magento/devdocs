@@ -69,7 +69,7 @@ content: "This module serves to handle the customer data (Customer, Customer Add
   method. Parameters:\n    - `visitor` is a `$this` object (`\\Magento\\Customer\\Model\\Visitor`
   class)\n\n- `visitor_activity_save` event in the `\\Magento\\Customer\\Model\\Visitor::saveByRequest`
   method. Parameters:\n    - `visitor` is a `$this` object (`\\Magento\\Customer\\Model\\Visitor`
-  class)\n\nFor information about an event in Magento 2, see [Events and observers](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/events-and-observers.html#events).\n\n###
+  class)\n\nFor information about an event in Magento 2, see [Events and observers](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/events-and-observers.html#events).\n\n###
   Layouts\n\nThis module introduces the following layouts in the `view/frontend/layout`
   and `view/adminhtml/layout` directories:\n- `view/adminhtml/layout`:\n    - `customer_address_edit`\n
   \   - `customer_group_index`\n    - `customer_index_cart`\n    - `customer_index_carts`\n
@@ -150,13 +150,13 @@ content: "This module serves to handle the customer data (Customer, Customer Add
   \   - delete customer group by ID\n\n- `\\Magento\\Customer\\Model\\Group\\RetrieverInterface`\n
   \   - get current customer group id from session\n\n- `\\Magento\\Customer\\Model\\Customer\\Source\\GroupSourceLoggedInOnlyInterface`\n
   \   - get customer group attribute source\n    \nFor information about a public
-  API in Magento 2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n###
+  API in Magento 2, see [Public interfaces & APIs](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n###
   UI components\n\nYou can extend customer and customer address updates using the
   configuration files located in the `view/adminhtml/ui_component` and `view/base/ui_component`
   directories:\n- `view/adminhtml/ui_component`:\n    - `customer_address_form`\n
   \   - `customer_address_listing`\n    - `customer_group_listing`\n    - `customer_listing`\n
   \   - `customer_online_grid`\n\n- `view/base/ui_component`:\n    - `customer_form`\n
-  \   \nFor information about a UI component in Magento 2, see [Overview of UI components](http://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n##
+  \   \nFor information about a UI component in Magento 2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n##
   Additional information\n\nMore information can get at articles:\n- [Customer Configurations](https://docs.magento.com/user-guide/configuration/customers/customer-configuration.html)\n-
   [Customer Attributes](https://docs.magento.com/user-guide/stores/attributes-customer.html)\n-
   [Customer Address Attributes](https://docs.magento.com/user-guide/stores/attributes-customer-address.html)\n-
@@ -165,6 +165,6 @@ content: "This module serves to handle the customer data (Customer, Customer Add
   Console commands\n\nMagento_Customer provides console commands:\n- `bin/magento
   customer:hash:upgrade` - upgrades a customer password hash to the latest hash algorithm\n\n###
   Cron options\n\nCron group configuration can be set at `etc/crontab.xml`:\n- `visitor_clean`
-  - clean visitor's outdated records\n\n[Learn how to configure and run cron in Magento.](http://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html).\n\n###
+  - clean visitor's outdated records\n\n[Learn how to configure and run cron in Magento.](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html).\n\n###
   Indexers\n\nThis module introduces the following indexers:\n- `customer_grid` -
   customer grid indexer\n\n[Learn how to manage the indexers](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html)."

@@ -103,7 +103,7 @@ This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}
    ln -s /etc/nginx/sites-available/magento magento
    ```
 
-For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map).
+For more detail about the map directive, see [nginx documentation on the map directive](https://nginx.org/en/docs/http/ngx_http_map_module.html#map).
 
 {% endcollapsible %}
 

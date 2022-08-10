@@ -62,7 +62,7 @@ Efforts should be made to optimize icons and/or icon fonts for assistive technol
 Use "aria-hidden" attribute:
 Modern versions of assistive technologies will announce CSS generated content, as well as specific Unicode characters. To avoid unintended and confusing output in screen readers hide them with the aria-hidden="true" attribute.
 
-From: [http://getbootstrap.com/components/](http://getbootstrap.com/components/)
+From: [https://getbootstrap.com/docs/5.2/components/accordion/](https://getbootstrap.com/docs/5.2/components/accordion/)
 
 ### Example of "aria-hidden" attribute
 
@@ -74,7 +74,7 @@ From: [http://getbootstrap.com/components/](http://getbootstrap.com/components/)
 <span><span class="icon-star" aria-hidden="true"></span>Favorite</span>
 ```
 
-From: [http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html](http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html)
+From: [https://www.filamentgroup.com/lab/bulletproof_icon_fonts.html](https://www.filamentgroup.com/lab/bulletproof_icon_fonts.html)
 
 ### How to make your icon font accessible in three easy steps
 

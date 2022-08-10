@@ -24,7 +24,7 @@ To improve the accuracy of Signifyd's transaction estimation, external integrati
 
 ### Provide AVS/CVV response codes
 
-A custom [payment method](https://glossary.magento.com/payment-method) can implement the `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping from specific codes to [EMS standard](http://www.emsecommerce.net/avs_cvv2_response_codes.htm), then register these mappings in the `config.xml` file of a custom payment module.
+A custom [payment method](https://glossary.magento.com/payment-method) can implement the `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping from specific codes to EMS standard, then register these mappings in the `config.xml` file of a custom payment module.
 
 Below is an example of mapping registration:
 

@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Using DocBlock Annotations
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/
+layout: migrated
 ---
 
 DocBlock annotations help to declare context in your code. In addition to built-in [PHPUnit annotations][]
@@ -21,7 +23,6 @@ Configuration Fixture|`@magentoConfigFixture`|`@magentoConfigFixture [<store_cod
 Database Isolation|`@magentoDbIsolation`|`@magentoDbIsolation enabled|disabled`|Enables or disables database isolation. Disabled by default, unless you are using `@magentoDataFixture`, in which case it is enabled by default. All data, required for a test, live during transaction only. Any test results won't be written in a database.
 Data Fixture|`@magentoDataFixture`|`@magentoDataFixture <script_filename>|<method_name>|<fully_qualified_class_name> [as:alias | with:{}]`|Points to a class or a method which creates testing entities (fixtures) for test execution. These are applied during the transaction.
 Data Fixture Before Transaction|`@magentoDataFixtureBeforeTransaction`|`@magentoDataFixtureBeforeTransaction <script_filename>|<method_name>`|Points to a class or a method which creates testing entities (fixtures) for test execution before the transaction has begun. You will need to implement a rollback file for changes made here. (e.g. Fixture file my_fixture.php would also require a my_fixture_rollback.php that reverts the original fixture's changed.)
-Data Fixture Data Provider|`@magentoDataFixtureDataProvider`|`@magentoDataFixtureDataProvider <callable>|{}`|Points to a Data Provider callable method or contains an inline JSON string for Parameterized Data Fixtures.
 Application Area|`@magentoAppArea`|`@magentoAppArea adminhtml|frontend|global`|Configures test environment in the context of specified application area.
 Enable/Disable Cache|`@magentoCache`|`@magentoCache <type>|all enabled|disabled`|Enables or disables certain cache segment or all of them to prevent isolation problems.
 Indexer Dimension Mode|`@magentoIndexerDimensionMode`|`@magentoIndexerDimensionMode <indexer> <mode>`|Sets the indexer dimension mode for the test run. More information can be found in the [DevBlog](https://community.magento.com/t5/Magento-DevBlog/Indexers-parallelization-and-optimization/ba-p/104922).
@@ -34,7 +35,6 @@ The Magento-specific annotations for integration tests are applied in the follow
 1. `@magentoAppIsolation`
 1. `@magentoDbIsolation`
 1. `@magentoDataFixtureBeforeTransaction`
-1. `@magentoDataFixtureDataProvider`
 1. `@magentoDataFixture`
 1. `@magentoIndexerDimensionMode`
 1. `@magentoComponentsDir`

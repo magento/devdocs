@@ -67,4 +67,4 @@ redis-cli ping
 If both commands succeeded, Redis is set up properly.
 
 #### More information
-[`redis-cli` command reference](http://redis.io/topics/rediscli)
+[`redis-cli` command reference](https://redis.io/topics/rediscli)
