@@ -83,7 +83,7 @@ Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Credi
 {:.ref-header}
 Related topics
 
-*  [Getting Started with Magento Web APIs](https://developer.adobe.com/commerce/webapi/get-started/bk-get-started-api)
+*  [Getting Started with Magento Web APIs](https://developer.adobe.com/commerce/webapi/get-started/)
 *  [Create a configurable product Tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/)
 *  [REST API Reference Overview](https://developer.adobe.com/commerce/webapi/rest/)
 *  [REST API documentation](https://magento.redoc.ly/)
