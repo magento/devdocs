@@ -90,7 +90,7 @@ Use this environment variable to confirm message queues are running after a depl
 
 {:.bs-callout-info}
 
-To return a list of message queue `consumers`, run the command `./bin/magento queue:consumers:list`.
+To return a list of message queue `consumers`, run the `./bin/magento queue:consumers:list` command.
 
 Example array that runs specific `consumers` and the `multiple_processes` to spawn for each consumer:
 
