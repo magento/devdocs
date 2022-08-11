@@ -72,8 +72,7 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-Failure to clean static view files before deploying can cause problems if you
-deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
+Failure to clean static view files before deploying can cause problems if you deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
 
 ### `CRON_CONSUMERS_RUNNER`
 
@@ -89,8 +88,7 @@ Use this environment variable to confirm message queues are running after a depl
 -  `multiple_processes`-A number specifying the number of processes to spawn for each consumer. Supported in Magento **2.4.4** or greater.
 
 {:.bs-callout-info}
-
-To return a list of message queue `consumers`, run the command `./bin/magento queue:consumers:list`.
+To return a list of message queue `consumers`, run the `./bin/magento queue:consumers:list` command.
 
 Example array that runs specific `consumers` and the `multiple_processes` to spawn for each consumer:
 
@@ -128,9 +126,9 @@ By default, the deployment process overwrites all settings in the `env.php` file
 
 Configure how `consumers` process messages from the message queue by choosing one of the following options:
 
--  `false`—Consumers process available messages in the queue, close the TCP connection, and terminate. Consumers do not wait for additional messages to enter the queue, even if the number of processed messages is less than the `max_messages` value specified in the `CRON_CONSUMERS_RUNNER` deploy variable.
+-  `false`—`Consumers` process available messages in the queue, close the TCP connection, and terminate. `Consumers` do not wait for additional messages to enter the queue, even if the number of processed messages is less than the `max_messages` value specified in the `CRON_CONSUMERS_RUNNER` deploy variable.
 
--  `true`—Consumers continue to process messages from the message queue until reaching the maximum number of messages (`max_messages`) specified in the `CRON_CONSUMERS_RUNNER` deploy variable before closing the TCP connection and terminating the consumer process. If the queue empties before reaching `max_messages`, the consumer waits for more messages to arrive.
+-  `true`—`Consumers` continue to process messages from the message queue until reaching the maximum number of messages (`max_messages`) specified in the `CRON_CONSUMERS_RUNNER` deploy variable before closing the TCP connection and terminating the consumer process. If the queue empties before reaching `max_messages`, the consumer waits for more messages to arrive.
 
 {:.bs-callout-warning}
 If you use workers to run `consumers` instead of using a cron job, set this variable to true.
