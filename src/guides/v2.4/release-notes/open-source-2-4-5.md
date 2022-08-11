@@ -1212,10 +1212,9 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Updating an item quantity from the wish list page now updates the quantity on the product detail page as expected. {{ site.data.var.ce }} now picks up the updated value from the product URL and populates the `qty` field of product detail page from the wishlist itself.
 
-## Known issues
+## Known issue
 
-**Issue**: Admin users cannot create an order or reorder for customers from the Admin when Braintree is enabled. When the Admin user clicks either **Order** or **Reorder**, {{ site.data.var.ce }} does not submit the order, and the  `system.log` displays this error: `report.CRITICAL: Error: Call to a member function getMethodInstance() on null in /app/vendor/paypal/module-braintree-core/Block/Form.php:174`. **Workaround**: A hotfix will be released in the near future. <!--- AC-6222-->
-
+**Issue**: Admin users cannot create an order or re-order for customers from the Admin when Braintree is enabled. When the Admin user clicks either **Order** or **Reorder**, {{ site.data.var.ee }} does not submit the order, and the  `system.log` displays this error: `report.CRITICAL: Error: Call to a member function getMethodInstance() on null in /app/vendor/paypal/module-braintree-core/Block/Form.php:174`.  **Workaround**:  `BUNDLE-3137-composer.patch` is now available. See the [Admin can't create order/reorder when Braintree payment enabled](https://support.magento.com/hc/en-us/articles/8322266352525) Knowledge Base article for a discussion of this issue and access to the patch. A fix will also be included in {{ site.data.var.ee }} 2.4.5-p1. <!--- AC-6222-->
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.

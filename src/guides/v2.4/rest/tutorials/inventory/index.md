@@ -28,10 +28,10 @@ This **14-step tutorial** generally takes **1 hour**.
 
 *  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
-*  Know how to construct a REST call in Magento. See [Construct a request](https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request.html) for details.
+*  Know how to construct a REST call in Magento. See [Construct a request](https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request) for details.
 
 *  Obtain an admin authorization token. Multiple calls in this tutorial require administrator privileges. See [Generate the admin token](https://developer.adobe.com/commerce/webapi/rest/tutorials/prerequisite-tasks/) for more information.
 
 ### Other resources
 
-*  Magento uses [Swagger](https://swagger.io) to provide REST API documentation on local instances of Magento. See [Generate a local API reference](https://developer.adobe.com/commerce/webapi/rest/quick-reference/generate-local.html) for more information. You can view the [static REST API documentation](https://magento.redoc.ly/), which displays reference information using ReDoc.
+*  Magento uses [Swagger](https://swagger.io) to provide REST API documentation on local instances of Magento. See [Generate a local API reference](https://developer.adobe.com/commerce/webapi/rest/quick-reference/generate-local) for more information. You can view the [static REST API documentation](https://magento.redoc.ly/), which displays reference information using ReDoc.
