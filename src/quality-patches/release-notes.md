@@ -21,6 +21,18 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.18
+
+-  **ACSD-45817** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where a GraphQL product mutation for a specific store returns all configurable variants, including those not assigned to the requested store.
+-  **ACSD-46146** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.6`)_-Fixes the issue where two order confirmation emails are sent after placing an order from Admin.
+-  **ACSD-45255** _(for Adobe Commerce `>=2.4.3 <2.4.6`)_-Fixes an exception on the Low Stock Report page for a restricted admin user.
+-  **ACSD-45488** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.6`)_-Fixes the issue where a configurable product with multiple sources is not returned to In Stock automatically.
+-  **ACSD-45754** _(for Adobe Commerce and Magento Open Source `>=2.3.1 <2.4.6`)_-Fixes the issue where Reward points are not added after applying a coupon to the cart.
+-  **ACSD-45849** _(for Adobe Commerce `>=2.4.3 <2.4.4`)_-Fixes the issue where video metadata is lost after a staging update is applied.
+-  **ACSD-45257** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.4`)_-Fixes the issue where GraphQL doesn't display a cart discount correctly.
+-  **ACSD-44938** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.4`)_-Fixes the issue where VAT_ID cannot be applied in a GraphQL request for a guest user.
+-  Updated patches: MDVA-43417.
+
 ## v1.1.17
 
 -  **ACSD-45241** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.4.4`)_-Fixes the issue where stock quantity for a virtual product is miscalculated after creating a credit memo.
