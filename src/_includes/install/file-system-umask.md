@@ -38,4 +38,4 @@ To set `magento_umask`:
 <!-- Link Definitions -->
 
 [file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
-[umask]: http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
+[umask]: https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html

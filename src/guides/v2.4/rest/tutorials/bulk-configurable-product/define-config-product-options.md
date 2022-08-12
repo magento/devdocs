@@ -12,7 +12,7 @@ return_to:
 functional_areas:
   - Integration
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/
+contributor_link: https://www.comwrap.com/en.html
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/define-config-product-options/
 layout: migrated
 ---
@@ -24,7 +24,7 @@ layout: migrated
  The `POST async/bulk/V1/configurable-products/bySku/options` call assigns the specified `attribute_id` to be the configurable attribute.
 
 {:.bs-callout-warning}
- The `attribute_id` and its value may be different on your installation. Check the values carefully before using them in your calls. To get the correct `attribute_id`, see [Get the list of attributes defined in an attribute searchCriteria](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+ The `attribute_id` and its value may be different on your installation. Check the values carefully before using them in your calls. To get the correct `attribute_id`, see [Get the list of attributes defined in an attribute searchCriteria](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/plan-product) for more information.
 
  The value assigned to the `value_index` must be unique within the system.
 
@@ -74,7 +74,7 @@ Now that you have set the configurable attribute to be `sku`, you can link all s
  **Endpoint:**
 
  {:.bs-callout-info}
-Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  You must replace input parameters with a string that begins with `by` and ends with the input parameter name, such as `bySku`. See [`bulk endpoints`](https://developer.adobe.com/commerce/webapi/rest/use-rest/bulk-endpoints.html) for more information.
+Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  You must replace input parameters with a string that begins with `by` and ends with the input parameter name, such as `bySku`. See [`bulk endpoints`](https://developer.adobe.com/commerce/webapi/rest/use-rest/bulk-endpoints) for more information.
 
  `POST <host>/rest/default/async/bulk/V1/configurable-products/bySku/child`
 

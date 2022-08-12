@@ -228,7 +228,7 @@ If your [module](https://glossary.magento.com/module) adds several payment metho
 
 ## Step 3: Create the template for the payment method component {#template}
 
-In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. You can find a sample `.html` template in any module implementing payment methods, for example the Magento_Authorizenet module.
+In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](https://knockoutjs.com/) syntax. You can find a sample `.html` template in any module implementing payment methods, for example the Magento_Authorizenet module.
 
 The template for rendering the Authorize.Net payment method in checkout is [`<Magento_Authorizenet_module_dir>/view/frontend/web/template/payment/authorizenet-directpost.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html).
 

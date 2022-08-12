@@ -11,7 +11,7 @@ content: "This module provides Magento Indexing functionality.\nIt allows to:\n 
   information about a module installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
   Structure\n\n`App/` - the directory that contains launch application entry point.\n\nFor
   information about a typical file structure of a module in Magento 2, see [Module
-  file structure](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n\n##
+  file structure](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n\n##
   Extensibility\n\nExtension developers can interact with the Magento_Indexer module.
   For more information about the Magento extension mechanism, see [Magento plugins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
   Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
@@ -41,7 +41,7 @@ content: "This module provides Magento Indexing functionality.\nIt allows to:\n 
   dimension mode\n\n### Cron options\n\nCron group configuration can be set at `etc/crontab.xml`:\n-
   `indexer_reindex_all_invalid` - regenerate indexes for all invalid indexers\n- `indexer_update_all_views`
   - update indexer views\n- `indexer_clean_all_changelogs` - clean indexer view changelogs\n\n[Learn
-  how to configure and run cron in Magento.](http://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html).\n\nMore
+  how to configure and run cron in Magento.](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html).\n\nMore
   information can get at articles:\n- [Learn more about indexing](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/indexing.html)\n-
   [Learn more about Indexer optimization](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/indexer-batch.html)\n-
   [Learn more how to add custom indexer](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/indexing-custom.html)\n-

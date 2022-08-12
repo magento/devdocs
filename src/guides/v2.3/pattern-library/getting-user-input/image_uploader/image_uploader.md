@@ -73,7 +73,7 @@ Likewise, an image may be removed from the Admin application by tapping the "tra
 
 ## Accessibility
 
-To initiate the uploader, the buttons should follow button accessibility guidelines: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms-graphical-buttons](http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms-graphical-buttons)
+To initiate the uploader, the buttons should follow button accessibility guidelines: [https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms-graphical-buttons](https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms-graphical-buttons)
 
 In the browser upload window, standard behavior should be kept.
 

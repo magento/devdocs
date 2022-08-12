@@ -11,7 +11,7 @@ return_to:
 functional_areas:
   - Integration
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/
+contributor_link: https://www.comwrap.com/en.html
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/
 layout: migrated
 ---
@@ -33,6 +33,6 @@ A system integrator can use Magento REST bulk APIs to perform actions on a large
 
 ### Other resources
 
-*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
-*  [Asynchronous web endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/asynchronous-web-endpoints.html) provides information about how to use Magento Asynchronous API
-*  [Bulk endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/bulk-endpoints.html) provides information about how to use Magento Bulk API
+*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/) provides additional information about completing any Magento REST tutorial.
+*  [Asynchronous web endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/asynchronous-web-endpoints) provides information about how to use Magento Asynchronous API
+*  [Bulk endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/bulk-endpoints) provides information about how to use Magento Bulk API

@@ -45,7 +45,7 @@ To enable domain authentication:
 **Example `TXT` record with account ID:**
 
 ```text
->v=spf1 include:u17504801.wl.sendgrid.net -all
+v=spf1 include:u17504801.wl.sendgrid.net -all
 ```
 
 **Example `CNAME` records:**

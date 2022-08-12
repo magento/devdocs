@@ -775,7 +775,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.1.1. Page file names MUST follow this pattern:
 
 *  `{Admin or Storefront}{Description}Page.xml`, where `{Description}` briefly describes the page under test.
-*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Use [PascalCase](https://wiki.c2.com/?PascalCase).
 *  Example: `AdminProductAttributeGridPage.xml`
 
 11.3.1.2. Page `name` attribute MUST be the same as the file name.
@@ -792,7 +792,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.2.1. Section file names MUST follow this pattern:
 
 *  `{Admin or Storefront}{Description}Section.xml`, where `{Description}` briefly describes the section under test.
-*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Use [PascalCase](https://wiki.c2.com/?PascalCase).
 *  Example: `StorefrontCheckoutCartSummarySection.xml`
 
 11.3.2.2. Section `name` attribute MUST be the same as the file name.
@@ -805,7 +805,7 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.3.2. The element `name` MUST be unique within the `<section>`.
 
-11.3.3.3. The element `name` SHOULD be written in [camelCase](http://wiki.c2.com/?CamelCase).
+11.3.3.3. The element `name` SHOULD be written in [camelCase](https://wiki.c2.com/?CamelCase).
 
 11.3.3.4. Parameterized selectors MUST use descriptive names for their parameters.
 
@@ -816,7 +816,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.4.1. Data entity file names MUST follow this pattern:
 
 *  `{Type}Data.xml`, where `{Type}` describes the type of entities.
-*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Use [PascalCase](https://wiki.c2.com/?PascalCase).
 *  Examples: `ProductData.xml` or `CustomerData.xml`
 
 11.3.4.2. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedly ran against the same environment.
@@ -844,7 +844,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.6.1. Metadata file names MUST follow this pattern:
 
 *  `{Type}Meta.xml`, where `{Type}` describes the type of entity.
-*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Use [PascalCase](https://wiki.c2.com/?PascalCase).
 *  Examples: `CategoryMeta.xml` and `ProductAttributeMeta.xml`
 
 ## 12. Web API
@@ -994,7 +994,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 
 [RFC2119]: https://tools.ietf.org/html/rfc2119
 [SOLID principles]: https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
-[Temporal coupling]: http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/
+[Temporal coupling]: https://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/
 [Law of Demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter
 [CQRS principle]: https://martinfowler.com/bliki/CQRS.html
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
