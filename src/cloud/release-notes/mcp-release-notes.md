@@ -20,7 +20,15 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 The `{{site.data.var.mcp-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`
 
 <!--Add release notes below-->
+## v1.0.18
 
+Release date: August 11, 2022
+
+Critical patch for {{site.data.var.ee}} 2.4.5:
+
+-  **Issue with orders using Braintree payments**—This patch resolves a critical issue preventing admins from placing new orders or reorders.<!-- MCLOUD-9137 -->
+
+See [Admin can't create order/reorder when Braintree payment enabled](https://support.magento.com/hc/en-us/articles/8322266352525).
 ## v1.0.17
 
 Release date: May 24, 2022
