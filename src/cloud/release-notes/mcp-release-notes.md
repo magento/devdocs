@@ -29,6 +29,7 @@ Critical patch for {{site.data.var.ee}} 2.4.5:
 -  **Issue with orders using Braintree payments**—This patch resolves a critical issue preventing admins from placing new orders or reorders.<!-- MCLOUD-9137 -->
 
 See [Admin can't create order/reorder when Braintree payment enabled](https://support.magento.com/hc/en-us/articles/8322266352525).
+
 ## v1.0.17
 
 Release date: May 24, 2022
