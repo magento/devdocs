@@ -68,7 +68,7 @@
   AWS ElastiCache: Redis 6
   AWS Elasticsearch: '7.9'
 2.4.2:
-  Composer: '2'
+  Composer: '1,2'
   Elasticsearch: '7.9'
   MariaDB: '10.4'
   MySQL: '8.0'
