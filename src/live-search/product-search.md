@@ -151,11 +151,9 @@ facets {
 
 ### Items list
 
-The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and {{site.data.var.ee}}, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
+The `items` object primarily provides details about each item returned. If Catalog Service is not installed, then you must specify the `product` field. The `product field` uses the [`ProductInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and {{site.data.var.ee}}, to return details about the product. A typical query might return the product name, price, SKU and image.
 
-The `items` object can also optionally return highlighted text that shows the matching search terms.
-
-The following snippet returns relevant information about each item:
+The following snippet returns relevant information about each item when Catalog Service is not installed or used:
 
 ```graphql
 items {
@@ -179,6 +177,81 @@ items {
     }
 }
 ```
+
+If [Catalog Service]() is installed, you can optionally use the `productView` field instead of the `product` field to return product details. Catalog Service uses [Catalog Sync](https://experienceleague.adobe.com/docs/commerce-merchant-services/user-guides/catalog-sync.html) to manage product data, resulting with query responses with less latency that is possible with the `ProductInterface`. With Catalog Service, the structure of the pricing information varies, depending on whether the product is designated as a `SimpleProduct` (simple, downloadable, gift card) or as a `ComplexProduct` (configurable, grouped, or bundle).
+
+The following Catalog Service snippet returns relevant information about each item:
+
+```graphql
+items {
+  productView {
+    name
+    sku
+    ... on SimpleProductView {
+      price {
+        final {
+          amount {
+            value
+            currency
+          }
+        }
+        regular {
+          amount {
+            value
+            currency
+          }
+        }
+      }
+    }
+    ... on ComplexProductView {
+      options {
+        id
+        title
+        required
+        values {
+          id
+          title
+        }
+      }
+      priceRange {
+        maximum {
+          final {
+            amount {
+              value
+              currency
+            }
+          }
+          regular {
+            amount {
+              value
+              currency
+            }
+          }
+        }
+        minimum {
+          final {
+            amount {
+              value
+              currency
+            }
+          }
+          regular {
+            amount {
+              value
+              currency
+            }
+          }
+        }
+      }
+    }
+  }
+}    
+```
+
+{:.bs-callout-info}
+The Catalog Service [products query](../catalog-service/products.md) describes the contents of the `ProductView` object.
+
+The `items` object can also optionally return highlighted text that shows the matching search terms.
 
 ### Other fields and objects
 
@@ -212,7 +285,9 @@ You must specify the following HTTP headers to run this query. [GraphQL Support]
 
 ## Example usage
 
-The following example uses "Watch" as the search phrase:
+### Live Search only
+
+The following example uses "Watch" as the search phrase. The query uses the core `ProductInterface` to access product information. As a result, the query has a longer response time than using Catalog Service to retrieve this information.
 
 **Request:**
 
@@ -290,6 +365,7 @@ The following example uses "Watch" as the search phrase:
 
 **Response:**
 
+{% collapsible Response %}
 ```json
 {
   "extensions": {
@@ -648,6 +724,424 @@ The following example uses "Watch" as the search phrase:
   }
 }
 ```
+{% endcollapsible %}
+
+### Live Search with Catalog Service
+
+In the following example, the query returns information on the same products as the previous example. However, it has been constructed to return item information inside the Catalog Service `productView` object instead of the core `product` object. Note that the pricing information varies, depending on the product type. For the sake of brevity, facet information is not shown.
+
+**Request:**
+
+```graphql
+{
+  productSearch(
+    phrase: "bag"
+    sort: [
+      { 
+        attribute: "price"
+        direction: DESC }]
+    page_size: 9
+  ) {
+    page_info {
+      current_page
+      page_size
+      total_pages
+    }
+    items {
+      productView {
+        name
+        sku
+        ... on SimpleProductView {
+          price {
+            final {
+              amount {
+                value
+                currency
+              }
+            }
+            regular {
+              amount {
+                value
+                currency
+              }
+            }
+          }
+        }
+        ... on ComplexProductView {
+          options {
+            id
+            title
+            required
+            values {
+              id
+              title
+            }
+          }
+          priceRange {
+            maximum {
+              final {
+                amount {
+                  value
+                  currency
+                }
+              }
+              regular {
+                amount {
+                  value
+                  currency
+                }
+              }
+            }
+            minimum {
+              final {
+                amount {
+                  value
+                  currency
+                }
+              }
+              regular {
+                amount {
+                  value
+                  currency
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+{% collapsible Response %}
+```json
+{
+  "data": {
+    "productSearch": {
+      "page_info": {
+        "current_page": 1,
+        "page_size": 9,
+        "total_pages": 3
+      },
+      "items": [
+        {
+          "productView": {
+            "name": "Impulse Duffle",
+            "sku": "24-UB02",
+            "price": {
+              "final": {
+                "amount": {
+                  "value": 74,
+                  "currency": "USD"
+                }
+              },
+              "regular": {
+                "amount": {
+                  "value": 74,
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        },
+        {
+          "productView": {
+            "name": "Fusion Backpack 567890",
+            "sku": "24-MB02",
+            "price": {
+              "final": {
+                "amount": {
+                  "value": 59,
+                  "currency": "USD"
+                }
+              },
+              "regular": {
+                "amount": {
+                  "value": 59,
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        },
+        {
+          "productView": {
+            "name": "Rival Field Messenger",
+            "sku": "24-MB06",
+            "price": {
+              "final": {
+                "amount": {
+                  "value": 45,
+                  "currency": "USD"
+                }
+              },
+              "regular": {
+                "amount": {
+                  "value": 45,
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        },
+        {
+          "productView": {
+            "name": "Push It Messenger Bag",
+            "sku": "24-WB04",
+            "price": {
+              "final": {
+                "amount": {
+                  "value": 45,
+                  "currency": "USD"
+                }
+              },
+              "regular": {
+                "amount": {
+                  "value": 45,
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        },
+        {
+          "productView": {
+            "name": "Overnight Duffle",
+            "sku": "24-WB07",
+            "price": {
+              "final": {
+                "amount": {
+                  "value": 45,
+                  "currency": "USD"
+                }
+              },
+              "regular": {
+                "amount": {
+                  "value": 45,
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        },
+        {
+          "productView": {
+            "name": "Erika Running Short",
+            "sku": "WSH12",
+            "options": [
+              {
+                "id": "color",
+                "title": "Color",
+                "required": false,
+                "values": [
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzkzLzY2",
+                    "title": "Purple"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzkzLzY3",
+                    "title": "Red"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzkzLzYy",
+                    "title": "Green"
+                  }
+                ]
+              },
+              {
+                "id": "size",
+                "title": "Size",
+                "required": false,
+                "values": [
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xODA=",
+                    "title": "28"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xODE=",
+                    "title": "29"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xODI=",
+                    "title": "30"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xODM=",
+                    "title": "31"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xODQ=",
+                    "title": "32"
+                  }
+                ]
+              }
+            ],
+            "priceRange": {
+              "maximum": {
+                "final": {
+                  "amount": {
+                    "value": 45,
+                    "currency": "USD"
+                  }
+                },
+                "regular": {
+                  "amount": {
+                    "value": 45,
+                    "currency": "USD"
+                  }
+                }
+              },
+              "minimum": {
+                "final": {
+                  "amount": {
+                    "value": 45,
+                    "currency": "USD"
+                  }
+                },
+                "regular": {
+                  "amount": {
+                    "value": 45,
+                    "currency": "USD"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "productView": {
+            "name": "Wayfarer Messenger Bag 987",
+            "sku": "24-MB05",
+            "price": {
+              "final": {
+                "amount": {
+                  "value": 44,
+                  "currency": "USD"
+                }
+              },
+              "regular": {
+                "amount": {
+                  "value": 44,
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        },
+        {
+          "productView": {
+            "name": "Nora Practice Tank",
+            "sku": "WT03",
+            "options": [
+              {
+                "id": "color",
+                "title": "Color",
+                "required": false,
+                "values": [
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzkzLzY1",
+                    "title": "Orange"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzkzLzY2",
+                    "title": "Purple"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzkzLzY3",
+                    "title": "Red"
+                  }
+                ]
+              },
+              {
+                "id": "size",
+                "title": "Size",
+                "required": false,
+                "values": [
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xNzU=",
+                    "title": "XS"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xNzY=",
+                    "title": "S"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xNzc=",
+                    "title": "M"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xNzg=",
+                    "title": "L"
+                  },
+                  {
+                    "id": "Y29uZmlndXJhYmxlLzE4Ni8xNzk=",
+                    "title": "XL"
+                  }
+                ]
+              }
+            ],
+            "priceRange": {
+              "maximum": {
+                "final": {
+                  "amount": {
+                    "value": 39,
+                    "currency": "USD"
+                  }
+                },
+                "regular": {
+                  "amount": {
+                    "value": 39,
+                    "currency": "USD"
+                  }
+                }
+              },
+              "minimum": {
+                "final": {
+                  "amount": {
+                    "value": 39,
+                    "currency": "USD"
+                  }
+                },
+                "regular": {
+                  "amount": {
+                    "value": 39,
+                    "currency": "USD"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "productView": {
+            "name": "Driven Backpack",
+            "sku": "24-WB03",
+            "price": {
+              "final": {
+                "amount": {
+                  "value": 36,
+                  "currency": "USD"
+                }
+              },
+              "regular": {
+                "amount": {
+                  "value": 36,
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+{% endcollapsible %}
+
 ## Input fields
 
 The `productSearch` query accepts the following fields as input:
@@ -758,6 +1252,7 @@ Field | Data Type | Description
 --- | --- | ---
 `appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values: `BOOST`, `BURY`, and `PIN`
 `product` | ProductInterface! | Contains details about the product. Go to [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html) for more information
+`productView` | ProductView | If Catalog Service is installed, contains details about the product view. The Catalog Service [`product` query](../catalog-service/products.md) fully describes this object.
 
 ### SearchResultPageInfo data type {#SearchResultPageInfo}
 
