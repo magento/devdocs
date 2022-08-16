@@ -245,7 +245,7 @@ items {
       }
     }
   }
-}    
+}
 ```
 
 {:.bs-callout-info}
@@ -737,7 +737,7 @@ In the following example, the query returns information on the same products as 
   productSearch(
     phrase: "bag"
     sort: [
-      { 
+      {
         attribute: "price"
         direction: DESC }]
     page_size: 9
