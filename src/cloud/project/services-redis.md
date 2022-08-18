@@ -8,7 +8,7 @@ redirect_from:
   - /cloud/project/project-conf-files_services-redis.html
 ---
 
-[Redis](http://redis.io) is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html), which {{site.data.var.ee}} uses by default.
+[Redis](https://redis.io) is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](https://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html), which {{site.data.var.ee}} uses by default.
 
 We support Redis versions 3.2, 5.0, and 6.0. See [Configure Redis]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/redis/config-redis.html).
 

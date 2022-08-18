@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: In-Store Pickup
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/in-store-pickup/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/in-store-pickup/
 layout: migrated
 contributor_name: Oleksandr Kravchuk
 contributor_link: https://github.com/swnsma
@@ -56,7 +56,7 @@ Name | Type | Description
 `[sort][0][field]=` | String | Specifies the field to sort on.
 `[sort][0][direction]=` | String | Specifies whether to return results in ascending (`ASC`) or descending (`DESC`) order. The default is `DESC`.
 
-[Search using REST endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) provides a full list of supported condition types.
+[Search using REST endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches) provides a full list of supported condition types.
 
 **Sample Usage:**
 

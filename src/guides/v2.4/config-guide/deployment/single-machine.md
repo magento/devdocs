@@ -6,6 +6,8 @@ functional_areas:
   - Deploy
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/single-machine.html
+layout: migrated
 ---
 
 This topic provides instructions for deploying updates to Magento on a production server using the command line.
@@ -106,4 +108,4 @@ Related topics
 [5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [6]: {{ page.baseurl }}/install-gde/install/prepare-install.html
 [8]: {{ page.baseurl }}/install-gde/composer.html
-[10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
+[10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html

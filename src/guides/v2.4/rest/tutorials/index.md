@@ -13,11 +13,11 @@ The REST tutorials provide an introduction to Magento web APIs. In general, the 
 
 *  The [**order processing** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/) demonstrates the lifecycle of an order. Major steps include creating a quote, converting it to an order, issuing an invoice, and shipping the order.
 
-*  The [**order processing with Inventory Management**](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/index.html) tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Inventory Management features.
+*  The [**order processing with Inventory Management**](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/) tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Inventory Management features.
 
-*  The [**configurable product** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/.html) helps you plan then create a configurable product and its component simple products.
+*  The [**configurable product** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/) helps you plan then create a configurable product and its component simple products.
 
-*  The [**bulk API configurable product** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/.html) demonstrates how to create configurable products using bulk APIs.
+*  The [**bulk API configurable product** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/) demonstrates how to create configurable products using bulk APIs.
 
 *  The [**grouped products** tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/grouped-product/) demonstrates how to create and manage grouped products.
 
@@ -31,9 +31,9 @@ Before you begin any tutorial, make sure you know the basics about {{site.data.v
 
 *  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
-*  Know how to construct a REST call in Magento. See [Construct a request](https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request.html) for details.
+*  Know how to construct a REST call in Magento. See [Construct a request](https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request) for details.
 
-*  Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs]({{site.baseurl}}/redoc/{{page.guide_version}}/) or [generate a local API reference](https://developer.adobe.com/commerce/webapi/quick-reference/rest/generate-local.html).
+*  Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs](https://magento.redoc.ly/) or [generate a local API reference](https://developer.adobe.com/commerce/webapi/rest/quick-reference/generate-local).
 
 *  Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}}]({{ site.user_guide_url }}/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
 

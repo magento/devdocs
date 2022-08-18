@@ -79,9 +79,9 @@ This section discusses how to configure a proxy using a virtual host.
 
 ## Secure communication with Apache {#es-ws-secure-apache}
 
-This section discusses how to secure communication between Apache and the search engine using [HTTP Basic](http://tools.ietf.org/html/rfc2617) authentication with Apache. For more options, consult one of the following resources:
+This section discusses how to secure communication between Apache and the search engine using [HTTP Basic](https://datatracker.ietf.org/doc/html/rfc2617) authentication with Apache. For more options, consult one of the following resources:
 
-*  [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html)
+*  [Apache 2.4 authentication and authorization tutorial](https://httpd.apache.org/docs/2.4/howto/auth.html)
 
 See one of the following sections:
 

@@ -83,4 +83,4 @@ Related topics
 <!-- Link definitions -->
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
 [GraphQL Developer Guide]: {{ page.baseurl }}/graphql/
-[PWA Studio docs]: http://pwastudio.io
+[PWA Studio docs]: https://developer.adobe.com/commerce/pwa-studio/

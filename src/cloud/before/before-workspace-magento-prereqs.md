@@ -46,22 +46,22 @@ We strongly recommend installing [Nginx]({{ site.baseurl }}/guides/v2.3/install-
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](https://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 
-*  [bcmath](http://php.net/manual/en/book.bc.php)
-*  [curl](http://php.net/manual/en/book.curl.php)
+*  [bcmath](https://php.net/manual/en/book.bc.php)
+*  [curl](https://php.net/manual/en/book.curl.php)
 *  ext-dom
 *  [fpm](https://php-fpm.org/)
-*  [gd](http://php.net/manual/en/book.image.php)
-*  [intl](http://php.net/manual/en/book.intl.php)
-*  [json](http://php.net/manual/en/ref.json.php)
-*  [mbstring](http://php.net/manual/en/book.mbstring.php)
-*  [mcrypt](http://php.net/manual/en/book.mcrypt.php) (for PHP 7.1 and earlier only)
-*  [mysql](http://php.net/manual/en/set.mysqlinfo.php)
-*  [xml](http://php.net/manual/en/book.xml.php)
-*  [zip](http://php.net/manual/en/book.zip.php)
+*  [gd](https://php.net/manual/en/book.image.php)
+*  [intl](https://php.net/manual/en/book.intl.php)
+*  [json](https://php.net/manual/en/ref.json.php)
+*  [mbstring](https://php.net/manual/en/book.mbstring.php)
+*  [mcrypt](https://php.net/manual/en/book.mcrypt.php) (for PHP 7.1 and earlier only)
+*  [mysql](https://php.net/manual/en/set.mysqlinfo.php)
+*  [xml](https://php.net/manual/en/book.xml.php)
+*  [zip](https://php.net/manual/en/book.zip.php)
 
 ### Set up PHP memory limit {#cloud-first-php}
 
@@ -92,7 +92,7 @@ To set a memory limit:
 
 ## Database (local) {#database}
 
-You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.ee}} environments use [MariaDB](https://mariadb.org/), with a [Galera Cluster](http://galeracluster.com/) with triple redundancy in the Production environment.
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.ee}} environments use [MariaDB](https://mariadb.org/), with a [Galera Cluster](https://galeracluster.com/) with triple redundancy in the Production environment.
 
 Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
 
@@ -140,7 +140,7 @@ You need to set an auto-increment value for the MariaDB installation.
 
 ### Pro: Set up the auto-increment for MySQL {#cloud-mysql}
 
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html) is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.ee}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
+The MySQL configuration parameter [`auto_increment_increment`](https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html) is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.ee}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 

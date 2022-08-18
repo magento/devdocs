@@ -2,7 +2,7 @@
 group: testing
 title: Writing Testable Code
 contributor_name: Vinai Kopp
-contributor_link: http://vinaikopp.com/
+contributor_link: https://vinaikopp.com/
 functional_areas:
   - Testing
   - test
@@ -294,12 +294,12 @@ Almost as a side effect, those classes are very easy to test.
 [PHP]: https://glossary.magento.com/php
 [constructor-injection]: {{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection
 [IoInterface]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php
-[DateTimeInterface]: http://php.net/manual/en/refs.calendar.php
+[DateTimeInterface]: https://www.php.net/manual/en/refs.calendar.php
 [RemoteAddress]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php
 [Request]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php
 [Law-of-Demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter
 [Kent-Beck]: https://en.wikipedia.org/wiki/Kent_Beck
-[BeckDesignRules]: http://martinfowler.com/bliki/BeckDesignRules.html
+[BeckDesignRules]: https://martinfowler.com/bliki/BeckDesignRules.html
 [clean-code]: https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ
-[refactoring]: http://martinfowler.com/books/refactoring.html
-[growing-object-oriented-software]: http://www.growing-object-oriented-software.com
+[refactoring]: https://martinfowler.com/books/refactoring.html
+[growing-object-oriented-software]: https://www.growing-object-oriented-software.com

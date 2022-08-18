@@ -162,4 +162,4 @@ The following sample code creates a bundle product. The `price_type` attribute c
 {:.ref-header}
 Related topics
 
-[Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html)
+[Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches)

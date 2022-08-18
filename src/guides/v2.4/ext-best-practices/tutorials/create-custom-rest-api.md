@@ -558,6 +558,6 @@ The example uses Magento sample data for `product_id: 1` and the endpoint ```htt
 
 ### Related Topic
 
-*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/index.html)
+*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/)
 *  [Configure a web API]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
 *  [Access Control List (ACL)]({{ page.baseurl }}/ext-best-practices/tutorials/create-access-control-list-rule.html)

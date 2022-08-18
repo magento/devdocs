@@ -1,6 +1,6 @@
 ## Overview of secure web server communication {#es-ws-secure-over}
 
-This topic discusses an example of securing communication between your web server and search engine (Elasticsearch or OpenSearch) using a combination of Transport Layer Security (TLS) encryption and [HTTP basic authentication](http://tools.ietf.org/html/rfc2617). You can optionally configure other types of authentication as well; we provide references for that information.
+This topic discusses an example of securing communication between your web server and search engine (Elasticsearch or OpenSearch) using a combination of Transport Layer Security (TLS) encryption and [HTTP basic authentication](https://datatracker.ietf.org/doc/html/rfc2617). You can optionally configure other types of authentication as well; we provide references for that information.
 
 (An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to *TLS*.)
 

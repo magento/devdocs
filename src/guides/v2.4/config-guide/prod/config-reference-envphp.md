@@ -5,29 +5,32 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-envphp.html
+layout: migrated
 ---
 
 The `env.php` file contains the following sections:
 
-| Name                          | Description                                                     |
-|-------------------------------|-----------------------------------------------------------------|
-| `backend`                     | Settings for the Admin area                                     |
-| `cache`                       | Configure redis page and default cache                          |
-| `cache_types`                 | Cache storage settings                                          |
+| Name                        | Description                                                    |
+|-----------------------------|----------------------------------------------------------------|
+| `backend`                   | Settings for the Admin area                                    |
+| `cache`                     | Configure redis page and default cache                         |
+| `cache_types`               | Cache storage settings                                         |
 | `consumers_wait_for_messages` | Configure how consumers process messages from the message queue |
-| `cron`                        | Enable or disable the cron jobs                                 |
-| `crypt`                       | The encryption key for cryptographic functions                  |
-| `db`                          | Database connection settings                                    |
-| `directories`                 | Magento directories mapping settings                            |
-| `downloadable_domains`        | List of downloadable domains                                    |
-| `install`                     | The installation date                                           |
-| `lock`                        | Lock provider settings                                          |
-| `MAGE_MODE`                   | The [Magento mode][magento-mode]                                |
-| `queue`                       | [Message queues][message-queues] settings                       |
-| `resource`                    | Mapping of resource name to a connection                        |
-| `session`                     | Session storage data                                            |
-| `system`                      | Disables the field for editing in the admin                     |
-| `x-frame-options`             | Setting for [x-frame-options][x-frame-options]                  |
+| `cron`                      | Enable or disable the cron jobs                                |
+| `crypt`                     | The encryption key for cryptographic functions                 |
+| `db`                        | Database connection settings                                   |
+| `default_connection`        | Message queues default connection                              |
+| `directories`               | Magento directories mapping settings                           |
+| `downloadable_domains`      | List of downloadable domains                                   |
+| `install`                   | The installation date                                          |
+| `lock`                      | Lock provider settings                                         |
+| `MAGE_MODE`                 | The [Magento mode][magento-mode]                               |
+| `queue`                     | [Message queues][message-queues] settings                      |
+| `resource`                  | Mapping of resource name to a connection                       |
+| `session`                   | Session storage data                                           |
+| `system`                    | Disables the field for editing in the admin                    |
+| `x-frame-options`           | Setting for [x-frame-options][x-frame-options]                 |
 
 ## backend
 
@@ -164,6 +167,19 @@ All database configurations are available in this node.
 ]
 ```
 
+## default_connection
+
+Defines the default connection for message queues. The value can be `db`, `amqp`, or a custom queue system like `redismq`. If you specify any value other than `db`, the message queue software must be installed and configured first. Otherwise, messages will not be processed correctly.
+
+```conf
+'queue' => [
+    'default_connection' => 'amqp'
+]
+```
+
+If `queue/default_connection` is specified in the system `env.php` file, this connection is used for all message queues through the system, unless a specific connection is defined in a `queue_topology.xml`, `queue_publisher.xml` or `queue_consumer.xml` file.
+For example, if `queue/default_connection` is `amqp` in `env.php` but a `db` connection is specified in the queue configuration XML files of a module, the module will use MySQL as a message broker.
+
 ## directories
 
 Optional directory mapping options that need to be set when the web server is configured to serve Magento app from the `/pub` directory for [improved security][change-docroot-to-pub].
@@ -209,6 +225,7 @@ The Magento deploy mode can be configured in this node.
 ```conf
 'MAGE_MODE' => 'developer'
 ```
+
 Learn more about [Magento Modes][magento-modes].
 
 ## queue
@@ -247,6 +264,7 @@ Magento session related configurations are stoted in the `session` node.
   'save' => 'files'
 ],
 ```
+
 Learn more about session in [Session][session].
 
 ## x-frame-options

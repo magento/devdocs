@@ -2,6 +2,22 @@
     "2.4.4-2.4.6": {
         "releases": [
             {
+                "publishedAt":"2022-08-09T12:05:25Z",
+                "tagName":"2.4.5",
+                "releaseNotes" : {
+                    "commerce": "https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-5.html",
+                    "opensource": "https://devdocs.magento.com/guides/v2.4/release-notes/open-source-2-4-5.html"
+                }
+
+            },
+            {
+                "publishedAt":"2022-08-09T12:06:03Z",
+                "tagName":"2.4.4-p1",
+                "releaseNotes" : {
+                    "common": "https://devdocs.magento.com/guides/v2.4/release-notes/2-4-4-p1.html"
+                }
+            },
+            {
                 "publishedAt": "2022-04-12T14:09:01Z",
                 "tagName": "2.4.4",
                 "releaseNotes" : {
@@ -10,10 +26,17 @@
                 }
             }
         ],
-        "end-of-support": "2024-11-??"
+        "end-of-support": "2024-11-25"
     },
     "2.4.0-2.4.3": {
         "releases": [
+            {
+                "publishedAt":"2022-08-09T12:06:46Z",
+                "tagName":"2.4.3-p3",
+                "releaseNotes" : {
+                    "common": "https://devdocs.magento.com/guides/v2.4/release-notes/2-4-3-p3.html"
+                }
+            },
             {
                 "publishedAt": "2022-04-12T14:08:56Z",
                 "tagName": "2.4.3-p2",
@@ -84,6 +107,13 @@
     },
     "2.3": {
         "releases": [
+            {
+                "publishedAt":"2022-08-09T12:08:32Z",
+                "tagName":"2.3.7-p4",
+                "releaseNotes": {
+                    "common": "https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p4.html"
+                }
+            },
             {
                 "publishedAt": "2022-04-12T14:08:47Z",
                 "tagName": "2.3.7-p3",

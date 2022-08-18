@@ -87,7 +87,7 @@ We highly recommend the following best practices and considerations for your dep
 
 Follow best practices for builds and deployment, and use the [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) workflow to upgrade your project and environments. Use the following guidelines to plan your upgrade and post-upgrade work:
 
--  **Backup your project**–Before upgrading the {{ site.data.var.ee }} and any third-party or custom extensions, back up the database in Integration, Staging, and Production environments. See [Back up the database]({{ site.baseurl }}/cloud/project/project-upgrade.html#back-up-the-database).
+-  **Backup your project**–Before upgrading the {{ site.data.var.ee }} and any third-party or custom extensions, back up the database in Integration, Staging, and Production environments. See [Back up the database]({{ site.baseurl }}/cloud/project/project-upgrade.html).
 
 -  **Check for compatibility issues**–
 

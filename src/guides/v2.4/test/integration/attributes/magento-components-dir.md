@@ -1,6 +1,8 @@
 ---
 group: testing
 title: Component registration attribute
+migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/components-dir/
+layout: migrated
 ---
 
 When your test design requires you to register fixture components and unregister them after the test execution, use the `ComponentsDir` attribute.

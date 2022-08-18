@@ -23,7 +23,7 @@ content: "This module implements the shipping methods which do not involve a dir
   more information about a layout in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
   UI components\n\nThis module extends following ui components located in the `view/adminhtml/ui_component`
   directory:\n- `sales_rule_form`\n- `salesrulestaging_update_form`\n\nFor information
-  about a UI component in Magento 2, see [Overview of UI components](http://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n##
+  about a UI component in Magento 2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n##
   Additional information\n\nYou can get more information about offline shipping methods
   in magento at the articles:\n- [How to configure Free Shipping](https://docs.magento.com/user-guide/shipping/shipping-free.html)\n-
   [How to configure Flat Rate](https://docs.magento.com/user-guide/shipping/shipping-flat-rate.html)\n-

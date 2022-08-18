@@ -12,7 +12,7 @@ Without indexing, Magento would have to calculate the price of every product on 
 ## Indexing terminology
 
 Dictionary
-: Original data entered to the system. Dictionaries are organized in <a href="http://en.wikipedia.org/wiki/Database_normalization" target="_blank">normal form</a> to facilitate maintenance (updating the data).
+: Original data entered to the system. Dictionaries are organized in <a href="https://en.wikipedia.org/wiki/Database_normalization" target="_blank">normal form</a> to facilitate maintenance (updating the data).
 
 Index
 : Representation of the original data for optimized reading and searching. Indexes can contain results of aggregations and various calculations. Index data can be always re-created from a dictionary using a certain algorithm.
@@ -52,7 +52,7 @@ The following components are involved in the indexing process:
             <td>
                 <ul>
                     <li>Allows tracking database changes for a certain <a href="https://glossary.magento.com/entity" target="_blank">entity</a> (product, <a href="https://glossary.magento.com/category" target="_blank">category</a>, etc.) and running change handler.</li>
-                    <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing <a href="https://glossary.magento.com/php" target="_blank">PHP</a> code instead of SQL queries, which allows materializing multiple queries).</li>
+                    <li>Emulates the <a href="https://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing <a href="https://glossary.magento.com/php" target="_blank">PHP</a> code instead of SQL queries, which allows materializing multiple queries).</li>
                 </ul>
             </td>
         </tr>

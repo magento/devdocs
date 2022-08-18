@@ -19,6 +19,6 @@ content: "This module provides API for ability to login into customer account fo
   \   - save authentication data. Return secret key\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\SetLoggedAsCustomerAdminIdInterface`:\n
   \   - set id of admin logged as customer\n\n- `\\Magento\\LoginAsCustomerApi\\Api\\SetLoggedAsCustomerCustomerIdInterface`:\n
   \   - set id of customer admin is logged as\n\nFor information about a public API
-  in Magento 2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
+  in Magento 2, see [Public interfaces & APIs](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
   Additional information\n\nThis module is a part of Login As Customer feature.\n\n[Learn
   more about Login As Customer feature](https://docs.magento.com/user-guide/customers/login-as-customer.html)."

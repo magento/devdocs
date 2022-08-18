@@ -11,7 +11,7 @@ Previous step
 
 [Enable SSH keys]({{ site.baseurl }}/cloud/before/before-workspace-ssh.html)
 
-**This step is optional if you installed nginx as your web server.** The [file system owner]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner) provides root access and permissions, for security reasons on a hosted system.
+**This step is optional if you installed nginx as your web server.** The [file system owner]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/file-sys-perms-over.html) provides root access and permissions, for security reasons on a hosted system.
 
 To enable the web server (Apache) to write files and directories in the file system but to also maintain *ownership* by the [file system owner](https://glossary.magento.com/magento-file-system-owner), both users must be in the same group. This is necessary so both users can share access to {{site.data.var.ee}} files, including files created using the [Admin](https://glossary.magento.com/magento-admin) or other web-based utilities.
 

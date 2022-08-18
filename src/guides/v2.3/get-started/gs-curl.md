@@ -15,7 +15,7 @@ To create the endpoint in the call, append the REST URI that you constructed in 
 
 To pass the customer data object in the POST call payload, specify a JSON or [XML](https://glossary.magento.com/xml) request body on the call.
 
-For a complete list of cURL command options, see [curl.1 the man page](http://curl.haxx.se/docs/manpage.html).
+For a complete list of cURL command options, see [curl.1 the man page](https://curl.se/docs/manpage.html).
 
 The cURL examples in this guide use the following command-line options:
 
