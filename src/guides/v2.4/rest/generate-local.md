@@ -31,7 +31,7 @@ To view the Swagger documentation for a specific store view, use this URL:
 -  The assigned store code
 -  `all`. This value only applies to the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the API call affects all the merchant's stores.
 
-By default, Magento returns documentation for resources available to anonymous users across all stores. If you specify a valid customer or admin token in the `api_key` text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the `POST /V1/integration/customer/token` endpoint or a 2FA endpoint such as `POST /V1/tfa/provider/google/authenticate` with the appropriate payload, as directed in [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token.html).
+By default, Magento returns documentation for resources available to anonymous users across all stores. If you specify a valid customer or admin token in the `api_key` text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the `POST /V1/integration/customer/token` endpoint or a 2FA endpoint such as `POST /V1/tfa/provider/google/authenticate` with the appropriate payload, as directed in [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token).
 
 The generated Swagger documentation provides the capability to test REST requests. A user can enter a sample request, then press the **Try it out!** button, and Swagger returns information such as a `curl` command, a request URL, a response body, a response code, and the response header. The **Try it out!** button will not work unless a bearer [authorization](https://glossary.magento.com/authorization) token has been specified.
 
@@ -58,7 +58,7 @@ To return information about all services:
 `http://<magento_host>/rest/<store_code>/schema`
 
 {:.bs-callout-info}
-You must specify an authorization token for an [admin](https://glossary.magento.com/admin) user to return information for most endpoints. See [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token.html) for more information.
+You must specify an authorization token for an [admin](https://glossary.magento.com/admin) user to return information for most endpoints. See [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token) for more information.
 
 ## Return the complete JSON schema
 
@@ -86,5 +86,5 @@ You may also use web server rewrite rules to redirect users trying to access the
 {:.ref-header}
 Related topics
 
-[Restricting access to anonymous web APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/anonymous-api-security.html)
-[Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token.html)
+[Restricting access to anonymous web APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/anonymous-api-security)
+[Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token)

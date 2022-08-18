@@ -69,7 +69,7 @@ Assess the work to be done for upgrading:
 
 *  Review the [release notes]({{page.baseurl}}/release-notes/bk-release-notes.html) to understand the scope and impact of the new version.
 
-*  Use the [Upgrade Compatibility Tool]({{site.url}}/upgrade-compatibility-tool/introduction.html) to identify potential problems that must be fixed in your custom code before attempting to upgrade to a newer version.
+*  Use the [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html) to identify potential problems that must be fixed in your custom code before attempting to upgrade to a newer version.
 
 *  If you are using 3rd-party extensions, validate their compatibility with the target version you are planning to upgrade to.
 
