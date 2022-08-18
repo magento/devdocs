@@ -99,7 +99,7 @@ To set up GeoIp handling:
 1. After page reload, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
 
 {:.bs-callout-info}
-The current Adobe Commerce Fastly GeoIP module implementation does not support redirections between websites.
+The current Adobe Commerce Fastly GeoIP module implementation does not support redirections between multiple websites.
 
 Fastly also provides a series of [geolocation-related VCL features](https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features) for customized geolocation coding.
 
