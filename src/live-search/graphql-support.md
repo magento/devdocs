@@ -35,7 +35,7 @@ You can run only queries that are specific to Live Search in the embedded GraphQ
 
 ## Run queries on a standalone GraphQL browser {#headers-list}
 
-1. Set the GraphQL endpoint to `https://<host>/search/graphql`.
+1. Set the GraphQL endpoint to `https://commerce.adobe.io/search/graphql`.
 
 1. Add the following HTTP headers to all Live Search GraphQL calls:
 
