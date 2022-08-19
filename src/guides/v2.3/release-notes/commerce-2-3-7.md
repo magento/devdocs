@@ -9,6 +9,10 @@ title: Adobe Commerce 2.3.7 Release Notes
 
 PHP 7.3 reached end of support in December 2021, and {{site.data.var.ee}} 2.3.x reaches end of support in April 2022. **We strongly recommend planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance**.
 
+## Apply AC-3022.patch to continue offering DHL as a shipping carrier
+
+DHL has introduced schema version 6.2 and will deprecate schema version 6.0 in September 2022. Adobe Commerce 2.4.4 and earlier versions that support the DHL integration support only version 6.0. Merchants deploying these releases should apply AC-3022.patch at their earliest convenience to continue offering DHL as a shipping carrier. See the Apply a patch to continue offering DHL as shipping carrier Knowledge Base article for information about downloading and installing the patch.
+
 ## Backward-Incompatible Changes (BiCs)
 
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.7 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
