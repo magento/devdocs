@@ -17,7 +17,7 @@ The following graphic demonstrates the Pro develop and deploy workflow, which us
 
 ## Development workflow {#develop}
 
-The Integration environment provides a single, base integration branch containing your {{site.data.var.ece}} code. You can create one additional, environment branch. This allows for up to two active branches deployed to Platform-as-a-Service (PaaS) containers.
+The Integration environment provides a single, base integration branch containing your {{site.data.var.ece}} code. You can create one additional active environment branch. This allows for up to two active branches deployed to Platform-as-a-Service (PaaS) containers. There is no limit on the number of inactive environments.
 
 {% include cloud/note-enhanced-integration-envs-kb.md%}
 

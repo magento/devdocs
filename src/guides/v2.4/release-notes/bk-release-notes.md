@@ -6,9 +6,14 @@ redirect_from: magento-release-information.html
 
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.4.x release notes
 
+*  [{{site.data.var.ce}} 2.4.5 Release Notes]({{page.baseurl}}/release-notes/open-source-2-4-5.html)
+*  [{{site.data.var.ee}} 2.4.5 Release Notes]({{page.baseurl}}/release-notes/commerce-2-4-5.html)
+
+*  [{{site.data.var.ee}} 2.4.4-p1 Release Notes]({{page.baseurl}}/release-notes/2-4-4-p1.html)
 *  [{{site.data.var.ce}} 2.4.4 Release Notes]({{page.baseurl}}/release-notes/open-source-2-4-4.html)
 *  [{{site.data.var.ee}} 2.4.4 Release Notes]({{page.baseurl}}/release-notes/commerce-2-4-4.html)
 
+*  [{{site.data.var.ee}} 2.4.3-p3 Release Notes]({{page.baseurl}}/release-notes/2-4-3-p3.html)
 *  [{{site.data.var.ee}} 2.4.3-p2 Release Notes]({{page.baseurl}}/release-notes/2-4-3-p2.html)
 *  [{{site.data.var.ee}} 2.4.3-p1 Release Notes]({{page.baseurl}}/release-notes/2-4-3-p1.html)
 *  [{{site.data.var.ce}} 2.4.3 Release Notes]({{page.baseurl}}/release-notes/open-source-2-4-3.html)

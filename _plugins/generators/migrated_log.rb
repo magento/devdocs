@@ -17,15 +17,15 @@ module Jekyll
       pages = @site.pages
       migrated_pages = pages.filter { |page| page.data['layout'] == 'migrated' }
       number_of_staying_pages = pages.count { |page| page.data['guide_version'] == '2.3' || page.data['group'].nil? }
-      url_prefix = site.config['url'] + site.config['baseurl']
       migrated_pages_data = []
+
       migrated_pages.each do |page|
         migrated_page = {
           path: page.path,
           title: page.data['title'] || abort("Error in '#{page.path}'.\n Check 'title' in the file's frontmatter.".red),
           guide: @site.data.dig('toc', page.data['group'],
                                 'label') || abort("Error in '#{page.path}'.\n Check 'group' in the file's frontmatter or 'label' in the corresponding TOC.".red),
-          migrated_from: url_prefix + page.url,
+          migrated_from: site.baseurl + page.url,
           migrated_to: page.data['migrated_to'] || abort("Error in '#{page.path}'.\n Check 'migrated_to' in the file's frontmatter.".red),
           migrated_to_source: if page.data['migrated_to'].start_with?('https://experienceleague.adobe.com')
                                 'Adobe Experience League'

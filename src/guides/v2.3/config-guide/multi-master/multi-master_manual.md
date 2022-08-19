@@ -266,7 +266,7 @@ This script restores sales data in your quote database.
 
 #### NDB requirement {#sql-sales-restore-ndb-req}
 
-If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
+If you are using a [Network Database (NDB)](https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
 
 1. Convert tables from InnoDb to NDB type in dump files:
 
@@ -367,7 +367,7 @@ mysqldump -u <your database root username> -p <your main Magento DB name> magent
 
 ### NDB requirement
 
-If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
+If you are using a [Network Database (NDB)](https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
 
 1. Convert tables from InnoDb to NDB type in dump files:
 

@@ -2,6 +2,8 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Calendar widget
+migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/calendar/
+layout: migrated
 ---
 
 The Calendar widget is a customized jQuery [Datepicker Widget] that enables selecting a data using a pop-up or an in-line calendar. Calendar is also responsible for:
@@ -110,8 +112,8 @@ The result is a calendar and a icon(_Click Here_) that opens the calendar.
 
 ![Calendar Widget]({{ site.baseurl }}/common/images/widget/calendar-widget-result.png)
 
-[Datepicker Widget]: http://api.jQueryui.com/datepicker/
+[Datepicker Widget]: https://api.jqueryui.com/datepicker/
 [global configuration]: #fedg_calendar_config
 [lib/web/mage/calendar.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/calendar.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
-[Datepicker Widget]: http://api.jqueryui.com/datepicker/
+[Datepicker Widget]: https://api.jqueryui.com/datepicker/

@@ -95,6 +95,10 @@ The following query shows the status of a cart that is ready to be converted int
         sku
       }
       quantity
+      errors {
+        code
+        message
+      }
     }
     available_payment_methods {
       code

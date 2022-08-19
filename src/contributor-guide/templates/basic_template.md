@@ -124,13 +124,13 @@ Tables can be useful for displaying different kinds of data in an organized way.
 | Data 4         | Data 5         |                |
 | Data 6         |                |                |
 
-You can read more about table syntax [here](http://kramdown.gettalong.org/syntax.html#tables).
+You can read more about table syntax [here](https://kramdown.gettalong.org/syntax.html#tables).
 
 ## Advanced Syntax {#advanced}
 
 ### Code blocks {#code-blocks}
 
-Code blocks can also be defined using [Rouge formatting](http://rouge.jneen.net/). View the .md file of this template for examples.
+Code blocks can also be defined using [Rouge formatting](https://github.com/rouge-ruby/rouge). View the .md file of this template for examples.
 
 For inline code, surround the content with single backticks: `` `example` ``.
 

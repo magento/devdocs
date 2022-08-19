@@ -9,8 +9,8 @@ content: "## Magento_CatalogInventoryStaging module\n\n## Overview\n\nThe Magent
   that have dependencies on the Magento_CatalogInventoryStaging module in the `require`
   section of the `composer.json` file. The file is located in the root directory of
   the module.\n\n## Extension points\n\nYou can interact with the Magento_CatalogInventoryStaging
-  module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).\n\n[The
-  Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html)
+  module using the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html)
   enables you to override the functionality of the Magento_CatalogInventoryStaging
   module.\n\n## Additional information\n\nYou can track [backward incompatible changes
-  made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html)."
+  made in a Magento EE mainline after the Magento 2.0 release](https://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html)."

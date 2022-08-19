@@ -21,4 +21,4 @@ content: "This module implements integration New Relic APM and New Relic Insight
   about command's parameters](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html#newreliccreatedeploy-marker).\n\n###
   Cron options\n\nCron group configuration can be set at `etc/crontab.xml`:\n- `magento_newrelicreporting_cron`
   - runs collecting all new relic reports\n\n[Learn how to configure and run cron
-  in Magento.](http://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html)."
+  in Magento.](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html)."

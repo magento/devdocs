@@ -6,7 +6,7 @@ In some cases, a very long query string causes the user's allocated memory space
 
 ## How to set open files ulimit
 
-We recommend setting the open files [`ulimit`](http://ss64.com/bash/ulimit.html) for the Magento file system user to a value of 65536 or more.
+We recommend setting the open files [`ulimit`](https://ss64.com/bash/ulimit.html) for the Magento file system user to a value of 65536 or more.
 
 You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.
 
@@ -36,4 +36,4 @@ To optionally set the value in the user's Bash shell:
 1. Save your changes to `.bashrc` and exit the text editor.
 
 {:.bs-callout-warning}
-We recommend you avoid setting a value for [`pcre.recursion_limit`](http://php.net/manual/en/pcre.configuration.php) in `php.ini` because it can result in incomplete rollbacks with no failure notice.
+We recommend you avoid setting a value for [`pcre.recursion_limit`](https://php.net/manual/en/pcre.configuration.php) in `php.ini` because it can result in incomplete rollbacks with no failure notice.

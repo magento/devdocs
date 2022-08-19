@@ -26,11 +26,11 @@ csuite: Cloud Suite for Commerce
 
 ct: ece-tools
 ct-repo: magento/ece-tools
-ct-release: 2002.1.10
+ct-release: 2002.1.11
 
 mcc-prod: Cloud Components of Commerce
 mcc-package: magento/magento-cloud-components
-mcc-release: 1.0.10
+mcc-release: 1.0.11
 
 mcd-prod: Cloud Docker for Commerce
 mcd-package: magento/magento-cloud-docker
@@ -38,7 +38,7 @@ mcd-release: 1.3.2
 
 mcp-prod: Cloud Patches for Commerce
 mcp-package: magento/magento-cloud-patches
-mcp-release: 1.0.17
+mcp-release: 1.0.18
 
 # TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
 # is the variable value.

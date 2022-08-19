@@ -2,7 +2,7 @@
 group: rest-api
 title: Asynchronous web endpoints
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/
+contributor_link: https://www.comwrap.com/en.html
 functional_areas:
   - Integration
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/asynchronous-web-endpoints/
@@ -66,7 +66,7 @@ PUT <host>/rest/<store_code>/async/V1/products/24-MB01
 
 ## Response
 
-Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status](https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-endpoints.html) of your request.
+Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status](https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-endpoints) of your request.
 
 ```json
 {

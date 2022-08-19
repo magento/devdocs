@@ -80,11 +80,11 @@ Attribute | Data type | Description
 
 #### FilterMatchTypeInput attributes
 
-Use the `FilterMatchTypeInput` object to construct a filter that returns products that exactly match a string or contain the specified pattern.
+Use the `FilterMatchTypeInput` object to construct a filter that returns products that partially fuzzy match a string or contain the specified pattern.
 
 Attribute | Data type | Description
 --- | --- | ---
-`match` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific SKU, specify a value such as `24-MB01`
+`match` | String | Use this attribute to partially fuzzy match the specified string. For example, to filter on a specific SKU, specify a value such as `24-MB01`
 
 You must specify a `FilterMatchTypeInput` object to filter on a custom product attribute of the following types:
 

@@ -14,7 +14,7 @@
 
 1. To run Magento commands from any directory, add `<magento_root>/bin` to your system `PATH`.
 
-   Because shells have differing syntax, consult a reference like [unix.stackexchange.com](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables).
+   Because shells have differing syntax, consult a reference like [unix.stackexchange.com](https://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables).
 
    Sample bash shell for CentOS:
 

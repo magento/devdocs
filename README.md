@@ -171,6 +171,10 @@ Find guidelines for building the site locally in the checked out README.
 >**NOTE**
 >There is no guarantee the site will be built, since it can have dependencies on the external resources that are not available anymore.
 
+## Archived docs
+
+To view the archived documentation, see <http://magento.github.io/devdocs/>.
+
 ***
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!

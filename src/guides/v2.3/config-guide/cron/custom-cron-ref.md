@@ -48,7 +48,7 @@ where:
 |`job_name`|Unique ID for this cron job.|
 |`classpath`|Class to be instantiated (classpath).|
 |`method`|Method in `classpath` to call.|
-|`time`|Schedule in [cron format](http://www.nncron.ru/help/EN/working/cron-format.htm). Omit this parameter if the schedule is defined in the Magento database or other storage.|
+|`time`|Schedule in cron format. Omit this parameter if the schedule is defined in the Magento database or other storage.|
 
 The resulting `crontab.xml` with two groups may look like this:
 

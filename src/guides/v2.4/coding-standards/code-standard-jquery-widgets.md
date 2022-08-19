@@ -349,9 +349,9 @@ When a component is initialized, it is also important to send parameters to it, 
    *  Maintains proper `this` context inside the handlers, so it is not necessary to use the `$.proxy()` method.
    *  Event handlers are automatically namespaced and cleaned up on destruction.
 
-[jquery-ui-widget-factory]: http://jqueryui.com/widget/
-[jquery-ui-api-doc]: http://api.jqueryui.com/jQuery.widget/
-[rfc2119]: http://www.ietf.org/rfc/rfc2119.txt
+[jquery-ui-widget-factory]: https://jqueryui.com/widget/
+[jquery-ui-api-doc]: https://api.jqueryui.com/jQuery.widget/
+[rfc2119]: https://www.ietf.org/rfc/rfc2119.txt
 [single-responsibility-principle]: https://en.wikipedia.org/wiki/Single_responsibility_principle
-[dom-event-bubbling]: http://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing
-[law-of-demeter]: http://en.wikipedia.org/wiki/Law_of_Demeter
+[dom-event-bubbling]: https://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing
+[law-of-demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter

@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Manage source items
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/manage-source-items/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-source-items/
 layout: migrated
 ---
 
@@ -118,7 +118,7 @@ Magento returns an empty array.
 
 The following call returns all source items for `sku` = `new_product2`.
 
-See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches) for information about constructing a search query.
 
 **Sample Usage:**
 
