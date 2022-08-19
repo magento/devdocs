@@ -47,7 +47,7 @@ For a list of recommended PHP configuration settings, see [Required PHP settings
 
 ## Check custom php.ini settings
 
-After pushing the `php.ini` changes to your Cloud environment, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ site.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
+After pushing the `php.ini` changes to your Cloud environment, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ site.baseurl }}/cloud/env/environments-start.html#ssh-tunneling) to your environment and entering:
 
 ```bash
 cat /etc/php5/fpm/php.ini
