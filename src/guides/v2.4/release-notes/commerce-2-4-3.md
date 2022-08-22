@@ -29,6 +29,10 @@ PHP Fatal error: Uncaught Error: Call to undefined function Magento\Framework\Fi
 
 This error results from the use of the `str_contains` function, which is an PHP 8.x function. {{ site.data.var.ee }} 2.4.3 does not support PHP 8.x. This hotfix replaces this function with a supported PHP 7.x function. See the [{{site.data.var.ee}} upgrade 2.4.3, 2.3.7-p1 PHP Fatal error Hotfix](https://support.magento.com/hc/en-us/articles/4408021533069-Adobe-Commerce-upgrade-2-4-3-2-3-7-p1-PHP-Fatal-error-Hotfix) Knowledge Base article.
 
+## Apply `AC-3022.patch` to continue offering DHL as a shipping carrier
+
+DHL has introduced schema version 6.2 and will deprecate schema version 6.0 in the near future. Adobe Commerce 2.4.4 and earlier versions that support the DHL integration support only version 6.0. Merchants deploying these releases should apply `AC-3022.patch` at their earliest convenience to continue offering DHL as a shipping carrier. See the [Apply a patch to continue offering DHL as shipping carrier](https://support.magento.com/hc/en-us/articles/7707818131597-Apply-a-patch-to-continue-offering-DHL-as-shipping-carrier) Knowledge Base article for information about downloading and installing the patch.
+
 ## Highlights
 
 Look for the following highlights in this release.
