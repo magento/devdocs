@@ -172,6 +172,61 @@ query {
 }
 ```
 
+### Retrieve orders based on scope argument:
+
+The following query returns all customer orders, across all store view codes. The value of GLOBAL in the scope field overrides the store view code specified in the Store header.
+
+***Request:***
+
+```graphql
+{
+    customer {
+        orders(
+            pageSize: 20,
+            scope: GLOBAL
+        ) {
+            items {
+                id
+                order_number
+                order_date
+                total {
+                    grand_total
+                    { value currency }
+                }
+                status
+            }
+        }
+    }
+}
+```
+
+***Response:***
+
+```json
+{
+    "data": {
+        "customer": {
+            "orders": {
+                "items": [
+                    {
+                        "id": "ODg=",
+                        "order_number": "48000000001",
+                        "order_date": "2022-07-27 18:01:38",
+                        "total": {
+                            "grand_total": {
+                                "value": 15,
+                                "currency": "USD"
+                            }
+                        },
+                        "status": "Pending"
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+
 ### Retrieve detailed information about a specific order {#order-details}
 
 The following example returns details about one of the customer's previous orders.
