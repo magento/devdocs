@@ -6,6 +6,7 @@ Attribute | Data type | Description
 `filter` | CustomerOrdersFilterInput | Defines the criteria to search for. If no filter is specified, the query returns and paginates all of the customer's orders
 `currentPage` | Int | Specifies which page of results to return. The default value is 1
 `pageSize` | Int | Specifies the maximum number of results to return at once. The default value is 20
+`scope` | ScopeTypeEnum | Specifies the scope to search for customer orders. The Store request header identifies the customer's store view code. The default value of STORE limits the search to the value specified in the header. Specify WEBSITE to expand the search to include all customer orders assigned to the website that is defined in the header, or specify GLOBAL to include all customer orders across all websites and stores.
 
 The `customers` query returns a [`CustomerOrders`](#customerOrders) object.
 
