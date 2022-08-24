@@ -10,7 +10,7 @@ functional_areas:
 As of {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4, all installations must be configured to use [Elasticsearch][] or [OpenSearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
 
 {:.bs-callout-info}
-OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. [Migrate from Elasticsearch to OpenSearch][] provides guidance on switching to OpenSearch.
+OpenSearch support was added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. [Migrate from Elasticsearch to OpenSearch][] provides guidance on switching to OpenSearch.
 
 ## Supported versions {#es-spt-versions}
 

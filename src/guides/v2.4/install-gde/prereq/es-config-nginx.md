@@ -14,7 +14,7 @@ functional_areas:
 ## Set up a proxy {#es-nginx-proxy}
 
 {:.bs-callout-info}
-OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. See [Migrate ElasticSearch to OpenSearch](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/opensearch-migration.html) for more information.
+OpenSearch support was added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. See [Migrate ElasticSearch to OpenSearch](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/opensearch-migration.html) for more information.
 
 This section discusses how to configure nginx as an *unsecure* proxy so that {{ site.data.var.ee }} or {{ site.data.var.ce }} can use a search engine running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
 

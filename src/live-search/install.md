@@ -40,17 +40,17 @@ Do the following:
 
 1. Choose the onboarding method that meets your requirements, and follow the instructions.
 
-   -  [Method 1](#method-1): Install without Elasticsearch/Opensearch
-   -  [Method 2](#method-2): Install with Elasticsearch/Opensearch (No downtime)
+   -  [Method 1](#method-1): Install without Elasticsearch/OpenSearch
+   -  [Method 2](#method-2): Install with Elasticsearch/OpenSearch (No downtime)
 
-## Method 1: Install without Elasticsearch/Opensearch {#method-1}
+## Method 1: Install without Elasticsearch/OpenSearch {#method-1}
 
 This onboarding method is recommended when installing Live Search to a:
 
 -  New Commerce installation
 -  Staging environment
 
-In this scenario, storefront operations are interrupted while the Live Search service indexes all products in the catalog. During the installation, Live Search modules are enabled and Elasticsearch/Opensearch modules are disabled.
+In this scenario, storefront operations are interrupted while the Live Search service indexes all products in the catalog. During the installation, Live Search modules are enabled and Elasticsearch/OpenSearch modules are disabled.
 
 1. Install {{site.data.var.ee}} 2.4.x without Live Search.
 
@@ -91,13 +91,13 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
 1. [Test](#test-the-connection) the connection from the storefront.
 
-## Method 2: Install with Elasticsearch/Opensearch {#method-2}
+## Method 2: Install with Elasticsearch/OpenSearch {#method-2}
 
 This onboarding method is recommended when installing Live Search to:
 
 -  An existing production Commerce installation
 
-In this scenario, Elasticsearch/Opensearch temporarily manages search requests from the storefront while the Live Search service indexes all products in the background, without any interruption to normal storefront operations. Elasticsearch/Opensearch is disabled and Live Search enabled after all catalog data is indexed and synchronized.
+In this scenario, Elasticsearch/OpenSearch temporarily manages search requests from the storefront while the Live Search service indexes all products in the background, without any interruption to normal storefront operations. Elasticsearch/Opensearch is disabled and Live Search enabled after all catalog data is indexed and synchronized.
 
 1. To download the `live-search` package, run the following from the command line:
 
@@ -117,7 +117,7 @@ In this scenario, Elasticsearch/Opensearch temporarily manages search requests f
    bin/magento setup:upgrade
    ```
 
-   Elasticsearch/Opensearch continues to manage search requests from the storefront while the Live Search service synchronizes the catalog data and indexes products in the background.
+   Elasticsearch/OpenSearch continues to manage search requests from the storefront while the Live Search service synchronizes the catalog data and indexes products in the background.
 
 1. Verify that the following [indexers]({{ site.user_guide_url }}/system/index-management.html) are set to `Update by Schedule`:
 
@@ -136,7 +136,7 @@ In this scenario, Elasticsearch/Opensearch temporarily manages search requests f
    -  The product count returned is close to what you expect for the store view
    -  Facet(s) are returned
 
-1. Run the following commands to disable Elasticsearch/Opensearch modules, enable Live Search modules, and run setup.
+1. Run the following commands to disable Elasticsearch/OpenSearch modules, enable Live Search modules, and run setup.
 
    ```bash
    bin/magento module:enable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover

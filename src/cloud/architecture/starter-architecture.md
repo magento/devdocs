@@ -82,7 +82,7 @@ Each service runs in a separate, secure container. Containers are managed togeth
 -  [Redis][]
 -  [RabbitMQ][]
 -  [Elasticsearch][]
--  [Opensearch][]
+-  [OpenSearch][]
 
 In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2][]. You also have access to [New Relic][] for performance management.
 
@@ -118,7 +118,7 @@ See the following sections for detailed instructions and walk-throughs to develo
 [Deploy your store]: {{ site.baseurl }}/cloud/live/stage-prod-live.html
 [Docker development]: {{ site.baseurl }}/cloud/docker/docker-development.html
 [Elasticsearch]: {{ site.baseurl }}/cloud/project/services-elastic.html
-[Opensearch]: {{ site.baseurl }}/cloud/project/services-opensearch.html
+[OpenSearch]: {{ site.baseurl }}/cloud/project/services-opensearch.html
 [Fastly CDN module for Magento 2]: {{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
 [Manage branches]: {{ site.baseurl }}/cloud/env/environments-start.html
 [MySQL]: {{ site.baseurl }}/cloud/project/services-mysql.html

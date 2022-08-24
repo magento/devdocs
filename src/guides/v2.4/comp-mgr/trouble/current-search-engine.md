@@ -58,7 +58,7 @@ After you configure your search engine and reindex, you are ready to upgrade to 
 
 ## If your search engine is `elasticsearch`
 
-Elasticsearch versions 6 and lower no longer supported.
+Elasticsearch versions 6 and earlier no longer supported.
 
 A value of `elasticsearch` indicates your down-level version of Magento is configured to use Elasticsearch 2.x. This version of Elasticsearch is no longer supported.
 
