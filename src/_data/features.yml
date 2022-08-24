@@ -57,30 +57,6 @@ features:
           2.3: false
           2.4: true 
       -
-        name: PayPal Smart Buttons
-        support:
-          2.0: false
-          2.1: false
-          2.2: false
-          2.3: true
-          2.4: true
-      -
-        name: Vendor Bundled Extension – Yotpo
-        support:
-          2.0: false
-          2.1: false
-          2.2: false
-          2.3: true
-          2.4: true
-      -
-        name: Live Chat Agent powered by dotdigital
-        support:
-          2.0: false
-          2.1: false
-          2.2: false
-          2.3: true
-          2.4: true
-      -
         name: Amazon Sales Channel
         support:
           2.0: false
@@ -105,7 +81,7 @@ features:
           2.3: true
           2.4: true
       -
-        name: Vendor Bundled Extensions (dotdigital, Klarna & Braintree)
+        name: Integrated Braintree for payments
         support:
           2.0: false
           2.1: false
@@ -161,14 +137,6 @@ features:
           2.0: false
           2.1: false
           2.2: false
-          2.3: true
-          2.4: true
-      -
-        name: Integrated Vertex
-        support:
-          2.0: false
-          2.1: false
-          2.2: true
           2.3: true
           2.4: true
       -
