@@ -5,6 +5,8 @@ group: "Fundamentals of Magento 2 Development"
 title: "Create a New Module"
 thumbnail: "fundamentals/thumbs/create-new-module.png"
 menu_order: 1
+migrated_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/backend-development/create-module.html
+layout: migrated
 ---
 
 Module is a structural element of Magento 2 – the whole system is built upon modules. Typically, the first step in creating a customization is building a module.
