@@ -54,7 +54,7 @@ Your request must specify the admin user's `username`, `password` and `otp` (one
 
 By default, an admin token is valid for 4 hours. To change this value, log in to Admin and go to **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration** > **Admin Token Lifetime (hours)**.
 
-See [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token.html) for more information about authorization tokens.
+See [Token-based authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token) for more information about authorization tokens.
 
 **Endpoint:**
 

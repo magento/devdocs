@@ -5,7 +5,7 @@ title: customer query
 
 The `customer` query returns information about the logged-in customer, store credit history and customer's wishlist.
 
-To return or modify information about a customer, we recommend you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-session.html).
+To return or modify information about a customer, we recommend you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-session).
 
 ## Syntax
 
@@ -169,6 +169,61 @@ query {
       }
     }
   }
+}
+```
+
+### Retrieve orders based on scope argument:
+
+The following query returns all customer orders, across all store view codes. The value of GLOBAL in the scope field overrides the store view code specified in the Store header.
+
+***Request:***
+
+```graphql
+{
+    customer {
+        orders(
+            pageSize: 20,
+            scope: GLOBAL
+        ) {
+            items {
+                id
+                order_number
+                order_date
+                total {
+                    grand_total
+                    { value currency }
+                }
+                status
+            }
+        }
+    }
+}
+```
+
+***Response:***
+
+```json
+{
+    "data": {
+        "customer": {
+            "orders": {
+                "items": [
+                    {
+                        "id": "ODg=",
+                        "order_number": "48000000001",
+                        "order_date": "2022-07-27 18:01:38",
+                        "total": {
+                            "grand_total": {
+                                "value": 15,
+                                "currency": "USD"
+                            }
+                        },
+                        "status": "Pending"
+                    }
+                ]
+            }
+        }
+    }
 }
 ```
 

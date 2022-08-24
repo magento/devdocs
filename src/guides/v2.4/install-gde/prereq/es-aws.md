@@ -56,4 +56,5 @@ For additional information, see the [OpenSearch AWS documentation][].
 [Elasticdump]: https://www.npmjs.com/package/elasticdump
 [OpenSearch AWS documentation]: https://docs.aws.amazon.com/opensearch-service/
 [Migrating to Amazon OpenSearch Service]: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/migration.html
+[OpenSearch AWS documentation]: https://docs.aws.amazon.com/opensearch-service/index.html
 [Advanced Install]: {{ page.baseurl }}/install-gde/install/cli/install-cli.html
