@@ -1,60 +1,44 @@
 {% include layout/header.html %}
 
 <div class="content-container videos-list">
-
 	<aside class="sidebar">
 		<button class="toc-toggler">Table of Contents</button>
 		<div class="sidebar-wrapper">
-
 			<ul>
 				<li class="level-0 {% if page.url == '/videos/' %}active{% endif %}"><a href="{{ site.baseurl }}/videos/">All Videos</a></li>
-
 				<li><span class="nav-header">Playlists</span></li>
-
 				{% assign playlists = site.videos | where: 'layout', 'video' | group_by: 'group' %}
 				{% for playlist in playlists %}
 					{% if playlist.name.size > 0 %}
-
 						{% assign url_parts = playlist.items[0].url | split: '/' %}
 						{% assign url_parts_size = url_parts | size %}
 						{% assign rm = url_parts[2] %}
-
 						<li class="{% if playlist.name == page.group %}active{% endif %}"><a href="{{site.baseurl}}/videos/{{ rm }}/">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
 					{% endif %}
 				{% endfor %}
-
 			</ul>
-
 		</div>
 	</aside>
 
 	<section class="content">
 		<div class="content-wrap">
-
             <header class="content-header">
 				<div class="message-banner">
 					<b>This page has <a href="{{ page.migrated_to }}">moved</a> and will be redirected soon. See <a href="{{ site.baseurl }}/migrated.html">Migrated topics</a> for the complete list.</b>
-					
 				</div>
-				{% include layout/page-header.html %}
+                {% include layout/page-header.html %}
 			</header>
             <main>
-
-			{% include layout/page-header.html %}
-			{{ content }}
-
-			{% assign sorted_videos = site.videos | where: 'layout', 'video' | sort: 'date' | reverse %}
-			
-			{% if page.group != nil %}
-				{% assign sorted_videos = sorted_videos | where: 'group', page.group | sort: 'menu_order' %}
-			{% endif %}
-
-			<div class="videos">
-			{% for video in sorted_videos %}
-        {% include video/preview.html %}
-			{% endfor %}
-			</div>
-
+                {{ content }}
+                {% assign sorted_videos = site.videos | where: 'layout', 'video' | sort: 'date' | reverse %}
+                {% if page.group != nil %}
+                    {% assign sorted_videos = sorted_videos | where: 'group', page.group | sort: 'menu_order' %}
+                {% endif %}
+                <div class="videos">
+                    {% for video in sorted_videos %}
+                    {% include video/preview.html %}
+                    {% endfor %}
+                </div>
 		   </main>
         </div>
 	</section>

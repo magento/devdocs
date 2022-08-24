@@ -6,7 +6,7 @@ title: "How to Add a New Product Attribute"
 thumbnail: "fundamentals/thumbs/add-attribute.png"
 menu_order: 1
 migrated_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/backend-development/add-product-attribute.html
-layout: migrated
+layout: video
 ---
 
 Adding a product attribute is one of the most popular operations in both Magento 1 and Magento 2.
