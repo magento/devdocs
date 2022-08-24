@@ -1,12 +1,12 @@
 label: Shared Services
 pages:
-- label: Storefront Events
+- label: Adobe Commerce Storefront Events
   children:
-    - label: Storefront Events SDK
+    - label: Adobe Commerce Storefront Event SDK
       url: /shared-services/storefront-events-sdk.html
       versionless: true
 
-    - label: Storefront Event Collector
+    - label: Adobe Commerce Storefront Event Collector
       url: /shared-services/storefront-event-collector.html
       versionless: true
 

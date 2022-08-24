@@ -5,7 +5,7 @@ title: Proxies
 menu_title: Proxies
 menu_order: 7
 contributor_name: Classy Llama
-contributor_link: http://www.classyllama.com/
+contributor_link: https://www.classyllama.com/
 migrated_to: https://developer.adobe.com/commerce/php/development/components/proxies/
 layout: migrated
 ---
@@ -56,7 +56,7 @@ Assume that class `SlowLoading` has a non-trivial performance impact when instan
 
 ### Proxies are generated code
 
-Magento has a solution for this situation: proxies. [Proxies](http://en.wikipedia.org/wiki/Proxy_pattern) extend other classes to become lazy-loaded versions of them. That is, a real instance of the class a proxy extends is created only after one of the class's methods is actually called. A proxy implements the same interface as the original class and so can be used as a dependency anywhere the original class can.  Unlike its parent, a proxy has only one dependency: the object manager.
+Magento has a solution for this situation: proxies. [Proxies](https://en.wikipedia.org/wiki/Proxy_pattern) extend other classes to become lazy-loaded versions of them. That is, a real instance of the class a proxy extends is created only after one of the class's methods is actually called. A proxy implements the same interface as the original class and so can be used as a dependency anywhere the original class can.  Unlike its parent, a proxy has only one dependency: the object manager.
 
 Proxies are generated code and therefore do not need to be manually written.  (See [Code generation]({{ page.baseurl }}/extension-dev-guide/code-generation.html) for more information.) Simply reference a class in the form `\Original\Class\Name\Proxy`, and the class is generated if it does not exist.
 

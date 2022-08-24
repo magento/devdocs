@@ -2,10 +2,12 @@
 group: testing
 title: Running Unit Tests in the CLI
 contributor_name: Vinai Kopp
-contributor_link: http://vinaikopp.com/
+contributor_link: https://vinaikopp.com/
 functional_areas:
   - Testing
   - test
+migrated_to: https://developer.adobe.com/commerce/testing/guide/unit/command-line/
+layout: migrated
 ---
 
 ### Running all unit tests

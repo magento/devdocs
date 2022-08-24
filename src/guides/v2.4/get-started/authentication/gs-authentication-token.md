@@ -159,7 +159,7 @@ echo send($request);
 
 Magento provides a separate token service for administrators and customers. When you request a token from one of these services, the service returns a unique access token in exchange for the username and password for a Magento account.
 
-The Magento web API framework allows *guest users* to access resources that are configured with the permission level of anonymous. Guest users are users who the framework cannot authenticate through existing authentication mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission. [Restricting access to anonymous web APIs]({{ page.baseurl }}/rest/anonymous-api-security.html) contains a list of APIs that do not require a token.
+The Magento web API framework allows *guest users* to access resources that are configured with the permission level of anonymous. Guest users are users who the framework cannot authenticate through existing authentication mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission. [Restricting access to anonymous web APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/anonymous-api-security) contains a list of APIs that do not require a token.
 
 The following table lists endpoints and services that can be used to get an authentication token. Admin accounts must be authenticated with a [two factor authentication]({{page.baseurl}}/security/two-factor-authentication.html) provider. Some providers may require multiple calls.
 
@@ -243,4 +243,4 @@ Related topics
 
 [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
 
-[Restricting access to anonymous web APIs]({{ page.baseurl }}/rest/anonymous-api-security.html)
+[Restricting access to anonymous web APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/anonymous-api-security)

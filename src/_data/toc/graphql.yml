@@ -9,7 +9,7 @@ pages:
         - label: GraphQL requests
           url: /graphql/send-request.html
 
-        - label: Authorization tokens
+        - label: GraphQL Authorization
           url: /graphql/authorization-tokens.html
 
         - label: Protected mutations

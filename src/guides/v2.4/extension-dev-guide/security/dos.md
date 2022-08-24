@@ -57,7 +57,7 @@ shopping.
 
 [Google ReCaptcha]({{ site.user_guide_url }}/stores/security-google-recaptcha.html) is an example of a
 challenge provider. One of the biggest advantages of ReCaptcha is that it avoids actually presenting
-a user with a challenge, unless it detects suspicious behavior. [Protected endpoints]({{page.baseurl}}/rest/protected-endpoints.html)
+a user with a challenge, unless it detects suspicious behavior. [Protected endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/protected-endpoints)
 contains a list of forms/endpoints can be enabled for ReCaptcha out-of-the-box. You can extend the list by following the example
 on how to add coverage can be found in the [SecurityPackage](https://github.com/magento/security-package/tree/develop/ReCaptchaCustomer) repo.
 

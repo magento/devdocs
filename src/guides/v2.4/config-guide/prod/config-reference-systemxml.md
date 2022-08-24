@@ -6,6 +6,8 @@ functional_areas:
   - System
 contributor_name: David Lambauer
 contributor_link: https://github.com/DavidLambauer
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-systemxml.html
+layout: migrated
 ---
 
 The `system.xml` file allows you to manage the Magento system configuration. Use this topic as a general reference for the `system.xml` file. The `system.xml` file is located under `etc/adminhtml/system.xml` in a given Magento 2 extension.
@@ -273,7 +275,7 @@ A `<field>`-Tag can have the following children:
 | Node                        | Description                                                                                                                                                                               | Type             |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
 | `label`                     | Defines the label that is displayed in the frontend.                                                                                                                                      | `string`         |
-| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`         |
+| `comment`                   | Adds a comment below the field label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`         |
 | `tooltip`                   | Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.                                        | `string`         |
 | `hint`                      | Displays additional information. Only available with specific `frontend_model`.                                                                                                           | `string`         |
 | `frontend_class`            | Adds a defined CSS class to the rendered section HTML element.                                                                                                                            | `string`         |

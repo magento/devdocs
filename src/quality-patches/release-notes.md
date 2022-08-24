@@ -21,6 +21,41 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.18
+
+-  **ACSD-45817** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where a GraphQL product mutation for a specific store returns all configurable variants, including those not assigned to the requested store.
+-  **ACSD-46146** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.6`)_-Fixes the issue where two order confirmation emails are sent after placing an order from Admin.
+-  **ACSD-45255** _(for Adobe Commerce `>=2.4.3 <2.4.6`)_-Fixes an exception on the Low Stock Report page for a restricted admin user.
+-  **ACSD-45488** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.6`)_-Fixes the issue where a configurable product with multiple sources is not returned to In Stock automatically.
+-  **ACSD-45754** _(for Adobe Commerce and Magento Open Source `>=2.3.1 <2.4.6`)_-Fixes the issue where Reward points are not added after applying a coupon to the cart.
+-  **ACSD-45849** _(for Adobe Commerce `>=2.4.3 <2.4.4`)_-Fixes the issue where video metadata is lost after a staging update is applied.
+-  **ACSD-45257** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.4`)_-Fixes the issue where GraphQL doesn't display a cart discount correctly.
+-  **ACSD-44938** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.4`)_-Fixes the issue where VAT_ID cannot be applied in a GraphQL request for a guest user.
+-  Updated patches: MDVA-43417.
+
+## v1.1.17
+
+-  **ACSD-45241** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.4.4`)_-Fixes the issue where stock quantity for a virtual product is miscalculated after creating a credit memo.
+-  **ACSD-43887** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where incorrect details are displayed on the checkout payment page when Purchase Orders for companies are enabled.
+-  **ACSD-45143** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.5`)_-Fixes the issue where the setShippingAddressesOnCart mutation doesn't allow setting numeric region code as 'region'.
+-  **ACSD-44591** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.6`)_-Fixes the error that occurs when an order is placed without CAPTCHA confirmation.
+-  **ACSD-45520** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.6`)_-Fixes the issue where swatch options are not pre-selected on the product detail page when a user edits configurable products from the shopping cart.
+-  **ACSD-45169** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.6`)_-Fixes the issue where Visual Merchandiser doesn't display the correct stock and price for a configurable product after a staging update is applied.
+-  **ACSD-45424** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.6`)_-Fixes the issue where an incorrect reservation compensation is created after a partial refund (credit memo).
+-  **MDVA-42807** _(for Adobe Commerce and Magento Open Source `>=2.3.1 <2.4.6`)_-Fixes the issue where the custom currency sign is not displayed on the store front.
+-  Updated patches: MDVA-42689, AC-3022.
+
+## v1.1.16
+
+-  **MDVA-44703** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where order totals in the Orders report are miscalculated for the restricted admin user.
+-  **MDVA-44940** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the SQL error that occurs while saving the category from admin.
+-  **MDVA-44562** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.2-p2`)_-Fixes the issue where the non-default store id for quote items is overridden by the default store id, despite the GraphQL request originating from the non-default store view.
+-  **MDVA-43167** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where admin order grid mass action doesn't apply for multi-page when admin user selects all orders.
+-  **MDVA-44044** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.2-p2`)_-Fixes the issue where a product is not displayed on the category page after it is assigned to a new website.
+-  **MDVA-42509** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.4`)_-Fixes the issue where a CSV could not be uploaded for a quick order resulting in an 'Unable to send the cookie' error.
+-  Updated patches: MDVA-41061, MDVA-42584.
+-  The prefix for the new Quality Patches Tool patches will be changed from "MDVA" to "ACSD" due to internal process changes.
+
 ## v1.1.15
 
 -  **MDVA-40961** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where an additional item can't be added to the cart when the minimum qty of the item is already in the cart.

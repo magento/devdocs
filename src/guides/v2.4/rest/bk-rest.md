@@ -1,6 +1,8 @@
 ---
 group: rest-api
 title: REST API Overview
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/
+layout: migrated
 functional_areas:
   - Integration
 ---
@@ -18,4 +20,4 @@ For more information, see [Generate local REST API reference](generate-local.htm
 [REST API documentation]: https://magento.redoc.ly
 [ReDoc]: https://github.com/Rebilly/ReDoc
 [Open-API specification]: https://github.com/OAI/OpenAPI-Specification
-[Swagger]: http://swagger.io/
+[Swagger]: https://swagger.io/

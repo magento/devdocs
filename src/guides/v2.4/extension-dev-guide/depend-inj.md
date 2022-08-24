@@ -138,7 +138,7 @@ Related topics
 *  [Programming concepts]({{ page.baseurl }}/extension-dev-guide/api-concepts.html)
 
 [Dependency Injection]: https://en.wikipedia.org/wiki/Dependency_injection
-[dependency inversion principle]: http://www.oodesign.com/dependency-inversion-principle.html
+[dependency inversion principle]: https://www.oodesign.com/dependency-inversion-principle
 [`di.xml`]: {{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html
 [`ObjectManager`]: {{ page.baseurl }}/extension-dev-guide/object-manager.html
 [code compiler tool]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html

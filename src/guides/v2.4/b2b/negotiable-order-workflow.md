@@ -2,6 +2,8 @@
 group: b2b-developer-guide
 title: Place a negotiable quote order
 ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/negotiable-order-workflow
+layout: migrated
 ---
 
 This topic describes how REST calls can be used to place items in a shopping cart, initiate and complete the process of negotiating a quote, and reimbursing the buyer's credit upon receipt of payment.
@@ -10,11 +12,11 @@ This topic describes how REST calls can be used to place items in a shopping car
 
 *  You have [installed and enabled]({{ site.baseurl }}/extensions/b2b/) {{site.data.var.b2b}}.
 *  You have [created a company]({{ page.baseurl }}/b2b/company-object.html) and a [company user]({{ page.baseurl }}/b2b/company-object.html).
-*  You have an integration or [admin authorization token]({{ page.baseurl }}/rest/tutorials/orders/order-admin-token.html) to make calls on behalf of seller, and a [customer token]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html#get-token) to make calls on behalf of the company user.
+*  You have an integration or [admin authorization token](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-admin-token) to make calls on behalf of seller, and a [customer token](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-create-customer#get-token) to make calls on behalf of the company user.
 
 ## Prepare the order
 
-The steps in this section are similar to those in the [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html), except that different products are added to the cart.
+The steps in this section are similar to those in the [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/), except that different products are added to the cart.
 
 ### Create a shopping cart
 
@@ -1000,7 +1002,7 @@ Authorization Bearer <admin token>
 
 ## Related information
 
-*  [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
+*  [Order processing tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/)
 *  [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
 *  [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
 *  [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)

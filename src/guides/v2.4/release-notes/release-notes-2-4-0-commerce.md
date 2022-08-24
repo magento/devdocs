@@ -25,6 +25,10 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.
 
 The package names of security releases are typically appended with -p1. However, we could not avoid deviating from these naming conventions with Magento 2.3.5, which in turn has had a temporary ripple effect on the subsequent security package names. Specifically, the full-feature Magento 2.3.5 release is Magento 2.3.5-p1. The security release that we will release when Magento 2.4.0 GAs will be Magento 2.3.5-p2. We hope to return to the usual naming conventions in future releases.
 
+## Apply `AC-3022.patch` to continue offering DHL as a shipping carrier
+
+DHL has introduced schema version 6.2 and will deprecate schema version 6.0 in September 2022. Adobe Commerce 2.4.4 and earlier versions that support the DHL integration support only version 6.0. Merchants deploying these releases should apply `AC-3022.patch` at their earliest convenience to continue offering DHL as a shipping carrier. See the [Apply a patch to continue offering DHL as shipping carrier](https://support.magento.com/hc/en-us/articles/7707818131597-Apply-a-patch-to-continue-offering-DHL-as-shipping-carrier) Knowledge Base article for information about downloading and installing the patch.
+
 ## Security patch available
 
 Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.5-p2) provides. Patch 2.3.5.2 (Composer package 2.3.5-p2) is a security patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.5-p1. All hot fixes that were applied to the 2.3.5 release are included in this security patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
@@ -1054,7 +1058,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7042-->
 
-*  Layered navigation no longer breaks HTML5 validation of the swatch module. Previously, HTML validation errors occurred for attributes that were not defined in the [W3C markup validation service](http://validator.w3.org/), but those attributes have been changed to data attributes. _Fix submitted by Nirav Patel in pull request [26055](https://github.com/magento/magento2/pull/26055)_. [GitHub-22363](https://github.com/magento/magento2/issues/22363)
+*  Layered navigation no longer breaks HTML5 validation of the swatch module. Previously, HTML validation errors occurred for attributes that were not defined in the [W3C markup validation service](https://validator.w3.org/), but those attributes have been changed to data attributes. _Fix submitted by Nirav Patel in pull request [26055](https://github.com/magento/magento2/pull/26055)_. [GitHub-22363](https://github.com/magento/magento2/issues/22363)
 
 <!--- ENGCOM-7065-->
 
@@ -2126,7 +2130,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7458-->
 
-*  Corrected the VAT Validation URL for [EU Vat numbers](http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl).  _Fix submitted by Shikha Mishra in pull request [27886](https://github.com/magento/magento2/pull/27886)_. [GitHub-27874](https://github.com/magento/magento2/issues/27874)
+*  Corrected the VAT Validation URL for [EU Vat numbers](https://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl).  _Fix submitted by Shikha Mishra in pull request [27886](https://github.com/magento/magento2/pull/27886)_. [GitHub-27874](https://github.com/magento/magento2/issues/27874)
 
 ### Visual Merchandiser
 

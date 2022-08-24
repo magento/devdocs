@@ -1,6 +1,8 @@
 ---
 group: rest-api
 title: Check salable quantities
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/check-salable-quantity/
+layout: migrated
 ---
 
 Magento provides several endpoints that allow you to check whether a product from a specified stock is salable and the available quantity.

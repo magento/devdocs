@@ -112,7 +112,7 @@ Anyone working on your project can subscribe to the {{site.data.var.ece}} status
 
 <!--Link references-->
 
-[your {{site.data.var.ece}} account]: https://account.magento.com/customer/account/login
+[your {{site.data.var.ece}} account]: https://accounts.magento.cloud/user
 [Projects section]: https://cloud.magento.com/cloud/project/subscriptions/
 [Sales]: https://magento.com/explore/contact-sales
 [Adobe Solution Partner]: https://magento.com/partners/choose

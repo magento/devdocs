@@ -95,6 +95,10 @@ The following query shows the status of a cart that is ready to be converted int
         sku
       }
       quantity
+      errors {
+        code
+        message
+      }
     }
     available_payment_methods {
       code
@@ -267,6 +271,8 @@ In this query, the **Buy 3 tee shirts and get the 4th free** cart price rule fro
 
 The `3T1free` rule is applied first, and Magento returns the price of a single shirt, $29, as the discount. Magento then applies a 10% discount to the remaining total of the products in the cart.
 
+If other promotions or price adjustments are applied to the cart through either store credit or gift cards, these are reflected under the `discounts` object with the appropriate label.
+
 **Request:**
 
 ```graphql
@@ -332,15 +338,21 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
             },
             "discounts": [
               {
-                "label": "3T1free",
+                "label": "Discount (3T1free, 10% Off for New Customers)",
                 "amount": {
-                  "value": 29
+                  "value": 37.7
                 }
               },
               {
-                "label": "10% Off for New Customers",
+                "label": "Gift Card",
                 "amount": {
-                  "value": 8.7
+                  "value": 0.1
+                }
+              },
+              {
+                "label": "Store Credit",
+                "amount": {
+                  "value": 0.1
                 }
               }
             ]

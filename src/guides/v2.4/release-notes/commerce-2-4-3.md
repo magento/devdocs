@@ -29,6 +29,10 @@ PHP Fatal error: Uncaught Error: Call to undefined function Magento\Framework\Fi
 
 This error results from the use of the `str_contains` function, which is an PHP 8.x function. {{ site.data.var.ee }} 2.4.3 does not support PHP 8.x. This hotfix replaces this function with a supported PHP 7.x function. See the [{{site.data.var.ee}} upgrade 2.4.3, 2.3.7-p1 PHP Fatal error Hotfix](https://support.magento.com/hc/en-us/articles/4408021533069-Adobe-Commerce-upgrade-2-4-3-2-3-7-p1-PHP-Fatal-error-Hotfix) Knowledge Base article.
 
+## Apply `AC-3022.patch` to continue offering DHL as a shipping carrier
+
+DHL has introduced schema version 6.2 and will deprecate schema version 6.0 in the near future. Adobe Commerce 2.4.4 and earlier versions that support the DHL integration support only version 6.0. Merchants deploying these releases should apply `AC-3022.patch` at their earliest convenience to continue offering DHL as a shipping carrier. See the [Apply a patch to continue offering DHL as shipping carrier](https://support.magento.com/hc/en-us/articles/7707818131597-Apply-a-patch-to-continue-offering-DHL-as-shipping-carrier) Knowledge Base article for information about downloading and installing the patch.
+
 ## Highlights
 
 Look for the following highlights in this release.
@@ -47,7 +51,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  A **new Composer plugin** helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Releases New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
 
-*  **Rate limiting is now built in to Magento APIs** to prevent denial-of-service (DoS) attacks. Web APIs now impose restrictions on the size or number of resources (the default maximum is set to 20 and can be configured to a different value based on business need) that can be requested by a client. See [Rate limiting]({{page.baseurl}}/get-started/api-security.html#rate-limiting) for information about configuring these restrictions. <!--- MC-35358-->
+*  **Rate limiting is now built in to Magento APIs** to prevent denial-of-service (DoS) attacks. Web APIs now impose restrictions on the size or number of resources (the default maximum is set to 20 and can be configured to a different value based on business need) that can be requested by a client. See [Rate limiting]({{page.baseurl}}/get-started/api-security.html) for information about configuring these restrictions. <!--- MC-35358-->
 
 *  **ReCAPTCHA  coverage has been extended** to include:
 

@@ -125,7 +125,7 @@ This example shows you how to construct a REST web API call to create an account
 
     The `createAccount` call requires a `customer` data object. The `password` and `redirectUrl` values are optional. The default `password` value is `null` and the default `redirectUrl` value is blank.
 
-1. To pass the <code>customer</code> data object in the POST call payload, specify [JSON](http://www.json.com/) or [XML](https://glossary.magento.com/xml) request body on the call.
+1. To pass the <code>customer</code> data object in the POST call payload, specify JSON or [XML](https://glossary.magento.com/xml) request body on the call.
 
 ### Customers Search API request example {#customers-search-api-request-example}
 
@@ -145,7 +145,7 @@ The following example builds a Customers Search request based on search criteria
 
 1. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
 
-1. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html).
+1. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches).
 
    The following example finds customers whose first name contains "ver" or whose last name contains "Costello".
 

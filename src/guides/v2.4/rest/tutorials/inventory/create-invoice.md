@@ -2,6 +2,8 @@
 layout: tutorial
 group: rest-api
 title: Step 10. Create an invoice
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-invoice/
+layout: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 10. Create an invoice
 menu_order: 100
@@ -52,7 +54,7 @@ An invoice `id`, such as `3`.
 
 ## Retrieve the order item IDs
 
-When you create an order, Magento generates an `order_item_id` for each product. These values will be used in [Step 12. Create a shipment]({{page.baseurl}}/rest/tutorials/inventory/create-shipment.html).
+When you create an order, Magento generates an `order_item_id` for each product. These values will be used in [Step 12. Create a shipment](https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-shipment).
 
 **Endpoint:**
 
