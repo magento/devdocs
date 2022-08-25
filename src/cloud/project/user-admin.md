@@ -71,8 +71,7 @@ To add a user and assign roles:
    ```bash
    magento-cloud user:add
    ```
-
-2. Follow the prompts to specify the user email address, set the project and environment type roles, and add the user:
+1. Follow the prompts to specify the user email address, set the project and environment type roles, and add the user:
 
    ```terminal
    Enter the user's email address: alice@example.com
