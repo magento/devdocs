@@ -18,12 +18,12 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 | **Role**            | **Scope**  | **Access** |
 |-|-|-|
-| **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Adobe assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You must submit a {{site.data.var.ee}} Support ticket to modify settings or change the Account owner. |
+| **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Adobe assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You submit a {{site.data.var.ee}} Support ticket to modify settings or change the Account owner. |
 | **Super User** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][] and managing users. |
 | **Project reader** | Project | View access to all project environments. Users with this role cannot perform tasks on any environment. However, you can configure environment-level permissions for users with this role to permit write access to a specific environment. |
 | **Admin** | Environment | Change settings and perform tasks on an environment, including merging with the parent environment |
 | **Contributor** | Environment | Push code and branch the environment |
-| **Reader** | Environment | View-only access to an environment |
+| **Viewer** | Environment | View-only access to an environment |
 
 ## Add user authentication requirements
 
@@ -44,9 +44,9 @@ Changing user configuration on an {{site.data.var.ece}} environment requires a s
 
 -  Users assigned the **Admin** role can no longer manage users using the `magento-cloud` CLI. Only users that are granted the **Super User** or **Account Owner** role can manage users.
 
-### Manage users with the `magento-cloud` CLI {#cloud-user-mg-cli}
+## Manage users with the `magento-cloud` CLI {#cloud-user-mg-cli}
 
-Use the {{site.data.var.ece}} command line client to manage users and integrate this with any other automated system.
+Use the {{site.data.var.ece}} `magento-cloud` CLI to manage users and integrate this with other automated systems.
 
 Available commands:
 
@@ -54,8 +54,14 @@ Available commands:
 -  `magento-cloud user:delete`–delete a user
 -  `magento-cloud user:list [users]`–list project users
 -  `magento-cloud user:role`–view or change the user role
+-  `magento-cloud user:update`–update user role(s) on a project
 
-The following examples use the `magento-cloud` CLI to add a user, configure roles, and modify project assignments and assigned user roles.
+{:.bs-callout-tip}
+The `magento-cloud list` command displays all the `magento-cloud` CLI commands. To view the command and parameters for a specific command and not the entire list, append the command  with a -help. For example, `magento-cloud` `environment:list`, you run `magento-cloud environment:list -help`.
+
+The following examples use the `magento-cloud` CLI to add a user, configure roles, modify project assignments and assigned user roles.
+
+### Add a user and assign roles
 
 {:.procedure}
 To add a user and assign roles:
@@ -66,7 +72,7 @@ To add a user and assign roles:
    magento-cloud user:add
    ```
 
-1. Follow the prompts to specify the user email address, set the project and environment roles, and add the user:
+2. Follow the prompts to specify the user email address, set the project and environment type roles, and add the user:
 
    ```terminal
    Enter the user's email address: alice@example.com
@@ -90,8 +96,33 @@ To add a user and assign roles:
 
    After you add the user, Adobe sends an email to the specified address with instructions for accessing the {{ site.data.var.ece }} project.
 
-{:.bs-callout-tip}
-The `magento-cloud list` command displays all the `magento-cloud` CLI commands.
+### View a user's project role
+
+To view a user's Project role run:
+
+```bash
+magento-cloud user:get user@example.com
+
+```
+
+```terminal
+Current role(s) of User (user@example.com) on Production (i5xcjhjhp7fie):
+  Project role: admin
+```
+
+### Add a user role to an environment type
+
+To add a user as a `viewer` on the Production environment, and as a `contributor` on Development environment types run:
+
+```bash
+magento-cloud user:add user@example.com -r production:v -r development:c
+
+```
+To add a user as a viewer on Production and Development environment types, run:
+
+```bash
+magento-cloud user:add user@example.com -r prod%:v -r
+```
 
 ### Manage users from the Project Web UI {#cloud-user-webinterface}
 
@@ -280,7 +311,7 @@ To create an API token:
 
    ![Cloud create API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-create-api-token.png){:width="550px"}
 
-1. Specify an **Application** name for the token, for example specify a name that matches the machine user or automated process that will use the API token.
+1. Specify an **Application** name for the token, for example, specify a name that matches the machine user or automated process that uses the API token.
 
    ![Cloud create API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-api-token-app-name.png){:width="550px"}
 
