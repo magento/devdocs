@@ -96,8 +96,13 @@ Enter `exit` at the `mysql>` prompt to exit.
 
 To install or upgrade MySQL, see [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
-### Elasticsearch or OpenSearch
+### Search Engine
 
+#### OpenSearch:
+``` bash
+curl -XGET '<opensearch-hostname>:<opensearch-port>'
+```
+#### Elasticsearch:
 ``` bash
 curl -XGET '<elasticsearch-hostname>:<elasticsearch-port>'
 ```

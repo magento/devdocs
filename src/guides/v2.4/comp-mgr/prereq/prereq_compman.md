@@ -9,7 +9,7 @@ layout: migrated
 
 Complete the following tasks before upgrading Magento:
 
-*  [Verify Elasticsearch is installed](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html) (for Magento 2.4.0 and later)
+*  [Verify Search Engine is installed](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html) (for Magento 2.4.0 and later)
 *  [Set `ulimit` for the web server user](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html)
 *  [Checklist](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html)
 

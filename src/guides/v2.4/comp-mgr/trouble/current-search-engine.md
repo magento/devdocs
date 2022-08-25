@@ -22,7 +22,7 @@ Use the following command to check the current search engine:
 bin/magento config:show catalog/search/engine
 ```
 
-The error occurs if the returned value is `mysql` or `elasticsearch`.
+The error occurs if the returned value is `mysql`, `elasticsearch`, `elasticsearch6`.
 
 {:.bs-callout-warning}
 {%
@@ -45,18 +45,20 @@ Follow the guidelines described in the following sections to recover from Magent
 
 ## If your search engine is `mysql`
 
-Before Magento 2.4, MySQL was the default catalog search engine, but MySQL is no longer supported in this capacity. Now, you must install and configure Elasticsearch as your search engine before upgrading to 2.4.
+Before Magento 2.4, MySQL was the default catalog search engine, but MySQL is no longer supported in this capacity. Now, you must install and configure Elasticsearch or OpenSearch as your search engine before upgrading to 2.4.
 
 Use the following resources to help guide you through this process:
 
-*  [Install and configure the search engine]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/es-overview.html)
+*  [Install and configure the search engine]({{site.baseurl}}/guides/v2.4/config-guide/elasticsearch/es-overview.html)
 *  [Installing Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
 *  Configure Elasticsearch to work with [nginx]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/es-config-nginx.html) or [Apache]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/es-config-apache.html)
 *  [Configure Magento to use Elasticsearch]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/configure-magento.html)
 
-After you configure Elasticsearch and reindex, you are ready to upgrade to Magento 2.4.
+After you configure your search engine and reindex, you are ready to upgrade to Magento 2.4.
 
 ## If your search engine is `elasticsearch`
+
+Elasticsearch versions 6 and earlier no longer supported.
 
 A value of `elasticsearch` indicates your down-level version of Magento is configured to use Elasticsearch 2.x. This version of Elasticsearch is no longer supported.
 

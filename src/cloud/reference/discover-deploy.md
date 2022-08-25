@@ -103,7 +103,7 @@ Follow best practices for builds and deployment, and use the [Upgrades and patch
 
    -  Make any required updates to environment-specific settings before deploying to the remote environment.
 
-   -  Ensure that the Elasticsearch service version is compatible with the Elasticsearch PHP client version. See [Set up Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html).
+   -  Ensure that the OpenSearch or Elasticsearch service version is compatible with the OpenSearch or Elasticsearch PHP client version, respectively. See [Set up OpenSearch]({{ site.baseurl }}/cloud/project/services-opensearch.html) or [Set up Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html).
 
 -  **Check database connectivity and available storage in remote environments**–
 
@@ -201,7 +201,7 @@ The slug includes all files and folders **excluding the following** mounts confi
 
 Now we provision your applications and all of the [backend](https://glossary.magento.com/backend) services you need:
 
--  Mounts each service in a container (web server, Elasticsearch, RabbitMQ)
+-  Mounts each service in a container (web server, OpenSearch, RabbitMQ)
 -  Mounts the read-write file system (mounted on a highly available distributed storage grid)
 -  Configures the network so services can "see" each other (and only each other)
 

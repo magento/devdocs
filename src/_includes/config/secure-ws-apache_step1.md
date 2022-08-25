@@ -37,7 +37,7 @@ where
 
       In this example, we use the web server user, but the choice of user is up to you.
 
-   *  Setting up Elasticsearch: the user is named `magento_elasticsearch` in this example
+   *  Setting up Elasticsearch (or OpenSearch): the user is named `magento_elasticsearch` in this example
 
 *  `<password file name>` must be a hidden file (starts with `.`) and should reflect the name of the user. See the examples later in this section for details.
 

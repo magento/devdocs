@@ -129,11 +129,21 @@ These configuration values are available in the Admin in **Stores** > Settings >
 | Solr Server Path | `catalog/search/solr_server_path` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Elasticsearch Server Hostname | `catalog/search/elasticsearch_server_hostname` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Elasticsearch Server Port | `catalog/search/elasticsearch_server_port` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
-| Elasticsearch Index Prefix | `catalog/search/elasticsearch_index_prefix` | !<!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
+| Elasticsearch Index Prefix | `catalog/search/elasticsearch_index_prefix` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Enable Elasticsearch HTTP Auth | `catalog/search/elasticsearch_enable_auth` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
-| Elasticsearch HTTP Username | `catalog/search/elasticsearch_username` | !<!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| Elasticsearch HTTP Username | `catalog/search/elasticsearch_username` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 | Elasticsearch HTTP Password | `catalog/search/elasticsearch_password` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 | Elasticsearch Server Timeout | `catalog/search/elasticsearch_server_timeout` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| OpenSearch Server Hostname | `catalog/search/opensearch_server_hostname` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
+| OpenSearch Server Port | `catalog/search/opensearch_server_port` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
+| OpenSearch Index Prefix | `catalog/search/opensearch_index_prefix` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
+| Enable OpenSearch HTTP Auth | `catalog/search/opensearch_enable_auth` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| OpenSearch HTTP Username | `catalog/search/opensearch_username` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| OpenSearch HTTP Password | `catalog/search/opensearch_password` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| OpenSearch Server Timeout | `catalog/search/opensearch_server_timeout` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+
+{:.bs-callout-info}
+OpenSearch settings available starting from Magento 2.4.6.
 
 ### Inventory sensitive and system-specific paths
 

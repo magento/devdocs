@@ -142,6 +142,13 @@ The following tables provide many but not all available install parameters. For 
 `--elasticsearch-enable-auth` | Enables authentication on the search engine server. The default is `false`. | No
 `--elasticsearch-username` | The user ID to authenticate the search engine | No, unless authentication is enabled
 `--elasticsearch-password` | The password to authenticate the search engine | No, unless authentication is enabled
+`--opensearch-host` | The host name or IP address where the **OpenSearch** engine is running. The default is `localhost`. | No
+`--opensearch-port` | The port for incoming HTTP requests. The default is `9200`. | No
+`--opensearch-index-prefix` | A prefix that identifies the search engine index. The default is `magento2`. | No
+`--opensearch-timeout` | The number of seconds before the system times out. The default is `15`. | No
+`--opensearch-enable-auth` | Enables authentication on the search engine server. The default is `false`. | No
+`--opensearch-username` | The user ID to authenticate the search engine | No, unless authentication is enabled
+`--opensearch-password` | The password to authenticate the search engine | No, unless authentication is enabled
 
 **RabbitMQ configuration options:**
 
@@ -202,7 +209,7 @@ The following example installs Magento with the following options:
 *  Default language is `en_US` (U.S. English)
 *  Default currency is U.S. dollars
 *  Default time zone is U.S. Central (America/Chicago)
-*  OpenSearch 1.2 is installed on `es-host.example.com` and connects on port 9200
+*  OpenSearch 1.2 is installed on `os-host.example.com` and connects on port 9200
 
 ```bash
 magento setup:install --base-url=http://127.0.0.1/magento2/ \
@@ -210,8 +217,8 @@ magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --use-rewrites=1 \
---search-engine=elasticsearch7 --elasticsearch-host=es-host.example.com \
---elasticsearch-port=9200
+--search-engine=opensearch --opensearch-host=os-host.example.com \
+--opensearch-port=9200
 ```
 
 Messages similar to the following display to indicate a successful installation:
@@ -232,8 +239,8 @@ You have the option to install Magento without creating the Magento administrato
 magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 \
---search-engine=elasticsearch7 --elasticsearch-host=es-host.example.com \
---elasticsearch-port=9200
+--search-engine=opensearch --opensearch-host=os-host.example.com \
+--opensearch-port=9200
 ```
 
 Messages like the following display if the installation is successful:
