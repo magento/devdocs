@@ -1098,7 +1098,7 @@ extensions:
         support:
           2.4.5: supported
           2.4.4: supported
-          2.4.3: compatible
+          2.4.3: supported
           2.4.2: not supported
           2.4.1: not supported
           2.4.0: not supported
