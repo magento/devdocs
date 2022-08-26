@@ -199,6 +199,14 @@ features:
           2.3: false
           2.4: true
       -
+        name: PHP 8.1
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
         name: PHP 7.4
         support:
           2.0: false
