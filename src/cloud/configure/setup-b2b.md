@@ -86,7 +86,7 @@ To extend functionality, see the [{{site.data.var.ee}} B2B Developer Guide][b2b-
 [admin-enable]: {{ site.baseurl }}/extensions/b2b/
 [b2b-dev]: {{ site.baseurl }}/guides/v2.3/b2b/bk-b2b.html
 [b2b-user]: {{ site.user_guide_url }}/getting-started.html
-[branching]: {{ site.baseurl }}/cloud/env/environments-start.html#getstarted
+[branching]: {{ site.baseurl }}/cloud/env/environments-start.html
 [config]: {{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html
 [extensions]: {{ site.baseurl }}/extensions/
 [install-b2b]: {{ site.baseurl }}/extensions/b2b/

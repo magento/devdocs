@@ -12,7 +12,7 @@ When making changes to a database, you may find it helpful to run profiling to i
 {:.procedure}
 To enable database query profiling:
 
-1. [Log in to the database]({{ site.baseurl }}/cloud/env/environments-start.html#commands).
+1. [Log in to the database]({{ site.baseurl }}/cloud/env/environments-start.html#interact-with-remote-environments).
 
 1. Enable profiling.
 
@@ -38,7 +38,6 @@ To enable database query profiling:
 
 ## Example log
 
-{:.no-copy}
 ```sql
 MariaDB [6fck2obu3244c]> show profiles;
 +----------+------------+---------------------------------------------------------------------------------------------------------------------------------+

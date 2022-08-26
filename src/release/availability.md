@@ -17,6 +17,7 @@ The following table describes the status of Adobe Commerce software availability
 | **PWA Studio**                                  | Available now | [Documentation](https://developer.adobe.com/commerce/pwa-studio/) and [GitHub](https://github.com/magento/pwa-studio) |
 | **Channel Manager**                             | Available now | [Commerce Marketplace](https://marketplace.magento.com/magento-channel-manager.html) \| [User Guide](https://experienceleague.adobe.com/docs/commerce-channels/channel-manager/intro-to-channel-manager/overview.html) |
 | **Amazon Sales Channel**                        | Available now for {{site.data.var.ee}} versions 2.4.x and 2.3.x (US, Canada, Mexico, and UK) | [Commerce Marketplace](https://marketplace.magento.com/magento-module-amazon.html) \| [Release Notes](https://experienceleague.adobe.com/docs/commerce-channels/amazon/release-notes.html) \| [User Guide]({{ site.user_guide_url }}/sales-channels/asc/amazon-sales-channel.html) |
+| **Experience Platform Connector**                     | Available now | [Commerce Marketplace](https://marketplace.magento.com/magento-experience-platform-connector.html) \| [Release Notes](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/release-notes.html?lang=en) \| [User Guide](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/overview.html?lang=en) |
 
 ## Compatibility
 
