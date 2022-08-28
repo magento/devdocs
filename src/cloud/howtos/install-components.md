@@ -88,11 +88,13 @@ To enable or disable an extension:
 1. Enable or disable a module. The `module` command updates the `config.php` file with the requested status of the module.
 
    >Enable a module.
+
    ```bash
    bin/magento module:enable <module-name>
    ```
 
    >Disable a module.
+
    ```bash
    bin/magento module:disable <module-name>
    ```
@@ -164,7 +166,7 @@ If you encounter errors, see [extension deployment failure][trouble].
 
 <!-- link definitions -->
 
-[branching]: {{ site.baseurl }}/cloud/env/environments-start.html#getstarted
+[branching]: {{ site.baseurl }}/cloud/env/environments-start.html
 [config]: {{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html
 [extensions]: {{ site.baseurl }}/extensions/
 [Commerce Marketplace]: https://marketplace.magento.com

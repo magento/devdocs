@@ -4,8 +4,35 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Wed Aug 17 15:51:01 2022
+updated: Mon Aug 22 19:58:38 2022
 entries:
+- description: Added information about the DHL schema upgrade patch to the Adobe Commerce
+    2.4.x and 2.3.7 release notes. See [2.4.x Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
+    and  [2.3.x Release Information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 22, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3122
+  merge_commit: 4d0858cca3e7472f74b3fc273ff39d84f11cc1b8
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added the `productView` field to the Live Search [`productSearch` query](https://devdocs.magento.com/live-search/product-search.html).
+    This field was added to support Adobe Commerce Catalog Service, which is currently
+    in beta.
+  versions: 2.4.x
+  type: Major Update
+  date: August 18, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3117
+  merge_commit: acefa4024fa4a2bcb1048262bcdad591d5dec4a4
+  contributor: keharper
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
 - description: "[Cloud Patches 1.0.18 release](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v1018)
     contains a critical patch for Commerce 2.4.5."
   versions: 2.4.5

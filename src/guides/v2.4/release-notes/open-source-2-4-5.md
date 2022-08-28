@@ -65,7 +65,7 @@ Outdated JavaScript libraries have been updated to their latest versions, and ou
 
 The following Composer dependencies have been updated to the latest versions with constraint:
 
-*  `colinmollenhour/credis`  (1.13.0)? <!--- AC-2732-->
+*  `colinmollenhour/credis`  (1.13.0) <!--- AC-2732-->
 *  `guzzlehttp/guzzle` (^7.4.2)
 *  `laminas/laminas-captcha` (updated with a constraint ^2.12) <!--- AC-2625-->
 *  `laminas/laminas-db`   (^2.15.0)

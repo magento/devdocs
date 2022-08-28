@@ -61,3 +61,4 @@ The Live Search queries can return the following error codes when a query encoun
 |1001 |`index_not_found_exception`<br />Live Search exception message.|
 |1002 |`search_phase_execution_exception`<br />Live Search exception message.|
 |1003 |`mapper_parsing_exception`<br />Live Search exception message.|
+|1004 |`invalid_argument_exception`<br /> The request has an invalid argument.|
