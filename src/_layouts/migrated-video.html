@@ -1,0 +1,109 @@
+{% include layout/header.html %}
+
+<div class="content-container video-page">
+	<aside class="sidebar">
+		<button class="toc-toggler">Table of Contents</button>
+		<div class="sidebar-wrapper">
+			<ul>
+				<li class="level-0"><a href="{{ site.baseurl }}/videos/">&larr; All Videos</a></li>
+				{% assign g = page.path | split: '/' %}
+				{% assign g = g[1] %}
+				{% assign playlists = site.videos | where: 'layout', 'migrated-videos' | where_exp: 'page', 'page.path contains g' | sort: 'menu_order' %}
+				{% for playlist in playlists %}
+					<li class="playlist-name">
+						<a href="{{ playlist.url }}">{{ playlist.title }}</a>
+					</li>
+				{% endfor %}
+				{% assign videos = site.videos | where: 'layout', 'migrated-video' | where_exp: 'page', 'page.path contains g' | sort: 'menu_order' %}
+				{% for video in videos %}
+          <li class="{% if video.url == page.url %}active{% assign current = forloop.index %}{% endif %}">
+          {% if site.baseurl == "" %}
+            <a href="{{ video.url }}">
+          {% else %}
+            <a href="{{ site.baseurl }}{{ video.url }}">
+          {% endif %}
+              {{ video.title }}
+              <span class="video-duration">{{ video.duration }} </span>
+            </a>
+          </li>
+				{% endfor %}
+		  </ul>
+		</div>
+	</aside>
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<div class="message-banner">
+					<b>This page has <a href="{{ page.migrated_to }}">moved</a> and will be redirected soon. See <a href="{{ site.baseurl }}/migrated.html">Migrated topics</a> for the complete list.</b>
+				</div>
+				{% include layout/page-header.html %}
+			</header>
+            <main>
+                <div id="video-player" class="video-player-wrap">
+                    <div class="video-player">
+                        <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src='https://www.youtube.com/embed/{{ page.youtube_id }}'
+                                itemprop='embedUrl'
+                                frameborder='0'
+                            allowfullscreen>
+                    </iframe>
+                        </div>
+                    </div>
+                </div>
+
+			{{ content }}
+            </main>
+			<div class="adjaced-pages">
+				<div class="playlist-name">{{ playlists[0].title }}</div>
+			{% assign prev = current | minus: 2 %}
+			{% if prev >= 0 %}
+				<div class="previous-page">
+                    {% if site.baseurl == "/" %}
+                    <a href="{{ videos[prev].url }}">
+                    {% else %}
+                    <a href="{{ site.baseurl }}{{ videos[prev].url }}">
+                    {% endif %}
+						<span class="arrow">&larr; Previous</span>
+						<span class="title">{{ videos[prev].title }}</span>
+					</a>
+				</div>
+			{% endif %}
+
+			{% assign next = current %}
+			{% if next < videos.size %}
+				<div class="next-page">
+                    {% if site.baseurl == "/" %}
+                    <a href="{{ videos[next].url }}">
+                    {% else %}
+                    <a href="{{ site.baseurl }}{{ videos[next].url }}">
+                    {% endif %}
+						<span class="arrow">Next &rarr;</span>
+						<span class="title">{{ videos[next].title }}</span>
+					</a>
+				</div>
+			{% endif %}
+			</div>
+
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		{% include layout/page-info.html %}
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+{% include layout/footer.html %}
+
+<style>
+	main {
+		filter: opacity(30%);
+	}
+	section .page-intro {
+		filter: opacity(30%);
+	}
+</style>
