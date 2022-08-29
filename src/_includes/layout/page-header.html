@@ -48,7 +48,7 @@
   <h2 class="page-subtitle no_toc">{{ page.subtitle }}</h2>
   {% endif %}
 
-  {% unless page.layout == 'migrated' %}
+  {% unless page.layout contains 'migrated' %}
 	{% include layout/github-links.html %}
 	{% endunless %}
 
