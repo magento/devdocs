@@ -23,7 +23,7 @@ To verify the authenticity of the signature, we ask you to have the Adobe relati
 Further instructions while filling out the form:
 
 -  Make sure to use the email associated with the primary MageID.
--  For _Adobe Contact Email_, use `magebeta@adobe.com` - _We may not receive your request if you do not use this email!_.
+-  For _Adobe Contact Email_, use `commerce@adobe.com` - _We may not receive your request if you do not use this email!_.
 
 ## Developer access to GitHub
 
@@ -36,7 +36,7 @@ If you are not already in the Adobe Partner Program, you must do the following:
 
 1. Make sure all of your contributors have an active GitHub account with two-factor authentication enabled.
 1. Provide a maintainer GitHub username. We will provide that user the ability to add additional users associated with the parent company who signed the Beta Program Agreement (`github.com/accountname`).
-1. Contact <magebeta@adobe.com> from the official partner’s company email with the maintainer and ask to join.
+1. Contact <commerce@adobe.com> from the official partner's company email with the maintainer and ask to join.
 
 If you are not a partner, you won't be able to provide feedback for the 2.4.4 beta. We are working to change this for the next beta release.
 
@@ -53,7 +53,7 @@ See our [release schedule][] for the latest information about our upcoming Beta 
 -  Lastly, we ask partners to provide feedback and comments through the private Beta Github repository after installing and using the code.
 
 For more information about this program, refer to our [FAQ][].
-For additional questions, email us at <magebeta@adobe.com>.
+For additional questions, email us at <commerce@adobe.com>.
 
 <!-- Link definitions -->
 [Beta Program Agreement]: https://experiencecloudpanel.adobe.com/c/r/mbeta
