@@ -125,9 +125,10 @@ To add a user as a `viewer` on a `Production` environment, and as a `contributor
 magento-cloud user:add user@example.com -r production:v -r integration:c
 
 ```
-### Update a user access level role on an environment
 
-Update user environment access level to `admin` on the `Production` environment:
+### Update user environment permissions  
+
+Update user environment permissions to `admin` on the `Production` environment:
 
 ```bash
 magento-cloud user:update user@example.com -r production:a
