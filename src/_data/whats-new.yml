@@ -4,8 +4,33 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 22 19:58:38 2022
+updated: Mon Aug 29 14:38:55 2022
 entries:
+- description: Updated the [Regional IP addresses](https://devdocs.magento.com/cloud/env/environments-start.html#regional-ip-addresses)
+    for Cloud Integration environments.
+  versions: 2.x
+  type: Technical
+  date: August 25, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3121
+  merge_commit: 5ab9ae7c5587844c9d55b049bb48b0234502bcfb
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.19 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 24, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3128
+  merge_commit: 274f6a4af4a59285bbc06212648a2661535b1df1
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
 - description: Added information about the DHL schema upgrade patch to the Adobe Commerce
     2.4.x and 2.3.7 release notes. See [2.4.x Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
     and  [2.3.x Release Information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
