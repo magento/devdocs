@@ -1,6 +1,6 @@
 ---
 group: "Fundamentals of Magento 2 Development"
-layout: videos
+layout: migrated-videos
 permalink: "videos/fundamentals/"
 title: "Fundamentals of Magento 2 Development"
 menu_order: 0

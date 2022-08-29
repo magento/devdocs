@@ -7,7 +7,7 @@
 			<ul>
 				<li class="level-0 {% if page.url == '/videos/' %}active{% endif %}"><a href="{{ site.baseurl }}/videos/">All Videos</a></li>
 				<li><span class="nav-header">Playlists</span></li>
-				{% assign playlists = site.videos | where: 'layout', 'video' | group_by: 'group' %}
+				{% assign playlists = site.videos | where: 'layout', 'migrated-video' | group_by: 'group' %}
 				{% for playlist in playlists %}
 					{% if playlist.name.size > 0 %}
 						{% assign url_parts = playlist.items[0].url | split: '/' %}
@@ -30,7 +30,7 @@
 			</header>
             <main>
                 {{ content }}
-                {% assign sorted_videos = site.videos | where: 'layout', 'video' | sort: 'date' | reverse %}
+                {% assign sorted_videos = site.videos | where: 'layout', 'migrated-video' | sort: 'date' | reverse %}
                 {% if page.group != nil %}
                     {% assign sorted_videos = sorted_videos | where: 'group', page.group | sort: 'menu_order' %}
                 {% endif %}

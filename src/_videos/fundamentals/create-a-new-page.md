@@ -6,7 +6,7 @@ title: "Create a New Page"
 thumbnail: "fundamentals/thumbs/create-new-page.png"
 menu_order: 1
 migrated_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/frontend-development/create-new-page.html
-layout: video
+layout: migrated-video
 ---
 
 In this video on how to create a new page, we’ll create a page which returns JSON with one parameter: the message “HELLO WORLD!”

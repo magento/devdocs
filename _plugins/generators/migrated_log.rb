@@ -15,7 +15,7 @@ module Jekyll
       # Make the site object available in any scope in this class.
       @site = site
       pages = @site.pages
-      migrated_pages = pages.filter { |page| page.data['layout'] == 'migrated' }
+      migrated_pages = pages.filter { |page| page.data['layout'] and page.data['layout'].include? 'migrated' }
       number_of_staying_pages = pages.count { |page| page.data['guide_version'] == '2.3' || page.data['group'].nil? }
       migrated_pages_data = []
 
@@ -23,7 +23,7 @@ module Jekyll
         migrated_page = {
           path: page.path,
           title: page.data['title'] || abort("Error in '#{page.path}'.\n Check 'title' in the file's frontmatter.".red),
-          guide: @site.data.dig('toc', page.data['group'],
+          guide: page.data['layout'].include?('video') ? 'Video Tutorials' : @site.data.dig('toc', page.data['group'],
                                 'label') || abort("Error in '#{page.path}'.\n Check 'group' in the file's frontmatter or 'label' in the corresponding TOC.".red),
           migrated_from: site.baseurl + page.url,
           migrated_to: page.data['migrated_to'] || abort("Error in '#{page.path}'.\n Check 'migrated_to' in the file's frontmatter.".red),
@@ -37,6 +37,7 @@ module Jekyll
         }
         migrated_pages_data << migrated_page
       end
+
       migrated_pages_by_group = migrated_pages_data.group_by { |page| page[:guide] }.sort.to_h
       content = "The folowing #{migrated_pages.size} topics out of #{pages.size - number_of_staying_pages} have been migrated and will be redirected soon.\n\n"
       migrated_pages_by_group.each do |guide, topics|

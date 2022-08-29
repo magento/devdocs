@@ -8,13 +8,13 @@
 				<li class="level-0"><a href="{{ site.baseurl }}/videos/">&larr; All Videos</a></li>
 				{% assign g = page.path | split: '/' %}
 				{% assign g = g[1] %}
-				{% assign playlists = site.videos | where: 'layout', 'videos' | where_exp: 'page', 'page.path contains g' | sort: 'menu_order' %}
+				{% assign playlists = site.videos | where: 'layout', 'migrated-videos' | where_exp: 'page', 'page.path contains g' | sort: 'menu_order' %}
 				{% for playlist in playlists %}
 					<li class="playlist-name">
 						<a href="{{ playlist.url }}">{{ playlist.title }}</a>
 					</li>
 				{% endfor %}
-				{% assign videos = site.videos | where: 'layout', 'video' | where_exp: 'page', 'page.path contains g' | sort: 'menu_order' %}
+				{% assign videos = site.videos | where: 'layout', 'migrated-video' | where_exp: 'page', 'page.path contains g' | sort: 'menu_order' %}
 				{% for video in videos %}
           <li class="{% if video.url == page.url %}active{% assign current = forloop.index %}{% endif %}">
           {% if site.baseurl == "" %}
