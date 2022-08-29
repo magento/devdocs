@@ -33,7 +33,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
     if url_ignore
       url_ignore.push(jekyll_excludes_as_regex).flatten!.uniq!
     else
-      checks_config['html-proofer'][:url_ignore] = jekyll_excludes_as_regex
+      checks_config['html-proofer'][:ignore_urls] = jekyll_excludes_as_regex
     end
 
     # Read configuration options for html-proofer
