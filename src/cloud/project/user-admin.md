@@ -126,7 +126,7 @@ magento-cloud user:add user@example.com -r production:v -r integration:c
 
 ```
 
-### Update user environment permissions  
+### Update user environment permissions
 
 Update user environment permissions to `admin` on the `Production` environment:
 
