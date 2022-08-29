@@ -35,7 +35,7 @@ When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users wi
 
 Adobe Commerce on cloud infrastructure consists of three environments types: Production, Staging, and Integration. You grant user access to an environment by adding a user to an Admin, Viewer, or Contributor role.
 
-The role assigned to a user applies to all environments of that type. This enables you to set environment level permissions for multiple environments at once based on the environment.
+The role assigned to a user applies to all environments of that type. This enables you to set environment-level permissions for multiple environments at once.
 
 ## Add users and manage access
 
