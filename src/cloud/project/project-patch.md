@@ -207,7 +207,7 @@ To apply and test a custom patch on a Cloud environment:
 
 ## Revert a custom patch
 
-To revert/uninstall a previously applied custom patch:
+To revert or uninstall a previously applied custom patch:
 
 1. Delete the patch file from the `/m2-hotfixes` directory.
 
