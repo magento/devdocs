@@ -228,7 +228,6 @@ To revert/uninstall a previously applied custom patch:
    {:.bs-callout-info}
    Make sure to test in a pre-production environment. For {{site.data.var.ece}}, you can create new branches with the `magento-cloud environment:branch <branch-name>` CLI command.
 
-
 ## Apply patches to a non-Cloud project {#standalone}
 
 Use the [Quality Patches Tool]({{ site.baseurl }}/quality-patches/usage.html) for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
