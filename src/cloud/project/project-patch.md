@@ -205,6 +205,30 @@ To apply and test a custom patch on a Cloud environment:
    {:.bs-callout-info}
    Make sure to test all patches in a pre-production environment. For {{site.data.var.ece}}, you can create new branches with the `magento-cloud environment:branch <branch-name>` CLI command.
 
+## Revert a custom patch
+
+To revert/uninstall a previously applied custom patch:
+
+1. Delete the patch file from the `/m2-hotfixes` directory.
+
+1. Add, commit, and push code changes.
+
+   ```bash
+   git add m2-hotfixes/
+   ```
+
+   ```bash
+   git commit -m "Revert patch"
+   ```
+
+   ```bash
+   git push origin <branch-name>
+   ```
+
+   {:.bs-callout-info}
+   Make sure to test in a pre-production environment. For {{site.data.var.ece}}, you can create new branches with the `magento-cloud environment:branch <branch-name>` CLI command.
+
+
 ## Apply patches to a non-Cloud project {#standalone}
 
 Use the [Quality Patches Tool]({{ site.baseurl }}/quality-patches/usage.html) for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
