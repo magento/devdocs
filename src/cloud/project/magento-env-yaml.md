@@ -27,9 +27,9 @@ The `.magento.env.yaml` file contains two sections: `stage` and `log`. The `stag
 
 ### Environment variables
 
-The `ece-tools` package sets values in the `env.php` file based on values from [Cloud variables]({{site.baseurl}}/cloud/env/variables-cloud.html), variables set in the project web UI, and the `.magento.env.yaml` configuration file. The environment variables in the `.magento.env.yaml` file customize the Cloud environment by overriding your existing Commerce configuration. If a default value is `Not Set`, then the `ece-tools` package takes **NO** action and uses the Commerce default or the value from the MAGENTO_CLOUD_RELATIONSHIPS configuration. If the default value is set, then the `ece-tools` package takes the action to set that default.
+The `ece-tools` package sets values in the `env.php` file based on values from [Cloud variables]({{site.baseurl}}/cloud/env/variables-cloud.html), variables set in the Project Web interface, and the `.magento.env.yaml` configuration file. The environment variables in the `.magento.env.yaml` file customize the Cloud environment by overriding your existing Commerce configuration. If a default value is `Not Set`, then the `ece-tools` package takes **NO** action and uses the Commerce default or the value from the MAGENTO_CLOUD_RELATIONSHIPS configuration. If the default value is set, then the `ece-tools` package takes the action to set that default.
 
-The following topics contain the detailed definitions, such as whether a default value is set or not set, of all variables for use in the `.magento.env.yaml` file:
+The following topics contain detailed definitions, such as whether a default value is set or not set, of all variables that you can use in the `.magento.env.yaml` file:
 
 -  [Global]({{ site.baseurl }}/cloud/env/variables-global.html)—variables control actions in each phase: build, deploy, and post-deploy
 -  [Build]({{ site.baseurl }}/cloud/env/variables-build.html)—variables control build actions
@@ -104,7 +104,7 @@ The NOT_EXIST_OPTION variable is not allowed in configuration.
 
 ## PHP constants
 
-You can use PHP constants in `.magento.env.yaml` file definitions instead of hard-coding values. The following example defines the `driver_ options` using a PHP constant:
+You can use PHP constants in `.magento.env.yaml` file definitions instead of hard-coding values. The following example defines the `driver_options` using a PHP constant:
 
 ```yaml
 stage:
