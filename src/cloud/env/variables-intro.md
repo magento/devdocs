@@ -22,4 +22,4 @@ Variables are _hierarchical_, which means that if a variable is not overridden, 
 You can set [ADMIN variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html) from the Project Web interface or using the {{site.data.var.ee}} CLI. You can manage other environment variables from the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 {:.bs-callout-tip}
-YAML files are case sensitive and do not allow tabs. Be careful to use consistent indentation throughout the `.magento.env.yaml` file. The examples in our documentation and in the sample file use _two-space_ indentation.
+YAML files are case sensitive and do not allow tabs. Be careful to use consistent indentation throughout the `.magento.env.yaml` file or your configuration may not work as expected. The examples in our documentation and in the sample file use _two-space_ indentation. Use the [ece-tools validate command]({{ site.baseurl }}/cloud/project/magento-env-yaml.html#validate-configuration-file) to check your configuration.

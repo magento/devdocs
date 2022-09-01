@@ -9,7 +9,7 @@ functional_areas:
 The `.magento.env.yaml` file uses environment variables to centralize the management of build and deploy actions across all of your environments, including Pro Staging and Production. To configure unique actions in each environment, you must modify this file in each environment.
 
 {:.bs-callout-tip}
-YAML files are case sensitive and do not allow tabs. Be careful to use consistent indentation throughout the `.magento.env.yaml` file. The examples in our documentation and in the sample file use _two-space_ indentation.
+YAML files are case sensitive and do not allow tabs. Be careful to use consistent indentation throughout the `.magento.env.yaml` file or your configuration may not work as expected. The examples in our documentation and in the sample file use _two-space_ indentation. Use the [ece-tools validate command](#validate-configuration-file) to check your configuration.
 
 ## File structure
 
