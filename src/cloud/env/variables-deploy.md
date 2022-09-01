@@ -558,7 +558,8 @@ To further reduce deployment time, we recommend using [Configuration Management]
 
 Use this environment variable to retain customized search service settings between deployments. For example:
 
-#### Elasticsearch Configuration
+>Elasticsearch configuration:
+
 ```yaml
 stage:
   deploy:
@@ -570,7 +571,8 @@ stage:
      elasticsearch_server_timeout: '15'
 ```
 
-#### OpenSearch Configuration (available since v.2.4.6 and later)
+>OpenSearch configuration (for Commerce 2.4.6 and later):
+
 ```yaml
 stage:
   deploy:
@@ -591,7 +593,7 @@ stage:
   deploy:
     SEARCH_CONFIGURATION:
       engine: elasticsearch
-      elasticsearch_server_port: '1234'
+      elasticsearch_server_port: '9200'
       _merge: true
 ```
 
