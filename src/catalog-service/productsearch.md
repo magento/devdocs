@@ -1,6 +1,6 @@
 ---
 group: catalog-service
-title: Catalog Service productSearch query
+title: productSearch query
 ee_only: True
 ---
 
