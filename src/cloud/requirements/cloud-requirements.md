@@ -44,7 +44,7 @@ To get started with Git, [download](https://git-scm.com/downloads) and install G
 In addition to Git requirements for valid branch names, {{site.data.var.ee}} adds two additional requirements:
 The `/` character is not allowed. Branch names must be case-insensitively unique. In other words, if you have a branch named `CaSe`, you cannot create another branch named `case`.
 
-To connect to the Git repository, Secure Shell (SSH) access is required and not access through HTTPS. For a walk through of configuring SSH with your local, see [Enable SSH keys](https://devdocs.magento.com/cloud/before/before-workspace-ssh.html).
+To clone the Git repository, use the Secure Shell (SSH) access method. Do not use HTTPS. For a walk through of configuring SSH with your local, see [Enable SSH keys]({{ site.baseurl }}/cloud/before/before-workspace-ssh.html).
 
 ## Supported software and services {#cloud-arch-software}
 
