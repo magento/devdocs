@@ -18,7 +18,7 @@ For example, 2.4.3 is fully tested with MariaDB 10.4. Adobe recommends that you 
 
 ## Adobe Commerce on cloud infrastructure
 
-Elasticsearch version and compatibility support for {{site.data.var.ece}} is determined by versions deployed on the Cloud infrastructure, and sometimes differ from versions supported by Adobe Commerce on-premises deployments. For details on supported software and services deployed on the {{site.data.var.ece}}, see [Supported software and services](https://devdocs.magento.com/cloud/requirements/cloud-requirements.html#cloud-arch-software).
+Service version and compatibility support for {{site.data.var.ece}} is determined by versions deployed on the Cloud infrastructure, and sometimes differ from versions supported by Adobe Commerce on-premises deployments. For details on supported software and services deployed on {{site.data.var.ece}}, see [Supported software and services]({{ site.baseurl }}/cloud/requirements/cloud-requirements.html#cloud-arch-software).
 
 
 ## Miscellaneous
@@ -35,7 +35,7 @@ Mail Transfer Agent (MTA) or Simple Mail Transfer Protocol (SMTP) server
 ### Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
-Magento is not supported on Microsoft Windows and Apple's macOS.
+Magento is not supported on Microsoft Windows and Apple macOS.
 
 ### PHP extensions
 
