@@ -20,7 +20,6 @@ For example, 2.4.3 is fully tested with MariaDB 10.4. Adobe recommends that you 
 
 Service version and compatibility support for {{site.data.var.ece}} is determined by versions deployed on the Cloud infrastructure, and sometimes differ from versions supported by Adobe Commerce on-premises deployments. For details on supported software and services deployed on {{site.data.var.ece}}, see [Supported software and services]({{ site.baseurl }}/cloud/requirements/cloud-requirements.html#cloud-arch-software).
 
-
 ## Miscellaneous
 
 This section describes support and compatibility for all other types of required and optional software.
