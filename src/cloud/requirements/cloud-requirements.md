@@ -56,7 +56,7 @@ To clone the Git repository, use the Secure Shell (SSH) access method. Do not us
 *  Content Delivery Network (CDN): Fastly CDN
 *  Search: Elasticsearch, OpenSearch
 
-You cannot upgrade the software, but you can [configure the following services](https://{{ site.baseurl }}/cloud/project/services.html#default-and-supported-services):
+You cannot upgrade the software, but you can [configure the following services]({{ site.baseurl }}/cloud/project/services.html#default-and-supported-services):
 
 *  [PHP]({{ site.baseurl }}/cloud/project/magento-app.html)
 *  [MySQL]({{ site.baseurl }}/cloud/project/services-mysql.html)
