@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Application
+title: Application configuration
 functional_areas:
   - Cloud
   - Setup
