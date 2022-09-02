@@ -21,6 +21,14 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.19
+
+-  **ACSD-46213** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where category tree request is limited to 20 categories.
+-  **ACSD-45781** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.2`)_-Fixes the issue where the store front search field is not displayed on mobile.
+-  **ACSD-46192** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <2.4.5`)_-Fixes the issue with using the async/bulk/V1/configurable-products/bySku/options endpoint.
+-  **ACSD-46404** _(for Adobe Commerce and Magento Open Source `>=2.4.4 <2.4.5`)_-Fixes the issue where an admin user cannot log in after upgrading to 2.4.4.
+-  Updated patches: MDVA-41305, MDVA-38626, MDVA-38728, MDVA-41061-V4, MDVA-42269, MDVA-39305.
+
 ## v1.1.18
 
 -  **ACSD-45817** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where a GraphQL product mutation for a specific store returns all configurable variants, including those not assigned to the requested store.
