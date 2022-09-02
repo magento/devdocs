@@ -1,7 +1,7 @@
 ---
 group: cloud-guide
 title: Technologies and requirements
-funcyou tional_areas:
+functional_areas:
   - Cloud
   - Install
 ---
@@ -56,7 +56,7 @@ To clone the Git repository, use the Secure Shell (SSH) access method. Do not us
 *  Content Delivery Network (CDN): Fastly CDN
 *  Search: Elasticsearch, OpenSearch
 
-You cannot upgrade the software, but you can configure the following services:
+You cannot upgrade the software, but you can [configure the following services](https://{{ site.baseurl }}/cloud/project/services.html#default-and-supported-services):
 
 *  [PHP]({{ site.baseurl }}/cloud/project/magento-app.html)
 *  [MySQL]({{ site.baseurl }}/cloud/project/services-mysql.html)
@@ -64,8 +64,6 @@ You cannot upgrade the software, but you can configure the following services:
 *  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 *  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html). Elasticsearch 7.11 and later  is not supported for {{site.data.var.ece}}.
 *  [OpenSearch]({{ site.baseurl }}/cloud/project/services-opensearch.html). Adobe Commerce and Magento Open Source versions 2.4.4, 2.4.3-p2, and 2.3.7-p3 support the OpenSearch service.
-
-See also [Configure services](https://devdocs.magento.com/cloud/project/services.html#default-and-supported-services).
 
 {:.bs-callout-info}
 See [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) in the _Installation guide_ for recommended versions.
@@ -116,7 +114,7 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 
 For development and testing, Adobe recommends the following:
 
-*  Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications.
+*  Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications
 
    You can enable and test individual features, new extensions, and third-party integrations on different environments before you merge into a single environment.
 
