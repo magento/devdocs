@@ -6,7 +6,9 @@ menu_title: Data that needs to be migrated manually
 menu_node: parent
 menu_order: 5
 functional_areas:
-  - Tools
+  - Tool
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/migrate-data/manual.html
+layout: migrated
 ---
 
 ## Data types

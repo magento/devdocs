@@ -16,6 +16,10 @@ For example, 2.4.3 is fully tested with MariaDB 10.4. Adobe recommends that you 
 
 {% include install/system-requirements-table.html %}
 
+## Adobe Commerce on cloud infrastructure
+
+Service version and compatibility support for {{site.data.var.ece}} is determined by versions deployed on the Cloud infrastructure, and sometimes differ from versions supported by Adobe Commerce on-premises deployments. For details on supported software and services deployed on {{site.data.var.ece}}, see [Supported software and services]({{ site.baseurl }}/cloud/requirements/cloud-requirements.html#cloud-arch-software).
+
 ## Miscellaneous
 
 This section describes support and compatibility for all other types of required and optional software.
@@ -25,12 +29,12 @@ All of the following requirements apply to the latest patch release of Magento 2
 
 ### Mail server
 
-Mail Transfer Agent (MTA) or an SMTP server
+Mail Transfer Agent (MTA) or Simple Mail Transfer Protocol (SMTP) server
 
 ### Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
-Magento is not supported on Microsoft Windows and macOS.
+Magento is not supported on Microsoft Windows and Apple macOS.
 
 ### PHP extensions
 
@@ -59,7 +63,7 @@ PHPUnit (as a command-line tool) 9.0.0
 
 ### RAM
 
-Upgrading the Magento applications and extensions you obtain from Commerce Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
+Upgrading the Magento applications and extensions you obtain from Commerce Marketplaces and other sources can require up to 2 GB of RAM. If you are using a system with less than 2 GB of RAM, Adobe recommends you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
 
 ### System dependencies
 
