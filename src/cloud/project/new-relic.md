@@ -343,6 +343,8 @@ See the following New Relic documentation topics for additional information:
 
 -  [Configure notification channels using the New Relic API]
 
+-  [Magento's New Relic Integration]
+
 {:.bs-callout-warning}
 The alerts in the Managed Alerts for Magento Commerce policy have default notification channels configured to notify Adobe teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.
 
@@ -366,6 +368,7 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [Apdex score]: https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction
 [Configure notification channels using the New Relic Alerts user interface]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts
 [Configure notification channels using the New Relic API]: https://docs.newrelic.com/docs/alerts/rest-api-alerts/new-relic-alerts-rest-api/rest-api-calls-new-relic-alerts#channels
+[Magento's New Relic Integration]: https://newrelic.com/instant-observability/magento/509a6b56-d580-4e8c-8c64-cb71a61b8a26
 [from your New Relic account page]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
 [Explore your data with New Relic Logs UI]: https://docs.newrelic.com/docs/logs/new-relic-logs/ui-data/explore-your-data-new-relic-logs-ui
 [Health notifications]: {{site.baseurl}}/cloud/integrations/health-notifications.html
