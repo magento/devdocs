@@ -162,16 +162,16 @@ The three gateways map to the three servers in your Production environment clust
 Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS or Azure Availability Zones, each zone with a separate data center.
 
 In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides
-incremental backups, which include the file system and the database, every hour for the last 24 hours of operation. After the
-24-hour period, we retain the backups according to the following schedule:
+incremental backups, which include the file system and the database, according to the following schedule:
 
 Time Period | Backup Retention Policy
 --- | ---
-Days 1 to 3 | Each backup
-Days 4 to 6 | One backup per day
-Weeks 2 to 6 | One backup per week
-Weeks 8 to 12 | One bi-weekly backup
-Weeks 12 to 22 | One backup per month
+Day 1 | One backup per hour
+Days 2 through 3 | One back up every 6 hours
+Days 4 through 6 | One backup per day
+Weeks 2 through 6 | One backup per week
+Weeks 8 through 12 | One bi-weekly backup
+Weeks 12 through 22 | One backup per month
 
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 
@@ -179,7 +179,7 @@ Weeks 12 to 22 | One backup per month
 -  **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
 {:.bs-callout-tip}
-On Pro Staging and Production environments, you must [Submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) to restore an environment from an automatic backup. You can backup the database and code for your Production and Staging environments using `magento-cloud` CLI commands. See [Dump your database]({{site.baseurl}}/cloud/project/project-webint-snap.html#db-dump) and [bin/magento setup:backup]({{site.baseurl }}/guides/v2.4/reference/cli/magento-commerce.html#setupbackup). For Integration environments, we highly recommend that you create a snapshot as a first step after accessing your {{site.data.var.ece}} project and before applying any major changes. See [Snapshots and backup management]({{site.baseurl}}/cloud/project/project-webint-snap.html).
+On Pro Staging and Production environments, you must [Submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) to restore an environment from an automatic backup. You can back up the database and code for your Production and Staging environments using `magento-cloud` CLI commands. See [Dump your database]({{site.baseurl}}/cloud/project/project-webint-snap.html#db-dump) and [bin/magento setup:backup]({{site.baseurl }}/guides/v2.4/reference/cli/magento-commerce.html#setupbackup). For Integration environments, we highly recommend that you create a snapshot as a first step after accessing your {{site.data.var.ece}} project and before applying any major changes. See [Snapshots and backup management]({{site.baseurl}}/cloud/project/project-webint-snap.html).
 
 ### Production technology stack
 
@@ -208,7 +208,7 @@ The following figure shows the technologies used in the Production environment:
 -  Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
 -  Pro120 offers 120 CPU (40 x 3 nodes) up to 480GB RAM (160 x 3 nodes)
 
-Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
+Our redundant architecture means that we can offer to upscale without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
 
 For example, you can add extra web servers to an existing cluster should the constriction be at the PHP level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level. See [Scaled architecture]({{ site.baseurl }}/cloud/architecture/scaled-architecture.html).
 
