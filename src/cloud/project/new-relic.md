@@ -343,7 +343,7 @@ See the following New Relic documentation topics for additional information:
 
 -  [Configure notification channels using the New Relic API]
 
--  [Magento's New Relic Integration]
+-  [Magento's New Relic integration]
 
 {:.bs-callout-warning}
 The alerts in the Managed Alerts for Magento Commerce policy have default notification channels configured to notify Adobe teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.
