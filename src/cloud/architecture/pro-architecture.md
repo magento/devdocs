@@ -167,7 +167,7 @@ incremental backups, which include the file system and the database, according t
 Time Period | Backup Retention Policy
 --- | ---
 Day 1 | One backup per hour
-Days 2 through 3 | One back up every 6 hours
+Days 2 through 3 | One backup every 6 hours
 Days 4 through 6 | One backup per day
 Weeks 2 through 6 | One backup per week
 Weeks 8 through 12 | One bi-weekly backup
