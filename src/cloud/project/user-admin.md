@@ -18,7 +18,7 @@ You manage access to {{site.data.var.ece}} projects by adding users and assignin
 
 | **Role**            | **Scope**  | **Access** |
 |-|-|-|
-| **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Adobe assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You submit a {{site.data.var.ee}} Support ticket to modify settings or change the Account owner. |
+| **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Adobe assigns this role to the License Owner associated with the email address, name, and information of the person who registered the {{ site.data.var.ece }} account.  You submit a {{site.data.var.ee}} Support ticket to modify settings or change the Account owner. |
 | **Super User** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][] and managing users. |
 | **Project viewer** | Project | View access to all project environments. Users with this role cannot perform tasks on any environment. However, you can configure environment-level permissions for users with this role to permit write access to a specific environment. |
 | **Admin** | Environment | Change settings, push code, perform tasks and branch environments, including merging with the parent environment; SSH access |
@@ -31,28 +31,28 @@ For added security, Adobe provides project-level multi-factor authentication (MF
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
 
+## Add users and manage access
+
+You add users and assign roles using the `magento-cloud` CLI or the Project Web Interface.
+
+{:.bs-callout-tip}
+Changing user configuration on an {{site.data.var.ece}} environment requires a site deployment for the changes to take effect, which takes your site offline until the deployment completes. For Production environments, Adobe recommends completing user administration tasks during off-peak hours to prevent service disruptions.
+
 ## Environments and user access
 
 Adobe Commerce on cloud infrastructure consists of three environments types: Production, Staging, and Integration. You grant user access to an environment by adding a user to an Admin, Viewer, or Contributor role.
 
 The role assigned to a user applies to all environments of that type. This enables you to set environment-level permissions for multiple environments at once.
 
-## Add users and manage access
-
-You can add users and assign roles using the `magento-cloud` CLI or the Project Web Interface.
-
-{:.bs-callout-tip}
-Changing user configuration on an {{site.data.var.ece}} environment requires a site deployment for the changes to take effect, which takes your site offline until the deployment completes. For Production environments, we recommend completing user administration tasks during off-peak hours to prevent service disruptions.
-
 **Prerequisites:**
 
 -  To add a user to a project or environment, you need the email address associated with an existing {{ site.data.var.ece }} account. New users can [register for an account][{{site.data.var.ece}} account] and provide the associated email address after completing account validation.
 
--  Users assigned the **Admin** role can no longer manage users using the `magento-cloud` CLI. Only users that are granted the **Super User** or **Account Owner** role can manage users.
+-  Users assigned the **Admin** role cannot manage users using the `magento-cloud` CLI. Only users that are granted the **Super User** or **Account Owner** role can manage users.
 
 ## Manage users with the `magento-cloud` CLI {#cloud-user-mg-cli}
 
-Use the {{site.data.var.ece}} `magento-cloud` CLI to manage users and integrate this with other automated systems.
+Use the {{site.data.var.ece}} `magento-cloud` CLI to manage users and integrate with automated systems.
 
 Available commands:
 
@@ -60,12 +60,12 @@ Available commands:
 -  `magento-cloud user:delete`–delete a user
 -  `magento-cloud user:list [users]`–list project users
 -  `magento-cloud user:role`–view or change the user role
--  `magento-cloud user:update`–update user role(s) on a project
+-  `magento-cloud user:update`–update user role on a project
 
 {:.bs-callout-tip}
 The `magento-cloud list` command displays all the `magento-cloud` CLI commands. To view the command and parameters for a specific command and not the entire list, append the command  with a -help. For example, `magento-cloud` `environment:list`, you run `magento-cloud environment:list -help`.
 
-The following examples use the `magento-cloud` CLI to add a user, configure roles, modify project assignments, and assigned user roles.
+The following examples use the `magento-cloud` CLI to add a user, configure roles, modify project assignments, and assign user roles.
 
 ### Add a user and assign roles
 
@@ -128,7 +128,7 @@ magento-cloud user:add user@example.com -r production:v -r integration:c
 
 ### Update user environment permissions
 
-Update user environment permissions to `admin` on the `Production` environment:
+To update user environment permissions to `admin` on the `Production` environment:
 
 ```bash
 magento-cloud user:update user@example.com -r production:a
@@ -138,10 +138,13 @@ magento-cloud user:update user@example.com -r production:a
 
 You add project-level and environment-level permissions from the Project Web UI, and use the _Edit_ feature to modify permissions for an existing user.
 
+{:.bs-callout-tip}
 After you add a user, the user receives an email inviting them to join the {{site.data.var.ece}} project.
 
+### Add users from the Project Web UI
+
 {:.procedure}
-Access the Project Web UI to add users:
+To add users from the Project Web UI:
 
 1. Log in to [your {{site.data.var.ece}} account][{{site.data.var.ece}} account].
 
@@ -157,8 +160,10 @@ Access the Project Web UI to add users:
 
 1. In the Project Web UI, add project-level users and environment-level users as needed.
 
+### Add a project-level user
+
 {:.procedure}
-Add a project-level user:
+To add a project-level user:
 
 1. In the Project Web UI, click the settings icon in the top navigation bar.
 
@@ -178,21 +183,21 @@ Add a project-level user:
 
       For a project administrator account, select **Super User**. This role provides Admin rights to all settings and environments. If not selected, the account has only view options for all project environments.
 
-   -  Select permissions per specific environment (or branch) in the Integration environment: _No access_, _Admin_ (change settings, execute action, merge code), _Contributor_ (push code), or _Reader_ (view only). When you add active environments, you can modify permissions per user.
+   -  Select permissions per specific environment (or branch) in the Integration environment: _No access_, _Admin_ (change settings, execute action, merge code), _Contributor_ (push code), or _Viewer_ (view only). When you add active environments, you can modify permissions per user.
 
 1. Click **Add User**.
 
    {:.bs-callout-warning}
-   After adding project-level users, you must redeploy all environments to apply the changes. Adding a project user does not trigger the redeploy automatically.
+   After adding project-level users, you must redeploy all environments to apply the changes. Adding a project user does not trigger a redeploy automatically.
 
  {:.bs-callout-warning}
    Only **Super Users** can manage users in any environment. To grant a user access to the **Users** tab when configuring the environment, another **Super User** or the **Account Owner** must assign that user the **Super User** role.
 
 {%include cloud/note-prevent-site-availability-issues.md%}
 
-## Update account security settings
+## Update user account security settings
 
-After you add a user to a Cloud project, ask the user to review their account settings and add the following security configuration as needed:
+After you add a user to a Cloud project, ask the user to review their account security settings and add the following security configuration as needed:
 
 -  Enable 2FA
 
@@ -204,7 +209,7 @@ After you add a user to a Cloud project, ask the user to review their account se
 
 -  Create an API token
 
-   Users can generate an API token that can be used for secure SSH access to an environment. You need the token to enable authentication workflows for automated processes.
+   Users must generate an API token that is used for SSH access to an environment. You need the token to enable authentication workflows for automated processes.
 
    On projects with MFA enforcement enabled, you must use the API token to authenticate SSH access requests from automated accounts. The token allows automated processes to bypass authentication workflows which require 2FA.
 
@@ -217,7 +222,7 @@ After you add a user to a Cloud project, ask the user to review their account se
 -  [FreeOTP (Android)][]
 -  [GAuth Authenticator (Firefox OS, desktop, others)][]
 
-Instructions for installing the authenticator application and enabling 2FA are available on the {{site.data.var.ece}} _Account settings_ page in the Cloud Project Web UI.
+Instructions for installing the authenticator application and enabling 2FA are available on the {{site.data.var.ece}} _Account settings_ page in the Project Web UI.
 
 {:.procedure}
 To enable 2FA on your {{site.data.var.ece}} user account:
@@ -269,7 +274,7 @@ To enable 2FA on your {{site.data.var.ece}} user account:
    -  Click **Save** to save the codes to your account so you can view and manage them from your account security settings.
 
       {:.bs-callout-warning}
-      If you lose access to an account with 2FA and have no recovery codes, you must contact your project administrator, or submit a support ticket to reset the 2FA application.
+      If you lose access to an account with 2FA and have no recovery codes, you must contact your project administrator, or [submit a Support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) to reset the 2FA application.
 
 1. After completing the 2FA setup, click **Save** to update your account.
 
@@ -283,7 +288,7 @@ To enable 2FA on your {{site.data.var.ece}} user account:
 
 ### Manage 2FA configuration and recovery codes
 
-You can manage the 2FA configuration for a {{site.data.var.ece}} account from the _Security_ section on the _Account settings_ page.
+You manage the 2FA configuration for a {{site.data.var.ece}} account from the _Security_ section on the _Account settings_ page.
 
 1. Log in to the {{ site.data.var.ece }} user account.
 
@@ -304,7 +309,7 @@ You can manage the 2FA configuration for a {{site.data.var.ece}} account from th
 
 An API token can be exchanged for an OAuth 2 access token, which can then be used to authenticate requests.
 
-On projects that have MFA enforcement enabled, you must have an API token to enable secure SSH access for machine users and automated processes.
+On projects that have MFA enforcement enabled, you must have an API token to enable SSH access for machine users and automated processes.
 
 {%include cloud/cloud-secure-api-token.md%}
 
