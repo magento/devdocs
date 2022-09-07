@@ -1059,7 +1059,7 @@ extensions:
       -
         name: 1.2.0
         support:
-          2.4.5: compatible
+          2.4.5: supported
           2.4.4: supported
           2.4.3: supported
           2.4.2: supported
