@@ -4,6 +4,8 @@ functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/database-upgrade.html
+layout: migrated
 ---
 
 ## First steps {#instgde-cli-before}

@@ -7,6 +7,8 @@ functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/security.html
+layout: migrated
 ---
 
 ## SELinux {#install-prereq-selinux}

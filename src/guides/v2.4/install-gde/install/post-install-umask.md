@@ -8,6 +8,8 @@ functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/set-umask.html
+layout: migrated
 ---
 
 ## Optionally set `magento_umask` {#mage-owner-umask}

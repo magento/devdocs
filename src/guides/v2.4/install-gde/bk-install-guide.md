@@ -6,7 +6,9 @@ functional_areas:
   - System
   - Setup
 redirect_from:
-  - /guides/v2.4/install-gde/continue-to-install.html 
+  - /guides/v2.4/install-gde/continue-to-install.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/overview.html
+layout: migrated
 ---
 
 You are among the 240,000 merchants worldwide who put their trust in our eCommerce software. We have gathered some information to help you get started with Magento and with your Magento installation.

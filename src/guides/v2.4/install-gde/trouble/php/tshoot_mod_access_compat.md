@@ -8,6 +8,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/categories/115000200533-Troubleshooting
 ---
 
 ## 503 (Service Unavailable) errors accessing Magento software in a web browser {#trouble-install-depend}

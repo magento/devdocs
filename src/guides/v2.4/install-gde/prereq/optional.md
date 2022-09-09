@@ -6,6 +6,8 @@ functional_areas:
   - Setup
 redirect_from:
   - guides/v2.3/install-gde/trouble/php/tshoot_phpini.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/optional-software.html
+layout: migrated
 ---
 
 ## Magento optional software {#install-optional-intro}
