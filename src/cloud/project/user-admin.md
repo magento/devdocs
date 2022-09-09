@@ -14,7 +14,11 @@ redirect_from:
   - /cloud/project/user-admin.html#cloud-role-project
 ---
 
-You manage access to {{site.data.var.ece}} projects by adding users and assigning roles. Assign project-level roles to provide access to the entire project, and environment-level access to set permissions per available environment.
+You manage access to {{site.data.var.ece}} projects and certain environment types by adding users and assigning roles. Project level roles provide access to the entire project.
+
+## Environment types and user access
+
+Adobe Commerce on cloud infrastructure consists of three environments types: Production, Staging, and Integration. Access to an environment is granted by assigning a user the Admin, Contributor, Viewer, or None role.
 
 | **Role**            | **Scope**  | **Access** |
 |-|-|-|
@@ -24,6 +28,7 @@ You manage access to {{site.data.var.ece}} projects by adding users and assignin
 | **Admin** | Environment | Change settings, push code, perform tasks and branch environments, including merging with the parent environment; SSH access |
 | **Contributor** | Environment | Cannot change settings or execute actions; Can push code and branch the environment; SSH access |
 | **Viewer** | Environment | View-only access to an environment; No SSH access |
+| **None** | Environment | No access to an environment; No SSH access |
 
 ## Add user authentication requirements
 
@@ -37,12 +42,6 @@ You add users and assign roles using the `magento-cloud` CLI or the Project Web 
 
 {:.bs-callout-tip}
 Changing user configuration on an {{site.data.var.ece}} environment requires a site deployment for the changes to take effect, which takes your site offline until the deployment completes. For Production environments, Adobe recommends completing user administration tasks during off-peak hours to prevent service disruptions.
-
-## Environments and user access
-
-Adobe Commerce on cloud infrastructure consists of three environments types: Production, Staging, and Integration. You grant user access to an environment by adding a user to an Admin, Viewer, or Contributor role.
-
-The role assigned to a user applies to all environments of that type. This enables you to set environment-level permissions for multiple environments at once.
 
 **Prerequisites:**
 
@@ -84,15 +83,24 @@ To add a user and assign roles:
 
    Email address: alice@example.com
 
-   The user's project role can be 'viewer' ('v') or 'admin' ('a').
-   Project role [V/a]: a
-   The user's environment-level roles can be 'viewer', 'contributor', or 'admin'.
-   development environment role [V/c/a]: c
-   Summary:
-     Email address: alice@example.com
-     Project role: contributor
+   The user's project role can be admin (a) or viewer (v).
+
+   Project role (default: viewer) [a/v]: viewer
+
+   The user's environment type role(s) can be admin (a), viewer (v), contributor (c) or none (n).
+
+   Role on type development (default: none) [a/v/c/n]: none
+   Role on type production (default: none) [a/v/c/n]: admin
+   Role on type staging (default: none) [a/v/c/n]: admin
+
+   Adding the user alice@example.com to (project_id):
+   Project role: viewer
+     Role on type production: admin
+     Role on type staging: admin
+
    Adding users can result in additional charges.
-   Are you sure you want to add this user? [Y/n]
+
+   Are you sure you want to add this user? [Y/n] y
    Adding the user to the project
    ```
    {:.no-copy}
