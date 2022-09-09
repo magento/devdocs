@@ -7,7 +7,7 @@ functional_areas:
 
 ## Overview
 
-Magento 2 incorporates [Less](http://lesscss.org/), a CSS pre-processor that simplifies the management of complex CSS files.
+Magento 2 incorporates [Less](https://lesscss.org/), a CSS pre-processor that simplifies the management of complex CSS files.
 To define styles of a Magento store, you can use both - CSS and Less stylesheets.
 
 Magento application provides a built-in Less UI library, which you can optionally extend.

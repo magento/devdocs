@@ -14,6 +14,8 @@ redirect_from:
  - guides/v2.3/comp-mgr/extens-man/extensman-uninst-final.html
  - guides/v2.3/comp-mgr/extens-man/extensman-update.html
  - guides/v2.3/comp-mgr/extens-man/step3-parent.html
+redirect_to:
+ - guides/v2.4/install-gde/install/cli/extensions.html
 ---
 
 Code that extends or customizes {{site.data.var.ee}} and {{site.data.var.ce}} behavior is called an extension. You can optionally package and distribute extensions on the [Commerce Marketplace](https://marketplace.magento.com) or another extension distribution system.

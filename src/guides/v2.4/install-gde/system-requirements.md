@@ -16,6 +16,10 @@ For example, 2.4.3 is fully tested with MariaDB 10.4. Adobe recommends that you 
 
 {% include install/system-requirements-table.html %}
 
+## Adobe Commerce on cloud infrastructure
+
+Service version and compatibility support for {{site.data.var.ece}} is determined by versions deployed on the Cloud infrastructure, and sometimes differ from versions supported by Adobe Commerce on-premises deployments. For details on supported software and services deployed on {{site.data.var.ece}}, see [Supported software and services]({{ site.baseurl }}/cloud/requirements/cloud-requirements.html#cloud-arch-software).
+
 ## Miscellaneous
 
 This section describes support and compatibility for all other types of required and optional software.
@@ -25,12 +29,12 @@ All of the following requirements apply to the latest patch release of Magento 2
 
 ### Mail server
 
-Mail Transfer Agent (MTA) or an SMTP server
+Mail Transfer Agent (MTA) or Simple Mail Transfer Protocol (SMTP) server
 
 ### Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
-Magento is not supported on Microsoft Windows and macOS.
+Magento is not supported on Microsoft Windows and Apple macOS.
 
 ### PHP extensions
 
@@ -59,7 +63,7 @@ PHPUnit (as a command-line tool) 9.0.0
 
 ### RAM
 
-Upgrading the Magento applications and extensions you obtain from Commerce Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
+Upgrading the Magento applications and extensions you obtain from Commerce Marketplaces and other sources can require up to 2 GB of RAM. If you are using a system with less than 2 GB of RAM, Adobe recommends you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
 
 ### System dependencies
 
@@ -94,20 +98,20 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 
 <!-- Link Definitions -->
 [Known issue with xdebug]: https://support.magento.com/hc/en-us/articles/360034242212
-[php_xdebug 2.5.x]: http://xdebug.org/download.php
+[php_xdebug 2.5.x]: https://xdebug.org/download
 [bash]: https://www.gnu.org/software/bash/
 [gzip]: https://www.gzip.org/
 [lsof]: https://linux.die.net/man/8/lsof
 [mysql]: https://www.mysql.com/
 [mysqldump]: https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
 [nice]: https://linux.die.net/man/1/nice
-[php]: http://www.php.net/
+[php]: https://www.php.net/
 [sed]: https://www.gnu.org/software/sed/manual/sed.html
 [tar]: https://linux.die.net/man/1/tar
 [PHP installation instructions]: prereq/php-settings.html
-[official PHP documentation]: http://php.net/manual/en/extensions.php
-[PHP OPcache]: http://php.net/manual/en/intro.opcache.php
+[official PHP documentation]: https://php.net/manual/en/extensions.php
+[PHP OPcache]: https://php.net/manual/en/intro.opcache.php
 [PHP documentation]: prereq/php-settings.html
-[PHP OPcache documentation]: http://php.net/manual/en/opcache.setup.php
+[PHP OPcache documentation]: https://php.net/manual/en/opcache.setup.php
 [Required PHP settings]: {{ page.baseurl }}/install-gde/prereq/php-settings.html
 [security certificate]: https://glossary.magento.com/security-certificate

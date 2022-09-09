@@ -12,7 +12,7 @@ return_to:
 functional_areas:
   - Integration
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/
+contributor_link: https://www.comwrap.com/en.html
 migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/create-configurable-simple-products/
 layout: migrated
 ---
@@ -40,7 +40,7 @@ Some notes about the configurable product payload example:
  Although it's not required, the simple product payload also includes `stock_item` information. By default, the Luma store hides out-of-stock items, so adding stock will make the Champ Tee visible on the website.
 
  {:.bs-callout-info}
-Before you use this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+Before you use this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/plan-product) for more information.
 
  {:.bs-callout-info}
 The payload contains both the configurable product and the simple products.
@@ -309,7 +309,7 @@ The payload contains both the configurable product and the simple products.
 ```
 
  {:.bs-callout-info}
-For information about response fields, see the [Bulk API](https://developer.adobe.com/commerce/webapi/rest/use-rest/bulk-endpoints.html) section. To check the status of operations, see the API for [Bulk operation status endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-endpoints.html).
+For information about response fields, see the [Bulk API](https://developer.adobe.com/commerce/webapi/rest/use-rest/bulk-endpoints) section. To check the status of operations, see the API for [Bulk operation status endpoints](https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-endpoints).
 
 ## Verify this step
 

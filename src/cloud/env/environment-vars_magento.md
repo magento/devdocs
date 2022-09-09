@@ -6,13 +6,13 @@ functional_areas:
   - Configuration
 ---
 
-Users that have administrative access to the {{site.data.var.ece}} project can use the following project environment variables to override the configuration settings for the administrative user account to access the Admin UI. See [Change the ADMIN variables]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html#change-the-magento-admin-variables).
+Users that have administrative access to the {{site.data.var.ece}} project can use the following project environment variables to override the configuration settings for the administrative user account to access the Admin UI. See [Change the ADMIN variables]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html).
 
 ## Admin credentials
 
 Use the ADMIN variables in the following table to override credentials for the Admin user during installation.
 
-If you want to change the values after installation, connect to your environment using ssh and use the `magento-cloud` CLI [`admin:user` command]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-admin.html) to create or edit the Admin user credentials.
+If you want to change the values after installation, connect to your environment using ssh and use the {{site.data.var.ee}} CLI [`admin:user` command]({{ site.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-admin.html#create-or-edit-an-administrator) to create or edit the Admin user credentials.
 
 | Variable       | Default                     | Description |
 | -------------- | --------------------------- | ----------- |

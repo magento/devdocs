@@ -9,7 +9,7 @@ functional_areas:
 For all {{site.data.var.ece}} projects, you can use the [Project Web Interface](https://account.magento.com/customer/account/login/) to perform the following tasks:
 
 -  [Access projects](#project-access)
--  [Configure environment settings](#configure-environment-settings)
+-  [Configure environment settings](#project-conf-env-set)
 -  [Add users and manage access]({{ site.baseurl }}/cloud/project/user-admin.html)
 -  [Manage Git branches]({{ site.baseurl }}/cloud/project/project-webint-branch.html)
 

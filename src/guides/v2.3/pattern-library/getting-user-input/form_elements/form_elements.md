@@ -189,7 +189,7 @@ For specific details concerning styling including fonts, colors and effects and 
 
 ## Accessibility
 
-Follow this guideline: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms).
+Follow this guideline: [https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms).
 
 ## Assets
 

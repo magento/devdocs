@@ -327,7 +327,11 @@ The `queue_consumer.xml` file defines the relationship between a queue and its c
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+<<<<<<< HEAD
+    <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" handler="<Consumer_Class>::<Consumer_method>"/>
+=======
     <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="<Consumer_Class>::<Consumer_method>"/>
+>>>>>>> master
 </config>
 ```
 
@@ -338,7 +342,11 @@ The `queue_publisher.xml` file defines the exchange where a topic is published. 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
     <publisher topic="<topic_name>">
+<<<<<<< HEAD
+        <connection name="amqp" exchange="<exchange_name>" />
+=======
         <connection name="amqp" exchange="<exchange>" />
+>>>>>>> master
     </publisher>
 </config>
 ```
@@ -349,11 +357,15 @@ The `queue_topology.xml` file defines the message routing rules and declares que
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
-    <exchange name="magento" type="topic" connection="amqp">
-        <binding id="defaultBinding" topic="" destinationType="queue" destination="<queue_name>"/>
+    <exchange name="magento" connection="amqp">
+        <binding id="defaultBinding" topic="<topic_name>" destination="<queue_name>"/>
     </exchange>
 </config>
 ```
+
+{:.bs-callout-info}
+Message queue connections are defined dynamically, based on the deployment configuration in the `env.php` file. If AMQP is configured in the deployment configuration of the queue, AMQP connections are used. Otherwise, database connections are used.
+As a result, if AMQP is configured in the deployment configuration of the queue, you can omit connection declarations in the `queue_customer.xml`, `queue_publisher.xml`, and `queue_topology.xml` [message queue configuration files]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html).
 
 #### Related Topics
 

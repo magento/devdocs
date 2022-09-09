@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Link and unlink stocks and sources
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/modules/inventory/link-stocks-sources/
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/link-stocks-sources/
 layout: migrated
 ---
 
@@ -98,7 +98,7 @@ Magento returns empty array.
 
 The following call returns the link information for `stock_id = 4`.
 
-See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches) for information about constructing a search query.
 
 **Sample Usage:**
 
@@ -147,7 +147,7 @@ None
 
 ## Get sources assigned to a stock
 
-The `GET /V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/:stock_id` endpoint returns details about each source that is assigned to the specified stock. [Manage sources](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/) provides definitions for each attribute returned.
+The `GET /V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/:stock_id` endpoint returns details about each source that is assigned to the specified stock. [Manage sources](https://developer.adobe.com/commerce/webapi/rest/inventory/) provides definitions for each attribute returned.
 
 **Sample Usage:**
 

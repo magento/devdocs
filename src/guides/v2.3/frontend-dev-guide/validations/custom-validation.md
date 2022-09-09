@@ -39,7 +39,7 @@ var config = {
 define(['jquery'], function($) {
   'use strict';
 
-  return function() {
+  return function(targetWidget) {
     $.validator.addMethod(
       'validate-five-words',
       function(value, element) {
@@ -47,6 +47,7 @@ define(['jquery'], function($) {
       },
       $.mage.__('Please enter exactly five words')
     )
+    return targetWidget;
   }
 });
 ```

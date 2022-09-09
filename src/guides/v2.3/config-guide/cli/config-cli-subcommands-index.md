@@ -45,13 +45,7 @@ bin/magento indexer:status [indexer]
 
 Where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to view the status of all indexers.
 
-To list all indexers:
-
-```bash
-bin/magento indexer:info
-```
-
-A sample follows:
+To list status of all indexers:
 
 ```bash
 bin/magento indexer:status
@@ -92,13 +86,7 @@ bin/magento indexer:reindex [indexer]
 
 Where ```[indexer]``` is a space-separated list of indexers. Omit ```[indexer]``` to reindex all indexers.
 
-To view a list of all indexers:
-
-```bash
-bin/magento indexer:info
-```
-
-A sample follows:
+To reindex all indexers:
 
 ```bash
 bin/magento indexer:reindex
@@ -136,8 +124,9 @@ You can run the following indexes in parallel mode:
 -  `Catalog Search Fulltext` can be paralleled by store views.
 -  `Category Product` can be paralleled by store views.
 -  `Catalog Price` can be paralleled by website and customer groups.
+-  `Catalog Permissions` can be paralleled by customer groups.
 
-If you want to use parallelization, you must set one of the available modes of dimensions for the product price indexer:
+To use parallelization, set one of the available dimensions modes for the product price indexer:
 
 -  `none` (default)
 -  `website`
@@ -149,6 +138,10 @@ For example, to set the mode per website:
 ```bash
 bin/magento indexer:set-dimensions-mode catalog_product_price website
 ```
+To use parallelization for Catalog permissions, set one of the available dimensions modes for the Catalog Permissions indexer:
+
+-  `none` (default)
+-  `customer_group`
 
 Or to check the current mode:
 
@@ -253,12 +246,6 @@ Where:
 -  **`realtime`** - Sets the selected indexers to update on save.
 -  **`schedule`** - Sets the specified indexers to save according to the cron schedule.
 -  **`indexer`** - Is a space-separated list of indexers. Omit `indexer` to configure all indexers the same way.
-
-To view the list of indexers:
-
-```bash
-bin/magento indexer:info
-```
 
 For example, to change only the category products and product categories indexers to update on schedule, enter:
 

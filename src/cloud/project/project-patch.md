@@ -156,7 +156,11 @@ To apply patches in a Cloud environment:
    {:.bs-callout-info}
    After upgrading to a new version of {{site.data.var.ee}}, you must re-apply patches if the patches are not included in the new version.
 
-1. Commit and push the updated `.magento.env.yaml` file.
+1. Add, commit and push the updated `.magento.env.yaml` file.
+
+   ```bash
+   git add .magento.env.yaml
+   ```
 
    ```bash
    git commit -m "Apply patch"
@@ -187,7 +191,7 @@ To apply and test a custom patch on a Cloud environment:
 1. Add, commit, and push code changes.
 
    ```bash
-   git add -A
+   git add m2-hotfixes/
    ```
 
    ```bash
@@ -200,6 +204,29 @@ To apply and test a custom patch on a Cloud environment:
 
    {:.bs-callout-info}
    Make sure to test all patches in a pre-production environment. For {{site.data.var.ece}}, you can create new branches with the `magento-cloud environment:branch <branch-name>` CLI command.
+
+## Revert a custom patch
+
+To revert or uninstall a previously applied custom patch:
+
+1. Delete the patch file from the `/m2-hotfixes` directory.
+
+1. Add, commit, and push code changes.
+
+   ```bash
+   git add m2-hotfixes/
+   ```
+
+   ```bash
+   git commit -m "Revert patch"
+   ```
+
+   ```bash
+   git push origin <branch-name>
+   ```
+
+   {:.bs-callout-info}
+   Make sure to test in a pre-production environment. For {{site.data.var.ece}}, you can create new branches with the `magento-cloud environment:branch <branch-name>` CLI command.
 
 ## Apply patches to a non-Cloud project {#standalone}
 

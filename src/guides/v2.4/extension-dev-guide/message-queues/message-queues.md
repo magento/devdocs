@@ -90,7 +90,7 @@ The following sample introduces a runtime configuration that allows you to redef
 *  [Install RabbitMQ]
 
 <!-- Link definitions -->
-[RabbitMQ]: http://www.rabbitmq.com
+[RabbitMQ]: https://www.rabbitmq.com/
 [Configure message queues]: {{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html
 [Message Queues Overview]: {{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html
 [Configure message queues]: {{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html

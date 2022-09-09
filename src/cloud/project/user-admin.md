@@ -14,22 +14,28 @@ redirect_from:
   - /cloud/project/user-admin.html#cloud-role-project
 ---
 
-You can manage access to {{site.data.var.ece}} projects by adding users and assigning roles. Assign project-level roles to provide access to the entire project, and environment-level roles to set permissions per available environment.
+You manage access to {{site.data.var.ece}} projects by adding users and assigning roles. Assign project-level roles to provide access to the entire project, and environment-level access to set permissions per available environment.
 
 | **Role**            | **Scope**  | **Access** |
 |-|-|-|
-| **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Adobe assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You must submit a {{site.data.var.ee}} Support ticket to modify settings or change the Account owner. |
+| **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Adobe assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You submit a {{site.data.var.ee}} Support ticket to modify settings or change the Account owner. |
 | **Super User** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][] and managing users. |
-| **Project reader** | Project | View access to all project environments. Users with this role cannot perform tasks on any environment. However, you can configure environment-level permissions for users with this role to permit write access to a specific environment. |
-| **Admin** | Environment | Change settings and perform tasks on an environment, including merging with the parent environment |
-| **Contributor** | Environment | Push code and branch the environment |
-| **Reader** | Environment | View-only access to an environment |
+| **Project viewer** | Project | View access to all project environments. Users with this role cannot perform tasks on any environment. However, you can configure environment-level permissions for users with this role to permit write access to a specific environment. |
+| **Admin** | Environment | Change settings, push code, perform tasks and branch environments, including merging with the parent environment; SSH access |
+| **Contributor** | Environment | Cannot change settings or execute actions; Can push code and branch the environment; SSH access |
+| **Viewer** | Environment | View-only access to an environment; No SSH access |
 
 ## Add user authentication requirements
 
 For added security, Adobe provides project-level multi-factor authentication (MFA) enforcement to require two-factor authentication (2FA) for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
+
+## Environments and user access
+
+Adobe Commerce on cloud infrastructure consists of three environments types: Production, Staging, and Integration. You grant user access to an environment by adding a user to an Admin, Viewer, or Contributor role.
+
+The role assigned to a user applies to all environments of that type. This enables you to set environment-level permissions for multiple environments at once.
 
 ## Add users and manage access
 
@@ -44,9 +50,9 @@ Changing user configuration on an {{site.data.var.ece}} environment requires a s
 
 -  Users assigned the **Admin** role can no longer manage users using the `magento-cloud` CLI. Only users that are granted the **Super User** or **Account Owner** role can manage users.
 
-### Manage users with the `magento-cloud` CLI {#cloud-user-mg-cli}
+## Manage users with the `magento-cloud` CLI {#cloud-user-mg-cli}
 
-Use the {{site.data.var.ece}} command line client to manage users and integrate this with any other automated system.
+Use the {{site.data.var.ece}} `magento-cloud` CLI to manage users and integrate this with other automated systems.
 
 Available commands:
 
@@ -54,8 +60,14 @@ Available commands:
 -  `magento-cloud user:delete`–delete a user
 -  `magento-cloud user:list [users]`–list project users
 -  `magento-cloud user:role`–view or change the user role
+-  `magento-cloud user:update`–update user role(s) on a project
 
-The following examples use the `magento-cloud` CLI to add a user, configure roles, and modify project assignments and assigned user roles.
+{:.bs-callout-tip}
+The `magento-cloud list` command displays all the `magento-cloud` CLI commands. To view the command and parameters for a specific command and not the entire list, append the command  with a -help. For example, `magento-cloud` `environment:list`, you run `magento-cloud environment:list -help`.
+
+The following examples use the `magento-cloud` CLI to add a user, configure roles, modify project assignments, and assigned user roles.
+
+### Add a user and assign roles
 
 {:.procedure}
 To add a user and assign roles:
@@ -65,8 +77,7 @@ To add a user and assign roles:
    ```bash
    magento-cloud user:add
    ```
-
-1. Follow the prompts to specify the user email address, set the project and environment roles, and add the user:
+1. Follow the prompts to specify the user email address, set the project and environment type roles, and add the user:
 
    ```terminal
    Enter the user's email address: alice@example.com
@@ -90,18 +101,42 @@ To add a user and assign roles:
 
    After you add the user, Adobe sends an email to the specified address with instructions for accessing the {{ site.data.var.ece }} project.
 
-The following example changes the environment-level role that is assigned to a user:
+### View a user's project role
+
+To view a user's project role:
 
 ```bash
-magento-cloud user:role alice@example.com --level environment --environment development --role admin
+magento-cloud user:get user@example.com
+
 ```
 
-{:.bs-callout-tip}
-The `magento-cloud list` command displays all the `magento-cloud` CLI commands.
+Sample response:
 
-### Manage users from the Project Web UI {#cloud-user-webinterface}
+```terminal
+Current role(s) of User (user@example.com) on Production (project_id):
+  Project role: admin
+```
 
-You can add project-level and environment-level users from the Project Web UI, and use the _Edit_ feature to modify permissions for an existing user.
+### Add a user to multiple environments
+
+To add a user as a `viewer` on a `Production` environment, and as a `contributor` on an `Integration` environment:
+
+```bash
+magento-cloud user:add user@example.com -r production:v -r integration:c
+
+```
+
+### Update user environment permissions
+
+Update user environment permissions to `admin` on the `Production` environment:
+
+```bash
+magento-cloud user:update user@example.com -r production:a
+```
+
+## Manage users from the Project Web UI {#cloud-user-webinterface}
+
+You add project-level and environment-level permissions from the Project Web UI, and use the _Edit_ feature to modify permissions for an existing user.
 
 After you add a user, the user receives an email inviting them to join the {{site.data.var.ece}} project.
 
@@ -152,25 +187,6 @@ Add a project-level user:
 
  {:.bs-callout-warning}
    Only **Super Users** can manage users in any environment. To grant a user access to the **Users** tab when configuring the environment, another **Super User** or the **Account Owner** must assign that user the **Super User** role.
-
-{:.procedure}
-Add an environment-level user:
-
-1. In the Project Web UI, select the environment. Then, click **Configure environment**.
-
-   ![Configure the environment]({{ site.baseurl }}/common/images/cloud/cloud_project-env.png){:width="550px"}
-
-1. Click the **Users** tab, and then click **Add User**.
-
-1. Complete the _Add User_ form:
-
-   ![Add the user]({{ site.baseurl }}/common/images/cloud/cloud_project-add-env-user.png){:width="550px"}
-
-   -  Enter the user email address.
-
-   -  Select the user role from the dropdown menu: _Admin_, _Contributor_, or _Reader_.
-
-   -  Click *Add User*.
 
 {%include cloud/note-prevent-site-availability-issues.md%}
 
@@ -305,7 +321,7 @@ To create an API token:
 
    ![Cloud create API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-create-api-token.png){:width="550px"}
 
-1. Specify an **Application** name for the token, for example specify a name that matches the machine user or automated process that will use the API token.
+1. Specify an **Application** name for the token, for example, specify a name that matches the machine user or automated process that uses the API token.
 
    ![Cloud create API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-api-token-app-name.png){:width="550px"}
 

@@ -19,10 +19,10 @@ Redis features include:
 
 Installing and configuring the Redis software is beyond the scope of this guide. Consult resources such as:
 
-*  [Download Redis page](http://redis.io/download)
-*  [Redis quick start](http://redis.io/topics/quickstart)
+*  [Download Redis page](https://redis.io/download/)
+*  [Redis quick start](https://redis.io/docs/getting-started/)
 *  [digitalocean](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-redis)
-*  [Redis documentation page](http://redis.io/documentation)
+*  [Redis documentation page](https://redis.io/docs/)
 
 ## Set up redis configuration {#config-redis-setup}
 
@@ -41,7 +41,7 @@ You can also enable both the RDB and AOF options at the same time. For additiona
 For the cache instance, set up the instance so that it is large enough to store your entire Magento cache.
 Size requirements depend on different factors like the number of products and store views. As a starting point, you can use the size of the cache folder on your file system.  For example, if the `var/cache` folder on your file system is  5 GB, set up your Redis instance with at least 5 GB to start. Persistence is not required for the cache instance because the Magento cache can be restored. See also [Redis cache guide](https://redis.io/topics/lru-cache).
 
-For performance tuning, you can also enable the following settings for asynchronous deletion. These settings do not change the behavior of Redis. See also [redis news](http://antirez.com/news/93) for details about asynchronous deletion.
+For performance tuning, you can also enable the following settings for asynchronous deletion. These settings do not change the behavior of Redis.
 
 ```ini
 lazyfree-lazy-eviction yes
@@ -60,8 +60,8 @@ lazyfree-lazy-user-del yes
 
 You can find more information about configuring Redis from the following:
 
-*  [David Alger](http://davidalger.com/development/magento/configuring-magento-2-to-use-redis-cache-backend/)
-*  [TechyTalk](http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/)
+*  [David Alger](https://davidalger.com/posts/configuring-magento-2-to-use-redis-cache-backend/)
+*  [TechyTalk](https://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/)
 
 ## Next
 

@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Manage branches with the Magento Cloud CLI
+title: Manage branches with the CLI
 redirect_from:
   - /cloud/before/integration-ip-addr.html
   - /cloud/howtos/environment-tutorial-env-merge.html
@@ -13,17 +13,17 @@ To install the `magento-cloud` CLI, see the [Magento Cloud CLI reference]({{ sit
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html).
 
-## Use Magento Cloud CLI commands {#env-start-comm}
+## Use magento-cloud CLI commands
 
-The `magento-cloud` CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter. See the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
+The `magento-cloud` CLI commands are similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter. See the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
-## Get started creating branches {#getstarted}
+### Get started creating branches
 
-To begin, create a new branch.
+To begin, create a branch.
 
 {% include cloud/cli-get-started.md %}
 
-## Merge a branch {#merge}
+### Merge a branch
 
 After completing development, you can merge this branch to the parent:
 
@@ -41,7 +41,7 @@ After completing development, you can merge this branch to the parent:
    magento-cloud environment:merge <environment-ID>
    ```
 
-## Delete an environment {#env-delete}
+### Delete an environment
 
 Only delete an environment if you are certain that you no longer need it. You cannot recover an environment after you delete it.
 
@@ -108,157 +108,21 @@ To delete an environment:
 {:.bs-callout-info}
 To activate an inactive environment, use the `magento-cloud environment:activate` command.
 
-## Integration environment IP addresses {#ipaddress}
+## Interact with remote environments
 
-The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ site.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We always notify customers before making any IP address changes.
+After you [set up SSH keys]({{ site.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use `magento-cloud` CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
 
-If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your allowlist.
+{% include cloud/log-in-db.md %}
 
-### AWS regions
+### SSH tunneling
 
-<table>
-<tr>
-<th align="left" colspan="7"><b>Incoming IP addresses</b></th>
-</tr>
-<tr>
-<td align="right">US Region</td>
-<td align="right">US-2 Region</td>
-<td align="right">US-3 Region</td>
-<td align="right">US-5 Region</td>
-<td align="right">EU Region</td>
-<td align="right">EU-3 Region</td>
-<td align="right">AP-3 Region</td>
-</tr>
-<tr>
-<td align="right">
-<p>52.200.159.23</p>
-<p>52.200.159.125</p>
-<p>52.200.160.5</p>
-</td>
-<td align="right">
-<p>34.197.214.148</p>
-<p>34.197.144.144</p>
-<p>34.196.44.47</p>
-</td>
-<td align="right">
-<p>34.210.133.187</p>
-<p>34.214.72.239</p>
-<p>34.215.10.85</p>
-</td>
-<td align="right">
-<p>50.112.160.58</p>
-<p>54.213.195.223</p>
-<p>35.163.170.185</p>
-</td>
-<td align="right">
-<p>52.209.44.44</p>
-<p>52.209.23.96</p>
-<p>52.51.117.101</p>
-</td>
-<td align="right">
-<p>34.240.75.192</p>
-<p>34.251.110.37</p>
-<p>52.19.113.35</p>
-</td>
-<td align="right">
-<p>52.65.39.201</p>
-<p>52.65.10.202</p>
-<p>52.65.30.37</p>
-</td>
-</tr>
-</table>
+{% include cloud/ssh-tunnel.md %}
 
-<table >
-<tr>
-<th align="left" colspan="7"><b>Outgoing IP addresses</b></th>
-</tr>
-<tr>
-<td align="right">US Region</td>
-<td align="right">US-2 Region</td>
-<td align="right">US-3 Region</td>
-<td align="right">US-5 Region</td>
-<td align="right">EU Region</td>
-<td align="right">EU-3 Region</td>
-<td align="right">AP-3 Region</td>
-</tr>
-<tr>
-<td align="right">
-<p>52.200.155.111</p>
-<p>52.200.149.44</p>
-<p>50.17.163.75</p>
-</td>
-<td align="right">
-<p>34.197.219.58</p>
-<p>34.197.201.45</p>
-<p>34.197.217.71</p>
-</td>
-<td align="right">
-<p>34.210.166.180</p>
-<p>34.215.83.92</p>
-<p>34.213.20.158</p>
-</td>
-<td align="right">
-<p>54.70.238.217</p>
-<p>52.88.113.98</p>
-<p>52.36.188.230</p>
-</td>
-<td align="right">
-<p>52.51.163.159</p>
-<p>52.209.44.60</p>
-<p>52.208.156.247</p>
-</td>
-<td align="right">
-<p>34.240.57.142</p>
-<p>52.16.140.48</p>
-<p>52.209.134.55</p>
-</td>
-<td align="right">
-<p>52.65.143.178</p>
-<p>13.54.80.197</p>
-<p>52.62.224.4</p>
-</td>
-</tr>
-</table>
+## Regional IP addresses
 
-### Azure region
+The following tables list the incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ site.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We always notify customers before making any IP address changes.
 
-<table>
-<tr>
-<th align="left"><b>Incoming IP addresses</b></th>
-</tr>
-<tr>
-<td align="left">US-A1 Region</td>
-</tr>
-<tr>
-<td>
-<p>&nbsp;&nbsp;40.79.241.76</p>
-<p>52.147.176.136</p>
-<p>&nbsp;&nbsp;&nbsp;20.49.0.170</p>
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<th align= "left"><b>Outgoing IP addresses</b></th>
-</tr>
-<tr>
-<td align="left">US-A1 Region</td>
-</tr>
-<tr>
-<td>
-<p>&nbsp;&nbsp;40.79.241.76</p>
-<p>52.147.176.136</p>
-<p>&nbsp;&nbsp;&nbsp;20.49.0.170</p>
-</td>
-</tr>
-</table>
-
-### Get IP address of Cloud instance
-
-Use `ping` command for retrieving IP address for particular Cloud instance.
-
-Example of usage:
+You can use the `ping` command to retrieve the incoming IP address:
 
 ```bash
 ping integration-abcd123-abcd78910.us-3.magentosite.cloud
@@ -273,12 +137,20 @@ Request timeout for icmp_seq 1
 Request timeout for icmp_seq 2
 ```
 
-## Interact with environments using the magento-cloud CLI {#commands}
+If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your allowlist.
 
-After you [setup SSH keys]({{ site.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use `magento-cloud` CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
+### AWS regions
 
-{% include cloud/log-in-db.md %}
+|     |  United States  |     |     | Europe |     |     |     | Asia-Pacific |
+| --- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :---|
+|     | US   | US-3  | US-5  | EU   | EU-3  | EU-5  | EU-6  | AP-3  |
+| Incoming | <!--US-->52.200.159.23<br><br>52.200.159.125<br><br>52.200.160.5 | <!--US-3-->34.210.133.187<br><br>34.214.72.239<br><br>34.215.10.85 | <!--US-5-->50.112.160.58<br><br>54.213.195.223<br><br>35.163.170.185 | <!--EU-->52.209.44.44<br><br>52.209.23.96<br><br>52.51.117.101 | <!--EU-3-->34.240.75.192<br><br>34.251.110.37<br><br>52.19.113.35 | <!--EU-5-->35.157.81.88<br><br>3.122.198.131<br><br>52.28.102.195 | <!--EU-6-->35.181.23.47<br><br>35.181.24.165<br><br>35.180.237.48 | <!--AP-3-->52.65.39.201<br><br>52.65.10.202<br><br>52.65.30.37 |
+| Outgoing | <!--US-->52.200.155.111<br><br>52.200.149.44<br><br>50.17.163.75 | <!--US-3-->34.210.166.180<br><br>34.215.83.92<br><br>34.213.20.158 | <!--US-5-->54.70.238.217<br><br>52.88.113.98<br><br>52.36.188.230 | <!--EU-->52.51.163.159<br><br>52.209.44.60<br><br>52.208.156.247 | <!--EU-3-->34.240.57.142<br><br>52.16.140.48<br><br>52.209.134.55 | <!--EU-5-->3.121.163.221<br><br>3.121.79.229<br><br>18.197.3.230 | <!--EU-6-->52.47.155.26<br><br>35.181.0.157<br><br>35.181.12.15 | <!--AP-3-->52.65.143.178<br><br>13.54.80.197<br><br>52.62.224.4 |
 
-## SSH tunneling {#env-start-tunn}
+### Azure regions
 
-{% include cloud/ssh-tunnel.md %}
+|          |  United States  | Europe          |
+| -------- | :-------------- | :-------------- |
+|          | US-A1           | AZ-WESTEUROPE-1 |
+| Incoming | <!--US-A1--> 20.186.27.68<br><br>20.186.58.163<br><br>20.186.113.8 | <!--AZ-W-1-->50.112.160.58<br><br>54.213.195.223<br><br>35.163.170.185 |
+| Outgoing | <!--US-A1-->20.186.58.163<br><br>20.186.27.68<br><br>20.186.113.8 | <!--AZ-W-1-->104.45.78.98<br><br>51.105.168.218<br><br>51.105.163.143 |

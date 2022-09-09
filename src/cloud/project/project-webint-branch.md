@@ -30,7 +30,7 @@ Complete development of code and added extensions in a branch and, when complete
 
 For branching strategies, review [Starter]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) and [Pro]({{ site.baseurl }}/cloud/architecture/starter-develop-deploy-workflow.html) architecture overviews.
 
-Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can [delete it entirely]({{ site.baseurl }}/cloud/env/environments-start.html#env-delete) using the CLI.
+Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can [delete it entirely]({{ site.baseurl }}/cloud/env/environments-start.html#delete-an-environment) using the CLI.
 
 If you need additional environments for development, enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) for more information.
 
