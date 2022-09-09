@@ -8,8 +8,6 @@ functional_areas:
   - Install
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/uninstall.html
-layout: migrated
 ---
 
 A contributing developer reinstalls Magento by updating `composer.json` to specify the Magento product version and component versions desired and runs `composer update`.
