@@ -23,10 +23,12 @@ OpenSearch enables you to take data from any source, any format, and search and 
 {:.bs-callout-tip}
 Adobe recommends that you always set up OpenSearch for your {{ site.data.var.ece }} project even if you plan to configure a third-party search tool for your {{ site.data.var.ee }} application. Setting up OpenSearch provides a fallback option in the event that the third-party search tool fails.
 
+## Enable OpenSearch
+
 {:.procedure}
 To enable OpenSearch:
 
-1. For Starter projects, add the `opensearch` service to the `.magento/services.yaml` file with the appropriate version and allocated disk space in MB.
+1. For Starter projects and Pro Integration environments, add the `opensearch` service to the `.magento/services.yaml` file with the appropriate version and allocated disk space in MB.
 
    ```yaml
    opensearch:
@@ -34,7 +36,7 @@ To enable OpenSearch:
        disk: 1024
    ```
 
-   For Pro projects, you must submit a {{site.data.var.ee}} Support ticket to change the OpenSearch version in the Staging and Production environments.
+   For Pro projects, you must submit a {{site.data.var.ee}} [Support ticket](https://support.magento.com/hc/en-us/articles/360000913794#support-tickets) to change the OpenSearch version in the Staging and Production environments.
 
 1. Set the `relationships` property in the `.magento.app.yaml` file.
 
@@ -66,3 +68,16 @@ To enable OpenSearch:
    ```
 
 {%include cloud/tip-change-installed-service-version.md%}
+
+## Add plugins for OpenSearch
+
+You can add plugins to OpenSearch by adding the `configuration:plugins` section to the OpenSearch service in the `.magento/services.yaml` file. For example, the following code enables both the ICU and Phonetic analysis plugins.
+
+```yaml
+opensearch:
+    type: opensearch:<service-version>
+    disk: 1024
+    configuration:
+        plugins:
+            - analysis-icu
+            - analysis-phonetic
