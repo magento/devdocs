@@ -4,8 +4,73 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 29 14:38:55 2022
+updated: Mon Sep 12 14:38:55 2022
 entries:
+- description: The [Payments Integrations Guide](https://devdocs.magento.com/guides/v2.4/payments-integrations/bk-payments-integrations.html)
+    has moved to the [Adobe Devsite](https://developer.adobe.com/commerce/php/development/payments-integrations)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: September 7, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3141
+  merge_commit: bc9d234c3d943ba9983c3f281e702e0c34b25e80
+  contributor: jhadobe
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Improved the explanation for how the `ece-tools` package overrides
+    default Commerce configuration values using the [.magento.env.yaml file](https://devdocs.magento.com/cloud/project/magento-env-yaml.html).
+  versions: 2.x
+  type: Technical
+  date: September 2, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3138
+  merge_commit: 511de7458d36159daeadba81a300b841a73a230f
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Updated the email address for the [Commerce Beta Program](https://devdocs.magento.com/release/beta-program.html).
+  versions: 2.4.x
+  type: Technical
+  date: August 29, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3136
+  merge_commit: 767f03bca4176c956e9efadccdee33d57e51b98c
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
+- description: The [video tutorials](https://devdocs.magento.com/videos/) moved to
+    [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce-learn/tutorials/overview.html)
+    and will be redirected soon.
+  versions: 2.x
+  type: Major Update
+  date: August 29, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3127
+  merge_commit: cfc3f6bd3dce81f6f540ee6485bd0401b1f5c3f3
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+  - migration
+- description: The [Data Migration Guide](https://devdocs.magento.com/guides/v2.4/migration/bk-migration-guide.html)
+    topics moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/how-migration-works.html)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: August 29, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3133
+  merge_commit: 5612d06aaf9f581ebcfcd5cd209aed5967442162
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: Updated the [Regional IP addresses](https://devdocs.magento.com/cloud/env/environments-start.html#regional-ip-addresses)
     for Cloud Integration environments.
   versions: 2.x
