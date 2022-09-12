@@ -25,7 +25,7 @@ The release notes include:
 
 Release date: September 13, 2022
 
--  {:.new}**Added option to enable `synchronous_replication`**—Added an option to turn `synchronous_replication` on or off when `MYSQL_USE_SLAVE_CONNECTION` is enabled. See the `MYSQL_USE_SLAVE_CONNECTION` variable description in the [Deploy variables](https://devdocs.magento.com/cloud/env/variables-deploy.html#mysql_use_slave_connection).<!-- MCLOUD-9142 -->
+-  {:.new}**Added option to enable `synchronous_replication`**—Added an option to turn `synchronous_replication` on or off when `MYSQL_USE_SLAVE_CONNECTION` is enabled. See the `MYSQL_USE_SLAVE_CONNECTION` variable description in the [Deploy variables](https://{{ site.baseurl }}/cloud/env/variables-deploy.html#mysql_use_slave_connection).<!-- MCLOUD-9142 -->
 -  {:.new}**OpenSearch**—Added functionality to configure and set`opensearch` engine for the next Magento release 2.4.6.<!-- MCLOUD-9236 -->
 
 ## v2002.1.11
