@@ -23,8 +23,8 @@ The release notes include:
 Release date: September, 2022
 
 -  {:.new}**Apple M1 (ARM64) support**—Added changes to Docker images to enable support for Apple M1 (ARM64) architecture.<!-- MCLOUD-7989-2 MCLOUD-7989 -->
--  {:.fix}**Mailhog**—Fixed issue when Mailhog not catched emails while in developer mode.<!-- MCLOUD-8643 -->
--  {:.fix}**init-docker.sh**—Fixed service versions validator in the init-docker.sh.<!-- MCLOUD-8765 -->
+-  {:.fix}**Mailhog**—Fixed an issue where the Mailhog service did not cache emails while in developer mode.<!-- MCLOUD-8643 -->
+-  {:.fix}**init-docker.sh**—Fixed the service versions validator in the `init-docker.sh` script.<!-- MCLOUD-8765 -->
 
 ## v1.3.2
 

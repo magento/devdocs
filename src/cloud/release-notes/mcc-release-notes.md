@@ -22,7 +22,7 @@ The release notes include:
 
 Release date: September 13, 2022
 
--  {:.fix}**Cache warming requests**—Fixes issue in cases when cache warming hits "not visible individually" pages.<!-- MCLOUD-9134 -->
+-  {:.fix}**Cache warming requests**—Fixed issues related to cache warming that resulted in a "not visible individually" message.<!-- MCLOUD-9134 -->
 
 ## v1.0.11
 

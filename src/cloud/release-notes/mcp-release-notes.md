@@ -24,7 +24,7 @@ The `{{site.data.var.mcp-package}}` package uses the following version sequence:
 
 Release date: September 13, 2022
 
--  **Support PHP 8.1**—Fixed compatibility with certain php 8.1.x versions
+-  **Enhanced support for PHP 8.1**—Fixed compatibility issues with certain PHP 8.1.x versions.
 
 ## v1.0.18
 
