@@ -18,6 +18,12 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v1.0.12
+
+Release date: September 13, 2022
+
+-  {:.fix}**Cache warming**—Fixes issue when cache warming hits "not visible individually" pages.<!-- MCLOUD-9134 -->
+
 ## v1.0.11
 
 Release date: August 4, 2022

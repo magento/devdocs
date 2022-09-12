@@ -20,6 +20,12 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 The `{{site.data.var.mcp-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`
 
 <!--Add release notes below-->
+## v1.0.19
+
+Release date: September 13, 2022
+
+-  **Support PHP 8.1**—Fixed compatibility with certain php 8.1.x versions
+
 ## v1.0.18
 
 Release date: August 11, 2022
