@@ -25,8 +25,8 @@ The release notes include:
 
 Release date: September 13, 2022
 
--  {:.new}**Enabling synchronous_replication**—Added enabling synchronous replication if slave connections is enabled.<!-- MCLOUD-9142 -->
--  {:.new}**OpenSearch**—Added configuration `opensearch` engin instead of `elasticsearch7` for the next Magento release 2.4.6.<!-- MCLOUD-9236 -->
+-  {:.new}**Added option to enable `synchronous_replication`**—Added an option to turn synchronous replication on or off when slave connections is enabled.<!-- MCLOUD-9142 -->
+-  {:.new}**OpenSearch**—Added functionality to configure and set`opensearch` engine for the next Magento release 2.4.6.<!-- MCLOUD-9236 -->
 
 ## v2002.1.11
 
