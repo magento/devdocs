@@ -203,7 +203,7 @@ To add a project-level user:
 
 {%include cloud/note-prevent-site-availability-issues.md%}
 
-## Update user account security settings
+## Update account security settings
 
 After you add a user to a Cloud project, ask the user to review their account security settings and add the following security configuration as needed:
 
