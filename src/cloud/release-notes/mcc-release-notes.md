@@ -22,7 +22,7 @@ The release notes include:
 
 Release date: September 13, 2022
 
--  {:.fix}**Cache warming requests**—Fixed issues related to cache warming that resulted in a "not visible individually" message.<!-- MCLOUD-9134 -->
+-  {:.fix}**Warming up failed errors in the deployment log**—Fixed issue in cases where warmup requests are sent to the products page when visibility is set to not visible individually, resulting in "Warming up failed" errors in the deployment log.<!-- MCLOUD-9134 -->
 
 ## v1.0.11
 
