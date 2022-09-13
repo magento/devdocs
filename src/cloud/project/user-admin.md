@@ -16,8 +16,6 @@ redirect_from:
 
 You manage access to {{site.data.var.ece}} projects and certain environment types by adding users and assigning roles. Project level roles provide access to the entire project.
 
-## Environment types and user access
-
 Adobe Commerce on cloud infrastructure consists of three environments types: Production, Staging, and Integration. Access to an environment is granted by assigning a user the Admin, Contributor, Viewer, or None role.
 
 | **Role**            | **Scope**  | **Access** |
