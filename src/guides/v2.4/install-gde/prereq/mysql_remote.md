@@ -4,6 +4,8 @@ functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/database-server/mysql-remote.html
+layout: migrated
 ---
 
 There are times when you will want to host the database on a separate server, rather than running the database server and the web server on the same machine.
