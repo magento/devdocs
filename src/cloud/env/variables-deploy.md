@@ -321,7 +321,7 @@ stage:
     MYSQL_USE_SLAVE_CONNECTION: true
 ```
 
-When the `MYSQL_USE_SLAVE_CONNECTION` variable is set to `true`, the `synchronous_replication` parameter is set to `true` by default in the env.php on {{site.data.var.ece}} Staging and Production Pro cluster environments.
+When the `MYSQL_USE_SLAVE_CONNECTION` variable is set to `true`, the `synchronous_replication` parameter is set to `true` by default in the `env.php` file on Pro Staging and Production environments.
 
 ### `QUEUE_CONFIGURATION`
 
