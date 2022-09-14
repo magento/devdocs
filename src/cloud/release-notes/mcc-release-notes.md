@@ -22,7 +22,7 @@ The release notes include:
 
 Release date: September 13, 2022
 
--  {:.fix}**Warming up failed errors*—Fixes an issue when page visibility is set to `Not Visible Individually`, resulting in `ERROR: Warming up failed: <link to page>` errors in the deployment log.<!-- MCLOUD-9134 -->
+-  {:.fix}**Errors on warmup**—Fixed an issue that attempted to [warmup]({{ site.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_pages) when the page visibility is set to [**Not Visible Individually**]({{site.user_guide_url}}/system/data-attributes-product.html#simple-product-csv-file-structure) in the Admin, resulting in `ERROR: Warming up failed: <link to page>` errors in the deployment log.<!-- MCLOUD-9134 -->
 
 ## v1.0.11
 
