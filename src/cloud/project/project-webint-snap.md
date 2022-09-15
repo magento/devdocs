@@ -126,7 +126,7 @@ You can create a copy of your database using the `{{site.data.var.ct}} db-dump` 
 You can choose to back up selected databases by appending the database names to the command, for example:
 
 ```bash
-php vendor/bin/ece-tools -- main sales
+php vendor/bin/ece-tools db-dump -- main sales
 ```
 
 Consider the following guidelines:
