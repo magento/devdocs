@@ -1057,6 +1057,23 @@ extensions:
     name: Quick Checkout
     versions:
       -
+        name: 1.2.0
+        support:
+          2.4.5: supported
+          2.4.4: supported
+          2.4.3: supported
+          2.4.2: supported
+          2.4.1: supported
+          2.4.0: not supported
+          2.3.7: not supported
+          2.3.6: not supported
+          2.3.5-p1: not supported
+          2.3.4: not supported
+          2.3.3: not supported
+          2.3.2: not supported
+          2.3.1: not supported
+          2.3.0: not supported
+      -
         name: 1.1.0
         support:
           2.4.5: compatible

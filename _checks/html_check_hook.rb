@@ -19,19 +19,19 @@ Jekyll::Hooks.register :site, :post_write do |site|
 
   # Do not exit when html-proofer raises an error
   begin
-    # Check 'url_ignore' in '_config.checks.yml'
+    # Check 'ignore_urls' in '_config.checks.yml'
     # and add 'excludes' from Jekyll configuration.
     #
     checks_config = YAML.load_file('_config.checks.yml')
-    url_ignore = checks_config.dig('html-proofer', :url_ignore)
+    ignore_urls = checks_config.dig('html-proofer', :ignore_urls)
     jekyll_excludes = site.config['exclude']
     jekyll_excludes_as_regex =
       jekyll_excludes.map do |item|
         Regexp.new Regexp.escape(item)
       end
 
-    if url_ignore
-      url_ignore.push(jekyll_excludes_as_regex).flatten!.uniq!
+    if ignore_urls
+      ignore_urls.push(jekyll_excludes_as_regex).flatten!.uniq!
     else
       checks_config['html-proofer'][:ignore_urls] = jekyll_excludes_as_regex
     end
