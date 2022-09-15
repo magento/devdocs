@@ -130,6 +130,7 @@ Field | Data Type | Description
 --- | --- | ---
 `final` | Price | Price value after discounts, excluding personalized promotions.
 `regular` | Price | Base product price specified by the merchant.
+`roles` | [String] | Determines if the price should be visible or hidden.
 
 ### ProductViewPriceRange type
 
