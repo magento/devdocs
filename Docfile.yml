@@ -8,7 +8,7 @@ content_map:
 -
   directory: src/mftf
   repository: magento-devdocs/magento2-functional-testing-framework-public
-  branch: COMDOX-111-docs-migration
+  branch: migrated-docs
   filter: true
 -
   directory: src/mftf/v2
