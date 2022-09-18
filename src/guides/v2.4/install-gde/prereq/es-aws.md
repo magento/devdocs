@@ -5,6 +5,8 @@ functional_areas:
   - Search
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/search-engine/aws-opensearch.html
+layout: migrated
 ---
 
 {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.3 supports using Amazon OpenSearch Service clusters. This service is the successor to Amazon Elasticsearch Service. This topic describes how to configure Commerce to use AWS OpenSearch, and how to migrate data from a local Elasticsearch or OpenSearch instance to an AWS OpenSearch cluster.

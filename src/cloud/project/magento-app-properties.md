@@ -67,6 +67,9 @@ hooks:
         composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 ```
 
+{:.bs-callout-warning}
+The `.magento.app.yaml` file is deployed to all environments. This `composer` command installs all `dev` dependencies. Use caution and modify your code as needed for Production environments.
+
 ## `access`
 
 The `access` property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:

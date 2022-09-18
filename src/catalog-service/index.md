@@ -10,7 +10,7 @@ https://experienceleague.adobe.com/docs/commerce-merchant-services/catalog-servi
 
 Catalog Service uses GraphQL queries to provide rich view-model (read-only) catalog data to quickly and fully render product-related content on storefront, including product detail pages and product list pages. Catalog Service, along with [Live Search]({{site.baseurl}}/live-search/overview.html), each implement queries that return information that is not available to the [`products` query]({{site.baseurl}}/guides/v2.4/graphql/queries/products.html) on Adobe Commerce and Magento Open Source. For example, the Catalog Service [`products` query](products.html) treats all products as either simple or complex. Simple products have a single price, while complex products have a price range. The Live Search [`productSearch` query](../live-search/product-search.html) returns detailed facet information.
 
-You run these queries by sending them to a federated gateway. The URL is provided when you onboard.
+You run these queries by sending them to the gateway at `https://catalog-service.adobe.io/graphql`.
 
 {:.bs-callout-info}
 The gateway is for future integration with Live Search and [Product Recommendations](https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/overview.html?lang=en). In this release, you can access Catalog Service and Live Search queries from the same endpoint, if you have a valid license key for both products. However, the queries from the two products do not currently share any response data.

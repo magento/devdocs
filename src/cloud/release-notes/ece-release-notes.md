@@ -21,6 +21,13 @@ The release notes include:
 
 <!--Add release notes below-->
 
+## v2002.1.12
+
+Release date: September 13, 2022
+
+-  {:.new}**Enable `synchronous_replication`**—ECE-Tools sets `synchronous_replication=>true` in the `app/etc/env.php` file when `MYSQL_USE_SLAVE_CONNECTION` is enabled. This configuration affects only Magento 2.4.6+. See the `MYSQL_USE_SLAVE_CONNECTION` variable description in the [Deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#mysql_use_slave_connection).<!-- MCLOUD-9142 -->
+-  {:.new}**OpenSearch**—Added functionality to configure and set the `opensearch` engine for the next Adobe Commerce release 2.4.6. See [Set up OpenSearch service]({{ site.baseurl }}/cloud/project/services-opensearch.html).<!-- MCLOUD-9236 -->
+
 ## v2002.1.11
 
 Release date: August 4, 2022

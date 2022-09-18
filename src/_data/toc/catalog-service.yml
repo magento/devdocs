@@ -8,6 +8,10 @@ pages:
     url: /catalog-service/products.html
     versionless: true
 
+  - label: productSearch query
+    url: /catalog-service/productsearch.html
+    versionless: true
+
   - label: refineProduct query
     url: /catalog-service/refine-product.html
     versionless: true
