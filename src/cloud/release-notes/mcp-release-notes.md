@@ -20,7 +20,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 The `{{site.data.var.mcp-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`
 
 <!--Add release notes below-->
-## v1.0.19
+## v1.0.19 {#latest}
 
 Release date: September 13, 2022
 
