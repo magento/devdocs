@@ -214,9 +214,11 @@ To use the New Relic Logs application:
 
 1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. Select your application.
+1. If you have multiple accounts, select the account in the top-right section.
 
-1. On the _Explorer / Services - APM page_, expand the Triage section and select **Logs** from the navigation menu.
+1. Select the application name in the **Services** list.
+
+1. Select **Logs** from the left navigation menu.
 
 1. To review infrastructure log data for cloud services, enter the query string `has: "filePath"` in the _Find logs where_ field. Then, click **Query logs**.
    The names of the log files are stored in the `filePath` field, with full paths to the log file.
@@ -237,7 +239,7 @@ The following example shows a New Relic Insights dashboard created from queries 
 
 ![Cloud project New Relic CDN Logs dashboard]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-cdn-logs-dashboard.png){:width="650px"}
 
-For further information and examples, see [Introduction to New Relic Logs][New Relic Logs] and [Introduction to New Relic Insights][New Relic Insights].
+See [Get started with log management][New Relic Logs] and [Introduction to New Relic's query language][nrql] on the _New Relic Docs_ site.
 
 ### Monitor performance with Managed Alerts
 
@@ -374,10 +376,10 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [New Relic ONE UI]: https://docs.newrelic.com/docs/new-relic-one/use-new-relic-one/get-started/new-relic-one-core-ui-components
 [New Relic for application performance management (APM)]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
 [New Relic Help Center]: https://newrelic.com/
-[New Relic Logs]: https://docs.newrelic.com/docs/logs/new-relic-logs/get-started/introduction-new-relic-logs
+[New Relic Logs]: https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/
 [New Relic login]: https://login.newrelic.com/login
 [New Relic infrastructure]: https://newrelic.com/products/infrastructure
-[New Relic Insights]: https://docs.newrelic.com/docs/insights/use-insights-ui/getting-started/introduction-new-relic-insights
+[nrql]: https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language/
 [New Relic query syntax for logs]: https://docs.newrelic.com/docs/logs/new-relic-logs/ui-data/query-syntax-logs
 [New Relic reporting]: https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html
 [prerequisite steps]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
