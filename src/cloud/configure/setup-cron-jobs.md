@@ -187,7 +187,7 @@ To disable cron jobs:
 
 Adobe has updated the {{site.data.var.ece}} package to optimize cron processing on the {{site.data.var.ece}} platform and to fix cron-related issues. If you encounter problems with cron processing, make sure that your project is using the most current version of the `{{site.data.var.ct}}` package. See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html).
 
-You can review cron processing information in the application-level log files for each environment. See [Application logs]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs). 
+You can review cron processing information in the application-level log files for each environment. See [Application logs]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
 
 {:.bs-callout-info}
 Note that on multiple node environments (such as Pro), cron jobs will be executed on a randomly selected node. Because `~/var/log` is not shared between nodes, you may need to manually merge logs to get full visibility of cron execution.
