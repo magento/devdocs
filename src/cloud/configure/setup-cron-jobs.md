@@ -193,7 +193,7 @@ You can review cron processing information in the application-level log files fo
 Note that on multi-node environments (such as Pro), cron jobs are executed on a randomly selected node. Because `~/var/log` is not shared between nodes, you may need to manually merge logs to get full visibility of cron execution.
 
 {:.bs-callout-info}
-Cron jobs are executed with a different set of environment variables than are available in a SSH session. Notably, `$USER` is not available to cron jobs. 
+Cron jobs are executed with a different set of environment variables than are available in an SSH session. Notably, `$USER` is not available to cron jobs.
 
 See the following {{site.data.var.ee}} Support articles for help troubleshooting cron-related problems:
 
