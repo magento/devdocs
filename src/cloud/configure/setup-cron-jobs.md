@@ -190,7 +190,7 @@ Adobe has updated the {{site.data.var.ece}} package to optimize cron processing 
 You can review cron processing information in the application-level log files for each environment. See [Application logs]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
 
 {:.bs-callout-info}
-Note that on multiple node environments (such as Pro), cron jobs will be executed on a randomly selected node. Because `~/var/log` is not shared between nodes, you may need to manually merge logs to get full visibility of cron execution.
+Note that on multi-node environments (such as Pro), cron jobs are executed on a randomly selected node. Because `~/var/log` is not shared between nodes, you may need to manually merge logs to get full visibility of cron execution.
 
 {:.bs-callout-info}
 Cron jobs are executed with a different set of environment variables than are available in a SSH session. Notably, `$USER` is not available to cron jobs. 
