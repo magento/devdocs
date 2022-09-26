@@ -225,8 +225,6 @@ To use the New Relic Logs application:
 
 1. To review Fastly log data, enter the query string `has: "client_ip"` in the _Find logs where_ field. Then, click **Query logs**.
 
-   ![Cloud project New Relic Fastly log data]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-logs-has-client_ip-fastly.png){:width="650px"}
-
 1. To filter the Fastly log results further, select an attribute from the left menu, then click **Query logs** to apply the updated query.
 
    For example, to query the Fastly data by country code, select the _Geo Country Code_ attribute.
