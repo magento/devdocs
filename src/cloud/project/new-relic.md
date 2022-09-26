@@ -35,7 +35,7 @@ For Pro accounts, if New Relic APM is not installed on the Staging and Productio
 
 ## New Relic Logs
 
-{{site.data.var.ece}} Pro projects include the [New Relic Logs][] service on both Production and Staging environments. The service is pre-configured to aggregate all log data from your Staging and Production environments and display it in a centralized log management dashboard.
+{{site.data.var.ece}} projects include the [New Relic Logs][] service. The service is pre-configured to aggregate all log data from your Staging and Production environments and display it in a centralized log management dashboard.
 
 The aggregated data includes information from the following logs:
 
