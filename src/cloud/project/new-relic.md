@@ -104,14 +104,14 @@ To connect a Cloud environment to New Relic, add the New Relic license key to th
 
 ### Configure New Relic for Starter environments
 
-For Starter environments, enable the New Relic integration by adding the New Relic license key to the environment configuration. We recommend adding the key to the Staging and Production (master branch) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _{{site.data.var.ee}} User Guide_.
+For Starter environments, enable the New Relic integration by adding the New Relic license key to the environment configuration. We recommend adding the key to the Staging and Production (`master` branch) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _{{site.data.var.ee}} User Guide_.
 
 {% include cloud/note-env-config-redeploy-warning.md%}
 
 **Prerequisites:**
 
 -  Log in credentials for the {{site.data.var.ee}} account page, or for the New Relic account associated with your project
--  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or credentials to access the [Admin](https://docs.magento.com/m2/ce/user_guide/system/permissions.html) for the environment.
+-  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or credentials to access the [Admin](https://docs.magento.com/user-guide/system/permissions.html) for the environment.
 
 {:.procedure}
 To configure New Relic for Starter environments:
@@ -194,7 +194,7 @@ From this view, you can track and find the following types of information:
 
 We recommend reviewing tracked data:
 
--  **Most time consuming**—Determine time consumption by tracking requests in parallel. For example, you may have the highest transaction time spent in product and category views. If a customer account page suddenly ranks very high in time consumption, your application might be affected by a call or query-dragging performance.
+-  **Most time consuming**—Determine time consumption by tracking requests in parallel. For example, you may have the highest transaction time spent in product and category views. If a customer account page suddenly ranks high in time consumption, your application might be affected by a call or query-dragging performance.
 
 -  **Highest throughput**—Identify pages hit the most based on the size and frequency of bytes transmitted.
 
@@ -214,11 +214,9 @@ To use the New Relic Logs application:
 
 1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. If you have multiple accounts, select the account in the top-right section.
+1. Select the application name in the **Services - APM** list.
 
-1. Select the application name in the **Services** list.
-
-1. Select **Logs** from the left navigation menu.
+1. Select **Logs** from the Explorer navigation menu.
 
 1. To review infrastructure log data for cloud services, enter the query string `has: "filePath"` in the _Find logs where_ field. Then, click **Query logs**.
    The names of the log files are stored in the `filePath` field, with full paths to the log file.
@@ -308,7 +306,7 @@ To configure a notification channel:
 
 1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. Create a new notification channel.
+1. Create a notification channel.
 
    -  In the top navigation menu, click **Alerts & AI** to open the _Applied Intelligence_ page.
 
@@ -347,7 +345,7 @@ The alerts in the Managed alerts for Adobe Commerce policy have default notifica
 
 Do not modify any alerts included in the Managed alerts for Adobe Commerce policy. We update and improve the alert conditions in this policy over time, which overwrites any customizations you add to the policy.
 
-Instead of modifying an existing alert, you can create a new alert policy. Then, copy the alert conditions to the new policy. See [Update policies or conditions] in the New Relic documentation.
+Instead of modifying an existing alert, you can create an alert policy. Then, copy the alert conditions to the new policy. See [Update policies or conditions] in the New Relic documentation.
 
 {:.bs-callout-tip}
 See [Alerts concepts and workflow] in the New Relic documentation for more detailed information about Alerts, alert policies, and notification channels.
