@@ -29,7 +29,7 @@ For information about quality patches created by the Community for {{site.data.v
 -  **ACSD-46815** _(for Adobe Commerce and Magento Open Source `>=2.4.5 <2.4.6`)_-Fixes the issue where category tree request is limited to 20 categories.
 -  **ACSD-45675** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.6`)_-Fixes the issue where the product export uses category names from the Default Store View scope.
 -  **ACSD-46869** _(for Adobe Commerce and Magento Open Source `>=2.4.4 <2.4.6`)_-Fixes the issue where a configurable product in a cart is not updated via a PUT REST API request without changing the product quantity.
--  **MDVA-42768-V2** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where  Configurable product displays regular price as 0 when "Display Out-of-Stock" is Yes.
+-  **MDVA-42768-V2** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where Configurable product displays regular price as 0 when "Display Out-of-Stock" is Yes.
 -  Updated patches: MDVA-44562, ACSD-46213, MDVA-41305, MDVA-38346, MDVA-13203.
 -  Deprecated patch: MDVA-42768.
 
