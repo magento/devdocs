@@ -161,17 +161,15 @@ The three gateways map to the three servers in your Production environment clust
 
 Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS or Azure Availability Zones, each zone with a separate data center.
 
-In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides
-incremental backups, which include the file system and the database, according to the following schedule:
+In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides incremental backups, which include the file system and the database, according to the following schedule:
 
-Time Period | Backup Retention Policy
---- | ---
-Day 1 | One backup per hour
-Days 2 through 3 | One backup every 6 hours
-Days 4 through 6 | One backup per day
-Weeks 2 through 6 | One backup per week
-Weeks 8 through 12 | One bi-weekly backup
-Weeks 12 through 22 | One backup per month
+| Time Period        | Backup Retention Policy |
+| ------------------ | ----------------------- |
+| Day 1 through 3    | One backup per hour     |
+| Days 4 through 7   | One backup per day      |
+| Weeks 2 through 6  | One backup per week     |
+| Weeks 8 through 12 | One bi-weekly backup    |
+| Month 3 through 5  | One backup per month    |
 
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 
