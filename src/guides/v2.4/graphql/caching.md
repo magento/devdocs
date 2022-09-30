@@ -43,7 +43,7 @@ Magento explicitly disallows caching the following queries.
 
 ## Caching for logged-in customers {#customers}
 
-In general, guest shoppers see the same products, categories, and prices. Guest queries are easy to cache, because content can cached based on the URL and query alone. However, once the guest logs in as a customer, factors such their customer group or status as a B2B merchant can significantly affect what they see on the storefront.
+In general, guest shoppers see the same products, categories, and prices. Guest queries are easy to cache because content can be cached based on the URL and query alone. However, once the guest logs in as a customer, factors such their customer group or status as a B2B merchant can significantly affect what they see on the storefront.
 
 To enable caching for logged-in customers, {{site.data.var.ce}} 2.4.4 introduces the `X-Magento-Cache-Id` response header. This header is returned with every GraphQL GET and POST request. Its value is an SHA hash comprised of several factors that are specific to the customer's context. The following values are concatenated prior to being hashed:
 
