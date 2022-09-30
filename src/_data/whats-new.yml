@@ -4,8 +4,193 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 22 19:58:38 2022
+updated: Mon Sep 19 17:01:19 2022
 entries:
+- description: The [Functional Testing Framework Guide](https://devdocs.magento.com/mftf/docs/introduction.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/testing/functional-testing-framework/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: September 16, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3160
+  merge_commit: 2629e630f302f33b897a54a80c0a88957351e48f
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Cloud tools release:<br/>- [Ece-tools 2002.1.12](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v2002112)<br/>-
+    [Cloud Docker 1.3.3](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v133)<br/>-
+    [Cloud components 1.0.12](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html#v1012)<br/>-
+    [Cloud patches 1.0.19](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v1019)
+  versions: 2.x
+  type: Major Update
+  date: September 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3152
+  merge_commit: 29915eb9bb2330f4ff07c3469f179d32bd426f12
+  contributor: BaDos
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Moved the "Live Search with Catalog Service" example from Live Search
+    to the Catalog Service [productSearch query](https://devdocs.magento.com/catalog-service/productsearch.html)
+    topic.
+  versions: 2.x
+  type: New Topic
+  date: September 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3139
+  merge_commit: cfbc6d3a0ca4de064dc9215673ed85671e18b117
+  contributor: dobooth
+  membership: true
+  labels:
+  - 2.x
+  - New Topic
+- description: The [Installation Guide](https://devdocs.magento.com/guides/v2.4/install-gde/install-flow-diagram.html)
+    topics moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/overview.html)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: September 13, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3150
+  merge_commit: d5bb9c81d63725cb2887863d2ad3f8ae30ea66bb
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Added information about the `synchronous_replication` parameter for
+    the [`MYSQL_USE_SLAVE_CONNECTION`](https://devdocs.magento.com/cloud/env/variables-deploy.html#mysql_use_slave_connection)
+    deploy variable.
+  versions: 2.x
+  type: Major Update
+  date: September 13, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3154
+  merge_commit: f5eed15e3109a52112b860c84d475078e695c7cc
+  contributor: gamarshall
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added 2.4.x and 2.3.x security patches to the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    table.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: September 13, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3155
+  merge_commit: a53858655710ef612096bca1088fd7fc5779b3c8
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: The Quality Patches Tool [usage](https://devdocs.magento.com/quality-patches/tool.html)
+    topic moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/tools/quality-patches-tool/usage.html)
+    and will be redirected soon.
+  versions: 2.x
+  type: Major Update
+  date: September 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3153
+  merge_commit: 18ae42cc0eaba3c6b0876d4391c8020d90e9059f
+  contributor: barnato-v
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+  - migration
+- description: The [Payments Integrations Guide](https://devdocs.magento.com/guides/v2.4/payments-integrations/bk-payments-integrations.html)
+    has moved to the [Adobe Devsite](https://developer.adobe.com/commerce/php/development/payments-integrations)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: September 7, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3141
+  merge_commit: bc9d234c3d943ba9983c3f281e702e0c34b25e80
+  contributor: jhadobe
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Improved the explanation for how the `ece-tools` package overrides
+    default Commerce configuration values using the [.magento.env.yaml file](https://devdocs.magento.com/cloud/project/magento-env-yaml.html).
+  versions: 2.x
+  type: Technical
+  date: September 2, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3138
+  merge_commit: 511de7458d36159daeadba81a300b841a73a230f
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Updated the email address for the [Commerce Beta Program](https://devdocs.magento.com/release/beta-program.html).
+  versions: 2.4.x
+  type: Technical
+  date: August 29, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3136
+  merge_commit: 767f03bca4176c956e9efadccdee33d57e51b98c
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
+- description: The [video tutorials](https://devdocs.magento.com/videos/) moved to
+    [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce-learn/tutorials/overview.html)
+    and will be redirected soon.
+  versions: 2.x
+  type: Major Update
+  date: August 29, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3127
+  merge_commit: cfc3f6bd3dce81f6f540ee6485bd0401b1f5c3f3
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+  - migration
+- description: The [Data Migration Guide](https://devdocs.magento.com/guides/v2.4/migration/bk-migration-guide.html)
+    topics moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/how-migration-works.html)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: August 29, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3133
+  merge_commit: 5612d06aaf9f581ebcfcd5cd209aed5967442162
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Updated the [Regional IP addresses](https://devdocs.magento.com/cloud/env/environments-start.html#regional-ip-addresses)
+    for Cloud Integration environments.
+  versions: 2.x
+  type: Technical
+  date: August 25, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3121
+  merge_commit: 5ab9ae7c5587844c9d55b049bb48b0234502bcfb
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.19 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 24, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3128
+  merge_commit: 274f6a4af4a59285bbc06212648a2661535b1df1
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
 - description: Added information about the DHL schema upgrade patch to the Adobe Commerce
     2.4.x and 2.3.7 release notes. See [2.4.x Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
     and  [2.3.x Release Information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
