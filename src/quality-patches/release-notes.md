@@ -8,7 +8,7 @@ functional_areas:
 redirect_from:
   - /quality-patches/release-notes-commerce.html
   - /quality-patches/release-notes-open-source.html
-  migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/quality-patches-tool/release-notes.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/quality-patches-tool/release-notes.html
 layout: migrated
 ---
 
