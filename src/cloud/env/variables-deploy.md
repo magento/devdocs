@@ -560,15 +560,30 @@ To further reduce deployment time, we recommend using [Configuration Management]
 
 Use this environment variable to retain customized search service settings between deployments. For example:
 
+>Elasticsearch configuration:
+
 ```yaml
 stage:
   deploy:
    SEARCH_CONFIGURATION:
      engine: elasticsearch
-     elasticsearch_server_hostname: hostname
-     elasticsearch_server_port: '123456'
-     elasticsearch_index_prefix: magento
+     elasticsearch_server_hostname: 'http://elasticsearch.internal'
+     elasticsearch_server_port: '9200'
+     elasticsearch_index_prefix: 'magento2'
      elasticsearch_server_timeout: '15'
+```
+
+>OpenSearch configuration (for Commerce 2.4.6 and later):
+
+```yaml
+stage:
+  deploy:
+   SEARCH_CONFIGURATION:
+     engine: opensearch
+     opensearch_server_hostname: 'http://opensearch.internal'
+     opensearch_server_port: '9200'
+     opensearch_index_prefix: 'magento2'
+     opensearch_server_timeout: '15'
 ```
 
 {% include cloud/merge-configuration.md %}
@@ -580,7 +595,7 @@ stage:
   deploy:
     SEARCH_CONFIGURATION:
       engine: elasticsearch
-      elasticsearch_server_port: '1234'
+      elasticsearch_server_port: '9200'
       _merge: true
 ```
 

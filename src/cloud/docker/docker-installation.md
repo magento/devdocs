@@ -64,7 +64,7 @@ To install an {{site.data.var.ee}} on-premises project:
        mode: 'production'
    services:
        php:
-           version: '7.3'
+           version: '8.1'
            extensions:
                enabled:
                    - xsl
@@ -76,9 +76,10 @@ To install an {{site.data.var.ee}} on-premises project:
        redis:
            version: '5.0'
            image: 'redis'
-       elasticsearch:
-           version: '7.5'
-           image: 'magento/magento-cloud-docker-elasticsearch'
+       opensearch:
+           version: '1.2'
+           image: 'magento/magento-cloud-docker-opensearch'
+
    hooks:
        build: |
            set -e
