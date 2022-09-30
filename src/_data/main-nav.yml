@@ -371,7 +371,7 @@
 
 - label: Tutorials
   children:
-    - label: Rest Tutorials
+    - label: REST Tutorials
       url: https://developer.adobe.com/commerce/webapi/rest/tutorials/
       exclude_versions: ["2.3"]
 
