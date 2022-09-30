@@ -59,11 +59,11 @@
   children:
     - label: Installation Guide (on-premises)
       url: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/overview.html
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Installation Guide
       url: /install-gde/install-flow-diagram.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Extensions Guide
       url: https://experienceleague.adobe.com/docs/commerce-admin/start/resources/extensions.html
@@ -71,46 +71,46 @@
 
     - label: Software Update Guide
       url: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Software Update Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Configuration Guide
       url: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/overview.html
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Configuration Guide
       url: /config-guide/bk-config-guide.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Performance Best Practices
       url: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/overview.html
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Performance Best Practices
       url: /performance-best-practices/introduction.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Migration Guide
       url: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/how-migration-works.html
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Migration Guide
       url: /migration/bk-migration-guide.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Release Information
       url: /release-notes/bk-release-notes.html
 
     - label: Command-line Tools Reference
       url: https://experienceleague.adobe.com/docs/commerce-operations/reference/commerce.html
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Command-line Tools Reference
       url: /reference/cli/magento.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Tools
       url: https://experienceleague.adobe.com/docs/commerce-operations/tools/overview.html
@@ -122,43 +122,43 @@
       children:
         - label: Architecture
           url: https://developer.adobe.com/commerce/php/architecture/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: Architecture
           url: /architecture/bk-architecture.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: PHP Developer Guide
           url: https://developer.adobe.com/commerce/php/development/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: PHP Developer Guide
           url: /extension-dev-guide/bk-extension-dev-guide.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: Extension Developer Best Practices
           url: https://developer.adobe.com/commerce/php/best-practices/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: Extension Developer Best Practices
           url: /ext-best-practices/bk-ext-best-practices.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: Module Reference Guide
           url: https://developer.adobe.com/commerce/php/module-reference/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: Module Reference Guide
           url: /mrg/intro.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: Coding Standards
           url: https://developer.adobe.com/commerce/php/coding-standards/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: Coding Standards
           url: /coding-standards/bk-coding-standards.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: Contributor Guide
           url: https://developer.adobe.com/commerce/contributor/guides/
@@ -172,43 +172,43 @@
       children:
         - label: Frontend Developer Guide
           url: https://developer.adobe.com/commerce/frontend-core/guide/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: Frontend Developer Guide
           url: /frontend-dev-guide/bk-frontend-dev-guide.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: UI Components Guide
           url: https://developer.adobe.com/commerce/frontend-core/ui-components/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: UI Components Guide
           url: /ui_comp_guide/bk-ui_comps.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: JavaScript Developer Guide
           url: https://developer.adobe.com/commerce/frontend-core/javascript/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: JavaScript Developer Guide
           url: /javascript-dev-guide/bk-javascript-dev-guide.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: Admin Design Pattern Library
           url: https://developer.adobe.com/commerce/admin-developer/pattern-library/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: Admin Design Pattern Library
           url: /pattern-library/bk-pattern.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: Admin Style Guide
           url: https://developer.adobe.com/commerce/admin-developer/style-guide/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: Admin Style Guide
           url: /design-styleguide/bk-styleguide.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: PWA Documentation Site
           url: https://developer.adobe.com/commerce/pwa-studio/
@@ -221,19 +221,19 @@
       children:
         - label: Get Started with our Web APIs
           url: https://developer.adobe.com/commerce/webapi/get-started/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: Get Started with our Web APIs
           url: /get-started/bk-get-started-api.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: REST API Reference
           url: https://developer.adobe.com/commerce/webapi/rest/
-          exclude_versions: ["2.3"]
+          include_versions: ["2.4"]
 
         - label: REST API Reference
           url: /rest/bk-rest.html
-          exclude_versions: ["2.4"]
+          include_versions: ["2.3"]
 
         - label: SOAP API Reference
           url: /soap/bk-soap.html
@@ -253,11 +253,11 @@
   children:
     - label: Application Testing Guide
       url: https://developer.adobe.com/commerce/testing/guide/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Application Testing Guide
       url: /test/testing.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Functional Acceptance Testing (MFTF)
       url: https://developer.adobe.com/commerce/testing/functional-testing-framework/
@@ -265,35 +265,35 @@
 
     - label: Integration Testing
       url: https://developer.adobe.com/commerce/testing/guide/integration/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Integration Testing
       url: /test/integration/integration_test_execution.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: JavaScript Unit Testing
       url: https://developer.adobe.com/commerce/testing/guide/js/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: JavaScript Unit Testing
       url: /test/js/jasmine.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: PHP Unit Testing
       url: https://developer.adobe.com/commerce/testing/guide/unit/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: PHP Unit Testing
       url: /test/unit/unit_test_execution.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Web API Functional Testing
       url: https://developer.adobe.com/commerce/webapi/get-started/web-api-functional-testing/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Web API Functional Testing
       url: /get-started/web-api-functional-testing.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
 - separator: true
 
@@ -304,27 +304,27 @@
 
     - label: B2B
       url: https://developer.adobe.com/commerce/webapi/rest/b2b/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: B2B
       url: /b2b/bk-b2b.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Checkout
       url: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Inventory Management
       url: https://developer.adobe.com/commerce/webapi/rest/inventory/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Inventory Management
       url: /inventory/index.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Live Search
       url: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/guide-overview.html
@@ -347,7 +347,7 @@
 
     - label: Payment Integrations
       url: https://developer.adobe.com/commerce/php/development/payments-integrations/
-      exclude_versions: ["2.4"]
+      include_versions: ["2.4"]
 
     - label: Product Recommendations Developer Guide
       url: https://devdocs.magento.com/recommendations/product-recs.html
@@ -363,45 +363,45 @@
 
     - label: Staging
       url: https://developer.adobe.com/commerce/php/development/staging/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Staging
       url: /extension-dev-guide/staging.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
 - label: Tutorials
   children:
     - label: REST Tutorials
       url: https://developer.adobe.com/commerce/webapi/rest/tutorials/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Custom Attributes
       url: https://developer.adobe.com/commerce/php/tutorials/admin/custom-text-field-attribute/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Custom Attributes
       url: /howdoi/custom-attributes/introduction.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Customize Product Creation Form
       url: https://developer.adobe.com/commerce/php/tutorials/admin/custom-product-creation-form/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Customize Checkout
       url: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/
-      exclude_versions: ["2.3"]
+      include_versions: ["2.4"]
 
     - label: Customize Checkout
       url: /howdoi/checkout/checkout_overview.html
-      exclude_versions: ["2.4"]
+      include_versions: ["2.3"]
 
     - label: Support
       url: https://developer.adobe.com/commerce/contributor/community/support/
