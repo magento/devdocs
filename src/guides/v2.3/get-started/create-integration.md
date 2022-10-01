@@ -156,7 +156,7 @@ To develop a module, you must:
        }
 
        /**
-        * {@inheritdoc}
+        * @inheritDoc
         */
 
        public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
