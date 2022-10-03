@@ -1,10 +1,8 @@
 ---
 group: tools
 title: Quality Patches Tool
-group: tools
 functional_areas:
   - Upgrade
-redirect_from: https://devdocs.magento.com/quality-patches/tool.html
 migrated_to: https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html
 layout: migrated
 ---
