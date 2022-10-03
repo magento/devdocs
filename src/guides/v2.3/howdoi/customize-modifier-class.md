@@ -81,7 +81,7 @@ class Example extends AbstractModifier
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function modifyData(array $data)
     {

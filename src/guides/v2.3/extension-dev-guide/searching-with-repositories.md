@@ -438,7 +438,7 @@ Below is an example of how the [`CustomerRepositoryInterface`]({{ site.mage2blob
         }
         ...
         /**
-         * {@inheritdoc}
+         * @inheritDoc
          **/
         public function getList(SearchCriteriaInterface $searchCriteria)
         {

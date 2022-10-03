@@ -417,7 +417,7 @@ class ProductRepository implements ProductRepositoryInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      *
      * @param int $id
      * @return ResponseItemInterface
@@ -438,7 +438,7 @@ class ProductRepository implements ProductRepositoryInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      *
      * @param RequestItemInterface[] $products
      * @return void
