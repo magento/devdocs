@@ -3,6 +3,9 @@ group: tools
 title: Quality Patches Tool
 functional_areas:
   - Upgrade
+redirect_from: https://devdocs.magento.com/quality-patches/tool.html
+migrated_to: https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html
+layout: migrated
 ---
 
 The [Quality Patches Tool][github] is a command-line tool that delivers
