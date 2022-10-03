@@ -21,7 +21,13 @@ The release notes include:
 
 <!--Add release notes below-->
 
-## v2002.1.12 {#latest}
+## v2002.1.13 {#latest}
+
+Release date: TBD, 2022
+
+-  {:.new}Placeholder for Eventing<!-- CEXT-772 -->
+
+## v2002.1.12
 
 Release date: September 13, 2022
 

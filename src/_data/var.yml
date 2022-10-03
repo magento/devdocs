@@ -26,7 +26,7 @@ csuite: Cloud Suite for Commerce
 
 ct: ece-tools
 ct-repo: magento/ece-tools
-ct-release: 2002.1.12
+ct-release: 2002.1.13
 
 mcc-prod: Cloud Components of Commerce
 mcc-package: magento/magento-cloud-components
