@@ -101,7 +101,7 @@ class DefaultConfigProvider implements \Magento\Framework\Data\Wysiwyg\ConfigPro
     ...
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function getConfig(\Magento\Framework\DataObject $config) : \Magento\Framework\DataObject
     {

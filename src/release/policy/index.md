@@ -1,6 +1,8 @@
 ---
 title: Release policy
 group: release
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/policy.html
+layout: migrated
 ---
 
 {{site.data.var.ee}} and {{site.data.var.ce}} use [semantic versioning](https://semver.org/) on the individual module level (for example `magento/framework 101.1.1`), but not for the marketing version number. For example:
@@ -41,7 +43,7 @@ The following guidelines apply to patch releases:
 
 **Security Enhancement**: A software improvement or configuration change to proactively improve security within the application. These security enhancements help address security risks that impact the security posture of the {{site.data.var.ee}} application but may be backward incompatible.
 
-With security patch releases, you can keep your site more secure without applying additional quality fixes and enhancements that are contained within a full quarterly patch release. Security patch releases are appended with ‘-pN’, where N is the incremental patch version beginning with 1 (for example, 2.3.5-p1). Security patch releases can also include hotfixes required to address critical issues that affect the {{site.data.var.ee}} application.
+With security patch releases, you can keep your site more secure without applying additional quality fixes and enhancements that are contained within a full quarterly patch release. Security patch releases are appended with '-pN', where N is the incremental patch version beginning with 1 (for example, 2.3.5-p1). Security patch releases can also include hotfixes required to address critical issues that affect the {{site.data.var.ee}} application.
 
 Each security patch release is based on the prior full patch release, hence it contains quality and security fixes from prior patch release and security fixes created between the prior full patch release and the security patch release.
 
