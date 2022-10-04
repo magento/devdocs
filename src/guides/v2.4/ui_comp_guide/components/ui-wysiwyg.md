@@ -209,7 +209,7 @@ class ModifierPoolDataProvider extends AbstractDataProvider
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function getData()
     {
@@ -223,7 +223,7 @@ class ModifierPoolDataProvider extends AbstractDataProvider
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function getMeta()
     {

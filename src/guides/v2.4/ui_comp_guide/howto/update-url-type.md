@@ -51,7 +51,7 @@ class Page implements \Magento\Ui\Model\UrlInput\ConfigInterface
         $this->urlBuilder = $urlBuilder;
     }
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function getConfig(): array
     {
