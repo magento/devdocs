@@ -25,7 +25,7 @@ The release notes include:
 
 Release date: TBD, 2022
 
--  {:.new}Placeholder for Eventing<!-- CEXT-772 -->
+-  {:.new}**Added support for Adobe I/O Events for Adobe Commerce**. Extension developers can now use the [Adobe I/O Events](https://developer.adobe.com/events/docs/) framework to send Commerce event information from Cloud instances to their applications written for [Adobe App Builder](https://developer.adobe.com/app-builder/docs/overview/). Adobe I/O Events for Adobe Commerce is currently in Product Preview. <!-- CEXT-932 -->
 
 ## v2002.1.12
 
