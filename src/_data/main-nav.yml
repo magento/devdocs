@@ -299,10 +299,17 @@
 
 - label: Functional Areas
   children:
+  
+    - label: Advanced Reporting
+      url: https://developer.adobe.com/commerce/php/development/advanced-reporting/
+      include_versions: ["2.4"]
+      
     - label: Advanced Reporting
       url: /advanced-reporting/overview.html
+      include_versions: ["2.3"]
 
     - label: B2B
+    
       url: https://developer.adobe.com/commerce/webapi/rest/b2b/
       include_versions: ["2.4"]
 
