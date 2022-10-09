@@ -1,7 +1,6 @@
 ---
 - label: Cloud
   children:
-
     - label: Cloud basics
       children:
         - label: Cloud Guide
@@ -58,87 +57,158 @@
 
 - label: Setup
   children:
+    - label: Installation Guide (on-premises)
+      url: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/overview.html
+      include_versions: ["2.4"]
 
     - label: Installation Guide
       url: /install-gde/install-flow-diagram.html
+      include_versions: ["2.3"]
 
     - label: Extensions Guide
-      url: /extensions/
+      url: https://experienceleague.adobe.com/docs/commerce-admin/start/resources/extensions.html
       versionless: true
 
     - label: Software Update Guide
+      url: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html
+      include_versions: ["2.4"]
+
+    - label: Software Update Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
+      include_versions: ["2.3"]
+
+    - label: Configuration Guide
+      url: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/overview.html
+      include_versions: ["2.4"]
 
     - label: Configuration Guide
       url: /config-guide/bk-config-guide.html
+      include_versions: ["2.3"]
+
+    - label: Performance Best Practices
+      url: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/overview.html
+      include_versions: ["2.4"]
 
     - label: Performance Best Practices
       url: /performance-best-practices/introduction.html
+      include_versions: ["2.3"]
+
+    - label: Migration Guide
+      url: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/how-migration-works.html
+      include_versions: ["2.4"]
 
     - label: Migration Guide
       url: /migration/bk-migration-guide.html
+      include_versions: ["2.3"]
 
     - label: Release Information
       url: /release-notes/bk-release-notes.html
 
     - label: Command-line Tools Reference
+      url: https://experienceleague.adobe.com/docs/commerce-operations/reference/commerce.html
+      include_versions: ["2.4"]
+
+    - label: Command-line Tools Reference
       url: /reference/cli/magento.html
+      include_versions: ["2.3"]
 
     - label: Tools
-      url: /quality-patches/tool.html
+      url: https://experienceleague.adobe.com/docs/commerce-operations/tools/overview.html
       versionless: true
 
 - label: Development
   children:
-
     - label: Backend
       children:
+        - label: Architecture
+          url: https://developer.adobe.com/commerce/php/architecture/
+          include_versions: ["2.4"]
 
         - label: Architecture
           url: /architecture/bk-architecture.html
+          include_versions: ["2.3"]
+
+        - label: PHP Developer Guide
+          url: https://developer.adobe.com/commerce/php/development/
+          include_versions: ["2.4"]
 
         - label: PHP Developer Guide
           url: /extension-dev-guide/bk-extension-dev-guide.html
+          include_versions: ["2.3"]
+
+        - label: Extension Developer Best Practices
+          url: https://developer.adobe.com/commerce/php/best-practices/
+          include_versions: ["2.4"]
 
         - label: Extension Developer Best Practices
           url: /ext-best-practices/bk-ext-best-practices.html
-
-        - label: Module Reference Guide
-          url: /mrg/intro.html
           include_versions: ["2.3"]
 
         - label: Module Reference Guide
           url: https://developer.adobe.com/commerce/php/module-reference/
           include_versions: ["2.4"]
 
+        - label: Module Reference Guide
+          url: /mrg/intro.html
+          include_versions: ["2.3"]
+
+        - label: Coding Standards
+          url: https://developer.adobe.com/commerce/php/coding-standards/
+          include_versions: ["2.4"]
+
         - label: Coding Standards
           url: /coding-standards/bk-coding-standards.html
+          include_versions: ["2.3"]
 
         - label: Contributor Guide
-          url: /contributor-guide/contributing.html
+          url: https://developer.adobe.com/commerce/contributor/guides/
           versionless: true
 
         - label: Contribution Resources
-          url: /community/resources.html
+          url: https://developer.adobe.com/commerce/contributor/community/
           versionless: true
 
     - label: Frontend
       children:
+        - label: Frontend Developer Guide
+          url: https://developer.adobe.com/commerce/frontend-core/guide/
+          include_versions: ["2.4"]
 
         - label: Frontend Developer Guide
           url: /frontend-dev-guide/bk-frontend-dev-guide.html
+          include_versions: ["2.3"]
+
+        - label: UI Components Guide
+          url: https://developer.adobe.com/commerce/frontend-core/ui-components/
+          include_versions: ["2.4"]
 
         - label: UI Components Guide
           url: /ui_comp_guide/bk-ui_comps.html
+          include_versions: ["2.3"]
+
+        - label: JavaScript Developer Guide
+          url: https://developer.adobe.com/commerce/frontend-core/javascript/
+          include_versions: ["2.4"]
 
         - label: JavaScript Developer Guide
           url: /javascript-dev-guide/bk-javascript-dev-guide.html
+          include_versions: ["2.3"]
+
+        - label: Admin Design Pattern Library
+          url: https://developer.adobe.com/commerce/admin-developer/pattern-library/
+          include_versions: ["2.4"]
 
         - label: Admin Design Pattern Library
           url: /pattern-library/bk-pattern.html
+          include_versions: ["2.3"]
+
+        - label: Admin Style Guide
+          url: https://developer.adobe.com/commerce/admin-developer/style-guide/
+          include_versions: ["2.4"]
 
         - label: Admin Style Guide
           url: /design-styleguide/bk-styleguide.html
+          include_versions: ["2.3"]
 
         - label: PWA Documentation Site
           url: https://developer.adobe.com/commerce/pwa-studio/
@@ -149,12 +219,21 @@
 
     - label: API
       children:
+        - label: Get Started with our Web APIs
+          url: https://developer.adobe.com/commerce/webapi/get-started/
+          include_versions: ["2.4"]
 
         - label: Get Started with our Web APIs
           url: /get-started/bk-get-started-api.html
+          include_versions: ["2.3"]
+
+        - label: REST API Reference
+          url: https://developer.adobe.com/commerce/webapi/rest/
+          include_versions: ["2.4"]
 
         - label: REST API Reference
           url: /rest/bk-rest.html
+          include_versions: ["2.3"]
 
         - label: SOAP API Reference
           url: /soap/bk-soap.html
@@ -163,80 +242,122 @@
           url: /graphql/
 
         - label: Marketplace EQP API Reference
-          url: /marketplace/eqp/v1/api.html
+          url: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/
           versionless: true
 
         - label: Commerce Reporting API
-          url: /mbi/docs/getting-started.html
+          url: https://devdocs.magento.com/mbi/docs/getting-started.html
           versionless: true
 
 - label: Testing
   children:
+    - label: Application Testing Guide
+      url: https://developer.adobe.com/commerce/testing/guide/
+      include_versions: ["2.4"]
 
     - label: Application Testing Guide
       url: /test/testing.html
+      include_versions: ["2.3"]
 
     - label: Functional Acceptance Testing (MFTF)
-      url: /mftf/docs/introduction.html
+      url: https://developer.adobe.com/commerce/testing/functional-testing-framework/
       versionless: true
 
     - label: Integration Testing
+      url: https://developer.adobe.com/commerce/testing/guide/integration/
+      include_versions: ["2.4"]
+
+    - label: Integration Testing
       url: /test/integration/integration_test_execution.html
+      include_versions: ["2.3"]
+
+    - label: JavaScript Unit Testing
+      url: https://developer.adobe.com/commerce/testing/guide/js/
+      include_versions: ["2.4"]
 
     - label: JavaScript Unit Testing
       url: /test/js/jasmine.html
+      include_versions: ["2.3"]
+
+    - label: PHP Unit Testing
+      url: https://developer.adobe.com/commerce/testing/guide/unit/
+      include_versions: ["2.4"]
 
     - label: PHP Unit Testing
       url: /test/unit/unit_test_execution.html
+      include_versions: ["2.3"]
+
+    - label: Web API Functional Testing
+      url: https://developer.adobe.com/commerce/webapi/get-started/web-api-functional-testing/
+      include_versions: ["2.4"]
 
     - label: Web API Functional Testing
       url: /get-started/web-api-functional-testing.html
+      include_versions: ["2.3"]
 
 - separator: true
 
 - label: Functional Areas
   children:
-
+  
+    - label: Advanced Reporting
+      url: https://developer.adobe.com/commerce/php/development/advanced-reporting/
+      include_versions: ["2.4"]
+      
     - label: Advanced Reporting
       url: /advanced-reporting/overview.html
+      include_versions: ["2.3"]
+
+    - label: B2B
+    
+      url: https://developer.adobe.com/commerce/webapi/rest/b2b/
+      include_versions: ["2.4"]
 
     - label: B2B
       url: /b2b/bk-b2b.html
+      include_versions: ["2.3"]
+
+    - label: Checkout
+      url: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/
+      include_versions: ["2.4"]
 
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
+      include_versions: ["2.3"]
+
+    - label: Inventory Management
+      url: https://developer.adobe.com/commerce/webapi/rest/inventory/
+      include_versions: ["2.4"]
 
     - label: Inventory Management
       url: /inventory/index.html
+      include_versions: ["2.3"]
 
     - label: Live Search
-      url: /live-search/overview.html
-      versionless: true
-
-    - label: Catalog Service
-      url: /catalog-service/index.html
+      url: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/guide-overview.html
       versionless: true
 
     - label: Commerce Marketplace
-      url: /marketplace/sellers/getting-started.html
+      url: https://developer.adobe.com/commerce/marketplace/guides/sellers/
       versionless: true
 
     - label: Payment Services
-      url: /payment-services/index.html
+      url: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/guide-overview.html
       versionless: true
 
     - label: Order Management
-      url: https://omsdocs.magento.com/
+      url: https://omsdocs.magento.com/en/
 
     - label: Page Builder
       url: /page-builder/docs/index.html
       versionless: true
 
     - label: Payment Integrations
-      url: /payments-integrations/bk-payments-integrations.html
+      url: https://developer.adobe.com/commerce/php/development/payments-integrations/
+      include_versions: ["2.4"]
 
-    - label: Product Recommendations
-      url: /recommendations/product-recs.html
+    - label: Product Recommendations Developer Guide
+      url: https://devdocs.magento.com/recommendations/product-recs.html
       versionless: true
 
     - label: Security and Compliance
@@ -248,27 +369,51 @@
       versionless: true
 
     - label: Staging
+      url: https://developer.adobe.com/commerce/php/development/staging/
+      include_versions: ["2.4"]
+
+    - label: Staging
       url: /extension-dev-guide/staging.html
+      include_versions: ["2.3"]
 
 - label: Tutorials
   children:
+    - label: REST Tutorials
+      url: https://developer.adobe.com/commerce/webapi/rest/tutorials/
+      include_versions: ["2.4"]
 
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
+      include_versions: ["2.3"]
+
+    - label: Custom Attributes
+      url: https://developer.adobe.com/commerce/php/tutorials/admin/custom-text-field-attribute/
+      include_versions: ["2.4"]
 
     - label: Custom Attributes
       url: /howdoi/custom-attributes/introduction.html
+      include_versions: ["2.3"]
+
+    - label: Customize Product Creation Form
+      url: https://developer.adobe.com/commerce/php/tutorials/admin/custom-product-creation-form/
+      include_versions: ["2.4"]
 
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html
+      include_versions: ["2.3"]
+
+    - label: Customize Checkout
+      url: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/
+      include_versions: ["2.4"]
 
     - label: Customize Checkout
       url: /howdoi/checkout/checkout_overview.html
+      include_versions: ["2.3"]
 
     - label: Support
-      url: /community/resources/support.html
+      url: https://developer.adobe.com/commerce/contributor/community/support/
       versionless: true
 
     - label: Video Tutorials
-      url: /videos/
+      url: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/overview.html
       versionless: true

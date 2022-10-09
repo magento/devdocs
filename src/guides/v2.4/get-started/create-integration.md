@@ -151,7 +151,7 @@ For more information, see [Create a component]({{ page.baseurl }}/extension-dev-
        }
 
        /**
-        * {@inheritdoc}
+        * @inheritDoc
         */
 
        public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
