@@ -4,7 +4,6 @@ subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration
 menu_order: 1
-
 ---
 
 An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.
@@ -66,19 +65,13 @@ To develop a module, you must:
 
    ```xml
    <?xml version="1.0"?>
-   <!--
-      /**
-      * Copyright © Magento, Inc. All rights reserved.
-      * See COPYING.txt for license details.
-      */
-      -->
-      <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-          <module name="Vendor1_Module1" setup_version="2.0.0">
-               <sequence>
-                   <module name="Magento_Integration"/>
-               </sequence>
-          </module>
-        </config>
+   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+      <module name="Vendor1_Module1" setup_version="2.0.0">
+         <sequence>
+               <module name="Magento_Integration"/>
+         </sequence>
+      </module>
+   </config>
    ```
 
    Module `Magento_Integration` is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
@@ -107,16 +100,12 @@ To develop a module, you must:
      }
    ```
 
-    For more information, see [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
+   For more information, see [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
 
 1. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
 
    ```php
    <?php
-   /**
-   * Copyright © Magento, Inc. All rights reserved.
-   * See COPYING.txt for license details.
-   */
 
    \Magento\Framework\Component\ComponentRegistrar::register(
    \Magento\Framework\Component\ComponentRegistrar::MODULE,
@@ -156,7 +145,7 @@ To develop a module, you must:
        }
 
        /**
-        * {@inheritdoc}
+        * @inheritDoc
         */
 
        public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
@@ -231,7 +220,7 @@ In the following example, the test integration requires access to the following 
 
 Your module can optionally provide values in configuration file `config.xml`, so that the integration can be automatically pre-configured with default values. To enable this feature, update the `config.xml` file in the `etc/integration` directory.
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 If you pre-configure the integration, the values cannot be edited from the [admin](https://glossary.magento.com/admin) panel.
 
 The file defines which API resources the integration has access to.
@@ -286,7 +275,7 @@ Use the following steps to install your module:
 
 1. Run the following command to generate the new code.
 
-    {:.bs-callout-info}
+   {:.bs-callout-info}
    In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
    ```bash

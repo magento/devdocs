@@ -8,6 +8,8 @@ functional_areas:
 redirect_from:
   - /quality-patches/release-notes-commerce.html
   - /quality-patches/release-notes-open-source.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/quality-patches-tool/release-notes.html
+layout: migrated
 ---
 
 {% include install/patch/quality-patch-intro.md %}
@@ -20,6 +22,26 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
+
+## v1.1.20
+
+-  **ACSD-46520** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.5`)_-Fixes the issue where a user gets an incorrect order status when refunded using the store credit.
+-  **ACSD-46703** _(for Adobe Commerce and Magento Open Source `>=2.4.4 <2.4.6`)_-Fixes the issue when it is not possible to drag and drop custom options on a product edit page.
+-  **ACSD-44851** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.6`)_-Fixes the issue where a category with subcategories is unable to open or expand.
+-  **ACSD-46815** _(for Adobe Commerce and Magento Open Source `>=2.4.5 <2.4.6`)_-Fixes the issue where category tree request is limited to 20 categories.
+-  **ACSD-45675** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.6`)_-Fixes the issue where the product export uses category names from the Default Store View scope.
+-  **ACSD-46869** _(for Adobe Commerce and Magento Open Source `>=2.4.4 <2.4.6`)_-Fixes the issue where a configurable product in a cart is not updated via a PUT REST API request without changing the product quantity.
+-  **MDVA-42768-V2** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where Configurable product displays regular price as 0 when "Display Out-of-Stock" is Yes.
+-  Updated patches: MDVA-44562, ACSD-46213, MDVA-41305, MDVA-38346, MDVA-13203.
+-  Deprecated patch: MDVA-42768.
+
+## v1.1.19
+
+-  **ACSD-46213** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where category tree request is limited to 20 categories.
+-  **ACSD-45781** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.2`)_-Fixes the issue where the store front search field is not displayed on mobile.
+-  **ACSD-46192** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <2.4.5`)_-Fixes the issue with using the async/bulk/V1/configurable-products/bySku/options endpoint.
+-  **ACSD-46404** _(for Adobe Commerce and Magento Open Source `>=2.4.4 <2.4.5`)_-Fixes the issue where an admin user cannot log in after upgrading to 2.4.4.
+-  Updated patches: MDVA-41305, MDVA-38626, MDVA-38728, MDVA-41061-V4, MDVA-42269, MDVA-39305.
 
 ## v1.1.18
 

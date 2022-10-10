@@ -76,7 +76,7 @@ Your project is a single Git repository with three, main environment branches fo
 
 ## Integration environment {#cloud-arch-int}
 
-The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). Each environment includes a web server and database to test your site.
+The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). Each environment includes a web server and database to test your site. See [Regional IP Addresses]({{ site.baseurl }}/cloud/env/environments-start.html#regional-ip-addresses) for a list of AWS and Azure IP addresses.
 
 **Recommended use cases:**
 
@@ -92,7 +92,7 @@ For best performance in the Integration environment follow these best practices:
 
 -  Limit use to one or two concurrent users
 
--  Disable crons and manually run as needed
+-  Disable cron jobs and manually run as needed
 
 **Caveats:**
 
@@ -140,7 +140,7 @@ See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and 
 
 ## Production environment {#cloud-arch-prod}
 
-The Production environment runs your public-facing single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring redundant, high-availability nodes for continuous access and failover protection for your customers. The Production environment includes all services in the Staging environment, plus the [New Relic Infrastructure (NRI)](https://newrelic.com/products/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
+The Production environment runs your public-facing single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring redundant, high-availability nodes for continuous access and failover protection for your customers. The Production environment includes all services in the Staging environment, plus the [New Relic Infrastructure (NRI)](https://newrelic.com/platform/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
 
 You cannot create a branch from the Production environment branch. You must push code changes from the Staging environment branch to the Production environment branch.
 
@@ -161,17 +161,15 @@ The three gateways map to the three servers in your Production environment clust
 
 Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS or Azure Availability Zones, each zone with a separate data center.
 
-In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides
-incremental backups, which include the file system and the database, every hour for the last 24 hours of operation. After the
-24-hour period, we retain the backups according to the following schedule:
+In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides incremental backups, which include the file system and the database, according to the following schedule:
 
-Time Period | Backup Retention Policy
---- | ---
-Days 1 to 3 | Each backup
-Days 4 to 6 | One backup per day
-Weeks 2 to 6 | One backup per week
-Weeks 8 to 12 | One bi-weekly backup
-Weeks 12 to 22 | One backup per month
+| Time Period        | Backup Retention Policy |
+| ------------------ | ----------------------- |
+| Day 1 through 3    | One backup per hour     |
+| Days 4 through 7   | One backup per day      |
+| Weeks 2 through 6  | One backup per week     |
+| Weeks 8 through 12 | One bi-weekly backup    |
+| Month 3 through 5  | One backup per month    |
 
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 
@@ -179,7 +177,7 @@ Weeks 12 to 22 | One backup per month
 -  **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
 {:.bs-callout-tip}
-On Pro Staging and Production environments, you must [Submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) to restore an environment from an automatic backup. You can backup the database and code for your Production and Staging environments using `magento-cloud` CLI commands. See [Dump your database]({{site.baseurl}}/cloud/project/project-webint-snap.html#db-dump) and [bin/magento setup:backup]({{site.baseurl }}/guides/v2.4/reference/cli/magento-commerce.html#setupbackup). For Integration environments, we highly recommend that you create a snapshot as a first step after accessing your {{site.data.var.ece}} project and before applying any major changes. See [Snapshots and backup management]({{site.baseurl}}/cloud/project/project-webint-snap.html).
+On Pro Staging and Production environments, you must [Submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) to restore an environment from an automatic backup. You can create a backup of the database and code for your Production and Staging environments using `magento-cloud` CLI commands. See [Dump your database]({{site.baseurl}}/cloud/project/project-webint-snap.html#db-dump) and [`bin/magento setup:backup`]({{site.baseurl }}/guides/v2.4/reference/cli/magento-commerce.html#setupbackup). For Integration environments, we highly recommend that you create a snapshot as a first step after accessing your {{site.data.var.ece}} project and before applying any major changes. See [Snapshots and backup management]({{site.baseurl}}/cloud/project/project-webint-snap.html).
 
 ### Production technology stack
 
@@ -205,14 +203,14 @@ The following figure shows the technologies used in the Production environment:
 
 {{site.data.var.ee}} can scale from the smallest Pro12 cluster to the largest Pro120 cluster.
 
--  Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
--  Pro120 offers 120 CPU (40 x 3 nodes) up to 480GB RAM (160 x 3 nodes)
+-  Pro12 offers a 12-CPU (4 x 3 nodes) and 48-GB RAM (16 x 3 nodes)
+-  Pro120 offers 120 CPU (40 x 3 nodes) up to 480-GB RAM (160 x 3 nodes)
 
-Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
+Our redundant architecture means that we can offer to upscale without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
 
 For example, you can add extra web servers to an existing cluster should the constriction be at the PHP level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level. See [Scaled architecture]({{ site.baseurl }}/cloud/architecture/scaled-architecture.html).
 
-If you expect a significant increase in traffic for an event or other reason, you can request a temporary increase in capacity. See [How to request temporary Magento upsize](https://support.magento.com/hc/en-us/articles/360041138511) in the _Commerce Help Center_.
+If you expect a significant increase in traffic for an event or other reason, you can request a temporary increase in capacity. See [How to request temporary upsize](https://support.magento.com/hc/en-us/articles/360041138511) in the _Commerce Help Center_.
 
 ## Master environment
 
@@ -221,7 +219,7 @@ On Pro plan projects, the Master branch provides an active PaaS environment with
 **Caveats:**
 
 -  Do **not** create a branch from Master. Use the Integration environment branch to create new, active branches.
--  Do not use the Master environment for development, UAT or performance testing
+-  Do not use the Master environment for development, UAT, or performance testing
 
 ## Software versions {#cloud-arch-software}
 

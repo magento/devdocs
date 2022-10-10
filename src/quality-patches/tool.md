@@ -3,6 +3,8 @@ group: tools
 title: Quality Patches Tool
 functional_areas:
   - Upgrade
+migrated_to: https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html
+layout: migrated
 ---
 
 The [Quality Patches Tool][github] is a command-line tool that delivers

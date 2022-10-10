@@ -71,7 +71,7 @@ class Example implements ModifierInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function modifyData(array $data)
     {

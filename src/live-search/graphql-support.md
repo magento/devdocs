@@ -35,7 +35,7 @@ You can run only queries that are specific to Live Search in the embedded GraphQ
 
 ## Run queries on a standalone GraphQL browser {#headers-list}
 
-1. Set the GraphQL endpoint to `https://<host>/search/graphql`.
+1. Set the GraphQL endpoint to `https://commerce.adobe.io/search/graphql`.
 
 1. Add the following HTTP headers to all Live Search GraphQL calls:
 
@@ -61,3 +61,4 @@ The Live Search queries can return the following error codes when a query encoun
 |1001 |`index_not_found_exception`<br />Live Search exception message.|
 |1002 |`search_phase_execution_exception`<br />Live Search exception message.|
 |1003 |`mapper_parsing_exception`<br />Live Search exception message.|
+|1004 |`invalid_argument_exception`<br /> The request has an invalid argument.|

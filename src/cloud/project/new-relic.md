@@ -22,7 +22,7 @@ functional_areas:
 -  **Database query monitoring**—Locate and monitor database queries affecting performance.
 -  **App Map**—View all application dependencies within your site, extensions, and external services.
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event. See [Apdex score].
--  **Managed Alerts for Magento Commerce**–Use this New Relic alert policy to monitor application and infrastructure performance based on industry best practices. See [Monitor performance with the Managed Alerts for Magento Commerce alert policy](#monitor-performance-with-managed-alerts).
+-  **Managed alerts for Adobe Commerce**–Use this New Relic alert policy to monitor application and infrastructure performance based on industry best practices. See [Monitor performance with the Managed alerts for Adobe Commerce alert policy](#monitor-performance-with-managed-alerts).
 
 Your {{site.data.var.ece}} project includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
@@ -35,7 +35,7 @@ For Pro accounts, if New Relic APM is not installed on the Staging and Productio
 
 ## New Relic Logs
 
-{{site.data.var.ece}} Pro projects include the [New Relic Logs][] service on both Production and Staging environments. The service is pre-configured to aggregate all log data from your Staging and Production environments and display it in a centralized log management dashboard.
+{{site.data.var.ece}} projects include the [New Relic Logs][] service. The service is pre-configured to aggregate all log data from your Staging and Production environments and display it in a centralized log management dashboard.
 
 The aggregated data includes information from the following logs:
 
@@ -104,14 +104,14 @@ To connect a Cloud environment to New Relic, add the New Relic license key to th
 
 ### Configure New Relic for Starter environments
 
-For Starter environments, enable the New Relic integration by adding the New Relic license key to the environment configuration. We recommend adding the key to the Staging and Production (master) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _{{site.data.var.ee}} User Guide_.
+For Starter environments, enable the New Relic integration by adding the New Relic license key to the environment configuration. We recommend adding the key to the Staging and Production (`master` branch) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _{{site.data.var.ee}} User Guide_.
 
 {% include cloud/note-env-config-redeploy-warning.md%}
 
 **Prerequisites:**
 
 -  Log in credentials for the {{site.data.var.ee}} account page, or for the New Relic account associated with your project
--  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or credentials to access the [Admin](https://docs.magento.com/m2/ce/user_guide/system/permissions.html) for the environment.
+-  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or credentials to access the [Admin](https://docs.magento.com/user-guide/system/permissions.html) for the environment.
 
 {:.procedure}
 To configure New Relic for Starter environments:
@@ -194,11 +194,11 @@ From this view, you can track and find the following types of information:
 
 We recommend reviewing tracked data:
 
--  **Most time consuming**—Determine time consumption by tracking requests in parallel. For example, you may have the highest transaction time spent in product and category views. If a customer account page suddenly ranks very high in time consumption, your application might be affected by a call or query dragging performance.
+-  **Most time consuming**—Determine time consumption by tracking requests in parallel. For example, you may have the highest transaction time spent in product and category views. If a customer account page suddenly ranks high in time consumption, your application might be affected by a call or query-dragging performance.
 
 -  **Highest throughput**—Identify pages hit the most based on the size and frequency of bytes transmitted.
 
-All collected data details the time spent on an action transmitting data, queries, or _Redis_ data. If queries cause issues, New Relic provides information to track and respond to those issues.
+All collected data details the time spent on an action that transmits data, queries, or _Redis_ data. If queries cause issues, New Relic provides information to track and respond to those issues.
 
 For details on using this data to troubleshoot application performance issues, see [Troubleshoot performance using New Relic][] in the _{{site.data.var.ee}} Help Center_.
 
@@ -214,14 +214,9 @@ To use the New Relic Logs application:
 
 1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. Select your application.
+1. Select the application name in the **Services - APM** list.
 
-1. On the _APM applications page_, select **Logs** from the navigation menu.
-
-   ![Cloud project APM menu select Logs page]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-dashboard-logs-access.png){:width="650px"}
-
-   {:.bs-callout-tip}
-   You can also access the New Relic Logs application from the New Relic ONE home page. See [New Relic ONE core UI components][New Relic One UI].
+1. Select **Logs** from the Explorer navigation menu.
 
 1. To review infrastructure log data for cloud services, enter the query string `has: "filePath"` in the _Find logs where_ field. Then, click **Query logs**.
    The names of the log files are stored in the `filePath` field, with full paths to the log file.
@@ -229,8 +224,6 @@ To use the New Relic Logs application:
    ![Cloud project New Relic service log data]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-log-query-has-ident.png){:width="650px"}
 
 1. To review Fastly log data, enter the query string `has: "client_ip"` in the _Find logs where_ field. Then, click **Query logs**.
-
-   ![Cloud project New Relic Fastly log data]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-logs-has-client_ip-fastly.png){:width="650px"}
 
 1. To filter the Fastly log results further, select an attribute from the left menu, then click **Query logs** to apply the updated query.
 
@@ -242,7 +235,7 @@ The following example shows a New Relic Insights dashboard created from queries 
 
 ![Cloud project New Relic CDN Logs dashboard]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-cdn-logs-dashboard.png){:width="650px"}
 
-For further information and examples, see [Introduction to New Relic Logs][New Relic Logs] and [Introduction to New Relic Insights][New Relic Insights].
+See [Get started with log management][New Relic Logs] and [Introduction to New Relic's query language][nrql] on the _New Relic Docs_ site.
 
 ### Monitor performance with Managed Alerts
 
@@ -259,7 +252,7 @@ Based on industry best practices, the policy includes a collection of alerts tha
 | Redis         | NRI             | Pro             |
 | MariaDB       | NRI             | Pro             |
 
-When site infrastructure or application conditions trigger an alert threshold, New Relic sends alert notifications so that you can proactively address the issue.  See [Managed Alerts for Magento Commerce] in the _{{site.data.var.ee}} Help Center_ for details about alert thresholds and troubleshooting steps to resolve the issues that triggered the alert.
+When site infrastructure or application conditions trigger an alert threshold, New Relic sends alert notifications so that you can proactively address the issue. See [Managed alerts for Adobe Commerce] in the _{{site.data.var.ee}} Help Center_ for details about alert thresholds and troubleshooting steps to resolve the issues that triggered the alert.
 
 {:.bs-callout-info}
 For Pro Staging and Integration environments and Starter environments, use [Health notifications] to monitor disk space.
@@ -275,7 +268,7 @@ To review the Managed Alerts for {{ site.data.var.ee }} policy:
 
 1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. Locate the _Managed Alerts for Magento Commerce_ policy:
+1. Locate the _Managed alerts for Adobe Commerce_ policy:
 
    -  In the top navigation menu, click **Alerts & AI** to open the _Applied Intelligence_ page.
 
@@ -285,14 +278,14 @@ To review the Managed Alerts for {{ site.data.var.ee }} policy:
 
       ![Select account and project]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-select-account.png){:width="650px"}
 
-   -  In the _Policy_ list, you should see the **Managed Alerts for Magento Commerce** policy.
+   -  In the _Policy_ list, you should see the **Managed alerts for Adobe Commerce** policy.
 
       ![Generated alert policies]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-managed-alerts-for-magento.png){:width="650px"}
 
       {:.bs-callout-info}
-      If the Managed Alerts for {{ site.data.var.ee }} alert policy is not available, see [Managed Alerts for Magento Commerce][] in the _{{site.data.var.ee}} Help Center_.
+      If the Managed Alerts for {{ site.data.var.ee }} alert policy is not available, see [Managed alerts for Adobe Commerce][] in the _{{site.data.var.ee}} Help Center_.
 
-1. Click **Managed Alerts for Magento Commerce** to review the alert conditions defined in the policy.
+1. Click **Managed alerts for Adobe Commerce** to review the alert conditions defined in the policy.
 
    ![Managed alerts list]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-magento-alert-conditions.png){:width="650px"}
 
@@ -311,7 +304,7 @@ To configure a notification channel:
 
 1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. Create a new notification channel.
+1. Create a notification channel.
 
    -  In the top navigation menu, click **Alerts & AI** to open the _Applied Intelligence_ page.
 
@@ -344,13 +337,13 @@ See the following New Relic documentation topics for additional information:
 -  [Configure notification channels using the New Relic API]
 
 {:.bs-callout-warning}
-The alerts in the Managed Alerts for Magento Commerce policy have default notification channels configured to notify Adobe teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.
+The alerts in the Managed alerts for Adobe Commerce policy have default notification channels configured to notify Adobe teams that support {{ site.data.var.ece }} customers. Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.
 
 ### Create alert policies
 
-Do not modify any alerts included in the Managed Alerts for Magento Commerce policy. We update and improve the alert conditions in this policy over time, which overwrites any customizations you add to the policy.
+Do not modify any alerts included in the Managed alerts for Adobe Commerce policy. We update and improve the alert conditions in this policy over time, which overwrites any customizations you add to the policy.
 
-Instead of modifying an existing alert, you can create a new alert policy. Then, copy the alert conditions to the new policy. See [Update policies or conditions] in the New Relic documentation.
+Instead of modifying an existing alert, you can create an alert policy. Then, copy the alert conditions to the new policy. See [Update policies or conditions] in the New Relic documentation.
 
 {:.bs-callout-tip}
 See [Alerts concepts and workflow] in the New Relic documentation for more detailed information about Alerts, alert policies, and notification channels.
@@ -372,17 +365,17 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [Instructions for specific notification channels]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
 [Admin credentials]: https://docs.magento.com/m2/ce/user_guide/system/permissions.html
 [Adobe Partnership Owner Account]: https://account.newrelic.com/accounts/1311131/users
-[Managed Alerts for Magento Commerce]: https://support.magento.com/hc/en-us/articles/360045806832
+[Managed alerts for Adobe Commerce]: https://support.magento.com/hc/en-us/articles/360045806832
 [New Relic account]: #manage-new-relic-account
 [New Relic APM]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
 [New Relic APM Overview]: https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data
 [New Relic ONE UI]: https://docs.newrelic.com/docs/new-relic-one/use-new-relic-one/get-started/new-relic-one-core-ui-components
 [New Relic for application performance management (APM)]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
 [New Relic Help Center]: https://newrelic.com/
-[New Relic Logs]: https://docs.newrelic.com/docs/logs/new-relic-logs/get-started/introduction-new-relic-logs
+[New Relic Logs]: https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/
 [New Relic login]: https://login.newrelic.com/login
 [New Relic infrastructure]: https://newrelic.com/products/infrastructure
-[New Relic Insights]: https://docs.newrelic.com/docs/insights/use-insights-ui/getting-started/introduction-new-relic-insights
+[nrql]: https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language/
 [New Relic query syntax for logs]: https://docs.newrelic.com/docs/logs/new-relic-logs/ui-data/query-syntax-logs
 [New Relic reporting]: https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html
 [prerequisite steps]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types

@@ -151,11 +151,9 @@ facets {
 
 ### Items list
 
-The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and {{site.data.var.ee}}, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
+The `items` object primarily provides details about each item returned. If Catalog Service is not installed, then you must specify the `product` field to return details about each item. The `product` field uses the [`ProductInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and {{site.data.var.ee}}, to return details about the product. A typical query might return the product name, price, SKU and image.
 
-The `items` object can also optionally return highlighted text that shows the matching search terms.
-
-The following snippet returns relevant information about each item:
+The following snippet returns relevant information about each item when Catalog Service is not installed or used:
 
 ```graphql
 items {
@@ -179,6 +177,81 @@ items {
     }
 }
 ```
+
+If [Catalog Service](https://experienceleague.adobe.com/docs/commerce-merchant-services/catalog-service/guide-overview.html) is installed, you can optionally use the `productView` field instead of the `product` field to return product details. Catalog Service uses [Catalog Sync](https://experienceleague.adobe.com/docs/commerce-merchant-services/user-guides/catalog-sync.html) to manage product data, resulting in query responses with less latency than is possible with the `ProductInterface`. With Catalog Service, the structure of the pricing information varies, depending on whether the product is designated as a `SimpleProduct` (simple, downloadable, gift card) or as a `ComplexProduct` (configurable, grouped, or bundle).
+
+The following Catalog Service snippet returns relevant information about each item:
+
+```graphql
+items {
+  productView {
+    name
+    sku
+    ... on SimpleProductView {
+      price {
+        final {
+          amount {
+            value
+            currency
+          }
+        }
+        regular {
+          amount {
+            value
+            currency
+          }
+        }
+      }
+    }
+    ... on ComplexProductView {
+      options {
+        id
+        title
+        required
+        values {
+          id
+          title
+        }
+      }
+      priceRange {
+        maximum {
+          final {
+            amount {
+              value
+              currency
+            }
+          }
+          regular {
+            amount {
+              value
+              currency
+            }
+          }
+        }
+        minimum {
+          final {
+            amount {
+              value
+              currency
+            }
+          }
+          regular {
+            amount {
+              value
+              currency
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+{:.bs-callout-info}
+The Catalog Service [products query](../catalog-service/products.md) describes the contents of the `ProductView` object.
+
+The `items` object can also optionally return highlighted text that shows the matching search terms.
 
 ### Other fields and objects
 
@@ -212,7 +285,11 @@ You must specify the following HTTP headers to run this query. [GraphQL Support]
 
 ## Example usage
 
-The following example uses "Watch" as the search phrase:
+### Live Search
+
+The following example uses "Watch" as the search phrase. The query uses the core `ProductInterface` to access product information. As a result, the query has a longer response time than using Catalog Service to retrieve this information.
+
+For an example of using Live Search with Catalog Service, see [Catalog Service productSearch query]({{site.baseurl}}/catalog-service/productsearch.html). Other than returning the `productView` object, all other attributes are the same. See full references on this page.
 
 **Request:**
 
@@ -290,6 +367,7 @@ The following example uses "Watch" as the search phrase:
 
 **Response:**
 
+{% collapsible Response %}
 ```json
 {
   "extensions": {
@@ -648,6 +726,8 @@ The following example uses "Watch" as the search phrase:
   }
 }
 ```
+{% endcollapsible %}
+
 ## Input fields
 
 The `productSearch` query accepts the following fields as input:
@@ -758,6 +838,7 @@ Field | Data Type | Description
 --- | --- | ---
 `appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values: `BOOST`, `BURY`, and `PIN`
 `product` | ProductInterface! | Contains details about the product. Go to [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html) for more information
+`productView` | ProductView | If Catalog Service is installed, contains details about the product view. The Catalog Service [`product` query](../catalog-service/products.md) fully describes this object.
 
 ### SearchResultPageInfo data type {#SearchResultPageInfo}
 
