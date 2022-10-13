@@ -1,0 +1,23 @@
+---
+group: release-notes
+title: Magento Open Source 2.4.5-p1 Release Notes
+---
+
+{{ site.data.var.ee }} 2.4.5-p1 is a security release that provides five security fixes that enhance your {{ site.data.var.ee }} 2.4.5 or {{ site.data.var.ce }} 2.4.5 deployment. It provides fixes for vulnerabilities that have been identified in the previous release ({{ site.data.var.ee }} 2.4.5 and {{ site.data.var.ce }} 2.4.5).
+
+{:.bs-callout-info}
+Releases may contain backward-incompatible changes (BIC). To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
+
+## What's in this release?
+
+This security patch includes five security bug fixes. One fix included the creation of a new configuration setting. The **Require email confirmation if email has been changed** configuration setting lets administrators require email confirmation when an admin user changes their email address. <!--- AC-6292-->
+
+See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb22-48.html).
+
+## Installation and upgrade instructions
+
+For instructions on downloading and applying security patches (including patch 2.4.5-p1), see [Quick start install]({{site.baseurl}}/guides/v2.4/install-gde/composer.html).
+
+## More information?
+
+For general information about security patches, see [Introducing the New Security Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-Patch-Release/ba-p/141287).
