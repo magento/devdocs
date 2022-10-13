@@ -1,0 +1,31 @@
+roadmap:
+  - name: In Progress
+    features:
+      - name: Accessibility improvements for storefront/admin
+        status: inProgress
+      - name: Composer 2.2 support
+        status: inProgress
+      - name: Elasticsearch 7.17 support
+        status: inProgress
+      - name: Mobile layout optimization
+        status: inProgress
+      - name: Column grid layouts (viewports)
+        status: inProgress
+      - name: Security and quality improvements
+        status: inProgress
+      - name: Replace Froogaloop library with player.js
+        status: inProgress
+      - name: TinyMCE 5.10 support
+        status: inProgress
+      - name: Latest Vimeo API support
+        status: inProgress
+  - name: Planned
+    features:
+      - name: OpenSearch as independent search engine
+        status: Planned
+      - name: Remove jquery-migrate
+        status: Planned
+      - name: Remove PHP 7.4 compatibility
+        status: Planned
+      - name: Symfony dependency updates
+        status: Planned

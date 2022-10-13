@@ -25,7 +25,7 @@ The topic describes how stylesheets are preprocessed and compiled to [CSS](https
             <p>Root source files</p>
         </td>
         <td>
-            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{ site.mage2bloburl }}/2.2/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:
+            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:
 <pre>
 &lt;head&gt;
     &lt;css src="css/styles-m.css"/&gt;
@@ -57,7 +57,7 @@ In the Magento application, the following modes of compiling `.less` files to CS
 
 To set the compilation mode, do the following:
 
-1. In the Magento Admin, navigate to **Stores** > **Settings** > **Configuration** > ADVANCED > **Developer**.
+1. In the Admin, navigate to **Stores** > **Settings** > **Configuration** > ADVANCED > **Developer**.
 1. In the **Store View** drop-down field, select **Default Config**.
 1. Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
 1. To save the settings, click **Save Config**.
@@ -96,12 +96,27 @@ Once you save your changes, run the following command from your `<Magento_root>`
 bin/magento setup:static-content:deploy
 ```
 
+To generate frontend static view files in all languages:
+
+```bash
+bin/magento setup:static-content:deploy --area frontend
+```
+
+To generates backend static view files:
+
+```bash
+bin/magento setup:static-content:deploy --area adminhtml
+```
+
 The tool pre-processes (including compilation) and publishes the static view files.
 
 {:.bs-callout-info}
 Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: `bin/magento setup:static-content:deploy -f`. Read more about the command in the [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) section.
 
-All errors occurring during `.less` files compilation are handled by the [`oyejorge/less.php`](https://github.com/oyejorge/less.php) third party library.
+All errors occurring during `.less` files compilation are handled by the [LESS PHP library][] third party library.
+
+{:.bs-callout-info}
+Since Magento 2.3.3, `oyegorge/less.php` has been replaced by `wikimedia/less.php`
 
 Errors are caught as exceptions and written to the system log (by default it is `var/log/system.log`) and displayed on the screen. For each error, the following information is written:
 
@@ -133,7 +148,7 @@ See the [Compile LESS with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topi
 The client-side compilation flow is similar to [server-side](#server-side). The difference is in the set of files, published to `pub/static` on the last step. In the client-side mode, the following files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
 
 -  root source (.less) files with resolved `@magento_import` directive
--  [symlinks](http://en.wikipedia.org/wiki/Symbolic_link) to the root source file that do not contain `@magento_import`
+-  [symlinks](https://en.wikipedia.org/wiki/Symbolic_link) to the root source file that do not contain `@magento_import`
 -  symlinks to all other `.less` files imported recursively by the `@magento_import` and `@import` directives
 
 {:.bs-callout-info}
@@ -143,7 +158,7 @@ Symlink is not created, and a copy of the processed file is published to `pub/st
 
 Client-side LESS compilation is implemented using the native `less.js` library. The default configuration is set in `lib/web/less/config.less.js`; you can change it as needed.
 
-You can find the detailed information about the configuration and other options of the `less.js` used in a browser at [http://lesscss.org/usage/#using-less-in-the-browser](http://lesscss.org/usage/#using-less-in-the-browser).
+You can find the detailed information about the configuration and other options of the `less.js` used in a browser at [https://lesscss.org/usage/#using-less-in-the-browser](https://lesscss.org/usage/#using-less-in-the-browser).
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
 
@@ -162,7 +177,7 @@ To clear the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory, delete t
 
 ## The `@import` directive rules of usage {#fedg_css-import}
 
-You can import local and remote `.less` and `.css` files in your `.less` Magento stylesheets by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
+You can import local and remote `.less` and `.css` files in your `.less` Magento stylesheets by using the standard LESS [`@import` directive](https://lesscss.org/features/#import-directives-feature).
 According to the `@import` syntax, specifying the file extension for the imported file is not mandatory. For example, the following notation is allowed:
 
 ```less
@@ -262,9 +277,10 @@ Example of how `@magento_import` is used and processed in `<Magento_Blank_theme_
    </tbody>
 </table>
 
+<!-- Link definitions -->
 [production application mode]: {{page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode
-[LESS PHP library]: https://github.com/oyejorge/less.php
-[native `less.js` library]: http://lesscss.org/usage/#using-less-in-the-browser
+[LESS PHP library]: https://github.com/wikimedia/less.php
+[native `less.js` library]: https://lesscss.org/usage/#using-less-in-the-browser
 [Magento fallback mechanism]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static
 [publication]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview
 [root source files]: {{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms

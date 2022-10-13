@@ -2,9 +2,9 @@
 # Each setting is available on pages using Liquid {{ site.<config key> }}. For example, {{ site.title }}.
 # For more details about available options and defaults, refer to https://jekyllrb.com/docs/configuration/
 #
-title: Magento 2 Developer Documentation
-logo: DevDocs
-description: Magento 2 Developer Documentation.
+title: Adobe Commerce Developer Guide
+logo: Commerce DevDocs
+description: Adobe Commerce Developer Guide
 
 # the base protocol and domain
 url: https://devdocs.magento.com
@@ -53,14 +53,14 @@ defaults:
       github_link: true
       # Enables the 'Give us feedback' appearances on pages
       feedback_link: true
-  
-  - 
+
+  -
     scope:
       path: guides/v2.3
     values:
       guide_version: '2.3'
-  
-  - 
+
+  -
     scope:
       path: guides/v2.4
     values:
@@ -74,7 +74,7 @@ defaults:
       github_link: false
       feedback_link: false
 
-  - 
+  -
     scope:
       path: mbi
     values:
@@ -101,23 +101,19 @@ defaults:
       github_repo: https://github.com/magento/magento2-functional-testing-framework/
       functional_areas:
         - Test
-  - 
+  -
     scope:
       path: page-builder
     values:
       group: page-builder
-      github_link: false
-      feedback_link: false
-      ee_only: true
+      github_files: https://github.com/magento/magento2-page-builder-docs/tree/master/
+      github_repo: https://github.com/magento/magento2-page-builder-docs/
 
   - 
-      scope:
-        path: page-builder-migration
-      values:
-        group: page-builder
-        github_link: false
-        feedback_link: false
-        ee_only: true
+    scope:
+      path: magento-payments
+    values:
+      group: magento-payments
 
   -
     scope:
@@ -125,15 +121,25 @@ defaults:
     values:
       group: module-reference-guide-2_3
       github_link: false
-      feedback_link: false
-  
+
   -
     scope:
       path: guides/v2.4/mrg
     values:
       group: module-reference-guide-2_4
-      github_link: false
-      feedback_link: false
+      layout: migrated
+
+  -
+    scope:
+      path: guides/v2.3/install-gde
+    values:
+      group: installation-guide
+
+  -
+    scope:
+      path: guides/v2.4/install-gde
+    values:
+      group: installation-guide
 
 
 ##########################
@@ -154,7 +160,7 @@ plugins:
 optional_front_matter:
   remove_originals: true
 
-# Configuration options for the jekyll-relative-links plugin. 
+# Configuration options for the jekyll-relative-links plugin.
 # Exclude all .md directories and files except page-builder/ to prevent painfully long build times.
 
 relative_links:
@@ -196,7 +202,11 @@ kramdown:
 algolia:
   application_id: E642SEDTHL
   index_name: devdocs
-  api_key: d2d0f33ab73e291ef8d88d8b565e754c
+  # search-only API key allows to search data immediately.
+  # It is safe to use in production front-end code.
+  # Used at src/_includes/layout/header-scripts.html
+  # For more details, refer to: https://www.algolia.com/doc/guides/security/api-keys/#search-only-api-key
+  search_only_key: d2d0f33ab73e291ef8d88d8b565e754c
 
 google:
   gtm: GTM-KRCLXBB
@@ -215,8 +225,12 @@ mage2bloburl: https://github.com/magento/magento2/blob
 # Current version
 gdeurl: /guides/v2.4
 
-# Path to S3 location where we store large downloadable binary files, such as .ai, .psd, .zip, .pdf, .sketch
+# URL to downloadable binary files, such as .ai, .psd, .zip, .pdf, .sketch
 downloads: https://devdocs.magento.com/download
 
+# URL to the User guide
+user_guide_url: https://docs.magento.com/user-guide
+
+# Patterns to exclude for Jekyll
 exclude:
   - .git

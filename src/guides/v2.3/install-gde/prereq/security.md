@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Prerequisites
 title: SELinux and iptables
 menu_title: SELinux and iptables
@@ -12,10 +11,10 @@ functional_areas:
 
 ## SELinux {#install-prereq-selinux}
 
-[Security Enhanced Linux (SELinux)](http://selinuxproject.org/page/Main_Page) enables CentOS and Ubuntu administrators greater access control over their servers. If you are using SELinux *and* Apache must initiate a connection to another host, you must run the commands discussed in this section.
+[Security Enhanced Linux (SELinux)](https://selinuxproject.org/page/Main_Page) enables CentOS and Ubuntu administrators greater access control over their servers. If you are using SELinux *and* Apache must initiate a connection to another host, you must run the commands discussed in this section.
 
 {:.bs-callout-info}
-Magento has no recommendation about using SELinux; you can use it for enhanced security if you wish. If you use SELinux, you must configure it properly or the Magento application will function unpredictably. If you choose to use SELinux, consult a resource like [the CentOS wiki](http://wiki.centos.org/HowTos/SELinux) to set up rules to enable communication.
+Magento has no recommendation about using SELinux; you can use it for enhanced security if you wish. If you use SELinux, you must configure it properly or the Magento application will function unpredictably. If you choose to use SELinux, consult a resource like [the CentOS wiki](https://wiki.centos.org/HowTos/SELinux) to set up rules to enable communication.
 
 ### Suggestion for installing the Magento software with Apache
 
@@ -43,8 +42,8 @@ chcon -R --type httpd_sys_rw_content_t <magento_root>/generated
 
 The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we do not guarantee these commands work in all situations. For more information, see:
 
-*  [man page](http://linux.die.net/man/8/httpd_selinux)
-*  [serverlab](http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/)
+*  [man page](https://linux.die.net/man/8/httpd_selinux)
+*  [serverlab](https://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/)
 
 ### Enable inter-server communication
 
@@ -67,7 +66,7 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:
 
 *  Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo)
-*  CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
+*  CentOS: [CentOS how-to](https://wiki.centos.org/HowTos/Network/IPTables).
 
 {:.ref-header}
 Related topics

@@ -1,7 +1,6 @@
 ---
 group: javascript-developer-guide
-subgroup: 3_Widgets
-title: Magento jQuery widgets
+title: jQuery widgets
 ---
 
 The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
@@ -74,5 +73,5 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
 [ToggleAdvanced widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_toggle.html
 [TrimInput widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-trim-input.html
-[jQuery UI 1.9.2]: http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/
+[jQuery UI 1.9.2]: https://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/
 [Sticky widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_sticky.html

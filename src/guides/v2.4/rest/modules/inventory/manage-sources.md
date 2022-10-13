@@ -1,6 +1,8 @@
 ---
 group: rest-api
 title: Manage sources
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-sources/
+layout: migrated
 ---
 
 Sources represent locations storing and shipping available product stock. Any location with available stock and capable of order fulfillment can be added as a source. These locations can include warehouses, brick-and-mortar stores, distribution centers, and drop shippers.
@@ -57,6 +59,7 @@ Name | Description | Type | Requirements
 
 **In-Store Pickup functionality enhance Sources with next extension attributes:**
 Name | Description | Type | Requirements
+--- | --- | --- | ---
 `is_pickup_location_active` | Indicates whether a source can be used as a pickup location | Boolean | Optional
 `frontend_name` | The pickup location name. This value is used only on the Storefront. | String | Optional
 `frontend_description` | The pickup location description. It is used only on the Storefront. | String | Optional
@@ -173,7 +176,7 @@ None
 
 The following call returns all sources that are located in the United States (`country_id` = `US`)
 
-See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches) for information about constructing a search query.
 
 **Sample Usage:**
 

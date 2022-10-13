@@ -5,11 +5,11 @@ title: EAV and extension attributes
 
 There are two types of attributes you can use to extend Magento functionality:
 
-*  Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes in the [Magento Admin](https://glossary.magento.com/magento-admin) panel. See the [merchant documentation](http://docs.magento.com/m2/ce/user_guide/stores/attributes.html) for information about managing custom attributes.
+*  Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes in the [Admin](https://glossary.magento.com/magento-admin) panel. See the [merchant documentation]({{ site.user_guide_url }}/stores/attributes.html) for information about managing custom attributes.
 
    Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules are the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
-*  [Extension attributes](https://glossary.magento.com/extension-attribute). Extension attributes are new in Magento 2. They are used to extend functionality and often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the Magento Admin.
+*  [Extension attributes](https://glossary.magento.com/extension-attribute). Extension attributes are new in Magento 2. They are used to extend functionality and often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the Admin.
 
 ## EAV and custom attributes {#custom}
 
@@ -36,7 +36,7 @@ In this case, when `getCustomAttributes()` is called, the system returns only cu
 
 The `Customer` module provides a `system` option for its attributes. As a result, the `getCustomAttributes()` method only returns those EAV attributes that are not defined as `system` attributes. If you create custom attributes programmatically, set the `system` option to 'false' if you want to include the attribute in the `custom_attributes` array.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 As of version 2.3.4, Magento caches all system EAV attributes as they are retrieved. This behavior is defined in each affected module's `di.xml` file as the `attributesForPreload` argument for `<type name="Magento\Eav\Model\Config">`. Developers can cache custom EAV attributes by running the `bin/magento config:set dev/caching/cache_user_defined_attributes 1` command. This can also be done from the Admin while in Develop mode by setting **Stores** > Settings **Configuration** > **Advanced** > **Developer** > **Caching Settings** > **Cache User Defined Attributes** to **Yes**. Caching EAV attributes while retrieving improves performance as it decreases the amount of insert/select requests to the DB, but it increases the cache network size.
 
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
@@ -48,6 +48,10 @@ Both the `save()` and `getResource()` methods for `Magento\Framework\Model\Abstr
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace Magento\Customer\Setup\Patch\Data;
 
@@ -58,13 +62,25 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchVersionInterface;
 
+/**
+ * Class add customer example attribute to customer
+ */
 class AddCustomerExampleAttribute implements DataPatchInterface
 {
-
+    /**
+     * @var ModuleDataSetupInterface
+     */
     private $moduleDataSetup;
 
+    /**
+     * @var CustomerSetupFactory
+     */
     private $customerSetupFactory;
 
+    /**
+     * @param ModuleDataSetupInterface $moduleDataSetup
+     * @param CustomerSetupFactory $customerSetupFactory
+     */
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         CustomerSetupFactory $customerSetupFactory
@@ -73,6 +89,9 @@ class AddCustomerExampleAttribute implements DataPatchInterface
         $this->customerSetupFactory = $customerSetupFactory;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function apply()
     {
         $customerSetup = $this->customerSetupFactory->create(['setup' => $this->moduleDataSetup]);
@@ -82,7 +101,7 @@ class AddCustomerExampleAttribute implements DataPatchInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public static function getDependencies()
     {
@@ -91,6 +110,9 @@ class AddCustomerExampleAttribute implements DataPatchInterface
         ];
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getAliases()
     {
         return [];
@@ -159,6 +181,45 @@ In the following example, an attribute named `stock_item` of type `Magento\Catal
 
 When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property comes from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column.
 
+When you add search extension attributes, you must consider that this can cause ambiguity in the selection of fields in the resulting SQL query when using REST APIs.
+In these cases, the REST call must explicitly specify both the table name and field to use for selecting.
+
+For example, the following configuration may introduce ambiguity when getting orders via REST API. The configuration constructs a query like `SELECT .... FROM sales_order AS main_table LEFT JOIN sales_order`. This creates an ambiguity for all columns from the `sales_order` table in that MySQL cannot determine if it should take them from the `main_table` or from the `sales_order` from the `JOIN` clause.
+
+```xml
+<config>
+    <extension_attributes for="Magento\Sales\Api\Data\OrderInterface">
+        <attribute code="field1" type="int">
+            <join reference_table="sales_order" join_on_field="entity_id" reference_field="entity_id">
+                <field>field1</field>
+            </join>
+        </attribute>
+    </extension_attributes>
+</config>
+```
+
+**REST API Endpoint:**
+
+`GET http://<host>/rest/default/V1/orders`
+
+**Payload:**
+
+```http
+searchCriteria[filter_groups][0][filters][0]
+[field]=main_table.created_at&searchCriteria
+[filter_groups][0][filters][0][value]=2021-09-14%2000:00:00
+&searchCriteria[filter_groups][0][filters][0]
+[conditionType]=from
+&searchCriteria[filter_groups][1][filters][0]
+[field]=main_table.created_at
+&searchCriteria[filter_groups][1][filters][0]
+[value]=2021-09-14%2023:59:59
+&searchCriteria[filter_groups][1][filters][0]
+[conditionType]=to
+&searchCriteria[pageSize]=10
+&searchCriteria[currentPage]=86
+```
+
 ### Extension attribute authentication {#ext-aut}
 
 Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See [Web API authentication overview]({{ page.baseurl }}/get-started/authentication/gs-authentication.html) for general information about authentication in Magento.
@@ -219,9 +280,12 @@ This only works for extension attributes (those attributes defined in an `extens
 
 An `ExtensionInterface` will be empty if no extension attributes have been added. In the following example—in an unmodified installation—`CustomerExtensionInterface` will be generated, but will be empty:
 
-`interface CustomerExtensionInterface extends \Magento\Framework\Api\ExtensionAttributesInterface
+```php
+use Magento\Framework\Api\ExtensionAttributesInterface;
+interface CustomerExtensionInterface extends ExtensionAttributesInterface
 {
-}`
+}
+```
 
 However, if an extension similar to the following has been defined, the interface will not be empty:
 

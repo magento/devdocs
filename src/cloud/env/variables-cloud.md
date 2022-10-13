@@ -29,8 +29,9 @@ To [add environment variables to override configuration settings]({{ site.baseur
 Since values can change over time, it is best to inspect the variable at runtime and use it to configure your application. For example, we use the `MAGENTO_CLOUD_RELATIONSHIPS` variable to retrieve environment-related relationships as follows:
 
 ```php
+<?php
 /**
-  * Get relationships information from MagentoCloud environment variable.
+  * Get relationships information from cloud environment variable.
   *
   * @return mixed
   */

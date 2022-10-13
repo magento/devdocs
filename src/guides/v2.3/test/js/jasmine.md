@@ -75,10 +75,22 @@ Example:
 grunt spec:backend
 ```
 
+or for the frontend area:
+
+```bash
+grunt spec:luma
+```
+
 You can also run a single test:
 
 ```bash
 grunt spec:backend --file="/path/to/the/test.js"
+```
+
+or for the frontend area:
+
+```bash
+grunt spec:luma --file="/path/to/the/test.js"
 ```
 
 ## Write a test {#write-test}
@@ -226,6 +238,18 @@ This topic doesn't provide Jasmine test writing methodology.
 
 [Learn more about testing with Jasmine.]
 
+## Debug tests
+
+Jasmine tests can be debugged in a browser using the following steps:
+
+To keep the webserver running, set `keepalive` setting to `true` in the `dev/tests/js/jasmine/spec_runner/settings.json` file.
+
+Launch the tests with the `grunt spec:luma` CLI command. Now the webserver should be started and waiting, `_SpecRunner.html` file should be generated in the project root.
+
+Go to `http://localhost:8000/_SpecRunner.html` and use the developer console to debug the tests.
+
+The array of the tests can be edited in the `_SpecRunner.html` file to include only necessary files.
+
 ## Known issues and solutions
 
 ### Error: Cannot find module '&lt;module&gt;' {#cannot-find-module-error}
@@ -278,21 +302,20 @@ npm install
 
 <!-- External -->
 [`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
-{:target="_blank"}
+
 [`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
-{:target="_blank"}
+
 [Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html
-{:target="_blank"}
+
 [fontconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
-{:target="_blank"}
-[Grunt]: http://gruntjs.com/
-{:target="_blank"}
-[Install grunt-cli]: http://gruntjs.com/getting-started
-{:target="_blank"}
+
+[Grunt]: https://gruntjs.com/
+
+[Install grunt-cli]: https://gruntjs.com/getting-started
+
 [Install Node.js]: https://nodejs.org/en/
-{:target="_blank"}
+
 [Learn more about testing with Jasmine.]: https://jasmine.github.io/edge/introduction.html
-{:target="_blank"}
 
 <!-- Internal -->
 [Step 6]: #prepare-step6

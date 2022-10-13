@@ -16,7 +16,7 @@ The new architecture should not affect your install or update processes.  Howeve
 We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies PHP 7.0, update the [php configuration]({{ site.baseurl }}/cloud/project/magento-app-php-application.html) in the `.magento.app.yaml` file.
 
 {:.bs-callout-warning}
-Because of the PHP version requirement change, `{{site.data.var.ct}}` 2002.1.0 supports only {{site.data.var.ece}} projects running Magento 2.1.15 or later. If your project uses an earlier release, you must [upgrade the Magento version]({{site.baseurl}}/cloud/project/project-upgrade.html) before you update to `{{site.data.var.ct}}` 2002.1.0.
+Because of the PHP version requirement change, `{{site.data.var.ct}}` 2002.1.0 supports only {{site.data.var.ece}} projects running {{site.data.var.ee}} 2.1.15 or later. If your project uses an earlier release, you must [upgrade]({{site.baseurl}}/cloud/project/project-upgrade.html) before you update to `{{site.data.var.ct}}` 2002.1.0.
 
 ### Environment configuration changes
 
@@ -45,11 +45,11 @@ The following table summarizes CLI command changes in {{ site.data.var.ct }} v20
 
 In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and `m2-ece-deploy` commands to configure deployment hooks in the `.magento.app.yaml` file. When you update to v2002.1.0, check the `hooks` configuration in the `.magento.app.yaml` file for the obsolete commands, and replace them if needed.
 
-## Magento Cloud Patches changes
+## Cloud Patches changes
 
--  **Remove downloaded patches**–The `{{site.data.var.mcp-package}}` package bundles all patches available from the [Magento Technical resources](https://magento.com/tech-resources/download) page and applies them automatically when you deploy to the Cloud.  To prevent patch conflicts after upgrading to {{site.data.var.ct}} 2002.1.0 or later, remove any Magento-supplied patches that you downloaded and added to your project manually.
+-  **Remove downloaded patches**–The `{{site.data.var.mcp-package}}` package bundles all patches available from the [software downloads](https://magento.com/tech-resources/download) page and applies them automatically when you deploy to the Cloud. To prevent patch conflicts after upgrading to {{site.data.var.ct}} 2002.1.0 or later, remove any Adobe-supplied patches that you downloaded and added to your project manually.
 
--  **Updating the apply patches command**–We moved the command for applying patches to Magento Cloud from the `vendor/bin/ece-tools` directory to the `vendor/bin/ece-patches` directory. If you use this command to apply patches manually, use the new path.
+-  **Updating the apply patches command**–We moved the command for applying patches from the `vendor/bin/ece-tools` directory to the `vendor/bin/ece-patches` directory. If you use this command to apply patches manually, use the new path.
 
    > Manually apply patches
 
@@ -57,7 +57,7 @@ In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and
    php ./vendor/bin/ece-patches apply
    ```
 
-## Magento Cloud Docker changes
+## Cloud Docker changes
 
 -  **The minimum PHP version requirement is now PHP 7.1**–If your {{site.data.var.mcd-prod}} host is running an earlier version, upgrade to PHP v7.1 or later.
 
@@ -83,7 +83,7 @@ In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and
 
    -  **Running post-deploy hooks**–The `cloud-deploy` command no longer runs post deploy hooks. You must use the new `cloud-post-deploy` command to run post deploy hooks after you deploy. Update your scripts to add the command to run post deploy hooks.
 
-      ```php
+      ```shell
       bin/magento-docker ece-deploy
       bin/magento-docker ece-post-deploy
       ```

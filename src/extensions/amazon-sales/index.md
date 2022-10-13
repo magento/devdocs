@@ -1,12 +1,14 @@
 ---
 group: extensions
 title: Install Amazon Sales Channel
+migrated_to: https://experienceleague.adobe.com/docs/commerce-channels/amazon/getting-started/install.html
+layout: migrated
 ---
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 Amazon Sales Channel versions 4.0+ are only supported when integrated with Magento 2.3.x versions.
 
-The Amazon Sales Channel extension installs and adds features to integrate your Magento catalog with Amazon Seller Accounts to sell through the Amazon Marketplace. To review additional information, see the [Amazon Sales Channel Marketplace](http://marketplace.magento.com/magento-module-amazon.html) page.
+The Amazon Sales Channel extension installs and adds features to integrate your Magento catalog with Amazon Seller Accounts to sell through the Amazon Marketplace. To review additional information, see the [Amazon Sales Channel Marketplace](https://marketplace.magento.com/magento-module-amazon.html) page.
 
 ## Requirements
 
@@ -16,7 +18,7 @@ The Amazon Sales Channel extension installs and adds features to integrate your 
 
 ## Install
 
-Amazon Sales Channel install is a `.zip` file available from the Magento Marketplace. It includes a composer.json which provides the name `magento/amazon-sales-channel` and the available version.
+Amazon Sales Channel install is a `.zip` file available from the Commerce Marketplace. It includes a composer.json which provides the name `magento/amazon-sales-channel` and the available version.
 
 1. Log in with your Magento web account.
 
@@ -57,7 +59,7 @@ See [Add or Verify the Amazon API Key](https://docs.magento.com/m2/ee/user_guide
 
 You have the following options for configuring Amazon Sales Channel. You do not need to modify these settings to begin onboarding and selling on Amazon. We recommend advanced administrators consider these options.
 
-1. Log into the Magento Admin.
+1. Log into the Admin.
 
 1. On the _Admin_ sidebar, go to **Stores** > _Settings_ > **Configuration**.
 
@@ -85,4 +87,4 @@ You have the following options for configuring Amazon Sales Channel. You do not 
 
 1. Click **Download**.
 
-Complete the upgrade following the instructions [Upgrade an extension]({{site.baseurl}}/extensions/install/#upgrade-an-extension).
+Complete the upgrade following the instructions [Upgrade an extension]({{site.baseurl}}/extensions/install/).

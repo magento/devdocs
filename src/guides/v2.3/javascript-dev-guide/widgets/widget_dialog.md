@@ -4,7 +4,7 @@ subgroup: 3_Widgets
 title: DropdownDialog widget
 ---
 
-Magento dropdownDialog [widget](https://glossary.magento.com/widget) is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/){:target="_blank"}. As extra functionality it implements the following:
+Magento dropdownDialog [widget](https://glossary.magento.com/widget) is a customization of the standard [jQuery UI Dialog](https://api.jqueryui.com/dialog/). As extra functionality it implements the following:
 
 -  triggering [event](https://glossary.magento.com/event) for opening
 -  delaying to automatically close the drop-down on mouse out
@@ -18,7 +18,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 
 ## Options {#dialog_options}
 
-Magento customized Dialog widget has default [jQuery UI Dialog widget](http://api.jqueryui.com/dialog/){:target="_blank"} options, plus several custom options:
+Magento customized Dialog widget has default [jQuery UI Dialog widget](https://api.jqueryui.com/dialog/) options, plus several custom options:
 
 -  [autoPosition](#d_autoPosition)
 -  [autoSize](#d_autoSize)
@@ -195,6 +195,49 @@ This example uses some CSS classes that are used for minicart.
 </div>
 ```
 
+The following example shows a PHTML file using the script and custom CSS classes that have no defined properties:
+
+```php
+<?php
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+
+<div class="dropdown-wrap">
+    <button class="dropdown-button">
+        <span><?= $escaper->escapeHtml(__('Dropdown open button')) ?></span>
+    </button>
+    <div id="dropdown-dialog" data-role="dropdownDialog">
+        <?= $escaper->escapeHtml(__('Dropdown content')) ?>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'dropdownDialog'
+        ], function($, dropdownDialog) {
+            'use strict';
+
+            $('#dropdown-dialog').dropdownDialog({
+                appendTo: '.dropdown-wrap',
+                triggerTarget: '.dropdown-button',
+                closeOnMouseLeave: false,
+                closeOnEscape: true,
+                timeout: 2000,
+                triggerClass: 'active',
+                parentClass: 'active',
+                buttons: [{
+                    text: $.mage.__('Close'),
+                    click: function () {
+                        $(this).dropdownDialog("close");
+                    }
+                }]
+            });
+        }
+    );
+</script>
+```
+
 ### Result
 
 The result is a dropdown dialog and a button (_Click Here_) that opens the dialog.
@@ -203,10 +246,10 @@ The result is a dropdown dialog and a button (_Click Here_) that opens the dialo
 
 [lib/web/mage/dropdown.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/dropdown.js
 [Initialize JavaScript]: {{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html
-[`position`]: http://api.jqueryui.com/dialog/#option-position
-[height]: http://api.jqueryui.com/dialog/#option-height
-[width]: http://api.jqueryui.com/dialog/#option-width
-[minHeight]: http://api.jqueryui.com/dialog/#option-minHeight
-[minWidth]: http://api.jqueryui.com/dialog/#option-minWidth
-[title]: http://api.jqueryui.com/dialog/#option-title
-[jQuery UI Dialog widget]: http://api.jqueryui.com/dialog/
+[`position`]: https://api.jqueryui.com/dialog/#option-position
+[height]: https://api.jqueryui.com/dialog/#option-height
+[width]: https://api.jqueryui.com/dialog/#option-width
+[minHeight]: https://api.jqueryui.com/dialog/#option-minHeight
+[minWidth]: https://api.jqueryui.com/dialog/#option-minWidth
+[title]: https://api.jqueryui.com/dialog/#option-title
+[jQuery UI Dialog widget]: https://api.jqueryui.com/dialog/

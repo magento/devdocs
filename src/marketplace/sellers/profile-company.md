@@ -2,9 +2,11 @@
 group: marketplace-sellers
 title: Company Profile
 redirect_from: /marketplace/sellers/company-profile.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-company/
+layout: migrated
 ---
 
-Your company profile provides the information about your business and brand that appears in your Magento Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.
+Your company profile provides the information about your business and brand that appears in your Commerce Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.
 
 ![Company profile]({{ site.baseurl }}/marketplace/sellers/images/developer-portal-company-profile.png){: .zoom}
 _Company Profile_
@@ -81,7 +83,7 @@ _Social Networks_
 
 1. When prompted, enter your **PayPal Email** address.
 
-   {: .bs-callout .bs-callout-info}
+   {: .bs-callout-info}
    **Important:** This payment information is required of all developers, even those who make their extensions available at no charge. Magento sends your revenue share on a monthly basis to PayPal account.
 
 1. Watch for a confirmation email sent to the email address associated with the account.
@@ -95,7 +97,7 @@ _Social Networks_
 |Use as my default profile|Mark the checkbox to use your company profile as the default.|
 |Legal Company Name|The name of your legally registered business. Your company name appears in your Marketplace profile, and as a link in your extensions listings.|
 |Company Bio|A description of your company’s background, products, and services. You might begin with a couple of sentences to give a brief overview, and finish it later with a more detailed description. If you use a word processor to compose and spell check your bio, make sure to save it as plain text before pasting it into your profile. Make sure to convert all URLs to working hyperlinks. Maximum characters: 1500, including spaces.|
-|Update Image|Your company profile image represents your brand in Magento Marketplace, and appears on your developer profile and product pages. The image must have a professional presentation, and must not be derived from, or include the Magento logo. To learn more, see the Magento Extension Distribution and Service Agreement. <br/>Size: 255 x 255 pixels <br/>Supported file types: JPG / GIF / PNG|
+|Update Image|Your company profile image represents your brand in Commerce Marketplace, and appears on your developer profile and product pages. The image must have a professional presentation, and must not be derived from, or include the Magento logo. To learn more, see the Magento Extension Distribution and Service Agreement. <br/>Size: 255 x 255 pixels <br/>Supported file types: JPG / GIF / PNG|
 
 ### Contact information
 

@@ -9,7 +9,7 @@ This topic is a step-by-step tutorial to create a default en_US [locale](https:/
 
 ## Changing default strings {#theme}
 
-OrangeCo created a custom `orange` theme that inherits from the Magento Blank theme. When customizing their theme, they want to rephrase certain strings used in the Blank theme and modules for the default locale.
+ExampleCorp created a custom `orange` theme that inherits from the Magento Blank theme. When customizing their theme, they want to rephrase certain strings used in the Blank theme and modules for the default locale.
 
 Namely, they need the following changes:
 
@@ -21,15 +21,15 @@ The following image shows a page where the current strings are used:
 
 ![Product page where the Add to Compare string is displayed]
 
-To override the strings, OrangeCo plans to use the `en_US.csv` dictionary file.
+To override the strings, ExampleCorp plans to use the `en_US.csv` dictionary file.
 
 1. Run the [i18n (internationalization) tool] to generate the en_US dictionary for the `orange` theme:
 
    ```bash
-   php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
+   bin/magento i18n:collect-phrases --output="app/design/frontend/ExampleCorp/orange/i18n/en_US.csv" app/design/frontend/ExampleCorp/orange
    ```
 
-1. Open the newly generated `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file and add the following rows:
+1. Open the newly generated `app/design/frontend/ExampleCorp/orange/i18n/en_US.csv` file and add the following rows:
 
    ```text
    "Add to Cart", "Purchase"
@@ -45,7 +45,7 @@ To override the strings, OrangeCo plans to use the `en_US.csv` dictionary file.
 
 ## Results
 
-When OrangeCo applies the orange theme, the custom strings are used instead of the default.
+When ExampleCorp applies the orange theme, the custom strings are used instead of the default.
 
 For example:
 

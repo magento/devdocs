@@ -4,7 +4,7 @@ title: addConfigurableProductsToCart mutation
 ---
 
 {:.bs-callout-warning}
-Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+We recommend using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
 
 Use the `addConfigurableProductsToCart` mutation to add configurable products to a specific cart.
 
@@ -36,7 +36,7 @@ mutation {
   ) {
     cart {
       items {
-        id
+        uid
         quantity
         product {
           name
@@ -62,7 +62,7 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "5",
+            "uid": "Mzc=",
             "quantity": 2,
             "product": {
               "name": "Teton Pullover Hoodie",
@@ -110,16 +110,13 @@ Attribute | Type | Description
 
 The `CustomizableOptionInput` object contains the following attributes:
 
-Attribute | Type | Description
---- | --- | ---
-`id` | Int | The ID of the customizable option
-`value` | String | The value of the customizable option. For example, if color was the customizable option, a possible value could be `black`
+{% include graphql/customizable-option-input-24.md %}
 
 ### CartItemInput object {#cartItemInput}
 
 The `CartItemInput` object must contain the following attributes:
 
-{% include graphql/cart-item-input.md %}
+{% include graphql/cart-item-input-24.md %}
 
 ## Output attributes
 
@@ -139,10 +136,12 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
 `Could not add the product with SKU configurable to the shopping cart: The product that was requested doesn't exist. Verify the product and try again.` | The simple product with the SKU specified in the `data`.`sku` attribute does not exist.
 `Could not find a product with SKU "XXX"` | The configurable product with SKU specified in the `parent_sku` argument does not exist.
 `Could not find specified product.` | The simple product specified in the `data`.`sku` argument is not assigned to the configurable product provided in the `parent_sku` attribute.
 `Required parameter "cart_id" is missing` | The `cart_id` argument was omitted or contains an empty value.
+`Required parameter "cart_items" is missing` | The `cart_items` argument was omitted or contains an empty array.
 `Required parameter "email" is missing` | The `email` argument was omitted or contains an empty value.
 `The requested qty is not available` | The requested quantity specified `data`.`quantity` is not available.
 

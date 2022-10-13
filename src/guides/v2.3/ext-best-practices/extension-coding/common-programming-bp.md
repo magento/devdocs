@@ -15,11 +15,11 @@ Coding standards are a set of guidelines that describe how code should be writte
 
 [Magento's Coding Standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html) are based on the following:
 
-*  [Zend Coding standards](http://framework.zend.com/manual/1.12/en/coding-standard.html){:target="_blank"}
-*  [PSR2](http://www.php-fig.org/psr/psr-2/){:target="_blank"}
-*  [PSR4](http://www.php-fig.org/psr/psr-4/){:target="_blank"}
+*  [Zend Coding standards](https://framework.zend.com/manual/1.12/en/coding-standard.html)
+*  [PSR2](https://www.php-fig.org/psr/psr-2/)
+*  [PSR4](https://www.php-fig.org/psr/psr-4/)
 
-To help you stick to coding standards, we recommend using the [PHP_CodeSniffer tool](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"}.
+To help you stick to coding standards, we recommend using the [PHP_CodeSniffer tool](https://github.com/squizlabs/PHP_CodeSniffer).
 
 ### Write and utilize reusable code
 
@@ -50,9 +50,9 @@ You should be consistent in your naming conventions for files, folder names, cla
 Not following this practice is a code standards violation and impacts your extension's readability and  maintainability.
 
 ### Composition over inheritance
-[Class inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)){:target="_blank"} is the object-oriented programming concept that deals with code reuse and extending the behavior of a base class, which was preferred for Magento 1 development.
+[Class inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) is the object-oriented programming concept that deals with code reuse and extending the behavior of a base class, which was preferred for Magento 1 development.
 
-[Object composition](https://en.wikipedia.org/wiki/Object_composition){:target="_blank"} is the programming concept of combining class objects and data types to create a more complex class. The classes and data types are used together to produce a desired functionality.
+[Object composition](https://en.wikipedia.org/wiki/Object_composition) is the programming concept of combining class objects and data types to create a more complex class. The classes and data types are used together to produce a desired functionality.
 
 For Magento 2 [extension](https://glossary.magento.com/extension) development, we encourage the use of object composition over class inheritance. Using composition over inheritance makes your extension easier to maintain when class changes occur and update when new features need to be implemented.
 

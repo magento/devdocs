@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Magento theme structure
+title: Theme structure
 functional_areas:
   - Frontend
   - Theme
@@ -282,7 +282,7 @@ The key difference between static files and other theme files is that static fil
 Static view files that can be accessed by a direct link from the storefront, are distinguished as public theme files.
 
 {:.bs-callout-info}
-  To be actually accessible for browsers public static files are [published]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) to the `/pub/static/frontend/<Vendor>/<theme>/<language>/css/` directory.
+  To be actually accessible for browsers public static files are [published]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) to the `/pub/static/frontend/<Vendor>/<theme>/<locale>/css/` directory.
 
 ### Dynamic view files
 
@@ -292,7 +292,7 @@ Dynamic view files are located in a theme directory as follows:
 
 ```tree
 <theme_dir>/
-├── Magento_<module>/
+├── <Vendor>_<module>/
 │   ├── web/
 │   │   ├── css/
 │   │   │   ├── source/

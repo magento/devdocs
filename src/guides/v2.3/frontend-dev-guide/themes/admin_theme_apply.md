@@ -8,7 +8,7 @@ functional_areas:
 
 ## What's in this topic {#favicon-intro}
 
-This topic describes how to apply your custom [theme](https://glossary.magento.com/theme) for [Magento Admin](https://glossary.magento.com/magento-admin).
+This topic describes how to apply your custom [theme](https://glossary.magento.com/theme) for [Admin](https://glossary.magento.com/magento-admin).
 
 ## Prerequisites
 
@@ -42,9 +42,9 @@ Each step is described further with more details.
 
 ## Specify the custom Admin theme in `di.xml` {#specify_di}
 
-You need to specify the admin theme to be used in the `<your_module_dir>/etc/adminhtml/di.xml` file. Add it, if the file does not yet exist in your module.
+You need to specify the admin theme to be used in the `<your_module_dir>/etc/di.xml` file. Add it, if the file does not yet exist in your module.
 
-In `<your_module_dir>/etc/adminhtml/di.xml` add the following (replace the placeholders with the vendor name and theme code of your Admin theme):
+In `<your_module_dir>/etc/di.xml` add the following (replace the placeholders with the vendor name and theme code of your Admin theme):
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">

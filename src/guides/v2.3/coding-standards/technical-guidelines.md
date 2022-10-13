@@ -55,6 +55,12 @@ Use [RFC2119] to interpret keywords like:
 __Not recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Config
 {
     private $data;
@@ -74,6 +80,12 @@ class Config
 __Recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Config
 {
     private $data;
@@ -141,6 +153,12 @@ class Composite
 __Not recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Config
 {
     private $data;
@@ -156,6 +174,12 @@ class Config
 __Recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Config
 {
     private $fileReader;
@@ -233,6 +257,12 @@ class SessionManager
 __Not recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class AbstractController extends Action
 {
     // ...
@@ -268,6 +298,12 @@ class Edit extends AbstractController
 __Recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Edit extends Action
 {
     public function __constructor(
@@ -341,6 +377,12 @@ echo $url->get($baseUrl, 'custom/path');
 __Not recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Edit extends Action
 {
     public function execute()
@@ -364,6 +406,12 @@ class View extends Template
 __Recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Edit extends Action
 {
     public function execute()
@@ -727,7 +775,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.1.1. Page file names MUST follow this pattern:
 
 *  `{Admin or Storefront}{Description}Page.xml`, where `{Description}` briefly describes the page under test.
-*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Use [PascalCase](https://wiki.c2.com/?PascalCase).
 *  Example: `AdminProductAttributeGridPage.xml`
 
 11.3.1.2. Page `name` attribute MUST be the same as the file name.
@@ -744,7 +792,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.2.1. Section file names MUST follow this pattern:
 
 *  `{Admin or Storefront}{Description}Section.xml`, where `{Description}` briefly describes the section under test.
-*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Use [PascalCase](https://wiki.c2.com/?PascalCase).
 *  Example: `StorefrontCheckoutCartSummarySection.xml`
 
 11.3.2.2. Section `name` attribute MUST be the same as the file name.
@@ -753,11 +801,11 @@ You need to read configuration from different sources (like database or filesyst
 
 #### 11.3.3. Elements
 
-11.3.3.1. All element selectors MUST follow these [best practices](https://devdocs.magento.com/mftf/docs/best-practices.html).
+11.3.3.1. All element selectors MUST follow these [best practices]({{ site.baseurl }}/mftf/docs/best-practices.html).
 
 11.3.3.2. The element `name` MUST be unique within the `<section>`.
 
-11.3.3.3. The element `name` SHOULD be written in [camelCase](http://wiki.c2.com/?CamelCase).
+11.3.3.3. The element `name` SHOULD be written in [camelCase](https://wiki.c2.com/?CamelCase).
 
 11.3.3.4. Parameterized selectors MUST use descriptive names for their parameters.
 
@@ -768,7 +816,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.4.1. Data entity file names MUST follow this pattern:
 
 *  `{Type}Data.xml`, where `{Type}` describes the type of entities.
-*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Use [PascalCase](https://wiki.c2.com/?PascalCase).
 *  Examples: `ProductData.xml` or `CustomerData.xml`
 
 11.3.4.2. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedly ran against the same environment.
@@ -796,7 +844,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.6.1. Metadata file names MUST follow this pattern:
 
 *  `{Type}Meta.xml`, where `{Type}` describes the type of entity.
-*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Use [PascalCase](https://wiki.c2.com/?PascalCase).
 *  Examples: `CategoryMeta.xml` and `ProductAttributeMeta.xml`
 
 ## 12. Web API
@@ -822,8 +870,9 @@ You need to read configuration from different sources (like database or filesyst
 {% collapsible Example: %}
 
 ``` php
-use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\App\DataObject;
 use Magento\Framework\Event\Observer;
+use Magento\Framework\Event\ObserverInterface;
 
 class SampleEventObserverThatModifiesInputs implements ObserverInterface
 {
@@ -832,7 +881,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
      */
     public function execute(Observer $observer)
     {
-        /** @var \Magento\Framework\App\DataObject $transport */
+        /** @var DataObject $transport */
         $transport = $observer->getData('transport');
 
         if ($transport->getData('some_value') === true) {
@@ -939,17 +988,17 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 
 ## 17. Services
 
-17.1. New features with limited customization scenarios SHOULD be implemented as a thin Magento extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.
+17.1. New features with limited customization scenarios SHOULD be implemented as a thin extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
 [RFC2119]: https://tools.ietf.org/html/rfc2119
 [SOLID principles]: https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
-[Temporal coupling]: http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/
+[Temporal coupling]: https://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/
 [Law of Demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter
 [CQRS principle]: https://martinfowler.com/bliki/CQRS.html
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[rules]: https://github.com/magento/magento-coding-standard/blob/develop/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html

@@ -21,9 +21,15 @@ We recommend using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varn
 
 To create an uncacheable page, mark any block on that page as uncacheable in the layout using `cacheable="false"`.
 
+```xml
+<block class="Magento\Customer\Block\Form\Edit" name="customer_edit" template="Magento_Customer::form/edit.phtml" cacheable="false">
+    <container name="form.additional.info" as="form_additional_info"/>
+</block>
+```
+
 Examples of uncacheable pages include the compare products, cart, [checkout](https://glossary.magento.com/checkout) pages, and so on.
 
-[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml)
 
 {:.bs-callout-warning}
 Do not configure content pages (i.e., catalog, product, and CMS pages) to be uncacheable. Doing so has an adverse affect on performance.

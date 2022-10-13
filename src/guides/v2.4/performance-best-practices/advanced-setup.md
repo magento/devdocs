@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/performance-best-practices/advanced-setup.html
+layout: migrated
 ---
 
 Magento 2 is a highly flexible and scalable product containing solutions for merchants of all sizes. This section covers best practices and recommendations on configuring Magento to work with large amounts of data, extreme load, and other enterprise cases.
@@ -27,6 +29,12 @@ For example, if you are running a profile similar to B2B Medium, you can overrid
  {:.bs-callout-info}
 We have not enabled batching for the catalog rules indexer. Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time. In this case, editing your MySQL configuration file and allocating more memory to the TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration values (the default is 16M for both) will improve performance for this indexer, but will result in MySQL consuming more RAM.
 
+### Limit customer groups and shared catalogs by websites
+
+A large number of product SKUs, websites, customer groups, or shared catalogs will impact the running time of the Product Price and Catalog Rule indexers. This is because by default, all websites are assigned to all customer groups (shared catalogs).
+
+To decrease indexation time, you can [exclude certain websites from customer groups (shared catalogs)]({{page.baseurl}}/extension-dev-guide/indexer-optimization.html#customer-group-limitations-by-websites).
+
 ## Set up Redis
 
 Sometimes one Redis instance is not enough to serve incoming requests. There are several solutions that we can recommend to address this situation.
@@ -43,6 +51,9 @@ You could also use a Redis cluster that performs parallel read/write operations 
 
 ## Split the database
 
+{:.bs-callout-warning}
+The split database feature was [deprecated](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Split-Database-in-Magento-Commerce/ba-p/465187) in version 2.4.2 of {{site.data.var.ee}}. See [Revert from a split database to a single database]({{ page.baseurl }}/config-guide/revert-split-database.html).
+
 {{site.data.var.ee}} allows you to configure scalable database storage to meet the needs of a growing business. You can set up three separate master databases that serve specific domains:
 
 *  Main (Catalog) Database
@@ -54,13 +65,13 @@ To configure additional databases, you must create an empty database and run one
 For Checkout Master DB
 
 ```bash
-bin/magento setup:db-schema:add-slave
+bin/magento setup:db-schema:split-quote
 ```
 
 For OMS Master DB
 
 ```bash
-bin/magento setup:db-schema:add-slave
+bin/magento setup:db-schema:split-sales
 ```
 
 These commands migrate specific domain tables from the main database to a domain database. They also change the Magento configuration to allow corresponding connectivity and constraints processing.

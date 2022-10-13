@@ -160,7 +160,7 @@ Redefine link to constructor:
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="component" xsi:type="string">Magento_Products/js/grid/massactions</item>
+            <item name="component" xsi:type="string">Magento_Ui/js/grid/massactions</item>
         </item>
     </argument>
 </massaction>

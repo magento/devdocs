@@ -7,7 +7,7 @@ This topic features a step-by-step illustration of how to customize a [jQuery](h
 
 ## Customize a default Magento jQuery widget
 
-In their Orange theme, OrangeCo wants to remove the "Click on image to view it full sized" message displayed on the product page.
+In their Orange theme, ExampleCorp wants to remove the "Click on image to view it full sized" message displayed on the product page.
 
 The high-level steps for this task are the following:
 
@@ -19,28 +19,28 @@ Let's look at each step in more detail.
 
 ### Step 1: Define how the message is output {#define_script1}
 
-OrangeCo needs to define how the message is output. To do this, they take the following steps:
+ExampleCorp needs to define how the message is output. To do this, they take the following steps:
 
 1. Open a product page.
 1. Select to view the page source.
 1. Search for the "Click on image to view it full sized" string. The illustration of the search result follows: ![Page source search result]
 1. View that it is output by [`gallery.js`].
 
-We see that the script which OrangeCo needs to alter is `gallery.js`.
+We see that the script which ExampleCorp needs to alter is `gallery.js`.
 
-To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which [can be reached from the page source view or from the file system]. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
+To be able to extend `gallery.js`, ExampleCorp needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which [can be reached from the page source view or from the file system]. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
 
 ![RequireJS config file]
 
 ### Step 2: Add the custom widget extending the gallery widget {#add_code1}
 
-In the `app/design/frontend/OrangeCo/orange/web/js` OrangeCo adds `orange-gallery.js` with the following content:
+In the `app/design/frontend/ExampleCorp/orange/web/js` ExampleCorp adds `orange-gallery.js` with the following content:
 
 ```javascript
 define([
   'jquery',
   'jquery-ui-modules/widget',
-  'mage/gallery'
+  'mage/gallery/gallery'
 ], function($){
 
   $.widget('orange.gallery', $.mage.gallery, {
@@ -55,11 +55,11 @@ define([
 
 ### Step 3: Update the RequireJS configuration {#config1}
 
-OrangeCo adds the custom `app/design/OrangeCo/orange/requirejs-config.js` with the following content:
+ExampleCorp adds the custom `app/design/ExampleCorp/orange/requirejs-config.js` with the following content:
 
 ```javascript
 var config = {
-  "map": {
+  map: {
     "*": {
       "gallery": "js/orange-gallery"
     }
@@ -71,7 +71,7 @@ The new behavior is applied once the store pages are reloaded.
 
 ## Add and use a custom widget (jCarousel) {#use_custom_widget}
 
-OrangeCo wants to use the [jCarousel widget] to display product images on product pages. The high level steps for this task are the following:
+ExampleCorp wants to use the [jCarousel widget] to display product images on product pages. The high level steps for this task are the following:
 
 1. Define how product images are displayed by default.
 1. Add the custom script to the file system.
@@ -81,14 +81,14 @@ Let's look at each step in more detail.
 
 ### Step 1: Define what is the default implementation
 
-Using the approach described in the previous section, OrangeCo defines that the product images are displayed by [`gallery.js`], and the configuration path for it is `mage/gallery`.
+Using the approach described in the previous section, ExampleCorp defines that the product images are displayed by [`gallery.js`], and the configuration path for it is `mage/gallery`.
 
 ### Step 2: Add the custom script to the file system
 
 For the jCarousel widget to be able to use the configuration passed to the gallery widget,
-OrangeCo needs to add a "wrapper" script.
+ExampleCorp needs to add a "wrapper" script.
 
-To do this, OrangeCo adds the following files in the `app/design/frontend/OrangeCo/orange/web/js` directory:
+To do this, ExampleCorp adds the following files in the `app/design/frontend/ExampleCorp/orange/web/js` directory:
 
 -  The jCarousel widget source file: `jquery.jcarousel.js`
 -  A \"wrapper\" `orange-carousel.js` with the following content:
@@ -111,16 +111,16 @@ To do this, OrangeCo adds the following files in the `app/design/frontend/Orange
 
 ### Step 3: Update RequireJS configuration
 
-In the `app/design/OrangeCo/orange` directory OrangeCo adds `requirejs-config.js` with the following content:
+In the `app/design/ExampleCorp/orange` directory ExampleCorp adds `requirejs-config.js` with the following content:
 
 ```javascript
 var config = {
-  "map": {
+  map: {
     "*": {
       "gallery": "js/orange-gallery"
     }
   },
-  "shim": {
+  shim: {
     "js/jquery.jcarousel": ["jquery"] // as jquery.jcarousel isn't an AMD module
   }
 };
@@ -135,6 +135,6 @@ Recommended reading
 [`gallery.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
 [can be reached from the page source view or from the file system]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#extend_js
 [RequireJS config file]: {{site.baseurl}}/common/images/fdg_pr_2.png
-[jCarousel widget]: http://sorgalla.com/jcarousel/
+[jCarousel widget]: https://sorgalla.com/jcarousel/
 [`gallery.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
 [Use custom JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html

@@ -5,6 +5,8 @@ title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
 menu_node: parent
 menu_order: 8
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/technical-specification.html
+layout: migrated
 ---
 
 ## Overview {#migrate-overview}
@@ -164,6 +166,42 @@ Configuration file has the following structure:
 Change prefix option in case Magento was installed with prefix in database tables. It can be set for Magento 1 and Magento 2 databases. Use the "source_prefix" and "dest_prefix" configuration options accordingly.
 
 Configuration data is accessible via \Migration\Config class.
+
+### Steps available operations {#steps}
+
+|Document|Field|
+|---|---|
+|`step`|Second level node inside the Steps node. Description of the relevant step must be specified in the `title` attribute.|
+|`integrity`|Specifies the PHP class responsible for the integrity check. Compares the table field names, types, and other info to verify compatibility between Magento 1 and 2 data structures.|
+|`data`|Specifies the PHP class responsible for the data check. Transfers the data, table by table from Magento 1 to Magento 2.|
+|`volume`|Specifies the PHP class responsible for the volume check. Compares the number of records between tables to verify that the transfer was successful.|
+|`delta`|Specifies the PHP class responsible for the delta check. Transfers the delta from Magento 1 to Magento 2 after the full data migration.|
+
+### Source database information attributes {#source}
+
+|Document|Field|Required?|
+|---|---|---|
+|`name`|Database name of the Magento 1 server.|yes|
+|`host`|Host IP address of the Magento 1 server.|yes|
+|`port`|Port number of the Magento 1 server.|no|
+|`user`|Username of the Magento 1 database server.|yes|
+|`password`|Password of the Magento 1 database server.|yes|
+|`ssl_ca`|Path to SSL Certificate Authority file.|no|
+|`ssl_cert`|Path to SSL Certificate file.|no|
+|`ssl_key`|Path to SSL Key file.|no|
+
+### Destination database information attributes {#destination}
+
+|Document|Field|Required?|
+|---|---|---|
+|`name`|Database name of the Magento 2 server.|yes|
+|`host`|Host IP address of the Magento 2 server.|yes|
+|`port`|Port number of the Magento 2 server.|no|
+|`user`|Username of the Magento 2 database server.|yes|
+|`password`|Password of the Magento 2 database server.|yes|
+|`ssl_ca`|Path to SSL Certificate Authority file.|no|
+|`ssl_cert`|Path to SSL Certificate file.|no|
+|`ssl_key`|Path to SSL Key file.|no|
 
 ### Connect using the TLS protocol
 

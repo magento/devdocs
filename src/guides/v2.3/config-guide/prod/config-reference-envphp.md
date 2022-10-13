@@ -26,6 +26,7 @@ The `env.php` file contains the following sections:
 | `resource`                    | Mapping of resource name to a connection                        |
 | `session`                     | Session storage data                                            |
 | `x-frame-options`             | Setting for [x-frame-options][x-frame-options]                  |
+| `system`                      | Configuration values that cannot be edited in the Admin |
 
 ## backend
 
@@ -112,7 +113,7 @@ You can learn more about it at [Encryption Key][encryption-key].
 
 ## db
 
-All database configurations are availble in this node.
+All database configurations are available in this node.
 
 ```conf
 'db' => [
@@ -181,7 +182,7 @@ Learn more about [Magento Modes][magento-modes].
 
 ## queue
 
-Message queue releated configurations are availble in this node.
+Message queue related configurations are available in this node.
 
 ```conf
 'queue' => [
@@ -196,7 +197,7 @@ Learn more about Message queue in below link [Message Queue][message-queue]
 
 ## resource
 
-Resource configuration settings are avilable in this node.
+Resource configuration settings are available in this node.
 
 ```conf
 'resource' => [
@@ -208,7 +209,7 @@ Resource configuration settings are avilable in this node.
 
 ## session
 
-Magento session related configurations are stoted in the `session` node.
+Magento session related configurations are stored in the `session` node.
 
 ```conf
 'session' => [
@@ -227,6 +228,23 @@ x-frame-options header can be configured using this node.
 
 Learn more about session in [x-frame-options][x-frame-options].
 
+## system
+
+Magento configuration values that cannot be edited in the Admin.
+
+```conf
+'system' => [
+  'default' => [
+    'web' => [
+      'secure' => [
+          'base_url' => 'https://magento.test/'
+      ]
+    ]
+  ]
+```
+
+Learn more in [env-php-config-set][env-php-config-set].
+
 <!-- Link definitions -->
 [lock-provider-config]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html
 [encryption-key]: https://docs.magento.com/m2/ce/user_guide/system/encryption-key.html
@@ -240,3 +258,4 @@ Learn more about session in [x-frame-options][x-frame-options].
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
 [change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [crons]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html
+[env-php-config-set]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html

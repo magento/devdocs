@@ -1,6 +1,5 @@
 ---
-group: installation-guide
-title: Configure Apache and Elasticsearch
+title: Configure Apache for your search engine
 redirect_from: 
   - guides/v2.4/config-guide/elasticsearch/es-config-apache.html
 functional_areas:
@@ -8,20 +7,25 @@ functional_areas:
   - Search
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/search-engine/configure-apache.html
+layout: migrated
 ---
 
 {% include config/es-webserver-overview.md %}
 
 ## Set up a proxy {#es-apache-proxy}
 
-This section discusses how to configure Apache as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with Apache](#es-ws-secure-apache).
+{:.bs-callout-info}
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. See [Migrate ElasticSearch to OpenSearch](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/opensearch-migration.html) for more information.
+
+This section discusses how to configure Apache as an *unsecure* proxy so that {{ site.data.var.ee }} or {{ site.data.var.ce }} can use a search engine running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with Apache](#es-ws-secure-apache).
 
 {:.bs-callout-info}
-The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.
+The reason the proxy is not secured in this example is that it is easier to set up and verify. You can use TLS with this proxy. If you wish to do so, make sure you add the proxy information to your secure virtual host configuration.
 
 ### Set up a proxy for Apache 2.4 {#es-apache-proxy-24}
 
-This section discusses how to configure an Elasticsearch proxy using a virtual host.
+This section discusses how to configure a proxy using a virtual host.
 
 1. Enable `mod_proxy` as follows:
 
@@ -57,7 +61,7 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
    curl -i http://localhost:<proxy port>/_cluster/health
    ```
 
-   For example, if your proxy uses port 8080:
+   For example, if you are using Elasticsearch and your proxy uses port 8080:
 
    ```bash
    curl -i http://localhost:8080/_cluster/health
@@ -67,7 +71,7 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
    ```terminal
    HTTP/1.1 200 OK
-   Date: Tue, 23 Feb 2016 20:38:03 GMT
+   Date: Tue, 23 Feb 2019 20:38:03 GMT
    Content-Type: application/json; charset=UTF-8
    Content-Length: 389
    Connection: keep-alive
@@ -77,9 +81,9 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 ## Secure communication with Apache {#es-ws-secure-apache}
 
-This section discusses how to secure communication between Apache and Elasticsearch using [HTTP Basic](http://tools.ietf.org/html/rfc2617){:target="_blank"} authentication with Apache. For more options, consult one of the following resources:
+This section discusses how to secure communication between Apache and the search engine using [HTTP Basic](https://datatracker.ietf.org/doc/html/rfc2617) authentication with Apache. For more options, consult one of the following resources:
 
-*  [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html){:target="_blank"}
+*  [Apache 2.4 authentication and authorization tutorial](https://httpd.apache.org/docs/2.4/howto/auth.html)
 
 See one of the following sections:
 
@@ -120,6 +124,7 @@ This section discusses how to specify who can access the Apache server.
    ```
 
 1. If you added the preceding to your secure virtual host, remove `Listen 8080` and the `<VirtualHost *:8080>` directives you added earlier to your unsecure virtual host.
+
 1. Save your changes, exit the text editor, and restart Apache:
 
    *  CentOS: `service httpd restart`
@@ -130,4 +135,4 @@ This section discusses how to specify who can access the Apache server.
 {:.ref-header}
 Related topic
 
-[Configure Elasticsearch stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)
+[Configure search stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)

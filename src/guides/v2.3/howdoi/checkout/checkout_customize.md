@@ -154,16 +154,47 @@ To disable the component in your `checkout_index_index.xml` use the following in
 
 ## Remove a component {#remove}
 
-To remove a component from layout rendering, you need to create a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. In your plugin, implement the around method removing the corresponding layout nodes at run-time.
+To keep a component from being rendered, create a layout processor. A layout processor consists of a class, implementing
+the `\Magento\Checkout\Block\Checkout\LayoutProcessorInterface` interface, and thus a `LayoutProcessorInterface::process($jsLayout)` method.
 
-The following sample is an example of the around method removing a component:
+```php
+<?php
 
-```php?start_inline=1
-unset($jsLayout['components']['checkout']['children']['steps'][%path_to_target_node%]); //%path_to_target_node% is the path to the component's node in checkout_index_index.xml
-return $jsLayout;
+namespace <Vendor>\<Module>\Block\Checkout;
+
+use Magento\Checkout\Block\Checkout\LayoutProcessorInterface;
+
+class OurLayoutProcessor implements LayoutProcessorInterface
+{
+    /**
+     * @param array $jsLayout
+     * @return array
+     */
+    public function process($jsLayout)
+    {
+        //%path_to_target_node% is the path to the component's node in checkout_index_index.
+        unset($jsLayout['components']['checkout']['children']['steps'][%path_to_target_node%]);
+        return $jsLayout;
+    }
+}
 ```
 
-If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.
+Once created, add the layout processor through Dependency Injection (DI).
+
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Block\Onepage">
+        <arguments>
+            <argument name="layoutProcessors" xsi:type="array">
+                <item name="ourLayoutProcessor" xsi:type="object"><Vendor>\<Module>\Block\Checkout\OurLayoutProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
+```
+
+To use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.
 
 {:.bs-callout-info}
-Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is removed and not loaded.
+Disable vs remove a component: A disabled component is loaded but not rendered. If you remove a component, it is removed and not loaded.

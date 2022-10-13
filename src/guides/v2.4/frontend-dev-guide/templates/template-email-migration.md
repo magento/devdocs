@@ -3,11 +3,32 @@ group: frontend-developer-guide
 title: Migrating custom email templates
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/email-migration/
+layout: migrated
 ---
 
 {% raw %}
-With the release of Magento 2.3.4, we made some changes to custom email templates and how they access data and methods for email content.
-This topic describes the changes and provides instructions on how to convert your existing custom email templates.
+
+## Remove the legacy variable resolver
+
+With the release of Magento 2.4.4 and 2.4.3-p2, `\Magento\Framework\Filter\VariableResolver\LegacyResolver` and `\Magento\Framework\Filter\VariableResolver\StrategyResolver` have been removed and any legacy templates in the database will only be resolved using strict mode. Database templates can be checked using cli commands to verify
+compatibility with strict mode.
+
+## Verify compatibility with strict mode
+
+The following command scans all database email templates overridden using the Magento admin **Marketing** > Communications > **Email Templates** > **Add New Template** area for potential variable usage compatibility issues.
+
+```bash
+bin/magento dev:email:override-compatibility-check
+```
+
+To scan email templates overriden using a custom [theme](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/templates/template-email.html#customize-email-theme), please consider using the [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/install.html).
+
+The following command scans newsletter templates for any potential variable usage compatibility issues.
+
+```bash
+bin/magento dev:email:newsletter-compatibility-check
+```
 
 ## Changes to the custom email template workflow
 
@@ -55,13 +76,20 @@ This `order_data` object is passed to the view page as a `DataObject` and is ref
 ```php
 public function send(Invoice $invoice, $forceSyncMode = false)
 {
+    $this->identityContainer->setStore($invoice->getStore());
     $invoice->setSendEmail($this->identityContainer->isEnabled());
     if (!$this->globalConfig->getValue('sales_email/general/async_sending') || $forceSyncMode) {
         $order = $invoice->getOrder();
-        $this->identityContainer->setStore($order->getStore());
+        if ($this->checkIfPartialInvoice($order, $invoice)) {
+            $order->setBaseSubtotal((float) $invoice->getBaseSubtotal());
+            $order->setBaseTaxAmount((float) $invoice->getBaseTaxAmount());
+            $order->setBaseShippingAmount((float) $invoice->getBaseShippingAmount());
+        }
         $transport = [
             'order' => $order,
+            'order_id' => $order->getId(),
             'invoice' => $invoice,
+            'invoice_id' => $invoice->getId(),
             'comment' => $invoice->getCustomerNoteNotify() ? $invoice->getCustomerNote() : '',
             'billing' => $order->getBillingAddress(),
             'payment_html' => $this->getPaymentHtml($order),
@@ -147,7 +175,7 @@ In this example, we will create and pass a `lifetime_spend` custom value.
     }
    ```
 
-   and save the file to <Vendor>/<module>/Model.
+   and save the file to `<Vendor>/<module>/Model`.
 
 1. Add the new directive to the pool by adding this block to `di.xml`.
 

@@ -98,8 +98,7 @@ class Adjustment implements AdjustmentInterface
      */
     public function applyAdjustment($amount, SaleableInterface $saleableItem, $context = [])
     {
-        $return = $amount + self::ADJUSTMENT_VALUE;
-        return $return;
+        return $amount + self::ADJUSTMENT_VALUE;
     }
 
     /**

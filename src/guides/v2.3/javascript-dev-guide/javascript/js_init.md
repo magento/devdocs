@@ -25,23 +25,81 @@ In Magento 2, you have two options for specifying declarative notation:
 
 -  Using the `data-mage-init` attribute
 
-   > This is used to target a specific HTML element. It is easier to implement and is commonly used for jQuery UI widgets. This method can only be implemented on the specified HTML tag. For example, `<nav data-mage-init='{ "<component_name>": {...} }'></nav>`. This is preferred for its concise syntax, and direct access to the HTML element.
+   > This is used to target a specific HTML element. It is easier to implement and is commonly used for jQuery UI widgets. This method can only be implemented on the specified HTML tag. For example, `<nav data-mage-init='{"<component_name>": {...}}'></nav>`. This is preferred for its concise syntax, and direct access to the HTML element.
 
 -  Using the `<script type="text/x-magento-init"> ... </script>` tag
 
    > This is used to target either a CSS selector or `*`. If the CSS selector matches multiple HTML elements, the script will run for each matched HTML element. For `*`, no HTML element is selected and the script will run once with the HTML DOM as its target. This method can be implemented from anywhere in the codebase to target any HTML element. This is preferred when direct access to the HTML element is restricted, or when there is no target HTML element.
+
+Consider the example of adding a custom carousel JS:
+
+1. Copy the `<carousel_name>.carousel.js` file to the `app/design/frontend/<package_name>/<theme_name>/web/js/<carousel_name>/` directory.
+1. Add your RequireJS module at `app/design/frontend/<package_name>/<theme_name>/web/js/carousel.js`.
+
+   ```javascript
+    define(['jquery','<carousel_name>'], function($)
+    {
+        return function(config, element)
+        {
+            $(element).<carousel_name>(config);
+        };
+    });
+   ```
+
+1. Add the RequireJS config to the `app/design/frontend/<package_name>/<theme_name>/requirejs-config.js` file.
+
+    ```javascript
+    var config = {
+        map: {
+            '*': {
+                    'carousel': 'js/carousel',
+                    '<carousel_name>': 'js/<carousel_name>/<carousel_name>.carousel'
+                }
+            }
+    };
+    ```
+
+You now have two options for specifying declarative notation:
+
+-  Use the `data-mage-init` attribute to insert the carousel in a certain element:
+
+    ```html
+    <div data-mage-init='{"carousel":{"option": value}}'>
+        <div class="item">Item 1</div>
+        ...
+        <div class="item">Item n</div>
+    </div>
+    ```
+
+-  Use with `<script type="text/x-magento-init"/>`:
+
+    ```html
+    <div id="<carousel_name>" class="carousel">
+        <div class="item">Item 1</div>
+        ...
+        <div class="item">Item n</div>
+    </div>
+
+    <script type="text/x-magento-init">
+        {
+            "#<carousel_name>": {
+                "carousel": {"option": value}
+            }
+        }
+    </script>
+    ```
 
 #### Declarative notation using the `data-mage-init` attribute {#data_mage_init}
 
 Use the `data-mage-init` attribute to insert a JS component in a specified HTML element. The following example inserts a JS component in the `<nav/>` element:
 
 ```html
-<nav data-mage-init='{ "<component_name>": {...} }'></nav>
+<nav data-mage-init='{"<component_name>": {...}}'></nav>
 ```
 
 When the Javascript is inserted into the specified element, the script is called only for this particular element. It is not automatically called for other elements of this type on the page.
 
-##### How `data-mage-init` is processed {#init_process}
+#### How `data-mage-init` is processed {#init_process}
 
 On DOM ready, the `data-mage-init` attribute is parsed to extract component names and configuration to be applied to the element. Depending on the type of the inserted JS component, processing is performed as follows:
 
@@ -52,6 +110,20 @@ On DOM ready, the `data-mage-init` attribute is parsed to extract component name
     '<component_name>': function(config, element) { ... }
   };
   ```
+
+Where `<component_name>` is a native Magento JS component, for example: `menu`, `collapsible`, `tooltip` ...
+
+```html
+<nav data-mage-init='{"tooltip": {"content": "<?= /* @noEscape */ $content ?>"}}'></nav>
+```
+
+Or a custom JS component, implemented with a component path: `Vendor_Module/js/component`, or as an alias declared in `requirejs-config.js`.
+
+```html
+<nav data-mage-init='{"Vendor_Module/js/component": {"status":"<?= /* @noEscape */ $block->getStatus(); ?>"}}'></nav>
+```
+
+Read more about [locate JS components]({{ page.baseurl }}/javascript-dev-guide/javascript/js_debug.html).
 
 -  If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function. For example:
 
@@ -132,6 +204,9 @@ require([
 });
 </script>
 ```
+
+{:.bs-callout-tip}
+For better control when scripts are executed, use a declarative syntax rather than an imperative syntax. When using imperative syntax, the ability to leverage existing JS classes is lost and can block the rendering of the page.
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 

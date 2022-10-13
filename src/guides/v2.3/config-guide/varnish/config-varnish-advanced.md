@@ -7,9 +7,9 @@ functional_areas:
   - Setup
 ---
 
-Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from [Magento Admin](https://glossary.magento.com/magento-admin).
+Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from [Admin](https://glossary.magento.com/magento-admin).
 
-See the [Varnish Reference Manual](https://www.varnish-cache.org/docs/4.1/reference/index.html) for details about using the Varnish Configuration Language.
+See the [Varnish Reference Manual](https://varnish-cache.org/docs/6.5/reference/index.html) for details about using the Varnish Configuration Language.
 
 ## Health check {#health}
 
@@ -29,9 +29,9 @@ Magento defines the following default health check:
 
 Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the [backend](https://glossary.magento.com/backend) is considered unhealthy.
 
-The `health_check.php` script is located in the `pub` directory. If your Magento root directory is `pub`, then be sure to change the path in the `url` parameter from `/pub/health_check.php` to `health_check.php`.
+The `health_check.php` script is located in the `pub` directory. If your Magento root directory is `pub`, then be sure to change the path in the `url` parameter from `/pub/health_check.php` to `/health_check.php`.
 
-For more information, see the [Varnish health checks](https://varnish-cache.org/docs/4.1/users-guide/vcl-backends.html?highlight=health%20check#health-checks) documentation.
+For more information, see the [Varnish health checks](https://varnish-cache.org/docs/6.5/users-guide/vcl-backends.html#health-checks) documentation.
 
 ## Grace mode {#grace}
 
@@ -82,8 +82,7 @@ bin/magento cache:flush
 
 Saint mode is not part of the main Varnish package. It is a separately-versioned vmod that must be downloaded and installed. As a result, you should re-compile Varnish from source, as described in the following articles:
 
-*  [Installing Varnish 5.1](https://varnish-cache.org/docs/5.1/installation/index.html)
-*  [Installing Varnish 4.1](https://varnish-cache.org/docs/4.1/installation/install.html) (Stable)
+*  [Installing Varnish 6.5](https://varnish-cache.org/docs/6.5/installation/index.html)
 
 After you've recompiled, you can install the Saint mode [module](https://glossary.magento.com/module). In general, follow these steps:
 

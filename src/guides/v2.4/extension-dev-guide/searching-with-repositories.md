@@ -3,6 +3,8 @@ group: php-developer-guide
 title: Searching with Repositories
 functional_areas:
   - Search
+migrated_to: https://developer.adobe.com/commerce/php/development/components/searching-with-repositories/
+layout: migrated
 ---
 
 ## What is a repository? {#m2devgde-repository-intro}
@@ -40,6 +42,9 @@ $filter
 ```
 
 This filter will find all urls with the suffix of "magento.com".
+
+{:.bs-callout-info}
+A full list of condition types can be found in the [Rest API Reference](https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches).
 
 ### Filter Group
 
@@ -227,12 +232,11 @@ class ProductCategoryFilter implements CustomFilterInterface
     {
         $value = $filter->getValue();
         $conditionType = $filter->getConditionType() ?: 'in';
+        $filterValue = [$value];
         if (($conditionType === 'in' || $conditionType === 'nin') && is_string($value)) {
-            $value = explode(',', $value);
-        } else {
-            $value = [$value];
+            $filterValue = explode(',', $value);
         }
-        $categoryFilter = [$conditionType => $value];
+        $categoryFilter = [$conditionType => $filterValue];
 
         /** @var Collection $collection */
         $collection->addCategoriesFilter($categoryFilter);
@@ -438,7 +442,7 @@ Below is an example of how the [`CustomerRepositoryInterface`]({{ site.mage2blob
         }
         ...
         /**
-         * {@inheritdoc}
+         * @inheritDoc
          **/
         public function getList(SearchCriteriaInterface $searchCriteria)
         {
@@ -507,3 +511,6 @@ The `di.xml` configuration file excerpt below shows how you can create a virtual
       </arguments>
   </type>
 ```
+
+{:.bs-callout-info}
+When building an EAV Model that needs to implement the `Repository::getList` method, use the EAV Filter Processor; otherwise the custom filters will not be added to the collection.

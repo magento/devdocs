@@ -26,6 +26,31 @@ To extend the parent theme's styles in your theme:
 
 1. Add your Less code in this file.
 
+However, the above only works if the theme's parent is a Blank. Consider a Theme A which is the child of Blank. Theme A has two children, B and C. A global style rule is added to the `_extend.less` file of theme A. This extends its parent Blank. Theme B and C also have their own `_extend.less` files. Theme B and C will override the parent (Theme A), rather than extending it further. Theme B & Theme C are extending their grandparent (Blank) and overriding their parent (Theme A) in this setup.
+
+In case of subsequent descendants of the child theme, you can avoid this behavior by following these steps:
+
+1. Create a `_extend-child.less` in both your parent and child themes.
+1. Keep `_extend-child.less` empty in your parent theme and add it too your parent theme's `_extend.less` file.
+1. Add a `@import '_extend-child.less'` rule to the end of your parent's theme's `_extend.less` file.
+1. In your child theme, add `@import` or style rules in `_extend-child.less` to extend parent theme's CSS.
+
+   ```tree
+   app/design/frontend/Vendor/
+   ├── parent
+   │   └── web
+   │       └── css
+   │           └── source
+   │               ├── _extend-child.less (keep this file empty)
+   │               └── _extend.less
+   └── child
+       └── web
+           └── css
+               └── source
+                   └── _extend-child.less
+   ...
+   ```
+
 Extending a theme using `_extend.less` is the simplest option when you are happy with everything the parent theme has, but want to add more styles.
 
 {:.bs-callout-info}
@@ -49,7 +74,7 @@ To override parent styles (that is, override default Magento UI [library](https:
 
    It is important to remember that your `_theme.less` overrides the parent `_theme.less`.
 
-1. Copy all variables you need from the parent `_theme.less`, including those which will not be changed. For example if your theme inherits from Blank, the `_theme.less` you should copy from is located at `<Magento_Blank_theme_dir>/web/css/source/_theme.less`.
+1. Copy all variables you need from the parent `_theme.less`, including those which will not be changed. For example, if your theme inherits from Blank, the `_theme.less` you should copy from is located at `<Magento_Blank_theme_dir>/web/css/source/_theme.less`.
 1. Make the necessary changes.
 
 The drawback of this approach is that you need to monitor and manually update your files whenever the parent's `_theme.less` is updated.

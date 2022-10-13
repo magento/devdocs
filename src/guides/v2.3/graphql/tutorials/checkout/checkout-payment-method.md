@@ -15,18 +15,17 @@ contributor_link: https://www.atwix.com/
 ---
 
 {:.bs-callout-tip}
-You must always set a payment method.
+You must always set a payment method for an order.
 
 Use the following `cart` query to determine which payment methods which are available for your order.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-**Request:**
-
-{:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
-```text
+**Request:**
+
+```graphql
 query {
   cart(cart_id: "{ CART_ID }") {
     available_payment_methods {
@@ -54,21 +53,13 @@ query {
 }
 ```
 
-There are two mutation queries in GraphQl which can be use to set the payment method for your order:
-
-|Mutation|Description|
-|--- |--- |
-|`setPaymentMethodOnCart`|Sets the payment method for your order.|
-|`setPaymentMethodAndPlaceOrder`| **Deprecated** Sets the payment method and then immediately places your order. In this case ["Step 10. Place the order"]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-place-order.html) can be skipped.|
-
 ### Set payment method on cart {#setPaymentMethodOnCart}
 
 Use the `setPaymentMethodOnCart` mutation to set the payment method for your order. The value `checkmo` ("Check / Money order" payment method code) was returned in the query.
 
-**Request:**
+Send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
-{: .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
+**Request:**
 
 ```graphql
 mutation {
@@ -99,46 +90,6 @@ If the operation is successful, the response contains the code of the selected p
         "selected_payment_method": {
           "code": "checkmo"
         }
-      }
-    }
-  }
-}
-```
-
-### Set payment method and place order {#setPaymentMethodAndPlaceOrder}
-
-Use the `setPaymentMethodAndPlaceOrder` mutation to set the payment method and place the order.
-
-{:.bs-callout-warning}
-The `setPaymentMethodAndPlaceOrder` mutation has been deprecated.
-
-**Request:**
-
-```graphql
-mutation {
-  setPaymentMethodAndPlaceOrder(input: {
-      cart_id: "{ CART_ID }"
-      payment_method: {
-          code: "checkmo"
-      }
-  }) {
-    order {
-      order_id
-    }
-  }
-}
-```
-
-**Response:**
-
-If the operation is successful, the response contains the order ID.
-
-```json
-{
-  "data": {
-    "setPaymentMethodAndPlaceOrder": {
-      "order": {
-        "order_id": "000000001"
       }
     }
   }

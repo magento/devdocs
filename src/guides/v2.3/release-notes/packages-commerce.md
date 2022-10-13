@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce packages
+title: Adobe Commerce packages
 redirect-from: /guides/v2.3/release-notes/thirdparty-ee.html
 ---
 

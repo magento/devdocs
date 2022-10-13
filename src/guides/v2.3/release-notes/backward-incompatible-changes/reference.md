@@ -22,6 +22,28 @@ We expanded documentation coverage of the types of changes in 2.3.5. Previously,
 {:.bs-callout-info}
 Patch releases are primarily focused on delivering security and quality enhancements on a regular basis to help you keep your sites performing at their peak. On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues and high-impact quality issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes. See [Release policy]({{site.baseurl}}/release/policy/).
 
+## 2.3.7-p1 - 2.3.7-p2
+
+{% include backward-incompatible-changes/open-source/2.3.7-p1-2.3.7-p2.md %}
+
+{% include backward-incompatible-changes/commerce/2.3.7-p1-2.3.7-p2.md %}
+
+{% include backward-incompatible-changes/commerce/b2b-1.1.7-p1-1.1.7-p2.md %}
+
+## 2.3.7 - 2.3.7-p1
+
+{% include backward-incompatible-changes/open-source/2.3.7-2.3.7-p1.md %}
+
+{% include backward-incompatible-changes/commerce/2.3.7-2.3.7-p1.md %}
+
+{% include backward-incompatible-changes/commerce/b2b-1.1.7-1.1.7-p1.md %}
+
+## 2.3.6 - 2.3.7
+
+{% include backward-incompatible-changes/open-source/2.3.6-2.3.7.md %}
+
+{% include backward-incompatible-changes/commerce/2.3.6-2.3.7.md %}
+
 ## 2.3.5 - 2.3.6
 
 {% include backward-incompatible-changes/open-source/2.3.5-2.3.6.md %}

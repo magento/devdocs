@@ -1,0 +1,280 @@
+versions:
+  - 2.0
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.4
+features:
+  -
+    name: Maximizing conversion & sales
+    versions:
+      -
+        name: Seller Assisted Shopping
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: Live Search powered by Adobe Sensei
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: Product Recommendations powered by Adobe Sensei
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Page Builder drag and drop content management
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: PWA Studio
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Payment Services flexible payment options
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true 
+      -
+        name: Amazon Sales Channel
+        support:
+          2.0: false
+          2.1: false
+          2.2: true
+          2.3: true
+          2.4: true
+      -
+        name: B2B-ready functionality and APIs (check B2B's infosheet for more info)
+        support:
+          2.0: false
+          2.1: false
+          2.2: true
+          2.3: true
+          2.4: true
+      -
+        name: Instant Purchase
+        support:
+          2.0: false
+          2.1: false
+          2.2: true
+          2.3: true
+          2.4: true
+      -
+        name: Integrated Braintree for payments
+        support:
+          2.0: false
+          2.1: false
+          2.2: true
+          2.3: true
+          2.4: true
+      -
+        name: PayPal in-context checkout
+        support:
+          2.0: false
+          2.1: true
+          2.2: true
+          2.3: true
+          2.4: true
+  -
+    name: Smarter, faster operations
+    versions:
+      -
+        name: Enhanced Media Gallery & Asset Management
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: Buy Online Pickup In-Store (BOPIS)
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: B2B Order Approval Workflows
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: Adobe Stock Integration
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Multi-Source Inventory management
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Adobe Commerce Reporting
+        support:
+          2.0: false
+          2.1: true
+          2.2: true
+          2.3: true
+          2.4: true
+      -
+        name: Content staging & preview
+        support:
+          2.0: false
+          2.1: true
+          2.2: true
+          2.3: true
+          2.4: true
+      -
+        name: Payment Services reporting and reconciliation dashboard
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true 
+  -
+    name: Platform, performance, and security enhancements
+    versions:
+      -
+        name: Site-wide Analysis Tool
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: Composer Update Plugin
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: Upgrade Compatibility Tool
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: In-Product Guidance
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: PHP 8.1
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: PHP 7.4
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
+        name: PHP 7.3
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Continued tech stack updates
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Ongoing performance, quality, and security improvements
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Asynchronous & Bulk APIs
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: GraphQL
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Declarative Schema for easier installations and upgrades
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Security Tools:/ 2FA, ReCAPTCHA, ACL, WAF
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: true
+          2.4: true
+      -
+        name: Commerce-optimized cloud
+        support:
+          2.0: false
+          2.1: true
+          2.2: true
+          2.3: true
+          2.4: true

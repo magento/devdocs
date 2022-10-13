@@ -25,13 +25,23 @@ For security reasons, `SerializerInterface` implementations, such as the Json an
 
 ### Json (default)
 
-The [`Magento\Framework\Serialize\Serializer\Json`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/Json.php){:target="_blank"} class serializes and unserializes data using the [JSON](http://www.json.org/){:target="_blank"} format.
-This class does not unserialize objects.
+The [`Magento\Framework\Serialize\Serializer\Json`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/Json.php) class serializes and unserializes data using the [JSON](https://www.json.org/) format.
+
+### JsonHexTag
+
+The [`Magento\Framework\Serialize\Serializer\JsonHexTag`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/JsonHexTag.php) class serializes and unserializes data using the [JSON](https://www.json.org/) format using the `JSON_HEX_TAG` option enabled.
+
+### Base64Json
+
+The [`Magento\Framework\Serialize\Serializer\Base64Json`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/Base64Json.php) class serializes and encodes in the base64 format, and decodes the base64 encoded string and unserializes data using the [JSON](https://www.json.org/) format.
 
 ### Serialize
 
-The [`Magento\Framework\Serialize\Serializer\Serialize`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php){:target="_blank"} class is less secure than the Json implementation but provides better performance on large arrays.
-This class does not unserialize objects in [PHP](https://glossary.magento.com/php) 7.
+The [`Magento\Framework\Serialize\Serializer\Serialize`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php) class is less secure than the Json implementation but provides better performance on large arrays.
+
+### FormData
+
+The [`Magento\Framework\Serialize\Serializer\FormData`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/FormData.php) class unserializes the form data using the [JSON](https://www.json.org/) format. This class does not serialize objects to a form data format.
 
 {:.bs-callout-warning}
 Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities. Always use the `SerializerInterface` for serializing and unserializing.
@@ -112,17 +122,19 @@ If the interface does not exist or an earlier version of Magento 2 is being exec
 Here is an example:
 
 ```php
+use Magento\Framework\Serialize\SerializerInterface;
+use Magento\Framework\App\ObjectManager;
 
 ...
 /**
  * @param mixed $data
  * @return string
  */
- private function serialize($data)
- {
-    if (class_exists(\Magento\Framework\Serialize\SerializerInterface::class)) {
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $serializer = $objectManager->create(\Magento\Framework\Serialize\SerializerInterface::class);
+private function serialize($data)
+{
+    if (class_exists(SerializerInterface::class)) {
+        $objectManager = ObjectManager::getInstance();
+        $serializer = $objectManager->create(SerializerInterface::class);
         return $serializer->serialize($data);
     }
     return \serialize($data);

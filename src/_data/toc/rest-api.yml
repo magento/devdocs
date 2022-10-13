@@ -12,15 +12,15 @@ pages:
           children:
 
             - label: Admin REST endpoints
-              url: https://magento.redoc.ly/2.3.5-admin/
+              url: https://magento.redoc.ly/2.3.7-admin/
               include_versions: ["2.3"]
 
             - label: Customer REST endpoints
-              url: https://magento.redoc.ly/2.3.5-customer/
+              url: https://magento.redoc.ly/2.3.7-customer/
               include_versions: ["2.3"]
 
             - label: Guest REST endpoints
-              url: https://magento.redoc.ly/2.3.5-guest/
+              url: https://magento.redoc.ly/2.3.7-guest/
               include_versions: ["2.3"]
 
             - label: Asynchronous Admin REST endpoints
@@ -40,15 +40,15 @@ pages:
           children:
 
             - label: Admin REST endpoints
-              url: https://magento.redoc.ly/2.4.0-admin/
+              url: https://magento.redoc.ly/2.4.4-admin/
               include_versions: ["2.4"]
 
             - label: Customer REST endpoints
-              url: https://magento.redoc.ly/2.4.0-customer/
+              url: https://magento.redoc.ly/2.4.4-customer/
               include_versions: ["2.4"]
 
             - label: Guest REST endpoints
-              url: https://magento.redoc.ly/2.4.0-guest/
+              url: https://magento.redoc.ly/2.4.4-guest/
               include_versions: ["2.4"]
 
         - label: Generate a local API reference
@@ -111,7 +111,7 @@ pages:
 
           - label: Step 3. Create a customer
             url: /rest/tutorials/orders/order-create-customer.html
-          
+
           - label: Step 4. Create a quote
             url: /rest/tutorials/orders/order-create-quote.html
 
@@ -120,7 +120,7 @@ pages:
 
           - label: Step 6. Prepare for checkout
             url: /rest/tutorials/orders/order-prepare-checkout.html
-            
+
           - label: Step 7. Create an order
             url: /rest/tutorials/orders/order-create-order.html
 
@@ -211,7 +211,7 @@ pages:
 
           - label: Create a configurable product using bulk APIs tutorial
             url: /rest/tutorials/bulk-configurable-product/config-product-intro.html
-            
+
           - label: Step 1. Plan the product
             url: /rest/tutorials/bulk-configurable-product/plan-product.html
 
@@ -228,6 +228,22 @@ pages:
         class: tutorial
         url: /rest/tutorials/grouped-product/create-and-manage-grouped-products.html
 
+      - label: Create bundle products
+        class: tutorial
+        children:
+
+          - label: Create bundle products tutorial
+            url: /rest/tutorials/bundle-product/bundle-product-intro.html
+
+          - label: Step 1. Plan the product
+            url: /rest/tutorials/bundle-product/plan-product.html
+
+          - label: Step 2. Create the simple products
+            url: /rest/tutorials/bundle-product/create-simple-products.html
+
+          - label: Step 3. Create the bundle product
+            url: /rest/tutorials/bundle-product/create-bundle-product.html
+
     - label: Modules
       children:
 
@@ -239,7 +255,7 @@ pages:
 
             - label: Manage prices for multiple products
               url: /rest/modules/catalog-pricing.html
-        
+
         - label: Sales
           children:
 
@@ -276,4 +292,3 @@ pages:
             - label: In-Store Pickup
               url: /rest/modules/inventory/in-store-pickup.html
               exclude_versions: ["2.3"]
-              

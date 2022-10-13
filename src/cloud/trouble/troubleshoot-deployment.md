@@ -3,12 +3,13 @@ group: cloud-guide
 title: Troubleshoot deployment
 redirect_from:
    - /cloud/access-acct/trouble.html
+redirect_to: https://support.magento.com/hc/en-us/articles/4411647469965
 functional_areas:
   - Cloud
   - Deploy
 ---
 
-This topic discusses how to recover if you deployed the Magento application with the incorrect [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html). For example, you might have used the keys for another account or you might have used {{site.data.var.ce}} keys instead of {{site.data.var.ee}} keys.
+This topic discusses how to recover if you deployed the {{site.data.var.ee}} application with the incorrect [authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html). For example, you might have used the keys for another account or you might have used {{site.data.var.ce}} keys instead of {{site.data.var.ee}} keys.
 
 If you used the incorrect keys, deployment fails. To recover, you must clone the project, add the correct keys to `auth.json`, and push the change to the master branch.
 

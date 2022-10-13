@@ -1,0 +1,30 @@
+---
+title: LayeredNavigation
+content: "This module introduces Layered Navigation UI for Catalog (faceted search).\n\nThis
+  module can be removed from Magento installation without impact on the application.\n\n##
+  Installation\n\nFor information about a module installation in Magento 2, see [Enable
+  or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_LayeredNavigation
+  module. For more information about the Magento extension mechanism, see [Magento
+  plugins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_LayeredNavigation module.\n\n###
+  Layouts\n\nThis module introduces the following layout handles in the `view/frontend/layout`
+  directory:\n- `catalog_category_view_type_layered`\n- `catalog_category_view_type_layered_without_children`\n-
+  `catalogsearch_result_index`\n\nFor more information about a layout in Magento 2,
+  see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  UI components\n\nThis module extends following ui components located in the `view/adminhtml/ui_component`
+  directory:\n- `product_attribute_add_form`\n- `product_attributes_grid`\n- `product_attributes_listing`\n\nFor
+  information about a UI component in Magento 2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n###
+  Public APIs\n\n- `\\Magento\\LayeredNavigation\\Block\\Navigation\\FilterRendererInterface`\n
+  \   - render filter\n\nFor information about a public API in Magento 2, see [Public
+  interfaces & APIs](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
+  Additional information\n\n### Page Layout\nThis module modifies the following page_layout
+  in the `view/frontend.page_layout` directory: \n- `1columns` - moves block `catalog.leftnav`
+  into the `content.top` container\n- `2columns-left` - moves block `catalog.leftnav`
+  into the `sidebar.main\"` container\n- `2columns-right` - moves block `catalog.leftnav`
+  into the `sidebar.main\"` container\n- `3columns` - moves block `catalog.leftnav`
+  into the `sidebar.main\"` container\n- `empty` - moves block `catalog.leftnav` into
+  the `category.product.list.additional` container\n\nMore information can be found
+  in:\n- [Learn more about Layered Navigation](https://docs.magento.com/user-guide/catalog/navigation-layered.html)\n-
+  [Learn how to Configuring Layered Navigation](https://docs.magento.com/user-guide/catalog/navigation-layered-configuration.html)"

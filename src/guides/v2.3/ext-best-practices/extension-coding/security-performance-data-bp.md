@@ -14,7 +14,7 @@ You should make sure that your [extension](https://glossary.magento.com/extensio
 
   The Magento application is made up of a variety of components that work together to perform different business functions. We discourage the use of low-level functionality such as the [PHP](https://glossary.magento.com/php) `curl_*` functions and encourage the use of high-level components such as [`\Magento\Framework\HTTP\Adapter\Curl`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/Adapter/Curl.php). The use of low-level functionality can make Magento behave in unexpected ways that effectively disable built-in protection mechanisms, introduce exploitable inconsistencies, or otherwise expose the application to attack.
 
-For a list of discouraged low-level functions, review the [`Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php`](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php){:target="_blank"} file and the [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"}.
+For a list of discouraged low-level functions, review the [`Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php`](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php) file and the [Magento Coding Standard](https://github.com/magento/magento-coding-standard).
 
 ## Use wrappers instead of superglobal variables
 
@@ -24,15 +24,23 @@ Make sure that your Magento application does not directly use any PHP supergloba
   $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV
   ```
 
-Instead use the [`Magento\Framework\HTTP\PhpEnvironment\Request`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"} wrapper class to safely access these values.
+Instead use the [`Magento\Framework\HTTP\PhpEnvironment\Request`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php) wrapper class to safely access these values.
 
 ## Use the correct MySQL data types
 
 MySQL offers a range of numeric, string, and time data types. If you are storing a date, use a DATE or DATETIME field. Using an INTEGER or STRING can make SQL queries more complicated, if not impossible. It is often tempting to invent your own data formats; for example, storing serialized PHP objects in string. Database management may be easier, but MySQL will become a dumb data store and it may lead to problems later.
 
+## Use InnoDB storage engine
+
+We recommend using the InnoDB storage engine because other storage engines are not supported by some Cloud Database Services. Using the InnoDB storage engine ensures that extensions are more compatible with different environments.
+
 ## Avoid raw SQL queries
 
-Raw SQL queries can lead to potential security vulnerabilities and database portability issues. Use data adapter capabilities ([`Magento\Framework\DB\Adapter\Pdo\Mysql`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php){:target="_blank"} by default) to build and execute queries and move all data access code to a resource model. Use prepared statements to make sure that queries are safe to execute.
+Raw SQL queries can lead to potential security vulnerabilities and database portability issues. Use data adapter capabilities ([`Magento\Framework\DB\Adapter\Pdo\Mysql`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php) by default) to build and execute queries and move all data access code to a resource model. Use prepared statements to make sure that queries are safe to execute.
+
+## Use Primary Key
+
+A Primary Key is required for any DB cluster to run effectively. Without a Primary Key, you _will_ see performance issues during table replication.
 
 ## Use well-defined indexes
 
@@ -90,12 +98,12 @@ public function getCustomerCart()
 
 Make sure that your observer or plugin is declared in the proper area:
 
--  [`adminhtml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/etc/di.xml){:target="_blank"}
--  [`crontab`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cron/etc/di.xml){:target="_blank"}
--  [`frontend`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/etc/di.xml){:target="_blank"}
--  [`graphql`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/etc/di.xml){:target="_blank"}
--  [`webapi_rest`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml){:target="_blank"}
--  [`webapi_soap`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml){:target="_blank"}
+-  [`adminhtml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/etc/di.xml)
+-  [`crontab`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cron/etc/di.xml)
+-  [`frontend`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/etc/di.xml)
+-  [`graphql`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/etc/di.xml)
+-  [`webapi_rest`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml)
+-  [`webapi_soap`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml)
 
 The plugins and observers should be declared in the `<module-dir>/etc/<area>/` directory.
 

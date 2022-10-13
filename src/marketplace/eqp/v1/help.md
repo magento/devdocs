@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Getting help
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/help/
+layout: migrated
 ---
 
 Use these resources if you need additional help.
@@ -23,7 +25,7 @@ Use these resources if you need additional help.
 
 -  [Marketplace Developer Portal](https://developer.magento.com)
 -  [Sandbox Marketplace Developer Portal](https://developer-stg.magento.com)
--  [Magento Marketplace](https://marketplace.magento.com)
+-  [Commerce Marketplace](https://marketplace.magento.com)
 -  [Magento Account](https://account.magento.com)
 
 **Base URLs:**

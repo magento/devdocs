@@ -3,7 +3,7 @@ pages:
     - label: Introduction
       url: /payments-integrations/bk-payments-integrations.html
 
-    - label: Magento payment provider gateway
+    - label: Commerce payment provider gateway
       url: /payments-integrations/payment-gateway/payment-gateway-intro.html
       children:
 

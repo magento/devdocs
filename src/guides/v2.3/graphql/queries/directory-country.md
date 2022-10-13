@@ -7,13 +7,15 @@ redirect_from:
 
 Use the `country` query to retrieve information about a specific country.
 
+Use the [countries]({{page.baseurl}}/graphql/queries/directory-countries.html) query to retrieve a list of countries available in the system.
+
 ## Syntax
 
 `{country(id: String) {Country}}`
 
 ## Example usage
 
-The following query returns information about Australia.
+The following query uses a two-letter abbreviation for the country ID (id: "AU"), which returns information about Australia.
 
 **Request:**
 
@@ -110,3 +112,10 @@ The query returns a single `Country` object.
 
 *  [countries query]({{page.baseurl}}/graphql/queries/directory-countries.html)
 *  [currency query]({{page.baseurl}}/graphql/queries/directory-currency.html)
+
+## Errors
+
+Error | Description
+--- | ---
+`Country \"id\" value should be specified"` | The Country ID value must be specified to find the mapped country.
+`The country isn't available` | There is no country mapped to the given country ID.

@@ -5,12 +5,12 @@ title: WYSIWYG component
 menu_title: WYSIWYG component
 ---
 
-The WYSIWYG component is an [adapter](https://glossary.magento.com/adapter) for [TinyMCE v4](https://www.tinymce.com/){:target="_blank"} that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete [widget](https://glossary.magento.com/widget) declaration in the `content` option, which should contain both [markup](https://glossary.magento.com/markup) and the script responsible for creating the editor's instance.
+The WYSIWYG component is an [adapter](https://glossary.magento.com/adapter) for [TinyMCE v4](https://www.tinymce.com/) that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete [widget](https://glossary.magento.com/widget) declaration in the `content` option, which should contain both [markup](https://glossary.magento.com/markup) and the script responsible for creating the editor's instance.
 
 Magento supports all selector, plugin, and toolbar/menu configuration options supported by the TinyMCE v4 `tinymce.init()` method. However, Magento doesn't validate TinyMCE configuration options or flag invalid values before adding the editor to a page.
 
  {:.bs-callout-info}
-Refer to [TinyMCE's documentation](https://www.tinymce.com/docs/){:target="_blank"} for more information.
+Refer to [TinyMCE's documentation](https://www.tinymce.com/docs/) for more information.
 
 ## Configuration options
 
@@ -207,7 +207,7 @@ class ModifierPoolDataProvider extends AbstractDataProvider
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function getData()
     {
@@ -221,7 +221,7 @@ class ModifierPoolDataProvider extends AbstractDataProvider
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function getMeta()
     {

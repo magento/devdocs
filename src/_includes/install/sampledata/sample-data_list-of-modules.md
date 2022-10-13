@@ -21,7 +21,6 @@
 *  magento/module-theme-sample-data
 *  magento/module-widget-sample-data
 *  magento/module-wishlist-sample-data
-*  magento/sample-data
 *  magento/sample-data-media
 
 {{site.data.var.ee}} only:

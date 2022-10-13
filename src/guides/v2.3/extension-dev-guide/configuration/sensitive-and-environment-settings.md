@@ -28,6 +28,9 @@ Examples of sensitive information include:
 *  E-mail addresses
 *  Any personally identifiable information (e.g., address, phone number, date of birth, government identification number, etc.)
 
+{:.bs-callout-info}
+In keeping with current security and privacy best practices, be sure you are aware of any potential legal and security risks associated with the storage of customers’ full date of birth (month, day, year) along with other personal identifiers, such as full name, before collecting or processing such data.
+
 ### Environment or system-specific values
 
 _Environment_ or _system-specific_ values are unique to the system where Magento is deployed.
@@ -47,7 +50,7 @@ Examples of environment or system-specific values include:
 
 ## How to specify values as sensitive or system-specific
 
-Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool]{:target="_blank"} to the [`di.xml`][di-xml] file to specify either a system-specific or sensitive configuration value.
+Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool] to the [`di.xml`][di-xml] file to specify either a system-specific or sensitive configuration value.
 
 ### Example: Sensitive settings
 

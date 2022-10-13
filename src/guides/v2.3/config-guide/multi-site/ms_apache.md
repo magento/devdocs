@@ -31,10 +31,10 @@ If necessary, copy the existing `index.php` entry point script for your [website
 
 Setting up multiple stores consists of the following tasks:
 
-1. [Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the [Magento Admin](https://glossary.magento.com/magento-admin).
+1. [Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the [Admin](https://glossary.magento.com/magento-admin).
 1. Create one [Apache virtual host](#ms-apache-vhosts) per Magento website.
 
-## Step 1: Create websites, stores, and store views in the Magento Admin
+## Step 1: Create websites, stores, and store views in the Admin
 
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
@@ -44,8 +44,8 @@ This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`
 
 For more information about `SetEnvIf`, see:
 
-*  [Apache 2.2](http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html)
-*  [Apache 2.4](http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html)
+*  [Apache 2.2](https://httpd.apache.org/docs/2.2/mod/mod_setenvif.html)
+*  [Apache 2.4](https://httpd.apache.org/docs/2.4/mod/mod_setenvif.html)
 
 {% collapsible To create Apache virtual hosts: %}
 

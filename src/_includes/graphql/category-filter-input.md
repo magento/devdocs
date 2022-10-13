@@ -1,9 +1,12 @@
-The `CategoryFilterInput` object defines the filters to be used in this query.
+  The `CategoryFilterInput` object defines the filters to be used in this query.
 
 Attribute | Data type | Description
 --- | --- | ---
-`ids` | FilterEqualTypeInput | Filters by the specified category IDs
+`category_uid` | FilterEqualTypeInput | Filters by the unique category ID for a `CategoryInterface` object
+`ids` | FilterEqualTypeInput | Deprecated. Use `category_uid` instead. Filters by the specified category IDs
 `name` | FilterMatchTypeInput | Filters by the display name of the category
+`parent_category_uid` | FilterEqualTypeInput | Filters by the unique parent category ID for a `CategoryInterface` object
+`parent_id` | FilterEqualTypeInput | Deprecated. Use `parent_category_uid` instead
 `url_key` | FilterEqualTypeInput | Filters by the part of the URL that identifies the category
 `url_path` | FilterEqualTypeInput | Filters by the URL path for the category
 

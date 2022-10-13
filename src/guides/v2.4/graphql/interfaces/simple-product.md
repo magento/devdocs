@@ -7,9 +7,10 @@ contributor_link: https://www.atwix.com/
 
 The `SimpleProduct` data type implements the following interfaces:
 
--  `ProductInterface`
--  `PhysicalProductInterface`
--  `CustomizableProductInterface`
+-  [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html)
+-  [PhysicalProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html#PhysicalProductInterface)
+-  [CustomizableProductInterface]({{page.baseurl}}/graphql/interfaces/customizable-option-interface.html)
+-  [RoutableInterface]({{page.baseurl}}/graphql/interfaces/routable-interface.html)
 
 Attributes that are specific to the simple products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 
@@ -33,10 +34,10 @@ The following query returns information about simple product `24-MB01`, which is
     items {
       sku
       __typename
-      id
+      uid
       name
       categories {
-        id
+        uid
         name
         path
       }
@@ -58,6 +59,7 @@ The following query returns information about simple product `24-MB01`, which is
     }
   }
 }
+
 ```
 
 {% collapsible Response %}
@@ -70,16 +72,16 @@ The following query returns information about simple product `24-MB01`, which is
         {
           "sku": "24-MB01",
           "__typename": "SimpleProduct",
-          "id": 1,
+          "uid": "MQ==",
           "name": "Joust Duffle Bag",
           "categories": [
             {
-              "id": 3,
+              "uid": "Mw==",
               "name": "Gear",
               "path": "1/2/3"
             },
             {
-              "id": 4,
+              "uid": "NA==",
               "name": "Bags",
               "path": "1/2/3/4"
             }

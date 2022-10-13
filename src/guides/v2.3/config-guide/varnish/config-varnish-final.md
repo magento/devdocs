@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Now that you're using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.
+Now that you are using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.
 
 ### Verify HTTP response headers {#config-varnish-final-verify-headers}
 
@@ -60,7 +60,7 @@ For example, to use the Chrome inspector:
 
 Make sure the `<magento_root>/var/page_cache` directory is empty:
 
-1. Log in to your Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to your Magento server, or switch to, the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Enter the following command:
 
    ```bash

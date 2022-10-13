@@ -17,7 +17,7 @@ module LinkChecker
     baseurl = ENV['BUILD_NUMBER']
     return config['html-proofer'] unless baseurl
 
-    url_swap = { url_swap: { %r{\A/#{baseurl}} => '' } }
+    url_swap = { swap_urls: { %r{\A/#{baseurl}} => '' } }
     config['html-proofer'].merge(url_swap)
   end
 
@@ -40,6 +40,6 @@ module LinkChecker
   def self.file_name
     prefix = 'broken-links-in-'
     timestamp = Time.now.strftime('_%m-%d_%H-%M-%S')
-    prefix + current_branch + timestamp + '.md'
+    "#{prefix}#{current_branch}#{timestamp}.md"
   end
 end

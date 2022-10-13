@@ -4,6 +4,8 @@ title: Configure theme properties
 functional_areas:
   - Frontend
   - Theme
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/configure/
+layout: migrated
 ---
 
 ## What's in this topic
@@ -76,19 +78,19 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
       <td>
         The type of the images defined by the specified <code>id</code>. Allowed values:
         <ul>
-        <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
-        <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
-        <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
-        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the [Magento Admin](https://glossary.magento.com/magento-admin).</li>
-        <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
+        <li><code>image</code> - corresponds to the Base Image role in the Admin</li>
+        <li><code>small_image</code> - corresponds to the Small Image role in the Admin</li>
+        <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Admin</li>
+        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the [Admin](https://glossary.magento.com/magento-admin).</li>
+        <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Admin</li>
         </ul>
       </td>
     </tr>
 </tbody>
 </table>
 
-The following picture illustrates how image roles for product images are specified in the Magento Admin:
-![Setting image role in Magento Admin]({{ site.baseurl }}/common/images/fdg_theme_bck.png)
+The following picture illustrates how image roles for product images are specified in the Admin:
+![Setting image role in Admin]({{ site.baseurl }}/common/images/fdg_theme_bck.png)
 
 Image properties are defined by the corresponding elements, for example:
 
@@ -183,18 +185,3 @@ public function getBreakpoints()
 
  {:.bs-callout-info}
 Variables may be used within the scope of modules than the defined one.
-
-### Image lazy loading {#lazy_loading}
-
-When saving products, images are resized based on different properties including the `frame` variable `product_image_white_borders` in `view.xml`.
-By default, all images have frames. Magento calculates the required frame size and then it allocates the image to it.
-If the image is small, the white frame will be bigger.
-
-The variable `product_image_white_borders` can be overwritten in a custom theme. If it is not defined in a custom theme, it can also be set in `app/code/Magento/Catalog/etc/view.xml`.
-Variables defined in the theme `view.xml` have a higher priority. If the same variable is in a module's and also in the theme's `view.xml`, the module variable will be overwritten by the theme variable.
-
-If the `frame` property is enabled in the configuration file, native lazy-loading is enabled on the category product page, checkout shopping cart, and customer wish list.
-If the `frame` property is disabled, image lazy-loading is also disabled, unless the variable `enable_lazy_loading_for_images_without_borders` is enabled in `view.xml`.
-This is done to prevent small images from being stretched and distorted.
-
-If you have images within frames, and you are sure your images are correctly sized, you can enable lazy-loading by setting `enable_lazy_loading_for_images_without_borders` to `1` in `view.xml`.

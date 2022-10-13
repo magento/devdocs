@@ -4,6 +4,7 @@ title: Incorrect credentials
 functional_areas:
   - Cloud
   - Configuration
+redirect_to: https://support.magento.com/hc/en-us/articles/360040296392
 ---
 
 ## Incorrect credentials
@@ -29,7 +30,7 @@ To see the error log:
 
 To resolve this issue, you must clone the project locally and update `auth.json` with the correct {{site.data.var.ee}} [authorization keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
 
-Verify that you are using your own keys, and *not* [shared account keys](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html).
+Verify that you are using your own keys, and *not* [shared account keys]({{ site.user_guide_url }}/magento/magento-account-share.html).
 
 #### Get started
 
@@ -56,7 +57,7 @@ To get started:
 
 1. Change to a project directory.
 
-   For example if your project is named Magento 2, `cd magento-2`
+   For example if your project is named Commerce, `cd commerce`
 
 #### Update `auth.json` and redeploy the environment
 
@@ -162,4 +163,4 @@ To resolve the issue with credentials:
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
 {:.bs-callout-warning}
-For security reasons, we strongly recommend you change your Magento Admin URI, administrator username, and administrator password. For step-by-step details, see [Set environment and project variables]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+For security reasons, we strongly recommend you change your Admin URI, administrator username, and administrator password. For step-by-step details, see [Set environment and project variables]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).

@@ -5,16 +5,10 @@ functional_areas:
   - Upgrade
 ---
 
-## Prerequisites
+Complete the following tasks before upgrading Magento:
 
-Before running the [Module](https://glossary.magento.com/module) Manager, [Extension](https://glossary.magento.com/extension) Manager, or System Upgrade, complete the following tasks:
+*  [Verify Elasticsearch is installed](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html) (for Magento 2.4.0 and later)
+*  [Set `ulimit` for the web server user](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html)
+*  [Checklist](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html)
 
-*  [Set up cron]({{ page.baseurl }}/comp-mgr/prereq/prereq_cron.html)
-*  [Set `ulimit` for the web server user]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman-ulimit.html)
-*  [Checklist]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman-checklist.html)
-
-After you've completed all prerequisites, continue with:
-
-*  [Module Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
-*  [Extension install]({{ site.baseurl }}/extensions/install/)
-*  [System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
+After you have completed all prerequisites, continue with [upgrading Magento](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/implementation/perform-upgrade.html).

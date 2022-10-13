@@ -63,7 +63,7 @@ Before you begin, make sure you understand the following:
 
 ## Add CLI commands using dependency injection {#cli-sample}
 
-The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using [dependency injection](https://glossary.magento.com/dependency-injection). Look at the [`sample-module-command`](https://github.com/magento/magento2-samples/tree/master/sample-module-command){:target="_blank"} for an example. The module's [README.md](https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md){:target="_blank"} discusses how to install it.
+The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using [dependency injection](https://glossary.magento.com/dependency-injection). Look at the [`sample-module-command`](https://github.com/magento/magento2-samples/tree/master/sample-module-command) for an example. The module's [README.md](https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md) discusses how to install it.
 
 Following is a summary of the process:
 
@@ -126,7 +126,7 @@ Following is a summary of the process:
    ```
 
    {:.bs-callout-info}
-   Style the output text by using `<error>`, `<info>`, or `<comment>` tags. See [Symfony](https://symfony.com/doc/master/console/coloring.html){:target="_blank"} docummentation for more information about styling.
+   Style the output text by using `<error>`, `<info>`, or `<comment>` tags. See [Symfony](https://symfony.com/doc/current/console/coloring.html) documentation for more information about styling.
 
 1. Declare your Command class in `Magento\Framework\Console\CommandListInterface` and configure the command name using dependency injection (`<your component root dir>/etc/di.xml`):
 

@@ -21,9 +21,9 @@ where:
 
 Condition | Notes
 --- | ---
-`eq` | Equals.
+`eq` | Equals
 `finset` | A value within a set of values
-`from` | The beginning of a range. Must be used with `to`
+`from` | The beginning of a range. Must be used with `to`.
 `gt` | Greater than
 `gteq` |  Greater than or equal
 `in` | In. The `value` can contain a comma-separated list of values.
@@ -32,11 +32,12 @@ Condition | Notes
 `lteq` | Less than or equal
 `moreq` | More or equal
 `neq` | Not equal
-`nfinset` | A value that is not within a set of values
+`nfinset` | A value that is not within a set of values.
 `nin` | Not in. The `value` can contain a comma-separated list of values.
+`nlike` | Not like
 `notnull` | Not null
 `null` | Null
-`to` | The end of a range. Must be used with `from`
+`to` | The end of a range. Must be used with `from`.
 
 {:.bs-callout-info}
 `condition_type` is optional if the operator is `eq`.
@@ -92,6 +93,18 @@ searchCriteria[filter_groups][0][filters][0][field]=created_at&
 searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00&
 searchCriteria[filter_groups][0][filters][0][condition_type]=gt
 ```
+
+## Simple search using an `in` conditions type
+
+The following search finds all the products that are provided in the value field. When you specify the `in` condition type, the value field must be a comma separated list.
+
+```http
+GET <host>/rest/<store_code>/V1/products?
+searchCriteria[filter_groups][0][filters][0][field]=entity_id&
+searchCriteria[filter_groups][0][filters][0][value]=1,2,3,4,5&
+searchCriteria[filter_groups][0][filters][0][condition_type]=in
+```
+The query returns 5 items.
 
 ### Logical OR search
 

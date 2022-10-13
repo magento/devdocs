@@ -2,6 +2,8 @@
 layout: tutorial
 group: rest-api
 title: Step 1. Configure your environment
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/configure-environment/
+layout: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 1. Configure your environment
 menu_order: 10

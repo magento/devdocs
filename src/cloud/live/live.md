@@ -11,7 +11,7 @@ If you checked this information before deploying and testing in Staging, conside
 
 ## Why test fully in Integration, Staging, and Production? {#whytest}
 
-We strongly recommend testing in the Integration, Staging, and Production environments due to the complexity of ensuring that your custom code, themes, Magento extensions, and third-party integrations all work together to operate your Magento stores. The following are common issues you can discover and resolve when you complete testing in the Integration and Staging environments before updating your Production environment:
+We strongly recommend testing in the Integration, Staging, and Production environments due to the complexity of ensuring that your custom code, themes, extensions, and third-party integrations all work together to operate your stores. The following are common issues you can discover and resolve when you complete testing in the Integration and Staging environments before updating your Production environment:
 
 -  Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a warning before they occur in Production.
 
@@ -31,12 +31,12 @@ You need the following information and resources to prepare for site launch:
 -  List of all storefront domains to add to the certificate
 -  SSL/TLS certificate
 
-As part of {{site.data.var.ece}} subscription, Magento provides a Domain-Validated SSL/TLS certificate issued by Let's Encrypt. Each Pro Production, Staging, and Starter Production (`master`) environment has a unique certificate that covers all domains and subdomains in that environment. These certificates are provisioned and uploaded to your site automatically after you update your DNS configuration for development and production. See [Provision SSL/TLS certificates]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates).
+As part of {{site.data.var.ece}} subscription, Adobe provides a Domain-Validated SSL/TLS certificate issued by Let's Encrypt. Each Pro Production, Staging, and Starter Production (`master`) environment has a unique certificate that covers all domains and subdomains in that environment. These certificates are provisioned and uploaded to your site automatically after you update your DNS configuration for development and production. See [Provision SSL/TLS certificates]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates).
 
 {:.bs-callout-info}
-If you want to deploy your own Extended Validation SSL certificate for your company instead of using the Let's Encrypt certificate, contact your CTA or submit a [Magento Support ticket](https://support.magento.com/hc/en-us/articles/360019088251).
+If you want to deploy your own Extended Validation SSL certificate for your company instead of using the Let's Encrypt certificate, contact your CTA or submit a [Support ticket](https://support.magento.com/hc/en-us/articles/360019088251).
 
-## Set up Magento Security Scan Tool {#security-scan}
+## Set up the Security Scan Tool {#security-scan}
 
 {%
 include note.html
@@ -49,19 +49,19 @@ content='The security scan tool uses the following public IP addresses:
 52.87.98.44
 ```
 
-You must whitelist these IP addresses in your network firewall rules to allow the tool to scan your site. The tool posts requests to ports 80 and 443 only.'
+You must add these IP addresses to an allowlist in your network firewall rules to allow the tool to scan your site. The tool posts requests to ports 80 and 443 only.'
 %}
 
-The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out-of-date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login).
+The Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out-of-date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Commerce Marketplace account](https://account.magento.com/customer/account/login).
 
 -  Monitor your sites security status and applied security updates
 -  Receive security updates and site-specific notifications
 
-See the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html) for information about setting up and using the security scan tool. Typically, you start using this tool when you begin user acceptance testing (UAT).
+See the [User Guide]({{ site.user_guide_url }}/magento/security-scan.html) for information about setting up and using the security scan tool. Typically, you start using this tool when you begin user acceptance testing (UAT).
 
-Each site you scan must be registered through the Magento Security Scan tab. During the registration process, you must accept the Magento disclaimer before you can begin scanning.  You control both the schedule and authorizing the user to receive notifications when each scan is complete.  You can schedule scans for a specific, recurring date and time, or run a scan on demand as needed.
+Each site you scan must be registered through the Security Scan tab. During the registration process, you must accept the disclaimer before you can begin scanning. You control both the schedule and authorizing the user to receive notifications when each scan is complete.  You can schedule scans for a specific, recurring date and time, or run a scan on demand as needed.
 
-The Magento Security Scan Tool uses several user agent strings to simulate real-life malware activity. You might see the following user agents in your analytics or access logs:
+The Security Scan Tool uses several user agent strings to simulate real-life malware activity. You might see the following user agents in your analytics or access logs:
 
 ```text
 Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0
@@ -75,7 +75,7 @@ Visbot/2.0 (+http://www.visvo.com/en/webmasters.jsp;bot@visvo.com)
 {:.procedure}
 To scan your site:
 
-1. Access your [Magento Marketplace account](https://account.magento.com/customer/account/login).
+1. Access your [Commerce Marketplace account](https://account.magento.com/customer/account/login).
 1. Click the Security Scan tab and select **Go to Security Scan**.
 1. In the _Actions_ column for the site, select **Run Scan**. A notification status displays the scheduled scan.
 

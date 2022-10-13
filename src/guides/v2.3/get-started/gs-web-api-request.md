@@ -122,7 +122,7 @@ This example shows you how to construct a REST web API call to create an account
 
     The `createAccount` call requires a `customer` data object. The `password` and `redirectUrl` values are optional. The default `password` value is `null` and the default `redirectUrl` value is blank.
 
-1. To pass the <code>customer</code> data object in the POST call payload, specify [JSON](http://www.json.com/) or [XML](https://glossary.magento.com/xml) request body on the call.
+1. To pass the <code>customer</code> data object in the POST call payload, specify JSON or [XML](https://glossary.magento.com/xml) request body on the call.
 
 ### Customers Search API request example {#customers-search-api-request-example}
 
@@ -169,7 +169,7 @@ The following example builds a Customers Search request based on search criteria
                         ]
                     ]
                 ]
-            ]
+            ],
             'current_page' => 1,
             'page_size' => 10
         ],

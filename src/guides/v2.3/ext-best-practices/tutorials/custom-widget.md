@@ -36,7 +36,7 @@ This tutorial shows you how to create and insert your own widget on the frontend
 ```xml
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-    <widget class="OrangeCompany\Learning\Block\Widget\Test" id="orange_test_widget">
+    <widget class="ExampleCorp\Learning\Block\Widget\Test" id="orange_test_widget">
         <label>My New Widget</label>
         <description>This is a test widget!!!</description>
         <parameters>
@@ -75,7 +75,7 @@ Add a text and a select field:
 ```xml
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-    <widget class="OrangeCompany\Learning\Block\Widget\Test" id="orange_test_widget">
+    <widget class="ExampleCorp\Learning\Block\Widget\Test" id="orange_test_widget">
         ...
         <parameters>
             <parameter name="title" xsi:type="text" required="true" visible="true" sort_order="10">
@@ -129,10 +129,10 @@ After selecting the widget type and the layout location, we should be able to se
 Create the block class that we provided on the widget's initialization, responsible for
 rendering it on the frontend.
 
-> `OrangeCompany/Learning/Block/Widget/Test`
+> `ExampleCorp/Learning/Block/Widget/Test`
 
 ```php
-namespace OrangeCompany\Learning\Block\Widget;
+namespace ExampleCorp\Learning\Block\Widget;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Widget\Block\BlockInterface;
@@ -147,11 +147,11 @@ class Test extends Template implements BlockInterface
 
 And finally, create the template that will be used for showing the widget's data on the frontend.
 
-> `OrangeCompany/Learning/view/frontend/templates/widget/test.phtml`
+> `ExampleCorp/Learning/view/frontend/templates/widget/test.phtml`
 
 ```php
 <?php
-/** \OrangeCompany\Learning\Block\Widget\Test $block */
+/** \ExampleCorp\Learning\Block\Widget\Test $block */
 ?>
 <h3><?= $block->escapeHtml($block->getData('title')) ?></h3>
 <h3><?= $block->escapeHtml(__('Size:')) ?> <?= $block->escapeHtml($block->getData('size')) ?></h3>

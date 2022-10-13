@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Uninstall language packages
 functional_areas:
   - Install

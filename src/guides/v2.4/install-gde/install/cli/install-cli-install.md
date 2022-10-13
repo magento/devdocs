@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 05_Command-line installation
 title: Install the Magento software
 menu_title: Install the Magento software
@@ -8,10 +7,9 @@ functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/install.html
+layout: migrated
 ---
-
-{:.bs-callout-tip}
-Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
 ## Before you start your installation {#instgde-install-cli-prereq}
 
@@ -23,7 +21,7 @@ Before you begin, complete the following steps:
 
 *  Complete the first installation steps. See [Your install or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
-*  After you log in to the Magento server, [switch to the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+*  After you log in to the Magento server, [switch to the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 *  Review the [Get started with the command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html) overview.
 
@@ -66,7 +64,7 @@ The install command uses the following format:
 magento setup:install --<option>=<value> ... --<option>=<value>
 ```
 
-The following tables describe the installation option names and values. For example installation commands. see [Sample localhost installations](#install-cli-example).
+The following tables describe the installation option names and values, such as installation commands. See [Sample localhost installations](#install-cli-example).
 
 {:.bs-callout-info}
 Any options that contain spaces or special characters must be enclosed in either single or double quotes.
@@ -75,7 +73,7 @@ Any options that contain spaces or special characters must be enclosed in either
 
 The following options specify the user information and credentials for the Magento admin user.
 
-In Magento Commerce version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
+In {{site.data.var.ee}} version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
 
 |Name|Value|Required?|
 |--- |--- |--- |
@@ -89,9 +87,9 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 
 |Name|Value|Required?|
 |--- |--- |--- |
-|`--base-url`|Base URL to use to access your Magento Admin and storefront in any of the following formats:<br><br>`http[s]://<host or ip>/<your Magento install dir>/`.<br><br>**Note:** The scheme (http:// or https://) and a trailing slash are both required.<br><br>`<your Magento install dir>` is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be magento2 or it might be blank.<br><br>To access Magento on localhost, you can use either `http://127.0.0.1/<your Magento install dir>/` or `http://127.0.0.1/<your Magento install dir>/`.<br><br>- `{{base_url}}` which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the hostname magento.example.com, you can install the Magento software with `--base-url={{base_url}}` and access the Magento Admin with a URL like http://magento.example.com/admin.|Yes|
-|`--backend-frontname`|Uniform Resource Identifier (URI) to access the Magento Admin. You can omit this parameter to let Magento generate a random URI for you with the following pattern <code>admin_jkhgdfq</code>.<br><br>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.<br><br>The URI displays at the end of the installation. You can display it later at any time using the magento info:adminuri command.<br><br>If you choose to enter a value, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (`_`) only.|No|
-|`--db-host`|Use any of the following:<br><br>- The database server's fully qualified hostname or IP address.<br><br>- `localhost` (default) or `127.0.0.1` if your database server is on the same host as your web server.localhost means the MySQL client library uses UNIX sockets to connect to the database. `127.0.0.1` causes the client library to use the TCP protocol. For more information about sockets, see the [PHP PDO_MYSQL documentation](http://php.net/manual/en/ref.pdo-mysql.php).<br><br>**Note:** You can optionally specify the database server port in its hostname like www.example.com:9000|Yes|
+|`--base-url`|Base URL to use to access your Admin and storefront in any of the following formats:<br><br>`http[s]://<host or ip>/<your Magento install dir>/`.<br><br>**Note:** The scheme (http:// or https://) and a trailing slash are both required.<br><br>`<your Magento install dir>` is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be magento2 or it might be blank.<br><br>To access Magento on localhost, you can use either `http://127.0.0.1/<your Magento install dir>/` or `http://127.0.0.1/<your Magento install dir>/`.<br><br>- `{{base_url}}` which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the hostname magento.example.com, you can install the Magento software with `--base-url={{base_url}}` and access the Admin with a URL like http://magento.example.com/admin.|Yes|
+|`--backend-frontname`|Uniform Resource Identifier (URI) to access the Admin. You can omit this parameter to let Magento generate a random URI for you with the following pattern <code>admin_jkhgdfq</code>.<br><br>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.<br><br>The URI displays at the end of the installation. You can display it later at any time using the magento info:adminuri command.<br><br>If you choose to enter a value, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (`_`) only.|No|
+|`--db-host`|Use any of the following:<br><br>- The database server's fully qualified hostname or IP address.<br><br>- `localhost` (default) or `127.0.0.1` if your database server is on the same host as your web server.localhost means the MySQL client library uses UNIX sockets to connect to the database. `127.0.0.1` causes the client library to use the TCP protocol. For more information about sockets, see the [PHP PDO_MYSQL documentation](https://php.net/manual/en/ref.pdo-mysql.php).<br><br>**Note:** You can optionally specify the database server port in its hostname like www.example.com:9000|Yes|
 |`--db-name`|Name of the Magento database instance in which you want to install the Magento database tables.<br><br>Default is `magento2`.|Yes|
 |`--db-user`|Username of the Magento database instance owner.<br><br>Default is `root`.|Yes|
 |`--db-password`|Magento database instance owner's password.|Yes|
@@ -104,27 +102,30 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--timezone`|Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering magento info:timezone:list from the bin directory.)|No|
 |`--use-rewrites`|`1` means you use web server rewrites for generated links in the storefront and Admin.<br><br>`0` disables the use of web server rewrites. This is the default.|No|
 |`--use-secure`|`1` enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.<br><br>`0` disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be 0. This is the default.|No|
-|`--base-url-secure`|Secure base URL to use to access your Magento Admin and storefront in the following format: `http[s]://<host or ip>/<your Magento install dir>/`|No|
-|`--use-secure-admin`|`1` means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.<br><br>`0` means you do not use SSL with the Admin. This is the default.|No|
-|`--admin-use-security-key`|1 causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent cross-site script forgery attacks. This is the default.<br><br>`0` disables the use of the key.|No|
+|`--base-url-secure`|Secure base URL to use to access your Admin and storefront in the following format: `http[s]://<host or ip>/<your Magento install dir>/`|No|
+|`--use-secure-admin`|`1` means you use SSL to access the Admin. Make sure your web server supports SSL before you select this option.<br><br>`0` means you do not use SSL with the Admin. This is the default.|No|
+|`--admin-use-security-key`|1 causes the Magento software to use a randomly generated key value to access pages in the Admin and in forms. These key values help prevent cross-site script forgery attacks. This is the default.<br><br>`0` disables the use of the key.|No|
 |`--session-save`|Use any of the following:<br><br>- `db` to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.<br><br>- `files` to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow, you have a clustered database, or you want to store session data in Redis.<br><br>- `redis` to store session data in Redis. If you will be using Redis for default or page caching, Redis must be already installed. See Use Redis for session storage for additional information about configuring support for Redis.|No|
 |`--key`|If you have one, specify a key to encrypt sensitive data in the Magento database. If you don't have one, Magento generates one for you.|Yes|
 |`--cleanup-database`|To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.|No|
 |`--db-init-statements`|Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to this one before you set any values.<br><br>Default is `SET NAMES utf8;`.|No|
 |`--sales-order-increment-prefix`|Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.|No|
 
-**Elasticsearch configuration options:**
+{:.bs-callout-tip}
+To enable remote storage services during installation, see [Configure Remote Storage]({{ page.baseurl }}/config-guide/remote-storage/config-remote-storage.html) in the _Configuration Guide_.
+
+**Search engine configuration options:**
 
 |Name|Value|Required?|
 |--- |--- |--- |
-`--search-engine` | The version of Elasticsearch to use as the search engine. Possible values are `elasticsearch7`, `elasticsearch6`, and `elasticsearch5`. The default is `elasticsearch7`. Elasticsearch 5 has been deprecated and is not recommended. | No
-`--elasticsearch-host` | The host name or IP address where Elasticsearch is running. The default is `localhost`. | No
+`--search-engine` | The version of the search engine. Possible values are `elasticsearch7`, `elasticsearch6`, and `elasticsearch5`. The default is `elasticsearch7`. If you have installed OpenSearch as your search engine, specify the value `elasticsearch7`. Elasticsearch 5 has been deprecated and is not recommended. | No
+`--elasticsearch-host` | The host name or IP address where the search engine is running. The default is `localhost`. | No
 `--elasticsearch-port` | The port for incoming HTTP requests. The default is `9200`. | No
-`--elasticsearch-index-prefix` | A prefix that identifies the Elasticsearch index. The default is `magento2`. | No
+`--elasticsearch-index-prefix` | A prefix that identifies the search index. The default is `magento2`. | No
 `--elasticsearch-timeout` | The number of seconds before the system times out. The default is `15`. | No
-`--elasticsearch-enable-auth` | Enables authentication on the Elasticsearch server. The default is `false`. | No
-`--elasticsearch-username` | The user ID to authenticate Elasticsearch | No, unless authentication is enabled
-`--elasticsearch-password` | The password to authenticate Elasticsearch | No, unless authentication is enabled
+`--elasticsearch-enable-auth` | Enables authentication on the search engine server. The default is `false`. | No
+`--elasticsearch-username` | The user ID to authenticate  | No, unless authentication is enabled
+`--elasticsearch-password` | The password to authenticate | No, unless authentication is enabled
 
 **RabbitMQ configuration options:**
 
@@ -137,6 +138,17 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.|No|
 |`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
 |`--consumers-wait-for-messages`|Should consumers wait for a message from the queue? 1 - Yes, 0 - No|No|
+
+**Remote storage options:**
+
+| Name| Description | Required? |
+|--- |--- |--- |
+| `remote-storage-driver` | Adapter name<br>Possible values:<br>**file**: Disables remote storage and uses the local filesystem<br>**aws-s3**: Use the [Amazon Simple Storage Service (Amazon S3)](https://aws.amazon.com/s3/) | No |
+| `remote-storage-bucket` | Object storage or container name | No |
+| `remote-storage-prefix` | Optional prefix (location inside of object storage) | No |
+| `remote-storage-region` | Region name | No |
+| `remote-storage-key` | Optional access key | No |
+| `remote-storage-secret` | Optional secret key | No |
 
 **Lock configuration options:**
 
@@ -166,7 +178,7 @@ The following examples show the commands to complete install {{ site.data.var.ee
 
 The following example installs Magento with the following options:
 
-*  The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Magento Admin is `admin`; therefore:
+*  The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Admin is `admin`; therefore:
 
    Your storefront URL is `http://127.0.0.1`
 
@@ -236,7 +248,7 @@ After installation you can create an admin user using the `admin:user:create` co
 
 The following example installs Magento with the following options:
 
-*  The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Magento Admin is `admin`; therefore:
+*  The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Admin is `admin`; therefore:
 
    Your storefront URL is `http://127.0.0.1`
 
@@ -261,8 +273,7 @@ The following example installs Magento with the following options:
 
 ```bash
 magento setup:install --base-url=http://127.0.0.1/magento2/ \
---db-host=localhost --db-name=magento \
---db-user=magento --db-password=magento \
+--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --cleanup-database \
@@ -271,7 +282,7 @@ magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --elasticsearch-port=9200
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You must enter the command either on a single line or, as in the preceding example, with a `\` character at the end of each line.
 
 Messages like the following display if the installation is successful:

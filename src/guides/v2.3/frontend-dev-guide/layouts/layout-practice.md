@@ -11,7 +11,7 @@ This article features a step-by-step illustration of how a real-life layout cust
 
 ## Moving customer account links
 
-In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
+In their Orange theme, ExampleCorp wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
 ![layout transform]
 
@@ -72,7 +72,7 @@ The markup required for the drop-down is the following:
 
 ### Step 1: Define the layout blocks
 
-OrangeCo [applies the Luma theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html). Using the approach described in [Locate templates, layouts, and styles]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html) they find out that the original block responsible for displaying the header links is defined in
+ExampleCorp [applies the Luma theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html). Using the approach described in [Locate templates, layouts, and styles]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html) they find out that the original block responsible for displaying the header links is defined in
 
 `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`:
 
@@ -119,7 +119,7 @@ The links that should be in header, but outside the drop-down menu are added in 
 
 ### Step 2: Define the templates
 
-Similar to the way they defined the layout on the previous step, OrangeCo
+Similar to the way they defined the layout on the previous step, ExampleCorp
 defines the template which is used as the drop-down container : `<Magento_Customer_module_dir>/view/frontend/templates/account/customer.phtml`.
 
 ```php
@@ -166,11 +166,11 @@ See [app/code/Magento/Customer/view/frontend/templates/account/customer.phtml]({
 
 ### Step 3: Extend the base layout to add a block
 
-OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` module.
+ExampleCorp needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` module.
 
 So the following [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) layout is added in the Orange theme:
 
-`app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml`
+`app/design/frontend/ExampleCorp/orange/Magento_Theme/layout/default.xml`
 
 ```xml
 <?xml version="1.0"?>
@@ -189,9 +189,9 @@ So the following [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layou
 
 ### Step 4: Move links
 
-To move the links to the `header.links` block, OrangeCo adds an extending layout:
+To move the links to the `header.links` block, ExampleCorp adds an extending layout:
 
-`app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml`
+`app/design/frontend/ExampleCorp/orange/Magento_Customer/layout/default.xml`
 
 ```xml
 <?xml version="1.0"?>
@@ -214,12 +214,12 @@ Now the customer links look like following:
 
 Clicking the **Change** button toggles the `active` CSS class:
 
-To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo added  [_extend.less]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
+To add quick basic styling and visual behavior to the "dropdown" menu, ExampleCorp added  [_extend.less]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
 
 *  Redundant elements are hidden with CSS.
 *  The `.lib-dropdown()` mixin from [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element.
 
-`app/design/frontend/OrangeCo/orange/web/css/source/_extend.less`
+`app/design/frontend/ExampleCorp/orange/web/css/source/_extend.less`
 
 ```css
 //

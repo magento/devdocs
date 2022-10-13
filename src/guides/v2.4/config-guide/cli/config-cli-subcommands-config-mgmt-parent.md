@@ -1,1 +1,8 @@
-../../../v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-parent.md
+---
+group: configuration-guide
+title: Configuration management
+functional_areas:
+  - Configuration
+  - System
+  - Setup
+---

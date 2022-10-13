@@ -17,7 +17,7 @@ The basic interface for a request builder is [`\Magento\Payment\Gateway\Request\
 
 `\Magento\Payment\Gateway\Request\BuilderComposite` is a container for a list of `\Magento\Payment\Gateway\Request\BuilderInterface` implementations. It gets a list of classes, or types, or virtual type names, and performs a lazy instantiation on an actual `BuilderComposite::build([])` call. So that you can have as many objects, as required, but only those, which are needed for a request are instantiated.
 
-`BuilderComposite` implements the [composite design pattern](http://designpatternsphp.readthedocs.io/en/latest/Structural/Composite/README.html).
+`BuilderComposite` implements the [composite design pattern](https://designpatternsphp.readthedocs.io/en/latest/Structural/Composite/README.html).
 
 The concatenation strategy is defined in the `BuilderComposite::merge()` method. So if you need to alter the strategy, you need to add your custom implementation of `BuilderComposite`.
 
@@ -25,7 +25,7 @@ The concatenation strategy is defined in the `BuilderComposite::merge()` method.
 
 Builder composites are added using [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) in `di.xml`. A builder composite might comprise simple builders as well as other builder composites.
 
-Example of adding composite builders for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml`]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml)):
+Example of adding composite builders for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/di.xml)):
 
 {% highlight xml %}
 ...

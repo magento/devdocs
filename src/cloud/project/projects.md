@@ -23,22 +23,32 @@ The following sections detail more about project and environment variables:
 
 -  [Overview of environment variables]({{ site.baseurl }}/cloud/env/variables-intro.html)
 -  [{{site.data.var.ece}} environment variables]({{ site.baseurl }}/cloud/env/variables-cloud.html)
--  [Magento application environment variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html)
+-  [Application environment variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html)
 -  [Configuration management]({{ site.baseurl }}/cloud/live/sens-data-over.html)
 -  [Example of configuration management]({{ site.baseurl }}/cloud/live/sens-data-initial.html)
 
 ### Upgrade and patch {#upgrade}
 
-To upgrade and patch Magento, see:
+To upgrade and patch {{ site.data.var.ece }} projects, see:
 
--  [Upgrade and test Magento Commerce]({{ site.baseurl }}/cloud/project/project-upgrade.html)
--  [Patch and test Magento Commerce]({{ site.baseurl }}/cloud/project/project-patch.html)
+-  [Upgrade versions]({{ site.baseurl }}/cloud/project/project-upgrade.html)
+-  [Apply patches]({{ site.baseurl }}/cloud/project/project-patch.html)
 
 ## Access the Project Web Interface {#login}
 
-With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud).
+The Project Web Interface provides features to create, manage, and deploy code in Integration, Staging, and Production environments for Starter and Pro plans.
 
-![Log in to a project]({{ site.baseurl }}/common/images/cloud/cloud_project-login.png){:width="450px"}
+{:.procedure}
+To access your projects and environments:
+
+1. Log in to your account at [https://account.magento.com](https://account.magento.com).
+1. Click **Projects (Cloud)**.
+1. Locate your project and click **View Project Page**.
+
+The **View Project Page** link displays for Account Owners only. If you are not an Account Owner, go to [https://accounts.magento.cloud](https://accounts.magento.cloud) instead.
+
+{:.bs-callout-info}
+If you do not see any projects, you must contact the [Account Owner or Super User]({{ site.baseurl }}/cloud/project/user-admin.html) associated with the project and request access.
 
 ## Fastly and New Relic credentials {#integrations}
 
@@ -67,7 +77,7 @@ To review your integration tokens, IDs, and more:
 
 ## Access the project and environments {#project}
 
-When you first login, a list of projects you have access to displays. As an Account Owner, you can only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
+When you first login, a list of projects you have access to displays. As an Account Owner, you can only see your company's project. An Adobe Solutions Partner may see multiple projects for all of the clients they support.
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 
@@ -126,7 +136,7 @@ On the *Variables* tab, you can view, create, and manage environment variables f
 
 ![Environment variables fastly credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-web-ui-environment-variables.png){:width="650px"}
 
-You can also [list and review]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html) environment variables using the following Magento Cloud CLI command.
+You can also [list and review]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html) environment variables using the following `magento-cloud` CLI command.
 
 ```bash
 magento-cloud variable:get -e <environment ID>

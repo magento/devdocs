@@ -16,7 +16,7 @@ Composer manages required libraries and dependencies for your project and instal
 
 For {{site.data.var.ece}}, we use the `composer.json` and `composer.lock` files, located in the project root directory, to manage the modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more.
 
-Magento extension and module developers use the `composer.json` file to manage product installations and upgrades. See [Install, manage, and upgrade extensions]({{ site.baseurl }}/cloud/howtos/install-components.html).
+Extension and module developers use the `composer.json` file to manage product installations and upgrades. See [Install, manage, and upgrade extensions]({{ site.baseurl }}/cloud/howtos/install-components.html).
 
 The `composer.lock` file stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.
 
@@ -47,17 +47,17 @@ This package depends on a floating version of `vendor/magento/magento-cloud-conf
 The main packages of this metapackage are the following:
 
 -  **vendor/magento/ece-tools**—The `{{site.data.var.ct}}` package is compatible with {{site.data.var.ee}} version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
--  **vendor/magento/product-enterprise-edition**—This [metapackage](https://glossary.magento.com/metapackage) requires Magento application components, including modules, frameworks, themes, and so on.
+-  **vendor/magento/product-enterprise-edition**—This [metapackage](https://glossary.magento.com/metapackage) requires application components, including modules, frameworks, themes, and so on.
 -  **vendor/fastly2/magento2**—This module manages the Fastly CDN & services for the Pro Staging and Production and Starter Production environments. See [Fastly Documentation]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html).
 -  **vendor/magento/module-paypal-on-boarding**—This module provides PayPal payment gateway checkout by connecting to your PayPal merchant account. See [PayPal On-Boarding tool]({{ site.baseurl }}/cloud/live/paypal-onboarding.html).
 
 ## Base packages and file marshalling
 
-Magento contains two base packages: `magento/magento2-base` and `magento/magento2-ee-base`. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, [PHP](https://glossary.magento.com/php) entry points, and so on.
+{{site.data.var.ee}} contains two base packages: `magento/magento2-base` and `magento/magento2-ee-base`. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, [PHP](https://glossary.magento.com/php) entry points, and so on.
 
 These files are location-dependent, and cannot reside in the `vendor` directory. They are distributed as part of the base packages, and they rely on hooks located in the `magento/magento-composer-installer` package, which marshals them to the appropriate locations.
 
-One way in which {{site.data.var.ece}} deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment—specifically, the marshalling functionality of `magento/magento-composer-installer`—it is disabled.
+One way in which {{site.data.var.ece}} deploys differently than other installation types is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment—specifically, the marshalling functionality of `magento/magento-composer-installer`—it is disabled.
 
 When upgrading to a new {{site.data.var.ece}} version or adding, removing, or changing any packages that rely on file marshaling, you must:
 
@@ -72,4 +72,4 @@ When upgrading to a new {{site.data.var.ece}} version or adding, removing, or ch
 
 See [Patch {{site.data.var.ece}}]({{ site.baseurl }}/cloud/project/project-patch.html).
 
-This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check is whether all of the base package files were added to source control.
+This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of {{site.data.var.ee}}, one of the first things to check is whether all of the base package files were added to source control.

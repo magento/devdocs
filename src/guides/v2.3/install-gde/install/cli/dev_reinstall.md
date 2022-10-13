@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 99_contrib
 title: Reinstall the Magento software
 menu_title: Reinstall the Magento software
@@ -15,7 +14,7 @@ A contributing developer reinstalls Magento by updating `composer.json` to speci
 
 To reinstall the Magento software as a contributing developer:
 
-1. Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the [switch to the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the [switch to the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Make a backup copy of `composer.json` in your Magento installation directory:
 
    ```bash

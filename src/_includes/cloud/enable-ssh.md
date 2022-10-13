@@ -4,129 +4,61 @@ You can add multiple SSH keys for each system or workspace that you use.
 
 The SSH keys require the following:
 
--  Set up SSH keys as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+-  Set up SSH keys as the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 -  Create the keys using the GitHub account email address.
 
 For more information on SSH keys, see the following:
 
 -  [Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
 -  [Manually generating your SSH key in Windows](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows)
--  [ssh-keygen man page](http://linux.die.net/man/1/ssh-keygen)
+-  [ssh-keygen man page](https://linux.die.net/man/1/ssh-keygen)
 
 ## Locate an existing SSH key pair {#existing}
 
-An existing SSH key pair is typically located in the `.ssh` subdirectory of the user's home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.
-
-You can quickly verify if you have SSH keys by entering commands using terminal access.
-
-To check for SSH keys, enter the following command:
-
-```bash
-ls ~/.ssh
-```
-
-If you have SSH keys, a directory listing is displayed similar to the following:
-
-```terminal
-id_rsa  id_rsa.pub  known_hosts
-```
-
-If you do not have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See [Create a new SSH key pair](#ssh-create-new-key-pair).
-
-If you already have SSH keys, continue to:
-
--  [Add a public SSH key to your Magento account](#ssh-add-to-account) section
--  [Add your SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
-
-## Create a new SSH key pair {#ssh-create-new-key-pair}
-
-Use the `ssh-keygen` command to create an SSH key pair. `ssh-keygen` is typically installed on Linux systems.
+An existing SSH key pair is typically located in the `.ssh` subdirectory of the user home directory. This folder is hidden and may not display in the File Manager or Finder if your system is not configured to display hidden files and folders.
 
 {:.procedure}
-To create an SSH key pair:
+To check for SSH keys:
 
-1. The command syntax follows, entering the email used for your GitHub account:
-
-   ```bash
-   ssh-keygen -t rsa
-   ```
-
-   GitHub also uses the key length `-b 4096` in the command. Follow the prompts to complete the key.
-
-1. When prompted to "Enter a file in which to save the key," press **Enter** to save the file to the default location. The prompt displays the location.
-
-1. When prompted to enter a secure passphrase, enter a phrase to use like a password. Make note of this passphrase. You may be requested to enter it depending on tasks you complete using a terminal during development.
-
-1. After creating the SSH key pair, start the ssh-agent:
-
-   For Mac or Linux:
+1. In the terminal, list the contents of your SSH directory.
 
    ```bash
-   eval "$(ssh-agent -s)"
+   ls ~/.ssh
    ```
 
-   For Mac, you can edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+1. Review the output.
 
-   ```conf
-   Host *
-       AddKeysToAgent yes
-       UseKeychain yes
-       IdentityFile ~/.ssh/id_rsa
+   If you have SSH keys, a directory listing is displayed similar to the following:
+
+   ```terminal
+   id_rsa  id_rsa.pub  known_hosts
    ```
 
-   {:.bs-callout-info}
-   You can specify multiple SSH keys by adding multiple `IdentityFile` entries to your configuration.
+If the directory does not exist or has no SSH key files, you must generate at least one SSH key and add it to your GitHub account. For instructions, see [Generate a new SSH key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) in the GitHub documentation.
 
-   For Windows:
+If you have at least one SSH key in your directory, add the key to your {{site.data.var.ee}} and GitHub accounts:
 
-   ```shell
-   eval $(ssh-agent -s)
-   ```
+-  [Add an SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and [test the SSH connection](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/testing-your-ssh-connection).
+-  [Add your public SSH key to your {{site.data.var.ee}} account](#ssh-add-to-account)
 
-1. Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace `id_rsa` with that file name.
-
-   For Mac:
-
-   ```bash
-   ssh-add -K ~/.ssh/id_rsa
-   ```
-
-   For Windows or Linux:
-
-   ```shell
-   ssh-add ~/.ssh/id_rsa
-   ```
-
-1. [Add your SSH key to your GitHub account.](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) The instructions include Mac, Windows, and Linux.
-
-### Test the SSH keys {#test}
-
-After adding the SSH keys, test the SSH connection to GitHub:
-
-1. In the terminal, enter the following command:
-
-   ```bash
-   ssh -T git@github.com
-   ```
-
-1. You may see a warning that the authenticity of the host can't be established followed by an RSA fingerprint. Enter `yes` to continue.
-
-1. If successful, you should receive a success message. If you receive a permission denied error, see [Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey) troubleshooting on GitHub.
-
-## Add a public SSH key to your Magento account {#ssh-add-to-account}
+## Add a public SSH key to your {{site.data.var.ee}} account {#ssh-add-to-account}
 
 You can add SSH keys to your account in any of the following ways:
 
 -  Using the [{{site.data.var.ece}} CLI](#add-key-cli)
 -  Using the [{{site.data.var.ece}} Web Interface](#add-key-web)
+-  Using the [{{site.data.var.ece}} Cloud account Dashboard](#add-key-cloud)
 
-### Add a key using the CLI {#add-key-cli}
+After you add a key, you must [redeploy active Cloud environments](#update-cloud-environments-with-a-new-ssh-key) to upload the key.
+
+### Add your SSH key using the CLI {#add-key-cli}
 
 {:.procedure}
-To add an SSH key using the CLI:
+To add an SSH key using the [Magento Cloud CLI]({{site.baseurl}}/cloud/reference/cli-ref-topic.html):
 
 1. Open a terminal application on your local workstation.
-1. If you haven't done so already, log in (or switch to) the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
+
+1. If you have not done so already, log in (or switch to) the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
 
 1. Log in to your project:
 
@@ -140,30 +72,58 @@ To add an SSH key using the CLI:
    magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
    ```
 
-### Add a key using the Project Web Interface {#add-key-web}
+{:.bs-callout-tip}
+You can list and delete SSH keys using the Magento Cloud CLI commands `ssh-key:list` and `ssh-key:delete`.
 
-You will select and add your SSH public key to each environment in your account.
+### Add your SSH key using the Project Web Interface {#add-key-web}
+
+You must add your SSH public key to your account. After you add the key, you must redeploy all active environments on your account to install the key.
 
 -  Starter: Add to Master (Production) and any environments you create by branching from Master
--  Pro: Add the key to Staging, Production, and Integration environments
+-  Pro: Add the key to the Staging, Production, and Integration environments
 
 {:.procedure}
-To add an SSH key using the Project Web Interface:
+To add an SSH key using the Project Web interface:
 
-1. Copy your SSH public key to the clipboard.
+1. Get your public key.
 
-   If you do not already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key) to create them.
+   -  In the terminal, navigate to the `~/.ssh` directory.
+
+   -  Copy the contents of the public key file `~/.ssh/<keyname>.pub` to the clipboard.
+
+   If there are no SSH key files in the directory, you must create one. See [Generate a new SSH key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) in the GitHub documentation.
 
 1. Login and access your project through the [Project Web Interface](https://accounts.magento.cloud).
-1. In your selected branch, an icon displays if you do not have an SSH key added.
+
+1. In your project, look for the **No SSH key** icon to the right of the command field. This icon is visible when the project does not contain an SSH key.
 
    ![No SSH key]({{ site.baseurl }}/common/images/cloud/cloud_ssh-key-install.png)
 
-1. Copy and paste the content of your public SSH key in the screen.
+1. Click the icon to add the key.
 
-   ![Add SSH key]({{ site.baseurl }}/common/images/cloud/cloud_ssh-key-add.png)
+   -  Copy and paste the content of your public SSH key in the **Public key** field.
 
-1. Follow the prompts on your screen to complete the task.
+      ![Add SSH key]({{ site.baseurl }}/common/images/cloud/cloud_ssh-key-add.png)
+
+   -  Follow the prompts on your screen to complete the task.
+
+### Add a key from the Cloud Account dashboard {#add-key-cloud}
+
+You can add your SSH public key directly from the Cloud _Account Settings_ page.
+
+1. Open your [Cloud account page](https://accounts.magento.cloud) and log in if required.
+1. On the Cloud account dashboard, click the **Account Settings** tab.
+1. Under _SSH keys_, click **Add a public key**.
+
+## Update Cloud environments with a new SSH key
+
+After you add an SSH key, redeploy each active Cloud environment to upload the new key.
+
+Use the [Magento Cloud CLI]({{site.baseurl}}/cloud/reference/cli-ref-topic.html) to redeploy the environment:
+
+```bash
+magento-cloud redeploy --project <project-name> --host <host-name> --environment <environment-name>
+```
 
 ## Set global Git variables
 

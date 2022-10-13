@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Magento's deployment configuration
+title: Deployment configuration
 functional_areas:
   - Configuration
   - System
@@ -29,7 +29,7 @@ The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.
 Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
 
 ## Details about the deployment configuration {#config-php-contents}
-`config.php` and `env.php` are [PHP](https://glossary.magento.com/php) files that return a [multi-dimensional associative array](http://www.w3schools.com/php/php_arrays.asp), which is basically a hierarchical arrangement of configuration parameters and values.
+`config.php` and `env.php` are [PHP](https://glossary.magento.com/php) files that return a [multi-dimensional associative array](https://www.w3schools.com/php/php_arrays.asp), which is basically a hierarchical arrangement of configuration parameters and values.
 
 On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key---where both the key and its value are defined by the Magento framework.
 
@@ -50,8 +50,6 @@ Examples:
 *  Uninstall components: [`bin/magento setup:uninstall`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html)
 *  Check status of components: [`bin/magento module:status`]({{ page.baseurl }}/reference/cli/magento.html#modulestatus)
 *  Enable or disable components: [`bin/magento module:disable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable), [`bin/magento module:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
-*  [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
-*  [System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
 
 `config.php` snippet:
 

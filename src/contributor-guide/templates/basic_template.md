@@ -47,7 +47,7 @@ Use code fences to create code blocks. For extensive examples of adding code sam
 print "Hello World!";
 ```
 
-For more examples of basic markdown please follow this [link](https://daringfireball.net/projects/markdown/syntax){:target="_blank"}.
+For more examples of basic markdown please follow this [link](https://daringfireball.net/projects/markdown/syntax).
 
 ### Lists {#lists}
 
@@ -124,17 +124,17 @@ Tables can be useful for displaying different kinds of data in an organized way.
 | Data 4         | Data 5         |                |
 | Data 6         |                |                |
 
-You can read more about table syntax [here](http://kramdown.gettalong.org/syntax.html#tables){:target="_blank"}.
+You can read more about table syntax [here](https://kramdown.gettalong.org/syntax.html#tables).
 
 ## Advanced Syntax {#advanced}
 
 ### Code blocks {#code-blocks}
 
-Code blocks can also be defined using [Rouge formatting](http://rouge.jneen.net/){:target="_blank"}. View the .md file of this template for examples.
+Code blocks can also be defined using [Rouge formatting](https://github.com/rouge-ruby/rouge). View the .md file of this template for examples.
 
 For inline code, surround the content with single backticks: `` `example` ``.
 
-For blocks of code, surround content with 3 backticks and a [supported language](https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"}.
+For blocks of code, surround content with 3 backticks and a [supported language](https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers).
 
 *Example:*
 

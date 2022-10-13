@@ -9,5 +9,3 @@ functional_areas:
   - Upgrade
 redirect_to: https://support.magento.com/hc/en-us/articles/360033204651
 ---
-
-{% include comp-man/dependency.md %}

@@ -10,7 +10,7 @@ functional_areas:
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 
-If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.
+If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact {{site.data.var.ee}} Support to see if this is necessary in your case.
 
 Manually splitting databases involves:
 
@@ -46,7 +46,7 @@ We strongly recommend you back up your current database and file system so you c
 
 To back up your system:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as, or switch to, the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Enter the following commands:
 
    ```bash
@@ -266,7 +266,7 @@ This script restores sales data in your quote database.
 
 #### NDB requirement {#sql-sales-restore-ndb-req}
 
-If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
+If you are using a [Network Database (NDB)](https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
 
 1. Convert tables from InnoDb to NDB type in dump files:
 
@@ -367,7 +367,7 @@ mysqldump -u <your database root username> -p <your main Magento DB name> magent
 
 ### NDB requirement
 
-If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
+If you are using a [Network Database (NDB)](https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
 
 1. Convert tables from InnoDb to NDB type in dump files:
 
@@ -493,7 +493,7 @@ The final step in manually splitting databases is to add connection and resource
 
 {% collapsible Click to update the Magento deployment configuration %}
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as, or switch to, the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Back up your deployment configuration:
 
    ```bash

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Back up and roll back the file system, media, and database
 functional_areas:
   - Install
@@ -19,6 +18,9 @@ Backups are stored in the `var/backups` directory and can be restored at any tim
 
 After backing up, you can [roll back](#instgde-cli-uninst-roll) at a later time.
 
+{:.bs-callout-tip}
+For {{site.data.var.ece}} projects, see [Snapshots and backup management]({{ site.baseurl }}/cloud/project/project-webint-snap.html) in the _Cloud guide_.
+
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
@@ -35,7 +37,7 @@ bin/magento config:set system/backup/functionality_enabled 1
 **Deprecation Notice:**
 Magento backup functionality is deprecated as of 2.1.16, 2.2.7, and 2.3.0. We recommend investigating additional backup technologies and binary backup tools (such as Percona XtraBackup).
 
-## Set ulimit for the web server user {#instgde-cli-ulimit}
+## Set the open files limit {#instgde-cli-ulimit}
 {% include install/ulimit.md %}
 
 ## Backing up {#instgde-cli-uninst-back}

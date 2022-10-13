@@ -118,3 +118,13 @@ Attribute |  Data Type | Description
 ### ProductReview attributes {#ProductReview}
 
 {% include graphql/product-review.md %}
+
+## Errors
+
+Error | Description
+--- | ---
+`Field nickname of required type String! was not provided.` | The required attribute `nickname` is missing.
+`Field sku of required type String! was not provided.` | The required attribute `sku` is missing.
+`Field summary of required type String! was not provided.` | The required attribute `summary` is missing.
+`Field text of required type String! was not provided.` | The required attribute `text` is missing.
+`Field ratings of required type ProductReviewRatingInput! was not provided.` | The required attribute `ratings` is missing.

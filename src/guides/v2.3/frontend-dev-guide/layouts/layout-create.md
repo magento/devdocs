@@ -17,12 +17,23 @@ If the new page has a `3-columns-double-footer` layout, create a custom page-lay
     <update handle="3columns"/>
     <referenceContainer name="page.wrapper">
         <container name="footer-bottom" as="footer-bottom" after="footer" label="Footer Bottom" htmlTag="footer" htmlClass="page-footer-bottom">
-            <container name="footer-bottom-content" as="footer-bottom-content" htmlTag="div" htmlClass="footer content">
-                <block class="Magento\Framework\View\Element\Template" name="report.bugs.bottom" template="Magento_Theme::html/bugreport.phtml"/>
-            </container>
+            <container name="footer-bottom-content" as="footer-bottom-content" htmlTag="div" htmlClass="footer content" />
         </container>
     </referenceContainer>
 </layout>
+```
+
+To add a block to the container, create the layout:
+
+`app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/layout/default.xml`
+
+```xml
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceContainer name="footer-bottom-content">
+        <block class="Magento\Framework\View\Element\Template" name="report.bugs.bottom" template="Magento_Theme::html/bugreport.phtml"/>
+    </referenceContainer>
+</page>
 ```
 
 ## Add the new layout to the layouts.xml file
@@ -56,4 +67,3 @@ The new page layout displays in all `Layout` dropdowns.
 On the storefront, there is a new footer for those pages that use the `3 Columns Double Footer` layout.
 
 ![Storefront two footers layout]({{ site.baseurl }}/common/images/fdg/custom_layout_footer_bottom.png)
-

@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-By default, {{site.data.var.ece}} writes build and deploy actions to the `app/var/log/cloud.log` file inside the Magento root application directory. Optionally, you can send logs to a messaging system, such as Slack and email, to receive real-time notifications.
+By default, {{site.data.var.ece}} writes build and deploy actions to the `app/var/log/cloud.log` file inside the {{site.data.var.ee}} root application directory. Optionally, you can send logs to a messaging system, such as Slack and email, to receive real-time notifications.
 
 For example, you could send a Slack message to alert a group of people when a deployment fails, and prompt an investigation into what went wrong.
 
@@ -43,7 +43,7 @@ To configure notifications:
       email:
         to: <your-email>
         from: <your-email>
-        subject: "Log notification from Magento Cloud"
+        subject: "Log notification from Adobe Commerce"
         min_level: "notice"
     ```
 
@@ -90,7 +90,7 @@ log:
   email:
     to: <your-email>
     from: <your-email>
-    subject: "Log notification from Magento Cloud"
+    subject: "Log notification from Adobe Commerce"
     min_level: "notice"
 ```
 

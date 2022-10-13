@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: How To
 title: Configure Xdebug
-menu_title: Configure Xdebug
-menu_order: 100
-menu_node:
 functional_areas:
   - Cloud
   - Setup
@@ -15,7 +11,7 @@ Xdebug is an extension for debugging your PHP. The following explains how to con
 {:.bs-callout-info}
 You can configure Xdebug to run in the {{site.data.var.mcd-prod}} environment for local debugging without changing your {{site.data.var.ece}} project configuration. See [Configure Xdebug for Docker]({{site.baseurl}}/cloud/docker/docker-development-debug.html).
 
-To set up Xdebug, you need to [configure](#configure-xdebug) a file in your Git repository, configure your IDE, and set up port forwarding. You can configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.
+To set up Xdebug, [configure](#configure-xdebug) a file in your Git repository, configure your IDE, and set up port forwarding. You can configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. You do not need to do this for Pro Staging & Production environments as Xdebug is always available, see [Debug for Pro Staging and Production](#pro-debug).
 
 Once configured, you can debug [CLI commands](#debugcli), [web requests](#webrequests), and [code](#code). Remember, all {{site.data.var.ece}} environments are read-only. You need to pull code to your local development environment to perform debugging. For Pro Staging and Production environments, we include [additional instructions](#pro-debug) for Xdebug.
 
@@ -32,8 +28,6 @@ To configure Xdebug, you need to do the following:
 -  Configure your IDE, like [PhpStorm](#phpstorm)
 -  [Set up port forwarding](#port)
 
-For configuring on Pro plan Staging and Production, you need to enter a [ticket for Staging and Production](#pro).
-
 ### Get started with a branch {#branch}
 
 To add Xdebug, we recommend creating a branch to work in and add the files.
@@ -42,9 +36,12 @@ To add Xdebug, we recommend creating a branch to work in and add the files.
 
 ### Enable Xdebug in your environment {#enable}
 
+{:.bs-callout-info}
+For Pro Production & Staging environments this configuration step is not required. See [Debug for Pro Staging and Production](#pro-debug)
+
 To enable Xdebug for your project, add `xdebug` to the `runtime:extensions` section of the `.magento.app.yaml` file.
 
-You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to have it enabled. We enable Xdebug on those environments for you.
+You can enable Xdebug directly to all Starter environments and Pro Integration environments.
 
 {:.procedure}
 To enable Xdebug:
@@ -91,7 +88,7 @@ To configure PhpStorm to work with Xdebug:
 
 1. In your PhpStorm project, open the settings panel.
 
-   -  _Mac OS X_—Select **File** > **Preferences**.
+   -  _Mac OS X_—Select **PhpStorm** > **Preferences**.
    -  _Windows/Linux_—Select **File** > **Settings**.
 
 1. In the _Settings_ panel, expand and locate the **Languages & Frameworks** > **PHP** > **Servers** section.
@@ -107,7 +104,7 @@ To configure PhpStorm to work with Xdebug:
 
 1. Select **Use path mappings**. In the _File/Directory_ pane, the root of the project for the `serverName` displays.
 
-1. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/install_docker_php-storm-edit.png){:width="15px"} (**Edit**) and add a setting based on the environment:
+1. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/cloud/cloud-install_docker_php-storm-edit.png){:width="15px"} (**Edit**) and add a setting based on the environment:
 
    -  For all Starter environments and Pro Integration environments, the remote path is `/app`.
    -  For Pro Staging and Production environments:
@@ -179,12 +176,12 @@ To troubleshoot the connection:
 
 #### Port forwarding on Windows {#portwindows}
 
-To set up port forwarding (SSH tunneling) on Windows, you must configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). You can use other applications such as Cygwin. For more information on other applications, see the vendor documentation provided with those applications.
+To set up port forwarding (SSH tunneling) on Windows, you must configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). You can use other applications such as Cygwin. For more information on other applications, see the vendor documentation provided with those applications.
 
 {:.procedure}
 To set up an SSH tunnel on Windows using Putty:
 
-1. If you have not already done so, download [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+1. If you have not already done so, download [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
 1. Start Putty.
 
@@ -195,7 +192,7 @@ To set up an SSH tunnel on Windows using Putty:
    -  **Hostname (or IP address)** field: Enter the [SSH URL]({{ site.baseurl }}/cloud/env/environments-ssh.html) for your Cloud server
    -  **Port** field: Enter `22`
 
-   ![Set up Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session.png){:width="350px"}
+   ![Set up Putty]({{ site.baseurl }}/common/images/cloud/cloud-xdebug_putty-session.png){:width="350px"}
 
 1. In the _Category_ pane, click **Connection** > **SSH** > **Tunnels**.
 
@@ -207,7 +204,7 @@ To set up an SSH tunnel on Windows using Putty:
 
 1. Click **Add**.
 
-   ![Create an SSH tunnel in Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-tunnels.png){:width="350px"}
+   ![Create an SSH tunnel in Putty]({{ site.baseurl }}/common/images/cloud/cloud-xdebug_putty-tunnels.png){:width="350px"}
 
 1. In the _Category_ pane, click **Session**.
 
@@ -215,7 +212,7 @@ To set up an SSH tunnel on Windows using Putty:
 
 1. Click **Save**.
 
-   ![Save your SSH tunnel]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session-save.png){:width="350px"}
+   ![Save your SSH tunnel]({{ site.baseurl }}/common/images/cloud/cloud-xdebug_putty-session-save.png){:width="350px"}
 
 1. To test the SSH tunnel, click **Load**, then click **Open**.
 
@@ -224,17 +221,11 @@ To set up an SSH tunnel on Windows using Putty:
    -  All Putty settings are correct
    -  You are running Putty on the machine on which your private {{site.data.var.ece}} SSH keys are located
 
-### Configure Pro Staging and Production {#pro}
-
-To complete configuration for Pro plan Staging and Production environments, you must enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to have Xdebug enabled and configured in Staging and Production environments.
-
-We enable Xdebug in the environment. Be aware that this is a configuration change that requires us to redeploy your Staging and Production environments.
-
 ## SSH access to Xdebug environments {#ssh}
 
 For initiating debugging, performing setup, and more, you need the SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{ site.baseurl }}/cloud/project/projects.html) and your project spreadsheet.
 
-For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:
+For Starter environments and Pro Integration environments, you can use the following `magento-cloud` CLI command to SSH into those environments:
 
 ```bash
 magento-cloud environment:ssh --pipe -e <environment-ID>
@@ -254,12 +245,21 @@ ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
 ## Debug for Pro Staging and Production {#pro-debug}
 
+{:.bs-callout-info}
+On Pro Staging & Production environments, Xdebug is always available as these environments have a special setup for Xdebug. All normal web requests are routed to a dedicated PHP process that does not have Xdebug. Therefore, these requests are processed normally and are not subject to the performance degradation when Xdebug is loaded. When a web request is sent that has the Xdebug key, it is routed to a separate PHP process that has Xdebug loaded.
+
 To use Xdebug specifically on Pro plan Staging and Production environment, you create a separate SSH tunnel and web session only you have access to. This usage differs from typical access, only providing access to you and not to all users.
 
 You need the following:
 
 -  SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{ site.baseurl }}/cloud/project/projects.html) or your Cloud Onboarding UI.
--  The `xdebug_key` value we set when configuring the Staging and Pro environments
+-  The `xdebug_key` value we set when configuring the Staging and Pro environments.
+
+   The `xdebug_key` can be found by using SSH to log in to the primary node and executing:
+
+   ```bash
+   cat /etc/platform/*/nginx.conf | grep xdebug.sock | head -n1
+   ```
 
 {:.procedure}
 To set up an SSH tunnel to a Staging or Production environment:
@@ -359,9 +359,9 @@ To use Xdebug Helper with Chrome:
 
 1. Enable the extension in Chrome as shown in the following figure.
 
-   ![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-chrome.png)
+   ![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/cloud/cloud-install_docker_php-storm_xdebug-chrome.png)
 
-1. In Chrome, right-click ![Xdebug helper icon]({{ site.baseurl }}/common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
+1. In Chrome, right-click ![Xdebug helper icon]({{ site.baseurl }}/common/images/cloud/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
 
 1. From the pop-up menu, click **Options**.
 
@@ -369,11 +369,11 @@ To use Xdebug Helper with Chrome:
 
 1. Click **Save**.
 
-   ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
+   ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud/cloud-xdebug_helper-options.png){:width="400px"}
 
 1. Open your PhpStorm project.
 
-1. In the top navigation bar, click ![Start listening for connections]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"}  (**Start listening**).
+1. In the top navigation bar, click ![Start listening for connections]({{ site.baseurl }}/common/images/cloud/cloud-install_docker_php-storm_xdebug-start-listening.png){:width="25px"}  (**Start listening**).
 
    If the navigation bar isn't displayed, click **View** > **Navigation Bar**.
 
@@ -387,7 +387,7 @@ The method you choose is up to you. You have the following options:
 
 -  Check out code from Git and run `composer install`
 
-   This method works unless `composer.json` references packages in private repositories to which you do not have access. This method results in getting the entire Magento codebase.
+   This method works unless `composer.json` references packages in private repositories to which you do not have access. This method results in getting the entire {{site.data.var.ee}} codebase.
 
 -  Copy the `vendor`, `app`, `pub`, `lib`, and `setup` directories
 
@@ -395,12 +395,12 @@ The method you choose is up to you. You have the following options:
 
 -  Copy the `vendor` directory only
 
-   Because most Magento and third-party code is in the `vendor` directory, this method is likely to result in good testing although you will not be testing the entire codebase.
+   Because most {{site.data.var.ee}} and third-party code is in the `vendor` directory, this method is likely to result in good testing although you will not be testing the entire codebase.
 
 {:.procedure}
 To compress files and copy them to your local machine:
 
-1. Use SSH to login to the remote environment.
+1. Use SSH to log in to the remote environment.
 
 1. Compress the files.
 

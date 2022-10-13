@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: MFTF test versioning and backward compatibility policy
+migrated_to: https://developer.adobe.com/commerce/php/development/versioning/tests/
+layout: migrated
 ---
 
 ## Goals and requirements
@@ -25,15 +27,15 @@ Types of changes:
 
 The approach of defining what each release should include was taken from [Semantic Versioning](https://semver.org/).
 
-   3-component version numbers
-   ---------------------------
-   ```text
-    X.Y.Z
-    | | |
-    | | +-- Backward Compatible changes (bug fixes)
-    | +---- Backward Compatible changes (new features)
-    +------ Backward Incompatible changes
-   ```
+3-component version numbers:
+
+```text
+   X.Y.Z
+   | | |
+   | | +-- Backward Compatible changes (bug fixes)
+   | +---- Backward Compatible changes (new features)
+   +------ Backward Incompatible changes
+```
 
 ### Z release
 
@@ -111,13 +113,13 @@ It MAY include minor and patch level changes. Patch and minor version MUST be re
 | |`<test>` `<action>` changed|PATCH
 | |`<test>` `<action>` sequence changed|MAJOR
 | |`<test>` `<action>` type (`click`, `fillField`, etc) changed|PATCH
-| |`<test>` `<actionGroup>` `ref` changed|MAJOR
+| |`<test>` `<actionGroup>` `ref` changed|MINOR
 | |`<test>` `<before/after>` `<action>` added|MINOR
 | |`<test>` `<before/after>` `<action>` removed|MAJOR
 | |`<test>` `<before/after>` `<action>` changed|PATCH
 | |`<test>` `<before/after>` `<action>` sequence changed|MAJOR
 | |`<test>` `<before/after>` `<action>` type (`click`, `fillField`, etc) changed|PATCH
-| |`<test>` `<before/after>` `<actionGroup>` `ref` changed|MAJOR
+| |`<test>` `<before/after>` `<actionGroup>` `ref` changed|MINOR
 | |`<test>` `<annotations>` `<annotation>` added|PATCH
 | |`<test>` `<annotations>` `<annotation>` changed|PATCH
 | |`<test>` `<annotations>` `<annotation>` GROUP removed|MAJOR
@@ -134,7 +136,7 @@ It MAY include minor and patch level changes. Patch and minor version MUST be re
 | |`<suite>` `<before/after>` `<action>` changed|PATCH
 | |`<suite>` `<before/after>` `<action>` sequence changed|MAJOR
 | |`<suite>` `<before/after>` `<action>` type (`click`, `fillField`, etc) changed|PATCH
-| |`<suite>` `<before/after>` `<actionGroup>` `ref` changed|MAJOR
+| |`<suite>` `<before/after>` `<actionGroup>` `ref` changed|MINOR
 
 ---------------------------
 

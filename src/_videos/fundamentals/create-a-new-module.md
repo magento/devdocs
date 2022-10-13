@@ -1,10 +1,12 @@
 ---
-youtube_id: 682p52tFcmY
+youtube_id: cQ_78WIhI7s
 duration: "5:18"
 group: "Fundamentals of Magento 2 Development"
 title: "Create a New Module"
 thumbnail: "fundamentals/thumbs/create-new-module.png"
 menu_order: 1
+migrated_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/backend-development/create-module.html
+layout: migrated-video
 ---
 
 Module is a structural element of Magento 2 – the whole system is built upon modules. Typically, the first step in creating a customization is building a module.
@@ -66,8 +68,10 @@ Then put the following code into it:
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-<module name="Learning_FirstUnit" setup_version="0.0.1"> <sequence>
-<module name="Magento_Catalog"/> </sequence>
+    <module name="Learning_FirstUnit" setup_version="0.0.1">
+        <sequence>
+            <module name="Magento_Catalog"/>
+        </sequence>
     </module>
 </config>
 ```
@@ -84,9 +88,18 @@ Each module must have this file, which tells Magento how to locate the module. C
 `app/code/Learning/FirstUnit/registration.php`. Then put the following content into it:
 
 ```php
-<?php \Magento\Framework\Component\ComponentRegistrar::register(
-\Magento\Framework\Component\ComponentRegistrar::MODULE, 'Learning_FirstUnit',
-__DIR__
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'Learning_FirstUnit',
+    __DIR__
 );
 ```
 

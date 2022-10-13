@@ -20,7 +20,7 @@ In our examples, we will change the color and font of the primary buttons. The d
 ## Before you begin
 
 1. [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html). In your `theme.xml` file, specify Magento Luma or Magento Blank as the parent theme.
-1. [Apply your theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html#theme-apply-apply) in the [Magento Admin](https://glossary.magento.com/magento-admin).
+1. [Apply your theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html#theme-apply-apply) in the [Admin](https://glossary.magento.com/magento-admin).
 
 ## Using server-side compilation mode
 
@@ -111,7 +111,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 ## Using client-side compilation mode
 
 1. Navigate to your theme directory and create a `web/css/source/_extend.less` file.
-1. Log in to the Magento Admin.
+1. Log in to the Admin.
 1. Click **STORES** > **Settings** > **Configuration** > **ADVANCED** > **Developer** > **Frontend development workflow** > **Workflow type**.
 1. Change the LESS compilation mode to client-side.
 1. [Clean static view files]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache).

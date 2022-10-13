@@ -50,3 +50,10 @@ Attribute |  Data Type | Description
 ## Related topics
 
 [customer query]({{page.baseurl}}/graphql/queries/customer.html)
+
+## Errors
+
+Error | Description
+--- | ---
+`Email is invalid` | The given email-id is not in a proper format.
+`Field isEmailAvailable.email of required type String! was not provided` | The value specified in the `isEmailAvailable.email` argument is empty.

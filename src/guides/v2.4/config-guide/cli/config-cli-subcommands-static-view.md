@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html
+layout: migrated
 ---
 
 {% include config/cli-intro.md %}
@@ -34,17 +36,17 @@ You must write static view files to the Magento file system manually using the c
 
 To deploy static view files:
 
-1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
 1. Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 
    {:.bs-callout-info}
-   If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
+   If you enable static view file merging in the Admin, the `pub/static` directory system must be writable.
 
 Command options:
 
 ```bash
-bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
+bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [--no-parent] [-f|--force]
 ```
 
 The following table explains this command's parameters and values.
@@ -63,7 +65,7 @@ The following table explains this command's parameters and values.
     <tr>
         <td>&lt;languages&gt;</td>
         <td>
-            <p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes for which to output static view files. (Default is
+            <p>Space-separated list of <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes for which to output static view files. (Default is
                 <code>en_US</code>.)</p>
             <p>You can find the list by running <code>bin/magento info:language:list</code>.</p>
         </td>
@@ -74,7 +76,7 @@ The following table explains this command's parameters and values.
     <tr>
         <td>--language (-l)</td>
         <td>
-            <p>Generate files only for the specified languages. The default, with no option specified, is to generate files for all <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes. You can specify the name of one language code at a time. Default value is <b>all</b>.</p>
+            <p>Generate files only for the specified languages. The default, with no option specified, is to generate files for all <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes. You can specify the name of one language code at a time. Default value is <b>all</b>.</p>
             <p>For example, <code>--language en_US --language es_ES</code></p>
         </td>
         <td>
@@ -253,6 +255,16 @@ The following table explains this command's parameters and values.
         </td>
     </tr>
     <tr>
+        <td>--no-parent</td>
+        <td>
+            <p>Do not generate files for the parent themes of the current theme. It is strongly recommended to use this flag if you do not explicitly use the parent theme of the current theme you are trying to deploy. This will significantly increase the speed of the process.
+This flag is available in Magento 2.4.2</p>
+        </td>
+        <td>
+            <p>No</p>
+        </td>
+    </tr>
+    <tr>
         <td>--force (-f)</td>
         <td>
             <p>Deploy files in any mode. (by default, the static content deployment tool can be run only in production mode. Use this option to run it in default or developer mode).</p>
@@ -296,6 +308,18 @@ New version of deployed files: 1466710645
 ............
 Successful: 1993 files; errors: 0
 ---
+```
+
+The following command deploys only Javascript, with 4 jobs, with a standard deployment strategy:
+
+```bash
+bin/magento setup:static-content:deploy -s standard --no-misc --no-html --no-fonts --no-images --no-less --no-css -j 4
+```
+
+The following command deploys only CSS and LESS with 3 jobs, and a quick deployment strategy:
+
+```bash
+bin/magento setup:static-content:deploy -s quick --no-misc --no-html --no-fonts --no-images --no-javascript -j 3
 ```
 
 #### Generating static view files for one theme and one area
@@ -347,7 +371,7 @@ ERROR: You need to install the Magento application before running this utility.
 Use the following steps:
 
 1. Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
-1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the Magento file system owner.
+1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the file system owner.
 1. Delete the contents of `<magento_root>/pub/static` directory, except for the `.htaccess` file. Do not delete this file.
 1. [Run the static view files deployment tool](#config-cli-subcommands-staticview).
 
@@ -355,4 +379,4 @@ Use the following steps:
 
 When creating a custom implementation of the static content deployment tool, use only [atomic](https://en.wikipedia.org/wiki/Linearizability) file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content.
 
-One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php).
+One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see [https://php.net/manual/en/function.fwrite.php](https://php.net/manual/en/function.fwrite.php).

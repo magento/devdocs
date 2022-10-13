@@ -14,7 +14,7 @@ In addition, the [magnifier widget]({{ page.baseurl }}/javascript-dev-guide/widg
 
 Gallery is displayed consistently across all supported browsers and is responsive --- it sizes correctly on mobile devices and desktops.
 
-The gallery widget uses the [Fotorama widget].
+The gallery widget uses the Fotorama widget.
 
 The important feature of the gallery widget implementation is the possibility to configure the widget options in the `view.xml` configuration file of a theme.
 
@@ -79,7 +79,7 @@ Example of declarative initialization:
                     "<breakpoint_name>": {
                         "conditions": {
                             "max-width": "767px"
-                        }
+                        },
                         "options": {}
                     }
                 }
@@ -577,6 +577,57 @@ api.updateOptions([{
 }]);
 ```
 
-[Fotorama widget]: http://fotorama.io/
 [lib/web/mage/gallery/gallery.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
 [lib/web/magnifier/magnify.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/magnifier/magnify.js
+
+## Code sample
+
+This example shows a use case for a gallery widget on any page:
+
+```html
+<div class="image-gallery"></div>
+<script>
+require ([
+    'jquery',
+    'mage/gallery/gallery'
+], function ($, gallery) {
+    $(function () {
+        $('.image-gallery').each(function (index, element) {
+            gallery({
+                options: {
+                    "nav": "false",
+                    "loop": "true",
+                    "arrows": "true"
+                },
+                data: [
+                    { img: "<image_url_1>" },
+                    { img: "<image_url_2>" },
+                    { img: "<image_url_3>" }
+                ],
+                fullscreen: {
+                    "navdir": "horizontal"
+                },
+                "breakpoints": {
+                    "<breakpoint_name>": {
+                        "conditions": {
+                            "max-width": "767px"
+                        },
+                        "options": {}
+                    }
+                }
+            }, element);
+        });
+    });
+});
+</script>
+```
+
+The breakpoints options are set in the `view.xml` configuration file of a theme. The file is located in `<theme_dir>/etc`.
+
+```xml
+<var name="breakpoints">
+    <var name="%breakpoints_option1%">%option1_value%</var>
+    <var name="%breakpoints_option2%">%option2_value%</var>
+...
+</var>
+```

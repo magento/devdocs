@@ -1,11 +1,12 @@
 ---
-group: installation-guide
 title: Post-installation
 functional_areas:
   - Install
   - System
   - Setup
-redirect_from: /guides/v2.4/install-gde/continue-to-verify.html
+redirect_from: /guides/v2.3/install-gde/continue-to-verify.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/verify.html
+layout: migrated
 ---
 
 ## Now that you've finished your installation
@@ -24,8 +25,8 @@ If you haven't already installed optional sample data, you can [install it now](
 
 ### Manage and upgrade components
 
-*  [Component management (install, uninstall, enable, disable, update)]({{ page.baseurl }}/comp-mgr/manage-module.html)
-*  [System upgrade (upgrade the Magento software)]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html)
+*  [Component management (install, uninstall, enable, disable, update)](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/modules/manage.html)
+*  [System upgrade (upgrade the Magento software)](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/implementation/perform-upgrade.html)
 
 ### Configure
 

@@ -20,10 +20,12 @@ This article gives a comprehensive description of each layout file type.
 
 ## Page layout {#layout-types-page}
 
-Page layout declares the wireframe of a page inside the `<body>` section, for example one-column layout or two-column layout.
+Page layout declares the wireframe of a page inside the `<body>` section. For example, one-column layout or two-column layout.
 
 Allowed layout instructions:
 
+*  `<head>`
+*  `<body>`
 *  [`<container>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont)
 *  [`<referenceContainer>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref)
 *  [`<move>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv)
@@ -88,6 +90,11 @@ Sample page layout declaration file: `<Magento_Theme_module_dir>/view/frontend/l
 ```
 
 Use the `layout` attribute in the `page` node of a page configuration file to define a layout type for the page. The following example shows how to use the `3 columns` page layout type for the [Wish List Sharing]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Wishlist/view/frontend/layout/wishlist_index_share.xml#L8) page:
+
+Override the default `wishlist_index_share.xml` in any one of the following paths and add the `layout="3columns"` in the `page` node.
+
+*  Override the layout in a custom `theme` (_in the case where a custom-built theme is applied on the storefront_): `<custom_theme_dir>/Magento_Wishlist/layout/wishlist_index_share.xml`
+*  Override the layout in custom `module` (_in case the when building third-party extensions and you need to make changes to the existing layout_): `<custom_module_dir>/view/frontend/layout/wishlist_index_share.xml`
 
 ```xml
 <?xml version="1.0"?>

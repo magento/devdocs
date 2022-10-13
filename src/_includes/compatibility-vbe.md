@@ -5,18 +5,18 @@
 {% assign extensions = include.data.extensions | where: "name", include.extensions %}
 {% endif %}
 
-**Supported**{: .status-light.supported } – version that has been fully tested by Magento and is supported.
+**Supported**{: .status-light.supported } – version that has been fully tested by Adobe and is supported.
 
 <!-- **Compatible**{: .status-light.compatible } – independent release version that has not been fully tested by Magento, but is confirmed to be compatible. -->
 
-**Not supported**{: .status-light.not-supported } - version that is not compatible with a Magento release.
+**Not supported**{: .status-light.not-supported } - version that is not compatible with an {{site.data.var.ee}} or {{site.data.var.ce}} release.
 
 <table class="compatibility-table">
   <thead>
     <tr class="magento-version">
       <th>&nbsp;</th>
     {% for version in include.data.versions %}
-      <th>Magento {{version}}</th>
+      <th>Version {{version}}</th>
     {% endfor %}
     </tr>
   </thead>

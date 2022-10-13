@@ -50,7 +50,7 @@ Most options, methods, and events for the calendar widget correspond to the jQue
 This example shows how to initialize the calendar widget, including custom parameters.
 
 ```html
-<div class="field">
+<div class="field date">
     <label>Date : </label>
     <input type="text" class="input-text" id="example-date" style="width: auto" name="example-date" />
 </div>
@@ -67,7 +67,8 @@ This example shows how to initialize the calendar widget, including custom param
         showButtonPanel: true,
         currentText: $t('Go Today'),
         closeText: $t('Close'),
-        showWeek: true
+        showWeek: true,
+        showOn: "both"
       });
     })
 </script>
@@ -89,8 +90,8 @@ The result is a calendar and a icon(_Click Here_) that opens the calendar.
 
 ![Calendar Widget]({{ site.baseurl }}/common/images/widget/calendar-widget-result.png)
 
-[Datepicker Widget]: http://api.jQueryui.com/datepicker/
+[Datepicker Widget]: https://api.jqueryui.com/datepicker/
 [global configuration]: #fedg_calendar_config
 [lib/web/mage/calendar.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/calendar.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
-[Datepicker Widget]: http://api.jqueryui.com/datepicker/
+[Datepicker Widget]: https://api.jqueryui.com/datepicker/

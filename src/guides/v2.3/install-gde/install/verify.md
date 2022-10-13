@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 01_Verify
 title: Verify the installation
 menu_title: Verify the installation
@@ -29,17 +28,17 @@ The following figure shows a sample storefront page. If it displays as follows, 
 
 If the page displays a 404 (Not Found) or unconfigured (no styles, only text), see [After installing, images and stylesheets do not load; only text displays, no graphics](https://support.magento.com/hc/en-us/articles/360032994352).
 
-## Verify the Magento Admin {#instgde-verify-admin}
+## Verify the Admin {#instgde-verify-admin}
 
-Go to the [Magento Admin](https://glossary.magento.com/magento-admin) in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URI is `admin_au1nT`, enter `http://www.example.com/admin_au1nT` in your browser's address or location bar.
+Go to the [Admin](https://glossary.magento.com/magento-admin) in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URI is `admin_au1nT`, enter `http://www.example.com/admin_au1nT` in your browser's address or location bar.
 
 (The [Admin](https://glossary.magento.com/admin) URI is specified by the value of the `backend-frontname` installation parameter.)
 
-When prompted, log in as a Magento Administrator.
+When prompted, log in as a Administrator.
 
-The following figure shows a sample Magento Admin page. If it displays as follows, your installation was a success!
+The following figure shows a sample Admin page. If it displays as follows, your installation was a success!
 
-![Magento Admin which verifies a successful installation]({{ site.baseurl }}/common/images/install_success_admin.png)
+![Admin which verifies a successful installation]({{ site.baseurl }}/common/images/install_success_admin.png)
 
 If the page displays unconfigured (no styles, only text), see [After installing, images and stylesheets do not load; only text displays, no graphics](https://support.magento.com/hc/en-us/articles/360032994352).
 

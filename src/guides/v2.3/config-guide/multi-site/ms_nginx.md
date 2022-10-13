@@ -37,7 +37,7 @@ Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_website
 
 To set up multiple stores:
 
-1. [Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the [Magento Admin](https://glossary.magento.com/magento-admin).
+1. [Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the [Admin](https://glossary.magento.com/magento-admin).
 1. Create an [nginx virtual host](#ms-nginx-vhosts) to map many websites or one [nginx virtual host](#ms-nginx-vhosts) per Magento [website](https://glossary.magento.com/website) (steps detailed below).
 1. Pass the values of the [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample` (steps detailed below).
 
@@ -47,6 +47,7 @@ To set up multiple stores:
       *  Use `store` to load any store view in your storefront.
 
    *  `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`.
+1. Update the Base URL configuration on the Magento admin.
 
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
 
@@ -102,7 +103,7 @@ This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}
    ln -s /etc/nginx/sites-available/magento magento
    ```
 
-For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map).
+For more detail about the map directive, see [nginx documentation on the map directive](https://nginx.org/en/docs/http/ngx_http_map_module.html#map).
 
 {% endcollapsible %}
 
@@ -112,16 +113,13 @@ To create multiple virtual hosts:
 1. Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/french.mysite.mg`:
 
    ```conf
-   map $http_host $MAGE_RUN_CODE {
-       french.mysite.mg french;
-   }
-
    server {
        listen 80;
        server_name french.mysite.mg;
        set $MAGE_ROOT /var/www/html/magento2;
        set $MAGE_MODE developer;
        set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+       set $MAGE_RUN_CODE french;
        include /var/www/html/magento2/nginx.conf;
    }
    ```
@@ -129,16 +127,13 @@ To create multiple virtual hosts:
 1. Create another file named `german.mysite.mg` in the same directory with the following contents:
 
    ```conf
-   map $http_host $MAGE_RUN_CODE {
-       german.mysite.mg german;
-   }
-
    server {
        listen 80;
        server_name german.mysite.mg;
        set $MAGE_ROOT /var/www/html/magento2;
        set $MAGE_MODE developer;
        set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+       set $MAGE_RUN_CODE german;
        include /var/www/html/magento2/nginx.conf;
    }
    ```
@@ -171,8 +166,6 @@ To create multiple virtual hosts:
    ```bash
    ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
    ```
-
-For more details about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map).
 
 {% endcollapsible %}
 
@@ -239,6 +232,34 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
 ```
 
 {% endcollapsible %}
+
+## Step 4: Update the Base URL configuration {#update-base-url}
+
+You must update the Base URL for the `french` and the `german` websites in the Magento admin.
+
+### Update French Website Base URL
+
+1. Log in to the Magento admin and navigate to **Stores** > **Settings** > **Configuration** > **General** > **Web**.
+1. Change the _configuration scope_ to the `french` website.
+1. Expand **Base URLs** section and update the **Base URL** and **Base Link URL** value to `http://french.magento24.com/`.
+1. Expand **Base URLs (Secure)** section and update the **Secure Base URL** and **Secure Base Link URL** value to `https://french.magento24.com/`.
+1. Click **Save Config** and save the configuration changes.
+
+### Update German Website Base URL
+
+1. Log in to the Magento admin and navigate to **Stores** > **Settings** > **Configuration** > **General** > **Web**.
+1. Change the _configuration scope_ to the `german` website.
+1. Expand **Base URLs** section and update the **Base URL** and **Base Link URL** value to `http://german.magento24.com/`.
+1. Expand **Base URLs (Secure)** section and update the **Secure Base URL** and **Secure Base Link URL** value to `https://german.magento24.com/`.
+1. Click **Save Config** and save the configuration changes.
+
+### Clean the Cache
+
+Run the following command to clean the `config` and `full_page` caches.
+
+```bash
+bin/magento cache:clean config full_page
+```
 
 ## Verify your site  {#ms-nginx-verify}
 

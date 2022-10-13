@@ -17,7 +17,7 @@ To use SSH, you need to:
 
 *  Generate your SSH public and private keys
 *  Add your SSH public key to your remote server either through CLI commands or the Project Web Interface
-*  Use Magento Cloud CLI or Git commands to [SSH](#ssh) to an environment
+*  Use `magento-cloud` CLI or Git commands to [SSH](#ssh) to an environment
 
 You create an SSH key pair including a public and private key:
 
@@ -34,18 +34,18 @@ When you enter an SSH command to connect your client to the remote host, the hos
 
 You can connect using SSH in any of the following ways:
 
-*  [SSH using Magento Cloud CLI](#magento-cli)
+*  [SSH using `magento-cloud` CLI](#magento-cli)
 *  [Locate the SSH command in the Project Web Interface](#web-interface)
 *  [Git SSH commands for Pro Staging and Production](#pro)
 
 ### SSH using Magento Cloud CLI {#magento-cli}
 
-Magento Cloud CLI commands can only be used in environments with the software installed. These environments include:
+The `magento-cloud` CLI commands can only be used in environments with the software installed. These environments include:
 
 *  Starter environments
 *  Pro Integration environments
 
-To SSH to an environment using the Magento Cloud command line:
+To SSH to an environment using the `magento-cloud` command line:
 
 1. Log in to the project:
 
@@ -94,7 +94,7 @@ ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
 
 ### SSH commands for Pro Staging and Production {#pro}
 
-You can not use the Magento Cloud CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.
+You cannot use the `magento-cloud` CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.
 
 With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.
 
@@ -111,27 +111,20 @@ For example, to log in to the Staging environment, use the following command: `s
 
 ## sFTP to environments {#sftp}
 
-Typically, you want to use SSH for secure access to your environments and [migrate files]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
+Typically, you use SSH for secure access to your environments and [migrate files]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
 
 You need the following requirements to sFTP into cloud environments:
 
 *  You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.
 *  Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) with your public key attached. **Never provide your private SSH key.**
 
-When configuring sFTP, use your SSH public key and the following information for access:
+When configuring sFTP, use the information from your [SSH access environment command](#ssh) (`<project-id>-<environment-id>--<app-name>@ssh<cloud-host>`) and the following information:
 
-*  Username: All content before the `@` in your public SSH key.
+*  Username: All content before the `@` in your SSH access destination.
 *  Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
-*  Host: All content after the `@` in your public SSH key.
+*  Host: All content after the `@` in your SSH access.
 *  Port: 22, which is the default SSH port.
-
-To add your SSH public key information to your client:
-
-1. Use a text editor to open your generated SSH public key. Locate and edit the file in the directory location you generated it into.
-1. Copy and paste all content before the `@` in the file for the client Username.
-1. Leave Password empty.
-1. Copy and paste all content after the `@` in the file for the client Host.
-1. For the Port, enter 22.
+*  SSH Private Key: If necessary, provide the location of your private key to the sFTP client. By default, private keys are stored in the `~/.ssh` directory.
 
 Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.
 

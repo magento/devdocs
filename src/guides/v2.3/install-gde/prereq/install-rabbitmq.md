@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: RabbitMQ
 functional_areas:
   - Install
@@ -9,7 +8,7 @@ functional_areas:
 
 ## RabbitMQ Overview {#overview}
 
-RabbitMQ is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.
+RabbitMQ is an open source message broker that offers a reliable, highly available, scalable, and portable messaging system.
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
 
@@ -33,10 +32,10 @@ This command also installs the required Erlang packages.
 
 If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their website.
 
-1. Download the .deb package from [rabbitmq-server](https://www.rabbitmq.com/download.html){:target="_blank"}.
+1. Download the .deb package from [rabbitmq-server](https://www.rabbitmq.com/download.html).
 1. Install the package with `dpkg`.
 
-Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html){:target="_blank"} for more information.
+Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html) for more information.
 
 ## Install RabbitMQ on CentOS {#centos-install}
 
@@ -44,7 +43,7 @@ Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.h
 
 RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ.
 
-See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="_blank"} for more information.
+See [Manual installation](https://www.erlang-solutions.com/resources/download.html) for more information.
 
 Refer to the [RabbitMQ/Erlang version matrix](https://www.rabbitmq.com/which-erlang.html) to install the correct version.
 
@@ -52,9 +51,9 @@ Refer to the [RabbitMQ/Erlang version matrix](https://www.rabbitmq.com/which-erl
 
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-Refer to the RabbitMQ install page to get the latest supported vesion. Magento 2.3 supports RabbitMQ 3.8.x.
+Refer to the RabbitMQ install page to get the latest supported version. Magento 2.3 and 2.4 support RabbitMQ 3.8.x.
 
-Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
+Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html) for more information.
 
 ## Configure RabbitMQ {#config}
 
@@ -101,7 +100,13 @@ If you already had Magento installed and you want to connect it to RabbitMQ, add
   ),
 ```
 
-Then, run `bin/magento setup:upgrade` to apply the changes and create the required queues in RabbitMQ.
+You can also set RabbitMQ configuration values using the `bin/magento setup:config:set` command:
+
+```bash
+bin/magento setup:config:set --amqp-host="rabbitmq.example.com" --amqp-port="11213" --amqp-user="magento" --amqp-password="magento" --amqp-virtualhost="/"
+```
+
+After the running the command or updating the `<install_directory>/app/etc/env.php` file with AMQP configuration values, run `bin/magento setup:upgrade` to apply the changes and create the required queues and exchanges in RabbitMQ.
 
 ## Configure SSL
 

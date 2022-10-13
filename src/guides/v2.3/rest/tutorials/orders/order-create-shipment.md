@@ -37,7 +37,7 @@ where `3` is the order id.
 
 **Payload:**
 
-The `tracks` array optionally allows you to include one or more tracking numbers for the [shipment](https://glossary.magento.com/shipment).
+The `notify` field is used to trigger Magento to send the shipment email. The `tracks` array optionally allows you to include one or more tracking numbers for the [shipment](https://glossary.magento.com/shipment).
 
 {% collapsible Show code sample %}
 
@@ -57,6 +57,7 @@ The `tracks` array optionally allows you to include one or more tracking numbers
       "qty": 1
     }
   ],
+  "notify": true,
   "tracks": [
     {
       "track_number": "1Y-9876543210",
@@ -75,4 +76,4 @@ A shipment ID, such as `3`.
 
 ## Verify this step
 
-Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Shipments**. The shipment is displayed in the grid. Then click **Sales** > **Orders**. The status is Complete.
+Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Shipments**. The shipment is displayed in the grid. Then click **Sales** > **Orders**. The order status is Complete.

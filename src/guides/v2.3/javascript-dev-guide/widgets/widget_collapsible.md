@@ -106,7 +106,7 @@ Multiple types are supported:
 -  Boolean: the `false` value disables the animation
 -  Number: duration in milliseconds
 -  String: is parsed to an object as a json string
--  Object: For details about the object passed, see [jQuery.animate()](http://api.jquery.com/animate/).
+-  Object: For details about the object passed, see [jQuery.animate()](https://api.jquery.com/animate/).
 
    ```javascript
        {
@@ -295,7 +295,7 @@ $("#element").collapsible("option","header",".header");
 ```
 
 ### `icons` {#fedg_collaps_icons}
-The classes for icons to be used in headers. If no classes are specified, icons are not be created. A new span is created and appended to the header, the classes for this span are automatically changed whenever the content gets expanded/collapsed.
+The classes for icons to be used in headers. If no classes are specified, icons are not be created. A new span is created and prepended to the header, the classes for this span are automatically changed whenever the content gets expanded/collapsed.
 
 **Type**: String
 

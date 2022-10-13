@@ -18,7 +18,7 @@ A common suggestion is to use a value of `022` in the `magento_umask` file, whic
 
 To set `magento_umask`:
 
-1. In a command line terminal, log in to your Magento server as a [Magento file system owner][].
+1. In a command line terminal, log in to your Magento server as a [file system owner][].
 1. Navigate to the Magento install directory:
 
    ```bash
@@ -33,9 +33,9 @@ To set `magento_umask`:
 
    You should now have a file named `magento_umask` in the `<Magento install dir>` with the only content being the `umask` number.
 
-1. Log out and log back in as the [Magento file system owner][] to apply the changes.
+1. Log out and log back in as the [file system owner][] to apply the changes.
 
 <!-- Link Definitions -->
 
-[Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
-[umask]: http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
+[file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
+[umask]: https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html

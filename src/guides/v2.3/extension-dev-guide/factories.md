@@ -5,7 +5,7 @@ title: Factories
 menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
-contributor_link: http://www.classyllama.com/
+contributor_link: https://www.classyllama.com/
 ---
 
 ## Overview
@@ -23,32 +23,43 @@ Factories are an [exception](https://glossary.magento.com/exception) to this rul
 The following example illustrates the relationship between a simple factory and the `ObjectManager`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\Framework\App\Config;
+
+use Magento\Framework\ObjectManagerInterface;
+use Magento\Framework\Simplexml\Element;
+use Magento\Framework\App\Config\Base;
 
 class BaseFactory
 {
-  /**
-   * @var \Magento\Framework\ObjectManagerInterface
-   */
-  protected $_objectManager;
+    /**
+     * @var ObjectManagerInterface
+     */
+    protected $_objectManager;
 
-  /**
-   * @param \Magento\Framework\ObjectManagerInterface $objectManager
-   */
-  public function __construct(\Magento\Framework\ObjectManagerInterface $objectManager)
-  {
-    $this->_objectManager = $objectManager;
-  }
+    /**
+     * @param ObjectManagerInterface $objectManager
+     */
+    public function __construct(ObjectManagerInterface $objectManager)
+    {
+        $this->_objectManager = $objectManager;
+    }
 
-  /**
-   * Create config model
-   * @param string|\Magento\Framework\Simplexml\Element $sourceData
-   * @return \Magento\Framework\App\Config\Base
-   */
-  public function create($sourceData = null)
-  {
-    return $this->_objectManager->create(\Magento\Framework\App\Config\Base::class, ['sourceData' => $sourceData]);
-  }
+    /**
+     * Create config model
+     *
+     * @param string|Element $sourceData
+     * @return Base
+     */
+    public function create($sourceData = null): Base
+    {
+        return $this->_objectManager->create(Base::class, ['sourceData' => $sourceData]);
+    }
 }
 ```
 
@@ -81,23 +92,25 @@ $block = $this->blockFactory->create();
 
 For classes that require parameters, the automatically generated `create()` function accepts an array of parameters that it passes on to the `ObjectManager` to create the target class.
 
-The example below shows the construction of a `Magento\Search\Model\Autocomplete\Item` object by passing in an array of parameters to a factory:
+The example below shows the construction of a `\Magento\Framework\FlagFactory` object by passing in an array of parameters to a factory:
+
 ```php
-$resultItem = $this->itemFactory->create([
-  'title' => $item->getQueryText(),
-  'num_results' => $item->getNumResults(),
+$flag = $this->flagFactory->create([
+  'data' =>  ['flag_code' => 'something']
 ]);
 ```
+
+The `Flag` class has a `$data` constructor parameter which corresponds to the data key in the `create` array above.
 
 ### Interfaces
 
 Factories are smart enough to resolve dependencies and allow you to get the correct instance of an interface as defined in your module's `di.xml`.
 
-For example, in the [`CatalogInventory`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory){:target="_blank"} module, the `di.xml` file contains the following entry:
+For example, in the [`CatalogInventory`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory) module, the `di.xml` file contains the following entry:
 
 ```xml
 <preference for="Magento\CatalogInventory\Api\Data\StockItemInterface" type="Magento\CatalogInventory\Model\Stock\Item" />
 ```
 
-It instructs Magento to use the specific [`Item`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Model/Stock/Item.php){:target="_blank"} class wherever the [`StockItemInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php){:target="_blank"} is used.
+It instructs Magento to use the specific [`Item`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Model/Stock/Item.php) class wherever the [`StockItemInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php) is used.
 When a class in that [module](https://glossary.magento.com/module) includes the factory `StockItemInterfaceFactory` as a dependency, Magento generates a factory that is capable of creating the specific `Item` objects.

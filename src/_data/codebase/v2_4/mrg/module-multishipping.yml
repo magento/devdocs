@@ -1,0 +1,72 @@
+---
+title: Multishipping
+content: "**Magento_Multishipping** module provides functionality that allows customer
+  to request shipping to more than one address\nusing different carriers. The module
+  provides alternative to standard checkout flow.\n\n## Installation\n\nFor information
+  about a module installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Structure\n\nFor information about a typical file structure of a module in Magento
+  2,\n see [Module file structure](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n
+  \n ## Extensibility\n\nDevelopers can interact with the module and change behaviour
+  using type configuration feature.\n\nNamely, we can change `paymentSpecification`
+  for `Magento\\Multishipping\\Block\\Checkout\\Billing` and `Magento\\Multishipping\\Model\\Checkout\\Type\\Multishipping`
+  classes. \nAs result, we will get changed behaviour, new logic or something what
+  our business need. \n\nFor example:\n```\n<type name=\"Magento\\Multishipping\\Model\\Checkout\\Type\\Multishipping\">\n
+  \    <arguments>\n         <argument name=\"paymentSpecification\" xsi:type=\"object\">multishippingPaymentSpecification</argument>\n
+  \    </arguments>\n</type>\n```\nYo can check this configuration and find more examples
+  in the `etc/frontend/di.xml` file.\n \nMore information about [type configuration](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/di-xml-file.html).\n\n\nExtension
+  developers can interact with the Magento_Multishipping module. For more information
+  about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_Msrp module.\n\n### Events\n\nThis
+  module observes the following event:\n\n`etc/frontend/`\n\n - `checkout_cart_save_before`
+  in the `Magento\\Multishipping\\Observer\\DisableMultishippingObserver` file. \n\nThe
+  module dispatches the following events:\n\n- `multishipping_checkout_controller_success_action`
+  event in the\n  class `\\Magento\\Multishipping\\Controller\\Checkout\\Success::execute()`
+  method. Parameters:\n    - `order_ids` is order ids created during checkout\n- `checkout_controller_multishipping_shipping_post`
+  event in the\n  class `\\Magento\\Multishipping\\Controller\\Checkout\\ShippingPost::execute()`
+  method. Parameters:\n    - `request` is a request object `Magento\\Framework\\App\\RequestInterface`.\n
+  \   - `quote` is a quote object for current checkout `Magento\\Quote\\Model\\Quote`.\n-
+  `checkout_type_multishipping_set_shipping_items` event in the\n  class `\\Magento\\Multishipping\\Model\\Checkout\\Type\\Multishipping::setShippingItemsInformation()`
+  method. Parameters:\n    - `quote` is a quote object for current checkout `Magento\\Quote\\Model\\Quote`.\n-
+  `checkout_type_multishipping_create_orders_single` event in the\n  class `\\Magento\\Multishipping\\Model\\Checkout\\Type\\Multishipping::createOrders()`
+  method. Parameters:\n    - `order` is a prepared order object for creating `\\Magento\\Sales\\Model\\Order`.\n
+  \   - `address` is an address array.\n    - `quote` is a quote object for current
+  checkout `Magento\\Quote\\Model\\Quote`.\n- `checkout_submit_all_after` event in
+  the\n  class `\\Magento\\Multishipping\\Model\\Checkout\\Type\\Multishipping::createOrders()`
+  method. Parameters:\n    - `orders` is order object array `\\Magento\\Sales\\Model\\Order`
+  \ that was created.\n    - `quote` is a quote object for current checkout `Magento\\Quote\\Model\\Quote`.\n-
+  `checkout_multishipping_refund_all` event in the\n  class `\\Magento\\Multishipping\\Model\\Checkout\\Type\\Multishipping::createOrders()`
+  method. Parameters:\n    - `orders` is order object array `\\Magento\\Sales\\Model\\Order`
+  \ that was created.\n\nFor information about an event in Magento 2, see [Events
+  and observers](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/events-and-observers.html#events).\n\n###
+  Layouts\n\nThe module interacts with the following layout handles:\n\n`view/frontend/layout`
+  directory:\n\n - `checkout_cart_index`\n \nThis module introduces the following
+  layouts and layout handles:\n\n`view/frontend/layout` directory:\n\n - `multishipping_checkout`\n
+  - `multishipping_checkout_address_editaddress`\n - `multishipping_checkout_address_editbilling`\n
+  - `multishipping_checkout_address_editshipping`\n - `multishipping_checkout_address_newbilling`\n
+  - `multishipping_checkout_address_newshipping`\n - `multishipping_checkout_address_select`\n
+  - `multishipping_checkout_address_selectbilling`\n - `multishipping_checkout_addresses`\n
+  - `multishipping_checkout_billing`\n - `multishipping_checkout_customer_address`\n
+  - `multishipping_checkout_login`\n - `multishipping_checkout_overview`\n - `multishipping_checkout_register`\n
+  - `multishipping_checkout_results`\n - `multishipping_checkout_shipping`\n - `multishipping_checkout_success`\n\n##
+  Additional information\n\n### ACL\n\nModule introduces the following resources:\n\n-
+  `Magento_Multishipping::config_multishipping` - Multishipping Settings Section\n\nMore
+  information about [Access Control List rule](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/create-access-control-list-rule.html).\n\n###
+  Page Types\n\nModule introduces the new pages:\n\n`etc/frontend/page_types.xml`
+  file.\n\n- `checkout_cart_multishipping` - Catalog Quick Search Form Suggestion\n-
+  `checkout_cart_multishipping_address_editaddress` - Multishipping Checkout One Address
+  Edit Form\n- `checkout_cart_multishipping_address_editbilling` - Multishipping Checkout
+  Billing Address Edit Form\n- `checkout_cart_multishipping_address_editshipping`
+  - Multishipping Checkout Shipping Address Edit Form\n- `checkout_cart_multishipping_address_newbilling`
+  - Multishipping Checkout Billing Address Creation\n- `checkout_cart_multishipping_address_newshipping`
+  - Multishipping Checkout Shipping Address Creation\n- `checkout_cart_multishipping_address_selectbilling`
+  - Multishipping Checkout Billing Address Selection\n- `checkout_cart_multishipping_addresses`
+  - Multishipping Checkout Address (Any) Form\n- `checkout_cart_multishipping_billing`
+  - Multishipping Checkout Billing Information Step\n- `checkout_cart_multishipping_customer_address`
+  - Multishipping Checkout Customer Address Edit Form\n- `checkout_cart_multishipping_login`
+  - Multishipping Checkout Login User Form\n- `checkout_cart_multishipping_overview`
+  - Multishipping Checkout Overview\n- `checkout_cart_multishipping_register` - Multishipping
+  Checkout Register User Form\n- `checkout_cart_multishipping_shipping` - Multishipping
+  Checkout Shipping Information Step\n- `checkout_cart_multishipping_success` - Multishipping
+  Checkout Success\n\nMore information about [layout types](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-types.html).\n\n\nFor
+  information about significant changes in patch releases, see [2.3.x Release information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)."

@@ -102,3 +102,11 @@ Attribute |  Data Type | Description
 {% include graphql/cart-object-24.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a cart with ID \"xxxxx\"` | The ID provided in the `cart_id` field is invalid or the cart does not exist for the customer.
+`The cart isn't active` | The cart with the given cart ID is unavailable, because the items have been purchased and the cart ID becomes inactive.
+`Field ApplyStoreCreditToCartInput.cart_id of required type String! was not provided` | The value specified in the `ApplyStoreCreditToCartInput.cart_id` argument is empty.

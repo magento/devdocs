@@ -12,19 +12,19 @@ A view model is an abstraction of the view exposing public properties and comman
 Use this approach anytime you need to inject functionality into template files and your code does not need to be backwards compatible with Magento.
 
  {:.bs-callout-info}
-View models are available in Magento 2.2 onwards. If your code must be compatible with older versions of Magento, consider adding your logic to blocks. For more information about backward compatibility, see [Backward compatibility]({{ site.baseurl }}/contributor-guide/backward-compatible-development/).
+View models are available in Magento 2.2 onwards. If your code must be compatible with older versions of Magento, consider adding your logic to blocks. For more information, see [Backward compatibility]({{ site.baseurl }}/contributor-guide/backward-compatible-development/).
 
  {:.bs-callout-info}
-The use of helpers in templates is discouraged. It is recommeneded to use view models instead.
+The use of helpers in templates is discouraged. It is recommended to use view models instead.
 
 ## How to write view models
 
-View models can be used by passing the view model class as an argument to a template's block in the page layout configuration file. In the following example snippet, `MyNewViewModel` is the view model class of the OrangeCompany_Catalog module passed as an argument to a block.
+View models can be used by passing the view model class as an argument to a template's block in the page layout configuration file. In the following example snippet, `MyNewViewModel` is the view model class of the ExampleCorp_Catalog module passed as an argument to a block.
 
 ```xml
-<block name="orangeco.new.viewmodel" template="OrangeCompany_Catalog::example.phtml">
+<block name="examplecorp.new.viewmodel" template="ExampleCorp_Catalog::example.phtml">
     <arguments>
-        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="view_model" xsi:type="object">ExampleCorp\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </block>
 ```
@@ -34,7 +34,7 @@ In the following example, the same view model is used with an existing block in 
 ```xml
 <referenceBlock name="checkout.cart.item.renderers.default">
     <arguments>
-        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="view_model" xsi:type="object">ExampleCorp\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </referenceBlock>
 ```
@@ -42,7 +42,7 @@ In the following example, the same view model is used with an existing block in 
 The view model class must always implement the interface `\Magento\Framework\View\Element\Block\ArgumentInterface`. For example:
 
 ```php
-namespace OrangeCompany\Catalog\ViewModel;
+namespace ExampleCorp\Catalog\ViewModel;
 
 class MyNewViewModel implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
@@ -58,7 +58,7 @@ You can access the public methods for the view model class in the template:
 ```html
 <?php
 
-/** @var $viewModel \OrangeCompany\Catalog\ViewModel\MyNewViewModel */
+/** @var $viewModel \ExampleCorp\Catalog\ViewModel\MyNewViewModel */
 
 $viewModel = $block->getViewModel();
 
@@ -68,7 +68,7 @@ $viewModel = $block->getViewModel();
 
 ## Examples of view models
 
--  [Magento Theme](https://github.com/magento/magento2/blob/2.3.3/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L45 "view_model definition"). This `view_model` is injected into a template to return the target store redirect url.
+-  [Magento Theme]({{ site.mage2bloburl }}/2.3.3/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L45 "view_model definition"). This `view_model` is injected into a template to return the target store redirect url.
 
 The following is an example of view model usage within the `Magento/Catalog/view/frontend/layout/catalog_product_view.xml` layout file.
 

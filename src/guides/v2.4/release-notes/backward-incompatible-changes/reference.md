@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Backward incompatible changes reference
+migrated_to: https://developer.adobe.com/commerce/php/development/backward-incompatible-changes/reference/
+layout: migrated
 ---
 
 Use this page to review high-level reference information for all backward incompatible changes in each release. Backward incompatible changes that have a major impact and require detailed explanation and special instructions are documented in the [Backward incompatible changes highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) topic.
@@ -22,11 +24,89 @@ To view changes in functional tests, refer to [Backward incompatible changes in 
 {:.bs-callout-info}
 Patch releases are primarily focused on delivering security and quality enhancements on a regular basis to help you keep your sites performing at their peak. On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues and high-impact quality issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes. See [Release policy]({{site.baseurl}}/release/policy/).
 
+## 2.4.4 - 2.4.5
+
+### {{ site.data.var.ce }}
+
+{% include backward-incompatible-changes/open-source/2.4.4-2.4.5.md %}
+
+### {{ site.data.var.ee }}
+
+{% include backward-incompatible-changes/commerce/2.4.4-2.4.5.md %}
+
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/b2b/2.4.4-2.4.5.md %}
+
+## 2.4.3 - 2.4.4
+
+### {{ site.data.var.ce }}
+
+{% include backward-incompatible-changes/open-source/2.4.3-2.4.4.md %}
+
+### {{ site.data.var.ee }}
+
+{% include backward-incompatible-changes/commerce/2.4.3-2.4.4.md %}
+
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/b2b/2.4.3-2.4.4.md %}
+
+## 2.4.3 - 2.4.3-p1
+
+### {{ site.data.var.ce }}
+
+{% include backward-incompatible-changes/open-source/2.4.3-2.4.3-p1.md %}
+
+### {{ site.data.var.ee }}
+
+{% include backward-incompatible-changes/commerce/2.4.3-2.4.3-p1.md %}
+
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/commerce/2.4.3-2.4.3-p1.md %}
+
+## 2.4.2 - 2.4.3
+
+### {{ site.data.var.ce }}
+
+{% include backward-incompatible-changes/open-source/2.4.2-2.4.3.md %}
+
+### {{ site.data.var.ee }}
+
+{% include backward-incompatible-changes/commerce/2.4.2-2.4.3.md %}
+
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/b2b/2.4.2-2.4.3.md %}
+
+## 2.4.1 - 2.4.2
+
+### {{ site.data.var.ce }}
+
+{% include backward-incompatible-changes/open-source/2.4.1-2.4.2.md %}
+
+### {{ site.data.var.ee }}
+
+{% include backward-incompatible-changes/commerce/2.4.1-2.4.2.md %}
+
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/b2b/2.4.1-2.4.2.md %}
+
 ## 2.4.0 - 2.4.1
+
+### {{ site.data.var.ce }}
 
 {% include backward-incompatible-changes/open-source/2.4.0-2.4.1.md %}
 
+### {{ site.data.var.ee }}
+
 {% include backward-incompatible-changes/commerce/2.4.0-2.4.1.md %}
+
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/b2b/2.4.0-2.4.1.md %}
 
 ## 2.3.0 - 2.4.0
 

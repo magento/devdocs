@@ -6,7 +6,7 @@ contributor_link: https://www.atwix.com/
 ---
 
 {:.bs-callout-warning}
-Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+We recommend using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
 
 A downloadable product can be anything that you can deliver as a file, such as an eBook, music, video, software application, or an update. To add a downloadable product to a cart, you must provide the cart ID, the SKU, and the quantity. In some cases, you must include the IDs for downloadable product links. You can also optionally specify customizable options.
 
@@ -219,13 +219,13 @@ Attribute |  Data Type | Description
 
 The `CartItemInput` object must contain the following attributes:
 
-{% include graphql/cart-item-input.md %}
+{% include graphql/cart-item-input-24.md %}
 
 ### CustomizableOptionInput object {#CustomizableOptionInputVirtual}
 
-The `CustomizableOptionInput` object must contain the following attributes:
+The `CustomizableOptionInput` object can contain the following attributes:
 
-{% include graphql/customizable-option-input.md %}
+{% include graphql/customizable-option-input-24.md %}
 
 ### DownloadableProductCartItemInput object {#DownloadableProductCartItemInput}
 
@@ -261,6 +261,8 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` database table.
+`Could not find a product with SKU "YYY"` | A product with the SKU specified in the `data`.`sku` argument does not exist.
 `Required parameter "cart_id" is missing` | The mutation does not contain a `cart_id` argument.
 `Required parameter "cart_items" is missing` | The `cart_items` argument is empty or is not of type `array`.
 `Please specify product link(s).` | You tried to add a downloadable product in which the `Links can be purchased separately` option is enabled, but you did not specify individual product links.

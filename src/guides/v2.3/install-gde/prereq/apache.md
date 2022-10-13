@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Apache
 functional_areas:
   - Install
@@ -10,15 +9,6 @@ functional_areas:
 ## Apache versions supported {#apache-support}
 
 Magento supports Apache 2.4.x.
-
-## Help if you are just starting out {#apache-help-beginner}
-
-If you are new to all this and need some help getting started, we suggest the following:
-
-*  [Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-*  [What is the software that the Magento server needs to run?]({{page.baseurl }}/install-gde/basics/basics_software.html)
-*  [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
-*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Important: Apache required directives {#apache-required-directives}
 
@@ -33,7 +23,7 @@ If you are new to all this and need some help getting started, we suggest the fo
 
 ## Important: Apache rewrites and .htaccess {#apache-help-rewrite}
 
-This topic discusses how to enable Apache 2.4 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="_blank"}.
+This topic discusses how to enable Apache 2.4 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](https://httpd.apache.org/docs/current/howto/htaccess.html).
 
 Magento uses server rewrites and `.htaccess` to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.
 
@@ -42,7 +32,7 @@ Magento uses server rewrites and `.htaccess` to provide directory-level instruct
 {% endcollapsible %}
 
 {:.bs-callout-info}
-Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
+Failure to enable these settings typically results in styles not displaying on the storefront or Admin.
 
 ## Apache required modules {#apache-required-modules}
 
@@ -66,8 +56,8 @@ apache2 -v
 The result displays similar to the following:
 
 ```terminal
-Server version: Apache/2.2.22 (Ubuntu)
-Server built: Jul 22 2014 14:35:32
+Server version: Apache/2.4.04 (Ubuntu)
+Server built: Jul 22 2020 14:35:32
 ```
 
 *  If Apache is *not* installed, see:
@@ -79,12 +69,12 @@ Server built: Jul 22 2014 14:35:32
 The following sections discusses how to install or upgrade Apache:
 
 *  Install Apache
-*  Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 7.3+
+*  Upgrade to Apache 2.4 on Ubuntu to use PHP 7.3.
 
-### Installing Apache on Ubuntu 16, 14, or 12 {#install-prereq-apache-ubuntu-install}
+### Installing Apache on Ubuntu {#install-prereq-apache-ubuntu-install}
 
 {% collapsible Click to show/hide content %}
-To install the default version of Apache (Ubuntu 14, 16---Apache 2.4):
+To install the default version of Apache:
 
 1. Install Apache
 
@@ -102,7 +92,7 @@ To install the default version of Apache (Ubuntu 14, 16---Apache 2.4):
 
    ```terminal
    Server version: Apache/2.4.18 (Ubuntu)
-   Server built: 2016-04-15T18:00:57
+   Server built: 2020-04-15T18:00:57
    ```
 
 1. Enable rewrites and `.htaccess` as discussed in the following sections.
@@ -120,11 +110,9 @@ Next steps
 
 {% endcollapsible %}
 
-### Upgrading Apache on Ubuntu 12 {#install-prereq-apache-ubuntu-upgrade}
+### Upgrading Apache on Ubuntu {#install-prereq-apache-ubuntu-upgrade}
 
 {% collapsible Click to show/hide content %}
-
-To use PHP 7.3 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
 
 To upgrade to Apache 2.4:
 
@@ -149,7 +137,7 @@ To upgrade to Apache 2.4:
    ```
 
    {:.bs-callout-info}
-   If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
+   If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa).
 
 1. Verify the installation.
 
@@ -161,7 +149,7 @@ To upgrade to Apache 2.4:
 
    ```terminal
    Server version: Apache/2.4.10 (Ubuntu)
-   Server built: Jul 22 2014 22:46:25
+   Server built: Jul 22 2020 22:46:25
    ```
 
 1. Continue with the next section.
@@ -178,9 +166,9 @@ Next steps
 
 {% endcollapsible %}
 
-## Installing Apache on CentOS 6 or 7 {#install-prereq-apache-centos}
+## Installing Apache on CentOS {#install-prereq-apache-centos}
 
-{% collapsible Click to install Apache on CentOS 6 or 7 %}
+{% collapsible Click to install Apache on CentOS %}
 Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in `.htaccess`, which Magento uses to specify rewrite rules.
 
 Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify `.htaccess` directives.
@@ -203,15 +191,15 @@ Installing and configuring Apache is basically a three-step process: install the
 
    ```terminal
    Server version: Apache/2.2.15 (Unix)
-   Server built: Oct 16 2014 14:48:21
+   Server built: Oct 16 2020 14:48:21
    ```
 
 1. Continue with the next section.
 
    {:.bs-callout-info}
-   Even though Apache 2.4 is provided by default with CentOS 7. See the following section to configure it.
+   Even if Apache 2.4 is provided by default with CentOS, see the following section to configure it.
 
-### Enable rewrites and .htaccess for CentOS 7
+### Enable rewrites and .htaccess for CentOS
 
 1. Open `/etc/httpd/conf/httpd.conf` file for editing:
 
@@ -222,7 +210,7 @@ Installing and configuring Apache is basically a three-step process: install the
 1. Locate the block that starts with:
 
    ```conf
-   <Directory /var/www/html>
+   <Directory "/var/www/html">
    ```
 
 1. Change the value of `AllowOverride` to `All`.
@@ -230,12 +218,12 @@ Installing and configuring Apache is basically a three-step process: install the
    For example,
 
    ```conf
-   <Directory /var/www/>
+   <Directory "/var/www/">
      Options Indexes FollowSymLinks MultiViews
      AllowOverride All
      Order allow,deny
      Allow from all
-   <Directory>
+   </Directory>
    ```
 
    {:.bs-callout-info}
@@ -262,20 +250,19 @@ Failure to enable these settings typically results in no styles displaying on yo
 
 1. Locate the block that starts with:
 
-   *  Ubuntu 12: `<Directory /var/www/>`
-   *  Ubuntu 14: `<Directory /var/www/html>`
+   `<Directory "/var/www/html">`
 
 1. Change the value of `AllowOverride` to `All`.
 
-   An example for Ubuntu 12 follows:
+   For example:
 
    ```conf
-   <Directory /var/www/>
+   <Directory "/var/www/html">
      Options Indexes FollowSymLinks MultiViews
      AllowOverride All
      Order allow,deny
      Allow from all
-   <Directory>
+   </Directory>
    ```
 
 1. Save the file and exit the text editor.
@@ -312,12 +299,12 @@ If you encounter 403 Forbidden errors when trying to access the Magento site, yo
 
 ### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
 
-To enable website visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html){:target="_blank"}.
+To enable website visitors to access your site, use one of the [Require directives](https://httpd.apache.org/docs/2.4/howto/access.html).
 
 For example:
 
 ```conf
-<Directory /var/www/>
+<Directory "/var/www/">
   Options Indexes FollowSymLinks MultiViews
   AllowOverride All
   Order allow,deny
@@ -326,7 +313,7 @@ For example:
 ```
 
 {:.bs-callout-info}
-The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="_blank"}.
+The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order).
 {% endcollapsible %}
 
 {:.ref-header}

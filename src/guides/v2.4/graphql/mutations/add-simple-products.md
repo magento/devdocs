@@ -6,7 +6,7 @@ redirect from:
 ---
 
 {:.bs-callout-warning}
-Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+We recommend using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
 
 The `addSimpleProductsToCart` mutation allows you to add any number of simple and group products to the cart at the same time.
 
@@ -163,12 +163,12 @@ The following example adds a grouped product (`Workout-Kit`) to a cart. The grou
 mutation {
   addSimpleProductsToCart(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
+      cart_id: "2m3Wpue1L3bNARhErAKbZ8Lb7czvgq6R"
       cart_items: [
         {
           data: {
             quantity: 1
-            sku: "Workout-Kit"
+            sku: "24-WB01"
           }
         }
       ]
@@ -176,7 +176,7 @@ mutation {
   ) {
     cart {
       items {
-        id
+        uid
         product {
           name
           sku
@@ -197,26 +197,10 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "5",
+            "uid": "NDA=",
             "product": {
-              "name": "Go-Get'r Pushup Grips",
-              "sku": "24-UG05"
-            },
-            "quantity": 1
-          },
-          {
-            "id": "6",
-            "product": {
-              "name": "Dual Handle Cardio Ball",
-              "sku": "24-UG07"
-            },
-            "quantity": 1
-          },
-          {
-            "id": "7",
-            "product": {
-              "name": "Harmony Lumaflex&trade; Strength Band Kit ",
-              "sku": "24-UG03"
+              "name": "Voyage Yoga Bag",
+              "sku": "24-WB01"
             },
             "quantity": 1
           }
@@ -244,13 +228,13 @@ Attribute |  Data Type | Description
 
 The `CartItemInput` object must contain the following attributes:
 
-{% include graphql/cart-item-input.md %}
+{% include graphql/cart-item-input-24.md %}
 
 ### CustomizableOptionInput object {#CustomizableOptionInputSimple}
 
-The `CustomizableOptionInput` object must contain the following attributes:
+The `CustomizableOptionInput` object can contain the following attributes:
 
-{% include graphql/customizable-option-input.md %}
+{% include graphql/customizable-option-input-24.md %}
 
 ### SimpleProductCartItemInput object {#SimpleProductCartItemInput}
 

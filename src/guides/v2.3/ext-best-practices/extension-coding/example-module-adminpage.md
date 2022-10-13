@@ -1,9 +1,6 @@
 ---
 group: extension-best-practices
-subgroup: 02_Extension-Coding
-title: Creating a Magento admin page
-menu_title: Creating a Magento admin page
-menu_order: 1000
+title: Creating an admin page
 functional_areas:
   - Standards
 ---
@@ -48,7 +45,7 @@ For more information see: [`composer.json`]({{ page.baseurl }}/extension-dev-gui
       "AFL-3.0"
     ],
     "require": {
-      "php": "~7.1.3||~7.2.0||~7.3.0"
+      "php": "~7.2.0||~7.3.0"
     },
     "autoload": {
       "files": [ "registration.php" ],
@@ -69,12 +66,19 @@ For more information see: [registering your component]({{ page.baseurl }}/extens
 
 {% collapsible File content for registration.php %}
 ```php
-  <?php
-  \Magento\Framework\Component\ComponentRegistrar::register(
-      \Magento\Framework\Component\ComponentRegistrar::MODULE,
-      'MyCompany_ExampleAdminNewPage',
-      __DIR__
-  );
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'MyCompany_ExampleAdminNewPage',
+    __DIR__
+);
 ```
 {% endcollapsible %}
 
@@ -182,12 +186,17 @@ In the module's root directory, run the following command:
 mkdir -p Controller/Adminhtml/HelloWorld
 ```
 
-Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`. This file is the class assigned to the default Index action for the `HelloWorld` controller. Since the admin area serves this page, the file belongs in the `Adminhtml` directory, and the class itself extends [`\Magento\Backend\App\Action`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/App/Action.php){:target="_blank"}.
+Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`. This file is the class assigned to the default Index action for the `HelloWorld` controller. Since the admin area serves this page, the file belongs in the `Adminhtml` directory, and the class itself extends [`\Magento\Backend\App\Action`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/App/Action.php).
 
 {% collapsible File content for Index.php %}
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld;
 
 use Magento\Backend\App\Action;
@@ -248,8 +257,8 @@ Now that Magento knows how to handle requests for the **Hello World** page, we n
 Create the necessary directories for the files by running the following commands from the module's root directory:
 
 ```bash
-mkdir -pm view/adminhtml/layout
-mkdir -pm view/adminhtml/templates
+mkdir -p view/adminhtml/layout
+mkdir -p view/adminhtml/templates
 ```
 
 These files belong in the `view/adminhtml` directory because the Magento admin area use these files during page generation.

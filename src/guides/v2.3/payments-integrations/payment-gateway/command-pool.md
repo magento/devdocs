@@ -13,7 +13,7 @@ All [gateway commands]({{ page.baseurl }}/payments-integrations/payment-gateway/
 
 ## Interface
 
-The basic interface for a command pool is [`\Magento\Payment\Gateway\Command\CommandPoolInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php). It implements the [Pool pattern](http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html)
+The basic interface for a command pool is [`\Magento\Payment\Gateway\Command\CommandPoolInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php). It implements the [Pool pattern](https://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html)
 
 ## Default implementation
 
@@ -22,11 +22,11 @@ implements `CommandPoolInterface` and takes a list of commands as an optional ar
 
 ## Command pool configuration for a particular provider
 
-Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's [payment method](https://glossary.magento.com/payment-method) configuration ([`app/code/Magento/Braintree/etc/di.xml`]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml)).
+Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's [payment method](https://glossary.magento.com/payment-method) configuration ([`app/code/Magento/Braintree/etc/di.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/di.xml)).
 
 ```xml
 ...
-<!-- BrainreeCommandPool - a command pool for the Braintree payments provider -->
+<!-- BraintreeCommandPool - a command pool for the Braintree payments provider -->
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
     <arguments>
         <argument name="commands" xsi:type="array">
@@ -38,7 +38,7 @@ Following is an example of the command pool configuring for the Braintree paymen
     </arguments>
 </virtualType>
 ...
-<!-- Adding BrainreeCommandPool to the Braintree payment method configuration:-->
+<!-- Adding BraintreeCommandPool to the Braintree payment method configuration:-->
 <virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">
     <arguments>
         ...

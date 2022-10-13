@@ -1,5 +1,5 @@
 This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2.
-For additional details about configuring Elasticsearch, see the [{{site.data.var.ee}} User Guide](http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html).
+For additional details about configuring Elasticsearch, see the [{{site.data.var.ee}} User Guide]({{ site.user_guide_url }}/catalog/search-elasticsearch.html).
 
 {% include config/es-version-23.md %}
 
@@ -7,7 +7,7 @@ For additional details about configuring Elasticsearch, see the [{{site.data.var
 
 To configure Magento to use Elasticsearch:
 
-1. Log in to the Magento Admin as an administrator.
+1. Log in to the Admin as an administrator.
 1. Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
 1. From the **Search Engine** list, select your Elasticsearch version.
 
@@ -72,7 +72,7 @@ To clean the cache using the command line, use the [`magento cache:clean`]({{ pa
 
 To reindex using the command line:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as, or switch to, the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Enter any of the following commands:
 
 Enter the following command to reindex the catalog search index only:

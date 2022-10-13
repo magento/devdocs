@@ -6,7 +6,7 @@ contributor_link: https://www.atwix.com/
 ---
 
 {:.bs-callout-warning}
-Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+We recommend using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
 
 Use the `addBundleProductsToCart` mutation to add bundle products to a specific cart.
 
@@ -34,7 +34,7 @@ The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/mu
 mutation {
   addBundleProductsToCart(
     input: {
-      cart_id: "wARFaDnHva0tgzuforUYR4rvXincj5eu"
+      cart_id: "2m3Wpue1L3bNARhErAKbZ8Lb7czvgq6R"
       cart_items: [
       {
         data: {
@@ -76,14 +76,14 @@ mutation {
   }) {
     cart {
       items {
-        id
+        uid
         quantity
         product {
           sku
         }
         ... on BundleCartItem {
           bundle_options {
-            id
+            uid
             label
             type
             values {
@@ -109,14 +109,28 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "7",
+            "uid": "MjI=",
+            "quantity": 1,
+            "product": {
+              "sku": "WSH12"
+            }
+          },
+          {
+            "uid": "MjQ=",
+            "quantity": 3,
+            "product": {
+              "sku": "24-WB01"
+            }
+          },
+          {
+            "uid": "MzI=",
             "quantity": 1,
             "product": {
               "sku": "24-WG080"
             },
             "bundle_options": [
               {
-                "id": 1,
+                "uid": "YnVuZGxlLzE=",
                 "label": "Sprite Stasis Ball",
                 "type": "radio",
                 "values": [
@@ -129,7 +143,7 @@ mutation {
                 ]
               },
               {
-                "id": 2,
+                "uid": "YnVuZGxlLzI=",
                 "label": "Sprite Foam Yoga Brick",
                 "type": "radio",
                 "values": [
@@ -142,7 +156,7 @@ mutation {
                 ]
               },
               {
-                "id": 3,
+                "uid": "YnVuZGxlLzM=",
                 "label": "Sprite Yoga Strap",
                 "type": "radio",
                 "values": [
@@ -155,7 +169,7 @@ mutation {
                 ]
               },
               {
-                "id": 4,
+                "uid": "YnVuZGxlLzQ=",
                 "label": "Sprite Foam Roller",
                 "type": "radio",
                 "values": [
@@ -220,9 +234,9 @@ Attribute | Type | Description
 
 ### CustomizableOptionInput object {#customOptionInput}
 
-The `CustomizableOptionInput` object must contain the following attributes:
+The `CustomizableOptionInput` object can contain the following attributes:
 
-{% include graphql/customizable-option-input.md %}
+{% include graphql/customizable-option-input-24.md %}
 
 ## Output attributes
 
@@ -242,8 +256,8 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`Could not find a product with SKU "XXX"` | A simple product with the SKU specified in the `data.sku` argument does not exist.
 `Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` database table.
+`Could not find a product with SKU "XXX"` | A simple product with the SKU specified in the `data.sku` argument does not exist.
 `Required parameter "cart_id" is missing` | The `cart_id` argument is omitted or contains an empty value.
 
 ## Related topics

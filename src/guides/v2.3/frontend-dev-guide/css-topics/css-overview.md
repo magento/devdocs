@@ -7,14 +7,14 @@ functional_areas:
 
 ## Overview
 
-Magento 2 incorporates [Less](http://lesscss.org/), a CSS pre-processor that simplifies the management of complex CSS files.
+Magento 2 incorporates [Less](https://lesscss.org/), a CSS pre-processor that simplifies the management of complex CSS files.
 To define styles of a Magento store, you can use both - CSS and Less stylesheets.
 
 Magento application provides a built-in Less UI library, which you can optionally extend.
 
 To customize [storefront](https://glossary.magento.com/storefront) styles, you need to [create a custom design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html). Then you can use one of the following approaches:
 
-*  If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files.
+*  If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files. For example, to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files.
 *  Create your own Less files using the built-in Less preprocessor.
 *  Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
@@ -43,10 +43,10 @@ In the Blank theme, the buttons of the `.action.primary` class, so called *prima
 
 ![The default view of a product page, with the orange Add to Cart button]
 
-OrangeCo wants to change the color of the primary buttons to orange. To achieve this, they do the following:
+ExampleCorp wants to change the color of the primary buttons to orange. To achieve this, they do the following:
 
 1. Create a new Orange theme, which inherits from the Blank [theme](https://glossary.magento.com/theme).
-1. In the Orange theme directory add the overriding `app/design/frontend/OrangeCo/orange/web/css/source/_theme.less` file with the following code:
+1. In the Orange theme directory add the overriding `app/design/frontend/ExampleCorp/orange/web/css/source/_theme.less` file with the following code:
 
    ```less
    //  Primary button
@@ -58,7 +58,21 @@ OrangeCo wants to change the color of the primary buttons to orange. To achieve 
    @button-primary__hover__border: 1px solid @color-orange-red2;
    ```
 
-When OrangeCo [applies their theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the primary buttons will look like on the following image:
+ExampleCorp wants to change the color of the primary buttons to a custom color. In the orange theme directory add the overriding `app/design/frontend/ExampleCorp/orange/web/css/source/_theme.less` file with the following code:
+
+   ```less
+   //  Primary button
+   @btn-color-text: #2e3138;
+   @btn-color-background: #d5d7dd;
+   @btn-color-background-hover: #d9dbe0;
+   @button-primary__color: @btn-color-text;
+   @button-primary__hover__color: @btn-color-text;
+   @button-primary__background: @btn-color-background;
+   @button-primary__hover__background: @btn-color-background-hover;
+   @button-primary__border: 1px solid @btn-color-background;
+   ```
+
+When ExampleCorp [applies their theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the primary buttons will look like on the following image:
 
 ![The customized view of a product page, with the grey Add to Cart button]
 

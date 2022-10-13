@@ -132,7 +132,7 @@ In instances where to user wishes to build a list of one or many, as in a list o
 
 ## Form Field Validation
 
-Client-side validation should be used whenever possible to assist the user in completing an error-free form prior to submitting the data. A validation check should be triggered when the user redirects focus (clicks or tabs out of a field). A notification message should appear when an error was made. This message should appear in immediate proximity of the form element where the error occurred. This same style should be applied when messaging errors returned from server-side validation checks. Please refer to [Admin Errors and Messages Writing](https://devdocs.magento.com/guides/v2.3/design-styleguide/errors-and-messages/errors-and-messages.html) documentation for more details.
+Client-side validation should be used whenever possible to assist the user in completing an error-free form prior to submitting the data. A validation check should be triggered when the user redirects focus (clicks or tabs out of a field). A notification message should appear when an error was made. This message should appear in immediate proximity of the form element where the error occurred. This same style should be applied when messaging errors returned from server-side validation checks. Please refer to [Admin Errors and Messages Writing]({{ page.baseurl }}/design-styleguide/errors-and-messages/errors-and-messages.html) documentation for more details.
 
 ![](img/validation.png)
 
@@ -189,7 +189,7 @@ For specific details concerning styling including fonts, colors and effects and 
 
 ## Accessibility
 
-Follow this guideline: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms).
+Follow this guideline: [https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms).
 
 ## Assets
 

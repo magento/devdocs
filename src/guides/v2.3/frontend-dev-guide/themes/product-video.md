@@ -8,7 +8,7 @@ functional_areas:
 
 ## What's in this topic
 
-In Magento 2 on product pages you can add video from external resources (currently, from [YouTube](https://youtube.com) and [Vimeo](https://vimeo.com/)). Video is [added in Admin](http://docs.magento.com/m2/2.1/ee/user_guide/catalog/product-video.html?Highlight=product%20video) when creating or editing a product.
+In Magento 2 on product pages you can add video from external resources (currently, from [YouTube](https://youtube.com) and [Vimeo](https://vimeo.com/)). Video is [added in Admin]({{ site.user_guide_url }}/catalog/product-video.html) when creating or editing a product.
 Certain product video options can be set in the `config.xml` configuration file. These settings are not theme-specific.
 
 ## Configure product video options
@@ -84,3 +84,17 @@ Example:
 ```
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module.
+
+## Configure product video options from Admin
+
+1. On the _Admin_ sidebar, go to **Stores** > _Settings_ > **Configuration**.
+
+1. In the left panel, expand **Catalog** and choose **Catalog** underneath.
+
+1. Expand the _Product Video_ section and uncheck the **Use system value** checkbox. Then change the configuration options.
+
+![Product Video Options]({{ page.baseurl }}/frontend-dev-guide/images/config-catalog-catalog-product-video.png)
+
+1. When complete, click _Save Config_.
+
+1. When prompted, refresh the cache.

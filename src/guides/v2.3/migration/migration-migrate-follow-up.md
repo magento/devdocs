@@ -33,11 +33,19 @@ Reference numbers for Orders, Invoices, Shipments, Credit Memos, and RMA migrate
 
 After migration, Customer Segments must be resaved from the [Admin](https://glossary.magento.com/admin) Panel to get them up and running.
 
-### Configure time zone offset
+### Configure time zone
 
-If your Magento 1 server has the time zone set to anything other than UTC, you must configure the offset to migrate timestamp fields. To transform time to a different time zone, use the Data Migration Tool's `\Migration\Handler\Timezone` handler.
+The tool does not migrate timezone settings, so you must manually configure the timezone after migration at **Stores** > **Configuration** > **Locale Options** > **Timezone**.
+By default, Magento stores time data in the UTC-0 zone in the database and displays it according to the current timezone settings.
+If time data has already been saved in the database in a zone other than UTC-0, you must convert the existing time to UTC-0 using the Data Migration Tool’s `\Migration\Handler\Timezone` handler.
 
-In the following example, the Magento 1 server timezone is UTC-7. To convert the customer account creation date properly, add the following rule to `map-customer.xml`:
+In the following example, Magento 1 has been incorrectly saving time in the UTC-7 zone in the database (for example, due to a faulty third-party extension). To properly convert the customer account creation time to the UTC-0 zone upon migration, follow these steps:
+
+1. Copy the `map-customer.xml.dist` configuration file from the appropriate directory of the Data Migration Tool (`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>`) into the `<your Magento 2 install dir>/app/code/Vendor/Migration/etc/<migration edition>/map-customer.xml` file.
+
+1. Update the `<customer_map_file>` node in `config.xml` and remove the `.dist` extension from `map-customer.xml.dist`
+
+1. Add the following rule to the `map-customer.xml` file:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

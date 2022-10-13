@@ -49,7 +49,7 @@ To run the static tests on a subset of files, create a new testsuite for phpunit
 1. Navigate to the Magento base directory and run:
 
    ```bash
-   ./vendor/bin/phpunit --testsuite="Local Test Suite" -c dev/tests/static/phpunit.xml.dist
+   ./vendor/bin/phpunit --testsuite="Local Test Suite" -c dev/tests/static/phpunit.xml
    ```
 
 As a result of this process, you can run PHP static tests on a subset of files. It is also possible to run other types of static tests by following the same process with other testsuites.

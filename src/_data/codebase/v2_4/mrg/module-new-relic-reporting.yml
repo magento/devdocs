@@ -1,0 +1,24 @@
+---
+title: NewRelicReporting
+content: "This module implements integration New Relic APM and New Relic Insights
+  with Magento, giving real-time visibility into business and performance metrics
+  for data-driven decision making. \n\n## Installation\n\nBefore installing this module,
+  note that the Magento_NewRelicReporting is dependent on the following modules:\n-
+  `Magento_Store`\n- `Magento_Customer`\n- `Magento_Backend`\n- `Magento_Catalog`\n-
+  `Magento_ConfigurableProduct`\n- `Magento_Config`\n\nThis module creates the following
+  tables in the database:\n- `reporting_counts`\n- `reporting_module_status`\n- `reporting_orders`\n-
+  `reporting_users`\n- `reporting_system_updates`\n\nFor information about a module
+  installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_NewRelicReporting
+  module. For more information about the Magento extension mechanism, see [Magento
+  plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_NewRelicReporting module.\n\n##
+  Additional information\n\n[Learn more about New Relic Reporting](https://docs.magento.com/user-guide/reports/new-relic-reporting.html).\n\n###
+  Console commands\n\nThe Magento_NewRelicReporting provides console commands:\n-
+  `bin/magento newrelic:create:deploy-marker <message> <change_log> [<user>]` - check
+  the deploy queue for entries and create an appropriate deploy marker\n\n[Learn more
+  about command's parameters](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html#newreliccreatedeploy-marker).\n\n###
+  Cron options\n\nCron group configuration can be set at `etc/crontab.xml`:\n- `magento_newrelicreporting_cron`
+  - runs collecting all new relic reports\n\n[Learn how to configure and run cron
+  in Magento.](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html)."

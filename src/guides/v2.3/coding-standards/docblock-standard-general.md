@@ -12,7 +12,7 @@ Some parts of Magento code might not comply with this standard, but we are worki
 
 Following these standards is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.
 
-Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."
+Use [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."
 
 ## Scope of the standard {#scope}
 
@@ -20,7 +20,7 @@ The goal of this standard is to unify usage of code DocBlocks for all files, not
 
 The following is assumed by default:
 
-*  Formatting according to the [phpDocumentor](https://docs.phpdoc.org/latest/references/phpdoc/basic-syntax.html#what-is-a-docblock){:target="_blank"} standard
+*  Formatting according to the [phpDocumentor](https://docs.phpdoc.org/latest/guide/references/phpdoc/basic-syntax.html#basic-syntax) standard
 *  Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.
 
 ## General principles
@@ -41,7 +41,7 @@ Below are ways of improving code to help simplify documentation:
 *  Break down a method into smaller methods with descriptive names.
    For example:
 
-   ```php
+```php
     public function getPrice()
     {
         $price = 0;
@@ -57,12 +57,13 @@ Below are ways of improving code to help simplify documentation:
 
     private function getDiscount()
     {
-      if (it's discount time) {
-        return 10;
-      }
-      return 0;
+        if (it is discount time) {
+            return 10;
+        }
+
+        return 0;
     }
-   ```
+```
 
 ### Include all necessary details
 
@@ -167,7 +168,7 @@ interface MetadataObjectInterface
 
 ## Code structural elements {#code-elements}
 
-A structural element is defined in [phpDocumentor](http://phpdoc.org/) as part of the imperative source code, such as PHP or JavaScript, or procedural SQL.
+A structural element is defined in [phpDocumentor](https://phpdoc.org/) as part of the imperative source code, such as PHP or JavaScript, or procedural SQL.
 For example:
 
 *  namespace
@@ -202,6 +203,12 @@ There are two solutions possible:
 **DocBlock with Included Script File:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 /**
  * Magento integration Magento test framework (MTF) bootstrap
  *
@@ -222,14 +229,22 @@ class Bootstrap
 **DocBlock with Included Class File:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\Framework\Profiler\Adapter;
+
+use Magento\Framework\Profiler\AdapterAbstract;
 
 /**
  * Profiler CSV adapter
  *
  * ...
  */
-class Csv extends \Magento\Framework\Profiler\AdapterAbstract
+class Csv extends AdapterAbstract
 {
 // ...
     public function setFile($file)
@@ -299,7 +314,12 @@ Class attributes must have a type declaration using `@var` tag.
 **Example of Class Attribute:**
 
 ```php
-// ...
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento;
 
 class Profiler
@@ -573,6 +593,12 @@ In general, such method overrides are a [code smell](https://en.wikipedia.org/wi
 **DocBlock for the Interface:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 /**
  * Interface for mutable value object for integer values
  */
@@ -595,6 +621,12 @@ interface MutableInterface
 **DocBlock for the implementation:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 /**
  * Limited mutable value object for integer values
  */
@@ -628,7 +660,7 @@ The `@api` tag can be applied to a constant, a method, or to the entire class/in
 If the `@api` tag is applied at the file level, then all methods within the file are part of the public [API](https://glossary.magento.com/api).
 You do not need to annotate each method individually.
 
-See [Semantic Versioning 2.0.0](http://semver.org/) for information about changing and updating code while maintaining backward compatibility.
+See [Semantic Versioning 2.0.0](https://semver.org/) for information about changing and updating code while maintaining backward compatibility.
 
 ### @deprecated tag {#deprecated}
 
@@ -728,6 +760,16 @@ Syntax:
 See [PHP documentation](https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDocumentor/tutorial_tags.method.pkg.html) for more information about the `@method` tag.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Catalog\Model\Product;
+
+use Magento\Framework\Model\AbstractModel;
+
 /**
  * Image operations
  *
@@ -735,7 +777,7 @@ See [PHP documentation](https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDoc
  * @method string getLabel()
  * @method string getPosition()
  */
-class Image extends \Magento\Framework\Model\AbstractModel
+class Image extends AbstractModel
 {
     //.....
 }

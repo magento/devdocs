@@ -1,6 +1,7 @@
 ---
-group: installation-guide
 title: Modify docroot to improve security
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/docroot.html
+layout: migrated
 ---
 
 In a standard installation with an Apache web server, Magento is installed to the default web root: `/var/www/html/magento2`.
@@ -14,7 +15,7 @@ Within the `magento2` folder are:
 The Magento app is served from `/var/www/html/magento2/pub`. The rest of the Magento file system is vulnerable because it is accessible from a browser.
 Setting the webroot to the `pub/` directory prevents site visitors from accessing sensitive areas of the Magento file system from a browser.
 
-This topic describes how to change the Apache [docroot]({{ page.baseurl }}/install-gde/basics/basics_docroot.html) on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
+This topic describes how to change the Apache docroot on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
 
 ## A note about nginx
 
@@ -40,14 +41,14 @@ When used in your server block that defines your site, the `nginx.conf.sample` c
 
 ## Before you begin
 
-To complete this tutorial, you will need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack:
+To complete this tutorial, you will need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) stack:
 
 -  Linux
--  Apache (2.2+)
+-  Apache (2.4+)
 -  MySQL (5.7+)
--  PHP (7.3 or 7.4)
--  Elasticsearch (7.x)
--  Magento (2.3+)
+-  PHP (7.4)
+-  Elasticsearch (7.x) or OpenSearch (1.2)
+-  Magento (2.4+)
 
 {:.bs-callout-info}
 Refer to [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html) and the [Installation Guide]({{ page.baseurl }}/install-gde/bk-install-guide.html) for more information.

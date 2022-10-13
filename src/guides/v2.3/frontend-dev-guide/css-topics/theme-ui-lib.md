@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Magento UI library
+title: UI library
 functional_areas:
   - Frontend
   - Theme
@@ -134,6 +134,7 @@ To call a mixin with parameter values different from default, set these values w
     );
 }
 ```
+
 Variables starting with `@_` are private mixin variables used only in this mixin.
 Variables starting with `@` (without the underscore) are global, and are listed in [`lib/web/css/source/lib/variables`].
 
@@ -164,6 +165,7 @@ To set tabs and accordions using breakpoints, see the following example:
     }
 }
 ```
+
 ## Navigation set with CSS
 
 Use the Navigation style for mobile and tab style for desktop.
@@ -242,11 +244,11 @@ The generated Magento UI library documentation is provided in a convenient [HTML
 [embedded documentation]: #docs
 [inherits]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
 
-[Less]: http://lesscss.org/
+[Less]: https://lesscss.org/
 
 [Magento naming convention for the Less variables]: {{ page.baseurl }}/coding-standards/code-standard-less.html#naming
 
-[Magento UI library documentation]: https://magento-devdocs.github.io/magento2-ui-library/
+[Magento UI library documentation]: {{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html
 
 [ui_lib1.png]: {{ site.baseurl }}/common/images/ui_lib1.png
 [ui_lib2.png]: {{ site.baseurl }}/common/images/ui_lib2.png

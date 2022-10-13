@@ -4,19 +4,21 @@ title: Frontend Developer Guide
 landing-page: Frontend Developer Guide
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/
+layout: migrated
 ---
 
 ## Introduction {#overview-introduction}
 
 This document provides instructions for creating and installing custom [storefront](https://glossary.magento.com/storefront) themes for a Magento application. It describes Magento's content rendering process and explains the view layer of the system to the extent required to build a [theme](https://glossary.magento.com/theme) efficiently. The document also walks through everyday [frontend](https://glossary.magento.com/frontend) developer's tasks.
 
-Developing the view part of a custom [module](https://glossary.magento.com/module) and customizing the [Magento Admin](https://glossary.magento.com/magento-admin) panel design is out of the scope of this guide.
+Developing the view part of a custom [module](https://glossary.magento.com/module) and customizing the [Admin](https://glossary.magento.com/magento-admin) panel design is out of the scope of this guide.
 
 Frontend developers can use this guide to create custom themes to tailor the Magento storefront for a specific customer.
 
 You can apply these levels of customization to your site, where the levels require different development skills:
 
-*  You can make relatively simple changes to your site using cascading style sheets (CSS) to change colors and the look-and-feel of various interface components, replacing images, and other relatively cosmetic changes. For more advanced styling, familiarity with LESS (Leaner Style Sheets) and XML (Extensible Markup Language) is helpful.
+*  You can make relatively simple changes to your site using Cascading Style Sheets (CSS) to change colors and the look-and-feel of various interface components, replacing images, and other relatively cosmetic changes. For more advanced styling, familiarity with LESS (Leaner Style Sheets) and XML (Extensible Markup Language) is helpful.
 
     No structural changes are made to pages—you accept the structure of the site provided by default by modules you load on to your site.
 
@@ -57,7 +59,7 @@ To use this guide, you must be familiar with:
 *  [JavaScript](https://glossary.magento.com/javascript)
 *  [PHTML](https://glossary.magento.com/phtml)
 *  [PHP (Basic)](https://glossary.magento.com/php)
-*  [Responsive Web Design (RWD)](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_overview.html)
+*  [Responsive Web Design (RWD)]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 
 {:.ref-header}
 Related topics

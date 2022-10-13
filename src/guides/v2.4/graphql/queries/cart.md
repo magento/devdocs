@@ -57,7 +57,6 @@ The following query shows the status of a cart that is ready to be converted int
         label
       }
       telephone
-      pickup_location_code
       available_shipping_methods {
         amount {
           currency
@@ -96,6 +95,10 @@ The following query shows the status of a cart that is ready to be converted int
         sku
       }
       quantity
+      errors {
+        code
+        message
+      }
     }
     available_payment_methods {
       code
@@ -160,7 +163,6 @@ The following query shows the status of a cart that is ready to be converted int
             "label": "US"
           },
           "telephone": "(555) 229-3326",
-          "pickup_location_code": "txspeqs",
           "available_shipping_methods": [
             {
               "amount": {
@@ -217,7 +219,7 @@ The following query shows the status of a cart that is ready to be converted int
       ],
       "items": [
         {
-          "id": "14",
+          "uid": "Mg==",
           "product": {
             "name": "Strive Shoulder Pack",
             "sku": "24-MB04"
@@ -225,7 +227,7 @@ The following query shows the status of a cart that is ready to be converted int
           "quantity": 2
         },
         {
-          "id": "17",
+          "uid": "17",
           "product": {
             "name": "Savvy Shoulder Tote",
             "sku": "24-WB05"
@@ -269,6 +271,8 @@ In this query, the **Buy 3 tee shirts and get the 4th free** cart price rule fro
 
 The `3T1free` rule is applied first, and Magento returns the price of a single shirt, $29, as the discount. Magento then applies a 10% discount to the remaining total of the products in the cart.
 
+If other promotions or price adjustments are applied to the cart through either store credit or gift cards, these are reflected under the `discounts` object with the appropriate label.
+
 **Request:**
 
 ```graphql
@@ -276,7 +280,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
   cart(cart_id: "v7jYJUjvPeHbdMJRcOfZIeQhs2Xc2ZKT") {
     email
     items {
-      id
+      uid
       prices {
         total_item_discount {
           value
@@ -324,7 +328,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
       "email": "roni_cost@example.com",
       "items": [
         {
-          "id": "43",
+          "uid": "MjY=",
           "prices": {
             "total_item_discount": {
               "value": 37.7
@@ -334,15 +338,21 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
             },
             "discounts": [
               {
-                "label": "3T1free",
+                "label": "Discount (3T1free, 10% Off for New Customers)",
                 "amount": {
-                  "value": 29
+                  "value": 37.7
                 }
               },
               {
-                "label": "10% Off for New Customers",
+                "label": "Gift Card",
                 "amount": {
-                  "value": 8.7
+                  "value": 0.1
+                }
+              },
+              {
+                "label": "Store Credit",
+                "amount": {
+                  "value": 0.1
                 }
               }
             ]
@@ -403,7 +413,7 @@ The cart in the example contains 12 units of `24-UG05` and 8 units of `24-UG-01`
 query {
   cart(cart_id: "v7jYJUjvPeHbdMJRcOfZIeQhs2Xc2ZKT"){
     items {
-      id
+      uid
       quantity
       product{
         name
@@ -454,7 +464,7 @@ query {
     "cart": {
       "items": [
         {
-          "id": "65",
+          "uid": "NjU=",
           "quantity": 12,
           "product": {
             "name": "Go-Get'r Pushup Grips",
@@ -489,7 +499,7 @@ query {
           }
         },
         {
-          "id": "66",
+          "uid": "NjY=",
           "quantity": 8,
           "product": {
             "name": "Quest Lumaflex&trade; Band",
@@ -659,7 +669,7 @@ Attribute |  Data Type | Description
 `postcode` | String | The postal code for the billing address
 `region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
 `street` | [String!]! | The street for the billing address
-`telephone` | String! | The telephone number for the billing address
+`telephone` | String | The telephone number for the billing address
 
 ### CartAddressRegion object {#CartAddressRegion}
 
@@ -691,26 +701,7 @@ The `CartItemInterface` has the following implementations:
 *  SimpleCartItem
 *  VirtualCartItem
 
-The `CartItemInterface` can contain the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`id` | String | ID of the item
-`prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | Contains attributes that are common to all types of products
-`quantity` | Float | The number of items in the cart
-
-### CartItemPrices object {#CartItemPrices}
-
-The `CartItemPrices` object can contain the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`discounts`| [Discount] | An array of discounts to be applied to the cart item
-`price` | Money! | The price of the item before any discounts were applied
-`row_total` | Money! | The value of the `price` multiplied by the quantity of the item
-`row_total_including_tax` | Money! | The value of `row_total` plus the tax applied to the item
-`total_item_discount` | Money | The total of all discounts applied to the item
+See [`CartItemInterface`]({{page.baseurl}}/graphql/interfaces/cart-item-interface.html) for details.
 
 ### CartItemQuantity object {#CartItemQuantity}
 
@@ -728,8 +719,8 @@ The `CartPrices` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
-`discount` | CartDiscount | Deprecated. Use `discounts` instead
-`discounts` | [Discount] | An array containing all discounts applied to the cart
+`discount` | [CartDiscount](#CartDiscount) | Deprecated. Use `discounts` instead
+`discounts` | [[Discount]](#Discount) | An array containing all discounts applied to the cart
 `gift_options` | [GiftOptionsPrices](#GiftOptionsPrices) | The list of prices for the selected gift options
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
@@ -818,12 +809,22 @@ Attribute |  Data Type | Description
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | Deprecated. Use `cart_items_v2` instead
 `cart_items_v2` | [CartItemInterface] | An array that lists the items in the cart
 `items_weight` | Float | Deprecated. This attribute is not applicable for GraphQL
-`selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 `pickup_location_code` | String | The code of the in-store pickup location where the customer will receive the order
+`selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 
 ## Related topics
 
 *  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 *  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
+*  [setShippingAddressesOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-address.html)
+*  [setShippingMethodsOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-method.html)
 *  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
 *  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a cart with ID \"xxxxx\"` | The ID provided in the `cart_id` field is invalid or the cart does not exist for the customer.
+`The cart isn't active` | The cart with the specified cart ID is unavailable, because the items have been purchased and the cart ID becomes inactive.
+`Field cart.cart_id of required type String! was not provided` | The value specified in the `cart.cart_id` argument is empty.

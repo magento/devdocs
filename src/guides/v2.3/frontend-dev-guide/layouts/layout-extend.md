@@ -20,7 +20,17 @@ To add an extending [page configuration]({{ page.baseurl }}/frontend-dev-guide/l
          |--<layout2>.xml
     ```
 
-For example, to customize the layout defined in `<Magento_Catalog_module_dir>/view/frontend/layout/catalog_product_view.xml`, you need to add a layout file with the same name in your custom theme, such as: `<theme_dir>/Magento_Catalog/layout/catalog_product_view.xml`
+For example, to customize the layout defined in `<Magento_Catalog_module_dir>/view/frontend/layout/catalog_product_view.xml`, you need to add a layout file with the same name in your custom theme, such as: `<theme_dir>/Magento_Catalog/layout/catalog_product_view.xml`. Then do your customizations on the layout xml.
+
+**Example:**
+
+```xml
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
+    </body>
+</page>
+```
 
 To add an extending [page layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page) file:
 
@@ -32,6 +42,19 @@ To add an extending [page layout]({{ page.baseurl }}/frontend-dev-guide/layouts/
          |--<layout1>.xml
          |--<layout2>.xml
     ```
+
+For example, to customize the page layout defined in `<Magento_Theme_module_dir>/view/frontend/page_layout/1column.xml`, you need to add a page layout file with the same name in your custom theme, such as: `<theme_dir>/Magento_Theme/page_layout/1column.xml`. Then do your customizations on the page layout xml.
+
+**Example:**
+
+```xml
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="empty"/>
+    <referenceContainer name="page.wrapper">
+        <container name="page.top.after" label="After Page Top" after="page.top"/>
+    </referenceContainer>
+</layout>
+```
 
 ## Processing extending layouts
 
@@ -60,7 +83,7 @@ Where a `handle ID` is defined by the name of the corresponding layout file, and
 {:.ref-header}
 Related topics
 
-*  [Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html){:target="_blank"}
-*  [XML instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html){:target="_blank"}
-*  [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html){:target="_blank"}
-*  [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html){:target="_blank"}
+*  [Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html)
+*  [XML instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
+*  [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html)
+*  [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html)

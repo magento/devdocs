@@ -21,7 +21,7 @@ Migration is a perfect moment to make serious changes and get your site ready fo
 
 *  Have you identified if you need all these extensions on your new site?  (There might be old ones you can safely remove.)
 
-*  Have you determined if Magento 2 versions of your extensions exist?  (Visit [Magento Marketplace] to find the latest versions or contact your extension provider.)
+*  Have you determined if Magento 2 versions of your extensions exist?  (Visit [Commerce Marketplace] to find the latest versions or contact your extension provider.)
 
 *  What database assets from your extensions do you want to migrate?
 
@@ -109,7 +109,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 1. Magento 2 store is now ready to use. You and your customers can resume all activities.
 
 <!-- LINK ADDRESSES -->
-[Magento system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
-[Magento Marketplace]: https://marketplace.magento.com
+[Magento system requirements]: {{ page.baseurl }}/install-gde/system-requirements.html
+[Commerce Marketplace]: https://marketplace.magento.com
 [Technical Specification]: {{ page.baseurl }}/migration/migration-tool-internal-spec.html
 [Configuration guide]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html

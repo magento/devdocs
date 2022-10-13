@@ -45,29 +45,37 @@ Service classes that do not exist in the codebase, such as [proxies], [factories
 The following code sample highlights the two types of dependency injections used in Magento:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace Magento\Backend\Model\Menu;
+
+use Magento\Backend\Model\Menu\Builder\AbstractCommand;
+use Magento\Backend\Model\Menu\Item\Factory;
 
 class Builder
 {
     /**
-     * @var \Magento\Backend\Model\Menu\Item\Factory
+     * @var Factory
      */
     private $_itemFactory;
 
     /**
-     * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
+     * @param Factory $menuItemFactory
      */
     public function __construct(
-        \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
+        Factory $menuItemFactory,  // Service dependency
     ) {
         $this->_itemFactory = $menuItemFactory;
     }
 
     /**
-     * @param \Magento\Backend\Model\Menu\Builder\AbstractCommand
+     * @param AbstractCommand
      */
-    public function processCommand(\Magento\Backend\Model\Menu\Builder\AbstractCommand $command) // API param
+    public function processCommand(AbstractCommand $command) // API param
     {
         // processCommand Code
     }
@@ -77,7 +85,7 @@ class Builder
 
 ### Constructor injection
 
-In the code sample, the `Builder` class declares its dependency on the `Factory` and `Menu` classes in its constructor.
+In the code sample, the `Builder` class declares its dependency on the `Factory` class in its constructor.
 Magento uses the `di.xml` file to determine which implementations to inject into the `Builder` class.
 
 #### Optional dependencies
@@ -128,7 +136,7 @@ Related topics
 *  [Programming concepts]({{ page.baseurl }}/extension-dev-guide/api-concepts.html)
 
 [Dependency Injection]: https://en.wikipedia.org/wiki/Dependency_injection
-[dependency inversion principle]: http://www.oodesign.com/dependency-inversion-principle.html
+[dependency inversion principle]: https://www.oodesign.com/dependency-inversion-principle
 [`di.xml`]: {{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html
 [`ObjectManager`]: {{ page.baseurl }}/extension-dev-guide/object-manager.html
 [code compiler tool]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html

@@ -60,13 +60,13 @@ To configure additional databases, you must create an empty database and run one
 For Checkout Master DB
 
 ```bash
-bin/magento setup:db-schema:add-slave
+bin/magento setup:db-schema:split-quote
 ```
 
 For OMS Master DB
 
 ```bash
-bin/magento setup:db-schema:add-slave
+bin/magento setup:db-schema:split-sales
 ```
 
 These commands migrate specific domain tables from the main database to a domain database. They also change the Magento configuration to allow corresponding connectivity and constraints processing.

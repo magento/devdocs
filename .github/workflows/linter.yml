@@ -11,27 +11,31 @@ name: Lint Code Base
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
 #
 
-#############################
-# Start the job on all push #
-#############################
+###################################
+# Start the job on a pull request #
+###################################
 on:
-  pull_request:
-    branches:
-      - master
-      - 2.*-develop
-    paths-ignore:
-      - '**.md'
-      - '**.html'
-      - '**.xml'
+  pull_request
 
 ###############
 # Set the Job #
 ###############
-jobs:
+permissions:
+  contents: read
 
-  build:
-    # Name the Job
-    name: Lint Code Base
+jobs:
+  mdl:
+    name: mdl
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+      - name: Install mdl gem
+        run: gem install mdl
+      - name: Run mdl
+        run: mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .
+  super-lint:
     # Set the agent to run on
     runs-on: ubuntu-latest
 
@@ -43,15 +47,29 @@ jobs:
       # Checkout the code base #
       ##########################
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
 
       ################################
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
-        uses: github/super-linter@v3
+        uses: github/super-linter/slim@v4.9.7
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
-          VALIDATE_HTML: false
-          VALIDATE_MARKDOWN: false
+          VALIDATE_BASH: true
+          VALIDATE_BASH_EXEC: true
+          VALIDATE_CSS: true
+          VALIDATE_DOCKERFILE_HADOLINT: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_GITLEAKS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          VALIDATE_MARKDOWN: true
+          MARKDOWN_CONFIG_FILE: .markdownlint.json
+          VALIDATE_RUBY: true
+          VALIDATE_SHELL_SHFMT: true
+          VALIDATE_YAML: true

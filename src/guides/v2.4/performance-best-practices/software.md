@@ -5,14 +5,16 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/software.html
+layout: migrated
 ---
 
 We require the following software for production instances of Magento:
 
-*  [PHP]({{page.baseurl}}/install-gde/system-requirements-tech.html#php)
+*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html)
 *  Nginx and [PHP-FPM](https://php-fpm.org/)
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-*  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
+*  [Elasticsearch or OpenSearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
 
 For multi-server deployments, or for merchants planning on scaling their business, we recommend the following:
 
@@ -20,14 +22,16 @@ For multi-server deployments, or for merchants planning on scaling their busines
 *  [Redis]({{page.baseurl}}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
 *  A separate Redis instance as your [default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache)
 
-See [Magento technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html) for information about supported versions of each type of software.
+See [Magento technology stack requirements]({{page.baseurl}}/install-gde/system-requirements.html) for information about supported versions of each type of software.
 
 ## Operating system
 
-Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" and "recycle" TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in `/etc/sysctl.conf`:
+Operating system configurations and optimizations are similar for Magento as compared to other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" TCP connections. To enable this mechanism, set the following value in `/etc/sysctl.conf`:
+
+{:.bs-callout-info}
+Enabling net.ipv4.tcp_tw_reuse has no effect on incoming connections.
 
 ```terminal
-net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 ```
 
@@ -41,9 +45,8 @@ Magento fully supports PHP 7.3 and 7.4. There are several factors to account for
 
 ### PHP extensions
 
-We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:
+We recommend limiting the list of active PHP extensions to those that are required for Magento functionality.
 
-<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Adding more extensions increases library load times.
@@ -75,19 +78,19 @@ realpath_cache_ttl=7200
 
 To get maximum speed out of Magento 2 on PHP 7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
 
-```bash
-  opcache.memory_consumption=512MB
-  opcache.max_accelerated_files=60000
-  opcache.consistency_checks=0
-  opcache.validate_timestamps=0
-  opcache.enable_cli=1
+```text
+opcache.memory_consumption=512
+opcache.max_accelerated_files=60000
+opcache.consistency_checks=0
+opcache.validate_timestamps=0
+opcache.enable_cli=1
 ```
 
 When you fine-tune the memory allocation for opcache, take into account the size of Magento’s code base and all your extensions. Magento’s performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.
 
 If you have a low-memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
-```bash
+```text
 opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 ```
@@ -117,7 +120,7 @@ You should also configure the number of threads for input request processing, as
 Web server | Attribute name | Location | Related information
 --- | --- | --- | ---
 Nginx | `worker_connections` | `/etc/nginx/nginx.conf` (Debian) | [Tuning NGINX for Performance](https://www.nginx.com/blog/tuning-nginx/)
-Apache 2.2 | `MaxClients` | `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache Performance Tuning](http://httpd.apache.org/docs/2.2/misc/perf-tuning.html)
+Apache 2.2 | `MaxClients` | `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache Performance Tuning](https://httpd.apache.org/docs/2.2/misc/perf-tuning.html)
 Apache 2.4 | `MaxRequestWorkers` |  `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache MPM Common Directives](https://httpd.apache.org/docs/2.4/mod/mpm_common.html#maxrequestworkers )
 
 ## MySQL
@@ -131,7 +134,7 @@ Parameter | Default | Description
 `innodb_buffer_pool_instances` | 8 | The default value is set to 8 to avoid issues with multiple threads attempting to access the same instance.
 `innodb_buffer_pool_size` | 128MB | Combined with the multiple pool instances described above, this means a default memory allocation of 1024MB. The total size is divided among all the buffer pools. For best efficiency, specify a combination of `innodb_buffer_pool_instances` and `innodb_buffer_pool_size` so that each buffer pool instance is at least 1 GB.
 `max_connections` | 150 | The value of the `max_connections` parameter should correlate with the total number of PHP threads configured in the application server. A general recommendation would be 300 for a small and 1,000 for a medium environment.
-`innodb-thread-concurrency` | 0 | The best value for this configuration should be calculated by the formula: `innodb-thread-concurrency = 2 * (NumCPUs + NumDisks)`
+`innodb_thread_concurrency` | 0 | The best value for this configuration should be calculated by the formula: `innodb_thread_concurrency = 2 * (NumCPUs + NumDisks)`
 
 ## Varnish
 

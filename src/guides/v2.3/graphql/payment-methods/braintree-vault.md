@@ -20,7 +20,7 @@ The following diagram shows the workflow for placing an order when Braintree Vau
 
 1. The client renders the token information, and the customer selects a payment method.
 
-   When the customer selects a stored payment method, the PWA uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation to set the payment method to `braintree_cc_vault`. The vaulted public hash is passed with other optional properties in the [`braintree_cc_vault`](#braintree_cc_vault-object).
+   When the customer selects a stored payment method, the PWA uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation to set the payment method to [`braintree_cc_vault`](#braintree_cc_vault-object). The vaulted public hash is passed with other optional properties in the `braintree_cc_vault`.
 
 1. Magento returns a `Cart` object.
 
@@ -35,7 +35,7 @@ The following diagram shows the workflow for placing an order when Braintree Vau
 ## `setPaymentMethodOnCart` mutation
 
 When you set the payment method to Braintree in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html)
-mutation, the `payment_method` object must contain a `braintree_cc_vault` object.
+mutation, the `payment_method` object must contain a [`braintree_cc_vault`](#braintree_cc_vault-object) object.
 
 ### braintree_cc_vault object
 
@@ -54,18 +54,20 @@ The following example shows the `setPaymentMethodOnCart` mutation constructed fo
 
 ```graphql
 mutation {
-  setPaymentMethodOnCart(input: {
-    cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
-    payment_method: {
-      code: "braintree_cc_vault"
-      braintree_cc_vault: {
-        public_hash: "fake-public-hash"
+  setPaymentMethodOnCart(
+    input: {
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
+      payment_method: {
+        code: "braintree_cc_vault"
+        braintree_cc_vault: { public_hash: "fake-public-hash" }
       }
     }
-  }) {
-  cart {
-    selected_payment_method {
-      code
+  ) {
+    cart {
+      selected_payment_method {
+        code
+        title
+      }
     }
   }
 }
@@ -80,6 +82,7 @@ mutation {
       "cart": {
         "selected_payment_method": {
           "code": "braintree_cc_vault"
+          "title": "Stored Cards"
         }
       }
     }

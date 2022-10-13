@@ -19,8 +19,17 @@ The sample payload does not contain the price or the size. These attributes will
 
 The `visibility` attribute is set to 4, meaning the product can be found by browsing or searching. This value will be changed for the simple products.
 
+The below table shows the equivalent code for the visibility attribute
+
+Visibility | Code
+--- | ---
+`Not Visible Individually` | 1
+`Catalog` | 2
+`Search` | 3
+`Catalog, Search` | 4
+
 {:.bs-callout-info}
-Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html) for more information.
 
 **Endpoint:**
 

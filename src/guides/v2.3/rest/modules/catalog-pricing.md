@@ -41,7 +41,7 @@ Name | Description | Format | Requirements
 `sku` | The SKU of the product | string | Required for setting or deleting a special price
 `skus` | An array of SKU values that is specified when retrieving a list of special prices | array | Required for retrievals
 `price_from` | The date and time the special price goes into effect. The date/time format is `YYYY-MM-DD hh:mm:ss`. The specified time must be later than the current time.  | string | Required in {{site.data.var.ee}}. Optional in {{site.data.var.ce}}.
-`price_to` | The date and time the special price ends. The date/time format is `YYYY-MM-DD hh:mm:ss` If no value is specified, the special price does not expire. | string | Optional
+`price_to` | The date and time the special price ends. The date/time format is `YYYY-MM-DD hh:mm:ss` If no value is specified, the special price does not expire. | string | Required in {{site.data.var.ee}}. Optional in {{site.data.var.ce}}.
 
 ### Set special prices
 
@@ -140,7 +140,7 @@ The following call returns the special price information for three SKU values.
 
 ### Delete a special price
 
-If any item to be deleted has an invalid `price`, `store_id`, `sku` or date, Magento marks the item as failed and excludes it from the delete list. Valid items are deleted as requested.
+If any item to be deleted has an invalid `price`, `store_id`, `sku` or `date`, Magento marks the item as failed and excludes it from the delete list. Valid items are deleted as requested.
 
 **Sample Usage:**
 

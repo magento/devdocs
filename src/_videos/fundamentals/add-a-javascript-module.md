@@ -1,10 +1,12 @@
 ---
-youtube_id: 4q43-auwAbU
+youtube_id: 4i2HJryIcdU
 duration: "4:20"
 group: "Fundamentals of Magento 2 Development"
 title: "How to Add a JavaScript Module"
 thumbnail: "fundamentals/thumbs/add-js-module.png"
 menu_order: 1
+migrated_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/frontend-development/add-javascript-module.html
+layout: migrated-video
 ---
 
 Magento 2 uses requireJS as a tool to define the module structure.
@@ -45,10 +47,17 @@ Now create two files:
 
 {% collapsible Show source code %}
 
-```php?start_inline=1
+```php
 <?php
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
     'Learning_Js',
     __DIR__
 );

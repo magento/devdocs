@@ -1,13 +1,14 @@
 ---
 group: cloud-guide
 title: Theme troubleshooting
+redirect_to: https://support.magento.com/hc/en-us/articles/360034358571
 ---
 
 This information helps you troubleshoot issues with themes added to your {{site.data.var.ece}} sites and stores.
 
 ## Lost images on deployment {#images}
 
-When using a theme in your stores that resizes images, the images may not display or disappear from catalog pages when deployed. This may occur due to loading the images from the cache. If this happens, you can use Magento command to regenerate the image cache and properly display the images.
+When using a theme in your stores that resizes images, the images may not display or disappear from catalog pages when deployed. This may occur due to loading the images from the cache. If this happens, you can use a CLI command to regenerate the image cache and properly display the images.
 
 This issue can occur in all environments during any deployment.
 

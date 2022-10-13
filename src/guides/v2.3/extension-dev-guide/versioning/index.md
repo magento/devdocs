@@ -1,15 +1,15 @@
 ---
 group: php-developer-guide
-title: Magento versioning schema
+title: Versioning schema
 redirect_from:
   - /guides/v2.3/architecture/versioning.html
 ---
 
-Magento software and Magento module releases have their own unique version number.
+{{site.data.var.ee}} and {{site.data.var.ce}} application and module releases have their own unique version number.
 
-## Software version format
+## Application version format
 
-A change in the version for the Magento software indicates a patch or feature release.
+A change in the version for the application indicates a patch or feature release.
 This version change does not reflect the nature of the changes in the code base.
 
 ## Module version format
@@ -24,24 +24,27 @@ The format follows [Semantic Versioning][semantic-versioning] rules for any `@ap
 *  The MINOR version increments when backward-compatible functionality has been added or if the module's customization points have changed.
 *  The PATCH version increments when backward-compatible bug fixes occur.
 
+{:.bs-callout-info}
+On an exceptional basis, breaking changes or additional patches or hotfixes may be released on a PATCH version to address security or compliance issues and high-impact quality issues.
+
 ### Pre-release versions
 
 For pre-release versions, the format is:
 
 `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`
 
-| `alpha`, `beta` or `rc` | Stability indicators, as described in the [`version_compare()`][php-version-compare]{:target="_blank"} specification|
+| `alpha`, `beta` or `rc` | Stability indicators, as described in the [`version_compare()`][php-version-compare] specification|
 | `n` | An increment number to distinguish releases of the non-stable versions |
 
-Magento's module versioning policy complies with the following specifications:
+Adobe's module versioning policy complies with the following specifications:
 
-*  [Semantic Versioning][semantic-versioning]{:target="_blank"}
-*  [Composer version specification][composer-versioning]{:target="_blank"}
-*  [PHP `version_compare()` specification][php-version-compare]{:target="_blank"}
+*  [Semantic Versioning][semantic-versioning]
+*  [Composer version specification][composer-versioning]
+*  [PHP `version_compare()` specification][php-version-compare]
 
 ## Where versioning is used
 
-The software version can be found in the source code of any [Magento component](https://glossary.magento.com/magento-component) or bundle, inside the `composer.json` file.
+The application version can be found in the source code of any [component](https://glossary.magento.com/magento-component) or bundle inside the `composer.json` file.
 
 It can be declared as the version of the component:
 
@@ -59,20 +62,19 @@ Or it can be used to declare a dependency on a particular version of a component
 }
 ```
 
- {:.bs-callout-info}
-If Magento is installed from GitHub without using Composer, the `version` is not included. Magento Admin displays the version as `Magento ver. dev-<GitHub-branch-name>`. In addition, Magento modules inside the `require` declaration  list a version of `*`. For example, `"magento/framework": "*"`
+{:.bs-callout-info}
+If you installed the application from GitHub without using Composer, the `version` is not included. The Admin displays the version as `Magento ver. dev-<GitHub-branch-name>`. In addition, modules inside the `require` declaration list a version of `*`. For example, `"magento/framework": "*"`.
 
-## Related Topics
+{:.ref-header}
+Related Topics
 
-[Module version dependencies][version-dependencies] - Information about how your module can depend on the version of other modules.
-
-[Codebase changes][codebase-changes] - Information on how changes in a Magento module's codebase affect versions.
-
-[Backward compatible development]({{ site.baseurl }}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
+*  [Module version dependencies][version-dependencies] - Information about how your module can depend on the version of other modules.
+*  [Codebase changes][codebase-changes] - Information on how changes in a module's codebase affect versions.
+*  [Backward compatible development]({{ site.baseurl }}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
 
 [version-dependencies]: {{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
 [codebase-changes]: {{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html
-[semantic-versioning]: http://semver.org/
+[semantic-versioning]: https://semver.org/
 [composer-versioning]: https://getcomposer.org/doc/04-schema.md#version
-[php-version-compare]: http://php.net/version_compare
+[php-version-compare]: https://php.net/version_compare
 [composer-json]: {{ page.baseurl }}/extension-dev-guide/build/composer-integration.html

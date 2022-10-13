@@ -21,7 +21,7 @@ After you [add your theme to the file system]({{ page.baseurl }}/frontend-dev-gu
 
 To apply a theme:
 
-1. In Admin, go to **CONTENT** > **Design** > **Configuration**. A Design Configuration page opens. It contains a grid with the available configuration scopes. For example:
+1. In Admin, go to **Content** > Design > **Configuration**. A Design Configuration page opens. It contains a grid with the available configuration scopes. For example:
 
    ![Design Configuration page]
 
@@ -39,10 +39,13 @@ To apply a theme:
 Design exceptions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
 To add a design exception:
 
-1. In Admin, go to **CONTENT** > **Design** > **Configuration**
+1. In Admin, go to **Content** > Design > **Configuration**
 1. In the configuration record corresponding to your store view, click **Edit**.
 1. On the **Design Rule** tab, click **Add New User Agent Rule**.
 1. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
+
+![Design Exception]({{ site.baseurl }}/common/images/user_agent_rule.png)
+
 1. Click **Save Configuration** or **Save and Continue**.
 1. If caching is enabled, [clear the cache](#theme-apply-clear).
 1. To see your changes applied, reload the storefront pages.
@@ -52,7 +55,7 @@ To add a design exception:
 You might want to set a permanent store logo that displays on the storefront no matter what theme is applied.
 To add a permanent theme-independent logo:
 
-1. In Admin, go to **CONTENT** > **Design** > **Configuration**
+1. In Admin, go to **Content** > Design > **Configuration**
 1. In the configuration record corresponding to your store view, click **Edit**.
 1. Expand the **Header** tab.
 1. In the **Logo Image** field browse to the logo file saved in your file system.
@@ -62,6 +65,8 @@ To add a permanent theme-independent logo:
 1. If caching is enabled, [clear the cache](#theme-apply-clear).
 1. To see your changes applied, reload the storefront pages.
 
+![Set store logo in Admin]({{ site.baseurl }}/common/images/logo.png)
+
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
 {:.bs-callout-warning}
@@ -69,12 +74,14 @@ To delete the permanent logo, go to the same location, and click the "Delete ima
 
 ## Clear the cache {#theme-apply-clear}
 
-If caching is enabled in Magento Admin, you must clear the cache after you apply the theme, add a design exception, add a logo, and perform other tasks.
+If caching is enabled in Admin, you must clear the cache after you apply the theme, add a design exception, add a logo, and perform other tasks.
 
 A system message notifies you that invalidated cache types must be refreshed.
 
 1. Click **System** > **Cache Management**.
 1. Clear the invalid cache types.
+
+![Clear the cache from Admin]({{ site.baseurl }}/common/images/clear_cache.png)
 
 ## Troubleshooting (if the changes do not get applied)
 

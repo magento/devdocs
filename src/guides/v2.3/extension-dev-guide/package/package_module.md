@@ -28,11 +28,14 @@ Element | Description
 `type` | For modules, this value must be set to `magento2-module`. Other possible types are `metapackage`, `magento2-theme`, and `magento2-language`.
 `autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see [Autoloading](https://getcomposer.org/doc/01-basic-usage.md#autoloading) from Composer.
 
+{:.bs-callout-info}
+The Commerce Marketplace does not support the Composer `source` and `dist` properties. All extensions distributed via the Marketplace are installed from the Commerce package repository. If your `composer.json` contains `source` or `dist` properties, it will cause failures in the EQP automation.
+
 {% include php-dev/composer-types.md %}
 
 ### Using metapackages {#package-metapackage}
 
-Metapackages allow you to group an [extension](https://glossary.magento.com/extension) that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a [metapackage](https://glossary.magento.com/metapackage) as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage `composer.json` file.
+Metapackages allow you to group an [extension](https://glossary.magento.com/extension) that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a [metapackage](https://glossary.magento.com/metapackage) as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Commerce Marketplace should be a .zip file containing only the metapackage `composer.json` file.
 
  {:.bs-callout-info}
 We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.
@@ -145,7 +148,7 @@ Prerequisite: Git must be set up on your machine.
 ### Hosting on a private repository {#private_repos}
 
 {:.bs-callout-info}
-If you use the Setup Wizard, you must use the Magento Marketplace repository. A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).
+A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).
 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Private Packagist](https://packagist.com/).
 1. Create the package in a way similar to the described above.

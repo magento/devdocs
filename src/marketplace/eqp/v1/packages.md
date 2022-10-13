@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Packages
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/packages/
+layout: migrated
 ---
 
 Use this resource to initiate and manage all aspects of submitting a package to the
@@ -16,17 +18,17 @@ Before submitting a package, you must first [upload your files](files.html) and 
 
 You can also check package submission status and retrieve [testing information](test-results.html) from the technical and marketing reviews.
 
-A successful submission results in a package being published to the [Magento Marketplace](https://marketplace.magento.com/).
+A successful submission results in a package being published to the [Commerce Marketplace](https://marketplace.magento.com/).
 
 ## EQP review process
 
 The EQP review process includes two steps:
 
 *  In **technical review**, we perform all automated testing. This step also involves manual testing after all automated tests run.
-*  In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
+*  In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Commerce Marketplace.
 
 These review steps occur in parallel when you submit a package.
-If both steps are successful, the package can be published to the Magento Marketplace.
+If both steps are successful, the package can be published to the Commerce Marketplace.
 If there is a failure, you can iteratively fix issues until they are resolved.
 
 ## Package fields
@@ -90,26 +92,29 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |original_launch_date|DateTime|GET|-|yes|The UTC date and time this version of the package was first released to the store.|`YYYY-MM-DD HH:MM:SS`|
 |offset|integer|GET|-|no|In combination with the `limit` parameter, it can be used for paging the collection of packages.|See [Get package details](#get-package-details). Default value is 0.|
 |platform|string|GET, POST, PUT|technical|yes|The Magento platform compatibility of this package.|`M2`|
+|pricing_model|object|GET, POST|marketing|no|How to interpret the pricing for this package.|See [Object Details](#object-details)|
+|pricing_model.pricing_type|string|GET, POST|marketing|no|Which pricing model is used by this package.|`one-time`, `subscription`|
+|pricing_model.payment_period|string|GET, POST|marketing|no|For a package using the "one-time" payment model, the number `1` signifies "once."  For a subscription, how often (in terms of months) payments are due.  Currently, only annual subscriptions are supported.|`1` for "one-time" payments, or `12` for annual subscriptions.|
 |prices|array|GET, POST, PUT|marketing|no|The list of prices in USD set for this package by edition, and the respective installation prices (if any). Editions must match `version_compatibility`.|Array of sub-objects.|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
 |prices[N].edition|string|GET, POST, PUT|marketing|no|The Magento edition for this price|`CE`, `EE`, `ECE`|
-|prices[N].price|number|GET, POST, PUT|marketing|no|The value for the purchase price of this package|A number, with up to two decimal places, eg 123.45|
-|prices[N].installation_price|string|GET, POST, PUT|marketing|no|The value for the installation price of this package|A number, with up to two decimal places, eg 123.45|
+|prices[N].price|number|GET, POST, PUT|marketing|no|The value for the purchase price of this package. For subscriptions, this is the annual price.|A number, with up to two decimal places, eg 123.45|
+|prices[N].installation_price|string|GET, POST, PUT|marketing|no|The value for the installation price of this package. This is only paid once, even for subscriptions.|A number, with up to two decimal places, eg 123.45|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
 |priority|string|GET, POST, PUT|-|no|The priority for this submission|`high`, `medium`, `low`|
-|process_as_patch|boolean|GET, POST, PUT|technical|yes|A flag to indicate the submission should follow the [expedited process for patch releases.](https://community.magento.com/t5/Magento-DevBlog/New-Expedited-Marketplace-Submission-Path/ba-p/77303)|`true`, `false`|
+|process_as_patch|string|GET, POST, PUT|technical|yes|A flag to indicate the submission should follow the [expedited process for patch releases.](https://community.magento.com/t5/Magento-DevBlog/New-Expedited-Marketplace-Submission-Path/ba-p/77303)|`yes`, `no`, `unknown`|
 |release_notes|substring|GET, POST, PUT|technical|yes|The release notes for the package submission.|Free text|
 |requested_launch_date|DateTime|POST, PUT|marketing|yes|When the package should be released to the store. If not supplied, it will be released to the store after all checks have passed.|`YYYY-MM-DD HH:MM:SS`|
 |shared_packages|array|GET, POST, PUT|technical|no|The list of artifact objects. Listing here enables the "access rights" to these shared packages when a buyer purchases this package.|Each shared package is specified by file_upload_id, or sku and version. See [Object Details](#object-details)|
 |shared_packages[N].artifact.file_upload_id|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
 |shared_packages[N].artifact.sku|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
 |shared_packages[N].artifact.version|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
-|short_description|substring|GET, POST, PUT|marketing|yes|The short description for the package.|Short free text|
-|sku|substring|GET|-|yes|The SKU generated from metadata in the code artifact.|A SKU|
+|short_description|string|GET|-|no|Was the short description for the package.|No longer used. Will always be returned as an empty string.|
+|sku|substring|GET, POST|-|yes|The SKU generated from metadata in the code artifact. Only specified in a `POST` when creating another version of an existing extension.|A SKU|
 |stability|string|GET, POST, PUT|marketing|yes|The version's build stability|`stable`, `beta`|
 |sort|string|GET|-|no|A comma-separated list of fields to sort the list, each field prefixed by `-` for descending order, or `+` for ascending order.|See [Get package details](#get-package-details).|
 |submission_id|substring|GET, PUT|-|yes|A globally unique ID assigned to a package when it is submitted in a POST request. All further references to this package using GET or PUT requests can be made supplying this identifier.|A generated string|
-|support_tiers|array|GET, POST, PUT|marketing|no|List of up to three support tiers per edition|See [Object Details](#object-details)|
+|support_tiers|array|GET, POST, PUT|marketing|no|List of up to three support tiers per edition. Not used for subscriptions.|See [Object Details](#object-details)|
 |support_tiers[N].tier|int|GET, POST, PUT|marketing|no|Which of the three support tiers (numbered 0-2 or 1-3)|`0`, `1`, `2`, `3`|
 |support_tiers[N].edition|string|GET, POST, PUT|marketing|no|Which Magento edition this support is for|`CE`, `EE`, `ECE`|
 |support_tiers[N].monthly_period|int|GET, POST, PUT|marketing|no|How many months the support lasts.|`1`, `3`, `6`, `9`, `12`|
@@ -121,7 +126,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |version_compatibility|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports. Must match the editions in `prices`|Array of objects|
 |version_compatibility[N].edition|string|GET, POST, PUT|technical|no|Magento edition for the accompanying versions list|`M2`|
 |version_compatibility[N].versions|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports in the given edition.|Array of version strings, eg ["2.3","2.4"]
-|version|substring|GET|-|yes|The version of this package.|`major.minor.patch`, eg `2.5.3`.|
+|version|substring|GET, POST|both|yes|The version of this package.|`major.minor.patch`, eg `2.5.3`.|
 
 ### Additional notes
 
@@ -189,7 +194,6 @@ For a new Magento 2 package:
     "file_upload_id" : "5c644f4dcb1900.18508194.9"
   }
 }
-
 ```
 
 #### shared_packages
@@ -241,6 +245,15 @@ For a new Magento 2 package:
 ```
 
 The **video_urls** property is optional.
+
+#### pricing model
+
+```json
+"pricing_model" : {
+  "pricing_type" : "subscription",
+  "payment_period" : 12
+}
+```
 
 #### prices
 
@@ -504,7 +517,8 @@ Send the "submit" action for the marketing content to re-publish the product.
 }
 ```
 
-*  The *overall* value indicates where the package is in the EQP pipeline.
+*  This is a read-only field.
+*  The **overall** value indicates where the package is in the EQP pipeline.
 *  Additional details are provided in the two main EQP areas:
    *  **technical** - Provides the current technical status.
    *  **marketing** - Provides the current marketing status.
@@ -559,6 +573,7 @@ PUT /rest/v1/products/packages/:item_id
 You can submit a package in either of the following ways:
 
 *  A single POST request with all required fields set. You must explicitly indicate that you are submitting for technical and marketing review using the `action` parameter.
+   *  If this package represents a newer version to an already existing extension, then also supply the `sku` parameter.
 *  A series of requests, typically in the following order:
    1. A single POST request with the minimum required fields set and `action` set to `draft` in either `technical`, `marketing`, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique `submission_id` for subsequent PUT operations.
    1. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
@@ -600,9 +615,9 @@ The following example shows a POST request with all required parameters set for 
       }
     ],
     "name" : "One Click Checkout",
-    "short_description" : "<Short description here>",
     "long_description" : "<Long description here>",
     "release_notes" : "<Release notes here>",
+    "version" : "1.1.5",
     "artifact" : {
       "file_upload_id" : "5c11e656057b42.97931218.5"
     },
@@ -646,6 +661,10 @@ The following example shows a POST request with all required parameters set for 
     "categories" : [
       "//Extensions//Payments & Security//Checkout Enhancements"
     ],
+    "pricing_model" : {
+       "pricing_type" : "one-time",
+       "payment_period" : 1
+    },
     "prices" : [
       {
         "edition" : "CE",
@@ -721,10 +740,10 @@ The PUT method can be used to update packages in the following states:
 *  The package is in draft mode for the technical or marketing review; or both.
 *  The package has been rejected in either the technical or marketing review; or both.
    You must fix these issues and re-submit the package.
-*  The package has been released to the Magento Marketplace.
-*  The package was removed from Magento Marketplace by the developer and needs to be re-published.
+*  The package has been released to the Commerce Marketplace.
+*  The package was removed from Commerce Marketplace by the developer and needs to be re-published.
 *  The package can be recalled while in the EQP pipeline.
-*  After a package has been released to the Magento Marketplace, you can update marketing information only.
+*  After a package has been released to the Commerce Marketplace, you can update marketing information only.
    Changing marketing information causes the package to be placed in marketing review.
    The package continues to be live on the marketplace, and after the marketing approval,
    the updated fields will be published to the store.
@@ -750,7 +769,7 @@ The HTTP response code will indicate success or failure.
 
 #### Required parameters
 
-If the **action** parameter gives a `submit` value for technical, marketing or both,
+If the **action** parameter gives a `submit` value for **technical**, **marketing** or both,
 the required parameters are listed below by their respective parallel EQP pipelines:
 
 ##### Technical
@@ -761,6 +780,8 @@ the required parameters are listed below by their respective parallel EQP pipeli
 |platform||
 |version_compatibility||
 |release_notes||
+|version||
+|sku|Only valid when a previous version exists|
 |artifact||
 |documentation_artifacts|At least the `user` guide must be supplied.|
 
@@ -769,7 +790,6 @@ the required parameters are listed below by their respective parallel EQP pipeli
 |Parameter|Comments|
 |---------|---------|
 |name||
-|short_description||
 |long_description||
 |documentation_artifacts||
 |categories||
@@ -781,7 +801,7 @@ the required parameters are listed below by their respective parallel EQP pipeli
 
 ##### Submission in several steps
 
-As described earlier, a submission can also be done in several steps in draft mode, followed by the action to `submit` for technical and/or `marketing` review. In such cases, the first
+As described earlier, a submission can also be done in several steps in draft mode, followed by the action to `submit` for **technical** and/or **marketing** review. In such cases, the first
 POST request in draft mode can be done with a minimal set of parameters:
 
 |Parameter|Comments|
@@ -789,7 +809,8 @@ POST request in draft mode can be done with a minimal set of parameters:
 |type|
 |platform|
 |name||
-|short_description||
+|version||
+|sku|Only valid when a previous version exists|
 |long_description||
 
 With the returned  `submission_id`, the remaining required parameters can be supplied using a PUT request in draft mode, and/or with an `action` to submit to either technical or marketing review; or both.
@@ -853,7 +874,7 @@ curl -X GET \
       }
     ],
     "name" : "One Click Checkout",
-    "short_description" : "<Short description here>",
+    "short_description" : "",
     "long_description" : "<Long description here>",
     "sku" : "acme/one-click-checkout",
     "version" : "1.1.5",
@@ -951,6 +972,10 @@ curl -X GET \
     "categories" : [
       "//Extensions//Payments & Security//Checkout Enhancements"
     ],
+    "pricing_model" : {
+       "pricing_type" : "one-time",
+       "payment_period" : 1
+    },
     "prices" : [
       {
         "edition" : "CE",
@@ -988,6 +1013,7 @@ curl -X GET \
 *  The `sku` and version will be determined from the code artifact (M2 zip file) meta-information (M2 `composer.json`), once it passes the malware checks.
 *  The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.
 *  The `eqp_status` field will indicate the current state of the package in the EQP process.
+*  The `short_description` field will always be returned as an empty string.  This field is no longer used.  It is returned for backward compatibility.
 
 To get additional details about the results of EQP testing, see [EQP Test Reports](test-results.html)
 
@@ -1004,7 +1030,6 @@ The following fields enable both sorting and filtering support. Refer to the [Pa
 |sku|Sub-string match|
 |version|Sub-string match|
 |name|Sub-string match|
-|short_description|Sub-string match|
 |long_description|Sub-string match|
 |release_notes|Sub-string match|
 |is_patch|Exact match|

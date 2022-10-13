@@ -14,6 +14,23 @@ pages:
       url: /marketplace/sellers/extension-quality-program.html
       versionless: true
 
+- label: Compatibility Requirements
+  url: /marketplace/sellers/compatibility/requirements.html
+  versionless: true
+  children:
+
+     - label: Release Compatibility
+       url: /marketplace/sellers/compatibility/releases.html
+       versionless: true
+
+     - label: Abandoned Extensions
+       url: /marketplace/sellers/compatibility/abandoned-extensions.html
+       versionless: true
+
+     - label: Obsolete Extensions
+       url: /marketplace/sellers/compatibility/obsolete-extensions.html
+       versionless: true
+
 - label: Seller Overview
   url: /marketplace/sellers/seller-overview.html
   versionless: true
@@ -103,8 +120,36 @@ pages:
       url: /marketplace/sellers/technical-review-guidelines.html
       versionless: true
 
-    - label: Code Validation
-      url: /marketplace/sellers/code-validation.html
+    - label: Malware Scan
+      url: /marketplace/sellers/malware-scan.html
+      versionless: true
+
+    - label: Code Sniffer
+      url: /marketplace/sellers/code-sniffer.html
+      versionless: true
+
+    - label: Installation and Varnish Tests
+      url: /marketplace/sellers/installation-and-varnish-tests.html
+      versionless: true
+
+    - label: MFTF Commerce-supplied Tests
+      url: /marketplace/sellers/mftf-magento.html
+      versionless: true
+
+    - label: MFTF Vendor-supplied Tests
+      url: /marketplace/sellers/mftf-vendor.html
+      versionless: true
+
+    - label: Copy Paste Detector
+      url: /marketplace/sellers/copy-paste-detector.html
+      versionless: true
+
+    - label: Semantic Version Check
+      url: /marketplace/sellers/semantic-version-check.html
+      versionless: true
+
+    - label: Extension Footprint Analysis
+      url: /marketplace/sellers/extension-footprint.html
       versionless: true
 
 - label: Submit for Marketing Review
@@ -154,11 +199,15 @@ pages:
       url: /marketplace/sellers/analytics.html
       versionless: true
 
-- label: Technical Reference
-  url: /marketplace/sellers/technical-reference.html
+- label: Subscriptions
+  url: /marketplace/sellers/subscriptions/extension-subscriptions.html
   versionless: true
   children:
 
-    - label: Packaging v1.x Extensions
-      url: /marketplace/sellers/packaging-v1x-extensions.html
+    - label: Selling Subscription-based Extensions
+      url: /marketplace/sellers/subscriptions/selling-subscriptions.html
+      versionless: true
+
+    - label: Buying Subscription-based Extensions
+      url: /marketplace/sellers/subscriptions/buying-subscriptions.html
       versionless: true

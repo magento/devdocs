@@ -10,17 +10,17 @@ functional_areas:
   - Configuration
 ---
 
-For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html). This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with additional content to post over time and across versions.
+For detailed information for configuring your store, sites, and websites, you may want to review the [{{site.data.var.ee}} 2.2.x User Guide]({{ site.user_guide_url }}/getting-started.html). This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with additional content to post over time and across versions.
 
 ## Understanding marketing campaigns and promotions {#campaigns}
 
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
 
-To create campaigns and promotions, you will create the options and settings in [Content Staging](http://docs.magento.com/m2/ee/user_guide/cms/content-staging.html). This feature allows you to create and preview your campaigns prior to making them public for customer sales. The following information provides helpful information. For exact instructions, see the linked Magento 2 User Guide content.
+To create campaigns and promotions, you will create the options and settings in [Content Staging]({{ site.user_guide_url }}/cms/content-staging.html). This feature allows you to create and preview your campaigns prior to making them public for customer sales. The following information provides helpful information. For exact instructions, see the linked {{site.data.var.ee}} User Guide content.
 
 _Campaigns_ are marketing events for seasonal sales, new product lines, and more. Each campaign can include custom themes, blocks for content, widgets to control and display content, and associated promotions with price rules. Due to the extensive nature of a campaign, you create them with a start and end date through Content Staging.
 
-_Promotions_ provide discounts, one time offers, coupons, first time buyer incentives, and more. You create these promotions as _Price Rules_ that set the terms, discounts, and options to encourage customers to buy. You can create price rules on the [shopping cart](http://docs.magento.com/m2/ee/user_guide/marketing/price-rules-cart.html) or [catalog](http://docs.magento.com/m2/ee/user_guide/marketing/price-rules-catalog.html), with additional options for banners, reward points, and more. We also support scheduling campaigns for your promotions, applying price rules for major events like a new product line or seasonal sales.
+_Promotions_ provide discounts, one time offers, coupons, first time buyer incentives, and more. You create these promotions as _Price Rules_ that set the terms, discounts, and options to encourage customers to buy. You can create price rules on the [shopping cart]({{ site.user_guide_url }}/marketing/price-rules-cart.html) or [catalog]({{ site.user_guide_url }}/marketing/price-rules-catalog.html), with additional options for banners, reward points, and more. We also support scheduling campaigns for your promotions, applying price rules for major events like a new product line or seasonal sales.
 
 The following are tips to help create, update, and manage promotions and campaigns:
 
@@ -33,11 +33,11 @@ The following are tips to help create, update, and manage promotions and campaig
 
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
 
-Typically, you can set [Advanced Pricing](http://docs.magento.com/m2/ee/user_guide/catalog/pricing-advanced.html) for products through the **Products** > **Catalogs** area of the Magento Admin. With Staged Content, you need to complete a few extra steps to add the pricing to a promotion and campaign.
+Typically, you can set [Advanced Pricing]({{ site.user_guide_url }}/catalog/pricing-advanced.html) for products through the **Products** > **Catalogs** area of the Admin. With Staged Content, you need to complete a few extra steps to add the pricing to a promotion and campaign.
 
 To edit Advanced Pricing and update Content Staging:
 
-1. Log into the Magento Admin.
+1. Log into the Admin.
 1. Navigate to **Products** > **Catalog** and select a product and edit.
 1. In the Pricing tab, select **Advanced Pricing**. Edit the price and Save changes.
 1. At the top of the page, click **Schedule New Update**.
@@ -46,17 +46,17 @@ To edit Advanced Pricing and update Content Staging:
 1. Save the promotion. An inactive initial campaign is created.
 1. You can Preview to review the special price, promotion name, regular price, and the scheduled date range for the campaign.
 
-For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules](http://docs.magento.com/m2/ee/user_guide/marketing/price-rule-catalog-scheduled-changes.html). Click **Next** to walk through the steps.
+For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules]({{ site.user_guide_url }}/marketing/price-rule-catalog-scheduled-changes.html). Click **Next** to walk through the steps.
 
 ## Example Price Rules {#price-rules}
 
 Price rules can include logic and conditions as limitless as your marketing imagination. Some popular examples include Buy One Get One Free, Buy One Get One 50% Off, a $25 dollars off on orders over $100 dollars, and so on.
 
-To create a Price Rule, see our [Magento 2 User Guide](https://docs.magento.com/m2/ee/user_guide/search.html?query=price%20rules).
+To create a Price Rule, see our [{{site.data.var.ee}} User Guide](https://docs.magento.com/m2/ee/user_guide/search.html?query=price%20rules).
 
 The following provides an example of creating a Price Rule for a First Order Only discount. For this discount, you would want to:
 
-*  Create a price rule with a [customer segment](http://docs.magento.com/m2/ee/user_guide/marketing/customer-segment-price-rule.html) with a condition: Total Number of Orders less than 1
+*  Create a price rule with a [customer segment]({{ site.user_guide_url }}/marketing/customer-segment-price-rule.html) with a condition: Total Number of Orders less than 1
 *  Add this customer segment as a condition to the cart rule
 *  Optional - Add conditions and rules to apply the discounts to specific SKUs or categories of products for focused purchases
 
@@ -64,13 +64,13 @@ This ensures net-new customers or existing customers who have not made a purchas
 
 ## Understanding websites, stores, and store views {#sites}
 
-Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
+You can set up and run several stores with a single implementation of {{site.data.var.ece}}. See [Set up multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
 
-You can set up and run several shops through a single implementation of Magento. If you want to have shops that do not interact with each other, you create multiple _websites_. Each website has specific articles, customer data, checkouts, and shopping cart not shared with other websites in Magento.
+For stores that do not interact with each other, you can create multiple _websites_. Each website has specific articles, customer data, checkout, and shopping cart that are not shared with other websites in {{site.data.var.ee}}.
 
-Each website can include one or more _stores_ with different categories and articles, with shared customer data, checkout, and shopping cart. For these stores, a customer can sign up once and shop across different catalogs of products with a single checkout.
+Each website can include one or more _stores_ with different categories and articles, shared customer data, checkout, and shopping cart. For these stores, a customer can sign up once and shop across different catalogs of products with a single checkout.
 
-You can further create _store views_ for different languages, layouts, and designs. Each view can have its own domain, look and feel, and language while sharing articles, customer data, checkout, and shopping cart.
+Additionally, you can create _store views_ for different languages, layouts, and designs. Each view can have a separate domain, branding, and language while sharing articles, customer data, checkout, and shopping cart.
 
 The following are examples to better explain:
 
@@ -85,3 +85,6 @@ The following are examples to better explain:
 *  Two websites one for clothing and another for home decor with different catalogs and separate articles, customer data, and shopping cart. Each website could have multiple stores and views sharing articles, customer data, checkout, and shopping cart only within that website.
 
    ![Store example 3]({{ site.baseurl }}/common/images/cloud/cloud_example-store3.png)
+
+{:.bs-callout-warning}
+Be aware that catalog data expands as you increase the number of websites and stores. Depending on your project architecture, the additional stores can lead to a longer indexing process and slower response times for non-cached catalog pages. Adobe recommends that you monitor site performance closely.

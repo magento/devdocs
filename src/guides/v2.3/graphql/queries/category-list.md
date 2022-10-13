@@ -276,6 +276,86 @@ The following query returns breadcrumb information about categories that have th
 }
 ```
 
+### Return the categoryList by url_key filters
+
+The following query returns information about the Gear category using a `url_key` filter. You must pass the `url_key` value without a suffix and specify either the `eq` or `in` keyword.
+
+**Request:**
+
+```graphql
+{
+  categoryList(filters: { url_key: { eq: "gear" } }) {
+    id
+    level
+    name
+    path
+    url_path
+    url_key
+    children_count
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "categoryList": [
+      {
+        "id": 3,
+        "level": 2,
+        "name": "Gear",
+        "path": "1/2/3",
+        "url_path": "gear",
+        "url_key": "gear",
+        "children_count": "3"
+      }
+    ]
+  }
+}
+```
+
+### Return the categoryList by url_path filters
+
+The following query returns information about the Gear > Bags category using the `url_path` filter. Do not specify a suffix in the `url_path` value. The `url_path` filter accepts either the `eq` or `in` keyword.
+
+**Request:**
+
+```graphql
+{
+  categoryList(filters: { url_path: { eq: "gear/bags" } }) {
+    id
+    level
+    name
+    path
+    url_path
+    url_key
+    children_count
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "categoryList": [
+      {
+        "id": 4,
+        "level": 3,
+        "name": "Bags",
+        "path": "1/2/3/4",
+        "url_path": "gear/bags",
+        "url_key": "bags",
+        "children_count": "0"
+      }
+    ]
+  }
+}
+```
+
 ## Input attributes
 
 You must specify the `filters` attribute as input to your query.

@@ -56,7 +56,7 @@ Search requests are processed as follows:
 
 1. A search request from a user is received by the Magento web server, which forwards it to the Elasticsearch server.
 
-   You configure Elasticsearch in the Magento Admin to connect to the proxy's host and port.
+   You configure Elasticsearch in the Admin to connect to the proxy's host and port.
    We recommend the web server's SSL port (by default, 443).
 
 1. The Elasticsearch web server (listening on port 443) proxies the request to the Elasticsearch server (by default, it listens on port 9200).
@@ -109,7 +109,7 @@ Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Develop
 
 ## Additional resources {#es-resources}
 
-For additional information, see [Elasticsearch documentation][]{:target="_blank"}
+For additional information, see [Elasticsearch documentation][]
 
 ### Next
 

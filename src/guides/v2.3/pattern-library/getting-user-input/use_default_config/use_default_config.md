@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Use Default Config
 ---
-In the [Magento Admin](https://glossary.magento.com/magento-admin) some textfields can inherit default values (which have been set in config by the Merchant). A user has the ability to overwrite these default values at the page level. The "Use Default Value" or "Use Configuration Value" controls allow the user to revert an overwritten textfield value to the original default value.
+In the [Admin](https://glossary.magento.com/magento-admin) some textfields can inherit default values (which have been set in config by the Merchant). A user has the ability to overwrite these default values at the page level. The "Use Default Value" or "Use Configuration Value" controls allow the user to revert an overwritten textfield value to the original default value.
 
 ## When to Use
 
@@ -38,7 +38,7 @@ Value is set in Stores > Store configuration and user has to go there to change 
 
 ## Accessibility
 
-User should be able to access this control via their keyboard and it should be legible if the user use voice navigation. Follow this accessibility guideline: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#link](http://www.w3.org/TR/WCAG10-HTML-TECHS/#link)
+User should be able to access this control via their keyboard and it should be legible if the user use voice navigation. Follow this accessibility guideline: [https://www.w3.org/TR/WCAG10-HTML-TECHS/#link](https://www.w3.org/TR/WCAG10-HTML-TECHS/#link)
 
 ## Assets
 

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: T_SampleData
 title: Install, remove, or update optional sample data modules
 menu_title: Install, remove, or update optional sample data modules

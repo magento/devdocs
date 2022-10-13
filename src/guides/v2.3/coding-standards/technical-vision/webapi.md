@@ -82,7 +82,7 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and storefront areas from executing routers.
 1. Web API schema should be strictly typed. (All complex types should eventually be resolved to scalar types.)
 1. Authentication parameters must be passed via headers.
-1. Throttling must be configured by the system integrator. It is not supported by Magento
+1. Throttling must be configured by the system integrator. It is not supported by Magento.
 1. Internal server errors must be masked and never shown to the user in production mode. In developer mode, original exceptions must never be masked and should be displayed along with the related stacktrace.
 1. Pagination must be supported by all list operations.
 
@@ -90,7 +90,8 @@ Any new design related to Web API must satisfy the following constraints to keep
 
 1. Unlimited nesting should be supported during requests for related entities. (For example, get Order => Order Items => Products => Related Products)
 1. Field filtration must be performed with SQL queries. Do not filter on the application layer after you've fetched all possible fields.
-1. Third-party customizations must be done separately for Service Contracts and for GraphQL
+1. Third-party customizations must be done separately for Service Contracts and for GraphQL.
+1. When possible, classes marked as APIs should be utilized inside GraphQL resolvers.
 1. For modularity purposes, GraphQL configuration must be declared in a separate module. For example, to expose GraphQL for the module `MyModule`, you must create the `schema.graphqls` file in the `MyModuleGraphQl` module.
 1. GraphQL is primarily designed for store-front one-page apps and mobile applications. It supports token and cookie authentication, as well as guest access to public queries
 1. All queries must return the 200 HTTP status code. If an error occurs, return the error in the response body. A 500 status code is allowed when an exception occurs when generating a schema, but not during requests.

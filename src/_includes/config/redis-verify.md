@@ -50,6 +50,10 @@ If you use Redis for page caching, you'll see output similar to the following:
 ... more ...
 ```
 
+### Inspecting compressed data
+
+To inspect compressed Session data and Page Cache, the [RESP.app](https://flathub.org/apps/details/app.resp.RESP) supports the automatic decompression of Magento 2 Session and Page cache and displays PHP session data in a human-readable form.
+
 ### Redis ping command
 
 Enter the following command:
@@ -63,4 +67,4 @@ redis-cli ping
 If both commands succeeded, Redis is set up properly.
 
 #### More information
-[`redis-cli` command reference](http://redis.io/topics/rediscli)
+[`redis-cli` command reference](https://redis.io/topics/rediscli)

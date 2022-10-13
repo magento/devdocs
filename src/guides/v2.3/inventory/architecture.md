@@ -12,7 +12,7 @@ Module interchangeability was one of the main reasons behind introducing [Servic
 
 In Magento 2, a set of interfaces in a module's `/Api` directory typically define the service contracts, including the APIs and their implementations. A module interface expresses the elements (entity interfaces and services to manipulate them) that the module requires. These elements defined in the interface represent a gateway for communication between modules. The implementation contains the working business logic that corresponds to the elements declared in the interface.
 
-By placing service contracts (APIs), implementations, and UI code in the same module, Magento combines different architectural layers of the system in the scope of one component. Unfortunately, this means that a developer who wants to tweak a module's UI would be changing the same module as another developer who would like to substitute the  implementation for predefined business logic. Even modules that the developer expects to be used in headless Magento installations (those that don't use the Magento Admin at all) must contain UI code.
+By placing service contracts (APIs), implementations, and UI code in the same module, Magento combines different architectural layers of the system in the scope of one component. Unfortunately, this means that a developer who wants to tweak a module's UI would be changing the same module as another developer who would like to substitute the  implementation for predefined business logic. Even modules that the developer expects to be used in headless Magento installations (those that don't use the Admin at all) must contain UI code.
 
 ## Inventory management service layer
 
@@ -25,7 +25,7 @@ As a result of applying SRP to module responsibilities (while taking into accoun
 *  Admin UI
 *  Frontend UI
 
-The Admin and frontend UIs can be separated, because it's possible to have two different technology stacks. The Admin UI uses UI components, while the frontend UI can use the [PWA](https://magento.github.io/pwa-studio/) studio stack, consisting of technology such as webpack, React, Redux, and GraphQL.
+The Admin and frontend UIs can be separated, because it's possible to have two different technology stacks. The Admin UI uses UI components, while the frontend UI can use the [PWA](https://developer.adobe.com/commerce/pwa-studio/) studio stack, consisting of technology such as webpack, React, Redux, and GraphQL.
 
 Now, instead of creating one module that covers a specialized business domain, we create up to four modules, each one responsible for a dedicated layer of the system to provide high granularity for customizations. For example, in the standard Magento architecture, the `InventorySales` module would have contained all the APIs, business logic, and UI definitions. Now, these responsibilities are defined in the `InventorySales`,  `InventorySalesApi`, `InventorySalesAdminUI`, and `InventorySalesFrontendUI` modules.
 
@@ -41,7 +41,7 @@ The list of Inventory Management dependencies varies, depending on whether the m
 
 ### Dependencies in a standard installation
 
-For non-headless installations, Magento Inventory Management has dependencies on the following Magento 2.3 modules:
+For non-headless installations, Inventory Management has dependencies on the following modules:
 
 *  Backend
 *  BundleProduct
@@ -60,7 +60,7 @@ For non-headless installations, Magento Inventory Management has dependencies on
 
 ### Dependencies in a headless installation
 
-In headless installations, Magento Inventory Management is dependent on the following Magento 2.3 modules:
+In headless installations, Inventory Management is dependent on the following modules:
 
 *  BundleProduct
 *  Catalog

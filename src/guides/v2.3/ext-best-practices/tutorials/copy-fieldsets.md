@@ -10,7 +10,7 @@ functional_areas:
 
 ## Overview
 
-In this tutorial, you will learn to copy custom data from a [quote](https://glossary.magento.com/quote) object to an order object using the [Magento/Framework/DataObject/Copy][0]{:target="_blank"} class.
+In this tutorial, you will learn to copy custom data from a [quote](https://glossary.magento.com/quote) object to an order object using the [Magento/Framework/DataObject/Copy][0] class.
 
 ## Step 1: Define your attributes {#step-1}
 
@@ -36,6 +36,8 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 
 **etc/fieldset.xml:**
 
+The following example shows how to copy `sales_convert_quote`.`demo` to `sales_order`.`demo`.
+
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
@@ -43,6 +45,42 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
     <fieldset id="sales_convert_quote">
       <field name="demo">
         <aspect name="to_order" />
+      </field>
+    </fieldset>
+  </scope>
+</config>
+```
+
+Use the `targetField` attribute to specify the destination field. The following example shows how to copy `sales_convert_quote`.`demo` to `sales_order`.`order_demo`.
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+  <scope id="global">
+    <fieldset id="sales_convert_quote">
+      <field name="demo">
+        <aspect name="to_order" targetField="order_demo"/>
+      </field>
+    </fieldset>
+  </scope>
+</config>
+```
+
+Define a new `aspect` if you need to copy a field of a source table into multiple fields in a destination table.
+
+The following example shows how to copy `sales_convert_quote`.`demo` into
+
+-  `sales_order`.`demo`
+-  `sales_order`.`order_demo`
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+  <scope id="global">
+    <fieldset id="sales_convert_quote">
+      <field name="demo">
+        <aspect name="to_order"/>
+        <aspect name="to_demo_order" targetField="order_demo"/>
       </field>
     </fieldset>
   </scope>
@@ -65,50 +103,58 @@ The following code snippets highlight the code pieces needed to copy a fieldset 
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Vendor\Module\Observer;
 
+use Magento\Framework\DataObject\Copy;
+use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
+use Magento\Quote\Model\Quote;
+use Magento\Sales\Model\Order;
 
 class SaveOrderBeforeSalesModelQuoteObserver implements ObserverInterface
 {
     ...
 
     /**
-     * @var \Magento\Framework\DataObject\Copy
+     * @var Copy
      */
     protected $objectCopyService;
 
     ...
 
     /**
-     * @param \Magento\Framework\DataObject\Copy $objectCopyService
+     * @param Copy $objectCopyService
      * ...
      */
     public function __construct(
-      \Magento\Framework\DataObject\Copy $objectCopyService,
-      ...
+        Copy $objectCopyService,
+        ...
     ) {
         $this->objectCopyService = $objectCopyService;
         ...
     }
 
     /**
-     * @param \Magento\Framework\Event\Observer $observer
+     * @param Observer $observer
      */
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
-      /* @var \Magento\Sales\Model\Order $order */
-      $order = $observer->getEvent()->getData('order');
-      /* @var \Magento\Quote\Model\Quote $quote */
-      $quote = $observer->getEvent()->getData('quote');
+        /* @var Order $order */
+        $order = $observer->getEvent()->getData('order');
+        /* @var Quote $quote */
+        $quote = $observer->getEvent()->getData('quote');
 
-      $this->objectCopyService->copyFieldsetToTarget('sales_convert_quote', 'to_order', $quote, $order);
-      ...
+        $this->objectCopyService->copyFieldsetToTarget('sales_convert_quote', 'to_order', $quote, $order);
+        ...
 
-      return $this;
+        return $this;
     }
 }
-
 ```
 
 In the code, an instance of the `Copy` class is obtained from the constructor using [dependency injection][2].

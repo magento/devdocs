@@ -14,7 +14,7 @@ pages:
       url: /compliance/industry-compliance.html
 
     - label: Privacy Regulations
-    
+
       children:
 
         - label: CCPA
@@ -37,6 +37,6 @@ pages:
       versionless: true
       children:
 
-        - label: Magento Privacy JavaScript Library
+        - label: Privacy JavaScript Library
           versionless: true
           url: /compliance/privacy/magento-privacy-js-library.html

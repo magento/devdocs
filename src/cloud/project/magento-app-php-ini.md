@@ -18,7 +18,7 @@ Configuring PHP settings improperly can cause issues. We recommend only advanced
 
 To increase the PHP memory limit, add the following setting to the `php.ini` file:
 
-```php
+```ini
 memory_limit = 1G
 ```
 
@@ -26,7 +26,7 @@ For debugging, increase the value to 2G.
 
 ## Optimize realpath_cache configuration
 
-Set the following `realpath_cache` settings to improve Magento performance.
+Set the following `realpath_cache` settings to improve application performance.
 
 ```conf
 ;
@@ -43,15 +43,15 @@ realpath_cache_ttl = 7200
 These settings allow PHP processes to cache paths to files instead of looking them up each time a page loads. See [Performance Tuning](https://www.php.net/manual/en/ini.core.php) in the PHP documentation.
 
 {:.bs-callout-info}
-For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}/guides/v2.4/install-gde/prereq/php-settings.html).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}{{ site.gdeurl }}/install-gde/prereq/php-settings.html).
 
 ## Check custom php.ini settings
 
-After pushing the `php.ini` changes to your Cloud environment, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ site.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
+After pushing the `php.ini` changes to your Cloud environment, you can check that the custom PHP configuration has been added to your environment. For example, use SSH to log in to the remote environment and view the file using something similar to the following:
 
 ```bash
-cat /etc/php5/fpm/php.ini
+cat /etc/php/<php-version>/fpm/php.ini
 ```
 
 {:.bs-callout-info}
-If you use {{site.data.var.mcd-prod}} for local development, see [Docker service containers]{{site.baseurl}}//cloud/docker/docker-containers-service.html#fpm-container) for information about using a custom `php.ini` file in a Docker environment.
+If you use {{site.data.var.mcd-prod}} for local development, see [Docker service containers]({{site.baseurl}}/cloud/docker/docker-containers-service.html#fpm-container) for information about using a custom `php.ini` file in a Docker environment.

@@ -12,11 +12,8 @@ This topic describes how to install a third-party [theme](https://glossary.magen
 
 To install a theme, you need to add its code to your Magento 2 instance code base, and then register it in the database. The way a theme is distributed determines how to do this:
 
--  if a theme is just a set of files, for example an archive, add the theme manually.
--  if a theme is a [composer](https://glossary.magento.com/composer) package, install it using composer.
--  if a theme is distributed as an extension, use the **Web Setup Wizard** in [Magento Admin](https://glossary.magento.com/magento-admin).
-
-   {% include install/web/deprecated.md %}
+-  If a theme is just a set of files, for example an archive, add the theme manually.
+-  If a theme is a [Composer](https://glossary.magento.com/composer) package, install it using Composer.
 
 The following sections contain more information about each installation flow.
 
@@ -45,10 +42,12 @@ Composer-based themes are loaded from external sources and cannot be modified di
 
 ## Install a theme as an extension
 
-If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), install it with the **Web Setup Wizard**. See [Install the Extension](https://docs.magento.com/marketplace/user_guide/buyers/install-extension.html).
+If a theme is distributed on [Commerce Marketplace](https://marketplace.magento.com/), see [Install the Extension]({{ site.baseurl }}/extensions/install/).
 
 ## Register a theme
 
-After you create or install a theme, open the Magento [Admin](https://glossary.magento.com/admin) or reload any Magento Admin page. This way the theme gets registered and added to the database.
+After you create or install a theme, open the Magento [Admin](https://glossary.magento.com/admin) or reload any Admin page. This way the theme gets registered and added to the database.
 
-To make sure the theme is registered, in the Magento Admin navigate to **Content** > **Design** > **Themes**. If a theme is registered, it is displayed in the list of available themes.
+To make sure the theme is registered, in the Admin navigate to **Content** > **Design** > **Themes**. If a theme is registered, it is displayed in the list of available themes.
+
+![The registered theme in Admin]({{ site.baseurl }}/common/images/theme.png)

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: QA_Get
 title: Get the Magento software
 menu_title: Get the Magento software

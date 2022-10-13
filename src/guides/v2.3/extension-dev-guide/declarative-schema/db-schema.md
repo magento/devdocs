@@ -13,7 +13,7 @@ Each script iteratively adds changes. During the installation process, upgrade s
 
 The main disadvantage of this approach is that Magento applies changes blindly. For example, in one version a new database column might be introduced, only to be removed in the next. _Declarative setup_ eliminates this type of unnecessary work.
 
-Declarative setup is based on database structure declarations, and is used in projects such as [Doctrine](http://www.doctrine-project.org/). Schema files declare what the database structure should be,
+Declarative setup is based on database structure declarations, and is used in projects such as [Doctrine](https://www.doctrine-project.org/). Schema files declare what the database structure should be,
 and Magento determines the differences between the current table structure and what it should be. These differences can be represented with atomic SQL operations.
 
 Magento prioritizes the declarative schema and executes the declarative install schemas before the [data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html).
@@ -152,9 +152,8 @@ A column can have the following attributes:
 </tr>
 </table>
 
-For more information about each type, refer to the annotations in the corresponding XSD file. The location of the XSD file depends on how you installed Magento.
+For more information about each type, refer to the annotations in the corresponding XSD file.
 
-*  [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc`
 *  [Composer]({{page.baseurl}}/install-gde/composer.html) or [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
 
 Example:
@@ -198,7 +197,7 @@ To keep entity identifiers as immutable values, the declarative schema does not 
 Example:
 
 ```xml
-<constraint xsi:type="foreign" referenceId="COMPANY_CREDIT_COMPANY_ID_DIRECTORY_COUNTRY_COUNTRY_ID" table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id" onDelete="CASCADE"/>
+<constraint xsi:type="foreign" referenceId="COMPANY_CREDIT_COMPANY_ID_COMPANY_ENTITY_ID" table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id" onDelete="CASCADE"/>
 ```
 
 #### `index` subnode
@@ -246,7 +245,7 @@ When creating a new table, remember to [generate]({{ page.baseurl}}/extension-de
 
 ### Drop a table
 
-In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file.
+In the following example, the `declarative_table` table was completely removed from the `db_schema.xml` file.
 
 ```diff
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

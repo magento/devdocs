@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Magento configuration files
+title: Configuration files
 functional_areas:
   - Configuration
   - System

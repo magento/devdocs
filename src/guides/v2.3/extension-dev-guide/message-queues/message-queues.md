@@ -4,9 +4,9 @@ title: Message Queues
 
 ---
 
-Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
+Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other, nor do they need to communicate with the message queue at the same time. When a sender places a message onto a queue, it is stored until the recipient receives them.
 
-In {{site.data.var.ee}}, the Message Queue Framework (MQF) is a fully-functional system that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses [RabbitMQ] as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
+In {{site.data.var.ee}}, the Message Queue Framework (MQF) is a fully-functional system that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses [RabbitMQ] as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
 A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL [adapter](https://glossary.magento.com/adapter) stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
@@ -20,7 +20,7 @@ The following code sends a message to the queue. The `publish` method is defined
 $publisher->publish($topic, $message)
 ```
 
-In a MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required).
+In a MySQL adapter environment, a message that is published to multiple queues creates a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required).
 
 ## Instantiate a consumer
 
@@ -42,9 +42,9 @@ Implement `\Magento\Framework\MessageQueue\ConsumerInterface::process($maxNumber
 Perform the following actions:
 
 1. Define the queue name associated with current consumer using `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getQueueName`.
-1. Select `$maxNumberOfMessages` message records, filtering on the  `queue_name` field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers.
+1. Select `$maxNumberOfMessages` message records, filtering on the `queue_name` field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers.
 1. Decode the message using topic name taken from the `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface`.
-1. Invoke callback  `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
+1. Invoke callback `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
 
 ## Change message queue from MySQL to AMQP
 
@@ -89,7 +89,7 @@ The following sample introduces a runtime configuration that allows you to redef
 *  [Install RabbitMQ]
 
 <!-- Link definitions -->
-[RabbitMQ]: http://www.rabbitmq.com
+[RabbitMQ]: https://www.rabbitmq.com/
 [Configure message queues]: {{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html
 [Message Queues Overview]: {{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html
 [Configure message queues]: {{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html

@@ -2,6 +2,7 @@
 group: architecture-guide
 title: Module overview
 menu_title: Module overview
+redirect_from: guides/v2.3/install-gde/basics/basics_module.html
 ---
 
 ## What is a Magento module? {#arch-modules-overview}
@@ -67,7 +68,7 @@ Related topics
 [Module location and naming conventions][]
 
 <!-- Link Definitions  -->
-[Github repo]: https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento
+[Github repo]: https://github.com/magento/magento2/tree/2.3/app/code/Magento
 [Module dependencies]: {{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_depend.html
 [Modules and areas]: {{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_and_areas.html
 [Module location and naming conventions]: {{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html

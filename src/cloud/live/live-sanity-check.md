@@ -27,8 +27,8 @@ If you modified your `composer.json` file to add modules, we recommend running t
 
 Your Git branch must have the following files for building and deploying to your local, Integration, Staging, and Production environments:
 
-*  `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ site.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
-*  `config.php` if you use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) to manage Magento configuration settings
+*  `auth.json` in the root project directory. This file includes the authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment](https://support.magento.com/hc/en-us/articles/4411647469965).
+*  `config.php` if you use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) to manage configuration settings
 *  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html) is updated and saved in the root directory
 *  [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html) is updated and saved in `magento/`
 *  [`routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html) is updated and saved in `magento/`
@@ -37,7 +37,7 @@ Your Git branch must have the following files for building and deploying to your
 
 Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. Do **NOT** push the generated build files from this test to your remote Git branch. This is a test to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins automatically.
 
-1. SSH into your local Magento workspace.
+1. SSH into your local workspace.
 1. Move to another location to run your build. You should keep this build separate from your usual Git branch.
 1. Run the following command to build locally. The command builds the current project locally strictly to test the build without the full patching and commit process.
 
@@ -55,10 +55,7 @@ To remove these test builds, you can use the `magento-cloud local:clean` command
 
 ## Push code to Git and Integration {#push}
 
-Before you continue, push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
-
-{:.procedure}
-To prepare your code and branch:
+Before you continue, push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the application.
 
 {% include cloud/cli-get-started.md %}
 
@@ -89,7 +86,7 @@ During the [build phase]({{ site.baseurl }}/cloud/reference/discover-deploy.html
 
 The build also checks for a [configuration file]({{ site.baseurl }}/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it is completed in the deployment stage.
 
-Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hotfixes are in the `<Magento root dir>/m2-hotfixes` directory.
+Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hotfixes are in the `<Project root dir>/m2-hotfixes` directory.
 
 {:.procedure}
 To build your site:
@@ -169,17 +166,17 @@ We strongly recommend you complete your testing in an Integration or Staging env
 
 ## Deploy phase {#deploy}
 
-We highly recommend having Magento already installed prior to deployment. During the [deployment phase]({{ site.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
+We highly recommend installing the {{site.data.var.ee}} application prior to deployment. During the [deployment phase]({{ site.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
 
-*  Install the Magento application if needed
-*  If the Magento application is installed, upgrade components
+*  Install the {{site.data.var.ee}} application if needed
+*  If the {{site.data.var.ee}} application is installed, upgrade components
 *  Clear the [cache](https://glossary.magento.com/cache)
-*  Set the Magento application for [`production`]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode) mode
+*  Set the {{site.data.var.ee}} application for [`production`]({{ site.baseurl }}{{site.gdeurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 {:.procedure}
 To deploy your site:
 
-1. If you have not already, log in as or switch to the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. If you have not already, log in as or switch to the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 1. Change to your project root directory.
 1. Enter the following command:
 
@@ -187,15 +184,15 @@ To deploy your site:
    php bin/magento setup:upgrade
    ```
 
-   We highly recommend having Magento already installed if you followed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+   We highly recommend having {{site.data.var.ee}} already installed if you followed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the {{site.data.var.ee}} application yet, use the [`magento setup:install`]({{ site.baseurl }}{{site.gdeurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 
-1. Clean the Magento cache:
+1. Clean the cache:
 
    ```bash
    php bin/magento cache:clean
    ```
 
-1. Set the Magento application for [production mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode):
+1. Set the application for [production mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode):
 
    ```bash
    php bin/magento deploy:mode:set production

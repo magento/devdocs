@@ -4,9 +4,11 @@ subgroup: Security
 title: XSS prevention strategies
 menu_title: XSS prevention strategies
 menu_order: 1100
+migrated_to: https://developer.adobe.com/commerce/php/development/security/cross-site-scripting/
+layout: migrated
 ---
 
-[Cross-site scripting][]{:target="_blank"}, or XSS, is a security vulnerability that can be found in web applications. This vulnerability allows attackers to inject malicious code/styles into a web page viewed by users. Magento [extension](https://glossary.magento.com/extension) developers should be aware of these vulnerabilities to avoid introducing them in their code.
+[Cross-site scripting][], or XSS, is a security vulnerability that can be found in web applications. This vulnerability allows attackers to inject malicious code/styles into a web page viewed by users. Magento [extension](https://glossary.magento.com/extension) developers should be aware of these vulnerabilities to avoid introducing them in their code.
 
 There are three main types of XSS vulnerabilities:
 
@@ -176,7 +178,7 @@ parentElement.appendChild(newDiv);
 
 #### UI component data providers
 
-UI component data providers pass dynamic (user generated) data to UI components. The data they return is rendered in order to support component dynamic linking. Since user data is supposed to be treated a a literal value which is not refering to any other component, rendering of these properties must be disabled. See [UI component data providers][] to read more about data providers and component linking.
+UI component data providers pass dynamic (user generated) data to UI components. The data they return is rendered in order to support component dynamic linking. Since user data is supposed to be treated as a literal value which is not refering to any other component, rendering of these properties must be disabled. See [UI component data providers][] to read more about data providers and component linking.
 
 ```php
 $uiData = ['linkProperty' => '${ $.otherComponent.value }'];
@@ -203,7 +205,7 @@ It covers the following cases:
 -  Other of previously mentioned. Output is not escaped. Test is red.
 
 <!-- Link Definitions -->
-[product listing template]: https://github.com/magento/magento2/blob/78bb169ff9721c8d05c35b4c29a4464fd45bccbe/app/code/Magento/Catalog/view/frontend/templates/product/list.phtml#L16
+[product listing template]: {{ site.mage2bloburl }}/78bb169ff9721c8d05c35b4c29a4464fd45bccbe/app/code/Magento/Catalog/view/frontend/templates/product/list.phtml#L16
 [Template guide]: {{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html
 [Cross-site scripting]: https://owasp.org/www-community/attacks/xss/
 [Magento binding syntax]: {{ page.baseurl }}/ui_comp_guide/concepts/magento-bindings.html

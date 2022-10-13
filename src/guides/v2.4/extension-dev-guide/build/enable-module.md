@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Enable or disable your component
+migrated_to: https://developer.adobe.com/commerce/php/development/build/component-management/
+layout: migrated
 ---
 
 After you have built the component and are ready to enable it in your Magento environment, do the following:
@@ -28,7 +30,7 @@ After you have built the component and are ready to enable it in your Magento en
    bin/magento module:status <extension-name>
    ```
 
-   An extension name uses the format: <VendorName>_<ComponentName>.
+   An extension name uses the format: `<VendorName>_<ComponentName>`.
 
    Sample response:
 

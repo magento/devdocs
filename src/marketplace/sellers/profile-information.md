@@ -1,13 +1,15 @@
 ---
 group: marketplace-sellers
 title: Profile Information
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-information/
+layout: migrated
 ---
 
 Your profile tracks and provides all information for your Marketplace Developer Portal account, including company information, payment account information, access keys, tax forms, and partner information.
 
 ## Contact Info
 
-Your contact information includes your address, phone number, and PayPal email address. As part of the registration process, you must enter a valid PayPal email, even if your extensions are available for free on Magento Marketplace. Magento sends your revenue share payment to your PayPal account.
+Your contact information includes your address, phone number, and PayPal email address. As part of the registration process, you must enter a valid PayPal email, even if your extensions are available for free on Commerce Marketplace. Magento sends your revenue share payment to your PayPal account.
 
 ![Contact information]({{ site.baseurl }}/marketplace/sellers/images/account-information.png){: .zoom}
 _Contact Information_
@@ -20,7 +22,7 @@ _Contact Information_
 |Personal Bio|(Optional) Information about yourself.|
 |Personal Addresses|At least one address is required; you can enter up to three. If there are multiple addresses, you must designate one as the primary contact address.|
 |Login Credentials|Clicking <span class="btn">Go to My Account</span> takes you to your Magento account information.|
-|PayPal Email|You must enter a valid PayPal account email, even if  your extensions are available for free on Magento Marketplace. Magento sends your revenue share payment to your PayPal account.|
+|PayPal Email|You must enter a valid PayPal account email, even if  your extensions are available for free on Commerce Marketplace. Magento sends your revenue share payment to your PayPal account.|
 
 ### Company
 
@@ -33,13 +35,13 @@ _Contact Information_
 |Company Bio|Your Company Bio helps prospective buyers get acquainted with your company background and areas of expertise. Max characters 1500 words or less.|
 |Company Addresses|At least one address is required. You can enter up to three. If there are multiple addresses, you must designate one as the primary contact address.|
 |Login Credentials|Clicking <span class="btn">Go to My Account</span> takes you to your Magento account information.|
-|PayPal Email|You must enter a valid PayPal account email, even if  your extensions are available for free on Magento Marketplace. Magento sends your revenue share payment to your PayPal account.|
+|PayPal Email|You must enter a valid PayPal account email, even if  your extensions are available for free on Commerce Marketplace. Magento sends your revenue share payment to your PayPal account.|
 
 ## Access keys
 
-Magento Marketplace uses a pair of public and private 32-character tokens to authenticate access to the repository of third-party extensions and themes. You can create multiple sets of access keys for others who install extensions for your store. Marketplace access keys can be generated, disabled or enabled, and deleted from your account.
+Commerce Marketplace uses a pair of public and private 32-character tokens to authenticate access to the repository of third-party extensions and themes. You can create multiple sets of access keys for others who install extensions for your store. Marketplace access keys can be generated, disabled or enabled, and deleted from your account.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info}
 The access key pair that is generated for Marketplace is not the same as the [Encryption Key][1]{: target="_blank"} that is associated with the Magento 2.x setup.
 
 For more technical information, see [Get your authentication keys][2] in the developer documentation.
@@ -91,6 +93,6 @@ Click **Partner Portal** to open the Magento Partner Portal dashboard.
 ![Partner portal]({{ site.baseurl }}/marketplace/sellers/images/partner-portal.png){: .zoom}
 _Partner Portal_
 
-[1]: http://docs.magento.com/m2/ce/user_guide/system/encryption-key.html
-[2]: http://devdocs.magento.com/guides/v2.3/install-gde/prereq/connect-auth.html
+[1]: {{ site.user_guide_url }}/system/encryption-key.html
+[2]: {{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html
 [3]: https://magento.com/partners/become

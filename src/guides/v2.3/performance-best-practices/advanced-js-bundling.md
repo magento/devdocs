@@ -85,16 +85,16 @@ A clean Magento installation allows reaching enough good performance by splittin
 The following steps require you to install and have familiarity with the following tools:
 
 -  [nodejs](https://nodejs.org/en/download/)
--  [r.js](http://requirejs.org/docs/optimization.html#download)
--  [PhantomJS](http://phantomjs.org/) (optional)
+-  [r.js](https://requirejs.org/docs/optimization.html#download)
+-  [PhantomJS](https://phantomjs.org/) (optional)
 
 ### Sample code
 
 Full versions of the sample code used in this article are available here:
 
--  [build.js](samples/build.js){:target="_blank"}
--  [deps.js](samples/deps.js){:target="_blank"}
--  [deps-map.sh](samples/deps-map.sh.txt){:target="_blank"}
+-  [build.js](samples/build.js)
+-  [deps.js](samples/deps.js)
+-  [deps-map.sh](samples/deps-map.sh.txt)
 
 ### Part 1: Create a bundling configuration
 

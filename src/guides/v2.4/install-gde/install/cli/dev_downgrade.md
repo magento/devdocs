@@ -1,10 +1,11 @@
 ---
-group: installation-guide
 title: Change to a released version
 functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://developer.adobe.com/commerce/contributor/guides/install/change-version/
+layout: migrated
 ---
 
 This topic discusses how a contributing developer can change versions of the Magento software after cloning the `develop` branch. This might be necessary to perform some tasks that require a specific Magento version other than `develop`.
@@ -27,7 +28,7 @@ You have the following options:
 
 To change versions after cloning:
 
-1. Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as, or switch to, [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Use the following command to uninstall the Magento software:
 
    ```bash
@@ -59,7 +60,7 @@ To change versions after cloning:
 
 To change versions after cloning:
 
-1. Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as, or switch to, [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Create a [new database instance]({{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) for your installation.
 1. [Back up]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back) the Magento file system, database, and media files:
 

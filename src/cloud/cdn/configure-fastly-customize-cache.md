@@ -16,23 +16,26 @@ The following sections provide an overview and instructions for configuring some
 Fastly provides the _Force TLS_ option to redirect unencrypted requests (HTTP) to Fastly. After your Staging or Production environment has been provisioned with a [valid SSL/TLS certificate]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates), you can update the Fastly configuration for your store to enable the Force TLS option. See the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md) in the Fastly CDN Module for Magento 2 documentation.
 
 {:.bs-callout-info}
-Enabling the Force TLS option is a recommended best practice for Magento Commerce stores.
+Enabling the Force TLS option is a recommended best practice for {{ site.data.var.ece }} stores.
 
 ## Extend Fastly timeout
 
-The Fastly service configuration specifies a default timeout period of 180 seconds for HTTPS requests to the Magento Admin. Any request processing that exceeds the timeout period returns a 503 error.
+The Fastly service configuration specifies a default timeout period of 180 seconds for HTTPS requests to the Admin. Any request processing that exceeds the timeout period returns a 503 error.
 As a result, you could receive 503 errors when attempting operations that require lengthy processing, or when trying to perform bulk operations.
 
 If you need to complete bulk actions that take longer than 3 minutes, you can prevent 503 errors by changing the _Admin path timeout_ value.
 
+{:.bs-callout-info}
+To extend Fastly timeout parameters other than Admin in the Fastly UI, see [Increase Timeouts for Long Jobs](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-INCREASE-TIMEOUTS-LONG-JOBS.md).
+
 {:.procedure}
-To extend the Fastly timeout for the Magento Admin:
+To extend the Fastly timeout for the Admin:
 
 {% include cloud/admin-ui-login-step.md %}
 
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 
-1. In the *Fastly Configuration* section, expand **Advanced**.
+1. In the *Fastly Configuration* section, expand **Advanced Configuration**.
 
 1. Set the **Admin path timeout** value in seconds. This value cannot be more than 10 minutes (600 seconds).
 
@@ -40,7 +43,7 @@ To extend the Fastly timeout for the Magento Admin:
 
 1. After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
 
-Fastly retrieves the Magento Admin path for generating the VCL file from the `app/etc/env.php` configuration file.
+Fastly retrieves the Admin path for generating the VCL file from the `app/etc/env.php` configuration file.
 
 ## Configure purge options
 
@@ -50,7 +53,7 @@ The options include:
 
 -  **Purge category**–Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
 -  **Purge product**–Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
--  **Purge CMS page**–Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
+-  **Purge CMS page**–Purges page content when updating and adding pages to the {{site.data.var.ee}} CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
 -  **Soft purge**–Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
 
 ![Configure purge options]({{ site.baseurl }}/common/images/cloud/cloud_fastly-purgeoptions.png){:width="650px"}
@@ -58,7 +61,7 @@ The options include:
 {:.procedure}
 To configure Fastly purge options:
 
-1. In the *Fastly Configuration* section, expand **Advanced** to display the purge options.
+1. In the *Fastly Configuration* section, expand **Advanced Configuration** to display the purge options.
 
 1. For each purge option, select **Yes** to enable automatic purging, or **No** to disable automatic purging.
 
@@ -72,7 +75,7 @@ For more information, see [the Fastly configuration options](https://github.com/
 
 ## Configure GeoIP handling
 
-The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
+The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use an extension for GeoIP handling, you may need to verify the features with Fastly options.
 
 {:.procedure}
 To set up GeoIp handling:
@@ -81,13 +84,13 @@ To set up GeoIp handling:
 
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 
-1. In the *Fastly Configuration* section, expand **Advanced**.
+1. In the *Fastly Configuration* section, expand **Advanced Configuration**.
 
 1. Scroll down and select **Yes** to **Enable GeoIP**. Additional configuration options display.
 
 1. For GeoIP Action, select if the visitor is automatically redirected with **Redirect** or provided a list of stores to select from with **Dialog**.
 
-1. For **Country Mapping**, click **Add** to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+1. For **Country Mapping**, click **Add** to enter a two-letter country code to map with a specific {{site.data.var.ee}} store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 
    ![Add GeoIP country maps]({{ site.baseurl }}/common/images/cloud/cloud_fastly-geo-code.png)
 
@@ -95,13 +98,16 @@ To set up GeoIp handling:
 
 1. After page reload, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
 
+{:.bs-callout-info}
+The current Adobe Commerce Fastly GeoIP module implementation does not support redirects between multiple websites.
+
 Fastly also provides a series of [geolocation-related VCL features](https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features) for customized geolocation coding.
 
 ## Enable Fastly Edge modules
 
 Fastly Edge Modules is a flexible framework that allows definition of UI components and associated VCL code through a template. These modules make it easy to customize and extend the Fastly service configuration through the user interface instead of using custom VCL snippets.
 
-Edge modules allow you to enable specific functionality like CORS headers, Magento Cloud Sitemap rewrites, and to configure integration between your Magento store and other CMSs or back ends.
+Edge modules allow you to enable specific functionality like CORS headers, Magento Cloud Sitemap rewrites, and to configure integration between your {{site.data.var.ee}} store and other CMSs or back ends.
 
 You must turn on the _Enable Fastly Edge modules_ option to access the Edge Modules menu to view, configure, and manage the available Edge modules. See [Fastly Edge Modules](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULES.md) in the Fastly CDN module documentation.
 
@@ -139,7 +145,7 @@ To review the back end setting configuration:
 
 1. Click **Upload** to save your changes and upload them to the Fastly servers.
 
-1. In the Magento Admin, click **Save Config**.
+1. In the Admin, click **Save Config**.
 
 For more information, see the [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md) in the Fastly module documentation.
 
@@ -151,7 +157,7 @@ authentication on your Production environment. You can configure it on Staging
 to protect your site during the development process. See the [Basic Authentication Guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BASIC-AUTH.md) in the Fastly CDN module documentation.
 
 If you add user access and enable basic authentication on Staging, you can still
-access the Magento Admin without requiring additional credentials.
+access the Admin without requiring additional credentials.
 
 ## Create custom VCL snippets
 
@@ -164,19 +170,19 @@ Before adding custom VCL code, edge dictionaries, and ACLs to your Fastly module
 
 ## Manage domains
 
-For Starter projects, use the _Domains_ option to add and manage the Fastly domain configuration for your store. Before adding a domain to your project, you must submit a [Magento Support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to add the domain to your Cloud configuration. You can add the domain to Fastly after Magento confirms your request.
+For Starter projects, use the _Domains_ option to add and manage the Fastly domain configuration for your store. Before adding a domain to your project, you must submit a [{{site.data.var.ee}} Support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to add the domain to your Cloud configuration. You can add the domain to Fastly after Magento confirms your request.
 
 {:.bs-callout-info}
-For Pro plan projects, you must submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to update the Fastly domain configuration for your project.
+For Pro plan projects, you must submit a [{{site.data.var.ee}} support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to update the Fastly domain configuration for your project.
 
 {:.procedure}
-To manage Fastly domain configuration from the Magento Admin:
+To manage Fastly domain configuration from the Admin:
 
 {% include cloud/admin-ui-login-step.md %}
 
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 
-1. In the Magento Admin _Fastly Configuration_ section, click **Domains**.
+1. In the Admin _Fastly Configuration_ section, click **Domains**.
 
 1. Click **Manage Domains** to open the Domains page.
 
@@ -195,7 +201,7 @@ Use the _Maintenance Mode_ option to allow administrative access to your site fr
 {:.procedure}
 To enable Maintenance mode with Administrative access:
 
-1. Open the _Fastly configuration_ section in the Magento Admin UI.
+1. Open the _Fastly configuration_ section in the Admin UI.
 
 1. In the _Edge ACL_ section, update the `maint_allow` access control list (ACL) with the administrative IP addresses that can access your store while it is in Maintenance mode.
 

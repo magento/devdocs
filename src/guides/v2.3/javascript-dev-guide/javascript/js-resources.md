@@ -1,14 +1,14 @@
 ---
 group: javascript-developer-guide
 subgroup: 1_Javascript
-title: JavaScript resources in Magento
+title: JavaScript resources in Commerce
 ---
 
 ## Overview {#m2devgde-js-resources-intro}
 
 This topic describes general concepts of how [JavaScript](https://glossary.magento.com/javascript) (JS) components are organized in Magento.
 
-To address the problem of slow page loads, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){:target="_blank"}.
+To address the problem of slow page loads, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](https://requirejs.org).
 
 RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, it enables asynchronous JavaScript loading.
 
@@ -37,7 +37,7 @@ JS resources are accessed using relative paths.
 **Example 1:**
 
 *  File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
-*  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
+*  File published to `pub/static`: `pub/static/frontend/<Vendor>/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
 *  Called in script:
 
     ```javascript
@@ -59,7 +59,7 @@ JS resources are accessed using relative paths.
 **Example 3:**
 
 *  File actual location: `lib/web/jquery.js`
-*  File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
+*  File published to `pub/static`: `pub/static/<area>/<Vendor>/<theme>/<locale>/jquery.js`
 *  Called in script:
 
     ```javascript
@@ -71,13 +71,13 @@ Relative paths are also used in for [mapping and setting `paths` in requirejs-co
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
-To build a dependency on the third-party plugin, specify a [shim](http://requirejs.org/docs/api.html#config-shim) in the following configuration files:
+To build a dependency on the third-party plugin, specify a [shim](https://requirejs.org/docs/api.html#config-shim) in the following configuration files:
 
 *  `requirejs-config.js`
 
     ```javascript
     var config = {
-        "shim": {
+        shim: {
            "3-rd-party-plugin": ["jquery"]
         }
     };
@@ -105,7 +105,7 @@ To be available for the entire Magento instance, RequireJS library is included i
    ```xml
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
         <head>
-            <title>Magento Admin</title>
+            <title>Admin</title>
             <meta name="viewport" content="width=1024"/>
             <meta name="format-detection" content="telephone=no"/>
             <!-- Here's the library included -->
@@ -186,20 +186,19 @@ We should now be able to use the Slick library, for example, on any list that we
 </ul>
 
 <script>
-    require([
-        'jquery',
-        'slick'
-    ], function ($) {
-        $(document).ready(function () {
-            $(".my-list").slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 4,
-                slidesToScroll: 1
-            });
-        });
-    });
+   require([
+      'jquery',
+      'slick',
+      'domReady!'
+   ], function ($) {
+      $(".my-list").slick({
+         dots: true,
+         infinite: true,
+         speed: 300,
+         slidesToShow: 4,
+         slidesToScroll: 1
+      });
+   });
 </script>
 ```
 
@@ -227,6 +226,6 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 Related reading
 
 *  [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
-*  [RequireJS library](http://requirejs.org)
+*  [RequireJS library](https://requirejs.org)
 *  [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)
-*  [shim](http://requirejs.org/docs/api.html#config-shim)
+*  [shim](https://requirejs.org/docs/api.html#config-shim)

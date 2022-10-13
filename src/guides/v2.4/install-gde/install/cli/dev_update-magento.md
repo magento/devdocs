@@ -1,1 +1,0 @@
-../../../../v2.3/install-gde/install/cli/dev_update-magento.md

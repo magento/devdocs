@@ -2,6 +2,8 @@
 group: marketplace-sellers
 title: Account Setup Process
 redirect_from: /marketplace/sellers/set-up-your-account.html
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/account-setup-process/
+layout: migrated
 ---
 
 ## Step 1: Log in or register for a developer account.
@@ -10,12 +12,12 @@ If you have an existing Magento account, simply log in and complete the [develop
 
 ## Step 2: Agree to the terms of service.
 
-Read the Magento Marketplace [terms of service](https://magento.com/legal/terms/marketplace-xcelerate). Then, select the checkbox to agree with the terms and continue.
+Read the Commerce Marketplace [terms of service](https://magento.com/legal/terms/marketplace-xcelerate). Then, select the checkbox to agree with the terms and continue.
 
 ## Step 3: Complete your personal profile.
 
-The information in your [personal profile]({{ site.baseurl }}/marketplace/sellers/developer-register.html) identifies you as an individual vendor in Magento Marketplace, and includes your background, image, contact information, and social network addresses.
+The information in your [personal profile]({{ site.baseurl }}/marketplace/sellers/profile-personal.html) identifies you as an individual vendor in Commerce Marketplace, and includes your background, image, contact information, and social network addresses.
 
 ## Step 4: Complete your company profile.
 
-Your [company profile]({{ site.baseurl }}/marketplace/sellers/developer-register.html) is similar to your personal profile, and provides the information about your company and brand that appears in your Magento Marketplace listing.
+Your [company profile]({{ site.baseurl }}/marketplace/sellers/profile-company.html) is similar to your personal profile, and provides the information about your company and brand that appears in your Commerce Marketplace listing.

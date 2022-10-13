@@ -7,7 +7,7 @@ functional_areas:
 
 ## In this topic
 
-Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme [inherit][theme-inherit]{:target="_blank"} from the Magento Blank theme.
+Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme [inherit][theme-inherit] from the Magento Blank theme.
 
 ## Mobile first
 
@@ -36,6 +36,8 @@ The Blank and Luma themes use Less variables to implement the following [breakpo
 -  `@screen__m`: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)
 -  `@screen__l`: 1024px
 -  `@screen__xl`: 1440px
+
+The default breakpoint variables are located in the Magento UI library: `lib/web/css/source/lib/variables/_responsive.less`.
 
 You can change these breakpoints or add new ones in your custom theme. For instructions see the [Add a new breakpoint][rwd-breakpoints] topic.
 
@@ -85,14 +87,20 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
     // your code
 }
 
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+    @media only screen and (max-width: 375px) {
+        // styles for custom breakpoint below <= 375px mobile screen
+    }
+}
+
 //
 //  Tablet
 //  _____________________________________________
 
 // This will add styles for tablet devices. When using native media-queries, we recommend wrapping your media-queries with media-width Magento mixins or media-target
 & when (@media-target = 'desktop'), (@media-target = 'all') {
-    @media only screen and (min-width: @screen__m) and (max-width: @screen__xl - 1) {
-        // your code
+    @media only screen and (min-width: @screen__m) and (max-width: (@screen__xl - 1)) {
+        // styles for breakpoint >= 768px and < 1440px
     }
 }
 
@@ -130,7 +138,7 @@ Related topics
 [magento-ui-link]: {{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html
 [css-preprocessing]: {{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html
 [theme-create]: {{page.baseurl}}/frontend-dev-guide/themes/theme-create.html
-[css3-media-queries-wiki]: http://en.wikipedia.org/wiki/Media_queries
+[css3-media-queries-wiki]: https://en.wikipedia.org/wiki/Media_queries
 [breakpoints-link]: {{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms
 [theme-inherit]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
 [rwd-breakpoints]: {{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html

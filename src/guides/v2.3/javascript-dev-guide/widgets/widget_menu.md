@@ -4,7 +4,7 @@ subgroup: 3_Widgets
 title: Menu widget
 ---
 
-The Magento menu widget is a customized [jQuery UI Menu widget](http://api.jqueryui.com/menu/){:target="_blank"}. Magento menu extends the default functionality with the following:
+The Magento menu widget is a customized [jQuery UI Menu widget](https://api.jqueryui.com/menu/). Magento menu extends the default functionality with the following:
 
 -  expanding all layers of the menu tree past the second layer
 -  declaring a responsive menu
@@ -92,7 +92,7 @@ The following methods from [jQuery UI menu widget] were adjusted in scope of the
 
 [lib/web/mage/menu.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/menu.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
-[jQuery UI menu widget]: http://api.jqueryui.com/menu/
+[jQuery UI menu widget]: https://api.jqueryui.com/menu/
 
 ## Code Sample {#menu_code_sample}
 

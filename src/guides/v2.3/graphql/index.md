@@ -4,28 +4,28 @@ title: GraphQL Overview
 landing-page: GraphQL Developer's Guide
 ---
 
-[GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
+[GraphQL](https://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
 
 ## The current state of Magento GraphQL
 
 As of Magento 2.3.4, GraphQL provides the following features:
 
-*  Support for all product types, payment methods, and shipping methods
-*  Achieved <.5 sec average response times with 500 concurrent requests
-*  Redesigned a feature rich layered navigation
+-  Support for all product types, payment methods, and shipping methods
+-  Achieved <.5 sec average response times with 500 concurrent requests
+-  Redesigned a feature rich layered navigation
 
 ## Where we're going
 
 The `graphql-ce` Community Engineering repository has been archived. Development for Magento 2.3.5 will be limited to bug fixes.
 
-For the 2.4.0 and 2.4.1 releases, Magento teams are working toward completing GraphQL coverage for Business to Consumer (B2C) uses cases, with emphasis on the following:
+For the 2.4.0 and 2.4.1 releases, Magento teams are working toward completing GraphQL coverage for Business to Consumer (B2C) use cases, with emphasis on the following:
 
-*  Reorders
-*  Inventory Management store pickups
-*  Order history for logged in customers
-*  Replace product-specific mutations that add products to a cart with a single mutation that can handle all product types
-*  Gift wrapping and messages
-*  Saved payment methods
+-  Reorders
+-  Inventory Management store pickups
+-  Order history for logged in customers
+-  Replace product-specific mutations that add products to a cart with a single mutation that can handle all product types
+-  Gift wrapping and messages
+-  Saved payment methods
 
 We also expect to begin adding coverage for B2B scenarios.
 

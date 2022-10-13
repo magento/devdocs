@@ -1,10 +1,18 @@
-# Magento Developer Documentation
+# Adobe Commerce Developer Documentation
 
-Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
+Welcome! This site contains the latest Adobe Commerce and Magento Open Source developer documentation for ongoing releases of both products. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
+
+> **Important update**
+>
+> The developer documentation for Adobe Commerce and Magento Open Source is moving to the [Adobe Developer](https://developer.adobe.com/commerce) and [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce.html) sites. After a topic is moved, use the link in the topic header to find the new location.
+>
+>![Example of a topic header](https://user-images.githubusercontent.com/6391769/166058975-15c288d6-b266-4f1d-8b52-08ada3ca026f.png)
+>
+> To track relocated topics by guide, see [Migrated Topics](https://devdocs.magento.com/migrated.html).
 
 ## Contributors
 
-Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving Magento documentation.
+Our goal is to provide the Commerce and Open Source communities with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving the documentation.
 
 ![](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
@@ -15,7 +23,7 @@ This site is built by [Jekyll](https://jekyllrb.com/), which is an open-source t
 You can build the site locally in the following ways:
 
 -  [Installing the project dependencies locally](#build-locally) (Mac, Linux)
--  [Using Docker (docker-compose)](#docker-docker-compose) (Mac, Linux, Windows)
+-  [Using Docker (docker-compose)](https://github.com/magento/devdocs/wiki/Build-DevDocs-with-Docker) (Mac, Linux, Windows)
 -  [Using a Vagrant virtual machine](https://github.com/magento-devdocs/vagrant-for-magento-devdocs) (Mac, Linux, Windows)
 -  [Build DevDocs in Windows](https://github.com/magento/devdocs/wiki/Build-DevDocs-in-Windows) (Windows 7 & 10)
 -  [Building older versions of the documentation](https://github.com/magento/devdocs/wiki/Build-DevDocs-with-Docker)
@@ -144,7 +152,7 @@ exclude:
 
 ## Building old versions
 
-The published website contains documentation for the latest Magento releases only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
+The published website contains documentation for the most current Adobe Commerce and Magento Open Source releases only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
 
 To view the list of available tags:
 
@@ -163,9 +171,14 @@ Find guidelines for building the site locally in the checked out README.
 >**NOTE**
 >There is no guarantee the site will be built, since it can have dependencies on the external resources that are not available anymore.
 
+## Archived docs
+
+To view the archived documentation, see <http://magento.github.io/devdocs/>.
+
 ***
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
+-  [Slack](https://magentocommeng.slack.com/archives/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
 -  [Visit our wiki](https://github.com/magento/devdocs/wiki)
--  <a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
+-  <a href="https://twitter.com/AdobeCommrcDocs" class="twitter-follow-button" data-show-count="false">Twitter @AdobeCommrcDocs</a>

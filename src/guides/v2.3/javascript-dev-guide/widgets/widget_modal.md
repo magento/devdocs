@@ -17,7 +17,7 @@ The widget uses the following templates:
 -  [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`] popup type template.
 -  [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`] slide type template.
 
-The design patterns for the modal pop-up windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
+The design patterns for the modal pop-up windows in the Admin are described in the [Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
 
 ## Initialize the modal widget {#modal_initialize}
 
@@ -326,7 +326,7 @@ The modal widget is subscribed to the following events:
 
 You can listen to these events in two ways:
 
-Use jQuery's [`on`](http://api.jquery.com/on/) function:
+Use jQuery's [`on`](https://api.jquery.com/on/) function:
 
 ```javascript
 var modal = $('#modal_content').modal({...});
@@ -385,6 +385,47 @@ The following example shows how to initialize the modal widget and pass options 
 </div>
 ```
 
+The following example shows a PHTML file using the script:
+
+```html
+<button id="button">
+    <span><?= $block->escapeHtml(__('Click me')) ?></span>
+</button>
+
+<div id="modal">
+    <div class="modal-body-content">
+        <h2><?= $block->escapeHtml(__('Title')) ?></h2>
+        <p><?= $block->escapeHtml(__('Content')) ?></p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/modal"
+    ],function($, modal) {
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            title: 'Main title',
+            buttons: [{
+                text: $.mage.__('Ok'),
+                class: '',
+                click: function () {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#modal'));
+        $("#button").click(function() {
+            $('#modal').modal('openModal');
+        });
+    });
+</script>
+```
+
 ### Result
 
 The result is a modal and a button (_Click Here_) that opens the modal.
@@ -394,5 +435,5 @@ The result is a modal and a button (_Click Here_) that opens the modal.
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/modal.js
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html
-[Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
+[Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

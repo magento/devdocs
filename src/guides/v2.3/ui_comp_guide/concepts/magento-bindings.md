@@ -1,7 +1,6 @@
 ---
 group: ui-components-guide
-subgroup: concepts
-title: Magento binding syntax
+title: Binding syntax
 ---
 
 ## Overview

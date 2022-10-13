@@ -23,7 +23,7 @@ A GraphQL resolver must implement one of the following interfaces:
 
 -  [`\Magento\Framework\GraphQl\Query\ResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/ResolverInterface.php)
 
-The first two interfaces provide a way to resolve multiple branches/leaves at once (known as batching), while the last one resolves one request at a time. Magento recommends using batch resolvers for queries because they improve performance by fetching information required to resolve multiple GraphQL requests with a single operation.
+The first two interfaces provide a way to resolve multiple branches/leaves at once (known as batching), while the last one resolves one request at a time. We recommend using batch resolvers for queries because they improve performance by fetching information required to resolve multiple GraphQL requests with a single operation.
 
 ## Query resolvers
 
@@ -284,13 +284,16 @@ input CustomerInput {
     lastname: String @doc(description: "The customer's family name")
     suffix: String @doc(description: "A value such as Sr., Jr., or III")
     email: String @doc(description: "The customer's email address. Required")
-    date_of_birth: String @doc(description: "The customer's date of birth")
+    date_of_birth: String @doc(description: "The customer's date of birth.")
     taxvat: String @doc(description: "The customer's Tax/VAT number (for corporate customers)")
     gender: Int @doc(description: "The customer's gender(Male - 1, Female - 2)")
     password: String @doc(description: "The customer's password")
     is_subscribed: Boolean @doc(description: "Indicates whether the customer is subscribed to the company's newsletter")
 }
 ```
+
+{:.bs-callout-info}
+In keeping with current security and privacy best practices, be sure you are aware of any potential legal and security risks associated with the storage of customers’ full date of birth (month, day, year) along with other personal identifiers, such as full name, before collecting or processing such data.
 
 The `createCustomer` mutation returns `CustomerOutput` object
 
@@ -319,7 +322,9 @@ type Customer @doc(description: "Customer defines the customer name and address 
     addresses: [CustomerAddress] @doc(description: "An array containing the customer's shipping and billing addresses")
     gender: Int @doc(description: "The customer's gender (Male - 1, Female - 2)")
 }
-```
+
+{:.bs-callout-info}
+In keeping with current security and privacy best practices, be sure you are aware of any potential legal and security risks associated with the storage of customers’ full date of birth (month, day, year) along with other personal identifiers, such as full name, before collecting or processing such data.
 
 The following example shows the `createCustomer` mutation in action:
 

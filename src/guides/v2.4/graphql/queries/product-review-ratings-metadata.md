@@ -141,7 +141,7 @@ The `ProductReviewRatingMetadata` object contains the following attributes.
 
 Attribute | Data type | Description
 --- | --- | ---
-`id` | String! | | An encoded rating ID
+`id` | String! | An encoded rating ID
 `name` | String! | The label assigned to an aspect of a product that is being rated, such as quality or price
 `values` | [ProductReviewRatingValueMetadata!]! | A list of product review ratings, sorted by position
 

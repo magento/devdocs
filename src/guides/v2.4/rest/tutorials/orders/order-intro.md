@@ -2,6 +2,8 @@
 layout: tutorial
 group: rest-api
 title: Order processing tutorial
+migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/
+layout: migrated
 menu_title: Initial tasks
 return_to:
   title: REST tutorials
@@ -30,12 +32,12 @@ Complete the following prerequisites:
 
 *  Set up [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html). This tutorial assumes Google Authenticator is your 2FA solution.
 
-*  Know how to construct a REST call in Magento. See [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html) for details.
+*  Know how to construct a REST call in Magento. See [Construct a request](https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request) for details.
 
-*  Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/redoc/{{page.guide_version}}/) or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
+*  Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs](https://magento.redoc.ly/) or [generate a local API reference](https://developer.adobe.com/commerce/webapi/rest/quick-reference/generate-local).
 
-*  Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}} 2.1](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
+*  Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}} 2.1]({{ site.user_guide_url }}/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
 
 ### Other resources
 
-*  [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
+*  [REST Tutorials](https://developer.adobe.com/commerce/webapi/rest/tutorials/) provides additional information about completing any Magento REST tutorial.

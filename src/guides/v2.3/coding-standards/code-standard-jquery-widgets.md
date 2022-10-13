@@ -9,17 +9,17 @@ functional_areas:
   - Standards
 ---
 
-In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base---the [jQuery UI Widget Factory][jquery-ui-widget-factory]{:target="_blank"}.
+In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base---the [jQuery UI Widget Factory][jquery-ui-widget-factory].
 
 The factory provides a flexible base for building complex, stateful plug-ins with a consistent [API](https://glossary.magento.com/api).
 It is designed not only for plug-ins that are part of [jQuery](https://glossary.magento.com/jquery) UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.
 
-For more information, see the [jQuery Widget API documentation][jquery-ui-api-doc]{:target="_blank"}.
+For more information, see the [jQuery Widget API documentation][jquery-ui-api-doc].
 
 This standard is mandatory for Magento core developers and recommended for third-party [extension](https://glossary.magento.com/extension) developers.
 Some parts of Magento code might not comply with the standard, but we are working to gradually improve this.
 
-Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
+Use [RFC 2119][rfc2119] to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
 ## Naming conventions
 
@@ -103,9 +103,75 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
    })(jQuery);
    ```
 
+### Initializing a component on a selector
+
+There are two ways to initialize a component on a selector:
+
+*  Initialize the component in the `data-mage-init` attribute:
+
+  ```html
+  <div id="element-id" data-mage-init='{"Vendor_Module/js/myfile":{}}'></div>
+  ```
+
+*  Use a script type `text/x-magento-init` attribute:
+
+  ```html
+  <script type="text/x-magento-init">
+  {
+     "#element-id": {
+         "Vendor_Module/js/myfile": {}
+     }
+  }
+  </script>
+  ```
+
+In these cases the path to the file is:
+
+  `Vendor/Module/view/frontend/web/js/jsfilename.js`
+
+  which contains your code:
+
+  ```javascript
+  define(['uiComponent'],
+    function (Component) {
+      'use strict';
+      return Component.extend({
+        initialize: function (config, node) {
+          // some code
+        }
+      });
+    });
+  ```
+
+### Initializing a component on a selector with parameters
+
+When a component is initialized, it is also important to send parameters to it, which are normally determined dynamically in PHP.
+
+*  `data-mage-init`
+
+  ```html
+  <div id="element-id" data-mage-init='{"Vendor_Module/js/myfile":{"parameter":"value","status":<?php echo $block->getStatus(); ?>
+  }}'></div>
+  ```
+
+*  Using a script type `text/x-magento-init` attribute. For example:
+
+  ```html
+  <script type="text/x-magento-init">
+  {
+     "#element-id": {
+         "Vendor_Module/js/myfile1": {
+             "parameter":"value",
+             "status":<?php echo $block->getStatus(); ?>
+         }
+     }
+  }
+  </script>
+  ```
+
 ## Development standards
 
-*  Widgets should comply with the [single responsibility principle][single-responsibility-principle]{:target="_blank"}.
+*  Widgets should comply with the [single responsibility principle][single-responsibility-principle].
 
    Widgets should not have responsibilities not related to the [entity](https://glossary.magento.com/entity) described by the widget.
 
@@ -182,9 +248,9 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
    });
    ```
 
-*  You must use [DOM event bubbling][dom-event-bubbling]{:target="_blank"} to perform one-way communication between a child widget and its parent widget.
+*  You must use [DOM event bubbling][dom-event-bubbling] to perform one-way communication between a child widget and its parent widget.
 
-*  Widgets must comply with the [Law of Demeter][law-of-demeter]{:target="_blank"} principle.
+*  Widgets must comply with the [Law of Demeter][law-of-demeter] principle.
 
    Do not instantiate a widget or call a widget's methods inside another widget.
 
@@ -281,9 +347,9 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
    *  Maintains proper `this` context inside the handlers, so it is not necessary to use the `$.proxy()` method.
    *  Event handlers are automatically namespaced and cleaned up on destruction.
 
-[jquery-ui-widget-factory]: http://jqueryui.com/widget/
-[jquery-ui-api-doc]: http://api.jqueryui.com/jQuery.widget/
-[rfc2119]: http://www.ietf.org/rfc/rfc2119.txt
+[jquery-ui-widget-factory]: https://jqueryui.com/widget/
+[jquery-ui-api-doc]: https://api.jqueryui.com/jQuery.widget/
+[rfc2119]: https://www.ietf.org/rfc/rfc2119.txt
 [single-responsibility-principle]: https://en.wikipedia.org/wiki/Single_responsibility_principle
-[dom-event-bubbling]: http://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing
-[law-of-demeter]: http://en.wikipedia.org/wiki/Law_of_Demeter
+[dom-event-bubbling]: https://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing
+[law-of-demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter

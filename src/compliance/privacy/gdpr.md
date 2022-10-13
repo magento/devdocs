@@ -1,6 +1,8 @@
 ---
 group: compliance
 title: General Data Protection Regulation
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/privacy/gdpr.html
+layout: migrated
 ---
 
 {: .bs-callout-info}
@@ -10,8 +12,8 @@ The European Union (EU) enacted [General Data Protection Regulation](https://ec.
 
 System integrators can use the data flow diagrams and database information in the Personal Information Reference to build scripts to resolve use cases similar to the following:
 
--  A shopper asks for a copy of the data the merchant has stored about her
--  A shopper requests that all information about him be deleted
+-  A shopper asks for a copy of the data the merchant has stored about them
+-  A shopper requests that all information about them be deleted
 
 ## Personal Information Reference
 

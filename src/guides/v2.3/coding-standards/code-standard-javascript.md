@@ -9,20 +9,19 @@ functional_areas:
 Use Magento's [ESLint Rules][eslint-rules] to make sure your code adheres to Magento's coding standards.
 Developers writing [JavaScript](https://glossary.magento.com/javascript) and [jQuery](https://glossary.magento.com/jquery) code for Magento must adhere to these guidelines and follow the standards listed in this document.
 
-Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
+Use [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
 Magento uses the [jQuery library][jquery] including standard and custom [jQuery widgets][jquery-widgets].
 For the jQuery widget coding standard, see [jQuery widget coding standard][jquery-widget-coding-standard].
 
-## Eslint and JSCS tools
+## Eslint code analysis
 
-Use [ESLint][eslint] and `JSCS` to ensure the quality of your JavaScript code.
+Use [ESLint][eslint] to ensure the quality of your JavaScript code.
 
 ESLint is a community-driven tool that detects errors and potential problems in JavaScript code.
 It can use custom rules to enforce specific coding standards.
 
 *  [Magento ESLint Rules][eslint-rules]
-*  [Magento JSCS Rules][jscs-rules]
 
 ## Additional formatting standards
 
@@ -356,8 +355,7 @@ var foo = 'bar',
 ```
 
 [jquery]: https://jquery.com/
-[jquery-widgets]: http://api.jqueryui.com/category/widgets
+[jquery-widgets]: https://api.jqueryui.com/category/widgets
 [jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
-[eslint]: http://eslint.org/
-[eslint-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
-[jscs-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc
+[eslint]: https://eslint.org/
+[eslint-rules]: https://github.com/magento/magento-coding-standard/blob/develop/eslint/.eslintrc-magento

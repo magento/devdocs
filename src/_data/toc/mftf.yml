@@ -1,4 +1,4 @@
-label: Magento Functional Testing Framework Guide
+label: Functional Testing Framework Guide
 pages:
 
   - label: Introduction
@@ -73,7 +73,7 @@ pages:
       - label: Merge pages
         url: /mftf/docs/merge_points/merge-pages.html
         versionless: true
-        
+
       - label: Merge sections
         url: /mftf/docs/merge_points/merge-sections.html
         versionless: true
@@ -162,7 +162,7 @@ pages:
       - label: Selectors
         url: /mftf/docs/guides/selectors.html
         versionless: true
-      
+
       - label: Test isolation
         url: /mftf/docs/guides/test-isolation.html
         versionless: true
@@ -181,11 +181,11 @@ pages:
 
   - label: Troubleshooting
     url: /mftf/docs/troubleshooting.html
-    versionless: true 
+    versionless: true
 
   - label: Two-factor Authentication
     url: /mftf/docs/configure-2fa.html
-    versionless: true 
+    versionless: true
 
   - label: Update MFTF
     url: /mftf/docs/update.html
@@ -194,7 +194,7 @@ pages:
   - label: Versioning
     url: /mftf/docs/versioning.html
     versionless: true
-  
+
   - label: Backward incompatible changes in tests
     url: /mftf/docs/backward-incompatible-changes.html
     versionless: true

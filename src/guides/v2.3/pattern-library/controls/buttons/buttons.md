@@ -241,7 +241,7 @@ Left/Right: 15px
 
 #### Margin Spacing
 
-Top/Bottom margin spacing should should not be less than 10px
+Top/Bottom margin spacing should not be less than 10px
 
 Left/Right margin spacing should not be less than 10px
 
@@ -309,7 +309,7 @@ Left/Right: 15px
 
 #### Margin Spacing
 
-Top/Bottom margin spacing should should not be less than 10px
+Top/Bottom margin spacing should not be less than 10px
 
 Left/Right margin spacing should not be less than 10px
 
@@ -320,7 +320,7 @@ Left/Right margin spacing should not be less than 10px
 ## Accessibility
 
 *  [Keyboard shortcuts in Windows](https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts)
-*  [Mac keyboard shortcuts](http://support.apple.com/en-us/HT201236)
+*  [Mac keyboard shortcuts](https://support.apple.com/en-us/HT201236)
 
 (Keyboard shortcut same as checkbox)
 

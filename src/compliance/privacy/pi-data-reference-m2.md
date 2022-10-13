@@ -1,6 +1,8 @@
 ---
 group: compliance
 title: Personal Information Reference (Magento 2.x)
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/reference/data-m2.html
+layout: migrated
 ---
 
 {: .bs-callout-info}
@@ -45,7 +47,7 @@ Magento 2 primarily stores customer-specific information in customer, address, o
 
 ### Customer data {#customer-data}
 
-Magento 2 stores the following customer attributes:
+Magento 2 can be figured to store the following customer attributes:
 
 -  Date of Birth
 -  Email
@@ -55,6 +57,9 @@ Magento 2 stores the following customer attributes:
 -  Middle Name/Initial
 -  Name Prefix
 -  Name Suffix
+
+{:.bs-callout-info}
+In keeping with current security and privacy best practices, be sure you are aware of any potential legal and security risks associated with the storage of customers' full date of birth (month, day, year) along with other personal identifiers, such as full name, before collecting or processing such data.
 
 #### `customer_entity` and 'customer_entity' references
 

@@ -720,7 +720,7 @@ Component name must meaningful. It can contain the `primary`, `secondary`, `tert
 
 ### Location
 
-[Theme](https://glossary.magento.com/theme) mixins (except extends) should be located in the `source/utilities` directory.
+[Theme](https://glossary.magento.com/theme) mixins (except extends) should be located in the `web/css/source` directory. For more details, refer to [Css Theme][].
 
 ### Naming
 
@@ -728,15 +728,93 @@ For [mixin](https://glossary.magento.com/mixin) naming apply the class naming ru
 
 For mixins grouping use the double underscore "__" prefix.
 
+There are common situations when different elements use a similar set of CSS properties.
+
+In a `.css` file, properties are duplicated for each element. In a `.less` file, it is done by reusing the CSS rule - using mixins.
+
+For example, many elements on the page use the same animation. For this, create an `.animation-1` class with a set of animation properties:
+
 **Example:**
 
 ```css
-.extend__clearfix (...) {
+.extend__clearfix(...) {
     ...
 }
 
-.vendor-prefix__flex-direction (...) {
+.vendor-prefix__flex-direction(...) {
     ...
+}
+```
+
+```css
+.animation-1 {
+    transition: 300ms ease-in-out;
+    -moz-transition: 300ms ease-in-out;
+    -webkit-transition: 300ms ease-in-out;
+    -o-transition: 300ms ease-in-out;
+}
+```
+
+And then apply this mixin where necessary:
+
+```css
+.example-1 {
+   .animation-1();
+   width: 100%;
+}
+```
+
+After compiling the `.less` file into a `.css` file, the `.example-1` element has the following:
+
+```css
+.animation-1 {
+   transition: 300ms ease-in-out;
+   -moz-transition: 300ms ease-in-out;
+   -webkit-transition: 300ms ease-in-out;
+   -o-transition: 300ms ease-in-out;
+}
+.example-1 {
+   transition: 300ms ease-in-out;
+   -moz-transition: 300ms ease-in-out;
+   -webkit-transition: 300ms ease-in-out;
+   -o-transition: 300ms ease-in-out;
+   width: 100%;
+}
+```
+
+### Mixins with parameters
+
+Mixins also accept parameters. When calling these mixins, these parameter values are passed in. When creating this type of mixin, always set default values, since issues may occur when calling the mixin without specifying the parameter value. The example below shows how to create a mixin with parameters based on the example above and shows how to call it:
+
+```css
+.animation-1 (
+    @animation-speed: 300ms,
+    @animation-type: ease-in-out
+) {
+    transition: @animation-speed @animation-type;
+    -moz-transition: @animation-speed @animation-type;
+    -webkit-transition: @animation-speed @animation-type;
+    -o-transition: @animation-speed @animation-type;
+}
+.example-1 {
+    .animation-1(
+        @animation-speed: 1500ms
+    );
+}
+```
+
+Mixin parameters are set in parentheses with default values.
+
+When calling a mixin in parentheses, set the required value of the mixin parameters, if they differ from the default values.
+
+After compiling the `.less` file into a `.css` file, the `.example-1` element will have the following:
+
+```css
+.example-1 {
+   transition: 1500ms ease-in-out;
+   -moz-transition: 1500ms ease-in-out;
+   -webkit-transition: 1500ms ease-in-out;
+   -o-transition: 1500ms ease-in-out;
 }
 ```
 
@@ -782,3 +860,6 @@ Use single quotes.
 ```css
 @import "source/lib/_lib.less";
 ```
+
+<!-- Link definitions -->
+[Css Theme]: {{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Configure consumer behavior
 functional_areas:
   - Install

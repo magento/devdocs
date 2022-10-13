@@ -18,10 +18,10 @@ You must manage your Elasticsearch stopwords using `.csv` files located in the `
 
 For more information about how Elasticsearch uses stopwords, see the following resources:
 
-*  [Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html){:target="_blank"}
-*  [Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html){:target="_blank"}
-*  [Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html){:target="_blank"}
-*  [Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html){:target="_blank"}
+*  [Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html)
+*  [Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html)
+*  [Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html)
+*  [Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html)
 
 ## Configure stopwords {#config-stopwords}
 
@@ -39,7 +39,7 @@ See one of the following topics for more information:
 
 To edit stopwords:
 
-1. Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server, or switch to, the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 1. Use a text editor to open a stopword file in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
    `.csv` files use the naming convention `stopwords_<locale_code>.csv`. For example, the German stopword file is named `stopwords_de_DE.csv`.
@@ -51,9 +51,9 @@ To edit stopwords:
 1. Save your changes and exit the text editor.
 1. Clean the Magento configuration cache.
 
-   *  Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
+   *  Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
-   *  Command line: As the Magento file system owner, enter the following command:
+   *  Command line: As the file system owner, enter the following command:
 
       ```bash
       php <magento_root>/bin/magento magento cache:clean config
@@ -65,7 +65,7 @@ To edit stopwords:
 
 To add stopwords for a locale:
 
-1. Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server, or switch to, the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
 1. Use a text editor to create a stopword file named `stopwords_<locale_code>.csv` in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
@@ -89,9 +89,9 @@ To add stopwords for a locale:
 1. Save the changes to `esconfig.xml` and exit the text editor.
 1. Clean the Magento configuration cache.
 
-   *  Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
+   *  Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
-   *  Command line: As the Magento file system owner, enter the following command:
+   *  Command line: As the file system owner, enter the following command:
 
       ```bash
       php <magento_root>/bin/magento magento cache:clean config
@@ -110,13 +110,13 @@ The location depends on how you installed the Magento software. If you cloned th
 
 To change the directory:
 
-1. As the Magento file system owner, open the Elasticsearch `di.xml` in a text editor.
+1. As the file system owner, open the Elasticsearch `di.xml` in a text editor.
 
    If you cloned the repository, it's located at `app/code/Magento/Elasticsearch/etc/di.xml`
 
    If you got an archive or the metapackage, it's located at `vendor/magento/module-elasticsearch/etc/di.xml`
 
-1. Change the value of `fileDir` to the desired directory:
+1. Change the value of `stopwordsDirectory` to the desired directory:
 
    ```xml
    <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
@@ -130,7 +130,7 @@ Save your changes to `di.xml` and exit the text editor.
 
 ## To change the directory from your module {#to-change-directory-stopwords}
 
-1. [Create a new module](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html){:target="_blank"}
+1. [Create a new module]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
 1. In your module `etc/di.xml` add instructions:
 
    ```xml

@@ -31,12 +31,12 @@ Deployment strategies differ based on whether you choose to generate static cont
 
 Generating static content during the build phase with minified HTML is the optimal configuration for [**zero-downtime** deployments]({{ site.baseurl }}/cloud/deploy/reduce-downtime.html), also known as the **ideal state**. Instead of copying files to a mounted drive, it creates a symlink from the `./init/pub/static` directory.
 
-Generating static content requires access to themes and locales. Magento stores themes in the file system, which is accessible during the build phase; however, Magento stores locales in the database. The database is _not_ available during the build phase. In order to generate the static content during the build phase, you must use the `config:dump` command in the {{site.data.var.ct}} package to move locales to the file system. It reads the locales and saves them in the `app/etc/config.php` file.
+Generating static content requires access to themes and locales. {{site.data.var.ee}} stores themes in the file system, which is accessible during the build phase; however, {{site.data.var.ee}} stores locales in the database. The database is _not_ available during the build phase. In order to generate the static content during the build phase, you must use the `config:dump` command in the {{site.data.var.ct}} package to move locales to the file system. It reads the locales and saves them in the `app/etc/config.php` file.
 
 {:.procedure}
 To configure your project to generate SCD on build:
 
-1. Log in to your Cloud environment using SSH and move locales to the file system, then update the [`config.php` file]({{site.baseurl}}/cloud/project/project-upgrade.html#create-a-new-configphp-file).
+1. Log in to your Cloud environment using SSH and move locales to the file system, then update the [`config.php` file]({{site.baseurl}}/cloud/project/project-upgrade.html).
 
 1. The `.magento.env.yaml` configuration file should contain the following values:
 

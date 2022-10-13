@@ -1,7 +1,9 @@
 ---
 group: testing
-title: Magento Testing Guide
-landing-page: Testing Guide
+title: Application Testing Guide
+landing-page: Application Testing Guide
+migrated_to: https://developer.adobe.com/commerce/testing/guide/
+layout: migrated
 ---
 
 Magento actively leverages various testing strategies to ensure product and code quality.
@@ -239,7 +241,7 @@ MFTF tests are kept within its respective Module folder:
 <!-- Link Definitions -->
 [Magento definition of done]: {{ site.baseurl }}/contributor-guide/contributing_dod.html
 [Functional]: {{ site.baseurl }}/mftf/docs/introduction.html
-[Web API Functional]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
+[Web API Functional]: https://developer.adobe.com/commerce/webapi/get-started/web-api-functional-testing
 [Integration]: {{ page.baseurl }}/test/integration/integration_test_execution.html
 [performance toolkit]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html
 [JavaScript]: {{ page.baseurl }}/test/js/jasmine.html
@@ -248,7 +250,7 @@ MFTF tests are kept within its respective Module folder:
 [Magento backward compatibility policy]: {{ site.baseurl }}/contributor-guide/backward-compatible-development/
 [Functional Testing Framework]: https://github.com/magento/mtf
 [Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
-[Web API functional testing]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
+[Web API functional testing]: https://developer.adobe.com/commerce/webapi/get-started/web-api-functional-testing
 [Running Integration Tests]: {{ page.baseurl }}/test/integration/integration_test_execution.html
 [Extension Developer Guide on JavaScript Tests]: {{ page.baseurl }}/test/js/jasmine.html
 [`magento dev:tests:run`]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html

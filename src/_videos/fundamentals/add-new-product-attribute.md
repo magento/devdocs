@@ -1,10 +1,12 @@
 ---
-youtube_id: cM_9RkWFqqM
+youtube_id: mZNBENRgC1E
 duration: "7:36"
 group: "Fundamentals of Magento 2 Development"
 title: "How to Add a New Product Attribute"
 thumbnail: "fundamentals/thumbs/add-attribute.png"
 menu_order: 1
+migrated_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/backend-development/add-product-attribute.html
+layout: migrated-video
 ---
 
 Adding a product attribute is one of the most popular operations in both Magento 1 and Magento 2.
@@ -72,14 +74,17 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 
 {% collapsible Show code %}
 
-```php?start_inline=1
+```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
     'Learning_ClothingMaterial',
     __DIR__
 );
@@ -87,7 +92,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 
 {% endcollapsible %}
 
-## Step 2 Create an InstallData script
+## Step 2 Create an InstallData script {#CreateProductAttributeByUpgradeScript}
 
 Next, we need to create the InstallData script.
 Because adding an attribute technically adds records into several tables, such as `eav_attribute` and `catalog_eav_attribute,` this is data manipulation, not a schema change.
@@ -97,15 +102,18 @@ Create the file `app/code/Learning/ClothingMaterial/Setup/InstallData.php`:
 
 {% collapsible Show code %}
 
-```php?start_inline=1
+```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 namespace Learning\ClothingMaterial\Setup;
 
+use Magento\Catalog\Model\Product;
+use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
+use Magento\Eav\Setup\EavSetupFactory;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -125,13 +133,13 @@ class InstallData implements InstallDataInterface
      * Init
      * @param EavSetupFactory $eavSetupFactory
      */
-    public function __construct(\Magento\Eav\Setup\EavSetupFactory $eavSetupFactory)
+    public function __construct(EavSetupFactory $eavSetupFactory)
     {
         $this->eavSetupFactory = $eavSetupFactory;
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      * @SuppressWarnings(PHPMD.NPathComplexity)
@@ -140,7 +148,7 @@ class InstallData implements InstallDataInterface
     {
         $eavSetup = $this->eavSetupFactory->create();
         $eavSetup->addAttribute(
-            \Magento\Catalog\Model\Product::ENTITY,
+            Product::ENTITY,
             'clothing_material',
             [
                 'group' => 'General',
@@ -152,7 +160,7 @@ class InstallData implements InstallDataInterface
                 'backend' => 'Learning\ClothingMaterial\Model\Attribute\Backend\Material',
                 'required' => false,
                 'sort_order' => 50,
-                'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
+                'global' => ScopedAttributeInterface::SCOPE_GLOBAL,
                 'is_used_in_grid' => false,
                 'is_visible_in_grid' => false,
                 'is_filterable_in_grid' => false,
@@ -196,7 +204,7 @@ For now, we’ll just quickly go through most important ones:
 *  **visible_on_front:** A flag that defines whether an attribute should be shown on the “More Information” tab on the frontend
 *  **is_html_allowed_on_front:** Defines whether an attribute value may contain HTML
 
-## Step 3: Add a source model
+## Step 3: Add a source model {#AddSourceModel}
 
 Next, we need to create the source model:
 
@@ -204,16 +212,18 @@ Next, we need to create the source model:
 
 {% collapsible Show code %}
 
-```php?start_inline=1
+```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 namespace Learning\ClothingMaterial\Model\Attribute\Source;
 
-class Material extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
+use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
+
+class Material extends AbstractSource
 {
     /**
      * Get all options
@@ -248,28 +258,32 @@ Now we will create a backend model:
 
 {% collapsible Show code %}
 
-```php?start_inline=1
+```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 namespace Learning\ClothingMaterial\Model\Attribute\Backend;
 
-class Material extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend
+use Magento\Catalog\Model\Product;
+use Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend;
+use Magento\Framework\Exception\LocalizedException;
+
+class Material extends AbstractBackend
 {
     /**
      * Validate
-     * @param \Magento\Catalog\Model\Product $object
-     * @throws \Magento\Framework\Exception\LocalizedException
+     * @param Product $object
+     * @throws LocalizedException
      * @return bool
      */
     public function validate($object)
     {
         $value = $object->getData($this->getAttribute()->getAttributeCode());
         if ( ($object->getAttributeSetId() == 10) && ($value == 'wool')) {
-            throw new \Magento\Framework\Exception\LocalizedException(
+            throw new LocalizedException(
                 __('Bottom can not be wool.')
             );
         }
@@ -295,13 +309,21 @@ And finally, we create a frontend model to make our value bold:
 
 {% collapsible Show code %}
 
-```php?start_inline=1
+```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Learning\ClothingMaterial\Model\Attribute\Frontend;
 
-class Material extends \Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend
+use Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend;
+use Magento\Framework\DataObject;
+
+class Material extends AbstractFrontend
 {
-    public function getValue(\Magento\Framework\DataObject $object)
+    public function getValue(DataObject $object)
     {
         $value = $object->getData($this->getAttribute()->getAttributeCode());
         return "<b>$value</b>";
@@ -337,3 +359,54 @@ backend model has executed successfully, so now we’ll set it to Wool and save 
 
 Having saved the product, we’ll now move to the frontend.
 It should be visible and in bold text.
+
+## Product Attribute Option Creation
+
+A product attribute of type multiselect or select will present selectable options to the user. These options may be added manually through the admin panel or by upgrade script. The script process is slightly different depending on whether the options are being added at the moment of attribute creation or whether the options are being added at a later time to an existing attribute.
+
+### Add options to a new prouduct attribute {#AddOptionsAlongNewProductAttribute}
+
+Basic instructions for creating a product attribute by setup or upgrade script can be found [above](#CreateProductAttributeByUpgradeScript). Before scripting the attribute creation, pick one of these two use cases for your options:
+
+1. You want a set of options which cannot be modified by a user through the admin panel and which can only be changed through a future code push.
+1. You want a set of options which can be modified, added or deleted through the admin panel.
+
+For use case `1` (an 'immutable' set of options), follow the above instructions ["Add a source model"](#AddSourceModel). You will create a model that contains and dynamically returns the attribute's selectable options to the client.
+
+For use case `2` (a 'mutable' set of options), see ["EAV and extension attributes"]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/attributes.html). Make sure to declare 'Magento\Eav\Model\Entity\Attribute\Source\Table' as the value for the 'source' attribute option. This ensures that Magento will store options in the appropriate database table.
+
+With `\Magento\Eav\Setup\EavSetup.php::addAttribute()` and `\Magento\Eav\Setup\EavSetup.php::addAttributeOptions()` you can add a series of options with the following array:
+
+```php
+'option' => ['values' => ['Option 1', 'Option 2', 'Option 3', etc.]];
+```
+
+Alternatively, you may designate a specific option sorting order as follows:
+
+```php
+'option' => ['values' => [8 => 'Option 1', 3 => 'Option 2', 11 => 'Option 3', etc.]]
+```
+
+### Add options to an existing product attribute
+
+*  To add options to an 'immutable' set of options, modify the custom source model with the additional options you wish to provide.
+
+*  Adding options to a 'mutable' set of options leverages the same `EavSetup` object as you use when creating an attribute with options, but requires an additional step because `EavSetup` needs to know to which attribute you want to assign new options.
+
+1. Assign an array of new options to a variable:
+
+```php
+   $options = ['attribute_id' => null, 'values' => 'Option 1', 'Option 2', etc]];
+```
+
+1. Update your array with the attribute ID from the database:
+
+```php
+   $options['attribute_id'] = $eavSetup->getAttributeId($eavSetup->getEntityTypeId('catalog_product'), 'your_attribute_code');
+```
+
+1. Add your options:
+
+```php
+   $eavSetup->addAttributeOption($options);
+```

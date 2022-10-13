@@ -23,17 +23,19 @@ The following query returns the attribute type for various custom and EAV attrib
     attributes: [
       {
         attribute_code: "size"
-        entity_type: "4"
+        entity_type: "catalog_product"
       }
       {
         attribute_code: "color"
-        entity_type: "4"
+        entity_type: "catalog_product"
       }
     ]
   ) {
     items {
       attribute_code
       attribute_type
+      entity_type
+      input_type
       attribute_options {
        value
        label
@@ -41,6 +43,7 @@ The following query returns the attribute type for various custom and EAV attrib
     }
   }
 }
+
 ```
 
 **Response:**
@@ -53,6 +56,8 @@ The following query returns the attribute type for various custom and EAV attrib
         {
           "attribute_code": "size",
           "attribute_type": "Int",
+          "entity_type": "catalog_product",
+          "input_type": "select",
           "attribute_options": [
             {
               "value": "91",
@@ -139,6 +144,8 @@ The following query returns the attribute type for various custom and EAV attrib
         {
           "attribute_code": "color",
           "attribute_type": "Int",
+          "entity_type": "catalog_product",
+          "input_type": "select",
           "attribute_options": [
             {
               "value": "49",
@@ -203,7 +210,7 @@ The `AttributeInput` input object requires the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
-`entity_type` | String | The type of entity that defines the attribute
+`entity_type` | String | The type of entity that defines the attribute, such as `catalog_product`, `catalog_category`, or `customer`
 
 ## Output attributes
 
@@ -214,7 +221,7 @@ Attribute |  Data Type | Description
 `attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
 `attribute_options` | [`AttributeOption`] | An array of attribute options
 `attribute_type` | String | The data type of the attribute
-`entity_type` | String | The type of entity that defines the attribute
+`entity_type` | String | The type of entity that defines the attribute, such as `catalog_product`, `catalog_category`, or `customer`
 `input_type` | String | The frontend input type of the attribute
 
 ### AttributeOption object
@@ -225,3 +232,14 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `label` | String | The name of an attribute option
 `value` | String | The value assigned to an attribute option
+
+## Errors
+
+Error | Description
+--- | ---
+`Field "customAttributeMetadata" argument "attributes" of type "[AttributeInput!]!" is required but not provided` | The `attributes` array parameter is required.
+`The attribute with a "xxxx" attributeCode doesn't exist. Verify the attribute and try again` | The given `attribute_code` parameter is invalid.
+`Invalid entity_type specified: "xxxx"` | The given `entity_type` is invalid.
+`Missing attribute_code for the input entity_type: "xxxx"`| There is no value passed for the `attribute_code` parameter for the given `entity_type` parameter.
+`Missing entity_type for the input attribute_code: "xxxx"` | There is no value passed for the `entity_type` parameter for the given `attribute_code` parameter.
+`Missing attribute_code/entity_type for the input Empty AttributeInput` | There are no values passed for both `attribute_code` and `entity_type` parameters.

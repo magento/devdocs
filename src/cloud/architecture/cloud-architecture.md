@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Commerce Cloud architecture
+title: Cloud architecture for Commerce
 functional_areas:
   - Cloud
 redirect_from:
@@ -22,16 +22,16 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>Core features</td>
       <td>
         <ul>
-          <li>All Magento 2 core features</li>
+          <li><a href="{{ site.baseurl }}/release/commerce-features.html">All {{site.data.var.ee}} features</a></li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Commerce Reporting</a></li>
         </ul>
       </td>
       <td>
         <ul>
-          <li>All Magento 2 core features</li>
+          <li><a href="{{ site.baseurl }}/release/commerce-features.html">All {{site.data.var.ee}} features</a></li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Commerce Reporting</a></li>
           <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>
@@ -46,6 +46,7 @@ For comparison, each plan includes the following infrastructure features and sup
             <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> APM (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
           <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for {{site.data.var.ee}}</li>
+          <li>Egress filtering (outbound firewall)</li>
         </ul>
       </td>
       <td>
@@ -55,7 +56,7 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>
             <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production. The <a href="{{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-managed-alerts">Managed alerts for {{ site.data.var.ee }} policy</a> implements monitoring best practices to proactively notify you about application and infrastructure issues affecting site performance.
           </li>
-          <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for {{site.data.var.ee}}</li>
+          <li>Platform-as-a-service (PaaS) based Integration development environments (2 total active environments) optimized for {{site.data.var.ee}}</li>
           <li>Infrastructure-as-a-Service (IaaS)—dedicated virtual infrastructure for Production environments and for Staging environments</li>
         </ul>
       </td>
@@ -107,6 +108,6 @@ The [Starter plan architecture]({{ site.baseurl }}/cloud/architecture/starter-ar
 The [Pro plan architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) has a global master with three environments:
 
 -  **Integration**—The Integration environment provides a testable environment that includes a database, web server, caching, some services, environment variables, and configurations. You can develop, deploy, and test your code before merging to the Staging environment.
-   -  _Inactive_—You can have an unlimited number of inactive branches based on the Integration environment.
+   -  _Inactive_—You can have an unlimited number of inactive branches based on the Integration environment, but only one active branch (not including Integration itself).
 -  **Staging**—The Staging environment is for pre-Production testing and includes a database, web server, caching, third-party services, environment variables, configurations, and services, such as Fastly.
 -  **Production**—The Production environment includes a three-node, high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and third-party services.

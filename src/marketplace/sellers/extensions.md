@@ -1,11 +1,13 @@
 ---
 group: marketplace-sellers
 title: Extensions
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extensions/
+layout: migrated
 ---
 
 An extension is a custom module, language pack, or combination of custom modules and language packs, that adds new functionality to the core Magento product.
 
-All extensions submitted to Magento Marketplace are managed from the Extensions page in the Marketplace Developer Portal. It shows the status of each extension and language pack you have submitted, and provides access to the profile and version history of each. You can also use the workspace controls to sort and filter the list.
+All extensions submitted to Commerce Marketplace are managed from the Extensions page in the Marketplace Developer Portal. It shows the status of each extension and language pack you have submitted, and provides access to the profile and version history of each. You can also use the workspace controls to sort and filter the list.
 
 {: .images-table }
 [![]({{ site.baseurl }}/marketplace/sellers/images/assets/code-development.png)]({{ site.baseurl }}/marketplace/sellers/extension-create.html)|[**Build Your Extension**]({{ site.baseurl }}/marketplace/sellers/extension-create.html) - provides details on completing code, descriptions, documentation, and preparing to submit.|

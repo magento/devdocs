@@ -8,7 +8,7 @@ functional_areas:
   - Configuration
 ---
 
-Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branches, see [Git documentation](https://git-scm.com/doc).
+Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the `magento-cloud` CLI, or Git commands. For more information on Git branches, see [Git documentation](https://git-scm.com/doc).
 
 For more information about managing environments using the CLI, see [Manage branches with the CLI]({{ site.baseurl }}/cloud/env/environments-start.html).
 
@@ -30,7 +30,7 @@ Complete development of code and added extensions in a branch and, when complete
 
 For branching strategies, review [Starter]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) and [Pro]({{ site.baseurl }}/cloud/architecture/starter-develop-deploy-workflow.html) architecture overviews.
 
-Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can [delete it entirely]({{ site.baseurl }}/cloud/env/environments-start.html#env-delete) using the CLI.
+Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can [delete it entirely]({{ site.baseurl }}/cloud/env/environments-start.html#delete-an-environment) using the CLI.
 
 If you need additional environments for development, enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) for more information.
 
@@ -163,7 +163,7 @@ To find your project SSH public key (also referred to as a *deploy key*):
 
 ### Enter your GitHub deploy key {#cloud-deploykey-github}
 
-On GitHub, deploy keys are read-only by default. Your Magento project won't push code to the private repository.
+On GitHub, deploy keys are read-only by default. Your project won't push code to the private repository.
 
 To enter your project's public key as a GitHub deploy key:
 
@@ -233,6 +233,9 @@ To add the public SSH key for your project as a [GitLab deploy key](https://docs
    -  Click **Add Key** to save the configuration.
 
 ## Secure your environments and branches {#security}
+
+{:.bs-callout-warning}
+**DO NOT** use the following methods for securing Pro Staging and Production environments. This will break Fastly caching. You must use the [Blocking]({{ site.baseurl }}/cloud/cdn/fastly-vcl-blocking.html) feature available in the Fastly CDN for Magento.
 
 You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.
 

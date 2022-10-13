@@ -2,7 +2,7 @@
 group: rest-api
 title: Asynchronous web endpoints
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/
+contributor_link: https://www.comwrap.com/en.html
 functional_areas:
   - Integration
 ---
@@ -31,7 +31,7 @@ PUT /async/V1/products/:sku
 
 {{site.data.var.ce}} and {{site.data.var.ee}} installations support asynchronous web endpoints.
 
-The [REST API documentation]({{site.baseurl}}/redoc/{{page.guide_version}}/) provides a list of all current synchronous Magento API routes.
+The [REST API documentation]({{page.baseurl}}/rest/bk-rest.html) provides a list of all current synchronous Magento API routes.
 
 The response of an asynchronous request contains the following fields:
 
@@ -82,7 +82,7 @@ Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uui
 
 ## Store scopes
 
-You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
+You can specify a store code (which is labeled in the Admin as store view code) in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
 ```http
 POST /<store_code>/async/V1/products

@@ -17,7 +17,9 @@ The following graphic demonstrates the Pro develop and deploy workflow, which us
 
 ## Development workflow {#develop}
 
-The Integration environment provides a single, base `integration` branch containing your {{site.data.var.ece}} code. You can create up to four additional branches for developing your custom code, extensions, and third party integrations. This allows for a maximum of five _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
+The Integration environment provides a single, base integration branch containing your {{site.data.var.ece}} code. You can create one additional active environment branch. This allows for up to two active branches deployed to Platform-as-a-Service (PaaS) containers. There is no limit on the number of inactive environments.
+
+{% include cloud/note-enhanced-integration-envs-kb.md%}
 
 The {{site.data.var.ece}} environments support a flexible, continuous integration process. Begin by cloning the `integration` branch to your local project folder. Create a new branch, or multiple branches, to develop new features, configure changes, add extensions, and deploy updates:
 
@@ -35,7 +37,7 @@ With a developed code branch and the corresponding configuration files, your cod
 
 ## Deployment workflow {#deploy}
 
-Every time you push code from your local workstation to the remote environment or merge code to a base environment branch, the build and deploy scripts generate new Magento code and provision configured services to the remote environment.
+Every time you push code from your local workstation to the remote environment or merge code to a base environment branch, the build and deploy scripts generate new code and provision configured services to the remote environment.
 
 Build script actions:
 

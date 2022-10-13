@@ -1,11 +1,11 @@
 ---
 group: release-notes
-title: Magento Commerce 2.3.0 Release Notes
+title: Adobe Commerce 2.3.0 Release Notes
 ---
 
 *Release notes published November 28, 2018 and last updated on June 3, 2020.*
 
-We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
+We are pleased to present {{site.data.var.ee}} 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 ## Apply updated hot fix for CVE-2019-8118
 
@@ -13,44 +13,44 @@ The patch addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/
 
 ## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
 
-An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Commerce open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.   **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**.
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of {{site.data.var.ee}} open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Admin and subsequently launch malicious code in a store user’s browser.   **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**.
 
 This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
-blog post. You can directly access patch code through your Magento account for Magento Commerce. Locate the patch by the name. We provide both Git-based and Composer-based patches.
+blog post. You can directly access patch code through your Magento account for {{site.data.var.ee}}. Locate the patch by the name. We provide both Git-based and Composer-based patches.
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
-A critical SQL injection vulnerability has been identified in pre-2.3.1 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.3.1. **We strongly suggest that you install these full patches as soon as you can**.
+A critical SQL injection vulnerability has been identified in pre-2.3.1 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to {{site.data.var.ee}} or {{site.data.var.ce}} 2.3.1. **We strongly suggest that you install these full patches as soon as you can**.
 
-See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability.
+See the description of PRODSECBUG-2198 in the [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability.
 
 ## Highlights
 
-Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
+{{site.data.var.ee}} 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
 ### Merchant tool enhancements
 
 *  **Inventory Management (provided by [Magento Inventory (was MSI)](https://github.com/magento/inventory))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock.
 
-    Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+    Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/archives/C5FU5E2HY) channel (or [self signup](https://opensource.magento.com/slack)) to discuss the project.
    *  [Inventory Management overview]({{ page.baseurl }}/inventory/index.html) for developer documentation
    *  [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
 
 *  **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG (or Page Builder. See the  `Page Builder` discussion below. (Within the product interface, we now use the term  *dynamic block* instead of  *banner*.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.)
 
-*  **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. Registered participants can install PageBuilder Beta on {{site.data.var.ee}} 2.3.0 code. See check [Magento 2.3 product availability](https://devdocs.magento.com/release/availability.html) and [Magento blog](https://magento.com/blog/magento-news/magento-2.3-new-tools-fuel-your-growth-2019).
+*  **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. Registered participants can install PageBuilder Beta on {{site.data.var.ee}} 2.3.0 code. See check [Magento 2.3 product availability]({{ site.baseurl }}/release/availability.html) and [Magento blog](https://magento.com/blog/magento-news/magento-2.3-new-tools-fuel-your-growth-2019).
 
 ### Improved developer experience
 
-*  **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://magento.github.io/pwa-studio/) for information about this toolset as well as information about contributing to this ongoing project.
+*  **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://developer.adobe.com/commerce/pwa-studio/) for information about this toolset as well as information about contributing to this ongoing project.
 
 *  **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schema reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation.
 
-*  **GraphQL API** is now available with Magento 2.3.0. This API provides an alternative to REST and SOAP web APIs for custom frontend development, including headless storefronts and PWAs. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. GraphQL is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [GraphQL GitHub](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+*  **GraphQL API** is now available with Magento 2.3.0. This API provides an alternative to REST and SOAP web APIs for custom frontend development, including headless storefronts and PWAs. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. GraphQL is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [GraphQL GitHub](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://opensource.magento.com/slack)) to discuss the project.
 
-*  **Asynchronous Web APIs** allow any previous Magento REST APIs to be called asynchronously. This community-contributed feature includes separate status APIs that have been created to check the status of each request. Developers can now use the asynchronous APIs  in conjunction with queues that have also been migrated to Magento Open Source. See [Asynchronous web endpoints]({{ page.baseurl }}/rest/asynchronous-web-endpoints.html) for more information.
+*  **Asynchronous Web APIs** allow any previous Magento REST APIs to be called asynchronously. This community-contributed feature includes separate status APIs that have been created to check the status of each request. Developers can now use the asynchronous APIs  in conjunction with queues that have also been migrated to {{site.data.var.ce}}. See [Asynchronous web endpoints]({{ page.baseurl }}/rest/asynchronous-web-endpoints.html) for more information.
 
-*  **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to Magento Open Source. [See Bulk endpoints]({{ page.baseurl }}/rest/bulk-endpoints.html) for more information.
+*  **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to {{site.data.var.ce}}. [See Bulk endpoints]({{ page.baseurl }}/rest/bulk-endpoints.html) for more information.
 
 *  **Updates to Magento's tech stack (including upgraded PHP support to maintain PCI compliance)** include upgrades to Redis, MySQL, Elasticsearch, and compatibility with PHP 7.2.x.
 
@@ -74,7 +74,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 #### dotmailer
 
-*  dotmailer now supports the Magento Commerce split database mode.
+*  dotmailer now supports the split database mode.
 
 #### Klarna Payments
 
@@ -82,7 +82,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 *  Added a link to the Klarna merchant portal
 
-*  Added a detailed Klarna message in the Magento Admin where needed
+*  Added a detailed Klarna message in the Admin where needed
 
 *  Added an initial Magento Functional Test Framework (MFTF) test and support for future tests
 
@@ -116,7 +116,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 ### Other improvements
 
-*  **Elasticsearch support for Magento Open Source version**. Elasticsearch support was previously provided in Magento Commerce only.
+*  **Elasticsearch support for {{site.data.var.ce}} version**. Elasticsearch support was previously provided in {{site.data.var.ee}} only.
 
 *  **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality.
 
@@ -184,7 +184,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-91863 -->
 
-*  Statistics collection for the Reports module is now disabled by default. To enable or partially disable it, see **Stores** > **Settings** > **Configuration** > **General** > **Reports**. Note that certain product features, such as  Magento Commerce dynamic customer segments (specifically the ones based on viewed products), rely on Reports data collection to function properly.
+*  Statistics collection for the Reports module is now disabled by default. To enable or partially disable it, see **Stores** > **Settings** > **Configuration** > **General** > **Reports**. Note that certain product features, such as dynamic customer segments (specifically the ones based on viewed products), rely on Reports data collection to function properly.
 
 <!---MAGETWO-88281 -->
 
@@ -1632,7 +1632,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-75326 -->
 
-*  The Magento Admin no longer falls into a redirect loop when an administrator logs in with a role that has no resources assigned.  [GitHub-10611](https://github.com/magento/magento2/issues/10611)
+*  The Admin no longer falls into a redirect loop when an administrator logs in with a role that has no resources assigned.  [GitHub-10611](https://github.com/magento/magento2/issues/10611)
 
 <!---MAGETWO-82428 -->
 
@@ -2694,7 +2694,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-89990 -->
 
-*  The multi-shipping checkout  flow now supports the CyberSource payment method. This payment method is supported by Magento Commerce only. However,  as part of the process of adding CyberSource support, we've made improvements to the Multi-shipping module to simplify integration process for other payment methods. Users of the CyberSource payment method should note that CyberSource uses the Magento Vault module only to store and retrieve tokens. Stored CyberSource tokens won't be displayed on the checkout page or customer account.
+*  The multi-shipping checkout  flow now supports the CyberSource payment method. This payment method is supported by {{site.data.var.ee}} only. However,  as part of the process of adding CyberSource support, we've made improvements to the Multi-shipping module to simplify integration process for other payment methods. Users of the CyberSource payment method should note that CyberSource uses the Magento Vault module only to store and retrieve tokens. Stored CyberSource tokens won't be displayed on the checkout page or customer account.
 
 <!--- MAGETWO-89991 -->
 
@@ -3668,7 +3668,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 *  Renaming of tables is not supported.
 
-**Known issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/).  See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+**Known issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Commerce Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/).  See [Extension Manager shows no extensions in {{site.data.var.ee}} 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 
@@ -3692,13 +3692,13 @@ The following table identifies contributions from our community members. This ta
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements.html)
 
 For more information, see [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.3.0  using Composer.
+You can install {{site.data.var.ee}} 2.3.0 using Composer.
 
 ## Migration toolkits
 

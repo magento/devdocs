@@ -28,11 +28,11 @@ pages:
         - label: X-Frame-Options header
           url: /config-guide/secy/secy-xframe.html
 
-    - label: Magento application initialization and bootstrap
+    - label: Application initialization and bootstrap
       url: /config-guide/bootstrap/magento-bootstrap.html
       children:
 
-        - label: About Magento modes
+        - label: About application modes
           url: /config-guide/bootstrap/magento-modes.html
 
         - label: Customize base directory paths (MAGE_DIRS)
@@ -103,7 +103,7 @@ pages:
         - label: Code compiler
           url: /config-guide/cli/config-cli-subcommands-compiler.html
 
-        - label: Set the Magento mode
+        - label: Set the operation mode
           url: /config-guide/cli/config-cli-subcommands-mode.html
 
         - label: Start message queue consumers
@@ -114,6 +114,9 @@ pages:
 
         - label: Dependency reports
           url: /config-guide/cli/config-cli-subcommands-depen.html
+
+        - label: Catalog sync
+          url: /config-guide/cli/config-cli-subcommands-catalog-sync.html
 
         - label: Configuration management
           children:
@@ -151,14 +154,14 @@ pages:
         - label: Generate data for performance testing
           url: /config-guide/cli/config-cli-subcommands-perf-data.html
 
-        - label: Run the support utilities (Magento Commerce only)
+        - label: Run the support utilities (Adobe Commerce only)
           url: /config-guide/cli/config-cli-subcommands-spt-util.html
+          edition: ee-only
 
-    - label: Magento configuration files
+    - label: Configuration files
       url: /config-guide/config/config-magento.html
       children:
-
-        - label: Magento's deployment configuration
+        - label: Deployment configuration
           url: /config-guide/config/config-php.html
 
         - label: Module configuration files
@@ -182,8 +185,9 @@ pages:
             - label: Other configuration paths reference
               url: /config-guide/prod/config-reference-most.html
 
-            - label: Magento Commerce for B2B Extension configuration paths reference
+            - label: B2B Extension configuration paths reference (Adobe Commerce only)
               url: /config-guide/prod/config-reference-b2b.html
+              edition: b2b-only
 
             - label: .gitignore reference
               url: /config-guide/prod/config-reference-gitignore.html
@@ -220,7 +224,7 @@ pages:
       url: /config-guide/redis/config-redis.html
       children:
 
-        - label: Use Redis for the Magento page and default cache
+        - label: Use Redis for default cache
           url: /config-guide/redis/redis-pg-cache.html
 
         - label: Use Redis for session storage
@@ -236,23 +240,26 @@ pages:
         - label: Configure Varnish and your web server
           url: /config-guide/varnish/config-varnish-configure.html
 
-        - label: Configure Magento to use Varnish
+        - label: Configure Varnish for Commerce or Magento
           url: /config-guide/varnish/config-varnish-magento.html
 
         - label: Advanced Varnish configuration
           url: /config-guide/varnish/config-varnish-advanced.html
 
-        - label: How Magento cache clearing works with multiple Varnish instances
+        - label: How cache clearing works with multiple Varnish instances
           url: /config-guide/varnish/use-multiple-varnish-cache.html
 
         - label: Final verification
           url: /config-guide/varnish/config-varnish-final.html
 
-        - label: How Magento cache clearing works with Varnish
+        - label: How cache clearing works with Varnish
           url: /config-guide/varnish/use-varnish-cache.html
 
         - label: How Varnish caching works
           url: /config-guide/varnish/use-varnish-cache-how.html
+
+        - label: Varnish ESI Block
+          url: /config-guide/varnish/use-varnish-esi.html
 
     - label: Use memcached for session storage
       url: /config-guide/memcache/memcache.html
@@ -264,7 +271,7 @@ pages:
         - label: Install, configure, verify memcached on CentOS
           url: /config-guide/memcache/memcache_centos.html
 
-        - label: Configure Magento to use memcached
+        - label: Configure Commerce or Magento to use memcached
           url: /config-guide/memcache/memcache_magento.html
 
     - label: Multiple websites or stores
@@ -282,6 +289,17 @@ pages:
 
         - label: Tutorial—Set up multiple websites with Apache
           url: /config-guide/multi-site/ms_apache.html
+
+    - label: Remote storage
+      url: /config-guide/remote-storage/config-remote-storage.html
+      exclude_versions: ["2.3"]
+      children:
+
+        - label: Configure AWS S3 adapter
+          url: /config-guide/remote-storage/config-remote-storage-aws-s3.html
+
+        - label: Configure image resizing
+          url: /config-guide/remote-storage/config-remote-storage-image-resize.html
 
     - label: Set up a custom cron job and cron group
       url: /config-guide/cron/custom-cron.html
@@ -301,6 +319,9 @@ pages:
       include_versions: ["2.3"]
       children:
 
+        - label: Migrate from Elasticsearch to OpenSearch
+          url: /config-guide/elasticsearch/opensearch-migration.html
+
         - label: Configure nginx and Elasticsearch
           url: /config-guide/elasticsearch/es-config-nginx.html
 
@@ -310,23 +331,23 @@ pages:
         - label: Configure Elasticsearch stopwords
           url: /config-guide/elasticsearch/es-config-stopwords.html
 
-        - label: Configure Magento to use Elasticsearch
+        - label: Configure Commerce and Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
 
         - label: Change the Elasticsearch client
           url: /config-guide/elasticsearch/es-downgrade.html
 
-    - label: Configure and maintain Elasticsearch
+    - label: Configure and maintain the search engine
       url: /config-guide/elasticsearch/es-overview.html
       exclude_versions: ["2.3"]
       children:
 
-        - label: Configure Elasticsearch stopwords
+        - label: Configure stopwords
           url: /config-guide/elasticsearch/es-config-stopwords.html
 
-        - label: Configure Magento to use Elasticsearch
+        - label: Search engine configuration
           url: /config-guide/elasticsearch/configure-magento.html
-         
+
     - label: Message Queues
       url: /config-guide/mq/rabbitmq-overview.html
       children:
@@ -334,8 +355,13 @@ pages:
         - label: Manage message queues
           url: /config-guide/mq/manage-message-queues.html
 
-    - label: Split database performance solution (Magento Commerce only)
+        - label: Using AWS Message Queues
+          url: /config-guide/mq/aws-mq.html
+          exclude_versions: ["2.3"]
+
+    - label: Split database performance solution (Adobe Commerce only)
       url: /config-guide/multi-master/multi-master.html
+      edition: ee-only
       children:
 
         - label: Automatically configure master databases
@@ -350,11 +376,14 @@ pages:
         - label: Set up optional database replication
           url: /config-guide/multi-master/multi-master_slavedb.html
 
+    - label: Revert from a split database to a single database
+      url: /config-guide/revert-split-database.html
+
     - label: Custom Logging
       url: /config-guide/log/log-intro.html
       children:
 
-        - label: Magento logging in more detail
+        - label: Logging in more detail
           url: /config-guide/log/log-magento.html
 
         - label: Example - logging database activity

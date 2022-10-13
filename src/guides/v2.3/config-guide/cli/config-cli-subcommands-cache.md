@@ -43,6 +43,7 @@ To view the status of the cache, enter
 A sample follows:
 
 ```terminal
+Current status:
                 config: 1
                 layout: 1
             block_html: 1
@@ -66,9 +67,9 @@ config_integration_api: 1
 This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse effect on performance.
 
 {:.bs-callout-info}
-Starting in version 2.2, you can only enable or disable cache types using the command line while running Magento in production mode. If running Magento in developer mode, you can enable or disable cache types using the command line or manually. Before doing so, you must manually make `<magento_root>/app/etc/env.php` writeable by the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
+Starting in version 2.2, you can only enable or disable cache types using the command line while running Magento in production mode. If running Magento in developer mode, you can enable or disable cache types using the command line or manually. Before doing so, you must manually make `<magento_root>/app/etc/env.php` writeable by the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
-You can clean (also referred to as _flush_ or _refresh_) cache types using either the command line or the [Magento Admin](https://glossary.magento.com/magento-admin).
+You can clean (also referred to as _flush_ or _refresh_) cache types using either the command line or the [Admin](https://glossary.magento.com/magento-admin).
 
 Command options:
 
@@ -107,7 +108,7 @@ Sample result:
 {:.bs-callout-info}
 Enabling a [cache type](https://glossary.magento.com/cache-type) automatically clears that cache type.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 As of version 2.3.4, Magento caches all system EAV attributes as they are retrieved. Caching EAV attributes in this manner improves performance, because it decreases the amount of insert/select requests to the DB. However, it increases cache network size as well. Developers can cache custom EAV attributes by running the `bin/magento config:set dev/caching/cache_user_defined_attributes 1` command. This can also be done from the Admin while in [Developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html) by setting **Stores** > Settings **Configuration** > **Advanced** > **Developer** > **Caching Settings** > **Cache User Defined Attributes** to **Yes**.
 
 ## Clean and flush cache types {#config-cli-subcommands-cache-clean}
@@ -162,4 +163,4 @@ Sample result:
 ```
 
 {:.bs-callout-info}
-You can also clean and flush cache types in the [Magento Admin](https://glossary.magento.com/magento-admin). Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `bin/magento cache:flush`. **Flush Magento Cache** is equivalent to `bin/magento cache:clean`.
+You can also clean and flush cache types in the [Admin](https://glossary.magento.com/magento-admin). Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `bin/magento cache:flush`. **Flush Magento Cache** is equivalent to `bin/magento cache:clean`.

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 99_contrib
 title: Add or update components
 menu_title: Add or update components
@@ -13,11 +12,11 @@ functional_areas:
 
 A contributing developer updates components by specifying components and their versions in Magento's `composer.json`.
 
-To update components if you're *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
+To update components if you're *not* a contributing developer, see [Updating the Magento application and components](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
-1. Log in to the Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to the Magento server, or switch to, the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Change to the directory to which you cloned the Magento application. For example,
 
    ```bash
@@ -74,8 +73,8 @@ Save your changes to `composer.json`, exit the text editor, and enter `composer 
 {:.ref-header}
 Related topics
 
-If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md).
 
 <!-- ABBREVIATIONS -->
 
-If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md).

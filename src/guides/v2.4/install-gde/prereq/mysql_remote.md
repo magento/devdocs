@@ -1,15 +1,32 @@
 ---
-group: installation-guide
 title: Set up a remote MySQL database connection
 functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/database-server/mysql-remote.html
+layout: migrated
 ---
 
-## When to set up a remote database connection {#instgde-prereq-mysql-remote-over}
+There are times when you will want to host the database on a separate server, rather than running the database server and the web server on the same machine.
 
-This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento *web node* is the server on which you installed the Magento software and that runs your web server.)
+Magento has provided a way to connect to a MySQL server on a different machine. As of Magento 2.4.3, you can also configure Magento to use an Amazon Web Services (AWS) Aurora database with no code changes.
+
+Aurora is a high-performance, fully-compliant MySQL server hosted on AWS.
+
+## Connecting to an AWS Aurora database
+
+Using Aurora as the database is as easy as specifying the database in the regular Magento setup configuration, using the default database connector.
+
+When running `bin/magento setup:install`, use the Aurora information in the `db-` fields:
+
+```bash
+bin/magento setup:install ... --db-host='database-aurora.us-east-1.rds.amazonaws.com' --db-name='magento2' --db-user='username' --db-password='password' ...
+```
+
+The `db-host` value is the Aurora URL with the `https://` and trailing `:portnumber`  removed.
+
+## Setting up a remote database connection
 
 {:.bs-callout-info}
 This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have `root` access to the file system and you must be able to log in to MySQL as `root`.
@@ -33,7 +50,7 @@ Use the following guidelines to configure remote database connections if your we
 
 ### Resolving connection issues
 
-If you have issues connecting to either host, first ping the other host to make sure it's reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
+If you have issues connecting to either host, first ping the other host to make sure it is reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
 
 ## Create the remote connection {#instgde-prereq-mysql-remote-create}
 
@@ -61,7 +78,7 @@ To create a remote connection:
 
    If it exists, change the value as follows.
 
-   If it doesn't exist, add it anywhere except the `[mysqld]` section.
+   If it does not exist, add it to the `[mysqld]` section.
 
    ```conf
    bind-address = <ip address of your Magento web node>

@@ -41,10 +41,14 @@ You can now use this token in the Authorization request header field for any que
 
 ![GraphQL Authorization Bearer]({{site.baseurl}}/common/images/graphql/graphql-authorization.png)
 
-If necessary, you also can [revoke the customer's token]({{ page.baseurl }}/graphql/mutations/revoke-customer-token.html
+If necessary, you also can [revoke the customer's token]({{page.baseurl}}/graphql/mutations/revoke-customer-token.html)
+
+By default, a customer token is valid for 1 hour. You can change these values from Admin by selecting **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration** > **Customer Token Lifetime**.
 
 ## Admin tokens
 
 In Magento GraphQL, you specify an admin token only if you need to query products, categories, price rules, or other entities that are scheduled to be in a campaign (staged content). Staging is supported in {{site.data.var.ee}} only. See [Staging queries]({{page.baseurl}}/graphql/queries/index.html#staging) for more information.
 
 Magento does not provide a GraphQL mutation that generates an admin token. You must use the `POST /V1/integration/admin/token` REST endpoint instead. [Generate the admin token]({{page.baseurl}}/rest/tutorials/prerequisite-tasks/create-admin-token.html) shows how to use this endpoint.
+
+By default, an admin token is valid for 4 hours. You can change these values from Admin by selecting **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration** > **Admin Token Lifetime**.

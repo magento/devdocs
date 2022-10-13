@@ -10,7 +10,7 @@ redirect_from:
 
 The [Message Queue Framework (MQF)]({{ site.baseurl }}/guides/v2.3/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
 
-The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
+The MQF uses [RabbitMQ](https://www.rabbitmq.com/) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
 {:.bs-callout-warning}
 If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ site.baseurl }}/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
@@ -20,7 +20,7 @@ If you prefer using an existing AMQP-based service, like RabbitMQ, instead of re
 {:.procedure}
 To enable RabbitMQ:
 
-1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file along with the the installed RabbitMQ version.
+1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file along with the installed RabbitMQ version.
 
    ```yaml
    rabbitmq:
@@ -65,7 +65,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
 
 ### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
 
-1. Log in to the Magento Cloud CLI and project:
+1. Log in to the `magento-cloud` CLI and project:
 
    ```bash
    magento-cloud login
@@ -116,16 +116,16 @@ For debugging purposes, it is useful to directly connect to a service instance i
 1. Enable local port forwarding to RabbitMQ.
 
    ```bash
-   ssh -L <port-number>:mq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
+   ssh -L <port-number>:rabbitmq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
    An example for accessing the RabbitMQ management web interface at `http://localhost:15672` is:
 
    ```bash
-   ssh -L 15672:localhost:15672 <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
+   ssh -L 15672:rabbitmq.internal:15672 <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
-1. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber>` using the port number, username, and password information from the MAGENTO_CLOUD_RELATIONSHIP variable.
+1. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber>` using the port number, username, and password information from the MAGENTO_CLOUD_RELATIONSHIPS variable.
 
 ### Connect from the application {#cloud-rabbitmq-conn-cont}
 

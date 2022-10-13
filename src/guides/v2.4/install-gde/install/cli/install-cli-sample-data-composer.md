@@ -1,11 +1,12 @@
 ---
-group: installation-guide
 title: Install using Composer
 functional_areas:
   - Install
   - System
   - Setup
 redirect_from: /guides/v2.4/install-gde/install/web/install-web-sample-data-composer.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/sample-data/composer-packages.html
+layout: migrated
 ---
 
 {% include install/sampledata/sample-data-composer.md %}

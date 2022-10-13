@@ -14,7 +14,7 @@ Git is the center of all code management, build, and deployment for your {{site.
 If you need help understand Git, you can review the following resources:
 
 *  [Git documentation](https://git-scm.com/documentation) and [videos](https://git-scm.com/videos) from the makers of Git
-*  [Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) and [quick guide](http://rogerdudler.github.io/git-guide/) from Roger Dudler
+*  [Git cheatsheet](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) and [quick guide](https://rogerdudler.github.io/git-guide/) from Roger Dudler
 *  [Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg) with DevForge to understand how people use the repo and commands with a fun story
 
 ## Git CLI and clients {#clients}
@@ -37,7 +37,7 @@ For specifics on creating Git branches, see the following topics:
 *  [Manage branches with the CLI]({{ site.baseurl }}/cloud/env/environments-start.html)
 
 ## .gitignore file {#gitignore}
-Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.
+Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root project in the repository, in order to share the ignore rules with any other users that clone the repository.
 
 We include a base `.gitignore` file with the project repository. For a review of the {{site.data.var.ece}} file, see [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore). You can review the recommended files for your file in the [`.gitignore` reference]({{ site.baseurl }}/guides/v2.3/config-guide/prod/config-reference-gitignore.html).
 

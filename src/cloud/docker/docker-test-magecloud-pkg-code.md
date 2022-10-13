@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Cloud code testing
+title: Cloud code testing for Commerce
 functional_areas:
   - Cloud
   - Docker
@@ -17,12 +17,12 @@ Before you run tests, you must prepare your Docker environment and update the te
 
 Use the following table to review the test configuration files and available tests for each package.
 
-| Package                          | Test configuration                                                 | Test folder <br>(`src/Test/Functional/Acceptance`)                                                |
-|----------------------------------|--------------------------------------------------------------------|------------------------------------------------------------|
-| {{site.data.var.ct-repo}}               | [codeception.dist.yml][{{site.data.var.ct-repo}} codeception.dist.yml]  | [Acceptance tests][{{site.data.var.ct-repo}} Acceptance tests]  |
+| Package                       | Test configuration                                                         | Test folder <br>(`src/Test/Functional/Acceptance`)                 |
+| ----------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| {{site.data.var.ct-repo}}     | [codeception.dist.yml][{{site.data.var.ct-repo}} codeception.dist.yml]     | [Acceptance tests][{{site.data.var.ct-repo}} Acceptance tests]     |
 | {{site.data.var.mcc-package}} | [codeception.dist.yml][{{site.data.var.mcc-package}} codeception.dist.yml] | [Acceptance tests][{{site.data.var.mcc-package}} Acceptance tests] |
-| {{site.data.var.mcd-package}}    | [codeception.dist.yml][{{site.data.var.mcd-package}} codeception.dist.yml] | [Acceptance tests][{{site.data.var.mcd-package}} Acceptance tests] |
-| {{site.data.var.mcc-package}}   | [codeception.dist.yml][{{site.data.var.mcp-package}} codeception.dist.yml] | [Acceptance tests][{{site.data.var.mcp-package}} Acceptance tests] |
+| {{site.data.var.mcd-package}} | [codeception.dist.yml][{{site.data.var.mcd-package}} codeception.dist.yml] | [Acceptance tests][{{site.data.var.mcd-package}} Acceptance tests] |
+| {{site.data.var.mcc-package}} | [codeception.dist.yml][{{site.data.var.mcp-package}} codeception.dist.yml] | [Acceptance tests][{{site.data.var.mcp-package}} Acceptance tests] |
 
 {:.bs-callout-info}
 For Magento application testing, use the Magento Application Testing (MFTF) framework to run functional tests. See [Magento application testing].
@@ -217,7 +217,7 @@ You can see the available tests for each package in the package source files. Se
 
 ### Run all tests
 
-Use the following commands to run all available tests for each PHP versions:
+Use the following commands to run all available tests for each PHP version:
 
 -  **PHP 7.1**
 
@@ -237,10 +237,16 @@ Use the following commands to run all available tests for each PHP versions:
    ./vendor/bin/codecept run -g php73 --steps
    ```
 
+-  **PHP 7.4**
+
+   ```bash
+   ./vendor/bin/codecept run -g php74 --steps
+   ```
+
    If you are testing `{{site.data.var.ct-repo}}` code, use the following command:
 
    ```bash
-   ./vendor/bin/codecept run -x php71 -x php72 --steps
+   ./vendor/bin/codecept run -x php71 -x php72 -x php73 -x php74 --steps
    ```
 
 {:.bs-callout-tip}

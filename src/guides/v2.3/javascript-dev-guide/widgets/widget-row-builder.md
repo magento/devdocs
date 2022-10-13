@@ -54,6 +54,94 @@ The following example shows a PHTML file using the script:
 </script>
 ```
 
+The following example shows a PHTML file using the script with some data for a couple of fields:
+
+```html
+<div class="row-builder-example">
+    <div id="max-rows-message" style="display: none;" class="message notice limit" role="alert">
+        <span>Number of rows exceeded.</span>
+    </div>
+    <button type="button" id="add-row-button" class="action add">
+        <span>Add Item</span>
+    </button>
+    <div id="row-container"></div>
+</div>
+
+<script id="row-template" type="text/x-magento-template">
+    <div>
+        <div class="field name required">
+            <label for="field1-name<%- data._index_ %>" class="label"><span>Item <%- data._index_ %> Field</span></label>
+            <div class="control">
+                <input name="field1[name][<%- data._index_ %>]" type="text" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" class="input-text"
+                       id="field1-name<%- data._index_ %>"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label for="field2-name<%- data._index_ %>" class="label"><span>Item <%- data._index_ %> Field</span></label>
+            <div class="control">
+                <input name="field2[name][<%- data._index_ %>]" type="text" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" class="input-text"
+                       id="field2-name<%- data._index_ %>"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label for="field3-name<%- data._index_ %>" class="label"><span>Item <%- data._index_ %> Field</span></label>
+            <div class="control">
+                <input name="field3[name][<%- data._index_ %>]" type="text" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" class="input-text"
+                       id="field3-name<%- data._index_ %>"/>
+            </div>
+        </div>
+        <div class="actions-toolbar">
+            <div class="secondary">
+                <a href="#" id="btn-remove<%- data._index_ %>" class="action remove"
+                   title="Remove Item">
+                    <span>Remove Item</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script>
+    require([
+        'jquery',
+        'rowBuilder'
+    ], function ($) {
+        'use strict';
+
+        var data = {
+            formData: [
+                ["field1-name1", "field2-name1", "field3-name1"],
+                ["field1-name2", "field2-name2", "field3-name2"],
+                ["field1-name3", "field2-name3", "field3-name3"],
+                ["field1-name4", "field2-name4", "field3-name4"],
+            ],
+            templateFields: [
+                "field1-name", "field2-name", "field3-name"
+            ]
+        };
+
+        $(".row-builder-package-manager").rowBuilder({
+            "rowTemplate": "#row-template",
+            "rowContainer": "#row-container",
+            "rowParentElem": "<div></div>",
+            "remEventSelector": "a",
+            "btnRemoveSelector": ".action.remove",
+            "formDataPost": data
+        });
+    });
+</script>
+```
+
+This is provided during widget instantiation. For example:
+
+```text
+formDataPost : {"formData": ["field1-name1", "field2-name1", "field3-name1"], "templateFields":['field1-name','field2-name','field3-name']]}
+```
+
+-`"formData"` is the multi-dimensional array of form field values : [['a','b'],['c','b']] received from the server and encoded
+
+-`"templateFields"` are the input fields in the template with index suffixed after the field name. For example, `field1-name{index}`, `field2-name{index}`, `field3-name{index}`
+
 ## Options
 
 The PopupWindow widget has the following options:

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Prerequisites
 title: Prerequisites
 menu_node: parent
@@ -20,7 +19,7 @@ Before you install Magento, you must do all of the following:
 *  Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
 
 {:.bs-callout-info}
-We assume you're installing the Magento 2 software in a **development environment**, which means you have [root user](http://www.linfo.org/root.html) access to the machine **and** that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
+We assume you're installing the Magento 2 software in a **development environment**, which means you have root user access to the machine **and** that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
 
 We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems. Don't know what any of this means? Check out our [installation overview page]({{page.baseurl}}/install-gde/bk-install-guide.html).
 
@@ -67,9 +66,7 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 
 ### PHP
 
-{% include install/php-versions-2.3.md %}
-
-See [PHP][] for info on PHP requirements.
+See [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of PHP and [PHP] for PHP requirements.
 
 ### MySQL
 
@@ -83,7 +80,7 @@ For example:
 mysql -u magento -p
 ```
 
-Check you have the correct version of MySQL for the version of Magento you are installing, [Check Here For Supported Versions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#database). The following result indicates the version you are running.
+Check you have the correct version of MySQL for the version of Magento you are installing, [Check Here For Supported Versions]({{ page.baseurl }}/install-gde/system-requirements.html). The following result indicates the version you are running.
 
 ```terminal
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -97,7 +94,7 @@ affiliates. Other names may be trademarks of their respective
 owners.
 ```
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type `help` or `\h` for help. Type `\c` to clear the current input statement.
 
 Enter `exit` at the `mysql>` prompt to exit.
 

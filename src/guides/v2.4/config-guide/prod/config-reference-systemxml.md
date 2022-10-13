@@ -6,6 +6,8 @@ functional_areas:
   - System
 contributor_name: David Lambauer
 contributor_link: https://github.com/DavidLambauer
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-reference-systemxml.html
+layout: migrated
 ---
 
 The `system.xml` file allows you to manage the Magento system configuration. Use this topic as a general reference for the `system.xml` file. The `system.xml` file is located under `etc/adminhtml/system.xml` in a given Magento 2 extension.
@@ -29,7 +31,7 @@ If you want instant *XSD validation in your IDE, you can run `bin/magento dev:ur
 In the `system.xml` file, it is possible to define four different types of entities, which are related to each other. The following section describes the relationship between tabs, sections, groups, and fields. The following screenshot displays the Magento 2 System Configuration in the Admin backend.
 The red squares mark the different types that are defined in the `system.xml` file:
 
-![Screenshot displaying a configured section in the Magento Admin.](img/magento2-system-configuration.png)
+![Screenshot displaying a configured section in the Admin.](img/magento2-system-configuration.png)
 
 Tabs are used to split different configuration areas semantically. Each tab can contain one or more sections, which can also be referenced as submenus. A section contains one or more groups.
 Each group lists one or more fields. You can also use a group to add a general description for the following fields. As mentioned, each group can have one or more fields. Fields are the smallest entity
@@ -249,6 +251,22 @@ A `<field>`-Tag can have the following values for the `type=""` attribute:
 | `time`          | Control to set time using three dropdowns–Hour, minute and second.                                                                                                                                         |
 | `allowspecific` | A multiselect list of specific countries. Requires a `source_model` such as `Magento\Shipping\Model\Config\Source\Allspecificcountries`                                                                               |
 | `image`         | Allows an image to be uploaded.                                                                                                                                                                                                                                                                                                                                   |
+| `note`          | Allows an informational note to be added to the page. This type requires a `frontend_model` to render the note. |
+
+It is also possible to create a custom field type. This is often done when a special button, with an action, is required. To do this requires two main elements:
+
+-  Creating a block in the `adminhtml` area
+-  Setting the `type=""` to the path to this block
+
+The block itself requires, at a minimum, a `__construct` method and a `getElementHtml()` method. The [Magento_OfflineShipping]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/OfflineShipping) is a simple example of a custom type.
+
+For example, in the OfflineShipping module, the Export button is defined in `Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export` and the field definition looks like:
+
+```xml
+<field id="export" translate="label" type="Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export" sortOrder="5" showInDefault="0" showInWebsite="1" showInStore="0">
+    <label>Export</label>
+</field>
+```
 
 ### Field node reference
 
@@ -257,7 +275,7 @@ A `<field>`-Tag can have the following children:
 | Node                        | Description                                                                                                                                                                               | Type             |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
 | `label`                     | Defines the label that is displayed in the frontend.                                                                                                                                      | `string`         |
-| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`         |
+| `comment`                   | Adds a comment below the field label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`         |
 | `tooltip`                   | Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.                                        | `string`         |
 | `hint`                      | Displays additional information. Only available with specific `frontend_model`.                                                                                                           | `string`         |
 | `frontend_class`            | Adds a defined CSS class to the rendered section HTML element.                                                                                                                            | `string`         |
@@ -265,7 +283,7 @@ A `<field>`-Tag can have the following children:
 | `backend_model`             | Specifies a different backend model to modify the configured values.                                                                                                                      | `typeModel`      |
 | `source_model`              | Specifies a different source model that provides a specific set of values.                                                                                                                | `typeModel`      |
 | `config_path`               | Can be used to overwrite the generic config path of a field.                                                                                                                              | `typeConfigPath` |
-| `validate`                  | Define different validation rules (comma separated). Full reference list of available validation rules is listed below.                                                                   | `string`         |
+| `validate`                  | Define different validation rules (space separated). Full reference list of available validation rules is listed below.                                                                   | `string`         |
 | `can_be_empty`              | Used when `type` is `multiselect` to specify that a field can be empty.                                                                                                                   | `int`            |
 | `if_module_enabled`         | Used to display a field only when a given module is enabled.                                                                                                                              | `typeModule`     |
 | `base_url`                  | Used in combination with `upload_dir` for file uploads.                                                                                                                                   | `typeUrl`        |
@@ -359,28 +377,73 @@ The following validation rules are available:
 | Rule                            | Description                                                                                                             |
 |---------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | `alphanumeric`                  | Allows letters, numbers, spaces or underscores only.                                                                    |
-| `integer`                       | Enter a positive or negative non-decimal number.                                                                         |
-| `letters-only`                  | Allows letters only. For example, `abcABC`.                                                                                |
+| `integer`                       | Allows a positive or negative non-decimal number.                                                                       |
+| `ipv4`                          | Allows a valid IP v4 address.                                                                                           |
+| `ipv6`                          | Allows a valid IP v6 address.                                                                                           |
+| `letters-only`                  | Allows letters only. For example, `abcABC`.                                                                             |
+| `letters-with-basic-punc`       | Allows letters or punctuation only.<br>Must pass the following expression: `/^[a-z\-.,()\u0027\u0022\s]+$/i`.           |
+| `mobileUK`                      | Allows a (UK) mobile phone number.                                                                                      |
+| `no-marginal-whitespace`        | Disallows white spaces at the start or end of the value.                                                                |
 | `no-whitespace`                 | Disallows white spaces.                                                                                                 |
-| `time`                          | Allows a valid time in 24-hour format, between 00:00 and 23:59. For example `15`, `15:05` or `15:05:48`.                                        |
-| `time12h`                       | Allows a valid time in 12-hour format, between 12:00 am and 11:59:59 pm. For example `3 am`, `11:30 pm`, `02:15:00 pm`.          |
-| `validate-no-html-tags`         | HTML tags are not allowed.                                                                                              |
-| `validate-select`               | Select an option.                                                                                                       |
-| `validate-no-empty`             | Empty Value                                                                                                             |
-| `validate-alphanum-with-spaces` | Use letters (a-z or A-Z), numbers (0-9), or spaces only in this field.                                                  |
-| `validate-data`                 | Use letters (a-z or A-Z), numbers (0-9), or underscores (_) only in this field. The first character should be a letter. |
-| `validate-street`               | Use letters (a-z or A-Z), numbers (0-9), spaces, and “#” only in this field.                                            |
-| `validate-phoneStrict`          | Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                                |
-| `validate-phoneLax`             | Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                                |
-| `validate-fax`                  | Enter a valid fax number. For example, 123-456-7890.                                                                    |
-| `validate-email`                | Enter a valid email address. For example, johndoe@domain.com.                                                           |
-| `validate-emailSender`          | Enter a valid email address. For example, johndoe@domain.com.                                                           |
-| `validate-password`             | Enter 6 or more characters. Leading and trailing spaces will be ignored.                                                |
-| `validate-admin-password`       | Enter 7 or more characters, using both numeric and alphabetic.                                                          |
-| `validate-url`                  | Enter a valid URL. Protocol is required (http://, https:// or ftp://).                                                  |
-| `validate-clean-url`            | Enter a valid URL. For example, http://www.example.com or www.example.com.                                              |
-| `validate-xml-identifier`       | Enter a valid XML-identifier. For example, something_1, block5, id-4.                                                   |
-| `validate-ssn`                  | Enter a valid social security number. For example, 123-45-6789.                                                         |
-| `validate-zip-us`               | Enter a valid ZIP code. For example, 90602 or 90602-1234.                                                               |
-| `validate-date-au`              | Use this date format: dd/mm/yyyy. For example, 17/03/2006 for the 17th of March, 2006.                                  |
-| `validate-currency-dollar`      | Enter a valid $ amount. For example, $100.00.                                                                           |
+| `phoneUK`                       | Allows a (UK) phone number.                                                                                             |
+| `phoneUS`                       | Allows a (US) phone number.                                                                                             |
+| `required-entry`                | Disallows an empty value (equivalent validation as `validate-no-empty`).<br>Validation failure message: "This is a required field." |
+| `time`                          | Allows a valid time in 24-hour format, between 00:00 and 23:59. For example `15`, `15:05` or `15:05:48`.                |
+| `time12h`                       | Allows a valid time in 12-hour format, between 12:00 am and 11:59:59 pm. For example `3 am`, `11:30 pm`, `02:15:00 pm`. |
+| `validate-admin-password`       | Allows 7 or more characters, using both numeric and alphabetic.                                                         |
+| `validate-alphanum-with-spaces` | Allows usage of letters (a-z or A-Z), numbers (0-9), or spaces only.                                                    |
+| `validate-clean-url`            | Allows a valid URL. For example, http://www.example.com or www.example.com.                                             |
+| `validate-currency-dollar`      | Allows a valid (dollar) amount. For example, $100.00.                                                                   |
+| `validate-data`                 | Allows usage of letters (a-z or A-Z), numbers (0-9), or underscores (\_) only.<br>The first character must be a letter.<br>(Must match expression: `/^[A-Za-z]+[A-Za-z0-9_]+$/`)<br>Validation failure message: "Please use only letters (a-z or A-Z), numbers (0-9) or underscore (\_) in this field, and the first character should be a letter."  |
+| `validate-date-au`              | Enforces the following date format: dd/mm/yyyy. For example, 17/03/2006 for the 17th of March, 2006.                    |
+| `validate-email`                | Allows a valid email address. For example, johndoe@domain.com.                                                          |
+| `validate-emailSender`          | Allows a valid email address. For example, johndoe@domain.com.                                                          |
+| `validate-fax`                  | Allows a valid fax number. For example, 123-456-7890.                                                                   |
+| `validate-no-empty`             | Disallows an empty value (equivalent validation as `requried-entry`).<br>Validation failure message: "Empty value."     |
+| `validate-no-html-tags`         | Disallows usage of HTML tags.                                                                                           |
+| `validate-password`             | Allows 6 or more characters. Leading and trailing spaces will be ignored.                                               |
+| `validate-phoneLax`             | Allows a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                               |
+| `validate-phoneStrict`          | Allows a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                               |
+| `validate-select`               | Enforces that the select option chosen not have a `null` value, string value of `none` or string length of 0.        |
+| `validate-ssn`                  | Allows a valid (US) social security number. For example, 123-45-6789.                                                        |
+| `validate-street`               | Allows usage of letters (a-z or A-Z), numbers (0-9), spaces, and “#” only.                                              |
+| `validate-url`                  | Allows a valid URL. Protocol is required (http://, https:// or ftp://).                                                 |
+| `validate-xml-identifier`       | Allows a valid XML-identifier. For example, something_1, block5, id-4.                                                  |
+| `validate-zip-us`               | Allows a valid (US) ZIP code. For example, 90602 or 90602-1234.                                                         |
+| `vinUS`                         | Allows (US) vehicle identification number (VIN) value.                                                                  |
+
+### Default Values
+
+Default values for fields may be set in the module's `etc/config.xml` file by specifying the default value in the `section/group/field_ID` node.
+
+#### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID` (Default scope)
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <A_UNIQUE_SECTION_ID>
+            <A_UNIQUE_GROUP_ID>
+                <ANOTHER_UNIQUE_FIELD_ID>This is the default value</ANOTHER_UNIQUE_FIELD_ID>
+            </A_UNIQUE_GROUP_ID>
+        </A_UNIQUE_SECTION_ID>
+    </default>
+</config>
+```
+
+#### Example: Setting the default value for `ANOTHER_UNIQUE_FIELD_ID` (Website scope)
+
+Using the `websites` tag, specify the default value for a specific website.
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <websites>
+        <WEBSITE_CODE>
+            <A_UNIQUE_SECTION_ID>
+                <A_UNIQUE_GROUP_ID>
+                    <ANOTHER_UNIQUE_FIELD_ID>This is the default value</ANOTHER_UNIQUE_FIELD_ID>
+                </A_UNIQUE_GROUP_ID>
+            </A_UNIQUE_SECTION_ID>
+        </WEBSITE_CODE>
+    </websites>
+</config>
+```

@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: products query
-redirect_from:
-  - /guides/v2.3/graphql/reference/products.html
 ---
 
 The `products` query allows you to search for catalog items.
@@ -58,7 +56,8 @@ By default, you can use the following attributes as filters. To define a custom 
 
 Attribute | Data type | Description
 --- | --- | ---
-`category_id` | FilterEqualTypeInput | Filters by category ID
+`category_id` | FilterEqualTypeInput | Deprecated. Use `category_uid` instead. Filters by category ID
+`category_uid` | FilterEqualTypeInput | Filters by the unique ID of a category for objects that implement `CategoryInterface`
 `description` | FilterMatchTypeInput | Filters on the Description attribute
 `name` | FilterMatchTypeInput | Filters on the Product Name attribute
 `price` | FilterRangeTypeInput | Filters on the Price attribute
@@ -81,11 +80,11 @@ Attribute | Data type | Description
 
 #### FilterMatchTypeInput attributes
 
-Use the `FilterMatchTypeInput` object to construct a filter that returns products that exactly match a string or contain the specified pattern.
+Use the `FilterMatchTypeInput` object to construct a filter that returns products that partially fuzzy match a string or contain the specified pattern.
 
 Attribute | Data type | Description
 --- | --- | ---
-`match` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific SKU, specify a value such as `24-MB01`
+`match` | String | Use this attribute to partially fuzzy match the specified string. For example, to filter on a specific SKU, specify a value such as `24-MB01`
 
 You must specify a `FilterMatchTypeInput` object to filter on a custom product attribute of the following types:
 
@@ -245,16 +244,33 @@ The query returns a `Products` object containing the following information:
 
 Attribute | Data type | Description
 --- | --- | ---
-`aggregations` | [[Aggregation]](#Aggregation) | Layered navigation aggregations
+`aggregations (filter: AggregationsFilterInput)` | [[Aggregation]](#Aggregation) | Layered navigation aggregations with filters
 `filters` | LayerFilter | Deprecated. Use `aggregations` instead
 `items` | [[ProductInterface]](#ProductInterface) | An array of products that match the specified search criteria
 `page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | An object that includes the `page_info` and `currentPage` values specified in the query
 `sort_fields` |  [SortFields](#SortFields) | An object that includes the default sort field and all available sort fields
+`suggestions` | [[SearchSuggestion]](#SearchSuggestion) | An array that contains suggested search words. This object is returned when the value specified in the `search` input parameter does not return any results
 `total_count` | Int | The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not
+
+### AggregationsFilterInput filter
+
+The `AggregationsFilterInput` input object specifies the filters used in aggregations. `AggregationsCategoryFilterInput` is the filter object that determines how the category `AggregationOption` attribute is aggregated in the response.
+
+Attribute | Data type | Description
+--- | --- | ---
+`category` | AggregationsCategoryFilterInput | Filter category aggregations in layered navigation
+
+### AggregationsCategoryFilterInput attributes
+
+When the `category_id` field is specified as part of the `ProductAttributeFilterInput` input object, the `includeDirectChildrenOnly` field of the `AggregationsCategoryFilterInput` object can be used in the response to refine the returned aggregations. If `includeDirectChildrenOnly` is set to true, then the aggregations will contain only direct child categories. Otherwise, the category aggregations will follow the default algorithm. The default value is false.
+
+Attribute | Data type | Description
+--- | --- | ---
+`includeDirectChildrenOnly` | Boolean | Indicates whether to include only direct subcategories or all children categories at all levels. The default value is false
 
 ### Aggregation attributes {#Aggregation}
 
-Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category ID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
+Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category UID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
 
 {:.bs-callout-info}
 To enable a custom attribute to return layered navigation and aggregation data from the Admin, set the **Stores** > Attributes > **Product** > <attribute name> > **Storefront Properties** > **Use in Layered Navigation** field to **Filterable (with results)** or **Filterable (no results)**.
@@ -265,6 +281,7 @@ Attribute | Data type | Description
 `count` | Int | The number of filter items in the filter group
 `label` | String | The filter name displayed in layered navigation
 `options` | [AggregationOption] | Describes each aggregated filter option
+`position` | Int | The relative position of the attribute in a layered navigation block
 
 #### AggregationOption attributes {#AggregationOption}
 
@@ -289,6 +306,14 @@ Attribute | Data type | Description
 `current_page` | Int | Specifies which page of results to return
 `page_size` | Int | Specifies the maximum number of items to return
 `total_pages` | Int | The total number of pages returned
+
+### SearchSuggestion attributes {#SearchSuggestion}
+
+The `SearchSuggestion` object provides an array of suggested search terms.
+
+Attribute | Data type | Description
+--- | --- | ---
+`search` | String! | A string that provides a suggested search term that matches an existing product
 
 ### SortFields attributes {#SortFields}
 
@@ -411,12 +436,11 @@ The search returns 45 items, but only the first two items are returned on the cu
 }
 ```
 
-### Full text search with filter
+### Full text search with filter by price attribute
 
 The following sample query returns a list of products that meets the following criteria:
 
 -  The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
--  The SKU begins with `24-MB`
 -  The price is less than $50.
 
 The response for each item includes the `name`, `sku`, and `price` only. Up to 25 results are returned at a time, in decreasing order of price.
@@ -498,6 +522,68 @@ The response for each item includes the `name`, `sku`, and `price` only. Up to 2
       "total_count": 3,
       "page_info": {
         "page_size": 25
+      }
+    }
+  }
+}
+```
+
+### Query with filter by SKU attribute
+
+The following sample query returns product by SKU. You have to pass SKU value to return product information.
+
+**Request:**
+
+```graphql
+{
+  products(filter: { sku: { eq: "24-MB01" } }) {
+    items {
+      name
+      sku
+      url_key
+      stock_status
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+            currency
+          }
+        }
+      }
+    }
+    total_count
+    page_info {
+      page_size
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Joust Duffle Bag",
+          "sku": "24-MB01",
+          "url_key": "joust-duffle-bag",
+          "stock_status": "IN_STOCK",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 34,
+                "currency": "USD"
+              }
+            }
+          }
+        }
+      ],
+      "total_count": 1,
+      "page_info": {
+        "page_size": 20
       }
     }
   }
@@ -925,6 +1011,441 @@ By default, you cannot filter on the `color` attribute. [Filtering with custom a
 
 {% endcollapsible %}
 
+### Query with layered navigation and includeDirectChildrenOnly input filter applied
+
+The following query returns aggregations that filters on items with these characteristics:
+
+-  Women's Bottoms (category ID 22)
+-  In the price range of $40 - $49.99
+-  Comes in black (color 49)
+
+Because the `includeDirectChildrenOnly` input filter is set to true, the category aggregation in the response will include only the Women's Pants and Shorts categories, which are direct children of the Women's Bottoms category.
+
+{:.bs-callout-info}
+By default, you cannot filter on the `color` attribute. [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) describes how to enable this attribute for filtering. You can also run the following query without enabling the attribute by deleting `, color: {eq: "49"}`.
+
+**Request:**
+
+```graphql
+{
+products(filter: {category_id: {eq: "22"}, price: {from: "40", to: "49.99"}, color: {eq: "49"}}, pageSize: 25, sort: {name: DESC}) {
+    aggregations (filter: {category: {includeDirectChildrenOnly: true}}) {
+      attribute_code
+      count
+      label
+      options {
+        label
+        value
+        count
+      }
+    }
+    items {
+      name
+      sku
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+            currency
+          }
+        }
+      }
+    }
+    page_info {
+      page_size
+    }
+  }
+}
+```
+
+**Response:**
+
+{% collapsible Show sample response %}
+
+```json
+{
+  "data": {
+    "products": {
+      "aggregations": [
+        {
+          "attribute_code": "price",
+          "count": 1,
+          "label": "Price",
+          "options": [
+            {
+              "label": "40-50",
+              "value": "40_50",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "attribute_code": "category_id",
+          "count": 2,
+          "label": "Category",
+          "options": [
+            {
+              "label": "Pants",
+              "value": "27",
+              "count": 3
+            },
+            {
+              "label": "Shorts",
+              "value": "28",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "attribute_code": "climate",
+          "count": 7,
+          "label": "Climate",
+          "options": [
+            {
+              "label": "All-Weather",
+              "value": "201",
+              "count": 5
+            },
+            {
+              "label": "Cool",
+              "value": "203",
+              "count": 1
+            },
+            {
+              "label": "Indoor",
+              "value": "204",
+              "count": 4
+            },
+            {
+              "label": "Mild",
+              "value": "205",
+              "count": 4
+            },
+            {
+              "label": "Spring",
+              "value": "207",
+              "count": 3
+            },
+            {
+              "label": "Warm",
+              "value": "208",
+              "count": 5
+            },
+            {
+              "label": "Hot",
+              "value": "211",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "pattern",
+          "count": 3,
+          "label": "Pattern",
+          "options": [
+            {
+              "label": "Color-Blocked",
+              "value": "194",
+              "count": 1
+            },
+            {
+              "label": "Solid",
+              "value": "196",
+              "count": 2
+            },
+            {
+              "label": "Solid-Highlight",
+              "value": "197",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "attribute_code": "style_bottom",
+          "count": 4,
+          "label": "Style",
+          "options": [
+            {
+              "label": "Basic",
+              "value": "105",
+              "count": 2
+            },
+            {
+              "label": "Capri",
+              "value": "106",
+              "count": 3
+            },
+            {
+              "label": "Compression",
+              "value": "107",
+              "count": 1
+            },
+            {
+              "label": "Leggings",
+              "value": "108",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "attribute_code": "sale",
+          "count": 1,
+          "label": "Sale",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "attribute_code": "new",
+          "count": 1,
+          "label": "New",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "attribute_code": "erin_recommends",
+          "count": 2,
+          "label": "Erin Recommends",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 4
+            },
+            {
+              "label": "1",
+              "value": "1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "performance_fabric",
+          "count": 1,
+          "label": "Performance Fabric",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "attribute_code": "eco_collection",
+          "count": 2,
+          "label": "Eco Collection",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 3
+            },
+            {
+              "label": "1",
+              "value": "1",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "attribute_code": "size",
+          "count": 5,
+          "label": "Size",
+          "options": [
+            {
+              "label": "28",
+              "value": "171",
+              "count": 5
+            },
+            {
+              "label": "29",
+              "value": "172",
+              "count": 5
+            },
+            {
+              "label": "30",
+              "value": "173",
+              "count": 1
+            },
+            {
+              "label": "31",
+              "value": "174",
+              "count": 1
+            },
+            {
+              "label": "32",
+              "value": "175",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "material",
+          "count": 7,
+          "label": "Material",
+          "options": [
+            {
+              "label": "Cotton",
+              "value": "33",
+              "count": 1
+            },
+            {
+              "label": "Polyester",
+              "value": "38",
+              "count": 2
+            },
+            {
+              "label": "Microfiber",
+              "value": "149",
+              "count": 1
+            },
+            {
+              "label": "Spandex",
+              "value": "150",
+              "count": 4
+            },
+            {
+              "label": "Organic Cotton",
+              "value": "153",
+              "count": 2
+            },
+            {
+              "label": "CoolTech&trade;",
+              "value": "155",
+              "count": 1
+            },
+            {
+              "label": "Wool",
+              "value": "158",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "color",
+          "count": 7,
+          "label": "Color",
+          "options": [
+            {
+              "label": "Black",
+              "value": "49",
+              "count": 5
+            },
+            {
+              "label": "Blue",
+              "value": "50",
+              "count": 2
+            },
+            {
+              "label": "Gray",
+              "value": "52",
+              "count": 1
+            },
+            {
+              "label": "Green",
+              "value": "53",
+              "count": 1
+            },
+            {
+              "label": "Orange",
+              "value": "56",
+              "count": 3
+            },
+            {
+              "label": "Purple",
+              "value": "57",
+              "count": 1
+            },
+            {
+              "label": "White",
+              "value": "59",
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "name": "Diana Tights",
+          "sku": "WP06",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 59,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Daria Bikram Pant",
+          "sku": "WP10",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 51,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Carina Basic Capri",
+          "sku": "WP09",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 51,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Artemis Running Short",
+          "sku": "WSH04",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 45,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Ana Running Short",
+          "sku": "WSH10",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 40,
+                "currency": "USD"
+              }
+            }
+          }
+        }
+      ],
+      "page_info": {
+        "page_size": 25
+      }
+    }
+  }
+}
+```
+
+{% endcollapsible %}
+
 ### Return minimum and maximum prices and discount information
 
 In the following example, a catalog price rule that provides a 10% discount on all fitness equipment is in effect. The product queried, `24-WG080`, is the Sprite Yoga Companion Kit bundle product. This product has two user-selected options that cause the price to vary. If you choose to query a product that is not a composite (bundle, group, or configurable) product, the minimum and maximum prices are the same.
@@ -989,12 +1510,12 @@ In the following example, a catalog price rule that provides a 10% discount on a
                 "currency": "USD"
               },
               "final_price": {
-                "value": 61,
+                "value": 54.9,
                 "currency": "USD"
               },
               "discount": {
-                "amount_off": 0,
-                "percent_off": 0
+                "amount_off": 6.1,
+                "percent_off": 10
               }
             },
             "maximum_price": {
@@ -1003,12 +1524,12 @@ In the following example, a catalog price rule that provides a 10% discount on a
                 "currency": "USD"
               },
               "final_price": {
-                "value": 77,
+                "value": 69.3,
                 "currency": "USD"
               },
               "discount": {
-                "amount_off": 0,
-                "percent_off": 0
+                "amount_off": 7.7,
+                "percent_off": 10
               }
             }
           }
@@ -1101,18 +1622,18 @@ The following query shows how to get related products, up-sells, and cross-sells
 {
   products(filter: { sku: { eq: "24-WB06" } }) {
     items {
-      id
+      uid
       name
       related_products {
-        id
+        uid
         name
       }
       upsell_products {
-        id
+        uid
         name
       }
       crosssell_products {
-        id
+        uid
         name
       }
     }
@@ -1128,62 +1649,131 @@ The following query shows how to get related products, up-sells, and cross-sells
     "products": {
       "items": [
         {
-          "id": 11,
+          "uid": "MTE=",
           "name": "Endeavor Daytrip Backpack",
-          "related_products": [],
+          "related_products": [
+            {
+              "uid": "MTU=",
+              "name": "Affirm Water Bottle "
+            },
+            {
+              "uid": "MTg=",
+              "name": "Pursuit Lumaflex&trade; Tone Band"
+            },
+            {
+              "uid": "MTY=",
+              "name": "Dual Handle Cardio Ball"
+            },
+            {
+              "uid": "MTc=",
+              "name": "Zing Jump Rope"
+            }
+          ],
           "upsell_products": [
             {
-              "id": 1,
+              "uid": "MQ==",
               "name": "Joust Duffle Bag"
             },
             {
-              "id": 3,
+              "uid": "Mw==",
               "name": "Crown Summit Backpack"
             },
             {
-              "id": 4,
+              "uid": "NA==",
               "name": "Wayfarer Messenger Bag"
             },
             {
-              "id": 5,
+              "uid": "NQ==",
               "name": "Rival Field Messenger"
             },
             {
-              "id": 6,
+              "uid": "Ng==",
               "name": "Fusion Backpack"
             },
             {
-              "id": 7,
+              "uid": "Nw==",
               "name": "Impulse Duffle"
             },
             {
-              "id": 12,
+              "uid": "MTI=",
               "name": "Driven Backpack"
             },
             {
-              "id": 13,
+              "uid": "MTM=",
               "name": "Overnight Duffle"
             },
             {
-              "id": 14,
+              "uid": "MTQ=",
               "name": "Push It Messenger Bag"
             }
           ],
           "crosssell_products": [
             {
-              "id": 18,
+              "uid": "MTI=",
+              "name": "Driven Backpack"
+            },
+            {
+              "uid": "OA==",
+              "name": "Voyage Yoga Bag"
+            },
+            {
+              "uid": "Ng==",
+              "name": "Fusion Backpack"
+            },
+            {
+              "uid": "Nw==",
+              "name": "Impulse Duffle"
+            },
+            {
+              "uid": "OQ==",
+              "name": "Compete Track Tote"
+            },
+            {
+              "uid": "Mw==",
+              "name": "Crown Summit Backpack"
+            },
+            {
+              "uid": "MTQ=",
+              "name": "Push It Messenger Bag"
+            },
+            {
+              "uid": "MQ==",
+              "name": "Joust Duffle Bag"
+            },
+            {
+              "uid": "MTA=",
+              "name": "Savvy Shoulder Tote"
+            },
+            {
+              "uid": "Mg==",
+              "name": "Strive Shoulder Pack"
+            },
+            {
+              "uid": "NA==",
+              "name": "Wayfarer Messenger Bag"
+            },
+            {
+              "uid": "MTM=",
+              "name": "Overnight Duffle"
+            },
+            {
+              "uid": "NQ==",
+              "name": "Rival Field Messenger"
+            },
+            {
+              "uid": "MTg=",
               "name": "Pursuit Lumaflex&trade; Tone Band"
             },
             {
-              "id": 21,
+              "uid": "MjE=",
               "name": "Sprite Foam Yoga Brick"
             },
             {
-              "id": 32,
+              "uid": "MzI=",
               "name": "Sprite Stasis Ball 75 cm"
             },
             {
-              "id": 45,
+              "uid": "NDU=",
               "name": "Set of Sprite Yoga Straps"
             }
           ]
@@ -1211,7 +1801,7 @@ query {
     total_count
     items {
       sku
-      id
+      uid
       name
       image {
         url
@@ -1250,19 +1840,19 @@ query {
       "items": [
         {
           "sku": "24-MB01",
-          "id": 1,
+          "uid": "MQ==",
           "name": "Joust Duffle Bag",
           "image": {
-            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "url": "http://h3.test/media/catalog/product/cache/f2894681b4002ea001bba48638ea0dbc/m/b/mb01-blue-0.jpg",
             "label": "Joust Duffle Bag"
           },
           "small_image": {
-            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "url": "http://h3.test/media/catalog/product/cache/f2894681b4002ea001bba48638ea0dbc/m/b/mb01-blue-0.jpg",
             "label": "Joust Duffle Bag"
           },
           "media_gallery": [
             {
-              "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/07660f0f9920886e0f9d3257a9c68f26/m/b/mb01-blue-0.jpg",
+              "url": "http://h3.test/media/catalog/product/cache/f2894681b4002ea001bba48638ea0dbc/m/b/mb01-blue-0.jpg",
               "label": "Image"
             }
           ]
@@ -1349,6 +1939,133 @@ The following product query returns URL rewrite information about the Joust Duff
                 {
                   "name": "category",
                   "value": "4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Retrieve variant `uid` values {#variant-uid}
+
+The following query returns information about each variant of the configurable product `WSH12`. Each variant has a unique combination of color and size values. Specify the `uid` values in the `selected_options` array of the [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to indicate which variants the shopper selected.
+
+**Request:**
+
+```graphql
+{
+  products(filter: {sku: {eq: "WSH12"}}) {
+    items {
+      sku
+      ... on ConfigurableProduct {
+        variants {
+          attributes {
+            uid
+            label
+            code
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "sku": "WSH12",
+          "variants": [
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
+                  "label": "Green",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
+                  "label": "Purple",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4",
+                  "label": "Red",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
+                  "label": "Green",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
+                  "label": "Purple",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4",
+                  "label": "Red",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
                 }
               ]
             }

@@ -1,15 +1,17 @@
 ---
-group: installation-guide
 title: Required PHP settings
 functional_areas:
   - Install
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html
+layout: migrated
 ---
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
-{% include install/php-versions-2.4.md %}
+{:.bs-callout-info}
+See [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of PHP.
 
 ## Verify PHP is installed {#centos-verify-php}
 
@@ -36,9 +38,8 @@ On CentOS, [additional steps may be required][].
 
 ## Verify installed extensions
 
-Magento requires a set of extensions to be installed:
+Magento requires a set of extensions to be installed.
 
-<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 {:.procedure}
@@ -51,17 +52,16 @@ To verify installed extensions:
    ```
 
 1. Verify that all required extensions are installed.
-
 1. Add any missing modules using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.4 modules can be added with:
 
    ```bash
     yum -y install php74u-pdo php74u-mysqlnd php74u-opcache php74u-xml php74u-gd php74u-devel php74u-mysql php74u-intl php74u-mbstring php74u-bcmath php74u-json php74u-iconv php74u-soap
    ```
 
-{:.bs-callout-info}
-The `bcmath` extension is required for {{site.data.var.ee}} only.
-
 ## Check PHP settings
+
+{:.bs-callout-warning}
+If you are using PHP 7.4.20, set `pcre.jit=0` in your `php.ini` file. This will get around a PHP [bug](https://bugs.php.net/bug.php?id=81101) that prevents CSS from loading.
 
 -  Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
@@ -86,9 +86,9 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
 
    These settings allow PHP processes to cache paths to files instead of looking them up each time a page loads. See [Performance Tuning](https://www.php.net/manual/en/ini.core.php) in the PHP documentation.
 
--  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments){:target="_blank"}, which is required for Magento 2.1 and later.
+-  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments), which is required for Magento 2.1 and later.
 
-   We recommend you enable the [PHP OPcache](https://www.php.net/manual/en/book.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
+   We recommend you enable the [PHP OPcache](https://www.php.net/manual/en/book.opcache.php) for performance reasons. The OPcache is enabled in many PHP distributions.
 
    Magento 2.1 and later use PHP code comments for code generation.
 
@@ -141,7 +141,7 @@ If you have more than one `opcache.ini`, modify all of them.
 To set PHP options:
 
 1. Open a `php.ini` in a text editor.
-1. Locate your server's time zone in the available [time zone settings](https://php.net/manual/en/timezones.php){:target="_blank"}
+1. Locate your server's time zone in the available [time zone settings](https://php.net/manual/en/timezones.php)
 1. Locate the following setting and uncomment it if necessary:
 
    ```conf
@@ -194,6 +194,16 @@ To set `opcache.ini` options:
    -  Apache, Ubuntu: `service apache2 restart`
    -  Apache, CentOS: `service httpd restart`
    -  nginx, Ubuntu and CentOS: `service nginx restart`
+
+## Troubleshooting
+
+See the following {{site.data.var.ee}} Support articles for help troubleshooting PHP problems:
+
+-  [PHP version error or 404 error when accessing Magento in browser](https://support.magento.com/hc/en-us/articles/360033117152-PHP-version-error-or-404-error-when-accessing-Magento-in-browser)
+-  [PHP settings errors](https://support.magento.com/hc/en-us/articles/360034599631-PHP-settings-errors)
+-  [PHP mcrypt extension not installed properly](https://support.magento.com/hc/en-us/articles/360034280132-PHP-mcrypt-extension-not-installed-properly-)
+-  [PHP version readiness check issues](https://support.magento.com/hc/en-us/articles/360033546411)
+-  [Common PHP Fatal Errors and solutions](https://support.magento.com/hc/en-us/articles/360030568432)
 
 <!-- Link Definitions -->
 

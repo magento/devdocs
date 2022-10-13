@@ -3,6 +3,8 @@ group: frontend-developer-guide
 title: Translations overview
 functional_areas:
   - Frontend
+migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/
+layout: migrated
 ---
 
 The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.
@@ -22,7 +24,7 @@ A *translation dictionary* is a comma-separated value (.csv) file with at least 
 "Address %1 of %2","Adresse %1 von %2"
 ```
 
-*UI text strings* are the text elements in the Magento Admin, including field names, instructions, notifications, and table and grid labels. When localizing Magento, you replace these strings with translation dictionary content.
+*UI text strings* are the text elements in the Admin, including field names, instructions, notifications, and table and grid labels. When localizing Magento, you replace these strings with translation dictionary content.
 
 A *language package* is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. [More information about language packages](#m2devgde-xlate-languagepack).
 
@@ -44,7 +46,7 @@ Localizing Magento storefronts and the Admin panel gives your company global pre
       Use and distribute the dictionary as a standalone component (similar to modules and themes).
 
 *  Customize the default strings in Magento. For example, changing "Add to Wish List" to "Wish List".
-*  Use ready-to-use language packages prepared by other users or create your own. The [Magento Marketplace] offers language packs to download and install.
+*  Use ready-to-use language packages prepared by other users or create your own. The [Commerce Marketplace] offers language packs to download and install.
 *  Localize strings based on existing, or parent, translations using [language inheritance].
 *  Customize your translations further by creating more than one version of a translation for the same language to cover dialects and different phrasing.
 *  Contribute to [Magento translations](#translations-project) through [Magento CrowdIn project] with Magento Community Engineering. We encourage translation contributions and efforts in the project for future language packs.
@@ -148,7 +150,7 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 Community Engineering accepts translation contributions through the [Magento CrowdIn project] to localize all UI strings. Various Meet Magento and Contribution Day events include developers contributing translations.
 
 1. Create a [CrowdIn account] and join the [Magento CrowdIn project].
-1. Browse and select a language. A percentage displays tracking translation progress overall and per section of the Magento Admin.
+1. Browse and select a language. A percentage displays tracking translation progress overall and per section of the Admin.
 1. Expand and locate an area of UI text strings to translate. Strings marked red need a translation, and marked green have existing translations.
 1. Enter or review translations for strings as described in the [CrowdIn knowledge base].
 
@@ -176,9 +178,9 @@ If you need help understanding the context or meaning of a UI string, or have qu
 [CrowdIn account]: https://crowdin.com/join
 [CrowdIn knowledge base]: https://support.crowdin.com/online-editor
 [engcom@magento.com]: mailto:engcom@magento.com
-[self signup]: https://tinyurl.com/engcom-slack
-[Translations Slack channel]: https://magentocommeng.slack.com/messages/CD97DKBHS
-[Magento Marketplace]: https://marketplace.magento.com/catalogsearch/result/?q=language%20packs#q=language%20pack&idx=m2_cloud_prod_default_products&p=0&nR%5Bvisibility_search%5D%5B%3D%5D%5B0%5D=1
+[self signup]: https://opensource.magento.com/slack
+[Translations Slack channel]: https://magentocommeng.slack.com/archives/CD97DKBHS
+[Commerce Marketplace]: https://marketplace.magento.com/catalogsearch/result/?q=language%20packs#q=language%20pack&idx=m2_cloud_prod_default_products&p=0&nR%5Bvisibility_search%5D%5B%3D%5D%5B0%5D=1
 [Conventional notations for paths to modules and themes]: {{page.baseurl}}/frontend-dev-guide/conventions.html
 [Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
 [Translate theme strings]: {{page.baseurl}}/frontend-dev-guide/translations/translate_theory.html

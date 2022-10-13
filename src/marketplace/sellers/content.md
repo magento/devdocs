@@ -1,11 +1,13 @@
 ---
 group: marketplace-sellers
 title: Extension content
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/content/
+layout: migrated
 ---
 
 The content that accompanies your extension listing is derived from the profile of the extension or theme, and information in the developer\'s company profile.
 
--  All content that is associated with a Magento Marketplace listing must be free of offensive or discriminatory language, sexual content, or nudity.
+-  All content that is associated with a Commerce Marketplace listing must be free of offensive or discriminatory language, sexual content, or nudity.
 -  Your content must not misuse the Magento name and its trademarks, or misrepresent the Magento brand. To learn more, see our [branding guidelines]({{ site.baseurl }}/marketplace/sellers/branding.html).
 -  Do not promote additional services and extensions in your Marketplace listing and Company Bio.
 -  The extension listing must accurately describe the product, including the description and overview information, version compatibility, and category selection.
@@ -15,7 +17,7 @@ The content that accompanies your extension listing is derived from the profile 
 
 ## Extension profile
 
-Pay special attention to the following fields in your extension profile, because they provide the content for your listing on Magento Marketplace.
+Pay special attention to the following fields in your extension profile, because they provide the content for your listing on Commerce Marketplace.
 
 ### Long description
 
@@ -48,7 +50,7 @@ The extension title appears in the **Version Title** field of the extension prof
 
 Any additional fees or subscription pricing — including fees charged by a third-party company for integrated services — must be included in the opening paragraph in boldface text.
 
-The extension price that is listed on Magento Marketplace must match the price that is listed on the developer website. The minimum price for a paid extension is $25.
+The extension price that is listed on Commerce Marketplace must match the price that is listed on the developer website. The minimum price for a paid extension is $25.
 
 ### Screenshots
 

@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-overview.html
+layout: migrated
 ---
 
 A single instance of the {{site.data.var.ee}} software enables you to start multiple websites or store views that use different attributes and content, such as:
@@ -15,7 +17,7 @@ A single instance of the {{site.data.var.ee}} software enables you to start mult
 -  Products
 -  Currencies
 
-This flexible solution enables one Magento codebase and [Magento Admin](https://glossary.magento.com/magento-admin) to administer and display different stores. You configure the websites, stores, and store views in the Magento Admin panel. Use certain variables in virtual hosts to start the Magento application using these websites or store views.
+This flexible solution enables one Magento codebase and [Admin](https://glossary.magento.com/magento-admin) to administer and display different stores. You configure the websites, stores, and store views in the Admin. Use certain variables in virtual hosts to start the Magento application using these websites or store views.
 
 A typical use is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another set of categories and products on a separate domain in a different language.
 
@@ -46,6 +48,6 @@ Each website and each store view must have a unique identifier. This identifier 
 
 The following is a summary of the tasks you must perform:
 
-1. [Set up websites, stores, and store views in the Magento Admin.]({{page.baseurl}}/config-guide/multi-site/ms_websites.html)
+1. [Set up websites, stores, and store views in the Admin.]({{page.baseurl}}/config-guide/multi-site/ms_websites.html)
 1. Create a virtual host to load many websites or one virtual host per Magento website or store view to allow specific directives for each store.
 1. Pass the values of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` to the web server.

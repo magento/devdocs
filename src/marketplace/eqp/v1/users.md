@@ -1,6 +1,8 @@
 ---
 group: marketplace-api
 title: Users
+migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/users/
+layout: migrated
 ---
 
 The `users` resource accesses and updates your user profile. You can also access your sales reports.
@@ -25,7 +27,11 @@ GET /rest/v1/users/:mage_id?style=summary
 By default, requests for profile data return all fields.
 You can limit the amount of data that the request returns by using the `style=summary` option.
 
-The following example shows the request/response body for retrieving all profile data:
+The following example shows the request/response body for retrieving all profile data.
+
+|Selected Fields|Type|Description|
+|-------------|-----|-----------------|
+|send_newsletter|boolean|Whether to receive emails about policies and announcements|
 
 **Request:**
 
@@ -56,6 +62,7 @@ curl -X GET \
             "malware_status": "pass"
         },
 
+        "send_newsletter": true,
         "tos_accepted_version": "1.0",
         "tos_accepted_date": "2018-11-16 01:23:45",
         "is_company": false,
@@ -68,8 +75,8 @@ curl -X GET \
         "taxpayer_type": 2,
         "tax_review_status": 3,
         "tax_withhold_percent": 25,
-        "extension_share_percent": 70,
-        "theme_share_percent": 70,
+        "extension_share_percent": 85,
+        "theme_share_percent": 85,
         "install_share_percent": 100,
         "support_share_percent": 100,
         "privacy_policy_url": "https://www.example.com/privacy",
@@ -191,8 +198,8 @@ The following example shows a request to update the personal profile bio field:
 
 The `action` field specifies which update operation to perform:
 
-*  `submit` --- Once your profile is complete, publishes the profile to the Magento Marketplace [partners page](https://marketplace.magento.com/partners.html).
-*  `draft` --- The update is saved on the Marketplace Developer Portal, but not published to the Magento Marketplace.
+*  `submit` --- Once your profile is complete, publishes the profile to the Commerce Marketplace [partners page](https://marketplace.magento.com/partners.html).
+*  `draft` --- The update is saved on the Marketplace Developer Portal, but not published to the Commerce Marketplace.
 
 **Request:**
 

@@ -34,10 +34,20 @@ If the `schema_version` for your module is found in the `setup_module` table, Ma
 **Example:** InstallSchema.php
 
 ```php
-class VendorName\ModuleName\Setup\InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace VendorName\ModuleName\Setup;
+
+use Magento\Framework\Setup\InstallSchemaInterface;
+
+class InstallSchema implements InstallSchemaInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
@@ -58,10 +68,20 @@ The purpose of this class is to update the database structure or apply patches.
 **Example:** UpgradeSchema.php
 
 ```php
-class \VendorName\ModuleName\Setup\UpgradeSchema implements \Magento\Framework\Setup\UpgradeSchemaInterface
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace VendorName\ModuleName\Setup;
+
+use Magento\Framework\Setup\UpgradeSchemaInterface;
+
+class UpgradeSchema implements UpgradeSchemaInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function upgrade(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
@@ -82,10 +102,20 @@ This class makes final modifications to the database schema after it has been in
 **Example:** Recurring.php
 
 ```php
-class \VendorName\ModuleName\Setup\Recurring implements \Magento\Framework\Setup\InstallSchemaInterface
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace VendorName\ModuleName\Setup;
+
+use Magento\Framework\Setup\InstallSchemaInterface;
+
+class Recurring implements InstallSchemaInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
@@ -110,10 +140,20 @@ The purpose of this class is to populate the database with initial data.
 **Example:** InstallData.php
 
 ```php
-class \VendorName\ModuleName\Setup\InstallData implements \Magento\Framework\Setup\InstallDataInterface
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace VendorName\ModuleName\Setup;
+
+use Magento\Framework\Setup\InstallDataInterface;
+
+class InstallData implements InstallDataInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
@@ -134,10 +174,20 @@ The purpose of this class is to fix corrupted data or populate a new data field 
 **Example:** UpgradeData.php
 
 ```php
-class \VendorName\ModuleName\Setup\UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace VendorName\ModuleName\Setup;
+
+use Magento\Framework\Setup\UpgradeDataInterface;
+
+class UpgradeData implements UpgradeDataInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
@@ -158,10 +208,20 @@ This class makes final modifications to the database store after data has been i
 **Example:** RecurringData.php
 
 ```php
-class \VendorName\ModuleName\Setup\RecurringData implements \Magento\Framework\Setup\InstallDataInterface
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace VendorName\ModuleName\Setup;
+
+use Magento\Framework\Setup\InstallDataInterface;
+
+class RecurringData implements InstallDataInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
@@ -178,6 +238,12 @@ If your installation or upgrade logic spans multiple classes, pass this resource
 **Example:** [Customer module's DefaultCustomerGroupsAndAttributes.php]
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class DefaultCustomerGroupsAndAttributes implements DataPatchInterface, PatchVersionInterface
 {
     /**
@@ -195,13 +261,13 @@ class DefaultCustomerGroupsAndAttributes implements DataPatchInterface, PatchVer
      */
     public function __construct(
         CustomerSetupFactory $customerSetupFactory,
-        \Magento\Framework\Setup\ModuleDataSetupInterface $moduleDataSetup
+        ModuleDataSetupInterface $moduleDataSetup
     ) {
         $this->customerSetupFactory = $customerSetupFactory;
         $this->moduleDataSetup = $moduleDataSetup;
     }
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
     public function apply()
@@ -234,6 +300,12 @@ Use the [`ModuleContextInterface`] to get the current module version and execute
 **Example:** [User module's UpgradeData.php]
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\User\Setup;
 
 use Magento\Framework\Encryption\Encryptor;
@@ -262,7 +334,7 @@ class UpgradeData implements UpgradeDataInterface
 
 ## Uninstall event
 
-Magento executes the uninstall event class when your module is uninstalled using the command line:
+Magento executes the uninstall event class when your module is uninstalled using the following command:
 
 ```bash
 bin/magento module:uninstall --remove-data <module_name>
@@ -277,10 +349,20 @@ In this phase, your module should remove all traces of its existence in the data
 **Example:** Uninstall.php
 
 ```php
-class \VendorName\ModuleName\Setup\Uninstall implements \Magento\Framework\Setup\UninstallInterface
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace VendorName\ModuleName\Setup;
+
+use Magento\Framework\Setup\UninstallInterface;
+
+class Uninstall implements UninstallInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function uninstall(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {

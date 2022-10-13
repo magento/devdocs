@@ -12,15 +12,16 @@ The `categoryList` query supports the following types of filters. You can specif
 
 -  Category ID
 -  Category name
+-  Parent category ID
 -  URL key
 -  URL path
 
 If you do not provide any filter input, the query returns the root category.
 
-The query returns a `CategoryTree` object. The top level of the `CategoryTree` object provides details about the queried category. This object includes the `children` attribute, which contains an array of its immediate subcategories. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options.
+The query returns a `CategoryTree` object. The top level of the `CategoryTree` object provides details about the queried category. This object includes the `children` attribute, which contains an array of its immediate subcategories.
 
 {:.bs-callout-info}
-You cannot return the entire category tree if it contains more than ten sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured.
+You cannot return the entire category tree if the total number of nodes in the request exceeds the value specified in the `queryDepth` attribute defined in the GraphQL `di.xml` file. By default, this value is 20. [Query security]({{page.baseurl}}/graphql/security-configuration.html) further describes query depths.
 
 Use the `breadcrumbs` attribute to return information about the parent categories of the queried category.
 
@@ -36,23 +37,28 @@ categoryList (
 
 ### Return the category tree of a top-level category
 
-The following query returns information about category IDs `11` and `20` and two levels of subcategories. In the sample data, category IDs `11` and `20` are assigned to the `Men` and `Women` categories, respectively.
+The following query returns information about category IDs `12` and `21` and two levels of subcategories. In the sample data, category IDs `11` and `20` are assigned to the `Men` and `Women` categories, respectively.
 
 **Request:**
 
 ```graphql
 {
-  categoryList(filters: {ids: {in: ["11", "20"]}}) {
+  categoryList(
+    filters: {
+      ids: {in: ["12", "21"]}
+      parent_id: {in: ["2"]}
+    }
+  ) {
     children_count
     children {
-      id
+      uid
       level
       name
       path
       url_path
       url_key
       children {
-        id
+        uid
         level
         name
         path
@@ -74,70 +80,70 @@ The following query returns information about category IDs `11` and `20` and two
         "children_count": "8",
         "children": [
           {
-            "id": 13,
+            "uid": "MjM=",
             "level": 3,
             "name": "Bottoms",
-            "path": "1/2/11/13",
-            "url_path": "men/bottoms-men",
-            "url_key": "bottoms-men",
+            "path": "1/2/21/23",
+            "url_path": "women/bottoms-women",
+            "url_key": "bottoms-women",
             "children": [
               {
-                "id": 18,
+                "uid": "Mjg=",
                 "level": 4,
                 "name": "Pants",
-                "path": "1/2/11/13/18",
-                "url_path": "men/bottoms-men/pants-men",
-                "url_key": "pants-men"
+                "path": "1/2/21/23/28",
+                "url_path": "women/bottoms-women/pants-women",
+                "url_key": "pants-women"
               },
               {
-                "id": 19,
+                "uid": "Mjk=",
                 "level": 4,
                 "name": "Shorts",
-                "path": "1/2/11/13/19",
-                "url_path": "men/bottoms-men/shorts-men",
-                "url_key": "shorts-men"
+                "path": "1/2/21/23/29",
+                "url_path": "women/bottoms-women/shorts-women",
+                "url_key": "shorts-women"
               }
             ]
           },
           {
-            "id": 12,
+            "uid": "MjI=",
             "level": 3,
             "name": "Tops",
-            "path": "1/2/11/12",
-            "url_path": "men/tops-men",
-            "url_key": "tops-men",
+            "path": "1/2/21/22",
+            "url_path": "women/tops-women",
+            "url_key": "tops-women",
             "children": [
               {
-                "id": 14,
+                "uid": "MjQ=",
                 "level": 4,
                 "name": "Jackets",
-                "path": "1/2/11/12/14",
-                "url_path": "men/tops-men/jackets-men",
-                "url_key": "jackets-men"
+                "path": "1/2/21/22/24",
+                "url_path": "women/tops-women/jackets-women",
+                "url_key": "jackets-women"
               },
               {
-                "id": 15,
+                "uid": "MjU=",
                 "level": 4,
                 "name": "Hoodies & Sweatshirts",
-                "path": "1/2/11/12/15",
-                "url_path": "men/tops-men/hoodies-and-sweatshirts-men",
-                "url_key": "hoodies-and-sweatshirts-men"
+                "path": "1/2/21/22/25",
+                "url_path": "women/tops-women/hoodies-and-sweatshirts-women",
+                "url_key": "hoodies-and-sweatshirts-women"
               },
               {
-                "id": 16,
+                "uid": "MjY=",
                 "level": 4,
                 "name": "Tees",
-                "path": "1/2/11/12/16",
-                "url_path": "men/tops-men/tees-men",
-                "url_key": "tees-men"
+                "path": "1/2/21/22/26",
+                "url_path": "women/tops-women/tees-women",
+                "url_key": "tees-women"
               },
               {
-                "id": 17,
+                "uid": "Mjc=",
                 "level": 4,
-                "name": "Tanks",
-                "path": "1/2/11/12/17",
-                "url_path": "men/tops-men/tanks-men",
-                "url_key": "tanks-men"
+                "name": "Bras & Tanks",
+                "path": "1/2/21/22/27",
+                "url_path": "women/tops-women/tanks-women",
+                "url_key": "tanks-women"
               }
             ]
           }
@@ -147,70 +153,70 @@ The following query returns information about category IDs `11` and `20` and two
         "children_count": "8",
         "children": [
           {
-            "id": 22,
+            "uid": "MTQ=",
             "level": 3,
             "name": "Bottoms",
-            "path": "1/2/20/22",
-            "url_path": "women/bottoms-women",
-            "url_key": "bottoms-women",
+            "path": "1/2/12/14",
+            "url_path": "men/bottoms-men",
+            "url_key": "bottoms-men",
             "children": [
               {
-                "id": 27,
+                "uid": "MTk=",
                 "level": 4,
                 "name": "Pants",
-                "path": "1/2/20/22/27",
-                "url_path": "women/bottoms-women/pants-women",
-                "url_key": "pants-women"
+                "path": "1/2/12/14/19",
+                "url_path": "men/bottoms-men/pants-men",
+                "url_key": "pants-men"
               },
               {
-                "id": 28,
+                "uid": "MjA=",
                 "level": 4,
                 "name": "Shorts",
-                "path": "1/2/20/22/28",
-                "url_path": "women/bottoms-women/shorts-women",
-                "url_key": "shorts-women"
+                "path": "1/2/12/14/20",
+                "url_path": "men/bottoms-men/shorts-men",
+                "url_key": "shorts-men"
               }
             ]
           },
           {
-            "id": 21,
+            "uid": "MTM=",
             "level": 3,
             "name": "Tops",
-            "path": "1/2/20/21",
-            "url_path": "women/tops-women",
-            "url_key": "tops-women",
+            "path": "1/2/12/13",
+            "url_path": "men/tops-men",
+            "url_key": "tops-men",
             "children": [
               {
-                "id": 23,
+                "uid": "MTU=",
                 "level": 4,
                 "name": "Jackets",
-                "path": "1/2/20/21/23",
-                "url_path": "women/tops-women/jackets-women",
-                "url_key": "jackets-women"
+                "path": "1/2/12/13/15",
+                "url_path": "men/tops-men/jackets-men",
+                "url_key": "jackets-men"
               },
               {
-                "id": 24,
+                "uid": "MTY=",
                 "level": 4,
                 "name": "Hoodies & Sweatshirts",
-                "path": "1/2/20/21/24",
-                "url_path": "women/tops-women/hoodies-and-sweatshirts-women",
-                "url_key": "hoodies-and-sweatshirts-women"
+                "path": "1/2/12/13/16",
+                "url_path": "men/tops-men/hoodies-and-sweatshirts-men",
+                "url_key": "hoodies-and-sweatshirts-men"
               },
               {
-                "id": 25,
+                "uid": "MTc=",
                 "level": 4,
                 "name": "Tees",
-                "path": "1/2/20/21/25",
-                "url_path": "women/tops-women/tees-women",
-                "url_key": "tees-women"
+                "path": "1/2/12/13/17",
+                "url_path": "men/tops-men/tees-men",
+                "url_key": "tees-men"
               },
               {
-                "id": 26,
+                "uid": "MTg=",
                 "level": 4,
-                "name": "Bras & Tanks",
-                "path": "1/2/20/21/26",
-                "url_path": "women/tops-women/tanks-women",
-                "url_key": "tanks-women"
+                "name": "Tanks",
+                "path": "1/2/12/13/18",
+                "url_path": "men/tops-men/tanks-men",
+                "url_key": "tanks-men"
               }
             ]
           }
@@ -230,11 +236,11 @@ The following query returns breadcrumb information about categories that have th
 ```graphql
 {
   categoryList(filters: {name: {match: "Tops"}}) {
-    id
+    uid
     level
     name
     breadcrumbs {
-      category_id
+      category_uid
       category_name
       category_level
       category_url_key
@@ -250,28 +256,28 @@ The following query returns breadcrumb information about categories that have th
   "data": {
     "categoryList": [
       {
-        "id": 12,
+        "uid": "MjI=",
         "level": 3,
         "name": "Tops",
         "breadcrumbs": [
           {
-            "category_id": 11,
-            "category_name": "Men",
+            "category_uid": "MjE=",
+            "category_name": "Women",
             "category_level": 2,
-            "category_url_key": "men"
+            "category_url_key": "women"
           }
         ]
       },
       {
-        "id": 21,
+        "uid": "MTM=",
         "level": 3,
         "name": "Tops",
         "breadcrumbs": [
           {
-            "category_id": 20,
-            "category_name": "Women",
+            "category_uid": "MTI=",
+            "category_name": "Men",
             "category_level": 2,
-            "category_url_key": "women"
+            "category_url_key": "men"
           }
         ]
       }

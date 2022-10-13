@@ -125,7 +125,7 @@ To ensure that the text you add in a `.js` file is collected by the i18n tool an
 1. Link the `mage/translate` library:
 
    ```javascript
-   define (['jquery', 'mage/translate'], function ($) {...});
+   define (['jquery', 'mage/translate'], function ($, $t) {...});
    ```
 
 1. Use the `$.mage.__('')` function when adding a string:
@@ -134,10 +134,22 @@ To ensure that the text you add in a `.js` file is collected by the i18n tool an
    $.mage.__('<string>');
    ```
 
-   If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:
+   or
+
+   ```javascript
+   $t('<string>');
+   ```
+
+   If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the following syntax:
 
    ```javascript
    $.mage.__('Hello %1').replace('%1', yourVariable);
+   ```
+
+   or
+
+   ```javascript
+   $t('Hello %1').replace('%1', yourVariable);
    ```
 
 In this example, the `'Hello %1'` string is added to the dictionary when the i18n tool is run.

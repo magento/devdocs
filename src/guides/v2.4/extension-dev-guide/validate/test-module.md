@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Test your component
+migrated_to: https://developer.adobe.com/commerce/php/development/validate/test-component/
+layout: migrated
 ---
 
 ## Unit and Integration Tests {#test-unit}
@@ -30,7 +32,7 @@ Test your component by deploying {{site.data.var.ce}} and adding the component t
 
 Before you publish your component, test installing it.
 
-1. [Package your component] in a GitHub repository that is accessible by the machine on which you run the [Magento Admin](https://glossary.magento.com/magento-admin).
+1. [Package your component] in a GitHub repository that is accessible by the machine on which you run the [Admin](https://glossary.magento.com/magento-admin).
 1. On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
 
     To create a static route, add a line similar to the following to your `hosts` file:
@@ -49,10 +51,9 @@ See these resources for testing in [PHP](https://glossary.magento.com/php) and v
 *  The [Magento Coding Standard] provides a set of rules and sniffs for the [PHP_CodeSniffer] tool
 *  [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program] (video) from Magento Imagine 2017
 *  [Extension Quality Program]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html) in the Magento User Guide
-*  [01 The Module Skeleton Kata] (video) by [Mage2Katas]
 
 [Magento Testing Overview]: {{ page.baseurl }}/test/testing.html
-[Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/docs/introduction.html
+[Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [register]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [Package your component]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html
 [Install your component]: {{ page.baseurl }}/install-gde/install/cli/dev_add-update.html
@@ -61,4 +62,3 @@ See these resources for testing in [PHP](https://glossary.magento.com/php) and v
 [PHP_CodeSniffer]: https://github.com/squizlabs/PHP_CodeSniffer
 [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program]: https://magento.com/resources/technical-deep-dive-how-pass-magento-marketplace-extension-quality-program
 [01 The Module Skeleton Kata]: https://www.youtube.com/watch?v=JvBWJ6Lm9MU)
-[Mage2Katas]: http://mage2katas.com/

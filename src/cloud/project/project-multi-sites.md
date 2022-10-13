@@ -8,7 +8,12 @@ functional_areas:
   - Stores
 ---
 
-You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ site.baseurl }}/cloud/configure/configure-best-practices.html#sites). The process to set up multiple stores depends on whether you choose to use unique domains or share the same domain.
+You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ site.baseurl }}/cloud/configure/configure-best-practices.html#sites).
+
+{:.bs-callout-warning}
+Catalog data expands as you increase the number of websites and stores. Depending on your project architecture, the additional stores can lead to a longer indexing process and slower response times for non-cached catalog pages. Adobe recommends that you monitor site performance closely.
+
+The process to set up multiple stores depends on whether you choose to use unique or shared domains.
 
 Multiple stores with unique domains:
 
@@ -27,11 +32,25 @@ https://store.com/second/
 {:.no-copy}
 
 {:.bs-callout-tip}
-To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL]({{site.baseurl}}/guides/v2.3/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl).
+To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL][addstorecode] in the _Config Guide_.
+
+## Add New Domains
+
+Custom domains can be added to Pro Staging and any Production environment; they cannot be added to Integration environments.
+
+The process to add a domain depends on the type of Cloud account:
+
+-  For Pro Staging and Production
+
+   Add the new domain to Fastly, see [Manage domains][], or open a support ticket to request assistance. In addition, you must open a Support ticket to request new domains to be added to a cluster.
+
+-  For Starter Production only
+
+   Add the new domain to Fastly, see [Manage domains][], or open a support ticket to request assistance. In addition, you must add the new domain to the **Domains** tab in the Project Web Interface: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
 
 ## Configure local installation
 
-To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ site.baseurl }}/guides/v2.3/config-guide/multi-site/ms_over.html).
+To configure your local installation to use multiple stores, see [Multiple websites or stores][config-multiweb] in the _Config Guide_.
 
 After successfully creating and testing the local installation to use multiple stores, you must prepare your Integration environment:
 
@@ -39,18 +58,19 @@ After successfully creating and testing the local installation to use multiple s
    -  [Routes for separate domains](#routes)
    -  [Locations for shared domains](#locations)
 1. **Set up websites, stores, and store views**—configure using the {{site.data.var.ee}} Admin UI
-1. **Modify Magento variables**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in the `magento-vars.php` file
+1. **Modify variables**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in the `magento-vars.php` file
 1. **Deploy and test environments**—deploy and test the `integration` branch
 
 {:.bs-callout-tip}
 You can also use a local {{site.data.var.mcd-prod}} environment to set up multiple websites or stores. See the Cloud Docker instructions to [Set up multiple websites or stores]({{site.baseurl}}/cloud/docker/docker-multi-website.html).
 
+### Configuration updates to Pro environments
+
+{% include cloud/note-pro-missing-self-service-options.md %}
+
 ### Configure routes for separate domains {#routes}
 
-Routes define how to process incoming URLs. Multiple stores with unique domains requires you to define each domain in the `routes.yaml` file. The way you configure routes depends on how you want your site to operate.
-
-{:.bs-callout-info}
-For Pro, you must create a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to set up routes in the Staging or Production environment.
+Routes define how to process incoming URLs. Multiple stores with unique domains require you to define each domain in the `routes.yaml` file. The way you configure routes depends on how you want your site to operate.
 
 {:.procedure}
 To configure routes in an integration environment:
@@ -75,7 +95,7 @@ To configure routes in an integration environment:
 
 ### Configure locations for shared domains {#locations}
 
-Where the routes configuration defines how the URLs are processed, the `web` property in the `.magento.app.yaml` file defines how your application is exposed to the web. Web _locations_ allows more granularity for incoming requests. For example, if your domain is `store.com`, you can use `/first` (default site) and `/second` for requests to two different stores that share the same domain.
+Where the routes configuration defines how the URLs are processed, the `web` property in the `.magento.app.yaml` file defines how your application is exposed to the web. Web _locations_ allow more granularity for incoming requests. For example, if your domain is `store.com`, you can use `/first` (default site) and `/second` for requests to two different stores that share a domain.
 
 {:.procedure}
 To configure a new web location:
@@ -180,9 +200,9 @@ In the _Admin UI_, set up your {{site.data.var.ee}} **Websites**, **Stores**, an
 
 It is important to use the same name and Code of your websites, stores, and store views from your Admin when you set up your local installation. You need these values when you update the `magento-vars.php` file.
 
-### Modify Magento variables
+### Modify variables
 
-Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using the `magento-vars.php` file located in your project root directory.
+Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using the `magento-vars.php` file in your project root directory.
 
 {:.procedure}
 To pass variables using the `magento-vars.php` file:
@@ -314,4 +334,10 @@ Push your changes to your {{site.data.var.ece}} Integration environment and test
 
 Follow the deployment process for [deploying to Staging and Production]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments.
 
-We recommend fully testing in the Staging environment prior to pushing to the Production environment. If you need to change code, make the changes in the Integration environment and begin the process to deploy across environments again.
+Adobe recommends fully testing in the Staging environment before pushing to the Production environment. Make code changes in the Integration environment and begin the process to deploy across environments again.
+
+<!-- link definitions -->
+
+[addstorecode]: {{ site.baseurl }}/guides/v2.4/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl
+[config-multiweb]: {{ site.baseurl }}/guides/v2.4/config-guide/multi-site/ms_over.html
+[Manage domains]: {{ site.baseurl }}/cloud/cdn/configure-fastly-customize-cache.html#manage-domains

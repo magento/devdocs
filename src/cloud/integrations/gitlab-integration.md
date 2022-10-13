@@ -6,13 +6,13 @@ functional_areas:
   - Setup
 ---
 
-You can configure a GitLab repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your GitLab repository with your Magento Commerce Cloud account.
+You can configure a GitLab repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your GitLab repository with your {{ site.data.var.ece }} account.
 
 {% include cloud/note-private-repo.md %}
 
 This integration enables you to:
 
--  Create a new environment when you create a branch
+-  Create an environment when you create a branch
 -  Redeploy the environment when you merge a pull request
 -  Delete the environment when you delete the branch
 
@@ -27,7 +27,7 @@ You must obtain a GitLab token and a webhook to continue the process.
 
 ## Prepare your repository
 
-You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty GitLab repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
+Clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty GitLab repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
 
 1. From the terminal, log in to your {{site.data.var.ece}} project.
 
@@ -44,7 +44,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
 1. Clone the project to your local environment.
 
    ```bash
-   magento-cloud project:get <project-ID>
+   magento-cloud project:get <project-id>
    ```
 
 1. Add your GitLab repository as a remote (assuming GitLab is used in its SaaS version).
@@ -53,11 +53,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
    git remote add origin git@gitlab.com:<user-name>/<repo-name>.git
    ```
 
-1. Delete the default `magento` remote.
-
-   ```bash
-   git remote remove magento
-   ```
+   The default name for the remote connection may be `origin` or `magento`. If `origin` exists, you can choose a different name or you can rename or delete the existing reference. See [git-remote documentation](https://git-scm.com/docs/git-remote).
 
 1. Verify that you added the GitLab remote correctly.
 
@@ -95,7 +91,7 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 -  `<your-GitLab-token>`—The personal access token you generated for GitLab
 -  `--base-url`-URL of GitLab (https://gitlab.com/ if GitLab is used in its SaaS version)
 -  `--server-project`-Project name in GitLab (part after the base url)
--  `--build-merge-requests`-—An _optional_ parameter that instructs {{site.data.var.ece}} to build a new environment for each and every merge requests (`true` by default)
+-  `--build-merge-requests`-—An _optional_ parameter that instructs {{site.data.var.ece}} to build a new environment for every merge request (`true` by default)
 -  `--merge-requests-clone-parent-data`-—An _optional_ parameter that instructs {{site.data.var.ece}} to clone the parent environment's data for merge requests (`true` by default)
 -  `--fetch-branches`—An _optional_ parameter that causes {{site.data.var.ece}} to fetch all branches from the remote (as inactive environments) (`true` by default)
 -  `--prune-branches`—An _optional_ parameter that instructs {{site.data.var.ece}} to delete branches that do not exist on the remote (`true` by default)
@@ -129,23 +125,23 @@ To enable the GitLab integration:
    +----------------------------------+---------------------------------------------------------------------------------------+
    | Property                         | Value                                                                                 |
    +----------------------------------+---------------------------------------------------------------------------------------+
-   | id                               | eolmpfizzg9lu                                                                         |
+   | id                               | <integration-id>                                                                      |
    | type                             | gitlab                                                                                |
    | token                            | ******                                                                                |
    | base_url                         | https://gitlab.com/                                                                   |
-   | project                          | my-agency/project-name                                                            |
+   | project                          | my-agency/project-name                                                                |
    | fetch_branches                   | true                                                                                  |
-   | prune_branches                   | true                                                                                 |
-   | build_merge_requests             | false                                                                                  |
-   | merge_requests_clone_parent_data | false                                                                                  |
-   | hook_url                         | https://eu-3.magento.cloud/api/projects/3txxjf32gtryos/integrations/eolmpfizzg9lu/hook |
+   | prune_branches                   | true                                                                                  |
+   | build_merge_requests             | false                                                                                 |
+   | merge_requests_clone_parent_data | false                                                                                 |
+   | hook_url                         | https://eu-3.magento.cloud/api/projects/<project-id>/integrations/<integration-id>/hook |
    +----------------------------------+---------------------------------------------------------------------------------------+
    ```
    {:.no-copy}
 
 ### Add the webhook in GitLab
 
-In order to communicate events —such as a push or merge requests— with your Cloud Git server, you need to [create a webhook](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#overview) for your GitLab repository
+In order to communicate events —such as a push or merge requests— with your Cloud Git server, you must [create a webhook](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#overview) for your GitLab repository
 
 1. In your GitLab repository, click the **Settings** tab.
 
@@ -155,23 +151,41 @@ In order to communicate events —such as a push or merge requests— with your 
 
    -  **URL**: Enter the `Hook URL` returned when you enabled the GitLab integration.
    -  **Secret Token**: Enter a verification secret if needed.
-   -  **Trigger**: Check `Merge request events` and/or `Push events` depending on your needs
-   -  **Enable SSL verification**:  You must select this option
+   -  **Trigger**: Check `Merge request events` and/or `Push events` depending on your needs.
+   -  **Enable SSL verification**:  You must select this option.
 
 1. Click **Add webhook**.
 
 ### Test the integration
 
-To verify that the integration works, make a change in the GitLab repository and use the magento-cloud CLI to pull the change into the local environment or just merge a request in GitLab. See [Test the integration]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html#test-the-integration).
+After configuring the GitLab integration, you can verify the integration is operational using the `magento-cloud` CLI:
 
-If the integration succeeds, the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-basic.html) shows the GitLab commit message and the status of the Cloud deployment:
+```bash
+magento-cloud integration:validate
+```
 
-![GitLab integration successfull]({{ site.baseurl }}/common/images/cloud/cloud_gitlab-integration-success.png)
+Or you can test it by pushing a simple change to your GitLab repository.
 
-## Create a new Cloud branch
+1. Create a test file.
 
-Use the Magento Cloud CLI `environment:push` command to create and activate a new environment. See [Create a new Cloud branch]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#create-a-new-cloud-branch).
+   ```bash
+   touch test.md
+   ```
+
+1. Commit and push the change to your GitLab repository.
+
+   ```bash
+   git add . && git commit -m "Testing GitLab integration" && git push
+   ```
+
+1. Log in to the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project deploying.
+
+![Successful GitLab integration]({{ site.baseurl }}/common/images/cloud/cloud_gitlab-integration-success.png)
+
+## Create a Cloud branch
+
+Use the `magento-cloud` CLI `environment:push` command to create and activate a new environment. See [Create a new Cloud branch]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html).
 
 ## Remove the integration
 
-Use the Magento Cloud CLI `integration:delete` command to remove the integration. See [Remove the integration]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#remove-the-integration).
+Use the `magento-cloud` CLI `integration:delete` command to remove the integration. See [Remove the integration]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#remove-the-integration).

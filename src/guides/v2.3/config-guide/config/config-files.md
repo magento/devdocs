@@ -80,7 +80,7 @@ Configuration file|Description|Stage|Configuration object
 `di.xml`|[Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) configuration|primary, global, area|[\Magento\Framework\ObjectManager\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/ObjectManager/Config/Config.php)
 `eav_attributes.xml`| Provides EAV attributes configuration | global | [\Magento\Eav\Model\Entity\Attribute\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Eav/Model/Entity/Attribute/Config.php)
 `email_templates.xml`| Email templates configuration | global | [\Magento\Email\Model\Template\Config\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/Model/Template/Config/Data.php)
-`esconfig.xml`| [Elasticsearch locale stopwords config]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html#config-create-stopwords) | global | [\Magento\Elasticsearch\Model\Adapter\Index\Config\EsConfig]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Elasticsearch/Model/Adapter/Index/Config/EsConfig.php)
+`esconfig.xml`| [Search engine locale stopwords config]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html#config-create-stopwords) | global | [\Magento\Elasticsearch\Model\Adapter\Index\Config\EsConfig]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Elasticsearch/Model/Adapter/Index/Config/EsConfig.php)
 `events.xml`|Event/observer configuration|global, area|[\Magento\Framework\Event]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Event.php)
 `export.xml`| Export entity configuration | global | [\Magento\ImportExport\Model\Export\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ImportExport/Model/Export/Config.php)
 `extension_attributes.xml`|[Extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html#extension)| global | [\Magento\Framework\Api\ExtensionAttribute\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/ExtensionAttribute/Config.php)
@@ -91,7 +91,7 @@ Configuration file|Description|Stage|Configuration object
 `module.xml`| Defines module config data and soft dependency | primary, global | [\Magento\Framework\Module\ModuleList\Loader]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Module/ModuleList/Loader.php)
 `mview.xml`| [MView configuration]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html#mview-configuration) | primary, global | [\Magento\Framework\Mview\Config\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Mview/Config/Data.php)
 `payment.xml`| Payment module configuration | primary, global | [\Magento\Payment\Model\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Model/Config.php)
-`persistent.xml`| [Magento_Persistent]({{ page.baseurl }}/mrg/ce/Persistent.html) configuration file | global | [\Magento\Persistent\Helper\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Persistent/Helper/Data.php)
+`persistent.xml`| [Magento_Persistent]({{ page.baseurl }}/mrg/module-persistent.html) configuration file | global | [\Magento\Persistent\Helper\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Persistent/Helper/Data.php)
 `pdf.xml`| PDF settings | global | [\Magento\Sales\Model\Order\Pdf\Config\Reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Pdf/Config/Reader.php)
 `product_options.xml`| Provides product options configuration | global | [\Magento\Catalog\Model\ProductOptions\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/ProductOptions/Config.php)
 `product_types.xml`| Defines product type | global | [\Magento\Catalog\Model\ProductTypes\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/ProductTypes/Config.php)
@@ -139,4 +139,4 @@ Related topics
 -  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
 
 <!-- Link definitions -->
-[RabbitMQ]: http://www.rabbitmq.com
+[RabbitMQ]: https://www.rabbitmq.com/

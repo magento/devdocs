@@ -18,9 +18,10 @@ Plugins can not be used on following:
 *  Final classes
 *  Non-public methods
 *  Class methods (such as static methods)
-*  `__construct`
+*  `__construct` and `__destruct`
 *  Virtual types
 *  Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
+*  Objects that implement `Magento\Framework\ObjectManager\NoninterceptableInterface`
 
 ## Declaring a plugin
 
@@ -95,17 +96,24 @@ Use the following method names for the `_construct` method in the plugin class:
 
 Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
 
-You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return a `null` value.
+You can use before methods to change the arguments of an observed method by returning a modified argument. If there are any arguments, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return a `null` value.
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
+
+use Magento\Catalog\Model\Product;
 
 class ProductAttributesUpdater
 {
-    public function beforeSetName(\Magento\Catalog\Model\Product $subject, $name)
+    public function beforeSetName(Product $subject, $name)
     {
         return ['(' . $name . ')'];
     }
@@ -122,11 +130,18 @@ Below is an example of an after method modifying the return value `$result` of a
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
+
+use Magento\Catalog\Model\Product;
 
 class ProductAttributesUpdater
 {
-    public function afterGetName(\Magento\Catalog\Model\Product $subject, $result)
+    public function afterGetName(Product $subject, $result)
     {
         return '|' . $result . '|';
     }
@@ -135,29 +150,37 @@ class ProductAttributesUpdater
 
 The after methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If the observed method does not return a result (`@return void`), then it passes a `null` value to the next after method.
 
-Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
+Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Auth.php):
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
+
+use Magento\Backend\Model\Auth;
+use Psr\Log\LoggerInterface;
 
 class AuthLogger
 {
     private $logger;
 
-    public function __construct(\Psr\Log\LoggerInterface $logger)
+    public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
     /**
-     * @param \Magento\Backend\Model\Auth $authModel
+     * @param Auth $authModel
      * @param null $result
      * @param string $username
      * @return void
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function afterLogin(\Magento\Backend\Model\Auth $authModel, $result, $username)
+    public function afterLogin(Auth $authModel, $result, $username)
     {
         $this->logger->debug('User ' . $username . ' signed in.');
     }
@@ -166,20 +189,28 @@ class AuthLogger
 
 After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
 
-The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
+The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Product/Action.php):
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Psr\Log\LoggerInterface;
+use Magento\Catalog\Model\Product\Action;
 
 class WebsitesLogger
 {
     private $logger;
 
-    public function __construct(\Psr\Log\LoggerInterface $logger)
+    public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
-    public function afterUpdateWebsites(\Magento\Catalog\Model\Product\Action $subject, $result, $productIds, $websiteIds)
+    public function afterUpdateWebsites(Action $subject, $result, $productIds, $websiteIds)
     {
         $this->logger->log('Updated websites: ' . implode(', ',  $websiteIds));
     }
@@ -210,11 +241,18 @@ Below is an example of an around method adding behavior before and after an obse
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
+
+use Magento\Catalog\Model\Product;
 
 class ProductAttributesUpdater
 {
-    public function aroundSave(\Magento\Catalog\Model\Product $subject, callable $proceed)
+    public function aroundSave(Product $subject, callable $proceed)
     {
         $someValue = $this->doSmthBeforeProductIsSaved();
         $returnValue = null;
@@ -238,6 +276,11 @@ For example, the following code defines a parameter of type `SomeType`, which is
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Model;
 
 class MyUtility
@@ -253,13 +296,20 @@ You should wrap this method with a plugin:
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
+
+use My\Module\Model\MyUtility;
 
 class MyUtilityUpdater
 {
-    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, SomeType $obj = null)
+    public function aroundSave(MyUtility $subject, callable $proceed, SomeType $obj = null)
     {
-      //do something
+        //do something
     }
 }
 ```
@@ -270,14 +320,21 @@ You are responsible for forwarding the arguments from the plugin to the `proceed
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
+
+use My\Module\Model\MyUtility;
 
 class MyUtilityUpdater
 {
-    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, ...$args)
+    public function aroundSave(MyUtility $subject, callable $proceed, ...$args)
     {
-      //do something
-      $proceed(...$args);
+        //do something
+        $proceed(...$args);
     }
 }
 ```
@@ -367,9 +424,17 @@ With these methods:
 `PluginB`::`aroundDispatch()` defines the [$next]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php) argument with a `callable` type. For example:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\App\Action\Action;
+
 class PluginB
 {
-    public function aroundDispatch(\Magento\Framework\App\Action\Action $subject, callable $next, ...$args)
+    public function aroundDispatch(Action $subject, callable $next, ...$args)
     {
         // The first half of code goes here
         // ...
@@ -411,12 +476,20 @@ Using these methods:
 | **around**    |                  | aroundDispatch() |                  |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
 
-`PluginB`::`aroundDispatch()` does not define the ($next)[{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php] argument with a `callable` type. For example:
+`PluginB`::`aroundDispatch()` does not define the [$next]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php) argument with a `callable` type. For example:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\App\Action\Action;
+
 class PluginB
 {
-    public function aroundDispatch(\Magento\Framework\App\Action\Action $subject, $next, $result)
+    public function aroundDispatch(Action $subject, $next, $result)
     {
         // My custom code
         return $result;
@@ -502,5 +575,3 @@ Related topics
 
 *  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
 *  [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
-*  [The Plugin Integration Test Kata](http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}
-*  [The Around Interceptor Kata](http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}

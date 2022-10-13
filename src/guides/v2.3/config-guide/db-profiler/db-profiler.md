@@ -2,7 +2,7 @@
 group: configuration-guide
 title: Configure the database profiler
 contributor_name: Atish Goswami
-contributor_link: http://atishgoswami.com
+contributor_link: https://atishgoswami.com/
 functional_areas:
   - Configuration
   - System
@@ -53,7 +53,7 @@ An example follows:
 
 ## Step 2: Configure the output
 
-Configure the output in your Magento application boostrap file; this might be `<magento_root>/index.php` or it could be located in a web server virtual host configuration.
+Configure the output in your Magento application bootstrap file; this might be `<magento_root>/index.php` or it could be located in a web server virtual host configuration.
 
 The following example displays results in a three-column table:
 
@@ -63,10 +63,21 @@ The following example displays results in a three-column table:
 
 To configure the output, add the following after the `$bootstrap->run($app);` line in your bootstrap file:
 
-```php?start_inline=1
-/** @var \Magento\Framework\App\ResourceConnection $res */
-$res = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\App\ResourceConnection');
-/** @var Magento\Framework\DB\Profiler $profiler */
+```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\App\ObjectManager;
+use Magento\Framework\App\ResourceConnection;
+use Magento\Framework\DB\Profiler;
+
+/** @var ResourceConnection $res */
+$res = ObjectManager::getInstance()->get(ResourceConnection::class);
+
+/** @var Profiler $profiler */
 $profiler = $res->getConnection('read')->getProfiler();
 echo "<table cellpadding='0' cellspacing='0' border='1'>";
 echo "<tr>";
@@ -87,6 +98,6 @@ echo "</table>";
 
 ## Step 3: View the results
 
-Go to any page in your [storefront](https://glossary.magento.com/storefront) or [Magento Admin](https://glossary.magento.com/magento-admin) to view the results. A sample follows:
+Go to any page in your [storefront](https://glossary.magento.com/storefront) or [Admin](https://glossary.magento.com/magento-admin) to view the results. A sample follows:
 
 ![Sample database profiler results]({{ site.baseurl }}/common/images/config_db-profiler-results.png){:width="800px"}

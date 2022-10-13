@@ -35,7 +35,7 @@ where
 
    *  Setting up cron: the web server user or another user.
 
-      In this example, we use the web server user but the choice of user is up to you.
+      In this example, we use the web server user, but the choice of user is up to you.
 
    *  Setting up Elasticsearch: the user is named `magento_elasticsearch` in this example
 

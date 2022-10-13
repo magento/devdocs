@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Select From List
 ---
-In the Magento Admin, user will often times need to select item(s) from a list of items. This pattern address the variations of list pattern.
+In the Admin, user will often times need to select item(s) from a list of items. This pattern address the variations of list pattern.
 
 ## When to Use
 
@@ -38,7 +38,7 @@ The advantage of a list box is that it exposes more options to the user. The lis
 
 The form drop down, scroll area, and selections should be accessible via keyboard.
 
-Follow this form control accessibility guideline: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms)
+Follow this form control accessibility guideline: [https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms)
 
 ## Assets
 

@@ -1,11 +1,12 @@
 ---
-group: installation-guide
 title: Install optional sample data modules
 functional_areas:
   - Install
   - System
   - Setup
 redirect_from: /guides/v2.4/install-gde/install/web/install-web-sample-data.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/sample-data/overview.html
+layout: migrated
 ---
 
 {% include install/sampledata/sample-data-intro.md %}

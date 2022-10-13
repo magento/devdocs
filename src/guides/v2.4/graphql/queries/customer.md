@@ -5,7 +5,7 @@ title: customer query
 
 The `customer` query returns information about the logged-in customer, store credit history and customer's wishlist.
 
-To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
+To return or modify information about a customer, we recommend you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication](https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-session).
 
 ## Syntax
 
@@ -64,7 +64,7 @@ The following call returns information about the logged-in customer. Provide the
          "region": {
            "region_code": "MI",
            "region": "Michigan"
-         }
+         },
          "postcode": "78758",
          "country_code": "US",
          "telephone": "512 555-1212"
@@ -74,7 +74,7 @@ The following call returns information about the logged-in customer. Provide the
   }
 }
 ```
-### Retrieve a summary of the customer's order history
+### Retrieve a summary of the customer's order history {#order-history}
 
 The following example returns a summary of the logged-in customer's previous orders.
 
@@ -172,7 +172,7 @@ query {
 }
 ```
 
-### Retrieve detailed information about a specific order
+### Retrieve detailed information about a specific order {#order-details}
 
 The following example returns details about one of the customer's previous orders.
 
@@ -209,6 +209,7 @@ These topics contain examples with fragments and provide even more details:
           quantity_ordered
           quantity_invoiced
           quantity_shipped
+          eligible_for_return
         }
         carrier
         shipments {
@@ -289,10 +290,9 @@ These topics contain examples with fragments and provide even more details:
         "items": [
           {
             "id": "MQ==",
-            "carrier": "Flat Rate",
             "number": "000000001",
-            "order_date": "2020-03-18 17:25:20",
-            "status": "Complete",
+            "order_date": "2020-11-14 22:25:48",
+            "status": "Processing",
             "items": [
               {
                 "product_name": "Iris Workout Top",
@@ -304,9 +304,11 @@ These topics contain examples with fragments and provide even more details:
                 },
                 "quantity_ordered": 1,
                 "quantity_invoiced": 1,
-                "quantity_shipped": 1
+                "quantity_shipped": 1,
+                "eligible_for_return": true
               }
             ],
+            "carrier": "Flat Rate",
             "shipments": [
               {
                 "id": "MDAwMDAwMDAx",
@@ -479,27 +481,24 @@ query {
 ```
 ### Retrieve the customer's wish list
 
-The following query returns the customer's wish list:
+The following query returns the customer's wish lists. {{site.data.var.ee}} allows customers to have multiple wish lists.
 
 **Request:**
 
 ```graphql
 {
   customer {
-    wishlist {
-      items {
-        id
-        description
-        qty
-        product {
-          sku
-          name
-          price_range {
-            maximum_price {
-              regular_price {
-                value
-              }
-            }
+    wishlists {
+      id
+      name
+      items_count
+      items_v2 {
+        items {
+          id
+          product {
+            uid
+            name
+            sku
           }
         }
       }
@@ -514,42 +513,146 @@ The following query returns the customer's wish list:
 {
   "data": {
     "customer": {
-      "wishlist": {
-        "items": [
-          {
-            "id": 1,
-            "description": "I need this",
-            "qty": 1,
-            "product": {
-              "sku": "24-WG080",
-              "name": "Sprite Yoga Companion Kit",
-              "price_range": {
-                "maximum_price": {
-                  "regular_price": {
-                    "value": 77
-                  }
+      "wishlists": [
+        {
+          "id": "1",
+          "name": "Vacation Wants",
+          "items_count": 10,
+          "items_v2": {
+            "items": [
+              {
+                "id": "1",
+                "product": {
+                  "uid": "MTM=",
+                  "name": "Overnight Duffle",
+                  "sku": "24-WB07"
+                }
+              },
+              {
+                "id": "2",
+                "product": {
+                  "uid": "MTA=",
+                  "name": "Savvy Shoulder Tote",
+                  "sku": "24-WB05"
+                }
+              },
+              {
+                "id": "3",
+                "product": {
+                  "uid": "MTE=",
+                  "name": "Endeavor Daytrip Backpack",
+                  "sku": "24-WB06"
+                }
+              },
+              {
+                "id": "4",
+                "product": {
+                  "uid": "MTA5OA==",
+                  "name": "Miko Pullover Hoodie",
+                  "sku": "WH04"
+                }
+              },
+              {
+                "id": "5",
+                "product": {
+                  "uid": "MTIyNg==",
+                  "name": "Stellar Solar Jacket",
+                  "sku": "WJ01"
+                }
+              },
+              {
+                "id": "6",
+                "product": {
+                  "uid": "MTcyMg==",
+                  "name": "Nora Practice Tank",
+                  "sku": "WT03"
+                }
+              },
+              {
+                "id": "7",
+                "product": {
+                  "uid": "MTY5MA==",
+                  "name": "Bella Tank",
+                  "sku": "WT01"
+                }
+              },
+              {
+                "id": "17",
+                "product": {
+                  "uid": "MTg=",
+                  "name": "Pursuit Lumaflex&trade; Tone Band",
+                  "sku": "24-UG02"
+                }
+              },
+              {
+                "id": "18",
+                "product": {
+                  "uid": "MQ==",
+                  "name": "Joust Duffle Bag",
+                  "sku": "24-MB01"
+                }
+              },
+              {
+                "id": "20",
+                "product": {
+                  "uid": "NTI=",
+                  "name": "Sprite Yoga Companion Kit",
+                  "sku": "24-WG080"
                 }
               }
-            }
-          },
-          {
-            "id": 2,
-            "description": null,
-            "qty": 1,
-            "product": {
-              "sku": "24-UG04",
-              "name": "Zing Jump Rope",
-              "price_range": {
-                "maximum_price": {
-                  "regular_price": {
-                    "value": 12
-                  }
-                }
-              }
-            }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "id": "2",
+          "name": "Lose the Muffintop",
+          "items_count": 5,
+          "items_v2": {
+            "items": [
+              {
+                "id": "8",
+                "product": {
+                  "uid": "NDk=",
+                  "name": "Advanced Pilates & Yoga (Strength)",
+                  "sku": "240-LV08"
+                }
+              },
+              {
+                "id": "10",
+                "product": {
+                  "uid": "MTQ1MA==",
+                  "name": "Layla Tee",
+                  "sku": "WS04"
+                }
+              },
+              {
+                "id": "11",
+                "product": {
+                  "uid": "MTU2Mg==",
+                  "name": "Radiant Tee",
+                  "sku": "WS12"
+                }
+              },
+              {
+                "id": "12",
+                "product": {
+                  "uid": "MTYxMA==",
+                  "name": "Electra Bra Top",
+                  "sku": "WB01"
+                }
+              },
+              {
+                "id": "13",
+                "product": {
+                  "uid": "MTY0Mg==",
+                  "name": "Celeste Sports Bra",
+                  "sku": "WB03"
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }
@@ -561,6 +664,12 @@ The following query returns the customer's wish list:
 The `customer` object can contain the following attributes:
 
 {% include graphql/customer-output-24.md %}
+
+### CompareList attributes {#CompareList}
+
+The `CompareList` object can contain the following attributes:
+
+{% include graphql/compare-list-output.md %}
 
 ### CustomerAddress attributes {#customerAddressOutput}
 
@@ -616,38 +725,26 @@ Attribute |  Data Type | Description
 
 {% include graphql/customer-orders-output.md %}
 
+#### ProductReview object {#ProductReview}
+
+{% include graphql/product-review.md %}
+
 #### ProductReviews object {#ProductReviews}
 
 `ProductReviews` contains an array of reviews written about the product.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [ProductReview]! | An array of product reviews
+`items` | [[ProductReview]](#ProductReview)! | An array of product reviews
 `page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
 
-#### ProductReview object {#ProductReview}
+### Return attributes {#Return}
 
-{% include graphql/product-review.md %}
+{% include graphql/return.md %}
 
-### Wishlist attributes {#Wishlist}
+### Returns attributes {#Returns}
 
-Attribute | Data type | Description
---- | --- | ---
-`items` | [[WishlistItem](#wishlistitem)] | An array of items in the customer's wish list
-`items_count` | Int | The number of items in the wish list
-`id` | ID | The unique identifier of the wish list
-`sharing_code` | String | An encrypted code that Magento uses to link to the wish list
-`updated_at` | String | The time of the last modification to the wish list
-
-#### WishlistItem attributes {#wishlistitem}
-
-Attribute | Data type | Description
---- | --- | ---
-`added_at` | String | The time when the customer added the item to the wish list
-`description` | String | The customer's comment about this item
-`id` | Int | The wish list item ID
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
-`qty` | Float | The quantity of this wish list item
+The Returns object contains an array of [Return](#Return) objects.
 
 ### Store credit attributes
 
@@ -693,6 +790,33 @@ Attribute |  Data Type | Description
 ### Wishlist attributes {#Wishlist}
 
 {% include graphql/wishlist.md %}
+
+## B2B output attributes {#B2b}
+
+If B2B is installed the `Customer` object can contain additional information.
+
+### RequisitionListFilterInput attributes {#RequisitionListFilterInput}
+
+The `RequisitionListFilterInput` object defines filters that limit the number of requisition lists returned.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`name` | FilterMatchTypeInput | Filter by the display name of the requisition list
+`uids` | FilterEqualTypeInput | Filter requisition lists by one or more requisition list IDs
+
+### RequisitionList attributes {#RequisitionList}
+
+{% include graphql/requisition-list.md %}
+
+### RequisitionLists attributes {#RequisitionList}
+
+The RequisitionLists object contains an array of requisition lists.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [[RequisitionList]](#RequisitionList) | An array of requisition lists
+`page_info` | SearchResultPageInfo | Contains pagination metadata
+`total_count` | Int | The number of returned requisition lists
 
 ## Related topics
 

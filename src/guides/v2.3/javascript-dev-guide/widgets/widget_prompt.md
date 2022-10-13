@@ -10,7 +10,7 @@ It extends the [Magento modal widget].
 
 The prompt widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/prompt.js`].
 
-The widget can be used for implementing prompt windows for both, admin and [storefront](https://glossary.magento.com/storefront). The design patterns for the modal pop-up windows in the admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
+The widget can be used for implementing prompt windows for both, admin and [storefront](https://glossary.magento.com/storefront). The design patterns for the modal pop-up windows in the admin are described in the [Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
 
 ## Initialize the prompt widget {#prompt_init}
 
@@ -20,7 +20,7 @@ The prompt widget can be initialized with or without binding to a certain elemen
 
 ```javascript
 $('#prompt_init').prompt({
-    title: 'Prompt title',
+    title: $.mage.__('Prompt title'),
     actions: {
         confirm: function(){}, //callback on 'Ok' button click
         cancel: function(){}, //callback on 'Cancel' button click
@@ -33,12 +33,13 @@ $('#prompt_init').prompt({
 
 ```javascript
 require([
+    'jquery',
     'Magento_Ui/js/modal/prompt'
-], function(prompt) { // Variable that represents the `prompt` function
+], function($, prompt) { // Variable that represents the `prompt` function
 
     prompt({
-        title: 'Some title',
-        content: 'Some content',
+        title: $.mage.__('Some title'),
+        content: $.mage.__('Some content'),
         actions: {
             confirm: function(){},
             cancel: function(){},
@@ -223,9 +224,9 @@ The prompt widget implements the following events:
         'use strict';
 
         $('.prompt-modal-content').prompt({
-            title: 'Prompt Title',
+            title: $.mage.__('Prompt Title'),
             modalClass: 'prompt',
-            value: 'Value by default',
+            value: $.mage.__('Value by default'),
             validation: true,
             promptField: '[data-role="promptField"]',
             validationRules: ['required-entry'],
@@ -269,10 +270,10 @@ The prompt widget implements the following events:
         'use strict';
 
         prompt({
-            title: 'Prompt Title',
-            content: $('.prompt-modal-content'),
+            title: $.mage.__('Prompt Title'),
+            content: $.mage.__($('.prompt-modal-content')),
             modalClass: 'prompt',
-            value: 'Value by default',
+            value: $.mage.__('Value by default'),
             validation: true,
             promptField: '[data-role="promptField"]',
             validationRules: ['required-entry'],
@@ -308,5 +309,5 @@ The prompt widget implements the following events:
 [Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/prompt.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/prompt.js
 [`ui/template/modal/modal-prompt-content.html`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-prompt-content.html
-[Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
+[Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

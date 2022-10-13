@@ -8,7 +8,7 @@ functional_areas:
   - Standards
 ---
 
-This tutorial shows you how to add a new dynamic rows system configuration in the [Magento admin](https://glossary.magento.com/magento-admin), by extending the [Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray][0]{:target="_blank"} class.
+This tutorial shows you how to add a new dynamic rows system configuration in the [Magento admin](https://glossary.magento.com/magento-admin), by extending the [Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray][0] class.
 
 ## Step 1: Add a new system field
 
@@ -178,11 +178,11 @@ It is possible to set defaults for a dynamic row configuration, this is done by 
 Add a block to the `<default>` section of the `config.xml` file and do not include any values:
 
 ```xml
-<system>
-    <general>
+<general>
+    <quantity_ranges>
         <ranges></ranges>
-    </general>
-</system>
+    </quantity_ranges>
+</general>
 ```
 
 For each complete line of configuration, create an XML block with a repeating node that has a different value to all the others and contains XML tags for each sub-option and value.
@@ -204,8 +204,8 @@ In the following excerpt, a single row for `item1` contains 4 sub-options:
 Continue building the default block by adding 3 items to the `ranges` configuration option in the `config.xml` file:
 
 ```xml
-<system>
-    <general>
+<general>
+    <quantity_ranges>
         <ranges>
             <item1>
                 <from_qty>1</from_qty>
@@ -226,8 +226,8 @@ Continue building the default block by adding 3 items to the `ranges` configurat
                 <tax>0</tax>
             </item3>
         </ranges>
-    </general>
-</system>
+    </quantity_ranges>
+</general>
 ```
 
 To verify the default values for the configuration are correct, do the following :
@@ -254,4 +254,4 @@ The result is a new dynamic system row field in the Admin panel. If you have set
 
 ![Dynamic Rows System Config]({{ site.baseurl }}/common/images/ext-best-practices/dynamic-rows-config-result.png)
 
-[0]: {{ site.mage2bloburl }}/2.1/app/code/Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray.php
+[0]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray.php

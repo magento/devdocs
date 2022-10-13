@@ -5,6 +5,8 @@ functional_areas:
   - Configuration
   - System
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/configure-cron-jobs.html
+layout: migrated
 ---
 
 ## Overview of cron {#config-cli-cron-overview}
@@ -16,9 +18,9 @@ To run cron in a web browser, see [Secure cron.php to run in a browser]({{ page.
 
 This section discusses how to create or remove your Magento crontab (that is, the configuration for Magento cron jobs).
 
-{% include config/setup-cron_2.4_about.md %}
+{% include config/setup-cron_about.md %}
 
-{% include config/setup-cron_2.4_how-to.md %}
+{% include config/setup-cron_how-to.md %}
 
 ### Remove the Magento crontab {#config-cron-remove}
 
@@ -26,7 +28,7 @@ You should remove the Magento crontab only before uninstalling the Magento appli
 
 To remove the Magento crontab:
 
-1. Log in as or switch to the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in as or switch to the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Change to the Magento installation directory.
 1. Enter the following command:
 

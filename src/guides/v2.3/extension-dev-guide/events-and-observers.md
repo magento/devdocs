@@ -23,6 +23,11 @@ To dispatch an event, call the `dispatch` function of the event manager class an
 The following example shows you how to dispatch an event with and without an array of data.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace MyCompany\MyModule;
 
@@ -30,27 +35,27 @@ use Magento\Framework\Event\ManagerInterface as EventManager;
 
 class MyClass
 {
-  /**
-   * @var EventManager
-   */
-  private $eventManager;
+    /**
+     * @var EventManager
+     */
+    private $eventManager;
 
-  /*
-   * @param \Magento\Framework\Event\ManagerInterface as EventManager
-   */
-  public function __construct(EventManager $eventManager)
-  {
-    $this->eventManager = $eventManager;
-  }
+    /*
+     * @param EventManager $eventManager
+     */
+    public function __construct(EventManager $eventManager)
+    {
+        $this->eventManager = $eventManager;
+    }
 
-  public function something()
-  {
-    $eventData = null;
-    // Code...
-    $this->eventManager->dispatch('my_module_event_before');
-    // More code that sets $eventData...
-    $this->eventManager->dispatch('my_module_event_after', ['myEventData' => $eventData]);
-  }
+    public function something()
+    {
+        $eventData = null;
+        // Code...
+        $this->eventManager->dispatch('my_module_event_before');
+        // More code that sets $eventData...
+        $this->eventManager->dispatch('my_module_event_after', ['myEventData' => $eventData]);
+    }
 }
 
 ```
@@ -59,9 +64,31 @@ class MyClass
 
 Custom events can be dispatched by simply passing in a unique event name to the event manager when you call the `dispatch` function. Your unique event name is referenced in your module's `events.xml` file where you specify which observers will react to that event.
 
+You can make the custom event `my_module_event_after` subscribable by declaring the `MyCompany/MyModule/etc/events.xml` file as follows:
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="my_module_event_after">
+        <observer name="my_module_event_after_observer" instance="MyCompany\MyModule\Observer\MyEvent"/>
+    </event>
+</config>
+```
+
 ### Event areas
 
 Generally, the location of the `events.xml` file will be under the `<module-root>/etc` directory. Observers that are associated with events here will watch for these events globally. The `events.xml` file can also be defined under the `<module-root>/etc/frontend` and `<module-root>/etc/adminhtml` directories to configure observers to only watch for events in those specific areas.
+
+Declare the observer in the appropriate area. The `global` area allows the observer to run in all areas (`adminhtml`, `crontab`, `frontend`, `graphql`, `webapi_rest`, `webapi_soap`).
+
+| Area | File location |
+| --- | --- |
+| `global` | `<module-dir>/etc/events.xml` |
+| `adminhtml` | `<module-dir>/etc/adminhtml/events.xml` |
+| `crontab` | `<module-dir>/etc/crontab/events.xml` |
+| `frontend` | `<module-dir>/etc/frontend/events.xml` |
+| `graphql` | `<module-dir>/etc/graphql/events.xml` |
+| `webapi_rest` | `<module-dir>/etc/webapi_rest/events.xml` |
+| `webapi_soap` | `<module-dir>/etc/webapi_soap/events.xml` |
 
 ## Observers
 
@@ -74,45 +101,59 @@ To create an observer, you must place your class file under your `<module-root>/
 Below is an example of the basic observer class structure:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace MyCompany\MyModule\Observer;
 
+use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 
 class MyObserver implements ObserverInterface
 {
-  public function __construct()
-  {
-    // Observer initialization code...
-    // You can use dependency injection to get any class this observer may need.
-  }
+    public function __construct()
+    {
+        // Observer initialization code...
+        // You can use dependency injection to get any class this observer may need.
+    }
 
-  public function execute(\Magento\Framework\Event\Observer $observer)
-  {
-    // Observer execution code...
-  }
+    public function execute(Observer $observer)
+    {
+        // Observer execution code...
+    }
 }
 ```
 
 One of the more powerful feature of observers is that they are able to use parameters passed into the event when it was dispatched. Below is an example of an observer obtaining data passed in when the event was dispatched.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace MyCompany\MyModule\Observer;
 
+use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 
 class AnotherObserver implements ObserverInterface
 {
-  public function __construct()
-  {
-    // Observer initialization code...
-    // You can use dependency injection to get any class this observer may need.
-  }
+    public function __construct()
+    {
+        // Observer initialization code...
+        // You can use dependency injection to get any class this observer may need.
+    }
 
-  public function execute(\Magento\Framework\Event\Observer $observer)
-  {
-    $myEventData = $observer->getData('myEventData');
-    // Additional observer execution code...
-  }
+    public function execute(Observer $observer)
+    {
+        $myEventData = $observer->getData('myEventData');
+        // Additional observer execution code...
+    }
 }
 ```
 
@@ -127,7 +168,7 @@ The `observer` [xml](https://glossary.magento.com/xml) element has the following
 *  `disabled` - Determines whether this observer is active or not. Default value is false.
 *  `shared` - Determines the [lifestyle]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration) of the class. Default is `true`.
 
-{: .bs-callout .bs-callout-warning}
+{: .bs-callout-warning}
 The observer name must be unique, or an override will occur.
 
 Below is an example of how to assign observers to watch certain events:

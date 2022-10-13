@@ -3,6 +3,8 @@ group: web-api
 title: Authentication
 functional_areas:
   - Integration
+migrated_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/
+layout: migrated
 ---
 
 Magento allows developers to define web [API](https://glossary.magento.com/api) resources and their permissions in the `webapi.xml` configuration file. See [Services as Web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html).
@@ -12,7 +14,7 @@ Before you can make [web API](https://glossary.magento.com/web-api) calls, you m
 ## Accessible resources
 
 The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
-Each administrator or integration user can have a unique set of permissions which is configured in the [Magento Admin](https://glossary.magento.com/magento-admin).
+Each administrator or integration user can have a unique set of permissions which is configured in the [Admin](https://glossary.magento.com/magento-admin).
 Permissions required to access particular resource are configured in the `webapi.xml` file. This table lists the resources that each user type can access:
 
 User type | Accessible resources (defined in webapi.xml)
@@ -83,10 +85,10 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
 
 For example, in the preceding `webapi.xml` for the customerGroups resource, only a user with `Magento_Customer::group` authorization can `GET /V1/customerGroups/:id`. On the other hand, you can create a customer using `POST /V1/customers` anonymously (or by a guest).
 
-[Authorization](https://glossary.magento.com/authorization) is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.
+[Authorization](https://glossary.magento.com/authorization) is granted to either an administrator (or an integration) defined in the Admin with the customer group selected as one of the resources in the ACL tree.
 
 {:.bs-callout-info}
-A guest or anonymous is a special permission that doesn't need to be defined in `acl.xml` (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in `webapi.xml` can be accessed without the need for authentication.
+A guest or anonymous is a special permission that doesn't need to be defined in `acl.xml` (and will not show up in the permissions tree in the Admin). It just indicates that the current resource in `webapi.xml` can be accessed without the need for authentication.
 <br/><br/>
 Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, `GET /V1/customers/me` fetches the logged-in customer's details. This is typically useful for JavaScript-based widgets.
 
@@ -141,14 +143,14 @@ Each type of client has a preferred authentication method. To authenticate, use 
    </tr>
    <tr>
       <td>
-         <p>JavaScript widget on the Magento storefront or Magento Admin</p>
+         <p>JavaScript widget on the Magento storefront or Admin</p>
       </td>
       <td>
-         <p>Registered users use <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-session.html">session-based authentication</a> to log in to the Magento storefront or Magento Admin.</p>
+         <p>Registered users use <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-session.html">session-based authentication</a> to log in to the Magento storefront or Admin.</p>
          <p>A session is identified by a cookie and time out after a period of inactivity. Additionally, you can have a session as a guest user without logging in.</p>
          <ol>
             <li>
-               <p>As a customer, you log in to the Magento storefront with your customer credentials. As an administrator, you log in to the Magento Admin with your administrator credentials.</p>
+               <p>As a customer, you log in to the Magento storefront with your customer credentials. As an administrator, you log in to the Admin with your administrator credentials.</p>
             </li>
             <li>
                <p>The Magento web API framework identifies you and controls access to the requested resource.
@@ -168,22 +170,7 @@ This method is a good choice for authenticating customers and Admin users in thi
 *  **Customer Token**—Use this token in applications to authorize specific customer and query data related to that customer (for example, customer details, cart, and orders).
 *  **Admin Token**—Use this token in applications to authorize an Admin user and access Admin-related APIs.
 
-[Request a token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#request-token) and then (include it in future requests)({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access).
-
-{:.bs-callout-info}
-You should use this type of authentication mechanism over HTTPS.
-
-### Integration (Bearer Authentication)
-
-This method is a good choice for integrating with a third-party system that supports this kind of authentication. You can restrict access to specific resources.
-
-Magento generates a consumer key, consumer secret, access token, and access token secret when you create an active integration (self activated).
-
-To use bearer authentication for API requests, you can use an access token. [Create an active integration]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#integration-tokens) (self activated) and [use the access token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access) in the authorization header:
-
-```bash
-curl -X GET "http://magento2ce74.loc:8080/index.php/rest/V1/customers/1" -H "Authorization: Bearer 9xvitupdkju0cabq2i3dxyg6bblqmg5h"
-```
+[Request a token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#request-token) and then include it in [future requests]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access).
 
 {:.bs-callout-info}
 You should use this type of authentication mechanism over HTTPS.
@@ -205,7 +192,7 @@ Proceed to the authentication method for your preferred client:
 
 *  Third-party application. [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html).
 
-*  JavaScript [widget](https://glossary.magento.com/widget) on the Magento Admin or [storefront](https://glossary.magento.com/storefront). [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
+*  JavaScript [widget](https://glossary.magento.com/widget) on the Admin or [storefront](https://glossary.magento.com/storefront). [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
 *  [Extension attribute authentication]({{ page.baseurl }}/extension-dev-guide/attributes.html)
 

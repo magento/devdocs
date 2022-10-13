@@ -12,7 +12,7 @@ Fastly image optimization (Fastly IO) provides real-time image manipulation and 
 -  Force lossy conversion
 -  Deep image optimization
 -  Adaptive pixel ratios
--  Support for common image formats: PNG, JPEG, and GIF
+-  Support for common image formats: PNG, JPEG, GIF, and WebP
 
 You must set up your Fastly service and configure Origin shielding before you enable and configure the Fastly IO option.
 
@@ -30,7 +30,7 @@ You can enable Fastly image optimization (Fastly IO) from the Admin panel by upl
 {:.procedure}
 To enable Fastly IO:
 
-1. Log in to your local [Magento Admin]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin) panel as an administrator.
+1. Log in to your local [Admin]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin) panel as an administrator.
 
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
@@ -88,7 +88,7 @@ To update Fastly IO:
 
    ![Enable Fastly IO deep image optimization]({{ site.baseurl }}/common/images/cloud/cloud_fastly-io-deep-image-config.png){:width="650px"}
 
-   Deep image optimization is off by default. When this feature is enabled, the built-in resizing feature in Magento is turned off and resizing work is offloaded to the Fastly IO service. Image optimization only applies to product images. CMS images are not resized. See the [Fastly documentation](#deep-image-optimization).
+   Deep image optimization is off by default. When this feature is enabled, the built-in resizing feature in {{site.data.var.ee}} is turned off and resizing work is offloaded to the Fastly IO service. Image optimization only applies to product images. CMS images are not resized. See the [Fastly documentation](#deep-image-optimization).
 
 1. After you enable deep image optimization, enable the [adaptive pixel ratios](#adaptive-pixel-ratios) feature to generate images optimized for use in responsive websites.
 
@@ -112,7 +112,7 @@ If you turn off lossy conversion (`WebP Auto? = No`), Fastly IO only changes JPE
 
 ### Deep image optimization
 
-Deep image optimization is off by default. Enabling this option turns off the built-in Magento resizing and offloads it completely to the Fastly IO service.
+Deep image optimization is off by default. Enabling this option turns off the built-in {{site.data.var.ee}} resizing and offloads it completely to the Fastly IO service.
 This feature only resizes *product* images. CMS images are not resized.
 
 Enabling deep image optimization adds a background color definition to every image as defined in your theme. As a result, WebP images are switched from WebP lossless to WebP lossy. One of the major differences between lossless and lossy is that it drops the alpha channel from PNG images, which delivers much smaller images; however; images with transparencies may look odd on product and campaign pages that use a different background.

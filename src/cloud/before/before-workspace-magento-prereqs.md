@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Install Magento prerequisites
+title: Install prerequisites
 redirect_from:
   - /cloud/before/before-workspace-php.html
   - /cloud/before/before-workspace-cli.html
@@ -15,14 +15,14 @@ Previous step
 
 [Prepare for local environment setup]({{ site.baseurl }}/cloud/before/before-workspace.html)
 
-Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
+Install the following software packages and tools on your local workstation to prepare for code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
 
-To begin, install and set up a VM on your host computer (Windows, Mac OS, Linux-based system). A VM gives you an environment to install a different Operating System, tools, software, a database, and Magento without requiring a customized system. You only need to install the VM software on your host. All other software can be installed and configured on your VM.
+To begin, install and set up a VM on your host computer (Windows, Mac OS, Linux-based system). A VM gives you an environment to install a different Operating System, tools, software, a database, and application code without requiring a customized system. You only need to install the VM software on your host. All other software can be installed and configured on your VM.
 
 When you install and configure software on your local (or VM), you will first SSH into the VM and then complete installations. Follow the SSH instructions and commands for the VM software you install. For example, you would install PHP, Nginx, and database on the VM via SSH.
 
  {:.bs-callout-info}
-Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.
+ Our documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.
 
 ## Virtual machine or container (host) {#vm}
 
@@ -38,7 +38,7 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 ## Development tools {#devtools}
 
 *  [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Provides code branching and management for accessing {{site.data.var.ee}} and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host. For more information, see [How Cloud uses Git]({{ site.baseurl }}/cloud/reference/git-integration.html).
-*  [Composer](https://getcomposer.org/download/) - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM. For more information, see [How Cloud uses Composer]({{ site.baseurl }}/cloud/reference/cloud-composer.html).
+*  [Composer](https://getcomposer.org/download/) - Used for dependency management. Composer enables us to manage {{site.data.var.ee}} components and dependencies. Install on your local VM. For more information, see [How Cloud uses Composer]({{ site.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Web server (local) {#webserver}
 
@@ -46,26 +46,26 @@ We strongly recommend installing [Nginx]({{ site.baseurl }}/guides/v2.3/install-
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](https://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 
-*  [bcmath](http://php.net/manual/en/book.bc.php)
-*  [curl](http://php.net/manual/en/book.curl.php)
+*  [bcmath](https://php.net/manual/en/book.bc.php)
+*  [curl](https://php.net/manual/en/book.curl.php)
 *  ext-dom
 *  [fpm](https://php-fpm.org/)
-*  [gd](http://php.net/manual/en/book.image.php)
-*  [intl](http://php.net/manual/en/book.intl.php)
-*  [json](http://php.net/manual/en/ref.json.php)
-*  [mbstring](http://php.net/manual/en/book.mbstring.php)
-*  [mcrypt](http://php.net/manual/en/book.mcrypt.php) (for PHP 7.1 and earlier only)
-*  [mysql](http://php.net/manual/en/set.mysqlinfo.php)
-*  [xml](http://php.net/manual/en/book.xml.php)
-*  [zip](http://php.net/manual/en/book.zip.php)
+*  [gd](https://php.net/manual/en/book.image.php)
+*  [intl](https://php.net/manual/en/book.intl.php)
+*  [json](https://php.net/manual/en/ref.json.php)
+*  [mbstring](https://php.net/manual/en/book.mbstring.php)
+*  [mcrypt](https://php.net/manual/en/book.mcrypt.php) (for PHP 7.1 and earlier only)
+*  [mysql](https://php.net/manual/en/set.mysqlinfo.php)
+*  [xml](https://php.net/manual/en/book.xml.php)
+*  [zip](https://php.net/manual/en/book.zip.php)
 
 ### Set up PHP memory limit {#cloud-first-php}
 
-When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.ee}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
+When you're working with the `magento-cloud` CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.ee}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
 
 Before working with your {{site.data.var.ece}} project, set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
@@ -92,7 +92,7 @@ To set a memory limit:
 
 ## Database (local) {#database}
 
-You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.ee}} environments use [MariaDB](https://mariadb.org/), with a [Galera Cluster](http://galeracluster.com/) with triple redundancy in the Production environment.
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.ee}} environments use [MariaDB](https://mariadb.org/), with a [Galera Cluster](https://galeracluster.com/) with triple redundancy in the Production environment.
 
 Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
 
@@ -100,7 +100,7 @@ Regardless of database, for **Pro plans** you need to modify the `auto_increment
 For **Pro plans**, the Production environment has a three node infrastructure that uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
 
 {:.procedure}
-To install and create a MariaDB database for Magento on your local:
+To install and create a MariaDB database for {{site.data.var.ee}} on your local workstation:
 
 1. Use this command to create the database:
 
@@ -115,7 +115,7 @@ To install and create a MariaDB database for Magento on your local:
    ```
 
 1. Access the MariaDB database.
-1. Grant all privileges to the Magento account you created for the local:
+1. Grant all privileges to the account that you created:
 
    ```bash
    grant all privileges on <database> to '<account>'@'localhost' identified by '<password>';
@@ -140,7 +140,7 @@ You need to set an auto-increment value for the MariaDB installation.
 
 ### Pro: Set up the auto-increment for MySQL {#cloud-mysql}
 
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html) is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.ee}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
+The MySQL configuration parameter [`auto_increment_increment`](https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html) is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.ee}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 
@@ -176,7 +176,7 @@ To set `auto_increment_increment` to 3:
 
 To install the `magento-cloud` CLI , see the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
-## Additional requirements for Magento Commerce {#commerce}
+## Additional requirements
 
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 

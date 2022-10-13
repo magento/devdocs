@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Row Pattern (Table)
 ---
-The "row pattern" (also referred to as _table light_ and _mini grid_) is used in the [Magento Admin](https://glossary.magento.com/magento-admin) interface wherever the User is expected to want to input tabular data. This pattern allows the user to add as many rows of data as they desire. "Light tables" are used when the User needs to add/edit a relatively small amount of items (rows).
+The "row pattern" (also referred to as _table light_ and _mini grid_) is used in the [Admin](https://glossary.magento.com/magento-admin) interface wherever the User is expected to want to input tabular data. This pattern allows the user to add as many rows of data as they desire. "Light tables" are used when the User needs to add/edit a relatively small amount of items (rows).
 
 The pattern supports following actions:
 
@@ -65,7 +65,7 @@ Typically the Row Pattern will span either 8 or 12 columns for the page grid, de
 
 The form drop down, scroll area, and selections should be accessible via keyboard.
 
-Follow this form control accessibility guideline: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms)
+Follow this form control accessibility guideline: [https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](https://www.w3.org/TR/WCAG10-HTML-TECHS/#forms)
 
 ## Assets
 
