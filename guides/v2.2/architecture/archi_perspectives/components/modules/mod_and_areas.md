@@ -1,1 +1,0 @@
-../../../../../v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.md

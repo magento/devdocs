@@ -1,1 +1,0 @@
-../../v2.0/architecture/versioning_spec_format.md

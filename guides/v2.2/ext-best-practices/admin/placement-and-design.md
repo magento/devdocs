@@ -1,1 +1,0 @@
-../../../v2.1/ext-best-practices/admin/placement-and-design.md

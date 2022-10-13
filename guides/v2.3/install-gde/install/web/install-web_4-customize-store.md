@@ -1,1 +1,0 @@
-../../../../v2.2/install-gde/install/web/install-web_4-customize-store.md

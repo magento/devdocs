@@ -1,1 +1,0 @@
-../../../v2.1/howdoi/checkout/checkout_order.md

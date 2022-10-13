@@ -1,0 +1,64 @@
+label: Marketplace EQP API
+versionless: true
+pages:
+    - label: Introduction
+      url: /marketplace/eqp/v1/api.html
+      versionless: true
+
+    - label: Getting started
+      url: /marketplace/eqp/v1/getting-started.html
+      versionless: true
+      children:
+      
+        - label: Sandbox
+          url: /marketplace/eqp/v1/sandbox.html
+          versionless: true
+
+        - label: API access keys
+          url: /marketplace/eqp/v1/access-keys.html
+          versionless: true
+
+    - label: REST API
+      url: /marketplace/eqp/v1/rest-api.html
+      versionless: true
+      children:
+
+        - label: Authentication
+          url: /marketplace/eqp/v1/auth.html
+          versionless: true
+
+        - label: Users
+          url: /marketplace/eqp/v1/users.html
+          versionless: true
+
+        - label: Files
+          url: /marketplace/eqp/v1/files.html
+          versionless: true
+
+        - label: Packages
+          url: /marketplace/eqp/v1/packages.html
+          versionless: true
+
+        - label: Test results
+          url: /marketplace/eqp/v1/test-results.html
+          versionless: true
+
+        - label: Reports
+          url: /marketplace/eqp/v1/reports.html
+          versionless: true
+
+        - label: API callbacks
+          url: /marketplace/eqp/v1/callbacks.html
+          versionless: true
+
+        - label: Filtering
+          url: /marketplace/eqp/v1/filtering.html
+          versionless: true
+
+        - label: Handling errors
+          url: /marketplace/eqp/v1/handling-errors.html
+          versionless: true
+
+    - label: Getting help
+      url: /marketplace/eqp/v1/help.html
+      versionless: true

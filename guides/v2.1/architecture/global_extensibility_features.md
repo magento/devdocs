@@ -1,1 +1,0 @@
-../../v2.0/architecture/global_extensibility_features.md

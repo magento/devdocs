@@ -1,1 +1,0 @@
-../../../v2.2/install-gde/install/sample-data-after-clone.md

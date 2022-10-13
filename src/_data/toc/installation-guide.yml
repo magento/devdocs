@@ -1,0 +1,171 @@
+label: Installation Guide
+pages:
+
+    - label: Installation flow
+      url: /install-gde/install-flow-diagram.html
+
+    - label: System requirements
+      url: /install-gde/system-requirements.html
+
+    - label: Prerequisites
+      url: /install-gde/prereq/prereq-overview.html
+      children:
+
+        - label: Apache
+          url: /install-gde/prereq/apache.html
+
+        - label: nginx
+          url: /install-gde/prereq/nginx.html
+
+        - label: MySQL
+          url: /install-gde/prereq/mysql.html
+
+        - label: PHP
+          url: /install-gde/prereq/php-settings.html
+
+        - label: Search engine prerequisites
+          url: /install-gde/prereq/elasticsearch.html
+          exclude_versions: ["2.3"]
+          children:
+
+            - label: Using AWS Elasticsearch
+              url: /install-gde/prereq/es-aws.html
+              exclude_versions: ["2.3"]
+
+            - label: Configure nginx for your search engine
+              url: /install-gde/prereq/es-config-nginx.html
+              exclude_versions: ["2.3"]
+
+            - label: Configure Apache for your search engine
+              url: /install-gde/prereq/es-config-apache.html
+              exclude_versions: ["2.3"]
+
+        - label: Get your authentication keys
+          url: /install-gde/prereq/connect-auth.html
+
+        - label: File system ownership and permissions
+          children:
+
+            - label: Overview of ownership and permissions
+              url: /install-gde/prereq/file-sys-perms-over.html
+
+            - label: Set pre-installation ownership and permissions
+              url: /install-gde/prereq/file-system-perms.html
+
+        - label: RabbitMQ
+          url: /install-gde/prereq/install-rabbitmq.html
+
+        - label: Set up a remote MySQL database connection
+          url: /install-gde/prereq/mysql_remote.html
+
+        - label: SELinux and iptables
+          url: /install-gde/prereq/security.html
+
+        - label: Optional software
+          url: /install-gde/prereq/optional.html
+
+        - label: Get the software
+          url: /install-gde/bk-install-guide.html
+
+    - label: Quick start install
+      url: /install-gde/composer.html
+
+    - label: Contributor install
+      url: /install-gde/contrib-git.html
+      children:
+
+        - label: Clone the repository
+          url: /install-gde/prereq/dev_install.html
+
+        - label: Change to a released version
+          url: /install-gde/install/cli/dev_downgrade.html
+
+        - label: Update installation dependencies
+          url: /install-gde/install/prepare-install.html
+
+    - label: Advanced install
+      url: /install-gde/install/cli/install-cli.html
+      children:
+
+    - label: Post Installation
+      url: /install-gde/continue-to-verify_cli.html
+      children:
+        - label: Verify the installation
+          url: /install-gde/install/verify.html
+
+        - label: Configure the application
+          url: /install-gde/install/post-install-config.html
+
+        - label: Optionally set a umask
+          url: /install-gde/install/post-install-umask.html
+
+        - label: Install optional sample data
+          url: /install-gde/install/sample-data-after-magento.html
+          children:
+
+            - label: Install using Composer
+              url: /install-gde/install/sample-data-after-composer.html
+
+            - label: Install by cloning repositories
+              url: /install-gde/install/sample-data-after-clone.html
+
+    - label: Tutorials
+      children:
+
+        - label: Back up and roll back the file system, media, and database
+          url: /install-gde/install/cli/install-cli-backup.html
+
+        - label: Configure consumer behavior
+          url: /install-gde/install/cli/install-cli-subcommands-consumers.html
+
+        - label: Configure the lock provider
+          url: /install-gde/install/cli/install-cli-subcommands-lock.html
+
+        - label: Configure the store
+          url: /install-gde/install/cli/install-cli-subcommands-store.html
+
+        - label: Create, edit, or unlock an administrator account
+          url: /install-gde/install/cli/install-cli-subcommands-admin.html
+
+        - label: Create or update the deployment configuration
+          url: /install-gde/install/cli/install-cli-subcommands-deployment.html
+
+        - label: Create the database schema
+          url: /install-gde/install/cli/install-cli-subcommands-db.html
+
+        - label: Display or change the Admin URI
+          url: /install-gde/install/cli/install-cli-adminurl.html
+
+        - label: Enable or disable maintenance mode
+          url: /install-gde/install/cli/install-cli-subcommands-maint.html
+
+        - label: Enable or disable modules
+          url: /install-gde/install/cli/install-cli-subcommands-enable.html
+
+        - label: Modify docroot to improve security
+          url: /install-gde/tutorials/change-docroot-to-pub.html
+
+        - label: Remove sample data modules or update sample data
+          url: /install-gde/install/cli/install-cli-sample-data-other.html
+
+        - label: Install an extension
+          url: /install-gde/install/cli/extensions.html
+          exclude_versions: ["2.3"]
+
+        - label: Uninstall language packages
+          url: /install-gde/install/cli/install-cli-uninstall-langpk.html
+
+        - label: Uninstall modules
+          url: /install-gde/install/cli/install-cli-uninstall-mods.html
+
+        - label: Uninstall or reinstall Commerce
+          url: /install-gde/install/cli/install-cli-uninstall.html
+
+        - label: Update the database schema and data
+          url: /install-gde/install/cli/install-cli-subcommands-db-upgr.html
+
+        - label: Uninstall themes Composer packages
+          url: /install-gde/install/cli/install-cli-theme-uninstall.html
+
+    - label: Troubleshooting
+      url: https://support.magento.com/hc/en-us/categories/115000200533-Troubleshooting

@@ -1,1 +1,0 @@
-../../../../v2.1/install-gde/trouble/readiness/tshoot_rc_main.md

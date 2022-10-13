@@ -1,1 +1,0 @@
-../../v2.1/get-started/gs-web-api-response.md

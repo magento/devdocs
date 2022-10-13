@@ -1,1 +1,0 @@
-../../../v2.1/design-styleguide/capitalization/capitalization.md

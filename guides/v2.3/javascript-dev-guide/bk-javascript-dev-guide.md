@@ -1,1 +1,0 @@
-../../v2.2/javascript-dev-guide/bk-javascript-dev-guide.md

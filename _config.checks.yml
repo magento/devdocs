@@ -1,0 +1,25 @@
+# Configuration settings for html-proofer.
+# For configuration documentation, refer to: https://github.com/gjtorikian/html-proofer#configuration
+# For configuration defaults, refer to: https://github.com/gjtorikian/html-proofer/blob/master/lib/html-proofer/configuration.rb
+#
+html-proofer:
+
+  # Do not flag a tags missing href
+  :allow_missing_href: true
+
+  # Do not check external links.
+  :disable_external: true
+
+  # Ignore images with missing alt tags
+  :ignore_missing_alt: true
+
+  # Ignores images with empty alt tags.
+  :ignore_empty_alt: true
+
+  # Ignore entirely the files which pathname matches a specified pattern
+  :ignore_files:
+    - !ruby/regexp /guides\/v2\.3\/mrg/
+    - !ruby/regexp /guides\/v2\.4\/mrg/
+    - !ruby/regexp /mbi/
+    - !ruby/regexp /mftf/
+    - !ruby/regexp /page-builder/

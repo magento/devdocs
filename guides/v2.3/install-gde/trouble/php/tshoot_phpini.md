@@ -1,1 +1,0 @@
-../../../../v2.2/install-gde/trouble/php/tshoot_phpini.md

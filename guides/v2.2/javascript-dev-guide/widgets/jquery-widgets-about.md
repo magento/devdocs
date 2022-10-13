@@ -1,1 +1,0 @@
-../../../v2.1/javascript-dev-guide/widgets/jquery-widgets-about.md

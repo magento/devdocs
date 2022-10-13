@@ -1,1 +1,0 @@
-../../v2.1/architecture/bk-architecture.md

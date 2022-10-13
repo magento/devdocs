@@ -1,65 +1,35 @@
-# Site settings
-encoding: "utf-8"
-title: Magento 2 Developer Documentation
-email: mailto:DL-Magento-Doc-Feedback@magento.com
-description: > # this means to ignore newlines until "baseurl:"
-  Magento 2 Developer Documentation.
-baseurl: "/"
-# url: "https://github.com/magento/devdocs" # the base hostname & protocol for your site
-# twitter_username: magento
-# github_username:  magento
+# This file contains configuration settings for the devdocs website.
+# Each setting is available on pages using Liquid {{ site.<config key> }}. For example, {{ site.title }}.
+# For more details about available options and defaults, refer to https://jekyllrb.com/docs/configuration/
+#
+title: Adobe Commerce Developer Guide
+logo: Commerce DevDocs
+description: Adobe Commerce Developer Guide
 
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+# the base protocol and domain
+url: https://devdocs.magento.com
 
-# Version Switcher. Version numbers should be STRING
-version: "2.2"
+# Site theme: https://github.com/magento-devdocs/devdocs-theme
+# About themes in Jekyll: https://jekyllrb.com/docs/themes/
+theme: devdocs
+
+# A part of URL to be inserted between site.url and page.url
+baseurl: ""
+
+source: src
+
+plugins_dir: ./_plugins
+
+# Parameters for the version switcher. Numeric values must be wrapped in quotes.
+#
+version: "2.4"
 versions:
-   -
-      name: "2.0"
-      url: guides/v2.0/
-   -
-      name: "2.1"
-      url: guides/v2.1/
-   -
-      name: "2.2"
-      url: guides/v2.2/
-   -
-      name: "2.3 Pre-release"
-      url: guides/v2.3/
-
-# GitHub variables
-github: "https://github.com/magento/devdocs/tree/develop/guides/"
-
-# 2.0.0 variables
-gdeurl: "/guides/v2.0/"
-githuburl: "https://github.com/magento/devdocs/tree/develop/guides/v2.0/"
-mage2000url: "https://github.com/magento/magento2/blob/2.0/"
-
-# 1.x variables
-m1xgdeurl: "/guides/m1x/"
-m1xgithuburl: "https://github.com/magento/devdocs/blob/develop/"
-
-# 2.1.0 variables
-gdeurl21: "/guides/v2.1/"
-githuburl21: "https://github.com/magento/devdocs/tree/develop/guides/v2.1/"
-mage2100url: "https://github.com/magento/magento2/blob/2.1/"
-
-# 2.2.0 variables
-gdeurl22: "/guides/v2.2/"
-githuburl22: "https://github.com/magento/devdocs/tree/develop/guides/v2.2/"
-mage2200url: "https://github.com/magento/magento2/blob/2.2/"
-
-# 2.3.0 variables
-
-gdeurl23: "/guides/v2.3/"
-githuburl23: "https://github.com/magento/devdocs/tree/develop/guides/v2.3/"
-mage2300url: "https://github.com/magento/magento2/blob/2.3-develop/"
-
-# Other variables
-namem2fedg: "Magento 2 Frontend Developer's Guide"
-namem2devgde: "Magento 2 Developer's Guide"
-namem2apiref: "Magento 2 API Reference"
-namem2install: "Magento 2 Installation Guide"
+  -
+    name: "2.3"
+    url: /guides/v2.3/
+  -
+    name: "2.4"
+    url: /guides/v2.4/
 
 
 collections:
@@ -67,36 +37,200 @@ collections:
     output: true
     permalink: "/videos/:path/"
 
-plugins:
-  - jekyll-redirect-from
-
-
+# Specific settings for different scopes.
+#
 defaults:
+
   -
     scope:
       path: ""
+    values:
+      lang: en
+      layout: default
+      github_repo: https://github.com/magento/devdocs/
+      github_files: https://github.com/magento/devdocs/blob/master/
+      # Enables the 'Edit this page on GitHub' appearances on pages
+      github_link: true
+      # Enables the 'Give us feedback' appearances on pages
+      feedback_link: true
+
+  -
+    scope:
+      path: guides/v2.3
+    values:
+      guide_version: '2.3'
+
+  -
+    scope:
+      path: guides/v2.4
+    values:
+      guide_version: '2.4'
+
+  -
+    scope:
       type: videos
     values:
       layout: video
-      guide_version: "2.2"
+      github_link: false
+      feedback_link: false
 
-# toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
+  -
+    scope:
+      path: mbi
+    values:
+      group: mbi
+      github_files: https://github.com/magento/devdocs-mbi/blob/master/
+      github_repo: https://github.com/magento/devdocs-mbi/
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
+  -
+    scope:
+      path: mftf/docs
+    values:
+      group: mftf
+      github_files: https://github.com/magento/magento2-functional-testing-framework/blob/master/
+      github_repo: https://github.com/magento/magento2-functional-testing-framework/
+      functional_areas:
+        - Test
+
+  -
+    scope:
+      path: mftf/v2
+    values:
+      group: mftf-v2
+      github_files: https://github.com/magento/magento2-functional-testing-framework/tree/2.6.5/
+      github_repo: https://github.com/magento/magento2-functional-testing-framework/
+      functional_areas:
+        - Test
+  -
+    scope:
+      path: page-builder
+    values:
+      group: page-builder
+      github_files: https://github.com/magento/magento2-page-builder-docs/tree/master/
+      github_repo: https://github.com/magento/magento2-page-builder-docs/
+
+  - 
+    scope:
+      path: magento-payments
+    values:
+      group: magento-payments
+
+  -
+    scope:
+      path: guides/v2.3/mrg
+    values:
+      group: module-reference-guide-2_3
+      github_link: false
+
+  -
+    scope:
+      path: guides/v2.4/mrg
+    values:
+      group: module-reference-guide-2_4
+      layout: migrated
+
+  -
+    scope:
+      path: guides/v2.3/install-gde
+    values:
+      group: installation-guide
+
+  -
+    scope:
+      path: guides/v2.4/install-gde
+    values:
+      group: installation-guide
+
+
+##########################
+# Plugins and extensions #
+##########################
+#
+# For more details about plugins, refer to https://jekyllrb.com/docs/plugins/
+# To learn more about particular plugin, find it by name on GitHub.
+# This list doesn't include custom plugins.
+#
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-redirect-from
+  - jekyll-relative-links
+  - jekyll-sitemap
+  - jekyll-titles-from-headings
+
+optional_front_matter:
+  remove_originals: true
+
+# Configuration options for the jekyll-relative-links plugin.
+# Exclude all .md directories and files except page-builder/ to prevent painfully long build times.
+
+relative_links:
+  enabled:     true
+  collections: false
+  exclude:
+    - 404.md
+    - codelinks
+    - community
+    - extensions
+    - guides
+    - redoc
+    - release
+    - search
+    - system-requirements.md
+    - whats-new.md
+
+# Settings for the jekyll-titles-from-headings plugin.
+# For more details about the plugin, refer to https://github.com/benbalter/jekyll-titles-from-headings
+#
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: false
+
+# kramdown parser settings (extended Markdown to HTML parser). For more details about available options, refer to https://kramdown.gettalong.org/converter/html.html
+#
 kramdown:
   toc_levels: 2..3
+  syntax_highlighter_opts:
+    css_class: highlighter
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
 
-incremental: false
-
+# Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
+#
 algolia:
-  application_id: 'E642SEDTHL'
-  index_name: 'devdocs'
-  api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
-  lazy_update: false
-  files_to_exclude:
-    - guides/m1x
-    - swagger
+  application_id: E642SEDTHL
+  index_name: devdocs
+  # search-only API key allows to search data immediately.
+  # It is safe to use in production front-end code.
+  # Used at src/_includes/layout/header-scripts.html
+  # For more details, refer to: https://www.algolia.com/doc/guides/security/api-keys/#search-only-api-key
+  search_only_key: d2d0f33ab73e291ef8d88d8b565e754c
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Rakefile' ]
+google:
+  gtm: GTM-KRCLXBB
+
+# Toggles the _plugin/html-check-hook.rb script that checks links in the generated HTML
+#
+check_links: true
+
+#############
+# Variables #
+#############
+#
+# Magento 2 repository
+mage2bloburl: https://github.com/magento/magento2/blob
+
+# Current version
+gdeurl: /guides/v2.4
+
+# URL to downloadable binary files, such as .ai, .psd, .zip, .pdf, .sketch
+downloads: https://devdocs.magento.com/download
+
+# URL to the User guide
+user_guide_url: https://docs.magento.com/user-guide
+
+# Patterns to exclude for Jekyll
+exclude:
+  - .git

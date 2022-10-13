@@ -1,1 +1,0 @@
-../../../v2.2/contributor-guide/templates/tutorial-template-first.md

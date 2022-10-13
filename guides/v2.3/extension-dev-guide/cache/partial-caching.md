@@ -1,1 +1,0 @@
-../../../v2.2/extension-dev-guide/cache/partial-caching.md

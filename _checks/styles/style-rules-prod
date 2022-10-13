@@ -1,0 +1,38 @@
+rule 'MD001' # Header levels should only increment by one level at a time
+exclude_rule 'MD002'
+rule 'MD003', :style => :atx # Header style
+rule 'MD004' # Unordered list style; default "consistent"
+rule 'MD005' # Inconsistent indentation for list items at the same level
+rule 'MD006' # Consider starting bulleted lists at the beginning of the line
+rule 'MD007', :indent => 3 # Unordered list indentation
+rule 'MD009' # Trailing spaces; default: 0
+rule 'MD010' # Hard tabs
+exclude_rule 'MD011'
+rule 'MD012' # Multiple consecutive blank lines
+exclude_rule 'MD013'
+exclude_rule 'MD014'
+rule 'MD018' # No space after hash on atx style header
+rule 'MD019' # Multiple spaces after hash on atx style header
+exclude_rule 'MD020'
+exclude_rule 'MD021'
+exclude_rule 'MD022'
+rule 'MD023' # Headers must start at the beginning of the line
+exclude_rule 'MD024'
+rule 'MD025' # Multiple top level headers in the same document
+exclude_rule 'MD026'
+exclude_rule 'MD027'
+exclude_rule 'MD028'
+rule 'MD029' # Ordered list item prefix
+rule 'MD030', :ul_single => 2, :ol_single => 1, :ul_multi => 2, :ol_multi => 1 # Spaces after list markers
+exclude_rule 'MD031'
+rule 'MD032' # Lists should be surrounded by blank lines
+exclude_rule 'MD033'
+exclude_rule 'MD034'
+rule 'MD035' # Horizontal rule style; default "consistent"
+rule 'MD036' # Emphasis used instead of a header
+rule 'MD037' # Spaces inside emphasis markers
+rule 'MD038' # Spaces inside code span elements
+exclude_rule 'MD039'
+rule 'MD040' # Fenced code blocks should have a language specified
+exclude_rule 'MD041'
+rule 'MD046'

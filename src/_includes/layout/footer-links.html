@@ -1,0 +1,7 @@
+{% assign items = site.data.footer-links %}
+
+<ul class="nav footer-links" role="menu">
+{% for item in items %}
+  {% include layout/nav-item.html section=item %}
+{% endfor %}
+</ul>

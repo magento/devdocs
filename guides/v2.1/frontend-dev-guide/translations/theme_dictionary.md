@@ -1,1 +1,0 @@
-../../../v2.0/frontend-dev-guide/translations/theme_dictionary.md

@@ -1,1 +1,0 @@
-../../../v2.0/cloud/configure/cloud-vcl-custom-snippets.md

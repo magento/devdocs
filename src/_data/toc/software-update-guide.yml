@@ -1,0 +1,95 @@
+label: Software Update Guide
+pages:
+
+    - label: Commerce upgrade overview
+      url: /comp-mgr/bk-compman-upgrade-guide.html
+
+    - label: Prerequisites
+      url: /comp-mgr/prereq/prereq_compman.html
+      children:
+
+        - label: Check the catalog search engine
+          url: /comp-mgr/prereq/prereq-elasticsearch.html
+          exclude_versions: ["2.3"]
+
+        - label: Set the open files limit
+          url: /comp-mgr/prereq/prereq_compman-ulimit.html
+
+        - label: Set up cron for update and upgrade
+          url: /comp-mgr/prereq/prereq_cron.html
+
+        - label: Update and upgrade checklist
+          url: /comp-mgr/prereq/prereq_compman-checklist.html
+
+    - label: Upgrade Compatibility Tool
+      url: /upgrade-compatibility-tool/introduction.html
+      versionless: true
+      edition: ee-only
+      children:
+
+        - label: Prerequisites
+          url: /upgrade-compatibility-tool/prerequisites.html
+          versionless: true
+
+        - label: Install
+          url: /upgrade-compatibility-tool/install.html
+          versionless: true
+
+        - label: Run the tool
+          url: /upgrade-compatibility-tool/run.html
+          versionless: true
+
+        - label: Developer information
+          url: /upgrade-compatibility-tool/developer.html
+          versionless: true
+
+        - label: Error message reference
+          url: /upgrade-compatibility-tool/errors.html
+          versionless: true
+
+    - label: Upgrade best practices
+      url: /comp-mgr/upgrade-best-practices.html
+
+    - label: Upgrade Commerce
+      url: /comp-mgr/cli/cli-upgrade.html
+      children:
+
+        - label: Update the Commerce application
+          url: /comp-mgr/cli/dev_update-magento.html
+        
+        - label: Upgrade with sample data
+          url: /comp-mgr/cli/cli-rc1-samp.html
+
+    - label: Upgrade modules
+      url: /comp-mgr/upgrade-module.html
+
+    - label: Manage modules
+      url: /comp-mgr/manage-module.html
+
+    - label: Add or update components
+      url: /install-gde/install/cli/dev_add-update.html
+
+    - label: Apply patches
+      url: /comp-mgr/patching.html
+      children:
+
+       - label: Command Line
+         url: /comp-mgr/patching/command-line.html
+         children:
+
+       - label: Composer
+         url: /comp-mgr/patching/composer.html
+         children:
+
+    - label: Troubleshooting
+      children:
+
+        - label: Your current search engine is not supported
+          url: /comp-mgr/trouble/current-search-engine.html
+          exclude_versions: ["2.3"]
+
+        - label: Roll back after update failure
+          url: /comp-mgr/trouble/cman/update-fail.html
+
+        - label: Maintenance mode options for upgrade
+          url: /comp-mgr/trouble/cman/maint-mode.html

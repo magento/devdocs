@@ -1,1 +1,0 @@
-../../../v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.md

@@ -1,1 +1,0 @@
-../../../../v2.0/install-gde/install/cli/install-cli-uninstall.md

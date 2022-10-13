@@ -1,1 +1,0 @@
-../../v2.2/pattern-library/bk-pattern.md

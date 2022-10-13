@@ -1,0 +1,18 @@
+label: Contribution Resources
+pages:
+
+  - label: Community resources
+    url: /community/resources.html
+    versionless: true
+
+  - label: Community contributed best practices
+    url: /community/best-practices.html
+    versionless: true  
+    
+  - label: Contribution Day Organizer's Handbook
+    url: /community/contribution-day-organizer-handbook.html
+    versionless: true
+
+  - label: Contribution Programs
+    url: /community/contribution-programs.html
+    versionless: true

@@ -1,1 +1,0 @@
-../../../v2.1/extension-dev-guide/cli-cmds/cli-naming-guidelines.md

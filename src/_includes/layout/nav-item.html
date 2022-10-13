@@ -1,0 +1,42 @@
+{%- assign item = include.section -%}
+{%- assign children = item.children -%}
+{%- if page.guide_version -%}
+  {%- assign compare_version = page.guide_version -%}
+{%- else -%}
+  {%- assign compare_version = site.version -%}
+{%- endif -%}
+
+{%- unless item.exclude_versions contains compare_version -%}
+{%- if item.include_versions.size == nil or item.include_versions contains compare_version or item.include_versions contains 'all' -%}
+  {%- assign base = '' -%}
+  {%- if item.versionless -%}
+    {%- assign base = site.baseurl -%}
+  {%- else -%}
+    {%- if page.guide_version -%}
+      {%- assign base = page.baseurl -%}
+    {%- else -%}
+      {%- assign base = site.version | prepend: "/guides/v" | prepend: site.baseurl -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if item.url contains 'http' -%}
+    {%- assign base = '' -%}
+  {%- endif -%}
+
+  {%- assign item_url = item.url | prepend: base -%}
+  {%- assign compare_url = page.url | prepend: site.baseurl -%}
+<li class="{% if compare_url == item_url %}is-selected{% endif %} {{ item.class }} {{ include.itemClass }}" role="menuitem">
+  {%- if item.url -%}
+  <a href="{{ item_url }}" class="{{ include.labelClass }} {{item.edition}}">{{ item.label }}</a>
+  {%- else -%}
+  <span class="{{ include.labelClass }} {{item.edition}}">{{ item.label }}</span>
+  {%- endif -%}
+  {%- if children -%}
+  <ul class="{{ include.menuClass }}">
+    {%- for child in children -%}
+      {%- include layout/nav-item.html section=child itemClass=include.itemClass labelClass=include.labelClass -%}
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
+</li>
+{%- endif -%}
+{%- endunless -%}

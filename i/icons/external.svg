@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icons/external">
-            <path d="M0,0 L12,0 L12,12 L0,12 L0,0 Z M4,2 L2,2 L2,10 L10,10 L10,7 L12,7 L12,0 L4,0 L4,2 L4,2 Z" id="Rectangle" fill="#1572D0" fill-rule="nonzero"></path>
-            <path d="M10.0871982,4.0871982 L12,6 L12,0 L6,0 L7.96587786,1.96587786 L4.74424817,5.18750754 L6.86556852,7.30882789 L10.0871982,4.0871982 Z" id="Combined-Shape" fill="#1572D0"></path>
-        </g>
-    </g>
-</svg>

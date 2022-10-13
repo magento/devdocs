@@ -1,1 +1,0 @@
-../../../../v2.0/comp-mgr/trouble/cman/rc_perms.md

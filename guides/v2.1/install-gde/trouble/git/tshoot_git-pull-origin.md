@@ -1,1 +1,0 @@
-../../../../v2.0/install-gde/trouble/git/tshoot_git-pull-origin.md

@@ -1,0 +1,33 @@
+{% if page.layout == 'home' %}
+{% assign versions = site.versions %}
+{% else %}
+{% assign versions = page.versions %}
+{% endif %}
+
+{%- if versions.size > 1 -%}
+<div class="version-switcher">
+
+	<button id="version-switcher-button" class="spectrum-Picker spectrum-Picker--sizeM dropdown-toggle"
+		data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Picker-label">Version {{ page.guide_version }}</span>
+		<i class="spectrum-Icon spectrum-UIIcon-ChevronRight100 spectrum-Picker-icon" focusable="false"
+			aria-hidden="true"></i>
+	</button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Picker-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			{% for version in versions %}
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel"
+					href="{{ site.baseurl }}{{ version.url }}">Version {{ version.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+
+</div>
+{%- elsif versions.size == 1 -%}
+<div class="version-switcher">
+	<button class="spectrum-Picker spectrum-Picker--sizeM dropdown-toggle" disabled>
+		<span class="spectrum-Picker-label">Version {{ page.guide_version }}</span>
+	</button>
+</div>
+{%- endif -%}

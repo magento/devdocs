@@ -1,1 +1,0 @@
-../../v2.2/architecture/frontend_custom_strategies.md

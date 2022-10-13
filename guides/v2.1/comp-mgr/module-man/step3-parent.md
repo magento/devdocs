@@ -1,1 +1,0 @@
-../../../v2.0/comp-mgr/module-man/step3-parent.md

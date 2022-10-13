@@ -1,1 +1,0 @@
-../../../v2.0/cloud/trouble/trouble_comp-deploy-fail.md

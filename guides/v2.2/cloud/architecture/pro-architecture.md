@@ -1,1 +1,0 @@
-../../../../guides/v2.0/cloud/architecture/pro-architecture.md

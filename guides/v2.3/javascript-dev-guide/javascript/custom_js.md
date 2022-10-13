@@ -1,1 +1,0 @@
-../../../v2.2/javascript-dev-guide/javascript/custom_js.md

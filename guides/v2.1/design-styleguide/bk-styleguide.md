@@ -1,1 +1,0 @@
-../../v2.0/design-styleguide/bk-styleguide.md

@@ -1,1 +1,0 @@
-../../../v2.2/extension-dev-guide/build/create_component.md

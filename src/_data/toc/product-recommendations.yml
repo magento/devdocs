@@ -1,0 +1,23 @@
+---
+label: Product Recommendations
+pages:
+- label: Overview
+  url: /recommendations/product-recs.html
+  versionless: true
+  
+- label: Collect Data
+  url: /recommendations/events.html
+  versionless: true
+
+- label: Customize
+  url: /recommendations/customize.html
+  versionless: true
+  
+- label: Handle Cookie Restrictions
+  url: /recommendations/setting-cookie.html
+  versionless: true
+
+- label: SDK
+  url: /recommendations/recs-api.html
+  versionless: true
+  

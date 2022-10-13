@@ -1,1 +1,0 @@
-../../../v2.0/frontend-dev-guide/themes/js-bundling.md

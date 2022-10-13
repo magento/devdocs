@@ -1,1 +1,0 @@
-../../../v2.0/install-gde/prereq/merch_install.md

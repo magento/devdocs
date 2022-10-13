@@ -1,1 +1,0 @@
-../../../v2.0/config-guide/varnish/config-varnish-final.md

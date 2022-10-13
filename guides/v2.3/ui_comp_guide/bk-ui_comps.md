@@ -1,1 +1,0 @@
-../../v2.2/ui_comp_guide/bk-ui_comps.md

@@ -1,1 +1,0 @@
-../../v2.2/migration/bk-migration-guide.md

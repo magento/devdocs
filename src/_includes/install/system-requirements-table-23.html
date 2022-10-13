@@ -1,0 +1,137 @@
+{% assign requirements = site.data.codebase.v2_3.system-requirements %}
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Software dependencies
+      </th>
+    {% for requirement in requirements %}
+      <th>{{requirement[0]}}</th>
+    {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Composer</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['Composer'] %}
+            {{requirement[1]['Composer']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>Elasticsearch</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['Elasticsearch'] %}
+            {{requirement[1]['Elasticsearch']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>OpenSearch</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['OpenSearch'] %}
+            {{requirement[1]['OpenSearch']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>MariaDB</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['MariaDB'] %}
+            {{requirement[1]['MariaDB']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>MySQL</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['MySQL'] %}
+            {{requirement[1]['MySQL']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>PHP</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['PHP'] %}
+            {{requirement[1]['PHP']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>RabbitMQ</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['RabbitMQ'] %}
+            {{requirement[1]['RabbitMQ']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>Redis</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['Redis'] %}
+            {{requirement[1]['Redis']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>Varnish</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['Varnish'] %}
+            {{requirement[1]['Varnish']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>Apache</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['Apache'] %}
+            {{requirement[1]['Apache']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+    <tr>
+      <td>nginx</td>
+        {% for requirement in requirements %}
+      <td>{% if requirement[1]['nginx'] %}
+            {{requirement[1]['nginx']}}
+          {% else %}
+          --
+          {% endif %}
+      </td>
+        {% endfor %}
+    </tr>
+  </tbody>
+</table>

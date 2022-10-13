@@ -1,1 +1,0 @@
-../../v2.1/extension-dev-guide/bk-extension-dev-guide.md

@@ -1,1 +1,0 @@
-../../v2.0/contributor-guide/quarterly-contributors.md

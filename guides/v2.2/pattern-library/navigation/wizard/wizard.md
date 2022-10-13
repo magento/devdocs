@@ -1,1 +1,0 @@
-../../../../v2.1/pattern-library/navigation/wizard/wizard.md

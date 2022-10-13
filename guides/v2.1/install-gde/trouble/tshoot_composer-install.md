@@ -1,1 +1,0 @@
-../../../v2.0/install-gde/trouble/tshoot_composer-install.md

@@ -1,0 +1,24 @@
+/* Banner on top of the site header */
+.message-banner {
+  margin: 0 0 10px 0;
+}
+
+/* Reference styles */
+.content .ref-list {
+  margin-bottom: 2.5em;
+}
+
+.content .ref-list dt{
+  font-weight:500;
+}
+
+/* Paragraph that introduces important reference information (e.g., Related topics, Next step, Previous step), but does not qualify as a proper heading. Mimics the current H3 style */
+.content .ref-header {
+  font-weight: var(--spectrum-heading-3-text-font-weight, var(--spectrum-alias-heading-text-font-weight-regular));
+  font-size: var(--spectrum-heading-3-text-size, var(--spectrum-alias-heading3-text-size));
+  margin: 2em 0 .7em 0;
+}
+
+.container > .feature > ul > li > img.img-icon {
+  margin-top: -4px;
+}

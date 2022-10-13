@@ -1,1 +1,0 @@
-../../../v2.1/comp-mgr/cli/cli-rc1-samp.md

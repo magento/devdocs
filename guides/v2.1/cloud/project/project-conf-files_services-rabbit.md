@@ -1,1 +1,0 @@
-../../../v2.0/cloud/project/project-conf-files_services-rabbit.md

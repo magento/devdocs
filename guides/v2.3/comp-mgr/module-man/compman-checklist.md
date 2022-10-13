@@ -1,1 +1,0 @@
-../../../v2.2/comp-mgr/module-man/compman-checklist.md

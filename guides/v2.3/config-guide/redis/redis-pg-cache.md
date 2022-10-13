@@ -1,1 +1,0 @@
-../../../v2.2/config-guide/redis/redis-pg-cache.md

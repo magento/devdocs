@@ -1,1 +1,0 @@
-../../../v2.2/design-styleguide/content-formats/content-formats.md

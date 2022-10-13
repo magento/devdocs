@@ -1,1 +1,0 @@
-../../../../v2.1/pattern-library/displaying-data/tile/tile.md

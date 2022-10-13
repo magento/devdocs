@@ -1,1 +1,0 @@
-../../v2.2/install-gde/install-quick-ref.md

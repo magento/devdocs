@@ -1,1 +1,0 @@
-../../v2.0/cloud/bk-cloud.md

@@ -1,1 +1,0 @@
-../../../v2.1/frontend-dev-guide/css-guide/css_quick_guide_approach.md

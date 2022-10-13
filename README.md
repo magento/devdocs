@@ -1,97 +1,184 @@
-# Magento Developer Documentation
+# Adobe Commerce Developer Documentation
 
-Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases.
+Welcome! This site contains the latest Adobe Commerce and Magento Open Source developer documentation for ongoing releases of both products. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
 
-To contribute, please fork the `develop` branch.
+> **Important update**
+>
+> The developer documentation for Adobe Commerce and Magento Open Source is moving to the [Adobe Developer](https://developer.adobe.com/commerce) and [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce.html) sites. After a topic is moved, use the link in the topic header to find the new location.
+>
+>![Example of a topic header](https://user-images.githubusercontent.com/6391769/166058975-15c288d6-b266-4f1d-8b52-08ada3ca026f.png)
+>
+> To track relocated topics by guide, see [Migrated Topics](https://devdocs.magento.com/migrated.html).
 
-# Building this site
+## Contributors
 
-You can build this site locally in the following ways:
+Our goal is to provide the Commerce and Open Source communities with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving the documentation.
 
-- [Installing the project dependencies locally](#build-using-jekyll) (Mac, Linux)
-- [Using a Docker container](#build-using-docker) (Mac, Linux)
-- [Using a Vagrant virtual machine](#build-using-vagrant) (Mac, Linux, Windows)
+![](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
-## Build using Jekyll
+## Building this site
 
-For local builds, you need to install [Bundler](http://bundler.io/), and [Ruby](https://www.ruby-lang.org) version manager.
+This site is built by [Jekyll](https://jekyllrb.com/), which is an open-source tool developed in [Ruby](https://www.ruby-lang.org/en/).
 
-### To prepare your MacOS environment:
-1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
-1. Use Homebrew to install a Ruby version manager.
+You can build the site locally in the following ways:
 
+-  [Installing the project dependencies locally](#build-locally) (Mac, Linux)
+-  [Using Docker (docker-compose)](https://github.com/magento/devdocs/wiki/Build-DevDocs-with-Docker) (Mac, Linux, Windows)
+-  [Using a Vagrant virtual machine](https://github.com/magento-devdocs/vagrant-for-magento-devdocs) (Mac, Linux, Windows)
+-  [Build DevDocs in Windows](https://github.com/magento/devdocs/wiki/Build-DevDocs-in-Windows) (Windows 7 & 10)
+-  [Building older versions of the documentation](https://github.com/magento/devdocs/wiki/Build-DevDocs-with-Docker)
+
+## Build locally
+
+You do not need to set up a webserver to serve the site locally. Jekyll will use its own webserver for this.
+
+### Set up Ruby
+
+Consider to set up the Ruby version defined in [.ruby-version](.ruby-version).
+Ruby version manager such as [rvm](https://www.ruby-lang.org/en/documentation/installation/#rvm) or [rbenv](https://www.ruby-lang.org/en/documentation/installation/#rbenv) can help to manage the correct version for this automatically.
+
+See [official documentation](https://www.ruby-lang.org/en/documentation/installation/) for the most recent installation guidelines and available options.
+
+### Install devdocs
+
+Clone the repository. The first time you are at the `devdocs` directory, run:
+
+```bash
+bundle install
+```
+
+The website file structure contains directories pulled from multiple sources, not only this repository. The full list with mapped directories is defined in the [Docfile.yml](./Docfile.yml). It includes public and private repositories.
+To pull all the mapped sources:
+
+```bash
+rake init
+```
+
+Docfile begins with public sources, because the `rake init` task fails when it attempts to clone content from private repositories without the corresponding permissions.
+
+>**NOTE**
+>By default _rake_ clones using SSH. If you want to clone with HTTPS, you can run it with the `token` variable:
+>
+>```bash
+>token=none rake init
+>```
+>
+> Use `none` if you do not want to use a real token. To have access to private repositories, you will need a [GitHub token](https://github.com/settings/tokens) with the relevant access permissions.
+
+>**TIP**
+>All the helper CLI commands for this project are implemented using [rake](https://github.com/ruby/rake).
+Use the `rake --tasks` command for a complete list of available tasks, or filter the list using a keyword, such as `rake --tasks test`.
+
+Once you have completed preparing your environment, you can build locally and preview the site in your browser.
+
+### Run the website
+
+1. Using the following rake task, verify all the required dependencies and start the embedded web server:
+
+   ```bash
+   rake preview
    ```
-   $ brew install rbenv ruby-build
+
+   You will see the commands called by the rake task and the corresponding output. Each command is typically highlighted with the magenta color:
+
+   ```terminal
+   ~/magento/devdocs (master)$ rake preview
+   Install gems listed in the Gemfile: $ bundle install
+   Using rake 13.0.1
+   Using public_suffix 4.0.3
+   <truncated>
+   Bundle complete! 16 Gemfile dependencies, 70 gems now installed.
+   Use `bundle info [gemname]` to see where a bundled gem is installed.
+   Installed!
+   Cleaning after the last site generation: $ bundle exec jekyll clean
+   Configuration file: /Users/user/magento/devdocs/_config.yml
+             Cleaner: Removing /Users/user/magento/devdocs/_site...
+             Cleaner: Removing src/.jekyll-metadata...
+             Cleaner: Removing src/.jekyll-cache...
+             Cleaner: Nothing to do for .sass-cache.
+   Clean!
+   Enabled the default configuration: $ bundle exec jekyll serve --incremental \
+                                   --open-url \
+                                   --livereload \
+                                   --trace \
+                                   --plugins _plugins,_checks
+   Configuration file: /Users/user/magento/devdocs/_config.yml
+   Theme Config file: /Users/user/.rvm/gems/ruby-2.6.5/bundler/gems/devdocs-theme-e1a4ff6880d5/ _config.yml
+               Source: /Users/user/magento/devdocs/src
+         Destination: /Users/user/magento/devdocs/_site
+   Incremental build: enabled
+         Generating...
+   Running ["ImageCheck", "HtmlCheck", "LinkCheck", "ScriptCheck",  "LinkChecker::DoubleSlashCheck"] on ["/Users/user/magento/devdocs/_site"] on *.html...
+
+
+   Ran on 1747 files!
+
+
+   HTML-Proofer finished successfully.
+                       done in 220.316 seconds.
+   Auto-regeneration: enabled for 'src'
+   LiveReload address: http://127.0.0.1:35729
+       Server address: http://127.0.0.1:4000/
+     Server running... press ctrl-c to stop.
+           LiveReload: Browser connected
    ```
 
-1. Add rbenv to bash so that it loads every time you open a terminal.
-
-   ```
-   $ echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
-   ```
-
-1. Source your `.bash_profile` file.
-
-   ```
-   $ source ~/.bash_profile
-   ```
-
-1. Install a specific version of Ruby.
-
-   ```
-   $ rbenv install 2.4.x
-   $ rbenv global 2.4.x
-   $ ruby -v
-   ```
-
-1. Install the Bundler gem, which helps with Ruby dependencies.
-
-   ```
-   $ gem install bundler
-   ```
-
-1. Run `bundle install` the first time you are in the `devdocs` directory or when you need to pick up theme changes.
-
-### To build locally:
-Once you have completed preparing your environment, you can build locally and review the site in your browser.
-
-1. Run the serve command.
-
-   ```
-   $ bundle exec jekyll serve --incremental
-
-    Configuration file: /Users/username/Github/devdocs/_config.yml
-                Source: /Users/username/Github/devdocs
-           Destination: /Users/username/Github/devdocs/_site
-     Incremental build: enabled
-          Generating...
-                        done in x.x seconds.
-     Auto-regeneration: enabled for '/Users/username/Github/devdocs'
-        Server address: http://127.0.0.1:4000//
-      Server running... press ctrl-c to stop.
-   ```
-
-1. Use the **Server address** URL `http://127.0.0.1:4000/` in a browser to preview the content.
-
+1. The generated website launches automatically in a new tab in your browser.
 1. Press `Ctrl+C` in the serve terminal to stop the server.
 
-> ***TIP***  
-> Leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. Changing the `_config.yml` file requires a fresh build. Using the `--incremental` option limits re-builds to posts and pages that have changed.
+> ***TIP***
+> Leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. Changing the `_config.yml` file or other YAML file with data or configuration requires a fresh build (stop and start the server again with `rake preview`).
 
-## Build using Docker
+### Exclude private repositories
 
-[This Docker container](https://github.com/magento-devdocs/docker-for-devdocs) contains everything necessary to run Jekyll3 for working with Magento DevDocs.
+If you do not have access to the private repositories required by Docfile, you can exclude them in `_config.local.yml` to avoid the link checking report about missing pages.
 
-## Build using Vagrant
+Create a `_config.local.yml` file at the root of the project directory and exclude the paths you do not want to generate:
 
-You can deploy the devdocs site locally using [this Vagrant project](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
+```yaml
+exclude:
+  - page-builder
+```
+
+>**TIP**
+>You can override any other configuration options using this file.
+
+>**TIP**
+>To ignore the `_config.local.yml` file and preview the site with default configuration, use the `preview:all` option :
+>
+>```bash
+>rake preview:all
+>```
+
+## Building old versions
+
+The published website contains documentation for the most current Adobe Commerce and Magento Open Source releases only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
+
+To view the list of available tags:
+
+```bash
+git tag --list
+```
+
+To checkout the version (for example 2.2.0):
+
+```bash
+git checkout 2.2.0
+```
+
+Find guidelines for building the site locally in the checked out README.
+
+>**NOTE**
+>There is no guarantee the site will be built, since it can have dependencies on the external resources that are not available anymore.
+
+## Archived docs
+
+To view the archived documentation, see <http://magento.github.io/devdocs/>.
 
 ***
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
-*	<a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
-
-*	<a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
-
-*	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built using [GitHub pages](https://pages.github.com/).
+-  [Slack](https://magentocommeng.slack.com/archives/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
+-  [Visit our wiki](https://github.com/magento/devdocs/wiki)
+-  <a href="https://twitter.com/AdobeCommrcDocs" class="twitter-follow-button" data-show-count="false">Twitter @AdobeCommrcDocs</a>

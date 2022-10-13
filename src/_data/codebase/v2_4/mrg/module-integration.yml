@@ -1,0 +1,54 @@
+---
+title: Integration
+content: "This module enables third-party services to call the Web API by using access
+  tokens.\nIt provides an admin UI that enables manual creation of integrations. Extensions
+  can also provide a configuration\nfile so that an integration can be automatically
+  pre-configured. The module also contains the data\nmodel for request and access
+  token management.\n\n## Installation\n\nThe Magento_Integration module is one of
+  the base Magento 2 modules. You cannot disable or uninstall this module.\n\nThis
+  module is dependent on the following modules:\n- `Magento_Store`\n- `Magento_User`\n-
+  `Magento_Security`\n\nThe Magento_Integration module creates the following tables
+  in the database:\n- `oauth_consumer`\n- `oauth_token`\n- `oauth_nonce`\n- `integration`\n-
+  `oauth_token_request_log`\n\nFor information about a module installation in Magento
+  2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_Integration
+  module. For more information about the Magento extension mechanism, see [Magento
+  plugins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_Integration module.\n\n###
+  Events\n\nThe module dispatches the following events:\n\n#### Model\n- `customer_login`
+  event in the `\\Magento\\Integration\\Model\\CustomerTokenService::createCustomerAccessToken`
+  method. Parameters:\n    - `customer` is an object (`\\Magento\\Customer\\Api\\Data\\CustomerInterface`
+  class)\n\nFor information about an event in Magento 2, see [Events and observers](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/events-and-observers.html#events).\n\n###
+  Layouts\n\nThis module introduces the following layout handles in the `view/adminhtml/layout`
+  directory:\n- `adminhtml_integration_edit`\n- `adminhtml_integration_grid`\n- `adminhtml_integration_grid_block`\n-
+  `adminhtml_integration_index`\n- `adminhtml_integration_new`\n- `adminhtml_integration_permissionsdialog`\n-
+  `adminhtml_integration_tokensdialog`\n- `adminhtml_integration_tokensexchange`\n\nFor
+  more information about a layout in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  Public APIs\n\n- `\\Magento\\Integration\\Api\\AdminTokenServiceInterface`:\n    -
+  create access token for admin given the admin credentials\n    - revoke token by
+  admin ID\n\n- `\\Magento\\Integration\\Api\\AuthorizationServiceInterface`:\n    -
+  grant permissions to user to access the specified resources\n    - grant permissions
+  to the user to access all resources available in the system\n    - remove role and
+  associated permissions for the specified integration\n\n- `\\Magento\\Integration\\Api\\CustomerTokenServiceInterface`:\n
+  \   - create access token for admin given the customer credentials\n    - revoke
+  token by customer ID\n\n- `\\Magento\\Integration\\Api\\IntegrationServiceInterface`:\n
+  \   - create a new Integration\n    - get the details of a specific Integration
+  by integration ID\n    - find Integration by name\n    - get the details of an Integration
+  by consumer_id\n    - get the details of an active Integration by consumer_id\n
+  \   - update an Integration\n    - delete an Integration by integration ID\n    -
+  get an array of selected resources  for an integration\n  \n- `\\Magento\\Integration\\Api\\OauthServiceInterface`:\n
+  \   - create a new consumer account\n    - create access token for provided consumer\n
+  \   - retrieve access token assigned to the consumer\n    - load consumer by its
+  ID \n    - load consumer by its key\n    - execute post to integration (consumer)
+  HTTP Post URL. Generate and return oauth_verifier\n    - delete the consumer data
+  associated with the integration including its token and nonce\n    - remove token
+  associated with provided consumer\n\nFor information about a public API in Magento
+  2, see [Public interfaces & APIs](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n##
+  Additional information\n\n### Cron options\n\nCron group configuration can be set
+  at `etc/crontab.xml`:\n- `outdated_authentication_failures_cleanup` - clearing log
+  of outdated token request authentication failures\n- `expired_tokens_cleanups` -
+  delete expired customer and admin tokens\n\n[Learn how to configure and run cron
+  in Magento.](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html).\n\nMore
+  information can get at articles:\n- [Learn more about an Integration](https://docs.magento.com/user-guide/system/integrations.html)\n-
+  [Lear how to create an Integration](https://devdocs.magento.com/guides/v2.4/get-started/create-integration.html)"

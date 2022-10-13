@@ -1,1 +1,0 @@
-../../../v2.2/ui_comp_guide/concepts/ui_comp_linking_concept.md

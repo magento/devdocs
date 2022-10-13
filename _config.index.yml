@@ -1,0 +1,22 @@
+# Jekyll Algolia settings for indexing https://community.algolia.com/jekyll-algolia/options.html
+algolia:
+  files_to_exclude:
+    - swagger
+    - redoc
+  # Index HTML elements, especially code samples.
+  nodes_to_index: 'p,li,td,code'
+  # Override 10KB default and use our allowed max of 20KB
+  max_record_size: 20000
+  settings:
+    attributesForFaceting:
+      - searchable(functional_areas)
+      - searchable(guide_version)
+      - searchable(versionless)  
+
+# Disable the code blocks line numbers at indexing stage
+kramdown:
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false

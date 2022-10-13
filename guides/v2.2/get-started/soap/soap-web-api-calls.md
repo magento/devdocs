@@ -1,1 +1,0 @@
-../../../v2.1/get-started/soap/soap-web-api-calls.md

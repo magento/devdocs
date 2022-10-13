@@ -1,1 +1,0 @@
-../../../v2.2/cloud/trouble/environments-logs.md

@@ -1,1 +1,0 @@
-../../../v2.0/javascript-dev-guide/widgets/widget_tabs.md

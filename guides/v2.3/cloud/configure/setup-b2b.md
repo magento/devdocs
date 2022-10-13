@@ -1,1 +1,0 @@
-../../../v2.2/cloud/configure/setup-b2b.md

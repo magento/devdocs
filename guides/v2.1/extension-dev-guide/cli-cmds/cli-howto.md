@@ -1,1 +1,0 @@
-../../../v2.0/extension-dev-guide/cli-cmds/cli-howto.md

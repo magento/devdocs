@@ -1,1 +1,0 @@
-../../../v2.1/cloud/live/live-sanity-check.md

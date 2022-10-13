@@ -1,1 +1,0 @@
-../../v2.0/get-started/gs-curl.md

@@ -1,1 +1,0 @@
-../../../v2.1/get-started/authentication/gs-authentication-token.md

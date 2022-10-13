@@ -1,0 +1,63 @@
+label: UI Components
+pages:
+    - label: Overview
+      url: /ui_comp_guide/bk-ui_comps.html
+
+    - label: Using UI components client-side
+      url: /ui_comp_guide/bk-ui_comps.html
+
+    - label: Listing/Grid Component
+      url: /ui_comp_guide/bk-ui_comps.html
+      children:
+
+        - label: Grid search indexing
+          url: /ui-components/ui-listing-grid-search.html
+
+    - label: Listing/Grid Secondary Components
+      url: /ui_comp_guide/bk-ui_comps.html
+      children:
+
+        - label: Filter Component
+          url: /ui-components/ui-secondary-filter.html
+
+        - label: Pagination Component
+          url: /ui-components/ui-secondary-pagination.html
+
+        - label: MassActions Component
+          url: /ui-components/ui-secondary-massaction.html
+
+        - label: TreeMassAction Component
+          url: /ui-components/ui-secondary-treemass.html
+
+        - label: Column Component
+          url: /ui-components/ui-secondary-column.html
+
+        - label: UI-select Component
+          url: /ui-components/ui-secondary-uiselect.html
+
+        - label: Multiselect Component
+          url: /ui-components/ui-secondary-multi.html
+
+        - label: Inline Edit Component
+          url: /ui-components/ui-secondary-inline.html
+
+        - label: Bookmark Component
+          url: /ui-components/ui-secondary-bookmark.html
+
+        - label: Resize Component
+          url: /ui-components/ui-secondary-resize.html
+
+        - label: Sticky Header Component
+          url: /ui-components/ui-secondary-header.html
+
+        - label: Export Button Component
+          url: /ui-components/ui-export.html
+
+        - label: File Uploader Component
+          url: /ui-components/ui-secondary-uploader.html
+
+    - label: Form Component
+      url: /ui-components/ui-form.html
+
+    - label: definition.xml
+      url: /ui_comp_guide/bk-ui_comps.html

@@ -1,0 +1,170 @@
+---
+title: Customer
+content: "This module serves to handle the customer data (Customer, Customer Address
+  and Customer Group entities) both in the admin panel and the storefront. \nFor customer
+  passwords, the module implements upgrading hashes. \n\n## Installation\n\nThe Magento_Customer
+  module is one of the base Magento 2 modules. You cannot disable or uninstall this
+  module.\nThis module is dependent on the following modules:\n\n- `Magento_Eav`\n-
+  `Magento_Directory`\n\nThe following modules depend on this module:\n- `Magento_Captcha`\n-
+  `Magento_Catalog`\n- `Magento_CatalogCustomerGraphQl`\n- `Magento_CatalogRule`\n-
+  `Magento_CompareListGraphQl`\n- `Magento_CustomerAnalytics`\n- `Magento_CustomerGraphQl`\n-
+  `Magento_EncryptionKey`\n- `Magento_LoginAsCustomerGraphQl`\n- `Magento_NewRelicReporting`\n-
+  `Magento_ProductAlert`\n- `Magento_Reports`\n- `Magento_Sales`\n- `Magento_Swatches`\n-
+  `Magento_Tax`\n- `Magento_Wishlist`\n- `Magento_WishlistGraphQl`\n\nThe Magento_Customer
+  module creates the following tables in the database:\n- `customer_entity`\n- `customer_entity_datetime`\n-
+  `customer_entity_decimal`\n- `customer_entity_int`\n- `customer_entity_text`\n-
+  `customer_entity_varchar`\n- `customer_address_entity`\n- `customer_address_entity_datetime`\n-
+  `customer_address_entity_decimal`\n- `customer_address_entity_int`\n- `customer_address_entity_text`\n-
+  `customer_address_entity_varchar`\n- `customer_group`\n- `customer_eav_attribute`\n-
+  `customer_form_attribute`\n- `customer_eav_attribute_website`\n- `customer_visitor`\n-
+  `customer_log`\n\nFor information about a module installation in Magento 2, see
+  [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_Customer module.
+  For more information about the Magento extension mechanism, see [Magento plugins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_Customer module.\n\nA lot
+  of functionality in the module is on JavaScript, use [mixins](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/js_mixins.html)
+  to extend it.\n\n### Events\n\nThe module dispatches the following events:\n\n####
+  Block\n- `adminhtml_block_html_before` event in the `\\Magento\\Customer\\Block\\Adminhtml\\Edit\\Tab\\Carts::_toHtml`
+  method. Parameters:\n    - `block` is a `$this` object (`Magento\\Customer\\Block\\Adminhtml\\Edit\\Tab\\Carts`
+  class)\n    \n#### Controller\n- `customer_register_success` event in the `\\Magento\\Customer\\Controller\\Account\\CreatePost::execute`
+  method. Parameters:\n    - `account_controller` is a `$this` object (`\\Magento\\Customer\\Controller\\Account\\CreatePost`
+  class)\n    - `customer` is a customer object (`\\Magento\\Customer\\Model\\Data\\Customer`
+  class)\n    \n- `customer_account_edited` event in the `\\Magento\\Customer\\Controller\\Account\\EditPost::dispatchSuccessEvent`
+  method. Parameters:\n    - `email` is a customer email (`string` type)\n    \n-
+  `adminhtml_customer_prepare_save` event in the `\\Magento\\Customer\\Controller\\Adminhtml\\Index\\Save::execute`
+  method. Parameters:\n    - `customer` is a customer object to be saved (`\\Magento\\Customer\\Model\\Data\\Customer`
+  class)\n    - `request` is a request object with the `\\Magento\\Framework\\App\\RequestInterface`
+  interface.\n\n- `adminhtml_customer_save_after` event in the `\\Magento\\Customer\\Controller\\Adminhtml\\Index\\Save::execute`
+  method. Parameters:\n    - `customer` is a customer object (`\\Magento\\Customer\\Model\\Data\\Customer`
+  class)\n    - `request` is a request object with the `\\Magento\\Framework\\App\\RequestInterface`
+  interface.\n  \n#### Model\n- `customer_customer_authenticated` event in the `\\Magento\\Customer\\Model\\AccountManagement::authenticate`
+  method. Parameters:\n    - `model` is a customer object (`\\Magento\\Customer\\Model\\Customer`
+  class)\n    - `password` is a customer password (`string` type)\n\n- `customer_data_object_login`
+  event in the `\\Magento\\Customer\\Model\\AccountManagement::authenticate` method.
+  Parameters:\n    - `customer` is a customer object (`\\Magento\\Customer\\Model\\Data\\Customer`
+  class)\n\n- `customer_address_format` event in the `\\Magento\\Customer\\Model\\Address\\AbstractAddress::format`
+  method. Parameters:\n    - `type` is a address format type (`string` type)\n    -
+  `address` is a `$this` object (`\\Magento\\Customer\\Model\\Address\\AbstractAddress`
+  class)\n\n- `customer_customer_authenticated` event in the `\\Magento\\Customer\\Model\\Customer::authenticate`
+  method. Parameters:\n    - `model` is a customer object (`\\Magento\\Customer\\Model\\Customer`
+  class)\n    - `password` is a customer password (`string` type)\n\n- `customer_save_after_data_object`
+  event in the `\\Magento\\Customer\\Model\\ResourceModel\\CustomerRepository::save`
+  method. Parameters:\n    - `customer_data_object` is a saved customer object (`\\Magento\\Customer\\Model\\Data\\Customer`
+  class)\n    - `orig_customer_data_object` is a previous customer object (`\\Magento\\Customer\\Model\\Data\\Customer`
+  class)\n    - `delegate_data` is a customer additional data (`array` type)\n\n-
+  `customer_session_init` event in the `\\Magento\\Customer\\Model\\Session::__construct`
+  method. Parameters:\n    - `customer_session` is a `$this` object (`\\Magento\\Customer\\Model\\Session`
+  class)\n  \n- `customer_login` event in the `\\Magento\\Customer\\Model\\Session::setCustomerAsLoggedIn`
+  method. Parameters:\n    - `customer` is a `$this` object (`\\Magento\\Customer\\Model\\Customer`
+  class)\n\n- `customer_data_object_login` event in the `\\Magento\\Customer\\Model\\Session::setCustomerAsLoggedIn`
+  method. Parameters:\n    - `customer` is a `$this` object (`\\Magento\\Customer\\Model\\Data\\Customer`
+  class)\n\n- `customer_login` event in the `\\Magento\\Customer\\Model\\Session::setCustomerDataAsLoggedIn`
+  method. Parameters:\n    - `customer` is a `$this` object (`\\Magento\\Customer\\Model\\Customer`
+  class)\n\n- `customer_data_object_login` event in the `\\Magento\\Customer\\Model\\Session::setCustomerDataAsLoggedIn`
+  method. Parameters:\n    - `customer` is a `$this` object (`\\Magento\\Customer\\Model\\Data\\Customer`
+  class)\n\n- `customer_logout` event in the `\\Magento\\Customer\\Model\\Session::logout`
+  method. Parameters:\n    - `customer` is a `$this` object (`\\Magento\\Customer\\Model\\Customer`
+  class)\n\n- `visitor_init` event in the `\\Magento\\Customer\\Model\\Visitor::logout`
+  method. Parameters:\n    - `visitor` is a `$this` object (`\\Magento\\Customer\\Model\\Visitor`
+  class)\n\n- `visitor_activity_save` event in the `\\Magento\\Customer\\Model\\Visitor::saveByRequest`
+  method. Parameters:\n    - `visitor` is a `$this` object (`\\Magento\\Customer\\Model\\Visitor`
+  class)\n\nFor information about an event in Magento 2, see [Events and observers](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/events-and-observers.html#events).\n\n###
+  Layouts\n\nThis module introduces the following layouts in the `view/frontend/layout`
+  and `view/adminhtml/layout` directories:\n- `view/adminhtml/layout`:\n    - `customer_address_edit`\n
+  \   - `customer_group_index`\n    - `customer_index_cart`\n    - `customer_index_carts`\n
+  \   - `customer_index_edit`\n    - `customer_index_index`\n    - `customer_index_newsletter`\n
+  \   - `customer_index_orders`\n    - `customer_index_viewcart`\n    - `customer_index_viewwishlist`\n
+  \   - `customer_online_index`\n    \n- `view/frontend/layout`:\n    - `customer_account`\n
+  \   - `customer_account_confirmation`\n    - `customer_account_create`\n    - `customer_account_createpassword`\n
+  \   - `customer_account_edit`\n    - `customer_account_forgotpassword`\n    - `customer_account_index`\n
+  \   - `customer_account_login`\n    - `customer_account_logoutsuccess`\n    - `customer_address_index`\n
+  \   - `default`\n\nFor more information about a layout in Magento 2, see the [Layout
+  documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  Public APIs\n\n#### Data\n\n- `\\Magento\\Customer\\Api\\Data\\AddressInterface`:\n
+  \   - customer address data\n\n- `\\Magento\\Customer\\Api\\Data\\AddressSearchResultsInterface`:\n
+  \   - customer address search result data\n\n- `\\Magento\\Customer\\Api\\Data\\AttributeMetadataInterface`:\n
+  \   - customer attribute metadata\n\n- `\\Magento\\Customer\\Api\\Data\\CustomerInterface`:\n
+  \   - customer data\n\n- `\\Magento\\Customer\\Api\\Data\\CustomerSearchResultsInterface`:\n
+  \   - customer search result data\n\n- `\\Magento\\Customer\\Api\\Data\\GroupInterface`:\n
+  \   - customer group data\n\n- `\\Magento\\Customer\\Api\\Data\\GroupSearchResultsInterface`:\n
+  \   - customer group search result data\n\n- `\\Magento\\Customer\\Api\\Data\\OptionInterface`:\n
+  \   - option data\n\n- `\\Magento\\Customer\\Api\\Data\\RegionInterface`:\n    -
+  customer address region data\n\n- `\\Magento\\Customer\\Api\\Data\\ValidationResultsInterface`:\n
+  \   - validation results data\n\n- `\\Magento\\Customer\\Api\\Data\\ValidationRuleInterface`:\n
+  \   - validation rule data\n\n#### Metadata\n\n- `\\Magento\\Customer\\Api\\MetadataInterface`:\n
+  \   - retrieve all attributes filtered by form code \n    - retrieve attribute metadata
+  by attribute code\n    - get all attribute metadata\n    - get custom attributes
+  metadata for the given data interface\n    \n- `\\Magento\\Customer\\Api\\MetadataManagementInterface`:\n
+  \   - check whether attribute is searchable in admin grid and it is allowed\n    -
+  check whether attribute is filterable in admin grid and it is allowed\n    \n####
+  Customer address\n\n- `\\Magento\\Customer\\Api\\AddressMetadataInterface`:\n    -
+  retrieve information about customer address attributes metadata\n    - extends `Magento\\Customer\\MetadataInterface`\n
+  \   \n- `\\Magento\\Customer\\Api\\AddressMetadataManagementInterface`:\n    - manage
+  customer address attributes metadata\n    - extends `Magento\\Customer\\Api\\MetadataManagementInterface`\n
+  \   \n- `\\Magento\\Customer\\Api\\AddressRepositoryInterface`:\n    - save customer
+  address\n    - get customer address by address ID\n    - retrieve customers addresses
+  matching the specified criteria\n    - delete customer address\n    - delete customer
+  address by address ID\n\n- `\\Magento\\Customer\\Model\\Address\\AddressModelInterface`\n
+  \   - get street line by number\n    - create fields street1, street2, etc\n\n-
+  `\\Magento\\Customer\\Model\\Address\\ValidatorInterface`\n    - validate address
+  instance\n\n- `\\Magento\\Customer\\Model\\Address\\CustomAttributeListInterface`\n
+  \   - retrieve list of customer addresses custom attributes\n    \n#### Customer\n\n-
+  `\\Magento\\Customer\\Api\\AccountManagementInterface`:\n    - create customer account\n
+  \   - create customer account using provided hashed password\n    - validate customer
+  data\n    - check if customer can be deleted\n    - activate a customer account
+  using customer EMAIL and key that was sent in a confirmation email\n    - activate
+  a customer account using customer ID and key that was sent in a confirmation email\n
+  \   - authenticate a customer by username and password\n    - change customer password
+  by customer EMAIL\n    - change customer password by customer ID\n    - send an
+  email to the customer with a password reset link\n    - reset customer password\n
+  \   - check if password reset token is valid\n    - gets the account confirmation
+  status\n    - resend confirmation email\n    - check if given email is associated
+  with a customer account in given website\n    - check store availability for customer
+  given the customer ID\n    - retrieve default billing address for the given customer
+  ID\n    - retrieve default shipping address for the given customer ID\n    - get
+  hashed password\n    \n- `\\Magento\\Customer\\Api\\CustomerManagementInterface`:\n
+  \   - provide the number of customer count\n    \n- `\\Magento\\Customer\\Api\\CustomerMetadataInterface`:\n
+  \   - retrieve information about customer attributes metadata\n    - extends `Magento\\Customer\\MetadataInterface`\n
+  \   \n- `\\Magento\\Customer\\Api\\CustomerMetadataManagementInterface`:\n    -
+  manage customer attributes metadata\n    - extends `Magento\\Customer\\Api\\MetadataManagementInterface`\n
+  \   \n- `\\Magento\\Customer\\Api\\CustomerNameGenerationInterface`:\n    - concatenate
+  all customer name parts into full customer name\n    \n- `\\Magento\\Customer\\Api\\CustomerRepositoryInterface`:\n
+  \   - create or update a customer\n    - get customer by customer EMAIL\n    - get
+  customer by customer ID\n    - retrieve customers which match a specified criteria\n
+  \   - delete customer\n    - delete customer by customer ID\n\n- `\\Magento\\Customer\\Model\\AuthenticationInterface`:\n
+  \   - process customer authentication failure by customer ID\n    - unlock customer
+  by customer ID\n    - check if a customer is locked by customer ID\n    - authenticate
+  customer by customer ID and password\n\n- `\\Magento\\Customer\\Model\\EmailNotificationInterface`:\n
+  \   - send notification to customer when email and/or password changed\n    - send
+  email with new customer password\n    - send email with reset password confirmation
+  link\n    - send email with new account related information\n    \n#### Customer
+  group\n\n- `\\Magento\\Customer\\Api\\CustomerGroupConfigInterface`:\n    - set
+  system default customer group\n    \n- `\\Magento\\Customer\\Api\\GroupManagementInterface`:\n
+  \   - check if customer group can be deleted\n    - get default customer group\n
+  \   - get customer group representing customers not logged in\n    - get all customer
+  groups except group representing customers not logged in\n    - get customer group
+  representing all customers\n    \n- `\\Magento\\Customer\\Api\\GroupRepositoryInterface`:\n
+  \   - save customer group\n    - get customer group by group ID\n    - retrieve
+  customer groups which match a specified criteria\n    - delete customer group\n
+  \   - delete customer group by ID\n\n- `\\Magento\\Customer\\Model\\Group\\RetrieverInterface`\n
+  \   - get current customer group id from session\n\n- `\\Magento\\Customer\\Model\\Customer\\Source\\GroupSourceLoggedInOnlyInterface`\n
+  \   - get customer group attribute source\n    \nFor information about a public
+  API in Magento 2, see [Public interfaces & APIs](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html).\n\n###
+  UI components\n\nYou can extend customer and customer address updates using the
+  configuration files located in the `view/adminhtml/ui_component` and `view/base/ui_component`
+  directories:\n- `view/adminhtml/ui_component`:\n    - `customer_address_form`\n
+  \   - `customer_address_listing`\n    - `customer_group_listing`\n    - `customer_listing`\n
+  \   - `customer_online_grid`\n\n- `view/base/ui_component`:\n    - `customer_form`\n
+  \   \nFor information about a UI component in Magento 2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).\n\n##
+  Additional information\n\nMore information can get at articles:\n- [Customer Configurations](https://docs.magento.com/user-guide/configuration/customers/customer-configuration.html)\n-
+  [Customer Attributes](https://docs.magento.com/user-guide/stores/attributes-customer.html)\n-
+  [Customer Address Attributes](https://docs.magento.com/user-guide/stores/attributes-customer-address.html)\n-
+  [EAV And Extension Attributes](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/attributes.html)\n-
+  [2.4.x Release information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)\n\n###
+  Console commands\n\nMagento_Customer provides console commands:\n- `bin/magento
+  customer:hash:upgrade` - upgrades a customer password hash to the latest hash algorithm\n\n###
+  Cron options\n\nCron group configuration can be set at `etc/crontab.xml`:\n- `visitor_clean`
+  - clean visitor's outdated records\n\n[Learn how to configure and run cron in Magento.](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html).\n\n###
+  Indexers\n\nThis module introduces the following indexers:\n- `customer_grid` -
+  customer grid indexer\n\n[Learn how to manage the indexers](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html)."

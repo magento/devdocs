@@ -1,1 +1,0 @@
-../../../../v2.0/pattern-library/containers/tabs/tabs.md

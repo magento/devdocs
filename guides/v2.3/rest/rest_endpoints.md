@@ -1,1 +1,0 @@
-../../v2.2/rest/rest_endpoints.md

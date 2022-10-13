@@ -1,33 +1,32 @@
-_site/
-
-# OS generated files #
-######################
+# OS and IDE generated files #
+##############################
+/*.db
 .DS_Store
-.DS_Store?
-/.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-.idea
+.vscode
+.history
+/.idea
 
 # Config and output files #
 ###########################
+
 /_site/
+
+_config.local.yml
 .jekyll-metadata
-CNAME
-_config.yml
-/Readme.md
-ignore
-/*.yml
-!_config.devdocs.yml
-/gen_public.bat
-/jk.bat
+.jekyll-cache
+
 *.bat
-*.sh
-tmp/
+/tmp/
 /vendor/
-/Gemfile.lock
 /node_modules/
+
 _algolia_api_key
+
+# Docs from different repositories #
+###################################
+
+/src/mbi/
+/src/page-builder/
+/src/page-builder-migration/
+/src/guides/m1x/
+/src/mftf/

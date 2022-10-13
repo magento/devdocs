@@ -1,0 +1,2 @@
+{:.bs-callout-tip}
+For Pro projects, you must create a [Support ticket](https://support.magento.com/hc/en-us) to install or update services in Staging and Production environments. Indicate the service changes needed and include your updated `.magento.app.yaml` and `services.yaml` files and PHP version in the ticket. It can take up to 48 hours for the Cloud infrastructure team to update your project.

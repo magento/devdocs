@@ -1,1 +1,0 @@
-../../../../v2.0/pattern-library/displaying-data/datatable/datatable.md

@@ -1,1 +1,0 @@
-../../../v2.1/config-guide/bootstrap/magento-bootstrap.md

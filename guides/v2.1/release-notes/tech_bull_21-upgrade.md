@@ -1,1 +1,0 @@
-../../v2.0/release-notes/tech_bull_21-upgrade.md

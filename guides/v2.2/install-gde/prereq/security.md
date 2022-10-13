@@ -1,1 +1,0 @@
-../../../v2.1/install-gde/prereq/security.md
