@@ -4,8 +4,101 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Sep 26 14:38:45 2022
+updated: Mon Oct 10 14:39:18 2022
 entries:
+- description: The [Advanced Reporting](https://devdocs.magento.com/guides/v2.4/advanced-reporting/overview.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/development/advanced-reporting/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: October 6, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3180
+  merge_commit: cb3b7ec015e12d5e201b54b0825a82dc5786a6ce
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The Quality Patches Tool [home page](https://devdocs.magento.com/quality-patches/tool.html)
+    moved to [Experience League](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: October 3, 2022
+  link: https://github.com/magento/devdocs/pull/9521
+  merge_commit: df084a542261a999656b20f7343758244a547629
+  contributor: barnato-v
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - 'Progress: done'
+  - migration
+- description: Verified the backup retention policy for Cloud projects. See [Backup
+    and disaster recovery](https://devdocs.magento.com/cloud/architecture/pro-architecture.html#backup-and-disaster-recovery)
+    in the Cloud guide.
+  versions: 2.x
+  type: Technical
+  date: September 30, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3146
+  merge_commit: 9d068b8880b2216463c1da61d5f41b2cd2ff2b4d
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Updated the [New Relic instructions for Logs](https://devdocs.magento.com/cloud/project/new-relic.html#view-and-analyze-log-data).
+  versions: 2.x
+  type: Technical
+  date: September 30, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3169
+  merge_commit: 4edaa834aa405693e976dcc89e7467ad01d6dfe0
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: The Quality Patches Tool [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/tools/quality-patches-tool/release-notes.html)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: September 30, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3173
+  merge_commit: cb1aa57be409522d02b21f0c45f03dc35af28fe2
+  contributor: barnato-v
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Release Information](https://devdocs.magento.com/release/roadmap.html)
+    topics moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/release/roadmap.html)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: September 30, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3175
+  merge_commit: b649cfd3b2857b5d9ea8f3d93653f732271b8749
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.20 Quality Patches Tool (QPT) package release.
+  versions: 2.4.x
+  type: Major Update
+  date: September 27, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3170
+  merge_commit: 65e2ae5f2c783f7b72eedcad92991b011f057c55
+  contributor: apoltoratskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
 - description: The [Command-Line Tools Reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-commerce.html)
     topics moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/reference/commerce-on-premises.html)
     and will be redirected soon.

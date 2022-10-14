@@ -155,7 +155,7 @@ use Magento\Framework\Setup\InstallDataInterface;
 class InstallData implements InstallDataInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
@@ -269,7 +269,7 @@ class DefaultCustomerGroupsAndAttributes implements DataPatchInterface, PatchVer
         $this->moduleDataSetup = $moduleDataSetup;
     }
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
     public function apply()

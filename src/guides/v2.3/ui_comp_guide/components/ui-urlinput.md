@@ -61,7 +61,7 @@ class MyLink implements ConfigInterface
 {
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function getConfig()
     {
