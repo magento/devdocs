@@ -2,8 +2,6 @@
 group: catalog-service
 title: productSearch query
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/catalog-service/graphql/productsearch.html?lang=en
-layout: migrated
 ---
 
 The Catalog Service for Adobe Commerce `productSearch` query can use LiveSearch to return details about the SKUs specified as input. Although this query is the same  as the [`productSearch` query]({{site.baseurl}}/live-search/product-search.html), LiveSearch returns a `productView` object. See the [`productSearch` query]({{site.baseurl}}/live-search/product-search.html) topic for reference information.
