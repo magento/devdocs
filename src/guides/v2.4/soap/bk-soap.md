@@ -1,11 +1,8 @@
 ---
 group: soap
-subgroup: A_soap
 title: SOAP Reference
-landing-page: SOAP API
-menu_title: Overview
-menu_order: 1
-menu_node: parent
+migrated_to: https://developer.adobe.com/commerce/webapi/get-started/soap-web-api-calls/
+layout: migrated
 functional_areas:
   - Integration
 ---
