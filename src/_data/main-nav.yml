@@ -317,6 +317,10 @@
       url: /b2b/bk-b2b.html
       include_versions: ["2.3"]
 
+    - label: Catalog Service
+      url: /catalog-service/
+      versionless: true
+
     - label: Checkout
       url: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/
       include_versions: ["2.4"]
@@ -357,11 +361,11 @@
       include_versions: ["2.4"]
 
     - label: Product Recommendations Developer Guide
-      url: https://devdocs.magento.com/recommendations/product-recs.html
+      url: /recommendations/product-recs.html
       versionless: true
 
     - label: Security and Compliance
-      url: /security/security-and-compliance.html
+      url: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/overview.html
       versionless: true
 
     - label: Shared Services
