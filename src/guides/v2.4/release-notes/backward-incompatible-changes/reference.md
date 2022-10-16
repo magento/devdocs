@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Backward incompatible changes reference
+migrated_to: https://developer.adobe.com/commerce/php/development/backward-incompatible-changes/reference/
+layout: migrated
 ---
 
 Use this page to review high-level reference information for all backward incompatible changes in each release. Backward incompatible changes that have a major impact and require detailed explanation and special instructions are documented in the [Backward incompatible changes highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) topic.

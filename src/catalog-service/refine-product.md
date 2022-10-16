@@ -2,8 +2,6 @@
 group: catalog-service
 title: refineProduct query
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/catalog-service/graphql/refine-product.html?lang=en
-layout: migrated
 ---
 
 The `refineProduct` query narrows the results of a `products` query that was run against a complex product. Before you run the `refineProduct` query, you must run the `products` query and construct the response so that it returns a list of `options` within a `ComplexProductView` inline fragment. When a shopper selects a product option (such as size or color) on the storefront, run the `refineProduct` query, specifying the SKU and selected option value IDs as input. Depending on the number of product options the complex product has, you might need to run the `refineProduct` query multiple times, until the shopper has selected a specific variant.
