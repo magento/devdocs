@@ -236,7 +236,7 @@
           include_versions: ["2.3"]
 
         - label: SOAP API Reference
-          url: /soap/bk-soap.html
+          url: https://developer.adobe.com/commerce/webapi/get-started/soap-web-api-calls/
 
         - label: GraphQL Developer Guide
           url: /graphql/
