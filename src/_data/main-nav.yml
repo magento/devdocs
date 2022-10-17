@@ -237,6 +237,11 @@
 
         - label: SOAP API Reference
           url: https://developer.adobe.com/commerce/webapi/get-started/soap-web-api-calls/
+          include_versions: ["2.4"]
+
+        - label: SOAP API Reference
+          url: /soap/bk-soap.html
+          include_versions: ["2.3"]
 
         - label: GraphQL Developer Guide
           url: /graphql/
