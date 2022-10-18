@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Magento Open Source 2.4.2 Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-2.html
+layout: migrated
 ---
 
 {{site.data.var.ce}} 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. Elasticsearch 7.9.x and Redis 6.x are now supported.
@@ -286,7 +288,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36598-->
 
-*  A customer’s default billing address is now selected when the **My billing and shipping address are the same** checkbox on the checkout workflow is unselected.
+*  A customer's default billing address is now selected when the **My billing and shipping address are the same** checkbox on the checkout workflow is unselected.
 
 <!--- MC-37351-->
 
@@ -338,7 +340,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8442 -->
 
-*  Magento now correctly updates a cart’s item subtotal when a shopper clicks **Update Shopping Cart** while checking out with multiple addresses. [GitHub-30408](https://github.com/magento/magento2/issues/30408)
+*  Magento now correctly updates a cart's item subtotal when a shopper clicks **Update Shopping Cart** while checking out with multiple addresses. [GitHub-30408](https://github.com/magento/magento2/issues/30408)
 
 <!-- ENGCOM-8283 -->
 
@@ -380,7 +382,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-35490-->
 
-*  Problems with product sort order on the storefront have been resolved. Previously, when Magento indexed product prices, it occasionally set a configurable product’s `min_price` and `max_price` to 0 in the `catalog_product_index_price` table, which affected price sort order on the storefront.
+*  Problems with product sort order on the storefront have been resolved. Previously, when Magento indexed product prices, it occasionally set a configurable product's `min_price` and `max_price` to 0 in the `catalog_product_index_price` table, which affected price sort order on the storefront.
 
 <!--- MC-35608-->
 
@@ -428,7 +430,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-30626-->
 
-*  The price of a custom option with a percent price is now converted as expected into the active store’s base currency in multi-store deployments. Previously, the price of a custom option with a percent price was converted incorrectly. [GitHub-26432](https://github.com/magento/magento2/issues/26432)
+*  The price of a custom option with a percent price is now converted as expected into the active store's base currency in multi-store deployments. Previously, the price of a custom option with a percent price was converted incorrectly. [GitHub-26432](https://github.com/magento/magento2/issues/26432)
 
 <!--- MC-38890-->
 
@@ -448,7 +450,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-30626 ENGCOM-8475-->
 
-*  The price of a custom option with a percent price is now converted as expected into the active store’s base currency in multi-store deployments. Previously, the price of a custom option with a percent price was converted incorrectly. [GitHub-26432](https://github.com/magento/magento2/issues/26432)
+*  The price of a custom option with a percent price is now converted as expected into the active store's base currency in multi-store deployments. Previously, the price of a custom option with a percent price was converted incorrectly. [GitHub-26432](https://github.com/magento/magento2/issues/26432)
 
 <!-- ENGCOM-8395 -->
 
@@ -501,7 +503,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8478 -->
 
-*  Corrected the pluralization of “item” in the mini cart and checkout order summary. [GitHub-29920](https://github.com/magento/magento2/issues/29920)
+*  Corrected the pluralization of "item" in the mini cart and checkout order summary. [GitHub-29920](https://github.com/magento/magento2/issues/29920)
 
 <!-- ENGCOM-8309 -->
 
@@ -585,7 +587,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-38930-->
 
-*  A virtual product no longer changes type when its status is changed from enabled to disabled (or vice versa). Previously, Magento changed a product’s type from virtual to simple when its status changed.
+*  A virtual product no longer changes type when its status is changed from enabled to disabled (or vice versa). Previously, Magento changed a product's type from virtual to simple when its status changed.
 
 <!--- MC-38197-->
 
@@ -691,7 +693,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-39783-->
 
-*  The Admin customers grid is now available as expected when the non-default website is deleted in a multi-site deployment when indexes are set to **Update by Schedule**. Previously, Magento did not display the grid and threw this error:  `[2020-12-09 11:31:54] report.CRITICAL: The website with id 2 that was requested wasn't found. Verify the website and try again. \{"exception":"[object] (Magento\\Framework\\Exception\\NoSuchEntityException(code: 0): The website with id 2 that was requested wasn't found. Verify the website and try again. at /var/www/html/magento24ee/vendor/magento/module-store/Model/WebsiteRepository.php:110)”}`
+*  The Admin customers grid is now available as expected when the non-default website is deleted in a multi-site deployment when indexes are set to **Update by Schedule**. Previously, Magento did not display the grid and threw this error:  `[2020-12-09 11:31:54] report.CRITICAL: The website with id 2 that was requested wasn't found. Verify the website and try again. \{"exception":"[object] (Magento\\Framework\\Exception\\NoSuchEntityException(code: 0): The website with id 2 that was requested wasn't found. Verify the website and try again. at /var/www/html/magento24ee/vendor/magento/module-store/Model/WebsiteRepository.php:110)"}`
 
 ### dotdigital
 
@@ -701,7 +703,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Added an array check before looping over order status automations after an order is saved.
 
-*  Resolved issues with Composer upgrades that were the result of the dotdigital module’s dependency on `magento/module-authorization`.
+*  Resolved issues with Composer upgrades that were the result of the dotdigital module's dependency on `magento/module-authorization`.
 
 ### Downloadable
 
@@ -749,7 +751,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36942-->
 
-*  Images on a store’s home page are now rendered successfully. Previously, the page source HTML was corrupted because the three consecutive slashes in the image’s base64 code was misinterpreted as a comment.
+*  Images on a store's home page are now rendered successfully. Previously, the page source HTML was corrupted because the three consecutive slashes in the image's base64 code was misinterpreted as a comment.
 
 <!--- MC-37369-->
 
@@ -771,7 +773,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-38105-->
 
-*  You can now configure a native session handler that differs from the handler that is defined in `php.ini`. Previously, `SessionManager` did not set the memcache as `save_handler`, but instead used the file’s `session_handler`. Magento threw this error: `main.CRITICAL: Warning: SessionHandler::read(): open(127.0.0.1:11211/sess_0imeeaqmnvemdg4e3h57tat0ik, O_RDWR) failed: No such file or directory (2) in../vendor/magento/framework/Session/SaveHandler/Native.php on line 22 {"exception":"[object] (Exception(code: 0): Warning: SessionHandler::read(): open(127.0.0.1:11211/sess_0imeeaqmnvemdg4e3h57tat0ik, O_RDWR) failed: No such file or directory (2) in ../vendor/magento/framework/Session/SaveHandler/Native.php on line 22 at ../vendor/magento/framework/App/ErrorHandler.php:61)”}`. [GitHub-24717](https://github.com/magento/magento2/issues/24717)
+*  You can now configure a native session handler that differs from the handler that is defined in `php.ini`. Previously, `SessionManager` did not set the memcache as `save_handler`, but instead used the file's `session_handler`. Magento threw this error: `main.CRITICAL: Warning: SessionHandler::read(): open(127.0.0.1:11211/sess_0imeeaqmnvemdg4e3h57tat0ik, O_RDWR) failed: No such file or directory (2) in../vendor/magento/framework/Session/SaveHandler/Native.php on line 22 {"exception":"[object] (Exception(code: 0): Warning: SessionHandler::read(): open(127.0.0.1:11211/sess_0imeeaqmnvemdg4e3h57tat0ik, O_RDWR) failed: No such file or directory (2) in ../vendor/magento/framework/Session/SaveHandler/Native.php on line 22 at ../vendor/magento/framework/App/ErrorHandler.php:61)"}`. [GitHub-24717](https://github.com/magento/magento2/issues/24717)
 
 <!-- ENGCOM-8052 -->
 
@@ -889,7 +891,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8087 -->
 
-*  Added missing `order_data` array to `EmailSender` classes. This brings these classes into alignment with Magento’s recommendation to use scalar variables instead of objects within the email templates. [GitHub-29604](https://github.com/magento/magento2/issues/29604)
+*  Added missing `order_data` array to `EmailSender` classes. This brings these classes into alignment with Magento's recommendation to use scalar variables instead of objects within the email templates. [GitHub-29604](https://github.com/magento/magento2/issues/29604)
 
 ### GraphQL
 
@@ -1113,7 +1115,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36942-->
 
-*  Images on a store’s home page are now rendered successfully. Previously, the page source HTML was corrupted because the three consecutive slashes in the image’s base64 code were misinterpreted as a comment.
+*  Images on a store's home page are now rendered successfully. Previously, the page source HTML was corrupted because the three consecutive slashes in the image's base64 code were misinterpreted as a comment.
 
 <!-- ENGCOM-8116 -->
 
@@ -1135,7 +1137,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-35081-->
 
-*  Customer address `region_id` is no longer assigned a `NULL` value when you import customer addresses using a CSV file (`entity type = "customer address"` and `import behavior = "add/update”`) from which certain field values have been deleted.
+*  Customer address `region_id` is no longer assigned a `NULL` value when you import customer addresses using a CSV file (`entity type = "customer address"` and `import behavior = "add/update"`) from which certain field values have been deleted.
 
 <!--- MC-35295-->
 
@@ -1497,7 +1499,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-35152-->
 
-*  Magento now completes Payflow Pro payments successfully when the shopper’s name contains accented letters. Previously, payment did not complete, and Magento logged this error: `report.CRITICAL: String to be escaped was not valid UTF-8 or could not be converted`.
+*  Magento now completes Payflow Pro payments successfully when the shopper's name contains accented letters. Previously, payment did not complete, and Magento logged this error: `report.CRITICAL: String to be escaped was not valid UTF-8 or could not be converted`.
 
 #### PayPal
 
@@ -1507,7 +1509,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-37649-->
 
-*  Magento no longer creates duplicate orders when an order is placed with PayPal Express. Previously, when a shopper tried to pay for an order with PayPal Express but PayPal returned an error, Magento still created the order. This resulted in duplicate orders on the merchant’s site. [GitHub-13952](https://github.com/magento/magento2/issues/13952)
+*  Magento no longer creates duplicate orders when an order is placed with PayPal Express. Previously, when a shopper tried to pay for an order with PayPal Express but PayPal returned an error, Magento still created the order. This resulted in duplicate orders on the merchant's site. [GitHub-13952](https://github.com/magento/magento2/issues/13952)
 
 <!--- MC-38829-->
 
@@ -1587,7 +1589,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-37109-->
 
-*  Magento no longer displays the contents of a customer’s cart after the customers session expires. Previously, Magento displayed this error when a guest customer tried to check out when persistent shopping cart was enabled: `No such entity with cartid = 0`.
+*  Magento no longer displays the contents of a customer's cart after the customers session expires. Previously, Magento displayed this error when a guest customer tried to check out when persistent shopping cart was enabled: `No such entity with cartid = 0`.
 
 ### Pricing
 
@@ -1799,7 +1801,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8274 -->
 
-*  Magento now creates correct URLs for categories and products after a store view’s top-level URL key is changed. Previously, when a store view’s category tree contained modified  `url_keys`, if a category key did not change but the category parents’ key did, then the original code would used the category’s default store view when creating URLs. [GitHub-28633](https://github.com/magento/magento2/issues/28633)
+*  Magento now creates correct URLs for categories and products after a store view's top-level URL key is changed. Previously, when a store view's category tree contained modified  `url_keys`, if a category key did not change but the category parents' key did, then the original code would used the category's default store view when creating URLs. [GitHub-28633](https://github.com/magento/magento2/issues/28633)
 
 ### Target rules
 
@@ -1983,7 +1985,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-31892-->
 
-*  Magento now preserves an attribute’s value when you move the attribute from one group to another.
+*  Magento now preserves an attribute's value when you move the attribute from one group to another.
 
 <!-- ENGCOM-8085 -->
 
@@ -2003,7 +2005,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8120 -->
 
-*  The WAI-ARIA attribute `aria-atomic="true”` has been added to the error container tag. [GitHub-29560](https://github.com/magento/magento2/issues/29560)
+*  The WAI-ARIA attribute `aria-atomic="true"` has been added to the error container tag. [GitHub-29560](https://github.com/magento/magento2/issues/29560)
 
 <!-- ENGCOM-8175 -->
 
@@ -2049,7 +2051,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-23904 ENGCOM-8421-->
 
-*  You can now use POST `V1/invoice/:invoiceId/refund` to refund an invoice that has a zero quantity of products and zero shipping charges (for example, `{“items": [{"qty": 0, "orderItemId": 6, "extensionAttributes": {}}], "appendComment": false, "notify": true, "isOnline": true, "arguments": {"adjustment_negative": 0.0, "adjustment_positive": 0.99, "shipping_amount": 0}}.` ) Previously, Magento threw this error: `You can't create a creditmemo without products`. [GitHub-23069](https://github.com/magento/magento2/issues/23069)
+*  You can now use POST `V1/invoice/:invoiceId/refund` to refund an invoice that has a zero quantity of products and zero shipping charges (for example, `{"items": [{"qty": 0, "orderItemId": 6, "extensionAttributes": {}}], "appendComment": false, "notify": true, "isOnline": true, "arguments": {"adjustment_negative": 0.0, "adjustment_positive": 0.99, "shipping_amount": 0}}.` ) Previously, Magento threw this error: `You can't create a creditmemo without products`. [GitHub-23069](https://github.com/magento/magento2/issues/23069)
 
 <!--- MC-33732 -->
 
@@ -2110,7 +2112,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
    cd magento_root/pub/shop01
    ```
 
-1. Create symlinks for the store’s parent directories in the newly created directory:
+1. Create symlinks for the store's parent directories in the newly created directory:
 
    ```bash
    ln -s ../media media
@@ -2154,7 +2156,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
    }
 ```
 
-1. Configure your Apache server to point to the new subdirectory. Deployment configurations can vary widely. Here’s an example server configuration:
+1. Configure your Apache server to point to the new subdirectory. Deployment configurations can vary widely. Here's an example server configuration:
 
 ```xml
    <VirtualHost *:80>

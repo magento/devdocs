@@ -102,7 +102,7 @@
       include_versions: ["2.3"]
 
     - label: Release Information
-      url: /release-notes/bk-release-notes.html
+      url: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/overview.html
 
     - label: Command-line Tools Reference
       url: https://experienceleague.adobe.com/docs/commerce-operations/reference/commerce.html
