@@ -2,6 +2,8 @@
 group: shared-services
 title: Subscribe - Adobe Commerce Event SDK Reference
 ee_only: True
+migrated_to: https://developer.adobe.com/commerce/services/shared-services/storefront-events/sdk/subscribe/
+layout: migrated
 ---
 ## Functions
 
