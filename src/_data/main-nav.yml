@@ -343,7 +343,7 @@
       include_versions: ["2.3"]
 
     - label: Live Search
-      url: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/guide-overview.html
+      url: /live-search/overview.html
       versionless: true
 
     - label: Commerce Marketplace
