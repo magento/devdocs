@@ -374,7 +374,7 @@
       versionless: true
 
     - label: Shared Services
-      url: /shared-services/storefront-events-sdk.html
+      url: https://developer-stage.adobe.com/commerce/services/shared-services/
       versionless: true
 
     - label: Staging
