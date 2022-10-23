@@ -236,7 +236,12 @@
           include_versions: ["2.3"]
 
         - label: SOAP API Reference
+          url: https://developer.adobe.com/commerce/webapi/get-started/soap-web-api-calls/
+          include_versions: ["2.4"]
+
+        - label: SOAP API Reference
           url: /soap/bk-soap.html
+          include_versions: ["2.3"]
 
         - label: GraphQL Developer Guide
           url: /graphql/
@@ -338,7 +343,7 @@
       include_versions: ["2.3"]
 
     - label: Live Search
-      url: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/guide-overview.html
+      url: /live-search/overview.html
       versionless: true
 
     - label: Commerce Marketplace
@@ -369,7 +374,7 @@
       versionless: true
 
     - label: Shared Services
-      url: /shared-services/storefront-events-sdk.html
+      url: https://developer-stage.adobe.com/commerce/services/shared-services/
       versionless: true
 
     - label: Staging
