@@ -8,7 +8,7 @@ The `contactUs` mutation submits the contents of the Contact Us form.
 
 ## Syntax
 
- `mutation: contactUs(input: ContacUsInput!): ContactUsOutput`
+ `mutation: contactUs(input: ContactUsInput!): ContactUsOutput`
 
 ## Example usage
 
