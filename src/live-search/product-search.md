@@ -15,11 +15,7 @@ The `productSearch` query accepts the following fields as input:
 -  `sort` - An object that defines one or more product attributes to use to sort the search results. The default sortable product attributes in Luma are `price`, `name`, and `position`. A product's position is assigned within a category.
 -  `page_size` and `current_page` - These optional fields allow the search results to be broken down into smaller groups so that a limited number of items are returned at a time. The default value of `page_size` is `20`, and the default value for `current_page` is `1`. In the response, counting starts at page one.
 
-### Field Reference
-
-The following sections describe each field in detail.
-
-#### phrase
+### phrase
 
 The `phrase` field contains the text that a shopper enters on the storefront. Live Search applies all configured rules, synonyms and other configuration settings to return determine the search results. All `productSearch` queries must contain the `phrase` field.
 
@@ -29,7 +25,7 @@ The following example sets `Watch` as the phrase to search for:
 phrase: "Watch"
 ```
 
-#### filter
+### filter
 
 Filters are the part of the query that uses product attributes as facets that have been previously defined in the {{site.data.var.ee}} Admin. For example, to filter results by color, a color facet must be defined in Live Search, based on the existing `color` attribute.
 
@@ -60,7 +56,54 @@ Only facets specified in Live Search are returned.
 {:.bs-callout-tip}
 Use the [`attributeMetadata` query]({{ site.baseurl }}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
 
-#### sort
+Live Search provides a mechanism for filtering by `category` and `categoryPath`:
+
+#### categories
+
+This filters the selected categories on the facet filter on a search results page or a category browse page.
+
+_Scenario 1_- Search results page
+
+Performing a search on "pants" and then filters on one or more category facets on the search results page:
+
+```graphql
+filter: { 
+  attribute: 'categories',
+  in: ['women/bottoms-women/pants-women', 'women/new-arrivals']
+}
+```
+
+The categories returned will not be limited to any specific category path.
+
+_Scenario 2_- Category browse page
+
+Browse "Women's -> Bottoms", and on the results page selects "Short" in the category facet:
+
+```graphql
+filter: [
+  {attribute: 'categoryPath', eq: 'women/bottoms-women'},
+  {attribute: 'categories', in: ['women/bottoms-women/pants-women', 'women/new-arrivals'] } 
+]
+```
+
+The categories returned will be limited to the category specified in `categoryPath` filter, as long as there is a single `categoryPath`.
+
+#### categoryPath
+
+This filter returns category facets limited to immediate sub-categories of the passed category path. This is used to filter on the category path of the category page being browsed.
+
+For example, when browsing to "Women's -> Bottoms", filtering by `categoryPath` returns the facet sub-categories of "Bottoms" such as "Pants" and "Shorts".
+
+```graphql
+filter: {
+  attribute: 'categoryPath',
+  eq: 'women/bottoms-women'
+}
+```
+
+Strict filtering on the facets returned only happens when a single category path is passed. If you pass multiple paths (e.g., in: ["women/bottoms-women/shorts-women", "women/bottoms-women/pants-women"]), the facets returned will no longer be limited to sub-categories of these categories.
+
+### sort
 
 The `sort` field allows you to specify one or more product attributes to be used to sort the results. If you specify more than one attribute, Live Search sorts by the first field listed. If any items have the same value, those items are sorted by the secondary field. The value for each field can be set to either `ASC` or `DESC`.
 
@@ -82,7 +125,7 @@ sort: [
 {:.bs-callout-tip}
 Use the [`attributeMetadata` query]({{ site.baseurl }}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
 
-#### page_size
+### page_size
 
 When you run a query, you do not know in advance how many items the query will return. The query could return a few items, or it could return hundreds. The `page_size` field determines how many items to return at one time. If you use the default value of 20, and the query returns 97 items, the results will be stored in four pages containing 20 items each, and one page containing 17 items.
 
@@ -92,7 +135,7 @@ The following example sets the page size to 10:
 page_size: 10
 ```
 
-#### current_page
+### current_page
 
 The `currentPage` field specifies which page of results to return. If no value is specified, the first page is returned. To continue with the values mentioned in the `page_size` field, page number `5` contains items 81 - 97.
 
