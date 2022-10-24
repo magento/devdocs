@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Magento Open Source 2.4.4 Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-4.html
+layout: migrated
 ---
 
 {{ site.data.var.ce }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
@@ -148,7 +150,7 @@ With the exception of [Braintree](https://docs.magento.com/user-guide/payment/br
 
 *  The Venmo payment option is now supported.  <!--- AC-1229-->
 
-*  Pay Later has been added as an option for shoppers based on the shopper's location, not the merchant’s location.
+*  Pay Later has been added as an option for shoppers based on the shopper's location, not the merchant's location.
 
 *  Merchants can now set the shopper country when testing the shopper experience in their country of choice. Previously, tests were limited to testing only for the country in which the merchant is located. This change is valid in sandbox mode only.
 
@@ -174,7 +176,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-43094-->
 
-*  Data patches can no longer ignore a table’s unique constraints and insert duplicate values into a MySQL database table. Previously, patches could insert duplicate values, which corrupted the database.
+*  Data patches can no longer ignore a table's unique constraints and insert duplicate values into a MySQL database table. Previously, patches could insert duplicate values, which corrupted the database.
 
 <!--- AC-1480-->
 
@@ -268,7 +270,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-42885-->
 
-*  Shoppers can now add a bundle product with Fixed Product Tax and two options to their shopping cart. Previously, {{ site.data.var.ce }} did not add the product and displayed this error: `We can’t add this item to your shopping cart right now`.
+*  Shoppers can now add a bundle product with Fixed Product Tax and two options to their shopping cart. Previously, {{ site.data.var.ce }} did not add the product and displayed this error: `We can't add this item to your shopping cart right now`.
 
 <!--- MC-42249-->
 
@@ -372,7 +374,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-691-->
 
-*  {{ site.data.var.ce }} no longer throws this error when a shopper adds a billing address that is missing a street field: `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }”`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
+*  {{ site.data.var.ce }} no longer throws this error when a shopper adds a billing address that is missing a street field: `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }"`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
 
 <!--- AC-1625-->
 
@@ -380,7 +382,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- AC-691-->
 
-*  Checkout no longer fails at the payment stage when the billing address is missing street field values or the street field value is not an array. Previously, checkout failed with this error: `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }”`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
+*  Checkout no longer fails at the payment stage when the billing address is missing street field values or the street field value is not an array. Previously, checkout failed with this error: `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }"`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
 
 <!--- ACP2E-10-->
 
@@ -576,7 +578,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- ACP2E-47-->
 
-*  Order emails now contain data localized using the shopper’s locale as expected. Previously, order emails used the Admin locale.
+*  Order emails now contain data localized using the shopper's locale as expected. Previously, order emails used the Admin locale.
 
 <!--- ACP2E-107-->
 
@@ -828,7 +830,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-41672 23734-->
 
-*  {{ site.data.var.ce }} now converts the timestamp in the export filename to the user’s timezone after a scheduled export. Previously, these values were not converted, and {{ site.data.var.ce }} displayed the UTC timestamp.
+*  {{ site.data.var.ce }} now converts the timestamp in the export filename to the user's timezone after a scheduled export. Previously, these values were not converted, and {{ site.data.var.ce }} displayed the UTC timestamp.
 
 <!--- MC-42330-->
 
@@ -1345,7 +1347,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-42758-->
 
-*  Shipment email now includes the tracking number for the current shipment only. Previously, when an order included several shipments, each shipment’s email included the tracking numbers from all shipments related to the order.
+*  Shipment email now includes the tracking number for the current shipment only. Previously, when an order included several shipments, each shipment's email included the tracking numbers from all shipments related to the order.
 
 <!--- MC-42396-->
 
@@ -1407,7 +1409,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-1225-->
 
-*  Merchants can now test the shopper experience of the country in which the shopper is located, rather than the merchant’s location.
+*  Merchants can now test the shopper experience of the country in which the shopper is located, rather than the merchant's location.
 
 *  Functional tests have been stabilized for PHP 8.x compatibility. [GitHub-34327](https://github.com/magento/magento2/issues/34327), [GitHub-34188](https://github.com/magento/magento2/issues/34188)
 
@@ -1689,7 +1691,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 Dotdigital is a customer engagement platform that helps digital marketers and developers deliver communications across the customer journey. We harness the power of customer data, powering engagement, conversion, and loyalty for brands as they grow and scale. Customers love our easy-to-use platform that connects first party data across the systems, surfacing powerful insights and automating predictive cross-channel messages.
 
-Dotdigital’s 350+ employees serve mid-market and enterprise companies around the world and across industries. We aspire to inspire responsible marketing and are committed to sustainability, privacy, and security. Dotdigital is proud to be the world’s first carbon-neutral marketing automation platform, certified for ISO 14001, ISO 27701, and ISO 27001.
+Dotdigital's 350+ employees serve mid-market and enterprise companies around the world and across industries. We aspire to inspire responsible marketing and are committed to sustainability, privacy, and security. Dotdigital is proud to be the world's first carbon-neutral marketing automation platform, certified for ISO 14001, ISO 27701, and ISO 27001.
 
 See [Dotdigital — Marketing Automation](https://marketplace.magento.com/dotdigital-dotdigital-magento2-os-package.html) for purchase and download information.
 
