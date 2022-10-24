@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Magento Open Source 2.4.0 Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-0.html
+layout: migrated
 ---
 
 {{site.data.var.ce}} 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default.
@@ -90,7 +92,7 @@ The following platform upgrades help enhance website security and performance. S
 
 *  **MariaDB 10.4 support**. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported (as a result of removing support for MySQL 5.6 in this release).
 
-*  **Migration of dependencies on Zend Framework to the [Laminas project](https://getlaminas.org/about/foundation)** to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated. See the [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) DevBlog post.
+*  **Migration of dependencies on Zend Framework to the [Laminas project](https://getlaminas.org/about/foundation)** to reflect the transitioning of Zend Framework to the Linux Foundation's Laminas Project. Zend Framework has been deprecated. See the [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) DevBlog post.
 
 *  **Decomposition of Magento Controllers** allows extension developers to implement ActionInterface directly without "layer supertype" classes. See the [Decomposition of Magento Controllers](https://community.magento.com/t5/Magento-DevBlog/Decomposition-of-Magento-Controllers/ba-p/430883) DevBlog post. _Enhancement started by Vinai Kopp in pull request [16268](https://github.com/magento/magento2/pull/16268) and finalized by Lukasz Bajsarowicz in pull request [26778](https://github.com/magento/magento2/pull/26778)_. [GitHub-9582](https://github.com/magento/magento2/issues/9582)
 
@@ -108,7 +110,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Support for partial-word search for Elasticsearch (new default search engine)**. Elasticsearch now supports the use of  partial words in search terms for  product names and SKUs when using quick search. This capability was supported by the MySQL search engine, which has been deprecated and replaced by Elasticsearch in this release.
 
-*  **PayPal JavaScript SDK upgrade**. We’ve migrated the PayPal Express Checkout integration to the latest PayPal JavaScript SDK, an SDK that  automatically collects and passes needed risk parameters to PayPal. The behavior of the PayPal Express Checkout payment method remains unchanged. However, upgrading this SDK to the latest version let merchants access the latest features and security enhancements. <!--- MC-30962-->
+*  **PayPal JavaScript SDK upgrade**. We've migrated the PayPal Express Checkout integration to the latest PayPal JavaScript SDK, an SDK that  automatically collects and passes needed risk parameters to PayPal. The behavior of the PayPal Express Checkout payment method remains unchanged. However, upgrading this SDK to the latest version let merchants access the latest features and security enhancements. <!--- MC-30962-->
 
 *  **Deprecation and removal of the Web Set Up Wizard**. You must use the command line to install or upgrade Magento 2.4.0. See [Install Magento]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
 
@@ -129,7 +131,7 @@ This release contains enhancements to core quality, which improve the quality of
 
    *  Decrease in the size of network data transfers between Redis and Magento
 
-   *  Reduction in Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
+   *  Reduction in Redis' consumption of CPU cycles by improving the adapter's ability to automatically determine what needs to be loaded
 
    *  Reduction in race conditions on Redis write operations
 
@@ -231,7 +233,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-23940-->
 
-*  You can now successfully remove a website along with the website’s scope-specific configuration settings in `app/etc/config.php` as expected. Previously, when you tried to remove the website, the operation failed, and Magento displayed this error: `The website with code xxx that was requested wasn't found. Verify the website and try again`. Additionally, Magento displayed this error on the storefront: `Config files have changed. Run app:config:import or setup:upgrade command to synchronize configuration`. [GitHub-24061](https://github.com/magento/magento2/issues/24061)
+*  You can now successfully remove a website along with the website's scope-specific configuration settings in `app/etc/config.php` as expected. Previously, when you tried to remove the website, the operation failed, and Magento displayed this error: `The website with code xxx that was requested wasn't found. Verify the website and try again`. Additionally, Magento displayed this error on the storefront: `Config files have changed. Run app:config:import or setup:upgrade command to synchronize configuration`. [GitHub-24061](https://github.com/magento/magento2/issues/24061)
 
 <!--- MC-30140-->
 
@@ -264,7 +266,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-5546-->
 
-*  Problems with LESS compilation in Magento’s Luma theme when using an alternative LESS compiler than the one that ships with Magento by default have been resolved. _Fix submitted by Pieter Hoste in pull request [24003](https://github.com/magento/magento2/pull/24003)_. [GitHub-23619](https://github.com/magento/magento2/issues/23619)
+*  Problems with LESS compilation in Magento's Luma theme when using an alternative LESS compiler than the one that ships with Magento by default have been resolved. _Fix submitted by Pieter Hoste in pull request [24003](https://github.com/magento/magento2/pull/24003)_. [GitHub-23619](https://github.com/magento/magento2/issues/23619)
 
 <!--- ENGCOM-6367-->
 
@@ -294,7 +296,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!-- ENGCOM-7195-->
 
-*  Magento no longer saves a preview of an Adobe Stock image when you move the cursor to the window’s left vertical scroll bar after clicking **Save Preview** but not confirming the save operation. _Fix submitted by Serhiy Zhovnir in pull request [27399](https://github.com/magento/magento2/pull/27399)_. [GitHub-1002](https://github.com/magento/adobe-stock-integration/issues/1002)
+*  Magento no longer saves a preview of an Adobe Stock image when you move the cursor to the window's left vertical scroll bar after clicking **Save Preview** but not confirming the save operation. _Fix submitted by Serhiy Zhovnir in pull request [27399](https://github.com/magento/magento2/pull/27399)_. [GitHub-1002](https://github.com/magento/adobe-stock-integration/issues/1002)
 
 ### Backend
 
@@ -322,7 +324,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29633-->
 
-*  Administrators can no longer manually enter a tax class in the Admin for a bundle product when the bundle product’s **Tax Class** and **Dynamic Price** settings are disabled for the default store view. Previously, when an administrator unchecked the **Use Default Value** option next to **Tax Class**, Magento enabled the option, permitting an administrator to enter another value and save the product.
+*  Administrators can no longer manually enter a tax class in the Admin for a bundle product when the bundle product's **Tax Class** and **Dynamic Price** settings are disabled for the default store view. Previously, when an administrator unchecked the **Use Default Value** option next to **Tax Class**, Magento enabled the option, permitting an administrator to enter another value and save the product.
 
 <!--- MC-30257-->
 
@@ -362,7 +364,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-33230-->
 
-*  Magento now displays an informative message when a product in the mini cart becomes out-of-stock before checkout. Once you’ve removed the out-of-stock item, Magento displays the **Proceed to Checkout** button. Previously, Magento did not display this button.
+*  Magento now displays an informative message when a product in the mini cart becomes out-of-stock before checkout. Once you've removed the out-of-stock item, Magento displays the **Proceed to Checkout** button. Previously, Magento did not display this button.
 
 <!--- MC-31391-->
 
@@ -386,7 +388,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6615-->
 
-*  Changing the billing street no longer changes a customer’s shipping address when a single address has been selected for both billing and shipping address. _Fix submitted by Yurii Tvardyi in pull request [26279](https://github.com/magento/magento2/pull/26279)_. [GitHub-26276](https://github.com/magento/magento2/issues/26276)
+*  Changing the billing street no longer changes a customer's shipping address when a single address has been selected for both billing and shipping address. _Fix submitted by Yurii Tvardyi in pull request [26279](https://github.com/magento/magento2/pull/26279)_. [GitHub-26276](https://github.com/magento/magento2/issues/26276)
 
 <!--- ENGCOM-6251-->
 
@@ -412,7 +414,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6615-->
 
-*  Changing the billing street no longer changes a customer’s shipping address when a single address has been selected for both the billing and shipping addresses. _Fix submitted by Yurii Tvardyi in pull request [26279](https://github.com/magento/magento2/pull/26279)_. [GitHub-26276](https://github.com/magento/magento2/issues/26276)
+*  Changing the billing street no longer changes a customer's shipping address when a single address has been selected for both the billing and shipping addresses. _Fix submitted by Yurii Tvardyi in pull request [26279](https://github.com/magento/magento2/pull/26279)_. [GitHub-26276](https://github.com/magento/magento2/issues/26276)
 
 ### Catalog
 
@@ -438,7 +440,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30229-->
 
-*  The product compare feature now works as expected. It now displays only products in the current user’s compare list.
+*  The product compare feature now works as expected. It now displays only products in the current user's compare list.
 
 <!--- MC-30234-->
 
@@ -486,7 +488,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6300-->
 
-*  The sample description that is provided for a newly product’s description and title no longer contains double quotation marks.  _Fix submitted by Nathan Morgan in pull request [25655](https://github.com/magento/magento2/pull/25655)_. [GitHub-25654](https://github.com/magento/magento2/issues/25654)
+*  The sample description that is provided for a newly product's description and title no longer contains double quotation marks.  _Fix submitted by Nathan Morgan in pull request [25655](https://github.com/magento/magento2/pull/25655)_. [GitHub-25654](https://github.com/magento/magento2/issues/25654)
 
 <!--- ENGCOM-6424-->
 
@@ -502,7 +504,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6625-->
 
-*  Saving a new (duplicated) product no longer results in the duplication of the product’s images hundreds of times. _Fix submitted by Jeroen in pull request [25875](https://github.com/magento/magento2/pull/25875)_. [GitHub-9466](https://github.com/magento/magento2/issues/9466)
+*  Saving a new (duplicated) product no longer results in the duplication of the product's images hundreds of times. _Fix submitted by Jeroen in pull request [25875](https://github.com/magento/magento2/pull/25875)_. [GitHub-9466](https://github.com/magento/magento2/issues/9466)
 
 <!--- ENGCOM-6818-->
 
@@ -518,7 +520,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7151-->
 
-*  You can now use the Actions dropdown menu from the Products grid to specify whether a product has weight when you update multiple products’ attributes from the Admin.  _Fix submitted by Bartomiej Szubert in pull request [26075](https://github.com/magento/magento2/pull/26075)_. [GitHub-6310](https://github.com/magento/magento2/issues/6310)
+*  You can now use the Actions dropdown menu from the Products grid to specify whether a product has weight when you update multiple products' attributes from the Admin.  _Fix submitted by Bartomiej Szubert in pull request [26075](https://github.com/magento/magento2/pull/26075)_. [GitHub-6310](https://github.com/magento/magento2/issues/6310)
 
 <!--- ENGCOM-7453-->
 
@@ -620,7 +622,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32452-->
 
-*  New CMS pages are now added as expected to a website’s store page hierarchy.
+*  New CMS pages are now added as expected to a website's store page hierarchy.
 
 <!--- ENGCOM-7033-->
 
@@ -662,7 +664,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6520-->
 
-*  Magento now displays a product’s special price as expected when you select a discounted option of a configurable product. Previously, `class="normal-price"` was not changed to `class="special-price"` when a discounted option was selected. _Fix submitted by Ravi Chandra in pull request [26170](https://github.com/magento/magento2/pull/26170)_. [GitHub-24972](https://github.com/magento/magento2/issues/24972)
+*  Magento now displays a product's special price as expected when you select a discounted option of a configurable product. Previously, `class="normal-price"` was not changed to `class="special-price"` when a discounted option was selected. _Fix submitted by Ravi Chandra in pull request [26170](https://github.com/magento/magento2/pull/26170)_. [GitHub-24972](https://github.com/magento/magento2/issues/24972)
 
 ### Cookies
 
@@ -724,7 +726,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6667-->
 
-*  Magento now displays only the products that the customer has placed in their cart when the cart is viewed from the Admin. Previously, a customer’s shopping cart displayed all the products in the catalog when viewed from the Admin. _Fix submitted by Ravinder in pull request [26489](https://github.com/magento/magento2/pull/26489)_. [GitHub-26437](https://github.com/magento/magento2/issues/26437)
+*  Magento now displays only the products that the customer has placed in their cart when the cart is viewed from the Admin. Previously, a customer's shopping cart displayed all the products in the catalog when viewed from the Admin. _Fix submitted by Ravinder in pull request [26489](https://github.com/magento/magento2/pull/26489)_. [GitHub-26437](https://github.com/magento/magento2/issues/26437)
 
 <!--- ENGCOM-7036-->
 
@@ -792,7 +794,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6667-->
 
-*  Magento now displays only the products that the customer has placed in their cart when the cart is viewed from the Admin. Previously, a customer’s shopping cart displayed all the products in the catalog when viewed from the Admin. _Fix submitted by Ravinder in pull request [26489](https://github.com/magento/magento2/pull/26489)_. [GitHub-26437](https://github.com/magento/magento2/issues/26437)
+*  Magento now displays only the products that the customer has placed in their cart when the cart is viewed from the Admin. Previously, a customer's shopping cart displayed all the products in the catalog when viewed from the Admin. _Fix submitted by Ravinder in pull request [26489](https://github.com/magento/magento2/pull/26489)_. [GitHub-26437](https://github.com/magento/magento2/issues/26437)
 
 <!--- ENGCOM-6423-->
 
@@ -844,7 +846,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Frameworks
 
-*  Dependencies on Zend Framework have been migrated to the [Laminas project](https://getlaminas.org/about/foundation) to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated. _Fix submitted by Ihor Sviziev in pull request [26436](https://github.com/magento/magento2/pull/26436)_. [GitHub-26335](https://github.com/magento/magento2/issues/26335)
+*  Dependencies on Zend Framework have been migrated to the [Laminas project](https://getlaminas.org/about/foundation) to reflect the transitioning of Zend Framework to the Linux Foundation's Laminas Project. Zend Framework has been deprecated. _Fix submitted by Ihor Sviziev in pull request [26436](https://github.com/magento/magento2/pull/26436)_. [GitHub-26335](https://github.com/magento/magento2/issues/26335)
 
 <!--- MC-25257-->
 
@@ -860,7 +862,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30544-->
 
-*  The Update Attribute action now correctly updates the timestamp of a product’s `updated_at column` from `catalog_product_entity` when you update the product from the Admin edit product page.
+*  The Update Attribute action now correctly updates the timestamp of a product's `updated_at column` from `catalog_product_entity` when you update the product from the Admin edit product page.
 
 <!--- MC-30834-->
 
@@ -872,7 +874,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-33278-->
 
-*  We’ve improved the performance of the `Magento\Framework\App\DeploymentConfig\Reader::load` function. Previously, when a request was made to Magento, this function was called repetitively, which resulted in `config.php` and `env.php config` files being loaded each time the method was called.
+*  We've improved the performance of the `Magento\Framework\App\DeploymentConfig\Reader::load` function. Previously, when a request was made to Magento, this function was called repetitively, which resulted in `config.php` and `env.php config` files being loaded each time the method was called.
 
 <!--- MC-31728-->
 
@@ -880,7 +882,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31729-->
 
-*  Non-cacheable blocks added to the default layout in reference instructions for non-existent (undeclared) components on the page no longer affect page caching. Adding non-cacheable blocks to default layout handlers renders all Magento pages non-cacheable. This results from the layout generation process: During layout generation, Magento collects all available layout handles for a particular page and merges instructions from them into the page’s final layout structure. The default layout handle is used as a basic handle for every page. As a result, layout updates that are declared for the default handler appear on every Magento page. [GitHub-9041](https://github.com/magento/magento2/issues/9041)
+*  Non-cacheable blocks added to the default layout in reference instructions for non-existent (undeclared) components on the page no longer affect page caching. Adding non-cacheable blocks to default layout handlers renders all Magento pages non-cacheable. This results from the layout generation process: During layout generation, Magento collects all available layout handles for a particular page and merges instructions from them into the page's final layout structure. The default layout handle is used as a basic handle for every page. As a result, layout updates that are declared for the default handler appear on every Magento page. [GitHub-9041](https://github.com/magento/magento2/issues/9041)
 
 <!--- MC-31920-->
 
@@ -926,7 +928,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29273-->
 
-*  A store’s Admin URL no longer redirects to the storefront URL when these two URLs differ.
+*  A store's Admin URL no longer redirects to the storefront URL when these two URLs differ.
 
 <!--- MC-29658-->
 
@@ -1018,7 +1020,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6242-->
 
-*  Magento now implements PHP7.x’s [throwable interface](https://www.php.net/manual/en/class.throwable.php) to enable the catching of all errors that might potentially expose sensitive information such as passwords. _Fix submitted by miszyman in pull request [25250](https://github.com/magento/magento2/pull/25250)_. [GitHub-23350](https://github.com/magento/magento2/issues/23350)
+*  Magento now implements PHP7.x's [throwable interface](https://www.php.net/manual/en/class.throwable.php) to enable the catching of all errors that might potentially expose sensitive information such as passwords. _Fix submitted by miszyman in pull request [25250](https://github.com/magento/magento2/pull/25250)_. [GitHub-23350](https://github.com/magento/magento2/issues/23350)
 
 <!--- ENGCOM-6284-->
 
@@ -1038,7 +1040,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7071-->
 
-*  We’ve added the `@api`  PHP annotation to `AbstractExtensibleModel`, the `@deprecated` PHP annotation to `AbstractExtensibleObject`, and `@see` to `AbstractExtensibleModel`.  _Fix submitted by Alexander Taranovsky in pull request [22011](https://github.com/magento/magento2/pull/22011)_. [GitHub-22010](https://github.com/magento/magento2/issues/22010)
+*  We've added the `@api`  PHP annotation to `AbstractExtensibleModel`, the `@deprecated` PHP annotation to `AbstractExtensibleObject`, and `@see` to `AbstractExtensibleModel`.  _Fix submitted by Alexander Taranovsky in pull request [22011](https://github.com/magento/magento2/pull/22011)_. [GitHub-22010](https://github.com/magento/magento2/issues/22010)
 
 ### GraphQL
 
@@ -1068,7 +1070,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30313-->
 
-*  You can now add a child product of a grouped product to your cart when one of the grouped product’s other child products is out-of-stock. Previously, when one child product was out-of-stock, you could not add any other child products to the cart.
+*  You can now add a child product of a grouped product to your cart when one of the grouped product's other child products is out-of-stock. Previously, when one child product was out-of-stock, you could not add any other child products to the cart.
 
 ### Images
 
@@ -1082,7 +1084,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32273-->
 
-*  You can now successfully save an image to a category from the Admin. Previously, after you saved the image, part of  the URL was missing, and you couldn’t re-open the image.
+*  You can now successfully save an image to a category from the Admin. Previously, after you saved the image, part of  the URL was missing, and you couldn't re-open the image.
 
 <!--- MC-31727-->
 
@@ -1120,7 +1122,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29677-->
 
-*  Customizable options are now imported as expected when `row_id` is not equal to a product's `entity_id`. Previously, Magento did not import customizable options when `row_id` was not equal to a product’s `entity_id`, which resulted in certain products not being imported.
+*  Customizable options are now imported as expected when `row_id` is not equal to a product's `entity_id`. Previously, Magento did not import customizable options when `row_id` was not equal to a product's `entity_id`, which resulted in certain products not being imported.
 
 <!--- MC-29916-->
 
@@ -1140,7 +1142,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30528-->
 
-*  Magento now successfully imports all custom options for a configurable product’s child products when `store_view_code` is specified. This works whether you choose to import configurable products individually or collectively. Previously, Magento did not successfully import all custom options when the import file contained more than one item and `store_view_code` was specified.
+*  Magento now successfully imports all custom options for a configurable product's child products when `store_view_code` is specified. This works whether you choose to import configurable products individually or collectively. Previously, Magento did not successfully import all custom options when the import file contained more than one item and `store_view_code` was specified.
 
 <!--- MC-30672-->
 
@@ -1270,7 +1272,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6993-->
 
-*  Clicking **Enter** after naming a new folder in the Media Gallery now saves all changes you’ve made. Previously, clicking **Enter** instead of using the mouse to select **OK** resulted in all changes being lost.  _Fix submitted by Sergiy Vasiutynskyi in pull request [27029](https://github.com/magento/magento2/pull/27029)_. [GitHub-26847](https://github.com/magento/magento2/issues/26847)
+*  Clicking **Enter** after naming a new folder in the Media Gallery now saves all changes you've made. Previously, clicking **Enter** instead of using the mouse to select **OK** resulted in all changes being lost.  _Fix submitted by Sergiy Vasiutynskyi in pull request [27029](https://github.com/magento/magento2/pull/27029)_. [GitHub-26847](https://github.com/magento/magento2/issues/26847)
 
 <!-- ENGCOM-7490-->
 
@@ -1314,7 +1316,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32546-->
 
-*  You can now successfully complete an order and return to the merchant’s home page when **Website Payments Pro Hosted Solution** is configured. Previously, when you clicked **Return to merchant**, Magento threw this error: `Invalid Form Key. Please refresh the page`.
+*  You can now successfully complete an order and return to the merchant's home page when **Website Payments Pro Hosted Solution** is configured. Previously, when you clicked **Return to merchant**, Magento threw this error: `Invalid Form Key. Please refresh the page`.
 
 <!--- ENGCOM-6606-->
 
@@ -1326,7 +1328,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6524-->
 
-*  You can now remove additional information from the `quote_payment column additional_information` table after you’ve saved a quote. Previously, you could not remove this information after saving the quote because the `unsAdditionalInformation` method in `\Magento\Payment\Model\Info` did not initialize data properly.  _Fix submitted by Marco Oliveira in pull request [26084](https://github.com/magento/magento2/pull/26084)_. [GitHub-26083](https://github.com/magento/magento2/issues/26083)
+*  You can now remove additional information from the `quote_payment column additional_information` table after you've saved a quote. Previously, you could not remove this information after saving the quote because the `unsAdditionalInformation` method in `\Magento\Payment\Model\Info` did not initialize data properly.  _Fix submitted by Marco Oliveira in pull request [26084](https://github.com/magento/magento2/pull/26084)_. [GitHub-26083](https://github.com/magento/magento2/issues/26083)
 
 <!--- ENGCOM-6609-->
 
@@ -1344,7 +1346,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30639-->
 
-*  Magento no longer changes an order’s status to `Processing` in the Payment Review section of the checkout workflow when a payment with PayPal fails.
+*  Magento no longer changes an order's status to `Processing` in the Payment Review section of the checkout workflow when a payment with PayPal fails.
 
 <!--- MC-30864-->
 
@@ -1368,11 +1370,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31196-->
 
-*  Magento now successfully processes orders placed with PayPal Express Checkout where the order’s shipping address specifies a country region that the customer has manually entered into the text field rather than selected from the drop-down menu on the Shipping page. Previously, Magento displayed this error on the order review page: `Error 500: NOTICE: PHP message: PHP Fatal error: Uncaught Error: Call to a member function getId() on null in httpdocs/vendor/magento/module-paypal/Model/Api/Nvp.php:1527`. [GitHub-26698](https://github.com/magento/magento2/issues/26698)
+*  Magento now successfully processes orders placed with PayPal Express Checkout where the order's shipping address specifies a country region that the customer has manually entered into the text field rather than selected from the drop-down menu on the Shipping page. Previously, Magento displayed this error on the order review page: `Error 500: NOTICE: PHP message: PHP Fatal error: Uncaught Error: Call to a member function getId() on null in httpdocs/vendor/magento/module-paypal/Model/Api/Nvp.php:1527`. [GitHub-26698](https://github.com/magento/magento2/issues/26698)
 
 <!--- MC-31573-->
 
-*  The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome SameSite cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
+*  The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer's session — access that the new default Chrome SameSite cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
 
 <!--- MC-31292-->
 
@@ -1408,11 +1410,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6647-->
 
-*  Magento now saves and displays the correct price for tiered products even after you’ve edited products multiple times. Previously, Magento did not save the last edits made to product price. _Fix submitted by Ravi Chandra in pull request [26162](https://github.com/magento/magento2/pull/26162)_. [GitHub-25195](https://github.com/magento/magento2/issues/25195)
+*  Magento now saves and displays the correct price for tiered products even after you've edited products multiple times. Previously, Magento did not save the last edits made to product price. _Fix submitted by Ravi Chandra in pull request [26162](https://github.com/magento/magento2/pull/26162)_. [GitHub-25195](https://github.com/magento/magento2/issues/25195)
 
 <!--- ENGCOM-6914-->
 
-*  Both fixed and discount save percentage are now correctly applied on an order’s final price. Previously,  Magento displayed an incorrect tier price (both fixed & discount) save percentage on the product detail page. _Fix submitted by Sathish Subramanian in pull request [26584](https://github.com/magento/magento2/pull/26584)_. [GitHub-26583](https://github.com/magento/magento2/issues/26583)
+*  Both fixed and discount save percentage are now correctly applied on an order's final price. Previously,  Magento displayed an incorrect tier price (both fixed & discount) save percentage on the product detail page. _Fix submitted by Sathish Subramanian in pull request [26584](https://github.com/magento/magento2/pull/26584)_. [GitHub-26583](https://github.com/magento/magento2/issues/26583)
 
 <!--- MC-30255-->
 
@@ -1420,7 +1422,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32873-->
 
-*  Product stock alert unsubscribe now works when a user’s session has expired. Previously, when you clicked on the **Click here to stop alerts for this product** link, Magento displayed a 404 error.
+*  Product stock alert unsubscribe now works when a user's session has expired. Previously, when you clicked on the **Click here to stop alerts for this product** link, Magento displayed a 404 error.
 
 <!--- MC-31979-->
 
@@ -1472,7 +1474,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30000-->
 
-*  Magento now honors a customer’s default shipping address. Previously, Magento did not honor the default billing and default shipping addresses according to the settings, and the **Same As Billing Address** setting was not enabled automatically.
+*  Magento now honors a customer's default shipping address. Previously, Magento did not honor the default billing and default shipping addresses according to the settings, and the **Same As Billing Address** setting was not enabled automatically.
 
 <!--- MC-30299-->
 
@@ -1492,7 +1494,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6910-->
 
-*  You can now successfully add a product to the cart from the Admin when the stock quantity is 1. Previously, Magento didn’t add the product to the cart and displayed this message: `The requested qty is not available`. _Fix submitted by Serhii Petrychenko in pull request [26650](https://github.com/magento/magento2/pull/26650)._ [GitHub-25675](https://github.com/magento/magento2/issues/25675)
+*  You can now successfully add a product to the cart from the Admin when the stock quantity is 1. Previously, Magento didn't add the product to the cart and displayed this message: `The requested qty is not available`. _Fix submitted by Serhii Petrychenko in pull request [26650](https://github.com/magento/magento2/pull/26650)._ [GitHub-25675](https://github.com/magento/magento2/issues/25675)
 
 <!--- ENGCOM-7090-->
 
@@ -1790,7 +1792,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29804-->
 
-*  We’ve resolved a bug in `JsFooterPlugin.php` that affected the display of dynamic blocks. Previously, Magento displayed this error when you directly accessed `/banner/ajax/load/url`: `Uncaught TypeError: strpos() expects parameter 1 to be string, null given in`.
+*  We've resolved a bug in `JsFooterPlugin.php` that affected the display of dynamic blocks. Previously, Magento displayed this error when you directly accessed `/banner/ajax/load/url`: `Uncaught TypeError: strpos() expects parameter 1 to be string, null given in`.
 
 <!--- ENGCOM-6708-->
 
@@ -1922,7 +1924,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7137-->
 
-*  You can now update the value of a downloadable product’s sample and link title by enabling the  **Use default** checkbox. _Fix submitted by Abel Truong in pull request [27295](https://github.com/magento/magento2/pull/27295)_. [GitHub-27169](https://github.com/magento/magento2/issues/27169)
+*  You can now update the value of a downloadable product's sample and link title by enabling the  **Use default** checkbox. _Fix submitted by Abel Truong in pull request [27295](https://github.com/magento/magento2/pull/27295)_. [GitHub-27169](https://github.com/magento/magento2/issues/27169)
 
 <!--- ENGCOM-6532-->
 
@@ -1950,15 +1952,15 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31147-->
 
-*  Customers who change language on a CMS page can now successfully navigate to the store view they’ve selected. Previously, Magento displayed a 404 error.
+*  Customers who change language on a CMS page can now successfully navigate to the store view they've selected. Previously, Magento displayed a 404 error.
 
 <!--- ENGCOM-6997-->
 
-*  URL rewrite generation for product URLs for which you’ve enabled category path inclusion now works as expected. Previously, in deployments with multiple store views, Magento sometimes generated incorrect URL rewrites by using the default value of the category url path instead of the storeview-specific URL path. _Fix submitted by Pieter Hoste in pull request [26784](https://github.com/magento/magento2/pull/26784)_. [GitHub-25124](https://github.com/magento/magento2/issues/25124), [GitHub-11616](https://github.com/magento/magento2/issues/11616)
+*  URL rewrite generation for product URLs for which you've enabled category path inclusion now works as expected. Previously, in deployments with multiple store views, Magento sometimes generated incorrect URL rewrites by using the default value of the category url path instead of the storeview-specific URL path. _Fix submitted by Pieter Hoste in pull request [26784](https://github.com/magento/magento2/pull/26784)_. [GitHub-25124](https://github.com/magento/magento2/issues/25124), [GitHub-11616](https://github.com/magento/magento2/issues/11616)
 
 <!--- ENGCOM-6995-->
 
-*  We’ve added a check to prevent URL redirects if the request path is the same as the target path. _Fix submitted by Bartomiej Szubert in pull request [26902](https://github.com/magento/magento2/pull/26902)_. [GitHub-20309](https://github.com/magento/magento2/issues/20309)
+*  We've added a check to prevent URL redirects if the request path is the same as the target path. _Fix submitted by Bartomiej Szubert in pull request [26902](https://github.com/magento/magento2/pull/26902)_. [GitHub-20309](https://github.com/magento/magento2/issues/20309)
 
 <!--- ENGCOM-6303-->
 
@@ -2016,7 +2018,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6518-->
 
-*  We’ve improved the error message that is displayed when a customer tries to share their wishlist with more email addresses than is permitted.  _Fix submitted by divyajyothi5321 in pull request [26066](https://github.com/magento/magento2/pull/26066)_. [GitHub-26064](https://github.com/magento/magento2/issues/26064)
+*  We've improved the error message that is displayed when a customer tries to share their wishlist with more email addresses than is permitted.  _Fix submitted by divyajyothi5321 in pull request [26066](https://github.com/magento/magento2/pull/26066)_. [GitHub-26064](https://github.com/magento/magento2/issues/26064)
 
 <!--- ENGCOM-6723-->
 
@@ -2050,11 +2052,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 **Issue**: The **Add selections to my cart** button on the bottom of the shopping cart does not work. **Workaround**: Use the **Add selections to my cart** button on the top of the page. See [Add selections to my cart button does not work](https://support.magento.com/hc/en-us/articles/360045838312) Knowledge Base article. <!--- MC-35313-->
 
-**Issue**: Merchants can’t create a new order from the Admin because the **Add Products By SKU** and **Add Products**  buttons are missing from the order creation page when JavaScript bundling is enabled.  **Workaround**: Disable the JavaScript bundling for your Magento deployment. <!--- MC-36044-->
+**Issue**: Merchants can't create a new order from the Admin because the **Add Products By SKU** and **Add Products**  buttons are missing from the order creation page when JavaScript bundling is enabled.  **Workaround**: Disable the JavaScript bundling for your Magento deployment. <!--- MC-36044-->
 
 **Issue**: Magento throws a `404 not found` error when a customer tries to remove reward points when checking out an order being shipped to multiple addresses. <!--- MC-35955-->
 
-**Issue**: Editing a configurable product from a customer’s wishlist results in the following unexpected behavior: An unexpected field appears on the Configure Product page, and the Configure Product page does not disappear after you click **OK**. Magento also displays this message: `Please load Wish List item`. **Workaround**: Reload the Configure Product page. <!--- MC-35617-->
+**Issue**: Editing a configurable product from a customer's wishlist results in the following unexpected behavior: An unexpected field appears on the Configure Product page, and the Configure Product page does not disappear after you click **OK**. Magento also displays this message: `Please load Wish List item`. **Workaround**: Reload the Configure Product page. <!--- MC-35617-->
 
 **Issue**:  Customers cannot change the number of orders displayed per page when the Orders list spans multiple pages. Currently, Magento displays this message when you navigate to the last page of orders and try to change the number of orders displayed per page: `You have placed no orders`. See [Orders display error](https://support.magento.com/hc/en-us/articles/360046802271) Knowledge Base article.  **Workaround**: Re-opening the My Orders page will result in the display of the Orders list. <!--- MC-34153-->
 
@@ -2074,7 +2076,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  **Issue**: Magento displays an error when an administrator tries to access the Braintree Settlement Report page (**Admin** > **Reports** ). Currently, Magento displays this message: `An error has happened during application run. See exception log for details`. See [Braintree Settlement Report fails to load](https://support.magento.com/hc/en-us/articles/360046798251) Knowledge Base article. The **BUNDLE-2683_SettlementReport.patch** hotfix for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- BUNDLE-2683-->
 
-*  **Issue**: Merchants can’t create partial invoices for orders in deployments where Venmo is enabled and the **Enable Vault for Card Payments** setting is disabled. Currently, Magento displays this error: `The "vault_capture" command doesn't exist. Verify the command and try again`.  <!--- BUNDLE-2647-->
+*  **Issue**: Merchants can't create partial invoices for orders in deployments where Venmo is enabled and the **Enable Vault for Card Payments** setting is disabled. Currently, Magento displays this error: `The "vault_capture" command doesn't exist. Verify the command and try again`.  <!--- BUNDLE-2647-->
 
 *  **Issue**: Magento displays two identical PayPal methods in the Payment Method drop-down list that is available when creating a new cart price rule.   <!--- BUNDLE-2686-->
 
@@ -2088,7 +2090,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Vertex
 
-*  **Issue**:  Magento displays an  **Address verification** button on the shipping section of the checkout workflow even when address validation is disabled. The address validator doesn’t re-check the updated address and continues to display a message that indicates that the address is invalid when a customer enters a correct address after first entering an incorrect address even when address validation is enabled. **Workaround**: Disable Vertex address validation. <!--- BUNDLE-2604-->
+*  **Issue**:  Magento displays an  **Address verification** button on the shipping section of the checkout workflow even when address validation is disabled. The address validator doesn't re-check the updated address and continues to display a message that indicates that the address is invalid when a customer enters a correct address after first entering an incorrect address even when address validation is enabled. **Workaround**: Disable Vertex address validation. <!--- BUNDLE-2604-->
 
 ## Community contributions
 

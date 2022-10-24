@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Magento Open Source 2.4.3 Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-3.html
+layout: migrated
 ---
 
 {{ site.data.var.ce }} 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. Page Builder is now available as a bundled extension in {{site.data.var.ce}}. It is now the default content editing tool for {{site.data.var.ee}} and {{site.data.var.ce}}.
@@ -230,7 +232,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41177 magento/magento2#32594-->
 
-*  A bundle item’s price can now be set to 0.00. Previously, when you returned to the edit page after setting the price to 0.00, the price returned to its default value. [GitHub-32383](https://github.com/magento/magento2/issues/32383)
+*  A bundle item's price can now be set to 0.00. Previously, when you returned to the edit page after setting the price to 0.00, the price returned to its default value. [GitHub-32383](https://github.com/magento/magento2/issues/32383)
 
 <!--- MC-40603-->
 
@@ -242,7 +244,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39276-->
 
-*  An administrator can now change the value for a bundle product’s `Shipment Type` attribute after it has been moved to a different attribute group. Previously, this attribute was always saved with a `Together` value if it were moved to an attribute group other than the default group in the attribute set.
+*  An administrator can now change the value for a bundle product's `Shipment Type` attribute after it has been moved to a different attribute group. Previously, this attribute was always saved with a `Together` value if it were moved to an attribute group other than the default group in the attribute set.
 
 <!--- MC-38900-->
 
@@ -266,7 +268,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-30317 ENGCOM-7141-->
 
-*  Merchants can now assign a unique price for a bundle product on each store view of a multistore deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product’s price on website scope even when  **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`. [GitHub-12584](https://github.com/magento/magento2/issues/12584)
+*  Merchants can now assign a unique price for a bundle product on each store view of a multistore deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product's price on website scope even when  **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`. [GitHub-12584](https://github.com/magento/magento2/issues/12584)
 
 <!--- ENGCOM-8705 MC-38953-->
 
@@ -286,7 +288,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41572-->
 
-*  CAPTCHA now correctly validates data provided by a shopper, and CAPTCHA fields are now displayed as expected after a shopper’s multiple unsuccessful attempts to check out with PayPal Payflow Pro.
+*  CAPTCHA now correctly validates data provided by a shopper, and CAPTCHA fields are now displayed as expected after a shopper's multiple unsuccessful attempts to check out with PayPal Payflow Pro.
 
 <!--- MC-41281-->
 
@@ -528,7 +530,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40719-->
 
-*  Magento no longer duplicates product thumbnails in a product’s image gallery when you click on a product’s configurable options.
+*  Magento no longer duplicates product thumbnails in a product's image gallery when you click on a product's configurable options.
 
 <!--- MC-37418-->
 
@@ -560,7 +562,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8571-->
 
-*  `cron` jobs now complete as expected and no longer throw this serialization error:  `[Magento\Framework\DB\Adapter\DeadlockException]SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction, query was: DELETE FROM cron_schedule WHERE (status = 'missed') AND (job_code in ('indexer_reindex_all_invalid', 'indexer_update_all_views', 'indexer_clean_all_changelogs')) AND (created_at < '2018-09-28 18:32:28’)`. [GitHub-18409](https://github.com/magento/magento2/issues/18409)
+*  `cron` jobs now complete as expected and no longer throw this serialization error:  `[Magento\Framework\DB\Adapter\DeadlockException]SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction, query was: DELETE FROM cron_schedule WHERE (status = 'missed') AND (job_code in ('indexer_reindex_all_invalid', 'indexer_update_all_views', 'indexer_clean_all_changelogs')) AND (created_at < '2018-09-28 18:32:28')`. [GitHub-18409](https://github.com/magento/magento2/issues/18409)
 
 <!--- ENGCOM-8571-->
 
@@ -844,7 +846,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40867 magento/partners-magento2ee#532--->
 
-*  The `applyRewardPointsToCart` mutation now updates a cart’s grand total to accurately reflect the value of the reward points deducted. [GitHub-486](https://github.com/magento/partners-magento2ee/issues/486)
+*  The `applyRewardPointsToCart` mutation now updates a cart's grand total to accurately reflect the value of the reward points deducted. [GitHub-486](https://github.com/magento/partners-magento2ee/issues/486)
 
 <!--- MC-40379-->
 
@@ -852,7 +854,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40262-->
 
-*  Merchants can now use the GraphQL `setShippingAddressesOnCart` method to set billing and shipping addresses for a shopper’s cart when guest checkout is disabled.
+*  Merchants can now use the GraphQL `setShippingAddressesOnCart` method to set billing and shipping addresses for a shopper's cart when guest checkout is disabled.
 
 <!--- MC-39508-->
 
@@ -900,7 +902,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8477-->
 
-*  The `products` query no longer exposes a product’s special price when the special price period is set for a future date. [GitHub-30210](https://github.com/magento/magento2/issues/30210), [GitHub-29631](https://github.com/magento/magento2/issues/29631)
+*  The `products` query no longer exposes a product's special price when the special price period is set for a future date. [GitHub-30210](https://github.com/magento/magento2/issues/30210), [GitHub-29631](https://github.com/magento/magento2/issues/29631)
 
 <!--- magento-engcom/magento2ee#576-->
 
@@ -944,7 +946,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40898-->
 
-*  Administrators can now successfully change the `name` of a bundle product’s `bundle_values` from the Admin. Previously, Magento displayed the product as out-of-stock on the storefront after you changed the name from the Admin. Products were also merged with the same SKU into a single bundle-option section.
+*  Administrators can now successfully change the `name` of a bundle product's `bundle_values` from the Admin. Previously, Magento displayed the product as out-of-stock on the storefront after you changed the name from the Admin. Products were also merged with the same SKU into a single bundle-option section.
 
 <!--- MC-40333-->
 
@@ -1020,7 +1022,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41497-->
 
-*  Magento no longer throws an `Invalid header value detected` error on the Contact us form when a shopper enters an email address that contains French diacritic marks (such as "é", “è”). Magento now converts UTF-8 letters in the user name to ASCII encoding. Previously, UTF-8 letters were not converted to ASCII encoding in the unique section of the email address.
+*  Magento no longer throws an `Invalid header value detected` error on the Contact us form when a shopper enters an email address that contains French diacritic marks (such as "é", "è"). Magento now converts UTF-8 letters in the user name to ASCII encoding. Previously, UTF-8 letters were not converted to ASCII encoding in the unique section of the email address.
 
 <!--- MC-39947-->
 
@@ -1310,7 +1312,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-37820-->
 
-*  The payment methods list is now updated as expected when a guest shopper changes an order’s shipping address to a different country during checkout. Previously, changing billing address did not trigger an update of the possible payment methods.
+*  The payment methods list is now updated as expected when a guest shopper changes an order's shipping address to a different country during checkout. Previously, changing billing address did not trigger an update of the possible payment methods.
 
 #### PayPal
 
@@ -1354,7 +1356,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-36811-->
 
-*  Scheduled price updates are now applied to products already in a shopper’s cart. [GitHub-356](https://github.com/magento/partners-magento2ee/issues/356)
+*  Scheduled price updates are now applied to products already in a shopper's cart. [GitHub-356](https://github.com/magento/partners-magento2ee/issues/356)
 
 <!--- MC-24693-->
 
@@ -1698,7 +1700,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-30798 ENGCOM-8717-->
 
-*  Order emails sent from the Admin now use the store locale not the locale that is associated with the administrator’s account.
+*  Order emails sent from the Admin now use the store locale not the locale that is associated with the administrator's account.
 
 ### UI
 
@@ -1816,7 +1818,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-38442-->
 
-*  Magento now uses the correct custom email template when generating email for new Admin users. Previously, Magento used the old default template, which omitted the administrator’s first and last names.
+*  Magento now uses the correct custom email template when generating email for new Admin users. Previously, Magento used the old default template, which omitted the administrator's first and last names.
 
 <!--- MC-38122-->
 
@@ -1852,7 +1854,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-39128-->
 
-*  An administrator can now delete all of a widget’s layout updates. Previously, when a widget had multiple layout updates, an administrator could delete only the first.
+*  An administrator can now delete all of a widget's layout updates. Previously, when a widget had multiple layout updates, an administrator could delete only the first.
 
 <!--- MC-39107-->
 
@@ -1862,7 +1864,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-40651-->
 
-*  Magento no longer resets a configurable product’s configuration settings when you click the **Edit item** button for the product from a wish list. [GitHub-32119](https://github.com/magento/magento2/issues/32119)
+*  Magento no longer resets a configurable product's configuration settings when you click the **Edit item** button for the product from a wish list. [GitHub-32119](https://github.com/magento/magento2/issues/32119)
 
 <!--- MC-40417-->
 
