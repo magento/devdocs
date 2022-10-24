@@ -67,7 +67,7 @@ _Scenario 1_- Search results page
 Performing a search on "pants" and then filters on one or more category facets on the search results page:
 
 ```graphql
-filter: { 
+filter: {
   attribute: 'categories',
   in: ['women/bottoms-women/pants-women', 'women/new-arrivals']
 }
@@ -82,7 +82,7 @@ Browse "Women's -> Bottoms", and on the results page selects "Short" in the cate
 ```graphql
 filter: [
   {attribute: 'categoryPath', eq: 'women/bottoms-women'},
-  {attribute: 'categories', in: ['women/bottoms-women/pants-women', 'women/new-arrivals'] } 
+  {attribute: 'categories', in: ['women/bottoms-women/pants-women', 'women/new-arrivals'] }
 ]
 ```
 
