@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Adobe Commerce 2.4.1 Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/adobe-commerce/2-4-1.html
+layout: migrated
 ---
 
 {{site.data.var.ee}} 2.4.1 introduces enhancements to performance and security plus significant additions to the B2B feature set. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page. B2B improvements focus on the order approval process, B2B shipping methods, expanded logging of Admin actions, and enhanced security on storefront.
@@ -173,7 +175,7 @@ B2B merchants can now control shipping methods that are offered to each Company.
 #### New Admin features
 
 *  B2B merchants can create orders from the Admin on behalf of customers using Payment on Account as the payment method. <!--- BUNDLE-166 178-->
-*  Merchants can now directly view all quotes associated with a user from the customer’s detail page. <!--- BUNDLE-139 -->
+*  Merchants can now directly view all quotes associated with a user from the customer's detail page. <!--- BUNDLE-139 -->
 *  Merchants can now filter the Customers Now Online grid by Company. <!--- BUNDLE-137 -->
 *  Admins can now filter customers in the Admin by Sales Rep. <!--- BUNDLE-110 -->
 
@@ -434,7 +436,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35329-->
 
-*  The **Delete** button on the **Add to Shopping Cart by SKU** section of a customer’s **Manage Shopping Cart** page now works as expected when multiple rows are selected.
+*  The **Delete** button on the **Add to Shopping Cart by SKU** section of a customer's **Manage Shopping Cart** page now works as expected when multiple rows are selected.
 
 <!--- MC-34999-->
 
@@ -442,7 +444,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-25042-->
 
-*  A customer’s shipping address is now selected by default at checkout when the address is located in the country identified on the Allow Countries list and that list includes only that country. Previously, Magento did not select the address as default and displayed this error message: `Please specify a regionId in shipping address`.
+*  A customer's shipping address is now selected by default at checkout when the address is located in the country identified on the Allow Countries list and that list includes only that country. Previously, Magento did not select the address as default and displayed this error message: `Please specify a regionId in shipping address`.
 
 <!--- MC-24043-->
 
@@ -486,7 +488,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7949-->
 
-*  The success message that Magento displays when a shopper adds a product to their cart from the customer account sidebar now contains a link to the shopper’s shopping cart. _Fix submitted by Ajith in pull request [27977](https://github.com/magento/magento2/pull/27977)_. [GitHub-29097](https://github.com/magento/magento2/issues/29097)
+*  The success message that Magento displays when a shopper adds a product to their cart from the customer account sidebar now contains a link to the shopper's shopping cart. _Fix submitted by Ajith in pull request [27977](https://github.com/magento/magento2/pull/27977)_. [GitHub-29097](https://github.com/magento/magento2/issues/29097)
 
 <!--- ENGCOM-7825-->
 
@@ -512,7 +514,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-31068-->
 
-*  Magento now removes disabled products from a shopper’s cart before checkout. Previously, when a shopper added a product to their cart that was disabled before checkout completed, Magento removed the disabled product from the cart, but the product remained in the quote, and the shopper could not check out. [GitHub-26680](https://github.com/magento/magento2/issues/26680)
+*  Magento now removes disabled products from a shopper's cart before checkout. Previously, when a shopper added a product to their cart that was disabled before checkout completed, Magento removed the disabled product from the cart, but the product remained in the quote, and the shopper could not check out. [GitHub-26680](https://github.com/magento/magento2/issues/26680)
 
 <!--- MC-30624-->
 
@@ -520,7 +522,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7292-->
 
-*  Shoppers can now open a product’s detail page by clicking on the product name in the compare products sidebar. _Fix submitted by Eduard Chitoraga in pull request [27451](https://github.com/magento/magento2/pull/27451)_. [GitHub-21101](https://github.com/magento/magento2/issues/21101)
+*  Shoppers can now open a product's detail page by clicking on the product name in the compare products sidebar. _Fix submitted by Eduard Chitoraga in pull request [27451](https://github.com/magento/magento2/pull/27451)_. [GitHub-21101](https://github.com/magento/magento2/issues/21101)
 
 <!--- ENGCOM-7513-->
 
@@ -640,11 +642,11 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7787-->
 
-*  Magento no longer throws a validation error when you use POST `/V1/products` to a configurable product with an `int` value of 0. Previously, Magento threw this error: `Product with id "%1" does not contain required attribute “%2”.”` _Fix submitted by Vadim Malesh in pull request [29001](https://github.com/magento/magento2/pull/29001)_. [GitHub-13210](https://github.com/magento/magento2/issues/13210)
+*  Magento no longer throws a validation error when you use POST `/V1/products` to a configurable product with an `int` value of 0. Previously, Magento threw this error: `Product with id "%1" does not contain required attribute "%2"."` _Fix submitted by Vadim Malesh in pull request [29001](https://github.com/magento/magento2/pull/29001)_. [GitHub-13210](https://github.com/magento/magento2/issues/13210)
 
 <!--- ENGCOM-7214-->
 
-*  The configuration options attribute of a parent product are no longer assigned to a new configurable product’s `size` attribute. _Fix submitted by Abel Truong in pull request [27339](https://github.com/magento/magento2/pull/27339)_. [GitHub-26449](https://github.com/magento/magento2/issues/26449)
+*  The configuration options attribute of a parent product are no longer assigned to a new configurable product's `size` attribute. _Fix submitted by Abel Truong in pull request [27339](https://github.com/magento/magento2/pull/27339)_. [GitHub-26449](https://github.com/magento/magento2/issues/26449)
 
 ### Cookies
 
@@ -782,7 +784,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7715 -->
 
-*  A product’s `stock_item` data is updated and downloadable product links and samples are preserved as expected when you use a REST PUT call to update `stock_item` values. Previously, after the product update, the product no longer contained links to download content. _Fix submitted by Vadim Malesh in pull request [28799](https://github.com/magento/magento2/pull/28799)_. [GitHub-21811](https://github.com/magento/magento2/issues/21811)
+*  A product's `stock_item` data is updated and downloadable product links and samples are preserved as expected when you use a REST PUT call to update `stock_item` values. Previously, after the product update, the product no longer contained links to download content. _Fix submitted by Vadim Malesh in pull request [28799](https://github.com/magento/magento2/pull/28799)_. [GitHub-21811](https://github.com/magento/magento2/issues/21811)
 
 <!--- MC-29905-->
 
@@ -814,7 +816,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33700-->
 
-*  You can now create an email template that sends email with `Content-Type: "text/plain”`. Previously, Magento ignored the content type specified in the template. _Fix submitted by twoonesixdigital in pull request [26474](https://github.com/magento/magento2/pull/26474)_. [GitHub-26471](https://github.com/magento/magento2/issues/26471)
+*  You can now create an email template that sends email with `Content-Type: "text/plain"`. Previously, Magento ignored the content type specified in the template. _Fix submitted by twoonesixdigital in pull request [26474](https://github.com/magento/magento2/pull/26474)_. [GitHub-26471](https://github.com/magento/magento2/issues/26471)
 
 <!--- ENGCOM-7576-->
 
@@ -962,7 +964,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7420-->
 
-*  Magento now adds an admin user’s ACL role ID to the product category tree cache ID. This will limit the category trees that an admin with limited scope can see as expected. _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/magento/magento2/pull/27429)_. [GitHub-28306](https://github.com/magento/magento2/issues/28306)
+*  Magento now adds an admin user's ACL role ID to the product category tree cache ID. This will limit the category trees that an admin with limited scope can see as expected. _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/magento/magento2/pull/27429)_. [GitHub-28306](https://github.com/magento/magento2/issues/28306)
 
 ### Gift cards
 
@@ -1475,7 +1477,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33952-->
 
-*  Elasticsearch results now include the correct values for each store view’s attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default store view, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch did not index that value or return the product with that value in the results.
+*  Elasticsearch results now include the correct values for each store view's attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default store view, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch did not index that value or return the product with that value in the results.
 
 <!--- MC-35013-->
 
@@ -1525,7 +1527,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36458-->
 
-*  The **Set Product as New** attribute label now appears as expected on a product’s detail and scheduled update pages.
+*  The **Set Product as New** attribute label now appears as expected on a product's detail and scheduled update pages.
 
 <!--- MC-34484-->
 
@@ -1537,7 +1539,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33572-->
 
-*  You can now use POST `/V1/products/special-price` to update a product’s special price without specifying a `price_to` parameter value. Previously, attempts to set the price update without the `price_to` parameter specified were unsuccessful.
+*  You can now use POST `/V1/products/special-price` to update a product's special price without specifying a `price_to` parameter value. Previously, attempts to set the price update without the `price_to` parameter specified were unsuccessful.
 
 ### Store
 
@@ -1578,7 +1580,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36049-->
 
-*  Magento no longer displays a fixed product tax attribute on the storefront for a product after a merchant has unassigned it from the product’s attribute set.
+*  Magento no longer displays a fixed product tax attribute on the storefront for a product after a merchant has unassigned it from the product's attribute set.
 
 ### Test
 
@@ -1686,7 +1688,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35412-->
 
-*  Magento now correctly displays the calendar icon used for selecting a customer’s date of birth on the Conditions tab of **Customers** > **Segments** > **Add Segment**.
+*  Magento now correctly displays the calendar icon used for selecting a customer's date of birth on the Conditions tab of **Customers** > **Segments** > **Add Segment**.
 
 <!--- MC-35658-->
 
@@ -1890,7 +1892,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7674-->
 
-*  Added a test for deleting items from a customer’s wish list as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28632](https://github.com/magento/magento2/pull/28632)_. [GitHub-28721](https://github.com/magento/magento2/issues/28721)
+*  Added a test for deleting items from a customer's wish list as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28632](https://github.com/magento/magento2/pull/28632)_. [GitHub-28721](https://github.com/magento/magento2/issues/28721)
 
 <!--- ENGCOM-7675-->
 

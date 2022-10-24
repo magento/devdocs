@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Magento Open Source 2.4.5 Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-5.html
+layout: migrated
 ---
 
 {{ site.data.var.ce }} introduces improvements to platform quality, payment methods, GraphQL caching performance, and accessibility. It includes updates to integrated Google modules.
@@ -226,7 +228,7 @@ We have fixed hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 
 <!--- AC-2499-->
 
-*  Screen readers announce the word “Venia” only once when navigating to Venia headers and footers. Previously, the same word was announced twice consecutively.
+*  Screen readers announce the word "Venia" only once when navigating to Venia headers and footers. Previously, the same word was announced twice consecutively.
 
 <!--- AC-2585-->
 
@@ -390,7 +392,7 @@ We have fixed hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 
 <!--- ACP2E-13-->
 
-*  Administrators can now change configurable product options in a shopper’s cart from the Admin slide panel. Previously, the slide panel did not work correctly.
+*  Administrators can now change configurable product options in a shopper's cart from the Admin slide panel. Previously, the slide panel did not work correctly.
 
 <!--- AC-1705-->
 
@@ -586,7 +588,7 @@ We have fixed hundreds of issues in the {{ site.data.var.ce }} 2.4.5 core code.
 
 <!--- ACP2E-381-->
 
-*  You can now create a customer account on an iOS device with the inclined apostrophe (’) in the first, middle, or last name. Previously, only the straight apostrophe was allowed, and using iOS 11+ default inclined apostrophe resulted in a `Name is not valid!` error.
+*  You can now create a customer account on an iOS device with the inclined apostrophe (') in the first, middle, or last name. Previously, only the straight apostrophe was allowed, and using iOS 11+ default inclined apostrophe resulted in a `Name is not valid!` error.
 
 <!--- ACP2E-378-->
 
@@ -930,7 +932,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-52-->
 
-*  Redis cache management has been improved by the addition of TTL (expiration date) for configurable products’ associated product data caches. Previously, these caches were not evicted due to missing TTL values if Redis key eviction policy was configured to a volatile eviction policy.
+*  Redis cache management has been improved by the addition of TTL (expiration date) for configurable products' associated product data caches. Previously, these caches were not evicted due to missing TTL values if Redis key eviction policy was configured to a volatile eviction policy.
 
 <!--- ACP2E-464-->
 
@@ -1122,7 +1124,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-2851-->
 
-*  Administrators can now set the current user’s expiration date higher than 2038 and save the user successfully. Previously, the user whose expiration date was changed could not log back in after logging out.
+*  Administrators can now set the current user's expiration date higher than 2038 and save the user successfully. Previously, the user whose expiration date was changed could not log back in after logging out.
 
 <!--- AC-751-->
 
