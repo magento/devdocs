@@ -2,6 +2,8 @@
 group: release-notes
 title: 2.4 Release Information
 redirect_from: magento-release-information.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/overview.html
+layout: migrated
 ---
 
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.4.x release notes

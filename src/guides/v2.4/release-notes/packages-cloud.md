@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Cloud packages for Adobe Commerce
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/packages/cloud.html
+layout: migrated
 ---
 
 <!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/v2_4/cloud/composer_lock.json' file
