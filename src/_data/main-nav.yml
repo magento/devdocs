@@ -214,7 +214,7 @@
           url: https://developer.adobe.com/commerce/pwa-studio/
 
         - label: Page Builder Developer Guide
-          url: /page-builder/docs/index.html
+          url: https://developer.adobe.com/commerce/frontend-core/page-builder/
           versionless: true
 
     - label: API
