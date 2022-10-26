@@ -4,8 +4,107 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Oct 3 14:38:49 2022
+updated: Mon Oct 24 14:38:45 2022
 entries:
+- description: The [Shared Services](https://devdocs.magento.com/shared-services/storefront-events-sdk.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/services/shared-services/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: October 19, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3195
+  merge_commit: 4f129a1cdbf2e22d7eacdf93c8b54e279d7a979e
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [API endpoints attributes](https://devdocs.magento.com/codelinks/attributes.html)
+    topic moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/webapi/rest/attributes)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: October 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3190
+  merge_commit: e66911b062f0677d49e2ea112adfdb1128383d55
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Security and Compliance](https://devdocs.magento.com/security/security-and-compliance.html)
+    topics moved to [Experience League](https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/overview.html)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: October 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3183
+  merge_commit: f3a4a10e300caa6cedbefcc1701474d902e34b5b
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Backward-incompatible changes](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/index.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/development/backward-incompatible-changes/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: October 11, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3184
+  merge_commit: b308f39fea49c96df38205f253412fde3a7d66f2
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: Published release notes for the [2.4.5-p1](https://devdocs.magento.com/guides/v2.4/release-notes/2-4-5-p1.html)
+    and [2.4.4-p2](https://devdocs.magento.com/guides/v2.4/release-notes/2-4-4-p2.html)
+    versions.
+  versions: 2.4.4, 2.4.5
+  type: New Topic
+  date: October 11, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3186
+  merge_commit: c5b50f9e9fe4f604faeb2c51e351922e567a9136
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.4
+  - 2.4.5
+- description: The [Advanced Reporting](https://devdocs.magento.com/guides/v2.4/advanced-reporting/overview.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/php/development/advanced-reporting/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: October 6, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3180
+  merge_commit: cb3b7ec015e12d5e201b54b0825a82dc5786a6ce
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The Quality Patches Tool [home page](https://devdocs.magento.com/quality-patches/tool.html)
+    moved to [Experience League](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: October 3, 2022
+  link: https://github.com/magento/devdocs/pull/9521
+  merge_commit: df084a542261a999656b20f7343758244a547629
+  contributor: barnato-v
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - 'Progress: done'
+  - migration
 - description: Verified the backup retention policy for Cloud projects. See [Backup
     and disaster recovery](https://devdocs.magento.com/cloud/architecture/pro-architecture.html#backup-and-disaster-recovery)
     in the Cloud guide.

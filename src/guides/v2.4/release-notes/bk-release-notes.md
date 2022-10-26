@@ -2,13 +2,17 @@
 group: release-notes
 title: 2.4 Release Information
 redirect_from: magento-release-information.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/overview.html
+layout: migrated
 ---
 
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.4.x release notes
 
+*  [{{site.data.var.ee}} 2.4.5-p1 Release Notes]({{page.baseurl}}/release-notes/2-4-5-p1.html)
 *  [{{site.data.var.ce}} 2.4.5 Release Notes]({{page.baseurl}}/release-notes/open-source-2-4-5.html)
 *  [{{site.data.var.ee}} 2.4.5 Release Notes]({{page.baseurl}}/release-notes/commerce-2-4-5.html)
 
+*  [{{site.data.var.ee}} 2.4.4-p2 Release Notes]({{page.baseurl}}/release-notes/2-4-4-p2.html)
 *  [{{site.data.var.ee}} 2.4.4-p1 Release Notes]({{page.baseurl}}/release-notes/2-4-4-p1.html)
 *  [{{site.data.var.ce}} 2.4.4 Release Notes]({{page.baseurl}}/release-notes/open-source-2-4-4.html)
 *  [{{site.data.var.ee}} 2.4.4 Release Notes]({{page.baseurl}}/release-notes/commerce-2-4-4.html)
