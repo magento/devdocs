@@ -63,7 +63,7 @@ You cannot upgrade the software, but you can [configure the following services](
 *  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
 *  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 *  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html). Elasticsearch 7.11 and later  is not supported for {{site.data.var.ece}}.
-*  [OpenSearch]({{ site.baseurl }}/cloud/project/services-opensearch.html). Adobe Commerce and Magento Open Source versions 2.4.4, 2.4.3-p2, and 2.3.7-p3 support the OpenSearch service.
+*  [OpenSearch]({{ site.baseurl }}/cloud/project/services-opensearch.html). Adobe Commerce and Magento Open Source versions 2.3.7-p3, 2.4.3-p2, 2.4.4 and later support the OpenSearch service.
 
 {:.bs-callout-info}
 See [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) in the _Installation guide_ for recommended versions.
