@@ -101,7 +101,7 @@ filter: {
 }
 ```
 
-Strict filtering on the facets returned only happens when a single category path is passed. If you pass multiple paths (e.g., in: ["women/bottoms-women/shorts-women", "women/bottoms-women/pants-women"]), the facets returned will no longer be limited to sub-categories of these categories.
+Strict filtering on the facets returned only happens when a single category path is passed. If you pass multiple paths (e.g., `in: ["women/bottoms-women/shorts-women", "women/bottoms-women/pants-women"]`), the facets returned will no longer be limited to sub-categories of these categories.
 
 ### sort
 
