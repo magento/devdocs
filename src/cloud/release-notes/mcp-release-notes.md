@@ -24,7 +24,7 @@ The `{{site.data.var.mcp-package}}` package uses the following version sequence:
 
 Release date: October 27, 2022
 
--  **Added L2 cache improvements patch**—This patch fixes local flushing L2 cache for Magento 2.4.0 and 2.4.1 <!-- MCLOUD-7845 -->
+-  **Added L2 cache improvements patch**—This patch fixes an issue with flushing the local L2 cache for Commerce version 2.4.0 and 2.4.1.<!-- MCLOUD-7845 -->
 
 ## v1.0.19
 

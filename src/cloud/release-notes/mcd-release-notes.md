@@ -22,7 +22,7 @@ The release notes include:
 
 Release date: October 27, 2022
 
--  {:.new}**Added new Varnish images**—Added Varnish images for next versions 6.5, 7.0, and 7.1 <!-- MCLOUD-7879 -->
+-  {:.new}**Added new Varnish images**—Added Varnish images for next versions 6.5, 7.0, and 7.1.<!-- MCLOUD-7879 -->
 
 ## v1.3.3
 
