@@ -18,9 +18,15 @@ The release notes include:
 
 <!--Add release notes below-->
 
-## v1.3.3 {#latest}
+## v1.3.4 {#latest}
 
-Release date: September, 2022
+Release date: October 27, 2022
+
+-  {:.new}**Added new Varnish images**—Added Varnish images for next versions 6.5, 7.0, and 7.1.<!-- MCLOUD-7879 -->
+
+## v1.3.3
+
+Release date: September 13, 2022
 
 -  {:.new}**Apple M1 (ARM64) support**—Added changes to Docker images to enable support for Apple M1 (ARM64) architecture.<!-- MCLOUD-7989-2 MCLOUD-7989 -->
 -  {:.fix}**Mailhog**—Fixed an issue where the Mailhog service did not catch emails while in developer mode.<!-- MCLOUD-8643 -->

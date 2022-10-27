@@ -12,7 +12,7 @@ functional_areas:
 An update to the `{{site.data.var.ct}}` package also updates the other [{{site.data.var.csuite}} packages][], which are dependencies for `{{site.data.var.ct}}`. Therefore, you must use a version of {{site.data.var.ece}} that supports the `{{site.data.var.ct}}` package.
 
 {:.bs-callout-warning}
-If you use a version of {{site.data.var.ece}} that does not contain the {{site.data.var.ct}} package, then you must perform a one-time [upgrade][upgrade-project] to your cloud project to remove deprecated packages. To verify the {{site.data.var.ct}} package is installed, retrieve the Commerce version using the `php vendor/bin/ece-tools -V` command at your local project root directory.
+If you use a version of {{site.data.var.ece}} that does not contain the {{site.data.var.ct}} package, then you must perform a one-time [upgrade]({{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html) to your cloud project to remove deprecated packages. To verify the {{site.data.var.ct}} package is installed, retrieve the Commerce template version using the `php vendor/bin/ece-tools -V` command at your local project root directory.
 
 **Prerequisites**:
 
@@ -32,7 +32,7 @@ To update the `{{site.data.var.ct}}` package:
    ```
 
    {:.bs-callout-info}
-   If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, see [Upgrade project][].
+   If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, see [Upgrade project]({{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html).
 
 1. Add, commit, and push code changes.
 
@@ -55,7 +55,6 @@ To update the `{{site.data.var.ct}}` package:
 [latest `{{site.data.var.ct}}` release]: {{site.baseurl}}/cloud/release-notes/ece-release-notes.html
 [backward incompatible changes]: {{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html
 [Upgrade to use ece-tools]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html
-[upgrade project]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html
 [upgrade {{site.data.var.ee}} version]: {{site.baseurl}}/cloud/project/project-upgrade.html
 [Upgrades and Patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
 [{{site.data.var.csuite}} packages]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html
