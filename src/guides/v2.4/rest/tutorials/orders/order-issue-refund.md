@@ -86,4 +86,4 @@ Related topics
 *  [Getting Started with Magento Web APIs](https://developer.adobe.com/commerce/webapi/get-started/)
 *  [Create a configurable product Tutorial](https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/)
 *  [REST API Reference Overview](https://developer.adobe.com/commerce/webapi/rest/)
-*  [REST API documentation](https://magento.redoc.ly/)
+*  [REST API documentation](https://developer.adobe.com/commerce/webapi/rest/quick-reference/)
