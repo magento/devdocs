@@ -17,7 +17,7 @@ You can also create a dynamic REST API documentation set on your server with liv
 Magento uses [Swagger][] to display REST APIs for all installed products and allows you to try out the APIs.
 For more information, see [Generate local REST API reference](generate-local.html).
 
-[REST API documentation]: https://magento.redoc.ly
+[REST API documentation]: https://developer.adobe.com/commerce/webapi/rest/quick-reference/
 [ReDoc]: https://github.com/Rebilly/ReDoc
 [Open-API specification]: https://github.com/OAI/OpenAPI-Specification
 [Swagger]: https://swagger.io/

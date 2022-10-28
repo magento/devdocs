@@ -33,7 +33,7 @@ Before you begin any tutorial, make sure you know the basics about {{site.data.v
 
 *  Know how to construct a REST call in Magento. See [Construct a request](https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request) for details.
 
-*  Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs](https://magento.redoc.ly/) or [generate a local API reference](https://developer.adobe.com/commerce/webapi/rest/quick-reference/generate-local).
+*  Find the Magento REST API documentation. You can view the [static REST API documentation](https://developer.adobe.com/commerce/webapi/rest/quick-reference/) or [generate a local API reference](https://developer.adobe.com/commerce/webapi/rest/quick-reference/generate-local).
 
 *  Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}}]({{ site.user_guide_url }}/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
 
