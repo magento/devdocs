@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Adobe Commerce packages
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/packages/adobe-commerce.html
+layout: migrated
 ---
 
 <!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/v2_4/commerce/composer_lock.json' file

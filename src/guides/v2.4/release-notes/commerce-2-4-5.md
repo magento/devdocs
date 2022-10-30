@@ -1,6 +1,8 @@
 ---
 group: release-notes
 title: Adobe Commerce 2.4.5 Release Notes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/adobe-commerce/2-4-5.html
+layout: migrated
 ---
 
 {{ site.data.var.ee }} introduces improvements to platform quality, payment methods, GraphQL caching performance, and accessibility. It includes updates to integrated Google modules and the Upgrade Compatibility Tool and introduces Live Search B2B support.
@@ -151,7 +153,7 @@ Adobe Commerce merchants who have an Adobe ID and want a streamlined login to Ad
 
 ### Branding and style changes
 
-The Admin has been updated to align with Adobe’s brand strategy. Changes affect headers, footers, data grid color updates, and navigation elements.
+The Admin has been updated to align with Adobe's brand strategy. Changes affect headers, footers, data grid color updates, and navigation elements.
 
 ### B2B
 
@@ -281,7 +283,7 @@ We have fixed hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- AC-2499-->
 
-*  Screen readers announce the word “Venia” only once when navigating to Venia headers and footers. Previously, the same word was announced twice consecutively.
+*  Screen readers announce the word "Venia" only once when navigating to Venia headers and footers. Previously, the same word was announced twice consecutively.
 
 <!--- AC-2585-->
 
@@ -461,7 +463,7 @@ We have fixed hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-13-->
 
-*  Administrators can now change configurable product options in a shopper’s cart from the Admin slide panel. Previously, the slide panel did not work correctly.
+*  Administrators can now change configurable product options in a shopper's cart from the Admin slide panel. Previously, the slide panel did not work correctly.
 
 <!--- AC-1705-->
 
@@ -535,7 +537,7 @@ We have fixed hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-43-->
 
-*  {{ site.data.var.ee }} now correctly displays a configurable product’s stock status, available configurations, and displayed price when the availability of one of the configurable product’s child product is changed by a scheduled update. Previously, when a configurable product had two children and the availability of one child product was disabled with a scheduled update, the parent product’s stock status was incorrectly displayed as **Out of Stock** when the update was active, After the update completed, the displayed price and the availability of its configurations was miscalculated.
+*  {{ site.data.var.ee }} now correctly displays a configurable product's stock status, available configurations, and displayed price when the availability of one of the configurable product's child product is changed by a scheduled update. Previously, when a configurable product had two children and the availability of one child product was disabled with a scheduled update, the parent product's stock status was incorrectly displayed as **Out of Stock** when the update was active, After the update completed, the displayed price and the availability of its configurations was miscalculated.
 
 *  You can now re-order configurable products with optional custom options. Previously, re-order attempts failed, and meant displayed this error:  `Some of the selected options are not currently available`. [GitHub-35409](https://github.com/magento/magento2/issues/35409)
 
@@ -685,7 +687,7 @@ We have fixed hundreds of issues in the {{ site.data.var.ee }} 2.4.5 core code.
 
 <!--- ACP2E-381-->
 
-*  You can now create a customer account on an iOS device with the inclined apostrophe (’) in the first, middle, or last name. Previously, only the straight apostrophe was allowed, and using iOS 11+ default inclined apostrophe resulted in a `Name is not valid!` error.
+*  You can now create a customer account on an iOS device with the inclined apostrophe (') in the first, middle, or last name. Previously, only the straight apostrophe was allowed, and using iOS 11+ default inclined apostrophe resulted in a `Name is not valid!` error.
 
 <!--- ACP2E-378-->
 
@@ -1052,7 +1054,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ACP2E-52-->
 
-*  Redis cache management has been improved by the addition of TTL (expiration date) for configurable products’ associated product data caches. Previously, these caches were not evicted due to missing TTL values if Redis key eviction policy was configured to a volatile eviction policy.
+*  Redis cache management has been improved by the addition of TTL (expiration date) for configurable products' associated product data caches. Previously, these caches were not evicted due to missing TTL values if Redis key eviction policy was configured to a volatile eviction policy.
 
 <!--- ACP2E-464-->
 
@@ -1324,7 +1326,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-2851-->
 
-*  Administrators can now set the current user’s expiration date higher than 2038 and save the user successfully. Previously, the user whose expiration date was changed could not log back in after logging out.
+*  Administrators can now set the current user's expiration date higher than 2038 and save the user successfully. Previously, the user whose expiration date was changed could not log back in after logging out.
 
 <!--- AC-751-->
 

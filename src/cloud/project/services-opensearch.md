@@ -81,3 +81,4 @@ opensearch:
         plugins:
             - analysis-icu
             - analysis-phonetic
+```

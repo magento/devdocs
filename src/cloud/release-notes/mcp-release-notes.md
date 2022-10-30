@@ -20,7 +20,13 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 The `{{site.data.var.mcp-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`
 
 <!--Add release notes below-->
-## v1.0.19 {#latest}
+## v1.0.20 {#latest}
+
+Release date: October 27, 2022
+
+-  **Added L2 cache improvements patch**—This patch fixes an issue with flushing the local L2 cache for Commerce version 2.4.0 and 2.4.1.<!-- MCLOUD-7845 -->
+
+## v1.0.19
 
 Release date: September 13, 2022
 

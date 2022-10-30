@@ -102,7 +102,7 @@
       include_versions: ["2.3"]
 
     - label: Release Information
-      url: /release-notes/bk-release-notes.html
+      url: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/overview.html
 
     - label: Command-line Tools Reference
       url: https://experienceleague.adobe.com/docs/commerce-operations/reference/commerce.html
@@ -214,7 +214,7 @@
           url: https://developer.adobe.com/commerce/pwa-studio/
 
         - label: Page Builder Developer Guide
-          url: /page-builder/docs/index.html
+          url: https://developer.adobe.com/commerce/frontend-core/page-builder/
           versionless: true
 
     - label: API
