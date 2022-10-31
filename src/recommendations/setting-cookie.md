@@ -2,6 +2,8 @@
 group: product-recommendations
 title: Handle Cookie Restrictions
 ee_only: True
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/setting-cookie.html
+layout: migrated
 ---
 
 Both Adobe Commerce and Magento Open Source ask for consent before data is stored in browser cookies. For more information, refer to [Cookie restriction mode]({{ site.user_guide_url }}/stores/compliance-cookie-restriction-mode.html).
