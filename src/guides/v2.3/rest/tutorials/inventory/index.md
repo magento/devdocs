@@ -32,4 +32,4 @@ This **13-step tutorial** generally takes **1 hour**.
 
 ### Other resources
 
-*  Magento uses [Swagger](https://swagger.io) to provide REST API documentation on local instances of Magento. See [Generate a local API reference]({{ page.baseurl }}/rest/generate-local.html) for more information. You can view the [static REST API documentation](https://magento.redoc.ly/), which displays reference information using ReDoc.
+*  Magento uses [Swagger](https://swagger.io) to provide REST API documentation on local instances of Magento. See [Generate a local API reference]({{ page.baseurl }}/rest/generate-local.html) for more information. You can view the [static REST API documentation](https://developer.adobe.com/commerce/webapi/rest/quick-reference/), which displays reference information using ReDoc.
