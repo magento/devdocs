@@ -2,6 +2,8 @@
 group: product-recommendations
 title: Customize
 ee_only: True
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/customize.html
+layout: migrated
 ---
 
 When you install the Product Recommendations module, Adobe Commerce creates the `ProductRecommendationsLayout` directory. This directory contains template files that you can customize to change how the recommendations appear on your storefront. Specifically, you can modify or override the following template:
