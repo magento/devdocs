@@ -4,8 +4,23 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Oct 31 15:22:55 2022
+updated: Mon Nov 7 21:08:52 2022
 entries:
+- description: The [Product Recommendations](https://devdocs.magento.com/recommendations/product-recs.html)
+    topics moved to the [Experience League](https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/development-overview.html)
+    and the [Adobe Developer documentation](https://developer.adobe.com/commerce/services/product-recommendations/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: October 31, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3206
+  merge_commit: 5d4605e409897e614a1be5910c40f1fa9b9de331
+  contributor: jhadobe
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: "[Cloud Suite release notes](https://devdocs.magento.com/cloud/release-notes/cloud-tools.html)
     for ECE-Tools 2002.1.13, Cloud Patches 1.0.20, and Cloud Docker 1.3.4."
   versions: 2.x
