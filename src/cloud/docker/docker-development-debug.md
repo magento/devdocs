@@ -122,7 +122,7 @@ You can debug any {{site.data.var.ee}} command or PHP script using the following
 {:.procedure}
 To debug CLI commands:
 
-1. In your PhpStorm project, open the **Build, Extension, Deployment** > **Docker** panel, and then click `+` to add a new Docker server and update the following settings:
+1. In your PhpStorm project, open the **Build, Execution, Deployment** > **Docker** panel, and then click `+` to add a new Docker server and update the following settings:
 
    -  **Name**—Enter a name for the server, for example `Docker Cloud`.
    -  **Connect to Docker daemon with**—
