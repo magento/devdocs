@@ -123,7 +123,7 @@ To increase disk space for your application:
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A && git commit -m "Increase disk space for application" && git push origin <branch-name>
+   git add .magento.app.yaml && git commit -m "Increase disk space for application" && git push origin <branch-name>
    ```
 
    The changes take effect after you push the updated YAML file to the remote environment.
@@ -152,7 +152,7 @@ To increase disk space for a service:
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A && git commit -m "Increase disk space for service" && git push origin <branch-name>
+   git add .magento/services.yaml && git commit -m "Increase disk space for service" && git push origin <branch-name>
    ```
 
    The changes take effect after you push the updated YAML file to the remote environment.
