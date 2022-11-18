@@ -84,7 +84,7 @@ mutation {
 {
   "data": {
     "generateCustomerToken": {
-      "token": "zuo7zor5jfldft2nmu2gtylnm8ui7e8t"
+      "token": "zuo7zor5jfldft2nmu2gtylnm8ui7e8t" #gitleaks:allow
     }
   }
 }

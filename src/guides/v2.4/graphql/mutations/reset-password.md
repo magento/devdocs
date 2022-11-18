@@ -23,7 +23,7 @@ The following call sets a new customer password.
 mutation {
   resetPassword(
     email: "roni_cost@example.com",
-    resetPasswordToken: "gh80pkjGdsPyiXc0sUUXswX1uGN7crUr",
+    resetPasswordToken: "gh80pkjGdsPyiXc0sUUXswX1uGN7crUr", #gitleaks:allow
     newPassword: "new_password"
   )
 }

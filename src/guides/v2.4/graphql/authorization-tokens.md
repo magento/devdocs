@@ -45,7 +45,7 @@ mutation {
  {
    "data": {
      "generateCustomerToken": {
-       "token": "hoyz7k697ubv5hcpq92yrtx39i7x10um"
+       "token": "hoyz7k697ubv5hcpq92yrtx39i7x10um" #gitleaks:allow
      }
    }
  }

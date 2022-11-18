@@ -16,7 +16,7 @@ When the customer clicks the `Set a New Password` button, Magento sends an email
 The URL has the following format:
 
 ```text
-https://<MAGENTOSITE>/customer/account/createPassword/?token=gh80pkjGdsPyiXc0sUUXswX1uGN7crUr
+https://<MAGENTOSITE>/customer/account/createPassword/?token=gh80pkjGdsPyiXc0sUUXswX1uGN7crUr #gitleaks:allow
 ```
 
 Use the value of the token in the `resetPassword` mutation.

@@ -108,7 +108,7 @@ mutation {
     payment_method: {
       code: "klarna_pay_later"
       klarna: {
-        authorization_token: "e9abc610-6748-256f-a506-355626551326"
+        authorization_token: "e9abc610-6748-256f-a506-355626551326" #gitleaks:allow
       }
     }
   }) {

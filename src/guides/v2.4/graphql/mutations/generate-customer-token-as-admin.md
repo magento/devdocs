@@ -38,7 +38,7 @@ mutation{
 {
   "data": {
     "generateCustomerTokenAsAdmin": {
-      "customer_token": "cr0717abzoagxty1xjn4lj13kim36r6x"
+      "customer_token": "cr0717abzoagxty1xjn4lj13kim36r6x" #gitleaks:allow
     }
   }
 }

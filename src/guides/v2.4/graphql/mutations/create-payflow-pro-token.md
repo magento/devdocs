@@ -57,8 +57,8 @@ mutation {
       "response_message": "Approved",
       "result": 0,
       "result_code": 0,
-      "secure_token": "5JRGtIDsaJUuEPq0lR5m9ugqG",
-      "secure_token_id": "H3roFRhGjKzxCKr5TlA8mooClBpQxgBY"
+      "secure_token": "5JRGtIDsaJUuEPq0lR5m9ugqG", #gitleaks:allow
+      "secure_token_id": "H3roFRhGjKzxCKr5TlA8mooClBpQxgBY" #gitleaks:allow
     }
   }
 }

@@ -34,7 +34,7 @@ mutation {
 ```json
 {
   "data": {
-    "createBraintreeClientToken": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
+    "createBraintreeClientToken": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C" #gitleaks:allow
   }
 }
 ```
