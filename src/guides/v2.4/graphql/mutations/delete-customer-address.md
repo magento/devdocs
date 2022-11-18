@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: deleteCustomerAddress mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/delete-address/
+layout: migrated
 ---
 
 Use the `deleteCustomerAddress` mutation to delete the specified customer address.

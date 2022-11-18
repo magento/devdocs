@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: categories query
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/categories/
+layout: migrated
 ---
 
 The `categories` query returns a list of categories that match the specified filter. This query differs from the `categoryList` query in that it supports pagination.

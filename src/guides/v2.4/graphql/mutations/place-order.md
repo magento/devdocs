@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: placeOrder mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/place-order/
+layout: migrated
 ---
 
 The `placeOrder` mutation converts the cart into an order and returns an order ID. You cannot manage orders with GraphQL, because orders are part of the backend. You can use REST or SOAP calls to manage orders to their completion.
@@ -68,7 +70,7 @@ The `placeOrderInput` object must contain the following attribute:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_id` | String! | The unique ID that identifies the customer’s cart
+`cart_id` | String! | The unique ID that identifies the customer's cart
 
 ## Output attributes
 

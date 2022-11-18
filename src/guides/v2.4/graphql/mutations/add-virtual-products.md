@@ -3,6 +3,8 @@ group: graphql
 title: addVirtualProductsToCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-add-virtual-products.html
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/add-virtual-products/
+layout: migrated
 ---
 
 {:.bs-callout-warning}

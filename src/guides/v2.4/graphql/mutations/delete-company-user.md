@@ -4,6 +4,8 @@ title: deleteCompanyUser mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 b2b_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/mutations/delete-user/
+layout: migrated
 ---
 
 Use the `deleteCompanyUser` mutation to deactivate the specified company user.

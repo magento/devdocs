@@ -3,6 +3,8 @@ group: graphql
 title: requestPasswordResetEmail mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/request-password-reset-email/
+layout: migrated
 ---
 
 The `requestPasswordResetEmail` mutation triggers the password reset email by the provided email address. Use it to initiate the process to reset the registered customer's password before calling the [resetPassword]({{page.baseurl}}/graphql/mutations/reset-password.html) mutation.

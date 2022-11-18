@@ -4,6 +4,8 @@ title: isCompanyRoleNameAvailable query
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 b2b_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/queries/is-company-role-name-available/
+layout: migrated
 ---
 
 The `isCompanyRoleNameAvailable` query checks whether a company role name is valid for creating into a company.

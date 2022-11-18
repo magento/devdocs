@@ -5,6 +5,8 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_from:
   - /guides/v2.4/graphql/get-customer-authorization-token.html
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/usage/authorization-tokens/
+layout: migrated
 ---
 
 Adobe Commerce and Magento Open Source provide two mechanisms for authorizing GraphQL calls:

@@ -4,6 +4,8 @@ title: Gift card product data types
 ee_only: True
 redirect_from:
   - /guides/v2.4/graphql/product/gift-card-product.html
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/gift-card/
+layout: migrated
 ---
 
 The `GiftCardProduct` data type defines properties of a gift card, including the minimum and maximum values and an array that contains the current and past values on the specific gift card

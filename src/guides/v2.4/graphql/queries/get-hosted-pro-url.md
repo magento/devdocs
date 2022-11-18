@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: getHostedProUrl query
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/get-hosted-pro-url/
+layout: migrated
 ---
 
 The `getHostedProUrl` query is required to complete a transaction when the [PayPal Website Payments Pro Hosted Solution payment method]({{page.baseurl}}/graphql/payment-methods/hosted-pro.html) is selected. The query retrieves a PayPal-generated URL that the PWA client connects to, enabling the customer to enter their PayPal credentials and complete the transaction. Run this query after you [set the payment method]({{ page.baseurl}}/graphql/mutations/set-payment-method.html) and [place the order]({{ page.baseurl}}/graphql/mutations/place-order.html).
@@ -41,7 +43,7 @@ The `getHostedProUrl` query must contain the following attribute:
 
 Attribute | Data type | Description
 --- | --- | ---
-`cart_id` | String! | The unique ID that identifies the customer’s cart
+`cart_id` | String! | The unique ID that identifies the customer's cart
 
 ## Output attributes
 

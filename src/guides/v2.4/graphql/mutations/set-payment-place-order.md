@@ -3,6 +3,8 @@ group: graphql
 title: setPaymentMethodAndPlaceOrder mutation
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-payment-place-order/
+layout: migrated
 ---
 
 {:.bs-callout-warning}
@@ -77,7 +79,7 @@ The `placeOrderInput` object must contain the following attribute:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_id` | String! | The unique ID that identifies the customer’s cart
+`cart_id` | String! | The unique ID that identifies the customer's cart
 `payment_method` | [PaymentMethodInput!](#PaymentMethodInput) | The payment method data for the cart
 
 ### PaymentMethodInput attributes {#PaymentMethodInput}

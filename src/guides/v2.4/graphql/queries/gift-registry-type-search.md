@@ -1,7 +1,9 @@
 ---
 group: graphql
 title: giftRegistryTypeSearch query
-ee_only: true   
+ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/type-search/
+layout: migrated
 ---
 
 The `giftRegistryTypeSearch` query returns a list of gift registries that match the specified registrant name and, optionally, registry type ID. Use the [`giftRegistryTypes` query]({{page.baseurl}}/graphql/queries/gift-registry-types.html) to return list of registry type IDs.

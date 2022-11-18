@@ -2,6 +2,8 @@
 group: graphql
 title: moveProductsBetweenWishlists mutation
 ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/move-products/
+layout: migrated
 ---
 
 The `moveProductsBetweenWishlists` mutation moves the specified quantities of one or more products to a different wish list.

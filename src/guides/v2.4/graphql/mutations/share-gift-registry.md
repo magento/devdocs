@@ -3,6 +3,8 @@ group: graphql
 title: shareGiftRegistry mutation
 ee_only: true
 contributor_name: EY
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/share/
+layout: migrated
 ---
 
 The `shareGiftRegistry` mutation sends an invitation to a list email addresses to shop from the customer's gift registry.

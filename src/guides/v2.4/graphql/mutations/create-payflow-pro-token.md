@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: createPayflowProToken mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-payflow-pro-token/
+layout: migrated
 ---
 
 The `createPayflowProToken` mutation initiates a Payflow Pro transaction and receives a token. The payload must contain the redirect URLs to use when the transaction is successful, when the customer cancels the transaction, or when an error occurs.
