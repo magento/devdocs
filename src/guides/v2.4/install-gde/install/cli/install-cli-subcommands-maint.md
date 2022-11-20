@@ -88,9 +88,7 @@ bin/magento maintenance:allow-ips <ip address> .. <ip address> [--none]
 
 ## Multi-store setups
 
-To set up multiple stores, each with a different layout and localized content, create a skin for each and put it into `pub/errors/{name}` where `{name}` is the store code. To distinguish between stores and websites with the same instance, use `pub/errors/{type}-{name}` where `{type}` is either `store` or `website` and matches the `MAGE_RUN_TYPE` in your server configuration.
-
-Another option is to pass the `$_GET['skin']` parameter to the intended processor. This method requires a specific configuration on your server.
+If you want to set up multiple stores, each with a different layout and localized content, pass the `$_GET['skin']` parameter to the intended processor.
 
 In the following example, we are using a `503` type error template file, which requires localized content.
 

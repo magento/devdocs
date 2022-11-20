@@ -216,7 +216,7 @@ You can upgrade the installed service version by updating the service configurat
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A
+   git add .magento/services.yaml
    ```
 
    ```bash
