@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/log/log-handlers.html
+layout: migrated
 ---
 
 You can configure logging handlers to send messages to a remote logging server. A logging handler pushes build and deploy logs to other systems, similarly to the way you push logs to Slack and email. You can enable a _syslog_ handler, which is ideal for logging messages related to hardware, or a Graylog Extended Log Format (GELF) handler, which is ideal for logging messages from software applications.

@@ -8,6 +8,8 @@ functional_areas:
 redirect_from:
   - /cloud/before/before-project-owner.html
   - /cloud/onboarding/onboarding-portal.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/start/onboarding.html
+layout: migrated
 ---
 
 After your company purchases a {{site.data.var.ece}} subscription, initial project and code access is available only to the person designated as the License Owner (Account Owner).

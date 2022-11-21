@@ -4,6 +4,8 @@ title: GitHub integration
 functional_areas:
   - Cloud
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/github.html
+layout: migrated
 ---
 
 The GitHub integration enables you to manage your {{site.data.var.ece}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.ee}}. Before you begin, your project and environments must be in a GitHub repository.

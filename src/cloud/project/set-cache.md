@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Services
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/set-cache.html
+layout: migrated
 ---
 
 The cache time-to-live (TTL) for your media and static files is set in the `.magento.app.yaml` configuration file using the `expires` key.

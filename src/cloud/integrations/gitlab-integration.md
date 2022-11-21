@@ -4,6 +4,8 @@ title: GitLab integration
 functional_areas:
   - Cloud
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/gitlab.html
+layout: migrated
 ---
 
 You can configure a GitLab repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your GitLab repository with your {{ site.data.var.ece }} account.

@@ -4,6 +4,8 @@ title: Configure your project
 functional_areas:
   - Cloud
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/user-access.html
+layout: migrated
 ---
 
 For all {{site.data.var.ece}} projects, you can use the [Project Web Interface](https://account.magento.com/customer/account/login/) to perform the following tasks:

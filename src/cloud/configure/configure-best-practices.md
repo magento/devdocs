@@ -8,6 +8,8 @@ menu_node:
 functional_areas:
   - Cloud
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/best-practices.html
+layout: migrated
 ---
 
 For detailed information for configuring your store, sites, and websites, you may want to review the [{{site.data.var.ee}} 2.2.x User Guide]({{ site.user_guide_url }}/getting-started.html). This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with additional content to post over time and across versions.
@@ -26,7 +28,7 @@ The following are tips to help create, update, and manage promotions and campaig
 
 *  A promotion can be part of a campaign. A campaign cannot be a part of a promotion. You can have lists of promotions as price rules to use multiples times, with multiple campaigns.
 *  When you create a promotion, it will always create an initial campaign that is inactive. It will have a start date but not an end date. You can ignore this initial campaign. You can Schedule a New Update with the correct campaign schedule and make it active.
-*  A campaign has a start and end date, not a promotion. The Scheduler that appears when you create a promotion does not configure the start and end dates for the promotion. It allows you so schedule your campaign this promotion is associated with while you are on the promotion’s configuration page.
+*  A campaign has a start and end date, not a promotion. The Scheduler that appears when you create a promotion does not configure the start and end dates for the promotion. It allows you so schedule your campaign this promotion is associated with while you are on the promotion's configuration page.
 *  You cannot directly edit in Staged Content. If you need to edit settings and options in the campaign, you will need to edit the original or a replica and push to overwrite in Staged Content. For example, if you do not an end date for a campaign, you must edit the original and push to update.
 
 ## Advanced Pricing and Staged Content {#adv-pricing}

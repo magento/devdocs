@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
 redirect_from:
   - /cloud/basic-information/cloud-plans.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/cloud-architecture.html
+layout: migrated
 ---
 
 {{site.data.var.ece}} has a Starter and a Pro plan. Each plan has a unique architecture to drive your {{site.data.var.ee}} development and deployment process. Both the Starter plan and the Pro plan architecture deploy databases, web server, and caching servers across multiple environments for end-to-end testing while supporting continuous integration.

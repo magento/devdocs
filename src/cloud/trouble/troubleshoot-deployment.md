@@ -7,6 +7,8 @@ redirect_to: https://support.magento.com/hc/en-us/articles/4411647469965
 functional_areas:
   - Cloud
   - Deploy
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/recover-failed-deployment.html
+layout: migrated
 ---
 
 This topic discusses how to recover if you deployed the {{site.data.var.ee}} application with the incorrect [authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html). For example, you might have used the keys for another account or you might have used {{site.data.var.ce}} keys instead of {{site.data.var.ee}} keys.

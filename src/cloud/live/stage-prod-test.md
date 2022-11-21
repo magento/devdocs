@@ -9,6 +9,8 @@ functional_areas:
   - Cloud
   - Testing
   - Deploy
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/staging-and-production.html
+layout: migrated
 ---
 
 {:.ref-header}

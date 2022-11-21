@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Application
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html
+layout: migrated
 ---
 
 You can customize the PHP settings for your environment using a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.

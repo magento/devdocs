@@ -7,6 +7,8 @@ redirect_from:
   - /cloud/trouble/pro-env-management.html
 functional_areas:
   - Cloud
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/pro-develop-deploy-workflow.html
+layout: migrated
 ---
 
 The {{site.data.var.ece}} Pro plan includes a single Git repository with a Global Master and three main environments: the **Integration** environment for development and testing, the **Staging** environment for testing with all services, and the **Production** environment for launching and maintaining your live site. See [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) for an overview.

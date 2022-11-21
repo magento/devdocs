@@ -8,6 +8,8 @@ functional_areas:
   - Install
   - Setup
   - Configuration
+migrated_to: 
+layout: migrated
 ---
 
 {:.ref-header}

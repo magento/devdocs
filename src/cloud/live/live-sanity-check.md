@@ -4,6 +4,8 @@ title: Build and deploy on local
 functional_areas:
   - Cloud
   - Testing
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/staging-production.html
+layout: migrated
 ---
 
 Before pushing your code to your [Starter]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) Staging and Production environments, you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.

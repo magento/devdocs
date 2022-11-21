@@ -6,6 +6,8 @@ functional_areas:
   - Setup
 redirect_from:
   - /cloud/project/project-conf-files_magento-app.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/configure-app-yaml.html
+layout: migrated
 ---
 
 The `.magento.app.yaml` file controls the way your application builds and deploys. Although {{site.data.var.ece}} supports multiple applications per project, typically, a project has a single application with the `.magento.app.yaml` file at the root of the repository.

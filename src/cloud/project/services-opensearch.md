@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Search
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/opensearch.html
+layout: migrated
 ---
 
 The [OpenSearch](https://www.opensearch.org) service is an open-source fork of Elasticsearch 7.10.2, following the licensing changes for Elasticsearch. See [System requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html) for a list of supported versions.

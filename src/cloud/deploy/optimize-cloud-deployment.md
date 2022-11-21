@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Deploy
   - SCD
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/optimization.html
+layout: migrated
 ---
 
 Site performance can suffer during the deployment process. The length of time a site is in maintenance mode when deploying to a production site depends on many factors, such as environment configuration and the amount of content a site contains. The first best practice for optimizing your Cloud deployment is to [upgrade to use `{{site.data.var.ct}}`]({{ site.baseurl }}/cloud/project/ece-tools-upgrade-project.html) to benefit from the package features, such as commands to create a backup of the database and verify environment configuration.

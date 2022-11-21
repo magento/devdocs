@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/log/set-up-notifications.html
+layout: migrated
 ---
 
 By default, {{site.data.var.ece}} writes build and deploy actions to the `app/var/log/cloud.log` file inside the {{site.data.var.ee}} root application directory. Optionally, you can send logs to a messaging system, such as Slack and email, to receive real-time notifications.

@@ -4,6 +4,8 @@ title: Global variables
 functional_areas:
   - Cloud
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-global.html
+layout: migrated
 ---
 
 The following _global_ variables control actions across each phase: build, deploy, and post-deploy. Because global variables impact every phase, you must set them in the `global` stage of the `.magento.env.yaml` file:

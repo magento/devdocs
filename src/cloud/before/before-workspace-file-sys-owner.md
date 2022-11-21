@@ -4,6 +4,8 @@ title: Set up the file system owner
 functional_areas:
   - Cloud
   - Setup
+migrated_to: 
+layout: migrated
 ---
 
 {:.ref-header}

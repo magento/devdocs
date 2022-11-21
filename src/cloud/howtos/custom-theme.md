@@ -9,6 +9,8 @@ functional_areas:
   - Cloud
   - Setup
   - Theme
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/custom-theme.html
+layout: migrated
 ---
 
 You can install one or multiple themes to use for one or all of your stores and sites in your project. Themes include multiple static files including images, fonts, CSS, JavaScript, PHP, and more to fully design your stores. You can add the theme by either extracting its code to the file system or using Composer.

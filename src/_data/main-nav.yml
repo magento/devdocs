@@ -4,23 +4,23 @@
     - label: Cloud basics
       children:
         - label: Cloud Guide
-          url: /cloud/bk-cloud.html
+          url: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/overview.html
           versionless: true
 
         - label: Cloud Architecture
-          url: /cloud/architecture/cloud-architecture.html
+          url: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/cloud-architecture.html
           versionless: true
 
         - label: Project Structure
-          url: /cloud/project/project-start.html
+          url: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/file-structure.html
           versionless: true
 
         - label: Upgrades and Patches
-          url: /cloud/project/project-upgrade-parent.html
+          url: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/upgrade/best-practices.html
           versionless: true
 
         - label: Release Notes
-          url: /cloud/release-notes/cloud-tools.html
+          url: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-tools-suite.html
           versionless: true
 
     - label: Cloud development
@@ -38,11 +38,11 @@
           versionless: true
 
         - label: Configure Application
-          url: /cloud/project/magento-app.html
+          url: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/configure-app-yaml.html
           versionless: true
 
         - label: Configure Environments
-          url: /cloud/env/environments.html
+          url: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/configure-env-yaml.html
           versionless: true
 
     - label: Functional Testing

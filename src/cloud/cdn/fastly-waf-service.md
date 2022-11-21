@@ -6,6 +6,8 @@ functional_areas:
   - Install
   - Security
   - Compliance
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/fastly-waf-service.html
+layout: migrated
 ---
 
 Powered by Fastly, the web application firewall (WAF) service for {{ site.data.var.ece }} detects, logs, and blocks malicious request traffic before it can damage your sites or network. The WAF service is available on production environments only.
