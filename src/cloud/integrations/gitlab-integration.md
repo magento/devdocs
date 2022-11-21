@@ -107,7 +107,7 @@ To enable the GitLab integration:
 1. From the terminal, add the GitLab integration to your {{site.data.var.ece}} project:
 
    ```bash
-   magento-cloud integration:add --type gitlab --project=3txxjf32gtryos --token=qVUfeEn4ouze7A7JH --base-url=https://gitlab.com/ --server-project=my-agency/project-name --build-merge-requests=false --merge-requests-clone-parent-data=false --fetch-branches=true --prune-branches=true
+   magento-cloud integration:add --type gitlab --project=3txxjf32gtryos --token=qVUfeEn4ouze7A7JH #gitleaks:allow --base-url=https://gitlab.com/ --server-project=my-agency/project-name --build-merge-requests=false --merge-requests-clone-parent-data=false --fetch-branches=true --prune-branches=true
    ```
 
 1. When prompted, enter "Y" to add the integration.
