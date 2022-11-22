@@ -48,7 +48,7 @@ To enable Elasticsearch:
 1. Add, commit, and push code changes.
 
    ```bash
-   git add -A && git commit -m "Enable Elasticsearch" && git push origin <branch-name>
+   git add .magento/services.yaml .magento.app.yaml && git commit -m "Enable Elasticsearch" && git push origin <branch-name>
    ```
 
    For information on how these changes affect your environments, see [Services]({{ site.baseurl }}/cloud/project/services.html).
@@ -210,7 +210,7 @@ To remove Elasticsearch plugins:
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A
+   git add .magento/services.yaml
    ```
 
    ```bash
