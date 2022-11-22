@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: setShippingAddressesOnCart mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-shipping-address/
+layout: migrated
 ---
 
 The `setShippingAddressesOnCart` mutation sets one or more shipping addresses on a specific cart. The shipping address does not need to be specified in the following circumstances:

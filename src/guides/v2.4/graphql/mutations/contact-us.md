@@ -2,6 +2,8 @@
 group: graphql
 title: contactUs mutation
 pwa_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/mutations/contact-us/
+layout: migrated
 ---
 
 The `contactUs` mutation submits the contents of the Contact Us form.

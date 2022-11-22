@@ -2,6 +2,8 @@
 group: graphql
 title: recaptchaV3Config query
 pwa_only: True
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/recaptcha-v3-config/
+layout: migrated
 ---
 
 The `recaptchaV3Config` query returns information about the reCaptcha V3 configuration.

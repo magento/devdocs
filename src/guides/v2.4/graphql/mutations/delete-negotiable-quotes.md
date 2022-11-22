@@ -2,6 +2,8 @@
 group: graphql
 title: deleteNegotiableQuotes mutation
 b2b_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/delete/
+layout: migrated
 ---
 
 The `deleteNegotiableQuotes` mutation causes the specified negotiable quotes to be invisible from the Admin or from the storefront. The quotes are still present in the database.

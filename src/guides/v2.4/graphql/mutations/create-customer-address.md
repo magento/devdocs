@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: createCustomerAddress mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/create-address/
+layout: migrated
 ---
 
 Use the `createCustomerAddress` mutation to create the customer's address.
@@ -80,7 +82,7 @@ mutation {
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | Int | The ID assigned to the address object
-`CustomerAddressInput` | [CustomerAddress](#customerAddressInput) | An array containing the customer’s shipping and billing addresses
+`CustomerAddressInput` | [CustomerAddress](#customerAddressInput) | An array containing the customer's shipping and billing addresses
 
 {% include graphql/customer-address-input-24.md %}
 

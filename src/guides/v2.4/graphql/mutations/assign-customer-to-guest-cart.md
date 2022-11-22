@@ -3,6 +3,8 @@ group: graphql
 title: assignCustomerToGuestCart mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/assign-customer-to-guest-cart/
+layout: migrated
 ---
 
 The `assignCustomerToGuestCart` mutation merges a logged-in customer's shopping cart into the specified guest cart. The mutation inactivates the customer's shopping cart and moves the products to the guest cart. The guest cart is then assigned to the customer.

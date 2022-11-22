@@ -2,6 +2,8 @@
 group: graphql
 title: isCompanyAdminEmailAvailable query
 b2b_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/queries/is-company-admin-email-available/
+layout: migrated
 ---
 
 The `isCompanyAdminEmailAvailable` query checks whether the specified email can be used to create a company administrator account. If the email matches an existing customer or another company administrator account, the query returns a `false` value. A value of `true` indicates the email address can be used to create a company administrator account.

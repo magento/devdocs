@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: PayPal Payflow Pro payment method
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-pro/
+layout: migrated
 ---
 
 Payflow Pro is a payment gateway that processes debit and credit card payments. It is available for customers of the United States, Canada, Australia, and New Zealand.

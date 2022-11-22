@@ -1,7 +1,9 @@
 ---
 group: graphql
 title: giftRegistryEmailSearch query
-ee_only: true   
+ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/email-search/
+layout: migrated
 ---
 
 The `giftRegistryEmailSearch` query returns a list of gift registries that match the specified registrant email address. The query does not return registries based on owner email address.

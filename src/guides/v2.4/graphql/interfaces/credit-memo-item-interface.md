@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: CreditMemoItemInterface attributes and implementations
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/credit-memo-item/
+layout: migrated
 ---
 
 `CreditMemoItemInterface` provides details about items in a customer's order history that were refunded. It has the following implementations:

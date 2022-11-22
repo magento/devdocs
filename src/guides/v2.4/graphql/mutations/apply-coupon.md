@@ -3,6 +3,8 @@ group: graphql
 title: applyCouponToCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-apply-coupon.html
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/apply-coupon/
+layout: migrated
 ---
 
 The `applyCouponToCart` mutation applies a pre-defined coupon code to the specified cart. Valid coupon codes are defined in cart price rules.

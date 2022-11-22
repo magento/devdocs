@@ -3,6 +3,8 @@ group: graphql
 title: compareList query
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/compare-list/
+layout: migrated
 ---
 
 The `compareList` query retrieves information about a list of products so that the shopper can compare those products.

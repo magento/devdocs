@@ -2,6 +2,8 @@
 group: graphql
 title: GraphQL Overview
 landing-page: GraphQL Developer's Guide
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/
+layout: migrated
 ---
 
 [GraphQL](https://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.

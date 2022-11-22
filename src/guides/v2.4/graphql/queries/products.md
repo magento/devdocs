@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: products query
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/products/
+layout: migrated
 ---
 
 The `products` query allows you to search for catalog items.

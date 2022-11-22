@@ -2,6 +2,8 @@
 group: graphql
 title: applyStoreCreditToCart mutation
 ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/apply-store-credit/
+layout: migrated
 ---
 
 The `applyStoreCreditToCart` mutation applies store credit to the specified cart. Store credit must be enabled on the store to run this mutation.
@@ -87,7 +89,7 @@ The `ApplyStoreCreditToCartInput` object must contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_id` | String! | The unique ID that identifies the customer’s cart
+`cart_id` | String! | The unique ID that identifies the customer's cart
 
 ## Output attributes
 

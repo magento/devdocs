@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: removeReturnTracking mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/remove-return-tracking/
+layout: migrated
 ---
 
 The `removeReturnTracking` mutation deletes a customer-entered entry that defines the shipping carrier and tracking number for a return request. Use the [`customer` query]({{page.baseurl}}/graphql/queries/customer.html) to retrieve valid `carrier_uid` values.

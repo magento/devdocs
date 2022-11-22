@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: reorderItems mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/reorder-items/
+layout: migrated
 ---
 
 The `reorderItems` mutation allows a logged-in user to add all the products from a previous order into their cart. The **Stores** > Settings > **Sales** > **Sales** > **Reorder** > **Allow Reorder** field must be set to **Yes** to enable reorders. You must provide a customer authorization token with the call.

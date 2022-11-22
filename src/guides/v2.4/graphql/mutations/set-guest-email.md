@@ -3,6 +3,8 @@ group: graphql
 title: setGuestEmailOnCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-set-guest-email.html
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-guest-email/
+layout: migrated
 ---
 
 For guest customers, you must assign an email to the cart before you place the order.
@@ -52,7 +54,7 @@ The `SetGuestEmailOnCartInput` object must contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_id` | String! | The unique ID that identifies the customer’s cart
+`cart_id` | String! | The unique ID that identifies the customer's cart
 `email` | String! | The guest user's email
 
 ## Output attributes

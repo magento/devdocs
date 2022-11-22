@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: removeProductsFromWishlist mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/remove-products/
+layout: migrated
 ---
 
 The `removeProductsFromWishlist` mutation completely removes the specified items from the customer's wish list. Use the [`updateProductsInWishlist` mutation]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) to change the quantity of specific items in the wish list.

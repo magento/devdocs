@@ -4,6 +4,8 @@ title: Using queries
 redirect_from:
   - /guides/v2.3/graphql/search-pagination.html
   - /guides/v2.3/graphql/queries.html
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/usage/
+layout: migrated
 ---
 
 A GraphQL query retrieves data from the Magento server in a similar manner as a REST GET call. The current set of Magento GraphQL queries allow a mobile app or browser to render a wide variety of information, including the following:

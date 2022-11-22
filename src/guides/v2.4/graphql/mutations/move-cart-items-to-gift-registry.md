@@ -4,6 +4,8 @@ title: moveCartItemsToGiftRegistry mutation
 ee_only: true
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/move-cart-items/
+layout: migrated
 ---
 
 The `moveCartItemsToGiftRegistry` mutation moves all items from the cart to a gift registry.
@@ -99,7 +101,7 @@ The `moveCartItemsToGiftRegistry` mutation requires the following input:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cartUid` | ID! | The unique ID that identifies the customer’s cart
+`cartUid` | ID! | The unique ID that identifies the customer's cart
 `giftRegistryUid` | ID! | The unique ID of a `GiftRegistry` object
 
 ## Output attributes
