@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Services
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/sendgrid.html
+layout: migrated
 ---
 
 The SendGrid Simple Mail Transfer Protocol (SMTP) proxy service provides outbound email authentication and reputation monitoring services, including support for:

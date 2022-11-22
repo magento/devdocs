@@ -7,6 +7,8 @@ functional_areas:
   - Search
 redirect_from:
   - /cloud/project/project-conf-files_services-elastic.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/elasticsearch.html
+layout: migrated
 ---
 
 [Elasticsearch](https://www.elastic.co) is an open-source product that enables you to take data from any source, any format, and search and visualize it in real time.

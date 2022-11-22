@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/crons-property.html
+layout: migrated
 ---
 
 {{site.data.var.ee}} uses cron jobs for numerous features to schedule activities. This topic provides information for configuring crons for `{{site.data.var.ece}}` projects using the [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html) file.

@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/routes/redirects.html
+layout: migrated
 ---
 
 You can easily migrate to the {{site.data.var.ece}} platform without losing SEO rankings and traffic. Use the `magento/url-rewrite-import-export` module to redirect traffic from your old, indexed URLs to new URLs.

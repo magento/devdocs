@@ -4,10 +4,11 @@ title: Launch checklist
 functional_areas:
   - Cloud
   - Testing
-  
 redirect_from:
   - /common/pdf/magento-commerce-cloud-prelaunch-checklist.pdf
   - /cloud/live/go-live-checklist.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/launch/checklist.html
+layout: migrated
 ---
 
 Before you deploy to the Production environment, download the [Launch checklist]({{ site.downloads }}/magento-commerce-cloud-prelaunch-checklist.pdf), and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html).
@@ -46,7 +47,7 @@ To update DNS configuration for site launch:
 1. Update the following DNS configuration for your Production site:
 
    -  Set all necessary redirects, especially if you are migrating from an existing site
-   -  Set the zone’s root resource record to address the hostname
+   -  Set the zone's root resource record to address the hostname
    -  Lower the value for the Time-to-Live (TTL) to refresh DNS information to point customers to the correct Production store
 
       We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are updating your site. Be advised that shortening the TTL value adds load to the  DNS infrastructure. You should restore the previous higher value after site launch.

@@ -7,6 +7,8 @@ redirect_from:
   - /cloud/architecture/pro-architecture-legacy.html
 functional_areas:
   - Cloud
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/pro-architecture.html
+layout: migrated
 ---
 
 Your {{site.data.var.ece}} Pro architecture supports multiple environments that you can use to develop, test, and launch your store.

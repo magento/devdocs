@@ -4,7 +4,9 @@ title: PHP application
 functional_areas:
   - Cloud
   - Setup
-  - Application  
+  - Application
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html
+layout: migrated
 ---
 
 You can choose which [version of PHP]({{ site.baseurl}}/guides/v2.4/install-gde/system-requirements.html) to run in your `.magento.app.yaml` file:

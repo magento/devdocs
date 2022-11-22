@@ -6,9 +6,10 @@ functional_areas:
   - Configuration
   - Security
   - Compliance
-  
 redirect_from:
   - /cloud/project/project-enable-mfa-project.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/multi-factor-authentication.html
+layout: migrated
 ---
 
 For added security, {{site.data.var.ece}} provides multi-factor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments.

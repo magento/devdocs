@@ -3,6 +3,8 @@ group: cloud-guide
 title: Release notes archive for ece-tools
 functional_areas:
   - Cloud
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-release-archive.html
+layout: migrated
 ---
 
 {:.bs-callout-info}

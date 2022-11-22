@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-tools-suite.html
+layout: migrated
 ---
 
 The release information in this section relates to [Composer packages]({{ site.baseurl }}/cloud/reference/cloud-composer.html) used by {{site.data.var.ece}} only. For general release information, refer to the main {{site.data.var.ee}} [v2.3 Release Notes]({{ site.baseurl }}/guides/v2.3/release-notes/bk-release-notes.html) page.

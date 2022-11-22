@@ -4,6 +4,8 @@ title: Add site map and search engine robots
 functional_areas:
   - Cloud
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/robots-sitemap.html
+layout: migrated
 ---
 An attempt to generate and write the `sitemap.xml` file to the root directory results in the following error:
 

@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Deploy
   - SCD
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/process.html
+layout: migrated
 ---
 
 The deployment process begins when you perform a merge, push, or synchronization of your environment, or when you trigger a [manual redeployment]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands). The deployment process takes time, but there are ways to optimize deployment that depend on whether you are developing and testing or working with a live site. Most notably, you can control the [static content deployment]({{ site.baseurl }}/cloud/deploy/static-content-deployment.html).

@@ -9,6 +9,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/secure-connections.html
+layout: migrated
 ---
 
 SSH, or Secure Shell, is a common protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter [CLI commands]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html) for managing your branching, creating variables, and much more. We also support [sFTP](#sftp) (Secure FTP) using your SSH public key.
