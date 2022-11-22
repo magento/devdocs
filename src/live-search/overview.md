@@ -2,6 +2,8 @@
 group: live-search
 title: Live Search
 ee_only: True
+migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/guide-overview.html?lang=en
+layout: migrated
 ---
 
 Live Search powered by [Adobe Sensei](https://www.adobe.com/sensei.html) delivers a lightning fast, super relevant, and intuitive search experience for the storefront. Live Search is available for {{site.data.var.ee}} at no additional charge.

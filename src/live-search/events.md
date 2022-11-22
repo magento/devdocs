@@ -2,6 +2,8 @@
 group: live-search
 title: Events
 ee_only: True
+migrated_to: https://developer-stage.adobe.com/commerce/services/live-search/
+layout: migrated
 ---
 
 The [_Adobe Commerce Event SDK_]({{ site.baseurl }}/shared-services/storefront-events-sdk.html) provides access to a common data layer, with event publishing and subscription services.  The [_Adobe Commerce Event Collector_]({{ site.baseurl }}/shared-services/storefront-event-collector.html) package listens for events and includes the following search-related functions:
