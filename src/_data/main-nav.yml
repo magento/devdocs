@@ -328,7 +328,7 @@
       include_versions: ["2.3"]
 
     - label: Catalog Service
-      url: /catalog-service/
+      url: /catalog-service/index.html
       versionless: true
 
     - label: Checkout
