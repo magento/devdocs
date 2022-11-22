@@ -8,7 +8,7 @@ functional_areas:
   - Install
   - Setup
   - Configuration
-migrated_to: 
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/overview.html
 layout: migrated
 ---
 

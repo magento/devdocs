@@ -4,7 +4,7 @@ title: Prepare for local environment setup
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/overview.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html
 layout: migrated
 ---
 
