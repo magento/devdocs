@@ -328,7 +328,7 @@
       include_versions: ["2.3"]
 
     - label: Catalog Service
-      url: /catalog-service/
+      url: https://experienceleague.adobe.com/docs/commerce-merchant-services/catalog-service/guide-overview.html
       versionless: true
 
     - label: Checkout
@@ -348,7 +348,7 @@
       include_versions: ["2.3"]
 
     - label: Live Search
-      url: /live-search/overview.html
+      url: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/guide-overview.html
       versionless: true
 
     - label: Commerce Marketplace
