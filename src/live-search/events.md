@@ -2,7 +2,7 @@
 group: live-search
 title: Events
 ee_only: True
-migrated_to: https://developer-stage.adobe.com/commerce/services/live-search/
+migrated_to: https://developer.adobe.com/commerce/services/live-search/
 layout: migrated
 ---
 
