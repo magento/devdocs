@@ -38,7 +38,7 @@ To enable RabbitMQ:
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A
+   git add .magento.app.yaml .magento/services.yaml
    ```
 
    ```bash

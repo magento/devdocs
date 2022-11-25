@@ -41,7 +41,7 @@ To enable MySQL:
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A && git commit -m "Enable mysql service" && git push origin <branch-name>
+   git add .magento.app.yaml .magento/services.yaml && git commit -m "Enable mysql service" && git push origin <branch-name>
    ```
 
 1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships).
