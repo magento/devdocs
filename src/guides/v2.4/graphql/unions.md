@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: Unions
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/unions/
+layout: migrated
 ---
 
 A GraphQL union represents an object that could be one of several data types, but there is no guarantee that the data types contain fields in common. Use an inline fragment to return details about each possible data type.

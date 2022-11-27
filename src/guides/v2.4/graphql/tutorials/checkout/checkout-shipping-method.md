@@ -12,6 +12,8 @@ functional_areas:
   - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/tutorials/checkout/set-delivery-method/
+layout: migrated
 ---
 
 The `setShippingMethodsOnCart` mutation defines the delivery methods for your order. It requires these input parameters:

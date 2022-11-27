@@ -2,6 +2,8 @@
 group: graphql
 title: setNegotiableQuoteBillingAddress mutation
 b2b_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/set-billing-address/
+layout: migrated
 ---
 
 The `setNegotiableQuoteBillingAddress` mutation assigns the billing address for the specified negotiable quote. You can assign an address from the company user's address book, or define a new one. The negotiable quote must be in the UPDATED state to successfully set the billing address.

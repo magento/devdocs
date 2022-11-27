@@ -1,7 +1,9 @@
 ---
 group: graphql
 title: negotiableQuotes query
-b2b_only: true   
+b2b_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/queries/quotes/
+layout: migrated
 ---
 
 The `negotiableQuotes` query returns a list of negotiable quotes that can be viewed by the logged-in customer, including quotes created by the customer or by subordinates in the company hierarchy.

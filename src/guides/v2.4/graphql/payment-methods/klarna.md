@@ -3,6 +3,8 @@ group: graphql
 title: Klarna payment method
 contributor_name: Klarna
 contributor_link: https://www.klarna.com/
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/klarna/
+layout: migrated
 ---
 
 Klarna Payments enables your consumers to try before they buy, finance purchases on your store with Klarna, or let them pay directly. Klarna offers these payment methods through a widget that you can add inline on your checkout page.
@@ -106,7 +108,7 @@ mutation {
     payment_method: {
       code: "klarna_pay_later"
       klarna: {
-        authorization_token: "e9abc610-6748-256f-a506-355626551326"
+        authorization_token: "e9abc610-6748-256f-a506-355626551326" #gitleaks:allow
       }
     }
   }) {

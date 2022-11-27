@@ -2,6 +2,8 @@
 group: graphql
 title: removeGiftCardFromCart mutation
 ee_only: True
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/remove-giftcard/
+layout: migrated
 ---
 
 The `removeGiftCardFromCart` mutation removes a previously-applied gift card from the cart.

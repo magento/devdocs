@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: updateCustomerAddress mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/update-address/
+layout: migrated
 ---
 
 Use the `updateCustomerAddress` mutation to update the customer's address.
@@ -51,7 +53,7 @@ The `updateCustomerAddress` object contains the following inputs:
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | Int! | The ID assigned to the address object
-`CustomerAddressInput` | [CustomerAddress](#customerAddressInput)| An array containing the customer’s shipping and billing addresses
+`CustomerAddressInput` | [CustomerAddress](#customerAddressInput)| An array containing the customer's shipping and billing addresses
 
 {% include graphql/customer-address-input-24.md %}
 

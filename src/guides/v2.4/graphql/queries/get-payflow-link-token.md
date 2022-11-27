@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: getPayflowLinkToken query
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/get-payflow-link-token/
+layout: migrated
 ---
 
 The `getPayflowLinkToken` query retrieves PayPal payment credentials for a PayPal Payflow transaction. You must run this query after you [set the payment method]({{ page.baseurl}}/graphql/mutations/set-payment-method.html) and [place the order]({{ page.baseurl}}/graphql/mutations/place-order.html).

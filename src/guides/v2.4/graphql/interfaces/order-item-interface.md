@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: OrderItemInterface attributes and implementations
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/order-item/
+layout: migrated
 ---
 
 `OrderItemInterface` provides details about items in a customer's order history. It has the following implementations:

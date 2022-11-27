@@ -4,6 +4,8 @@ title: deleteCompanyTeam mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 b2b_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/mutations/delete-team/
+layout: migrated
 ---
 
 Use the `deleteCompanyTeam` mutation to delete a company team by ID. You can get the team ID with the [`company`]({{page.baseurl}}/graphql/queries/company.html) query.

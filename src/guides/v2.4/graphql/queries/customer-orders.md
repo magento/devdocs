@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: customerOrders query
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/orders/
+layout: migrated
 ---
 {:.bs-callout-warning}
 The `customerOrders` query has been deprecated. Specify the `orders` object in the [`customer`]({{page.baseurl}}/graphql/queries/customer.html) query instead.

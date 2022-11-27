@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: WishlistItemInterface attributes and implementations
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/interfaces/
+layout: migrated
 ---
 
 `WishlistItemInterface` provides details about items in a wish list. It has the following implementations:
