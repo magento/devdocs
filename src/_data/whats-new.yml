@@ -4,8 +4,37 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Nov 21 15:46:50 2022
+updated: Mon Nov 28 16:00:55 2022
 entries:
+- description: The [GraphQL Developer Guide](https://devdocs.magento.com/guides/v2.4/graphql/index.html)
+    topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/webapi/graphql/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: November 22, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3215
+  merge_commit: 334dd58b8c79d13ec2707e8f016271010fb275b6
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
+- description: The [Catalog Services](https://devdocs.magento.com/catalog-service/products.html)
+    and [Live Search](https://devdocs.magento.com/live-search/graphql-support.html)
+    GraphQL queries moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/webapi/graphql/)
+    and will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: November 22, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3218
+  merge_commit: e0ae15f332cfb0623b4a1726580ee66969b8b02b
+  contributor: keharper
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: The [Product Recommendations](https://devdocs.magento.com/recommendations/product-recs.html)
     topics moved to the [Experience League](https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/development-overview.html)
     and the [Adobe Developer documentation](https://developer.adobe.com/commerce/services/product-recommendations/)
