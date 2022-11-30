@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Configuration
   - Upgrade
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/upgrade-docker-package/
+layout: migrated
 ---
 
 We recommend that you use the latest version of {{site.data.var.mcd-prod}}. The version requirement is specified in the `composer.json` file for your project. Use the following instructions for the upgrade process.

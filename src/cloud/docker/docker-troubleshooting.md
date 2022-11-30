@@ -4,6 +4,8 @@ title: Get support for Magento Cloud Docker
 functional_areas:
   - Cloud
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/get-support/
+layout: migrated
 ---
 
 {{site.data.var.mcd-prod}} is a Magento Community Engineering project supported by the Magento developer community. You have several options to get support and learn more about {{site.data.var.mcd-prod}} and local development.
