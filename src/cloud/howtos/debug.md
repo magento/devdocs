@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
 migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/debug.html
-layout: migrateds
+layout: migrated
 ---
 
 Xdebug is an extension for debugging your PHP. The following explains how to configure Xdebug and PhpStorm to debug in your local environment. You can use the IDE of your choice. See the vendor documentation for those applications for further configuration information.
