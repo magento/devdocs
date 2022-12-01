@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: addProductsToWishlist mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/add-products/
+layout: migrated
 ---
 
 The `addProductsToWishlist` mutation adds one or more products to the specified wish list. This mutation supports all product types.

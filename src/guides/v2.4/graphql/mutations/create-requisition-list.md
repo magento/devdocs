@@ -4,6 +4,8 @@ title: createRequisitionList mutation
 b2b_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/create/
+layout: migrated
 ---
 The `createRequisitionList` mutation creates a requisition list for the logged in customer.
 

@@ -1,7 +1,9 @@
 ---
 group: graphql
 title: giftRegistryIdSearch query
-ee_only: true   
+ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/id-search/
+layout: migrated
 ---
 
 The `giftRegistryIdSearch` query returns a list of gift registries that match the specified registry ID. The ID is included in the email Magento sends to invitees on behalf of the registrant.

@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: CartItemInterface attributes and implementations
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/interfaces/cart-item/
+layout: migrated
 ---
 
 The `CartItemInterface` has the following implementations:

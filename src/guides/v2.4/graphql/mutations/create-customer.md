@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: createCustomer mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/create/
+layout: migrated
 ---
 
 {:.bs-callout-warning}

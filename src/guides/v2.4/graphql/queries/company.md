@@ -2,6 +2,8 @@
 group: graphql
 title: company query
 b2b_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/queries/company/
+layout: migrated
 ---
 
 The `company` query returns details about the user's company. The request must include the customer token of a company user.

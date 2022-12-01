@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: routes query
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/route/
+layout: migrated
 ---
 
 A merchant can reconfigure (rewrite) the URL to any product, category, or CMS page. When the rewrite goes into effect, any links that point to the previous URL are redirected to the new address.

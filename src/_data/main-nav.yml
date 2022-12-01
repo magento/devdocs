@@ -245,6 +245,11 @@
 
         - label: GraphQL Developer Guide
           url: /graphql/
+          include_versions: ["2.3"]
+        
+        - label: GraphQL Developer Guide
+          url: https://developer.adobe.com/commerce/webapi/graphql/
+          include_versions: ["2.4"]
 
         - label: Marketplace EQP API Reference
           url: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/
@@ -323,7 +328,7 @@
       include_versions: ["2.3"]
 
     - label: Catalog Service
-      url: /catalog-service/
+      url: /catalog-service/index.html
       versionless: true
 
     - label: Checkout

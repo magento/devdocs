@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: createPaypalExpressToken mutation
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-paypal-express-token/
+layout: migrated
 ---
 
 The `createPaypalExpressToken` mutation begins the authorization process for the following payment methods:

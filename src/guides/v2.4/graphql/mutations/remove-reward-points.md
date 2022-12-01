@@ -2,6 +2,8 @@
 group: graphql
 title: removeRewardPointsFromCart mutation
 ee_only: True
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/remove-reward-points/
+layout: migrated
 ---
 
 The `removeRewardPointsFromCart` mutation removes all reward points that were previously applied to the customer's cart with the [`applyRewardPointsToCart` mutation]({{page.baseurl}}/graphql/mutations/apply-reward-points.html).

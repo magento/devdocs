@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: productReviewRatingsMetadata query
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/product-review-ratings-metadata/
+layout: migrated
 ---
 
 The `productReviewRatingsMetadata` query returns the active ratings attributes and the values each rating can have. In Luma, these values are one star through five stars.

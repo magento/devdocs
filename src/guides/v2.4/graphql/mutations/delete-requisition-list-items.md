@@ -3,6 +3,8 @@ group: graphql
 title: deleteRequisitionListItems mutation
 b2b_only: true
 contributor_name: EY
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/delete-items/
+layout: migrated
 ---
 The `deleteRequisitionListItems` mutation removes items from the specified requisiton list for the logged in customer.
 

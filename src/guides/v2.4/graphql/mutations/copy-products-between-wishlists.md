@@ -2,6 +2,8 @@
 group: graphql
 title: copyProductsBetweenWishlists mutation
 ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/copy-products/
+layout: migrated
 ---
 
 The `copyProductsBetweenWishlists` mutation copies the specified quantities of one or more products to a different wish list. The original wish list is unchanged.

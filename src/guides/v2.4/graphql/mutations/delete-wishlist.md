@@ -2,6 +2,8 @@
 group: graphql
 title: deleteWishlist mutation
 ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/delete/
+layout: migrated
 ---
 
 The `deleteWishlist` mutation deletes the specified wish list. In {{site.data.var.ee}}, you cannot delete the customer's default (first) wish list. This mutation is not available in {{site.data.var.ce}}.

@@ -3,6 +3,8 @@ group: graphql
 title: addSimpleProductsToCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-add-simple-products.html
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/add-simple-products/
+layout: migrated
 ---
 
 {:.bs-callout-warning}

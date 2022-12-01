@@ -1,7 +1,9 @@
 ---
 group: graphql
 title: negotiableQuote query
-b2b_only: true   
+b2b_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/queries/quote/
+layout: migrated
 ---
 
 The `negotiableQuote` query retrieves details about the specified negotiable quote. Use the [`negotiableQuotes` query]({{page.baseurl}}/graphql/queries/negotiable-quotes.html) to return a list of valid `uid` values.

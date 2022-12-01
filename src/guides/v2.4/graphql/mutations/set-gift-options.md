@@ -2,6 +2,8 @@
 group: graphql
 title: setGiftOptionsOnCart mutation
 ee_only: true
+migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-gift-options/
+layout: migrated
 ---
 
 The `setGiftOptionsOnCart` mutation allows the buyer to set the following gift options on the cart level:
