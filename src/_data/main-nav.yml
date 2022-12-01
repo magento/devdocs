@@ -26,15 +26,15 @@
     - label: Cloud development
       children:
         - label: Local development
-          url: /cloud/docker/docker-development.html
+          url: https://developer.adobe.com/commerce/cloud-tools/docker/
           versionless: true
 
         - label: Configure and launch Docker
-          url: /cloud/docker/docker-config.html
+          url: https://developer.adobe.com/commerce/cloud-tools/docker/configure/
           versionless: true
 
         - label: Docker quick reference
-          url: /cloud/docker/docker-quick-reference.html
+          url: https://developer.adobe.com/commerce/cloud-tools/docker/quick-reference/
           versionless: true
 
         - label: Configure Application
@@ -48,11 +48,11 @@
     - label: Functional Testing
       children:
         - label: Application testing
-          url: /cloud/docker/docker-mftf.html
+          url: https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/
           versionless: true
 
         - label: Cloud code testing
-          url: /cloud/docker/docker-test-magecloud-pkg-code.html
+          url: https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/
           versionless: true
 
 - label: Setup
