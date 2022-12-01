@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/configure/manage-database/
+layout: migrated
 ---
 
 The Cloud Docker development environment provides MySQL services through a MariaDB (default) or MySQL database deployed to the [Docker database container][]. You connect to the database using `docker-compose` commands. You can also import data from an existing {{site.data.var.ece}} project into the database container using the `magento-cloud db:dump` command.

@@ -7,6 +7,8 @@ functional_areas:
   - Configuration
 redirect_from:
   - /cloud/reference/docker-config.html
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/configure/configuration-sources/
+layout: migrated
 ---
 
 You can create the Docker Compose configuration to build and deploy the Docker containers for your {{site.data.var.ee}} project from the following sources:

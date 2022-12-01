@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Docker
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/containers/cli/
+layout: migrated
 ---
 
 The following CLI containers, most of which are based on a [PHP-CLI version 7 image], provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations and interact with the application:

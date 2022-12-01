@@ -7,6 +7,8 @@ functional_areas:
   - Configuration
 redirect_from:
   - /cloud/reference/docker-launch.html
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/deploy/
+layout: migrated
 ---
 
 By default, `{{site.data.var.mcd-prod}}` deploys {{site.data.var.ee}} to a read-only file system in the Docker environment. This deployment mirrors the read-only file system in the Production environment. You have the option to deploy a Docker environment in developer mode, which provides an active development environment with full, writable file system permissions.
