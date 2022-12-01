@@ -6,6 +6,8 @@ redirect_from:
 functional_areas:
   - Cloud
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/overview.html
+layout: migrated
 ---
 
 {{site.data.var.ece}} environments are **Read Only**, including all Starter environments and all Pro Integration, Staging, and Production environments. In a local development environment, you can write and test code prior to pushing it to an Integration environment for further testing and deployment to Staging and Production. You must develop in a local workspace using a cloned Integration environment and push changes to the remote, read-only {{site.data.var.ece}} Git repository. You can choose one of two methods:

@@ -6,12 +6,13 @@ functional_areas:
   - Configuration
   - Account
   - Security
-
 redirect_from:
   - /cloud/admin/admin-user-admin.html
   - /cloud/project/user-admin.html#cloud-role-acct-owner
   - /cloud/project/user-admin.html#cloud-role-env
   - /cloud/project/user-admin.html#cloud-role-project
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/user-access.html
+layout: migrated
 ---
 
 You manage access to {{site.data.var.ece}} projects and certain environment types by adding users and assigning roles. Project level roles provide access to the entire project.

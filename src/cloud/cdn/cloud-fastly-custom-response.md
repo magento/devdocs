@@ -7,6 +7,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/setup-fastly/fastly-custom-response.html
+layout: migrated
 ---
 
 When a request to the Fastly origin fails, Fastly returns default response pages with basic formatting and generic messaging that can be confusing for users. For example, Fastly returns the following default error page when a request to the Fastly origin fails because of a 503 error.

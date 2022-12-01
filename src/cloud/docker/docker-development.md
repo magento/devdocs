@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Docker
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/
+layout: migrated
 ---
 
 {{site.data.var.mcd-prod}} provides an option to deploy {{site.data.var.ee}} to a Docker environment for development, testing, and automation tasks. It includes the following features:

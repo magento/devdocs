@@ -8,6 +8,8 @@ menu_node:
 functional_areas:
   - Cloud
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/sample-data.html
+layout: migrated
 ---
 
 If you need some example data when developing your store, you can install our sample data. This data simulates an active {{site.data.var.ee}} store including customers, products, and other data. This sample data works best with a new "blank site" {{site.data.var.ece}} template installation when creating your project in your Integration environment.

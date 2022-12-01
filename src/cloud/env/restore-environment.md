@@ -1,6 +1,8 @@
 ---
 title: Restore an environment
 group: cloud-guide
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/restore-environment.html
+layout: migrated
 ---
 
 If you encounter issues in your environment and do not have a [valid snapshot]({{ site.baseurl }}/cloud/project/project-webint-snap.html), you can try restoring your environment in one of the following ways:

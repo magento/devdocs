@@ -5,7 +5,9 @@ functional_areas:
   - Cloud
   - Setup
 redirect_from:
-  - /cloud/project/project-conf-files_services-mysql.html  
+  - /cloud/project/project-conf-files_services-mysql.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/mysql.html
+layout: migrated
 ---
 
 The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.2 to 10.4, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.

@@ -4,6 +4,8 @@ title: Monitor performance
 functional_areas:
   - Cloud
   - Storage
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/monitor/performance.html
+layout: migrated
 ---
 
 You can use the following services to monitor performance of your Cloud environments:

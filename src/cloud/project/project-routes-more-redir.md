@@ -4,6 +4,8 @@ title: Redirects
 functional_areas:
   - Cloud
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/routes/redirects.html
+layout: migrated
 ---
 
 Managing redirection rules is a common requirement for web applications, especially in cases where you do not want to lose incoming links that have changed or been removed over time.

@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Docker
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/deploy/developer-mode/
+layout: migrated
 ---
 
 Developer mode supports an active development environment with full, writable file system permissions. This option builds the Docker environment in developer mode and verifies configured service versions.

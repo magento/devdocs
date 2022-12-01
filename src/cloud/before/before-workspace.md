@@ -4,6 +4,8 @@ title: Prepare for local environment setup
 functional_areas:
   - Cloud
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html
+layout: migrated
 ---
 
 To develop, deploy, and test {{site.data.var.ece}}, you need to setup your local environment and clone your project's master Git branch. This local environment provides a development system for your custom code, extensions, and configurations to push for active testing in one of the Integration environments.

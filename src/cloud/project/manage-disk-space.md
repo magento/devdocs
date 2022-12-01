@@ -4,6 +4,8 @@ title: Manage disk space
 functional_areas:
   - Cloud
   - Storage
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/storage/manage-disk-space.html
+layout: migrated
 ---
 
 You can find the total storage capacity for your Cloud project in your {{site.data.var.ece}} contract and on your [account page](https://accounts.magento.cloud/user). Each project card in your account shows the number of _environments_, the _storage_ capacity in GB, and the number of _users_.

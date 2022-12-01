@@ -4,6 +4,8 @@ title: Post-deploy variables
 functional_areas:
   - Cloud
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-post-deploy.html
+layout: migrated
 ---
 The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global variables]({{ site.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `post-deploy` stage of the `.magento.env.yaml` file:
 

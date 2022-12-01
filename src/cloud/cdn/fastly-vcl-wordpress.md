@@ -6,6 +6,8 @@ redirect_from:
 functional_areas:
   - Cloud
   - Setup
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-wordpress.html
+layout: migrated
 ---
 
 The following procedure describes how to reroute incoming requests from a {{ site.data.var.ee }} store to a separate WordPress site using the Fastly edge module _Other CMS/backend integration_ with an Edge dictionary.  You can follow a similar process to reroute requests to other CMS backends.

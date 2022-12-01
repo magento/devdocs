@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Docker
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/
+layout: migrated
 ---
 
 The following containers provide the services required to build, deploy and run {{site.data.var.ee}} sites.

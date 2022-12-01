@@ -6,6 +6,8 @@ functional_areas:
   - Integration
   - Setup
   - Services
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/monitor/new-relic.html
+layout: migrated
 ---
 
 {{ site.data.var.ece }} projects include access to the following New Relic services to help manage, monitor, and troubleshoot your applications and infrastructure by collecting, viewing, and analyzing data from your {{ site.data.var.ece }} project.

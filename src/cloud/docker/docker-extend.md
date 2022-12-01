@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Docker
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/configure/extend-docker-configuration/
+layout: migrated
 ---
 
 You can use the built-in extension mechanism of Docker to specify [multiple compose files]. The following example replaces the default value of the `ENABLE_SENDMAIL` environment variable.

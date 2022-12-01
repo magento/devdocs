@@ -6,6 +6,8 @@ functional_areas:
   - Extensions
   - Module
   - B2B
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/b2b-module.html
+layout: migrated
 ---
 
 If your customers are companies, you can install the {{site.data.var.b2b}} module to extend your {{site.data.var.ece}} Pro project to accommodate a business-to-business model. Although this topic provides information specific to installing and configuring the B2B module for {{site.data.var.ece}}, you can find additional B2B information in the following guides:
