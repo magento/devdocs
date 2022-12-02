@@ -6,8 +6,9 @@ Welcome! This site contains the latest Adobe Commerce and Magento Open Source de
 >
 > Adobe Commerce and Magento Open Source 2.4.x documentation has been migrated to Adobe sites. See our new landing pages to access the most current information.
 >
->-  [Adobe Commerce Developer Documentation](https://developer.adobe.com/commerce/docs) (Adobe Developer site)—Develop, customize, integrate, extend, and use advanced capabilities
->-  [Adobe Commerce Documentation](https://experienceleague.adobe.com/docs/commerce.html) (Adobe Experience League)—Plan, implement, operate, upgrade, and maintain your Commerce projects
+>[Adobe Commerce Developer Documentation](https://developer.adobe.com/commerce/docs) (Adobe Developer site)—Develop, customize, integrate, extend, and use advanced capabilities
+>
+>[Adobe Commerce Documentation](https://experienceleague.adobe.com/docs/commerce.html) (Adobe Experience League)—Plan, implement, operate, upgrade, and maintain your Commerce projects
 >
 > Some content was consolidated or moved to different guides. If you can't find a topic, check the [Migrated Topics](https://devdocs.magento.com/migrated.html) list for the new link.
 >
