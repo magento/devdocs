@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: Filtering with custom attributes
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/usage/custom-filters/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/custom-filters/
 layout: migrated
 ---
 

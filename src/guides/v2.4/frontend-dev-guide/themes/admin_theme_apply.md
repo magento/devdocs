@@ -4,7 +4,7 @@ title: Apply an Admin theme
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/apply-admin/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/apply-admin/
 layout: migrated
 ---
 

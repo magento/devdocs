@@ -3,7 +3,7 @@ group: software-update-guide
 title: Your current search engine is not supported
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/search-engine-not-supported.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/search-engine-not-supported.html
 layout: migrated
 ---
 

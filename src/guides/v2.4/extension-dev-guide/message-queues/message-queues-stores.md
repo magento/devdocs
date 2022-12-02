@@ -5,7 +5,7 @@ contributor_name: Comwrap GmbH
 contributor_link: https://www.comwrap.com
 functional_areas:
   - Services
-migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/stores/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/stores/
 layout: migrated
 ---
 

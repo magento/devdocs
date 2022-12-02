@@ -1,7 +1,7 @@
 ---
 group: architecture-guide
 title: Persistence layer
-migrated_to: https://developer.adobe.com/commerce/php/architecture/layers/persistence/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/layers/persistence/
 layout: migrated
 ---
 

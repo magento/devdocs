@@ -2,7 +2,7 @@
 group: product-recommendations
 title: Customize
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/customize.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/customize.html
 layout: migrated
 ---
 

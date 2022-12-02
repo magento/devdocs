@@ -6,7 +6,7 @@ menu_title: Add a payment action
 menu_order: 5
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/payment-action/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/payment-action/
 layout: migrated
 ---
 

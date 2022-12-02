@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Application Area attribute
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/app-area/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/app-area/
 layout: migrated
 ---
 

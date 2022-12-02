@@ -5,7 +5,7 @@ group: "Fundamentals of Magento 2 Development"
 title: "Create a New Page"
 thumbnail: "fundamentals/thumbs/create-new-page.png"
 menu_order: 1
-migrated_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/frontend-development/create-new-page.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/frontend-development/create-new-page.html
 layout: migrated-video
 ---
 

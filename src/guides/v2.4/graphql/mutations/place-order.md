@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: placeOrder mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/place-order/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/place-order/
 layout: migrated
 ---
 

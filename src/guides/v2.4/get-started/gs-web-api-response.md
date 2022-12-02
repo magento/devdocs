@@ -4,7 +4,7 @@ subgroup: 20_REST
 title: Status codes and responses
 menu_title: Status codes and responses
 menu_order: 3
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-response/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-response/
 layout: migrated
 ---
 

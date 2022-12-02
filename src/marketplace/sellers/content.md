@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Extension content
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/content/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/content/
 layout: migrated
 ---
 

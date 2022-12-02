@@ -3,7 +3,7 @@ group: ui-components-guide
 title: Container component
 contributor_name: Jehangir Wahid
 contributor_link: https://github.com/Jehangir-Wahid
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/container/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/container/
 layout: migrated
 ---
 

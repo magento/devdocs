@@ -7,7 +7,7 @@ menu_node: parent
 menu_order: 2
 functional_areas:
   - Tools
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/create-plan.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/create-plan.html
 layout: migrated
 ---
 

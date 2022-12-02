@@ -4,7 +4,7 @@ title: Gift card product data types
 ee_only: True
 redirect_from:
   - /guides/v2.4/graphql/product/gift-card-product.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/gift-card/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/gift-card/
 layout: migrated
 ---
 

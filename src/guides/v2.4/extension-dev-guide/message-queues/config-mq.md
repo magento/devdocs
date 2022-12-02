@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/configuration/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/configuration/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: setBillingAddressOnCart mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-billing-address/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-billing-address/
 layout: migrated
 ---
 

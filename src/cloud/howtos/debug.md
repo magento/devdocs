@@ -4,7 +4,7 @@ title: Configure Xdebug
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/debug.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/debug.html
 layout: migrated
 ---
 

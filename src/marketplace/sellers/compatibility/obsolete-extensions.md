@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Obsolete Extensions
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/obsolete-extensions/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/obsolete-extensions/
 layout: migrated
 ---
 

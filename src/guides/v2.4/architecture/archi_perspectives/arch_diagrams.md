@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Architectural diagrams
 menu_title: Architectural diagrams
-migrated_to: https://developer.adobe.com/commerce/php/architecture/basics/diagrams/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/basics/diagrams/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Modal widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/modal/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/modal/
 layout: migrated
 ---
 

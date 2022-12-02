@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: GraphQL caching
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/usage/caching/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/caching/
 layout: migrated
 ---
 

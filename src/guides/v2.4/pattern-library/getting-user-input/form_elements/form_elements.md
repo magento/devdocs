@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Form Elements
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/getting-user-input/form-elements/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/getting-user-input/form-elements/
 layout: migrated
 ---
 Form elements are central to the Magento platform, particularly in the ‘Admin’ interface. This article contains examples of the various types of form elements encountered throughout the application to collect data input from its users.

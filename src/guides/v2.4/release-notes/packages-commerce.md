@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Adobe Commerce packages
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/packages/adobe-commerce.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/packages/adobe-commerce.html
 layout: migrated
 ---
 

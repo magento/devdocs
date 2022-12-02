@@ -1,7 +1,7 @@
 ---
 group: migration-guide
 title: How migration works
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/how-migration-works.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/how-migration-works.html
 layout: migrated
 ---
 

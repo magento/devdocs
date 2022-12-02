@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
   - Theme
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/storefront/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/storefront/
 layout: migrated
 ---
 

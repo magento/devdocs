@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Tile Pattern
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/displaying-data/tile/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/displaying-data/tile/
 layout: migrated
 ---
 This topic contains examples of the Tile pattern used in the [Admin](https://glossary.magento.com/admin) with functions for single selection, multi selection, drag and drop, and editing inline position. For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.

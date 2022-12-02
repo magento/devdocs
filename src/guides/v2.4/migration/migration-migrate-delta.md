@@ -4,7 +4,7 @@ subgroup: D_Migrate using the data migration tool
 title: Migrate changes
 functional_areas:
   - Tools
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/migrate-data/delta.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/migrate-data/delta.html
 layout: migrated
 ---
 

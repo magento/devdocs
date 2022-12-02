@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
   - Setup
   - Stores
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/multiple-sites.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/multiple-sites.html
 layout: migrated
 ---
 

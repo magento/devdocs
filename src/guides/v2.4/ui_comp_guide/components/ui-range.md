@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Range component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/range/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/range/
 layout: migrated
 ---
 

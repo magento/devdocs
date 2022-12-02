@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Checkboxset component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/checkbox-set/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/checkbox-set/
 layout: migrated
 ---
 

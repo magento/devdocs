@@ -1,7 +1,7 @@
 ---
 group: payment-services
 title: Configure Payment Services
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/configure/configure-cli.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/configure/configure-cli.html
 layout: migrated
 ---
 

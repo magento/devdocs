@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Glossary of common terms
-migrated_to: https://developer.adobe.com/commerce/php/development/common-terms/
+redirect_to: https://developer.adobe.com/commerce/php/development/common-terms/
 layout: migrated
 ---
 

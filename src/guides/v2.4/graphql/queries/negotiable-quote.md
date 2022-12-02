@@ -2,7 +2,7 @@
 group: graphql
 title: negotiableQuote query
 b2b_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/queries/quote/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/queries/quote/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: graphql
 title: CustomizableOptionInterface
 redirect_from:
   - /guides/v2.4/graphql/product/customizable-option-interface.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/customizable-option/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/customizable-option/
 layout: migrated
 ---
 

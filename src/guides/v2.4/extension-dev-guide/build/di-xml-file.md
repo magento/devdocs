@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: The di.xml file
-migrated_to: https://developer.adobe.com/commerce/php/development/build/dependency-injection-file/
+redirect_to: https://developer.adobe.com/commerce/php/development/build/dependency-injection-file/
 layout: migrated
 ---
 

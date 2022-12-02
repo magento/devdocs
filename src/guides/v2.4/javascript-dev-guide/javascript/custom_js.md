@@ -1,7 +1,7 @@
 ---
 group: javascript-developer-guide
 title: Use custom JavaScript
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/custom/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/custom/
 layout: migrated
 ---
 

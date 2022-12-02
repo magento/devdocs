@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Payment Services Release Notes
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/release-notes.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/release-notes.html
 layout: migrated
 ---
 

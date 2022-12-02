@@ -6,7 +6,7 @@ menu_title: Add vault to module dependencies
 menu_order: 1
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/module-configuration/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/module-configuration/
 layout: migrated
 ---
 

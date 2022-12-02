@@ -4,7 +4,7 @@ subgroup: 05_Package
 title: Package a component
 menu_title: Package a component
 menu_order: 2
-migrated_to: https://developer.adobe.com/commerce/php/development/package/component/
+redirect_to: https://developer.adobe.com/commerce/php/development/package/component/
 layout: migrated
 ---
 

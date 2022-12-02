@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Manage Sales
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/sales/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/sales/
 layout: migrated
 ---
 

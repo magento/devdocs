@@ -4,7 +4,7 @@ subgroup: 03_Build
 title: URN schema validation
 menu_title: URN schema validation
 menu_order: 5000
-migrated_to: https://developer.adobe.com/commerce/php/development/build/schema-validation/
+redirect_to: https://developer.adobe.com/commerce/php/development/build/schema-validation/
 layout: migrated
 ---
 

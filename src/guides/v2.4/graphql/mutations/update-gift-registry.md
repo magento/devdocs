@@ -2,7 +2,7 @@
 group: graphql
 title: updateGiftRegistry mutation
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/update/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/update/
 layout: migrated
 ---
 

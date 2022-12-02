@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Submit for Technical Review
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-technical-review/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-technical-review/
 layout: migrated
 ---
 

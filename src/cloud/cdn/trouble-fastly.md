@@ -6,7 +6,7 @@ redirect_from:
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/fastly-troubleshooting.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/fastly-troubleshooting.html
 layout: migrated
 ---
 

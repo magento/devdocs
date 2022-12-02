@@ -1,7 +1,7 @@
 ---
 group: payment-services
 title: Customize buttons and messaging
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/configure/configure-dashboard.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/configure/configure-dashboard.html
 layout: migrated
 ---
 

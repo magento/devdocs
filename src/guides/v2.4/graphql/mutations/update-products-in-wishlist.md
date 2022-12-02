@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: updateProductsInWishlist mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/update-products/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/update-products/
 layout: migrated
 ---
 

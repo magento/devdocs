@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: products query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/products/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/products/
 layout: migrated
 ---
 

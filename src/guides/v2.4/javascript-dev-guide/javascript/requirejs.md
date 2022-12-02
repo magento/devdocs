@@ -3,7 +3,7 @@ group: javascript-developer-guide
 title: RequireJS in Commerce
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/requirejs/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/requirejs/
 layout: migrated
 ---
 

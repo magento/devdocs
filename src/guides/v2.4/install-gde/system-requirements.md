@@ -8,7 +8,7 @@ redirect_from:
   - /guides/v2.4/install-gde/system-requirements-tech.html
   - /guides/v2.4/architecture/tech-stack.html
   - /system-requirements.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html
 layout: migrated
 ---
 

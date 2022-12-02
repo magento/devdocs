@@ -7,7 +7,7 @@ menu_node:
 menu_order: 4
 functional_areas:
   - Tools
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/migrate-data/follow-up.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/migrate-data/follow-up.html
 layout: migrated
 ---
 

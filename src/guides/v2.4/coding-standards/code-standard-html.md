@@ -7,7 +7,7 @@ menu_title: HTML style guide
 menu_order: 9
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/coding-standards/html-style-guide/
+redirect_to: https://developer.adobe.com/commerce/php/coding-standards/html-style-guide/
 layout: migrated
 ---
 

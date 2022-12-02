@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: DynamicRows component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/dynamic-rows/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/dynamic-rows/
 layout: migrated
 ---
 

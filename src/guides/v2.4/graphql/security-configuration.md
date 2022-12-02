@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: GraphQL security configuration
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/usage/security-configuration/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/security-configuration/
 layout: migrated
 ---
 

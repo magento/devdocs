@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Register as a Developer
 redirect_from: /marketplace/sellers/register-as-a-developer.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/developer-register/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/developer-register/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: graphql
 title: removeRewardPointsFromCart mutation
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/remove-reward-points/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/remove-reward-points/
 layout: migrated
 ---
 

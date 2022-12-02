@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Radioset component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/radio-set/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/radio-set/
 layout: migrated
 ---
 

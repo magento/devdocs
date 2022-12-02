@@ -11,7 +11,7 @@ redirect_from:
   - /cloud/project/user-admin.html#cloud-role-acct-owner
   - /cloud/project/user-admin.html#cloud-role-env
   - /cloud/project/user-admin.html#cloud-role-project
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/user-access.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/user-access.html
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: generateCustomerToken mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/generate-token/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/generate-token/
 layout: migrated
 ---
 

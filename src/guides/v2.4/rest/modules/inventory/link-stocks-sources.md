@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Link and unlink stocks and sources
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/link-stocks-sources/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/inventory/link-stocks-sources/
 layout: migrated
 ---
 

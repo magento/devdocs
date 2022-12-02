@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: category query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/category/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/category/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Revenue Share
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/revenue-share/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/revenue-share/
 layout: migrated
 ---
 

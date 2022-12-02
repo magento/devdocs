@@ -4,7 +4,7 @@ subgroup: 99_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
 menu_order: 4
-migrated_to: https://developer.adobe.com/commerce/php/development/components/service-contracts/design-patterns/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/service-contracts/design-patterns/
 layout: migrated
 ---
 

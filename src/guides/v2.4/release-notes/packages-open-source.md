@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Magento Open Source packages
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/packages/magento-open-source.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/packages/magento-open-source.html
 layout: migrated
 ---
 

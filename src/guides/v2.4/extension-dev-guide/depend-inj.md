@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Dependency injection
-migrated_to: https://developer.adobe.com/commerce/php/development/components/dependency-injection/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/dependency-injection/
 layout: migrated
 ---
 

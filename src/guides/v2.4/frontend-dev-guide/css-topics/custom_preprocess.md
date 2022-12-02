@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Add custom CSS preprocessor
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/custom-preprocessor/add/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/custom-preprocessor/add/
 layout: migrated
 ---
 

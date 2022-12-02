@@ -4,7 +4,7 @@ title: Locate templates, layouts, and styles
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/debug/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/debug/
 layout: migrated
 ---
 

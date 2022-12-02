@@ -5,7 +5,7 @@ title: Command naming guidelines
 menu_title: Command naming guidelines
 menu_node:
 menu_order: 2
-migrated_to: https://developer.adobe.com/commerce/php/development/cli-commands/naming-guidelines/
+redirect_to: https://developer.adobe.com/commerce/php/development/cli-commands/naming-guidelines/
 layout: migrated
 ---
 

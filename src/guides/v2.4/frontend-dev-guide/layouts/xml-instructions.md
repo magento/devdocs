@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Layout instructions
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/xml-instructions/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/xml-instructions/
 layout: migrated
 ---
 

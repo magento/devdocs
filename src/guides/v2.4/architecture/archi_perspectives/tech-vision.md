@@ -1,7 +1,7 @@
 ---
 group: architecture-guide
 title: Magento technical vision
-migrated_to: https://developer.adobe.com/commerce/php/architecture/technical-vision/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/technical-vision/
 layout: migrated
 ---
 

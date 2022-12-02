@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Application isolation attribute
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/app-isolation/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/app-isolation/
 layout: migrated
 ---
 

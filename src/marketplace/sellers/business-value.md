@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Business Value
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/business-value/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/business-value/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Private content
-migrated_to: https://developer.adobe.com/commerce/php/development/cache/page/private-content/
+redirect_to: https://developer.adobe.com/commerce/php/development/cache/page/private-content/
 layout: migrated
 ---
 

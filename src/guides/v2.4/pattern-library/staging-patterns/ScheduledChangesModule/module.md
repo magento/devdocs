@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Scheduled Changes Module
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/staging-patterns/module/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/staging-patterns/module/
 layout: migrated
 ---
 For all stage-able entities, a Scheduled Changes [Module](https://glossary.magento.com/module) appears on the top of each entity’s page. An entity’s module provides a quick summary of scheduled updates, as well as controls to view, edit and preview individual updates.

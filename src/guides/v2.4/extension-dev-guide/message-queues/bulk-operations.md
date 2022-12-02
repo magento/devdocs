@@ -3,7 +3,7 @@ group: php-developer-guide
 title: Bulk Operations
 functional_areas:
   - Services
-migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/bulk-operations/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/bulk-operations/
 layout: migrated
 ---
 

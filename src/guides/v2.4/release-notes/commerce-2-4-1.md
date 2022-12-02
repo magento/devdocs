@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Adobe Commerce 2.4.1 Release Notes
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/adobe-commerce/2-4-1.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/adobe-commerce/2-4-1.html
 layout: migrated
 ---
 

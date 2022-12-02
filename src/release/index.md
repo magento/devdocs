@@ -1,7 +1,7 @@
 ---
 title: Upcoming releases
 group: release
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/schedule.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/schedule.html
 layout: migrated
 ---
 

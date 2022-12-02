@@ -6,7 +6,7 @@ menu_title: Module version dependencies
 menu_order: 1200
 redirect_from:
   - /guides/v2.3/extension-dev-guide/backward-compatibility.html
-migrated_to: https://developer.adobe.com/commerce/php/development/versioning/dependencies/
+redirect_to: https://developer.adobe.com/commerce/php/development/versioning/dependencies/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: compliance
 title: Security and Compliance
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/overview.html
 layout: migrated
 ---
 

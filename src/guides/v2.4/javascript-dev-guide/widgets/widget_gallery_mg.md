@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Magnifier widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/magnifier/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/magnifier/
 layout: migrated
 ---
 

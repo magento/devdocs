@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
   - Theme
   - Standards
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/best-practices/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/best-practices/
 layout: migrated
 ---
 

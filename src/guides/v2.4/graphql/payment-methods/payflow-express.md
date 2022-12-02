@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: Express Checkout for other PayPal solutions
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-express/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-express/
 layout: migrated
 ---
 

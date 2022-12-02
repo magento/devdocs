@@ -4,7 +4,7 @@ subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration
 menu_order: 1
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/create-integration/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/create-integration/
 layout: migrated
 ---
 

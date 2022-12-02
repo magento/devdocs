@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Magento Open Source 2.4.0 Release Notes
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-0.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-0.html
 layout: migrated
 ---
 

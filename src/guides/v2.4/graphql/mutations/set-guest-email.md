@@ -3,7 +3,7 @@ group: graphql
 title: setGuestEmailOnCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-set-guest-email.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-guest-email/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-guest-email/
 layout: migrated
 ---
 

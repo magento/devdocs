@@ -8,7 +8,7 @@ level3_subgroup: custom-attributes
 menu_order: 1
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-text-field-attribute/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-text-field-attribute/
 layout: migrated
 ---
 

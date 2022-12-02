@@ -3,7 +3,7 @@ group: cloud-guide
 title: Snapshots and backup management
 functional_areas:
   - Cloud
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/storage/snapshots.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/storage/snapshots.html
 layout: migrated
 ---
 

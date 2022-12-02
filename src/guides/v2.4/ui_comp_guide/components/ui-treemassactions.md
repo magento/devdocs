@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: TreeMassActions component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/tree-mass-actions/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/tree-mass-actions/
 layout: migrated
 ---
 

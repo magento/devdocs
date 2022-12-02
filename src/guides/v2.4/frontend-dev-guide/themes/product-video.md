@@ -4,7 +4,7 @@ title: Configure product video
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/product-video/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/product-video/
 layout: migrated
 ---
 

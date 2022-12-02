@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: WYSIWYG Extension Points
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/wysiwyg/extension-points/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/wysiwyg/extension-points/
 layout: migrated
 ---
 

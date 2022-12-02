@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: addReturnComment mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/add-return-comment/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/add-return-comment/
 layout: migrated
 ---
 

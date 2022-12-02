@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
   - Application
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/workers-property.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/workers-property.html
 layout: migrated
 ---
 You can define zero or multiple work instances for each application. A worker

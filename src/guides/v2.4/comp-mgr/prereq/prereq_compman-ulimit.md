@@ -7,7 +7,7 @@ menu_order: 2
 menu_node:
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
 layout: migrated
 ---
 

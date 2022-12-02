@@ -3,7 +3,7 @@ group: software-update-guide
 title: Apply patches
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/overview.html
 layout: migrated
 ---
 

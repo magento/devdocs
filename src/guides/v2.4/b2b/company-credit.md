@@ -10,7 +10,7 @@ level3_subgroup: credit
 functional_areas:
   - B2B
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/company-credit
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/company-credit
 layout: migrated
 ---
 

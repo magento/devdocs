@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: Release Notes
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/release-notes/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/release-notes/
 layout: migrated
 ---
 

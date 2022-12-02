@@ -1,7 +1,7 @@
 ---
 group: web-api
 title: Web API functional testing
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/web-api-functional-testing/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/web-api-functional-testing/
 layout: migrated
 ---
 

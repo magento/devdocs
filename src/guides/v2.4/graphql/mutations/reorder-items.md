@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: reorderItems mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/reorder-items/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/reorder-items/
 layout: migrated
 ---
 

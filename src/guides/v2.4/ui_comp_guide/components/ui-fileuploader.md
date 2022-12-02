@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: FileUploader component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/file-uploader/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/file-uploader/
 layout: migrated
 ---
 

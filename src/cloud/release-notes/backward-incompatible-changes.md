@@ -1,7 +1,7 @@
 ---
 group: cloud-guide
 title: Backward incompatible changes
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/backward-incompatible-changes.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/backward-incompatible-changes.html
 layout: migrated
 ---
 

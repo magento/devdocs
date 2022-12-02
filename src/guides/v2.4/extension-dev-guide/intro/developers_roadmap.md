@@ -4,7 +4,7 @@ subgroup: 01_Introduction
 title: Developer roadmap
 menu_title: Developer roadmap
 menu_order: 2
-migrated_to: https://developer.adobe.com/commerce/php/development/roadmap/
+redirect_to: https://developer.adobe.com/commerce/php/development/roadmap/
 layout: migrated
 ---
 

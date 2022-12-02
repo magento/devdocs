@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: WishlistItemInterface attributes and implementations
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/interfaces/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/interfaces/
 layout: migrated
 ---
 

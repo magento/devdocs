@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: PayPal Website Payments Pro Hosted Solution payment method
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/hosted-pro/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/hosted-pro/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: configuration-guide
 title: Password hashing
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/password-hashing.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/password-hashing.html
 layout: migrated
 ---
 

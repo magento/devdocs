@@ -7,7 +7,7 @@ menu_title: Less coding standard
 menu_order: 8
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/coding-standards/less/
+redirect_to: https://developer.adobe.com/commerce/php/coding-standards/less/
 layout: migrated
 ---
 

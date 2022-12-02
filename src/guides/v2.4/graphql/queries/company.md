@@ -2,7 +2,7 @@
 group: graphql
 title: company query
 b2b_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/queries/company/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/queries/company/
 layout: migrated
 ---
 

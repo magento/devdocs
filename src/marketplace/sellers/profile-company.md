@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Company Profile
 redirect_from: /marketplace/sellers/company-profile.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-company/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-company/
 layout: migrated
 ---
 

@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 redirect_from:
   - /cloud/reference/error-codes.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/error-reference.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/error-reference.html
 layout: migrated
 ---
 

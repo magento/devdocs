@@ -7,7 +7,7 @@ menu_node:
 menu_order: 2
 functional_areas:
   - Tools
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/supported-versions.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/supported-versions.html
 layout: migrated
 ---
 

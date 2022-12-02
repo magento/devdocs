@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Example theme translation dictionary
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/practice/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/practice/
 layout: migrated
 ---
 

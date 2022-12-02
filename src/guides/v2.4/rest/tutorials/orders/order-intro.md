@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Order processing tutorial
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/
 layout: migrated
 menu_title: Initial tasks
 return_to:

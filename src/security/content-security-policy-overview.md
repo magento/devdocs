@@ -1,7 +1,7 @@
 ---
 group: compliance
 title: Content Security Policy Overview
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/content-security-policy.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/content-security-policy.html
 layout: migrated
 ---
 

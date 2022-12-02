@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 7. Create a cart and add products to it
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-cart-add-products/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-cart-add-products/
 layout: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 7. Create a cart and add products to it

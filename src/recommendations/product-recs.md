@@ -4,7 +4,7 @@ title: Overview
 redirect_from:
   - /recommendations/install.html
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/development-overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/development-overview.html
 layout: migrated
 ---
 

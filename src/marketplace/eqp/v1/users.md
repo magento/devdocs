@@ -1,7 +1,7 @@
 ---
 group: marketplace-api
 title: Users
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/users/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/users/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Restore an environment
 group: cloud-guide
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/restore-environment.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/restore-environment.html
 layout: migrated
 ---
 

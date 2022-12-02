@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: InsertForm component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/insert-form/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/insert-form/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Indexer dimension mode
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/indexer-dimension-mode/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/indexer-dimension-mode/
 layout: migrated
 ---
 

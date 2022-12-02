@@ -3,7 +3,7 @@ title: Extend Catalog Rule Conditions
 contributor_name: Ziffity
 contributor_link: https://www.ziffity.com/
 group: php-developer-guide
-migrated_to: https://developer.adobe.com/commerce/php/development/components/catalog-rules/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/catalog-rules/
 layout: migrated
 ---
 

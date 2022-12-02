@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Migrate install/upgrade scripts to declarative schema
-migrated_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/migration-scripts/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/migration-scripts/
 layout: migrated
 ---
 

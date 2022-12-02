@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: PasswordStrengthIndicator widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/password-strength-indicator/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/password-strength-indicator/
 layout: migrated
 ---
 

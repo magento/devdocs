@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Submit for Marketing Review
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-marketing-review/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-marketing-review/
 layout: migrated
 ---
 

@@ -6,7 +6,7 @@ menu_title: Payment method facade
 menu_order: 3
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/facade-configuration/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/facade-configuration/
 layout: migrated
 ---
 

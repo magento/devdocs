@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: createCustomerV2 mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/create-v2/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/create-v2/
 layout: migrated
 ---
 

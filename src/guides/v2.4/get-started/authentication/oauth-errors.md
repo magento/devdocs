@@ -3,7 +3,7 @@ group: web-api
 title: OAuth error codes
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/oauth-errors/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/oauth-errors/
 layout: migrated
 ---
 

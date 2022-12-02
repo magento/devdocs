@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: Resolvers
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/develop/resolvers/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/develop/resolvers/
 layout: migrated
 ---
 

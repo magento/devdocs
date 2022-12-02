@@ -1,7 +1,7 @@
 ---
 group: payments-integrations
 title: Commerce payment provider gateway
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: graphql
 title: Product interface implementations
 redirect_from:
   - /guides/v2.4/graphql/product/product-interface-implementations.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ subgroup: 3_Widgets
 title: RemainingCharacters widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/remaining-characters/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/remaining-characters/
 layout: migrated
 ---
 

@@ -7,7 +7,7 @@ redirect_from:
 functional_areas:
   - Cloud
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/update-package.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/update-package.html
 layout: migrated
 ---
 

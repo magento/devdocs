@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Configure declarative schema
-migrated_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/configuration/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/configuration/
 layout: migrated
 ---
 

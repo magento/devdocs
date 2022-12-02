@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Expandable Column component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/expandable-column/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/expandable-column/
 layout: migrated
 ---
 

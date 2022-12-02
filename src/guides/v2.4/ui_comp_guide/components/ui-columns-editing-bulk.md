@@ -3,7 +3,7 @@ group: ui-components-guide
 title: ColumnsEditingBulk component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-editing-bulk/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-editing-bulk/
 layout: migrated
 ---
 

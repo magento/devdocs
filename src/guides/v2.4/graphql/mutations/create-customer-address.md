@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: createCustomerAddress mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/create-address/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/create-address/
 layout: migrated
 ---
 

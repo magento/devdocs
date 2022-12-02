@@ -3,7 +3,7 @@ group: web-api
 title: Token-based authentication
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token/
 layout: migrated
 ---
 

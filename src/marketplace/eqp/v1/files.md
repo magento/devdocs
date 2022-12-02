@@ -1,7 +1,7 @@
 ---
 group: marketplace-api
 title: Files
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/files/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/files/
 layout: migrated
 ---
 

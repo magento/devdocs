@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: RoutableInterface attributes
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/routable/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/routable/
 layout: migrated
 ---
 

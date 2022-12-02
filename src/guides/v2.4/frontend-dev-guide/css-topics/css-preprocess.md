@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: How CSS and Less files are preprocessed and how to debug them
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/preprocess/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/preprocess/
 layout: migrated
 ---
 

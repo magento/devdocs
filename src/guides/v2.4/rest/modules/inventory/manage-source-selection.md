@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Manage source selection algorithms
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-source-selection/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-source-selection/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: mergeCarts mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/merge/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/merge/
 layout: migrated
 ---
 

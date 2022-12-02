@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Technical Review Guidelines
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/technical-review-guidelines/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/technical-review-guidelines/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Conventional notations used in this Guide
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/conventions/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/conventions/
 layout: migrated
 ---
 

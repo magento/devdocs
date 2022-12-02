@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Branding
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/branding/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/branding/
 layout: migrated
 ---
 

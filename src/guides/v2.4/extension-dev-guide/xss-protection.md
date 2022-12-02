@@ -4,7 +4,7 @@ subgroup: Security
 title: XSS prevention strategies
 menu_title: XSS prevention strategies
 menu_order: 1100
-migrated_to: https://developer.adobe.com/commerce/php/development/security/cross-site-scripting/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/cross-site-scripting/
 layout: migrated
 ---
 

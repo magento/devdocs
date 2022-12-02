@@ -7,7 +7,7 @@ redirect_from:
   - /cloud/trouble/pro-env-management.html
 functional_areas:
   - Cloud
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/pro-develop-deploy-workflow.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/pro-develop-deploy-workflow.html
 layout: migrated
 ---
 

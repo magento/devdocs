@@ -3,7 +3,7 @@ group: web-api
 title: Authentication
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/
 layout: migrated
 ---
 

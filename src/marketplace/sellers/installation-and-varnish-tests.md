@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Installation & Varnish Tests
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/installation-and-varnish-tests/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/installation-and-varnish-tests/
 layout: migrated
 ---
 

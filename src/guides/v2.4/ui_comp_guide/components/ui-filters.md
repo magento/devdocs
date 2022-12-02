@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Filters component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/filters/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/filters/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Accessibility Guidelines
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/general/accessibility-guidelines/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/general/accessibility-guidelines/
 layout: migrated
 ---
 The Magento application should be accessible for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. These are general guidelines that when adhere to, people with diverse range of hearing, movement, sight, and cognitive ability should be able to use.

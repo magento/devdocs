@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: ColumnsControls component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-controls/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-controls/
 layout: migrated
 ---
 

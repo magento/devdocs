@@ -3,7 +3,7 @@ group: graphql
 title: GraphQL functional testing
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/develop/functional-testing/
+redirect_to: https://developer.adobe.com/commerce/webapi/develop/functional-testing/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ title: Prepare your existing system
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html
 layout: migrated
 ---
 

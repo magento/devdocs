@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: DropdownDialog widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/dialog/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/dialog/
 layout: migrated
 ---
 

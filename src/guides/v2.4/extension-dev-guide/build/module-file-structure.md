@@ -2,7 +2,7 @@
 group: php-developer-guide
 subgroup: 03_Build
 title: Create your component file structure
-migrated_to: https://developer.adobe.com/commerce/php/development/build/component-file-structure/
+redirect_to: https://developer.adobe.com/commerce/php/development/build/component-file-structure/
 layout: migrated
 ---
 

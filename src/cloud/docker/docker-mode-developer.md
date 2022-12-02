@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
   - Docker
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/deploy/developer-mode/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/deploy/developer-mode/
 layout: migrated
 ---
 

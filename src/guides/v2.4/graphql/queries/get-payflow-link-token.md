@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: getPayflowLinkToken query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/get-payflow-link-token/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/get-payflow-link-token/
 layout: migrated
 ---
 

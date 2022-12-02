@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 8. Prepare for checkout
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/prepare-for-checkout/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/prepare-for-checkout/
 layout: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 8. Prepare for checkout

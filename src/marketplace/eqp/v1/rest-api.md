@@ -1,7 +1,7 @@
 ---
 group: marketplace-api
 title: REST API
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/rest-api/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/rest-api/
 layout: migrated
 ---
 

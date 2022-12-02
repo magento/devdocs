@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: JavaScript in responsive design
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/js/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/js/
 layout: migrated
 ---
 

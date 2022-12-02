@@ -3,7 +3,7 @@ group: php-developer-guide
 title: Example bulk operations implementation
 functional_areas:
   - Services
-migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/bulk-operations-example/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/bulk-operations-example/
 layout: migrated
 ---
 

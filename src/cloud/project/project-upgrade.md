@@ -4,7 +4,7 @@ title: Upgrade version
 functional_areas:
   - Cloud
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/upgrade/commerce-version.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/upgrade/commerce-version.html
 layout: migrated
 ---
 

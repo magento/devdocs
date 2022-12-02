@@ -4,7 +4,7 @@ subgroup: components
 title: UI-select component
 menu_title: UI-select component
 menu_node:
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/secondary-ui-select/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/secondary-ui-select/
 layout: migrated
 ---
 

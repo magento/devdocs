@@ -2,7 +2,7 @@
 group: live-search
 title: Live Search Release Notes
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/release-notes.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/release-notes.html
 layout: migrated
 ---
 

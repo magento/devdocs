@@ -7,7 +7,7 @@ menu_order: 1
 menu_node:
 functional_areas:
   - Content
-migrated_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/voice-and-tone/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/voice-and-tone/
 layout: migrated
 ---
 

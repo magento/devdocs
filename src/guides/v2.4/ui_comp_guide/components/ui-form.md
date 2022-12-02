@@ -3,7 +3,7 @@ group: ui-components-guide
 title: Form component
 redirect_from:
    - /guides/v2.3/ui-components/ui-form.html
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/form/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/form/
 layout: migrated
 ---
 

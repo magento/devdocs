@@ -5,7 +5,7 @@ group: "Fundamentals of Magento 2 Development"
 title: "How to Add a New Product Attribute"
 thumbnail: "fundamentals/thumbs/add-attribute.png"
 menu_order: 1
-migrated_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/backend-development/add-product-attribute.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/backend-development/add-product-attribute.html
 layout: migrated-video
 ---
 

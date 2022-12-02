@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Backward incompatible changes reference
-migrated_to: https://developer.adobe.com/commerce/php/development/backward-incompatible-changes/reference/
+redirect_to: https://developer.adobe.com/commerce/php/development/backward-incompatible-changes/reference/
 layout: migrated
 ---
 

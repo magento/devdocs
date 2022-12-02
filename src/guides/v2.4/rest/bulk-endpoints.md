@@ -5,7 +5,7 @@ contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com/en.html
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/bulk-endpoints/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/bulk-endpoints/
 layout: migrated
 ---
 

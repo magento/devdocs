@@ -5,7 +5,7 @@ contributor_name: Kalpesh Mehta from Corra
 contributor_link: https://partners.magento.com/portal/details/partner/id/70/
 functional_areas:
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/security-txt.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/security-txt.html
 layout: migrated
 ---
 

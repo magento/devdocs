@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Manage low-quantity notifications
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-low-quantity/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-low-quantity/
 layout: migrated
 ---
 

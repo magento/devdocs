@@ -2,7 +2,7 @@
 group: graphql
 title: setNegotiableQuoteBillingAddress mutation
 b2b_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/set-billing-address/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/set-billing-address/
 layout: migrated
 ---
 

@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Cache
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html
 layout: migrated
 ---
 

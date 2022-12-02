@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Custom Knockout.js bindings
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/knockout-bindings/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/knockout-bindings/
 layout: migrated
 ---
 

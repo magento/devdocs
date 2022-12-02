@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Code Sniffer
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/code-sniffer/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/code-sniffer/
 layout: migrated
 ---
 

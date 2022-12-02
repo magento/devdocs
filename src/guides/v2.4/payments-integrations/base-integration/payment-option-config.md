@@ -6,7 +6,7 @@ menu_title: Payment method configuration
 menu_order: 2
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/payment-option-config/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/payment-option-config/
 layout: migrated
 ---
 

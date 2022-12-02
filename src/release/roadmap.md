@@ -2,7 +2,7 @@
 title: Roadmap
 group: release
 description: See what we have planned for Adobe Commerce and Magento Open Source.
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/roadmap.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/roadmap.html
 layout: migrated
 ---
 

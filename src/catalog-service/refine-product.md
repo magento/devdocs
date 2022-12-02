@@ -2,7 +2,7 @@
 group: catalog-service
 title: refineProduct query
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/catalog-service/queries/refine-product/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/catalog-service/queries/refine-product/
 layout: migrated
 ---
 

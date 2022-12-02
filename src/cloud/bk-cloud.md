@@ -3,7 +3,7 @@ group: cloud-guide
 title: Cloud guide for Commerce
 functional_areas:
   - Cloud
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/overview.html
 layout: migrated
 ---
 

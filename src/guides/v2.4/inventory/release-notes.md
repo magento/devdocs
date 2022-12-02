@@ -1,7 +1,7 @@
 ---
 group: inventory
 title: Release Notes
-migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/release-notes.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/release-notes.html
 layout: migrated
 ---
 

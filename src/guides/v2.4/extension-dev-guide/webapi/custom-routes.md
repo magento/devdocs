@@ -5,7 +5,7 @@ contributor_name: Comwrap GmbH
 contributor_link: https://www.comwrap.com
 functional_areas:
   - Configuration
-migrated_to: https://developer.adobe.com/commerce/php/development/components/web-api/custom-routes/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/web-api/custom-routes/
 layout: migrated
 ---
 

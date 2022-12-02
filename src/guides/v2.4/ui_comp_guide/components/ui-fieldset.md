@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Fieldset component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/fieldset/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/fieldset/
 layout: migrated
 ---
 

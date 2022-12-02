@@ -1,7 +1,7 @@
 ---
 group: payment-services
 title: Security
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/security.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/security.html
 layout: migrated
 ---
 

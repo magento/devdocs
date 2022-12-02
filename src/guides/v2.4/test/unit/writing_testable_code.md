@@ -6,7 +6,7 @@ contributor_link: https://vinaikopp.com/
 functional_areas:
   - Testing
   - test
-migrated_to: https://developer.adobe.com/commerce/testing/guide/unit/writing-testable-code/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/unit/writing-testable-code/
 layout: migrated
 ---
 

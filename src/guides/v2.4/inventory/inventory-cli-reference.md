@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/cli.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/cli.html
 layout: migrated
 ---
 

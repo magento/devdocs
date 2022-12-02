@@ -5,7 +5,7 @@ title: Admin Headings and Organization
 menu_title: Headings and Organization
 menu_order: 6
 menu_node:
-migrated_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/headings-and-organization/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/headings-and-organization/
 layout: migrated
 ---
 Use consistent heading structure and content prioritization to create a hierarchy for users to easily navigate Admin.

@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
 redirect_from:
   - /cloud/trouble/environments-logs.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/log-locations.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/log-locations.html
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Seller Overview
 redirect_from: /marketplace/sellers/overview.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/seller-overview/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/seller-overview/
 layout: migrated
 ---
 

@@ -6,7 +6,7 @@ functional_areas:
 - Setup
 - Configuration
 - Testing
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/
 layout: migrated
 ---
 

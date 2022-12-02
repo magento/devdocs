@@ -7,7 +7,7 @@ subtitle: Customize Product Creation Form
 menu_node:
 level3_subgroup: product-creation-form
 menu_order: 2
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-product-creation-form/configuration/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-product-creation-form/configuration/
 layout: migrated
 ---
 

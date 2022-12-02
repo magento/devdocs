@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/overview.html
 layout: migrated
 ---
 

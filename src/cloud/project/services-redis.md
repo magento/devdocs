@@ -6,7 +6,7 @@ functional_areas:
   - Setup
 redirect_from:
   - /cloud/project/project-conf-files_services-redis.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/redis.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/redis.html
 layout: migrated
 ---
 

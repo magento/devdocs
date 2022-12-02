@@ -3,7 +3,7 @@ group: graphql
 title: CategoryInterface attributes
 redirect_from:
   - /guides/v2.4/graphql/product/category-interface.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/category/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/category/
 layout: migrated
 ---
 

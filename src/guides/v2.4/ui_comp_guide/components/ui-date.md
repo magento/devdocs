@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Date component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/date/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/date/
 layout: migrated
 ---
 

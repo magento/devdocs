@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Input component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/input/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/input/
 layout: migrated
 ---
 

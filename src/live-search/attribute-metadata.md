@@ -2,7 +2,7 @@
 group: live-search
 title: attributeMetadata query
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/live-search/queries/attribute-metadata/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/live-search/queries/attribute-metadata/
 layout: migrated
 ---
 

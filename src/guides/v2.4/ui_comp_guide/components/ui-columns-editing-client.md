@@ -3,7 +3,7 @@ group: ui-components-guide
 title: ColumnsEditingClient component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-editing-client/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-editing-client/
 layout: migrated
 ---
 

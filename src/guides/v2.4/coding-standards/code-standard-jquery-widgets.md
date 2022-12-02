@@ -7,7 +7,7 @@ menu_title: jQuery widget coding standard
 menu_order: 7
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/coding-standards/jquery-widgets/
+redirect_to: https://developer.adobe.com/commerce/php/coding-standards/jquery-widgets/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Using the new structure in UI components XML configuration
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/semantic-configuration/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/semantic-configuration/
 layout: migrated
 ---
 

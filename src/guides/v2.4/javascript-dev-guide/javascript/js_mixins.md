@@ -1,7 +1,7 @@
 ---
 group: javascript-developer-guide
 title: JavaScript mixins
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/mixins/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/mixins/
 layout: migrated
 ---
 

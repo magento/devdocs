@@ -1,7 +1,7 @@
 ---
 group: marketplace-api
 title: Test results
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/test-results/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/test-results/
 layout: migrated
 ---
 

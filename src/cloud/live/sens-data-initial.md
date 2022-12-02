@@ -4,7 +4,7 @@ title: Example of managing system-specific settings
 functional_areas:
   - Cloud
   - Deploy
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/store-settings.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/store-settings.html
 layout: migrated
 ---
 

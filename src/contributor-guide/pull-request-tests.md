@@ -1,7 +1,7 @@
 ---
 group: contributor-guide
 title: Pull Request Tests
-migrated_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/pull-request-tests/
+redirect_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/pull-request-tests/
 layout: migrated
 ---
 

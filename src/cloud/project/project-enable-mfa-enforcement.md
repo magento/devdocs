@@ -8,7 +8,7 @@ functional_areas:
   - Compliance
 redirect_from:
   - /cloud/project/project-enable-mfa-project.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/multi-factor-authentication.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/multi-factor-authentication.html
 layout: migrated
 ---
 

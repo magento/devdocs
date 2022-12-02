@@ -4,7 +4,7 @@ title: JavaScript unit testing with Jasmine
 functional_areas:
   - Testing
   - test
-migrated_to: https://developer.adobe.com/commerce/testing/guide/js/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/js/
 layout: migrated
 ---
 

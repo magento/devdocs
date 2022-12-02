@@ -3,7 +3,7 @@ group: ui-components-guide
 title: ColumnsEditor component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-editor/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-editor/
 layout: migrated
 ---
 

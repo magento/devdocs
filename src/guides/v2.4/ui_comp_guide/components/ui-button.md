@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Button component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/button/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/button/
 layout: migrated
 ---
 

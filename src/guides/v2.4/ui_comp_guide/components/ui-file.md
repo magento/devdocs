@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: File component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/file/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/file/
 layout: migrated
 ---
 

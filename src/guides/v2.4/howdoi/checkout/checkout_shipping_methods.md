@@ -6,7 +6,7 @@ title: Customize the list of shipping methods
 subtitle: Customize Checkout
 menu_order: 100
 level3_subgroup: checkout-tutorial
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-shipping-methods/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-shipping-methods/
 layout: migrated
 ---
 

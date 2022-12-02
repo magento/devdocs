@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Marketing Submission Preview
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/marketing-submission-preview/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/marketing-submission-preview/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ title: Docker development quick reference
 functional_areas:
   - Cloud
   - Docker
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/quick-reference/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/quick-reference/
 layout: migrated
 ---
 

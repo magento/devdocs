@@ -6,7 +6,7 @@ menu_title: Vault payment configuration
 menu_order: 2
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/vault-payment-configuration/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/vault-payment-configuration/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: tools
 title: Quality Patches Tool
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html
+redirect_to: https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html
 layout: migrated
 ---
 

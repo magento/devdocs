@@ -6,7 +6,7 @@ menu_title: Vault DI configuration
 menu_order: 3
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/vault-di/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/vault-di/
 layout: migrated
 ---
 

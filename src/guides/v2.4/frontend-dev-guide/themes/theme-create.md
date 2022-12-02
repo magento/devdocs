@@ -4,7 +4,7 @@ title: Create a new storefront theme
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/create-storefront/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/create-storefront/
 layout: migrated
 ---
 

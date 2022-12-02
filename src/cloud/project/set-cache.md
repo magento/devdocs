@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
   - Services
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/set-cache.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/set-cache.html
 layout: migrated
 ---
 

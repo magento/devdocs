@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Collapsible widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/collapsible/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/collapsible/
 layout: migrated
 ---
 

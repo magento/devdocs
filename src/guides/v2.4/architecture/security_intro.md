@@ -4,7 +4,7 @@ subgroup: Architectural Basics
 title: Security overview
 menu_title: Security
 menu_order:
-migrated_to: https://developer.adobe.com/commerce/php/architecture/basics/security/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/basics/security/
 layout: migrated
 ---
 

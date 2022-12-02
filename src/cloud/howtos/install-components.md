@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
   - Extensions
   - Module
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/extensions.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/extensions.html
 layout: migrated
 ---
 

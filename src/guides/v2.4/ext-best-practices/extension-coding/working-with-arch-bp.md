@@ -6,7 +6,7 @@ menu_title: Working with the Architecture
 menu_order: 2
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/extensions/architecture/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/extensions/architecture/
 layout: migrated
 ---
 

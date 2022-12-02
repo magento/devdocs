@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Name your component
-migrated_to: https://developer.adobe.com/commerce/php/development/build/component-name/
+redirect_to: https://developer.adobe.com/commerce/php/development/build/component-name/
 layout: migrated
 ---
 

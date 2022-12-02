@@ -3,7 +3,7 @@ group: advanced-reporting
 title: Modules providing advanced reporting
 functional_areas:
     - Reports
-migrated_to: https://developer.adobe.com/commerce/php/development/advanced-reporting/modules/
+redirect_to: https://developer.adobe.com/commerce/php/development/advanced-reporting/modules/
 layout: migrated
 ---
 

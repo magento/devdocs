@@ -3,7 +3,7 @@ group: advanced-reporting
 title: Data collection for advanced reporting
 functional_areas:
     - Reports
-migrated_to: https://developer.adobe.com/commerce/php/development/advanced-reporting/data-collection/
+redirect_to: https://developer.adobe.com/commerce/php/development/advanced-reporting/data-collection/
 layout: migrated
 ---
 

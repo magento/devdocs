@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Architectural layers overview
 menu_title: Architectural layers
-migrated_to: https://developer.adobe.com/commerce/php/architecture/layers/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/layers/
 layout: migrated
 ---
 

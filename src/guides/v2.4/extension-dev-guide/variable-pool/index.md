@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Variable Pool
-migrated_to: https://developer.adobe.com/commerce/php/development/components/variable-pool/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/variable-pool/
 layout: migrated
 ---
 

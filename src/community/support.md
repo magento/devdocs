@@ -5,7 +5,7 @@ subgroup: resources
 title: Adobe Commerce Support
 redirect_from:
   - /community/resources/support.html
-migrated_to: https://developer.adobe.com/commerce/contributor/community/support/
+redirect_to: https://developer.adobe.com/commerce/contributor/community/support/
 layout: migrated
 ---
 

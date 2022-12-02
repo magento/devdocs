@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Code generation
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/code-generation/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/code-generation/
 layout: migrated
 ---
 

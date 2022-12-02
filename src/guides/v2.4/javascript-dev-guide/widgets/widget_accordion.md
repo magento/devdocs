@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Accordion widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/accordion/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/accordion/
 layout: migrated
 ---
 

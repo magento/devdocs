@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Depends Annotation
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-depends/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-depends/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: graphql
 title: Extend an existing GraphQL schema
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/develop/extend-existing-schema/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/develop/extend-existing-schema/
 layout: migrated
 ---
 

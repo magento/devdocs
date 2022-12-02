@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html
 layout: migrated
 ---
 

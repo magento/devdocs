@@ -2,7 +2,7 @@
 group: graphql
 title: closeNegotiableQuotes mutation
 b2b_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/close/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/close/
 layout: migrated
 ---
 
