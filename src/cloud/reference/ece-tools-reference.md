@@ -3,6 +3,8 @@ group: cloud-guide
 title: ece-tools package
 functional_areas:
   - Cloud
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/package-overview.html
+layout: migrated
 ---
 
 The `{{site.data.var.ct}}` package is a set of scripts and tools designed to manage and deploy {{site.data.var.ece}} projects. The `{{site.data.var.ct}}` package simplifies many {{site.data.var.ece}} processes, such as deploying to a Docker environment, managing crons, verifying project configuration, and applying Adobe patches and hot fixes. You can view and contribute to the open-source [ece-tools repository on Github](https://github.com/magento/ece-tools).

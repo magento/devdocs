@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/setup/synchronize-data/
+layout: migrated
 ---
 
 You have the option to launch a Docker environment in [developer mode][set the launch mode], which provides an active development environment with full, writable file system permissions.

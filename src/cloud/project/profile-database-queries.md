@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Services
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/storage/profile-database-queries.html
+layout: migrated
 ---
 
 When making changes to a database, you may find it helpful to run profiling to identify the impact of those changes. Profiling maintains a log of database queries and increases run-time precision.

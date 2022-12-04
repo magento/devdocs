@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-components.html
+layout: migrated
 ---
 
 The [Magento Cloud Components](https://github.com/magento/magento-cloud-components) package provides extended {{site.data.var.ee}} core functionality for sites deployed on Cloud infrastructure. This package is a dependency for the {{ site.data.var.ct }} package. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).

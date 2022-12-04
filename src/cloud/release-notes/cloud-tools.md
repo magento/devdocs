@@ -7,6 +7,8 @@ functional_areas:
   - Configuration
 redirect_from:
   - /cloud/release-notes/CloudReleaseNotes.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-tools-suite.html
+layout: migrated
 ---
 
 This release information details the latest improvements to the {{site.data.var.csuite}} packages which are designed to deploy and manage {{site.data.var.ee}} installations and upgrades on the Cloud platform.

@@ -4,6 +4,8 @@ title: Component deployment failure
 functional_areas:
   - Cloud
   - Deploy
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/recover-failed-deployment.html
+layout: migrated
 ---
 
 This topic discusses how to recover from a failed component deployment. Typical examples include components that have dependencies that are not met by your environment, such as incompatible PHP versions.

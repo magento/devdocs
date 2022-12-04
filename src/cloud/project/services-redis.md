@@ -6,6 +6,8 @@ functional_areas:
   - Setup
 redirect_from:
   - /cloud/project/project-conf-files_services-redis.html
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/redis.html
+layout: migrated
 ---
 
 [Redis](https://redis.io) is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](https://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html), which {{site.data.var.ee}} uses by default.

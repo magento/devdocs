@@ -6,6 +6,8 @@ redirect_from:
 functional_areas:
   - Cloud
   - Configuration
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/fastly-troubleshooting.html
+layout: migrated
 ---
 
 Use the following information to troubleshoot and manage the Fastly CDN module for Magento 2 in your {{ site.data.var.ece }} project environments. For example, you can investigate response header values and caching behavior to resolve Fastly service and performance issues.

@@ -1,6 +1,8 @@
 ---
 group: cloud-guide
 title: Backward incompatible changes
+migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/backward-incompatible-changes.html
+layout: migrated
 ---
 
 Use the following information to learn about backward incompatible changes that might require you to adjust Cloud configuration and processes for existing Cloud projects when you upgrade to the latest release of the `{{site.data.var.ct}}` package or other {{site.data.var.csuite}} packages.

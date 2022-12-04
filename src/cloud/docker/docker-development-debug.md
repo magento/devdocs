@@ -6,6 +6,8 @@ functional_areas:
 - Setup
 - Configuration
 - Testing
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/
+layout: migrated
 ---
 
 Xdebug is an extension for debugging your PHP code. {{site.data.var.mcd-prod}} provides a separate container to handle Xdebug requests in the Docker environment.  Use this container to enable Xdebug and debug PHP code in your Docker environment without affecting your {{site.data.var.ece}} project configuration.

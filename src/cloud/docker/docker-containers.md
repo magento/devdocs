@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/containers/
+layout: migrated
 ---
 
 The [`{{site.data.var.mcd-package}}` repository][docker-repo] contains build information to create a Docker environment with the required specifications for {{site.data.var.ece}}. The build configuration creates a Docker instance with CLI and service containers required to run {{site.data.var.ece}} in a local Docker environment. You can customize the Docker containers available in the repository and add more as needed.
