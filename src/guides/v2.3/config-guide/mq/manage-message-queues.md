@@ -39,7 +39,7 @@ You can also use a process manager such as [Supervisor](https://supervisord.org/
 *  Each consumer processes 10000 messages and then terminates
 
 {:.bs-callout-info}
-If your {{ site.data.var.ee }} store is hosted on the Cloud platform, use the [`CRON_CONSUMERS_RUNNER`]({{ site.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner) to configure the `consumers_runner` cron job.
+If your {{ site.data.var.ee }} store is hosted on the Cloud platform, use the [`CRON_CONSUMERS_RUNNER`](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-deploy.html#cron_consumers_runner) to configure the `consumers_runner` cron job.
 
 #### Specific configuration
 
@@ -63,7 +63,7 @@ Edit the `/app/etc/env.php` file to configure the cron job `consumers_runner`.
 *  `consumers` - An array of strings specifying which consumer(s) to run. An empty array runs *all* consumers.
 
    {:.bs-callout-info}
-   If your {{ site.data.var.ee }} store is hosted on the Cloud platform, use the [`CONSUMERS_WAIT_FOR_MAX_MESSAGES`]({{ site.baseurl }}/cloud/env/variables-deploy.html#consumers_wait_for_max_messages) to configure how consumers process messages from the message queue.
+   If your {{ site.data.var.ee }} store is hosted on the Cloud platform, use the [`CONSUMERS_WAIT_FOR_MAX_MESSAGES`](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-deploy.html#consumers_wait_for_max_messages) to configure how consumers process messages from the message queue.
 
 {% include config/message-queue-consumers.md %}
 
