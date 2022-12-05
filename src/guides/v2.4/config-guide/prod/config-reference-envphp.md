@@ -139,7 +139,7 @@ Magento uses an encryption key to protect passwords and other sensitive data. Th
 
 ```conf
 'crypt' => [
-  'key' => '63d409380ccb1182bfb27c231b732f05'
+  'key' => '63d409380ccb1182bfb27c231b732f05' #gitleaks:allow
 ]
 ```
 

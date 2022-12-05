@@ -257,13 +257,13 @@ curl -X GET \
             {
                 "label": "main_key",
                 "user_key": "d41d8cd98f00b204e9800998ecf8427e",
-                "password_key": "12cbdcd3332eb8f166f62ee1a9bd33d0",
+                "password_key": "12cbdcd3332eb8f166f62ee1a9bd33d0", #gitleaks:allow
                 "is_enabled": true
             },
             {
                 "label": "key_for_bob",
                 "user_key": "4b335b25f8eb3449e7e222e8f9e052b0",
-                "password_key": "9ca8abe7376f451bde40513474c13c3c",
+                "password_key": "9ca8abe7376f451bde40513474c13c3c", #gitleaks:allow
                 "is_enabled": false
             }
         ],
@@ -371,7 +371,7 @@ curl -X PUT \
             {
                 "label": "key_for_bob",
                 "user_key": "4b335b25f8eb3449e7e222e8f9e052b0",
-                "password_key": "9ca8abe7376f451bde40513474c13c3c",
+                "password_key": "9ca8abe7376f451bde40513474c13c3c", #gitleaks:allow
                 "is_enabled": true
             }
      ]

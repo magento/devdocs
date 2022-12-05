@@ -68,7 +68,7 @@ interface AdapterInterface
      *     'rest' => array(
      *         'resourcePath' => $resourcePath, // e.g. /products/:id
      *         'httpMethod' => $httpMethod,     // e.g. GET
-     *         'token' => '21hasbtlaqy8t3mj73kjh71cxxkqj4aq'    // optional : for token based Authentication. Will
+     *         'token' => '21hasbtlaqy8t3mj73kjh71cxxkqj4aq'  #gitleaks:allow   // optional : for token based Authentication. Will
      *                                                             override default OAuth based authentication provided
      *                                                             by test framework
      *     ),
