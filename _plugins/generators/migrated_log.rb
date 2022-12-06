@@ -44,7 +44,7 @@ module Jekyll
 
       # Group migrated pages by guide
       migrated_pages_by_group = migrated_pages_data.group_by { |page| page[:guide] }.sort.to_h
-      # Introductory text in the Migrated topics page 
+      # Introductory text in the Migrated topics page
       content = "The folowing #{migrated_pages.size} topics out of #{all_migrating_pages.size} have been migrated and will be redirected soon.\n\n"
       migrated_pages_by_group.each do |guide, topics|
         content += "\n## #{guide}\n\n\n"
