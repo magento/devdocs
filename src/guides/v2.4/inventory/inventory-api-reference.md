@@ -1,6 +1,8 @@
 ---
 group: inventory
 title: Inventory API reference
+migrated_to: https://developer.adobe.com/commerce/php/development/components/web-api/inventory-management/
+layout: migrated
 ---
 
 <!-- Magento 2 inventory project (a.k.a MSI) release branch blob url variable

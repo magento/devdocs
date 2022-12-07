@@ -3,6 +3,8 @@ title: Backward incompatible changes in functional tests
 group: mftf
 functional_areas:
 - Test
+migrated_to: https://developer.adobe.com/commerce/testing/functional-testing-framework/backward-incompatible-changes/
+layout: migrated
 ---
 
 This reference describes important changes introduced to functional tests in the Magento codebase after the 2.3.0 release. This is in compliance with the [Magento MFTF test versioning and backward compatibility policy][].
