@@ -271,7 +271,11 @@
 
     - label: Functional Acceptance Testing (MFTF)
       url: https://developer.adobe.com/commerce/testing/functional-testing-framework/
-      versionless: true
+      include_versions: ["2.4"]
+
+    - label: Functional Acceptance Testing (MFTF)
+      url: https://devdocs.magento.com/mftf/v2/docs/introduction.html
+      include_versions: ["2.3"]
 
     - label: Integration Testing
       url: https://developer.adobe.com/commerce/testing/guide/integration/
