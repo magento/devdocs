@@ -4,6 +4,11 @@
 # See COPYING.txt for license details.
 
 # This plugin generates the page that contains a list of migrated topics: https://devdocs.magento.com/migrated.html
+# Also, it adds global data:
+#   - site.data.migration.migrated_pages
+#   - site.data.migration.deprecated_pages
+#   - site.data.migration.all_migrating_pages
+#   - site.data.migration.remained_migrating_pages
 #
 
 module Jekyll
@@ -51,6 +56,18 @@ module Jekyll
         topics.sort_by { |topic| topic[:title] }
               .each do |topic|
           content += "1. [#{topic[:title]}](#{topic[:migrated_from]}) has moved to [#{topic[:migrated_to_source]}](#{topic[:migrated_to]})\n"
+        end
+      end
+
+      content += "\n***\n\n\n"
+      content += "\n## Pages to be migrated\n\n\n"
+      
+      if remained_migrating_pages.empty?
+        content += "All 2.4 and versionless pages were migrated"
+      else
+        remained_migrating_pages.sort_by(&:path)
+                                .each do |page|
+          content += "1. `#{page.path}`\n"
         end
       end
 
