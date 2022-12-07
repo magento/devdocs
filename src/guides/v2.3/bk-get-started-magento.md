@@ -6,8 +6,6 @@ menu_order: 1
 menu_node:
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/docs
-layout: migrated
 ---
 
 ## Getting started with Magento {#highlights}
