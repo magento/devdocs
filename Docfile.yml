@@ -17,6 +17,6 @@ content_map:
   filter: true
 -
   directory: src/page-builder
-  repository: magento/pagebuilder-docs
+  repository: magento-devdocs/pagebuilder-docs
   branch: COMDOX-365-migration-metadata
   filter: true
