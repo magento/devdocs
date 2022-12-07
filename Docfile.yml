@@ -2,13 +2,13 @@ content_map:
 
 -
   directory: src/mbi
-  repository: magento-devdocs/devdocs-mbi
-  branch: COMDOx-365-redirects
+  repository: magento/devdocs-mbi
+  branch: master
   filter: true
 -
   directory: src/mftf
   repository: magento-devdocs/magento2-functional-testing-framework-public
-  branch: COMDOX-365-redirects
+  branch: migrated-docs
   filter: true
 -
   directory: src/mftf/v2
@@ -17,6 +17,6 @@ content_map:
   filter: true
 -
   directory: src/page-builder
-  repository: magento-devdocs/pagebuilder-docs
-  branch: COMDOX-365-migration-metadata
+  repository: magento/pagebuilder-docs
+  branch: master
   filter: true
