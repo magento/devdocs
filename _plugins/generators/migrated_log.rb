@@ -19,7 +19,7 @@ module Jekyll
     def generate(site)
       @site = site
       pages = @site.pages
-      migrated_pages = pages.select { |page| page.data['layout'] and page.data['layout'].include? 'migrated' }
+      migrated_pages = pages.select { |page| page.data['layout']&.include? 'migrated' }
       v2_3_pages = pages.select { |page| page.data['guide_version'] == '2.3' }
       remained_pages = pages - v2_3_pages
       deprecated_pages = remained_pages.select { |page| page.data['group'].nil? || page.data['redirect_to'] }
@@ -32,8 +32,12 @@ module Jekyll
         migrated_page = {
           path: page.path,
           title: page.data['title'] || abort("Error in '#{page.path}'.\n Check 'title' in the file's frontmatter.".red),
-          guide: page.data['layout'].include?('video') ? 'Video Tutorials' : @site.data.dig('toc', page.data['group'],
-                                'label') || abort("Error in '#{page.path}'.\n Check 'group' in the file's frontmatter or 'label' in the corresponding TOC.".red),
+          guide: if page.data['layout'].include?('video')
+                   'Video Tutorials'
+                 else
+                   @site.data.dig('toc', page.data['group'],
+                                  'label') || abort("Error in '#{page.path}'.\n Check 'group' in the file's frontmatter or 'label' in the corresponding TOC.".red)
+                 end,
           migrated_from: site.baseurl + page.url,
           migrated_to: page.data['migrated_to'] || abort("Error in '#{page.path}'.\n Check 'migrated_to' in the file's frontmatter.".red),
           migrated_to_source: if page.data['migrated_to'].start_with?('https://experienceleague.adobe.com')
@@ -61,9 +65,9 @@ module Jekyll
 
       content += "\n***\n\n\n"
       content += "\n## Pages to be migrated\n\n\n"
-      
+
       if remained_migrating_pages.empty?
-        content += "All 2.4 and versionless pages were migrated"
+        content += 'All 2.4 and versionless pages were migrated'
       else
         remained_migrating_pages.sort_by(&:path)
                                 .each do |page|
@@ -93,12 +97,12 @@ module Jekyll
       pages << topic
 
       site.data['migration'] =
-            {
-              'migrated_pages' => migrated_pages.map(&:path),
-              'deprecated_pages' => deprecated_pages.map(&:path),
-              'all_migrating_pages' => all_migrating_pages.map(&:path),
-              'remained_migrating_pages' => remained_migrating_pages.map(&:path)
-            }
+        {
+          'migrated_pages' => migrated_pages.map(&:path),
+          'deprecated_pages' => deprecated_pages.map(&:path),
+          'all_migrating_pages' => all_migrating_pages.map(&:path),
+          'remained_migrating_pages' => remained_migrating_pages.map(&:path)
+        }
 
       migrated_pages_data
     end
