@@ -3,7 +3,7 @@ title: Backward incompatible changes in functional tests
 group: mftf
 functional_areas:
 - Test
-migrated_to: https://developer.adobe.com/commerce/testing/functional-testing-framework/backward-incompatible-changes/
+redirect_to: https://developer.adobe.com/commerce/testing/functional-testing-framework/backward-incompatible-changes/
 layout: migrated
 ---
 

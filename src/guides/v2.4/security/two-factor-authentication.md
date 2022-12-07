@@ -3,7 +3,7 @@ group: configuration-guide
 title: Two-Factor Authentication
 functional_areas:
   - Configuration
-migrated_to: https://developer.adobe.com/commerce/testing/functional-testing-framework/two-factor-authentication/
+redirect_to: https://developer.adobe.com/commerce/testing/functional-testing-framework/two-factor-authentication/
 layout: migrated
 ---
 
