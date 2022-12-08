@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 redirect_from:
   - /cloud/reference/docker-config.html
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/configure/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/configure/
 layout: migrated
 ---
 

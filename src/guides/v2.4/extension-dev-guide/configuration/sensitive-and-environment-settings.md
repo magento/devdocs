@@ -6,7 +6,7 @@ menu_title: Sensitive and environment settings
 menu_order: 1000
 functional_areas:
   - Configuration
-migrated_to: https://developer.adobe.com/commerce/php/development/configuration/sensitive-environment-settings/
+redirect_to: https://developer.adobe.com/commerce/php/development/configuration/sensitive-environment-settings/
 layout: migrated
 ---
 

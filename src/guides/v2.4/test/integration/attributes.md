@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Using PHP built-in attributes
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/
 layout: migrated
 ---
 

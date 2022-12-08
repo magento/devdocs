@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: createPayflowProToken mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-payflow-pro-token/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-payflow-pro-token/
 layout: migrated
 ---
 

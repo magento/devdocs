@@ -4,7 +4,7 @@ title: Working with variables
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/variable-levels.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/variable-levels.html
 layout: migrated
 ---
 Environment variables apply to a specific environment or branch. An environment _inherits_ variable definitions from the parent environment. You can override an inherited value by defining the variable specifically for the environment. For example, to set variables for development, define the variable values in the `.magento.env.yaml` file in the Integration environment. All environments branching from the Integration environment inherit those values. See [Deployment configuration]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) for details about configuring your environment using the `.magento.env.yaml` file.

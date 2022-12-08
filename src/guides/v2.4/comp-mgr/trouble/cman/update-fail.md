@@ -7,7 +7,7 @@ menu_node:
 menu_order: 110
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/roll-back-after-update-failure.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/roll-back-after-update-failure.html
 layout: migrated
 ---
 

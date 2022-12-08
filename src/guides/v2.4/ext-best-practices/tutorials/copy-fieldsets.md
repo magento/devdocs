@@ -6,7 +6,7 @@ menu_title: Copying fieldsets
 menu_order: 1000
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/backend/copy-fieldsets/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/backend/copy-fieldsets/
 layout: migrated
 ---
 

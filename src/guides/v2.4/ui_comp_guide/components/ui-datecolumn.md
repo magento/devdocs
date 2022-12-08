@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: DateColumn component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/date-column/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/date-column/
 layout: migrated
 ---
 

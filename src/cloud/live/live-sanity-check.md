@@ -4,7 +4,7 @@ title: Build and deploy on local
 functional_areas:
   - Cloud
   - Testing
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/staging-production.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/staging-production.html
 layout: migrated
 ---
 

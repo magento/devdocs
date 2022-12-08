@@ -3,7 +3,7 @@ group: graphql
 title: cmsPage query
 redirect_from:
   - /guides/v2.3/graphql/reference/cms.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/cms-page/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/cms-page/
 layout: migrated
 ---
 

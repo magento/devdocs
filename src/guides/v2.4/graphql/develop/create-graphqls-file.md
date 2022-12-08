@@ -2,7 +2,7 @@
 group: graphql
 title: Define the GraphQL schema for a module
 redirect_from: /guides/v2.4/graphql/develop/configure-graphql-xml.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/develop/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/develop/
 layout: migrated
 ---
 

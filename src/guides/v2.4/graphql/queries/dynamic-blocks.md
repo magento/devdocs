@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: dynamicBlocks query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/dynamic-blocks/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/dynamic-blocks/
 layout: migrated
 ---
 

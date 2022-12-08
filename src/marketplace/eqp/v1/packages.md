@@ -1,7 +1,7 @@
 ---
 group: marketplace-api
 title: Packages
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/packages/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/packages/
 layout: migrated
 ---
 

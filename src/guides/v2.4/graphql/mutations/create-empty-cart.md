@@ -3,7 +3,7 @@ group: graphql
 title: createEmptyCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-create-cart.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/create-empty-cart/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/create-empty-cart/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: graphql
 title: applyCouponToCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-apply-coupon.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/apply-coupon/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/apply-coupon/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ subgroup: concepts
 title: uiRegistry
 menu_title: uiRegistry
 menu_order: 110
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/registry/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/registry/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Custom form validation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/custom-form/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/custom-form/
 layout: migrated
 ---
 

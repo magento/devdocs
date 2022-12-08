@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Working with files
-migrated_to: https://developer.adobe.com/commerce/php/development/security/file-uploads/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/file-uploads/
 layout: migrated
 ---
 

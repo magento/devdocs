@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Database isolation attribute
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/db-isolation/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/db-isolation/
 layout: migrated
 ---
 

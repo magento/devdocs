@@ -3,7 +3,7 @@ group: community
 title: Contribution Day Organizer's Handbook
 redirect_from:
   - /community/resources/contribution-day-organizer-handbook.html
-migrated_to: https://developer.adobe.com/commerce/contributor/community/organizer-handbook/
+redirect_to: https://developer.adobe.com/commerce/contributor/community/organizer-handbook/
 layout: migrated
 ---
 

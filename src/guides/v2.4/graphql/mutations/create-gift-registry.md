@@ -3,7 +3,7 @@ group: graphql
 title: createGiftRegistry mutation
 ee_only: true
 contributor_name: EY
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/create/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/create/
 layout: migrated
 ---
 The `createGiftRegistry` mutation creates a gift registry for the logged in customer.

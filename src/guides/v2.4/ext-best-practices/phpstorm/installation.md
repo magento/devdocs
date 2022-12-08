@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Installation
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/install/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/install/
 layout: migrated
 ---
 

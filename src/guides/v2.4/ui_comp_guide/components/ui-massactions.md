@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: MassActions component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/mass-actions/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/mass-actions/
 layout: migrated
 ---
 

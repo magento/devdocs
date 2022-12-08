@@ -3,7 +3,7 @@ group: software-update-guide
 title: Maintenance mode options for upgrade
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/maintenance-mode-options.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/maintenance-mode-options.html
 layout: migrated
 ---
 

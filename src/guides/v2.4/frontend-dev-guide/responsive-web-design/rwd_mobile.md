@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Create a responsive mobile theme based on a default theme
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/mobile/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/mobile/
 layout: migrated
 ---
 ## What's in this topic

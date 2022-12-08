@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: customerDownloadableProducts query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/downloadable-products/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/downloadable-products/
 layout: migrated
 ---
 

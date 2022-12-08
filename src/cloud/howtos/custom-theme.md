@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
   - Setup
   - Theme
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/custom-theme.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/custom-theme.html
 layout: migrated
 ---
 

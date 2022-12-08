@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html
 layout: migrated
 ---
 

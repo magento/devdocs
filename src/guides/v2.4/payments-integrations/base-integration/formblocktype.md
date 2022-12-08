@@ -6,7 +6,7 @@ menu_title: Payment info rendering in Admin checkout
 menu_order: 4
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/formblocktype/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/formblocktype/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: graphql
 title: NegotiableQuoteAddressInterface attributes and implementations
 b2b_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/interfaces/address/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/interfaces/address/
 layout: migrated
 ---
 

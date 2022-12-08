@@ -6,7 +6,7 @@ functional_areas:
   - Deploy
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/production-system.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/production-system.html
 layout: migrated
 ---
 

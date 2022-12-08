@@ -2,7 +2,7 @@
 group: extensions
 title: Install Inventory Management
 redirect_from: guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/get-started/install-update.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/get-started/install-update.html
 layout: migrated
 ---
 

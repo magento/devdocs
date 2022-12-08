@@ -3,7 +3,7 @@ group: graphql
 title: Using mutations
 redirect_from:
   - /guides/v2.3/graphql/mutations.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/usage/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/
 layout: migrated
 ---
 

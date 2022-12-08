@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Tab component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/tab/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/tab/
 layout: migrated
 ---
 

@@ -6,7 +6,7 @@ menu_title: Coding FAQ
 menu_order: 1000
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/extensions/faq/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/extensions/faq/
 layout: migrated
 ---
 

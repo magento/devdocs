@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Abandoned Extensions
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/abandoned-extensions/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/abandoned-extensions/
 layout: migrated
 ---
 

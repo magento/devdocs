@@ -1,7 +1,7 @@
 ---
 group: extensions
 title: Amazon Sales Channel Release Notes
-migrated_to: https://experienceleague.adobe.com/docs/commerce-channels/amazon/release-notes.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-channels/amazon/release-notes.html
 layout: migrated
 ---
 {: .bs-callout-warning }

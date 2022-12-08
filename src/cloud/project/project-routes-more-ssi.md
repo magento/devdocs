@@ -4,7 +4,7 @@ title: Server side includes
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/routes/server-side-includes.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/routes/server-side-includes.html
 layout: migrated
 ---
 

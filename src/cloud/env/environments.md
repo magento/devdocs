@@ -5,7 +5,7 @@ redirect_from:
   - /cloud/deploy/configure-deploy.html
 functional_areas:
   - Cloud
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/overview.html
 layout: migrated
 ---
 After fully configuring your store, you need to configure your environments. Environments in {{site.data.var.ece}} include containers with applications, services, and a database to provide a complete system for your {{site.data.var.ee}} application codebase and files.

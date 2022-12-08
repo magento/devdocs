@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: countries query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/countries/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/countries/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ title: applyGiftCardToCart mutation
 ee_only: True
 redirect from:
   - /guides/v2.3/graphql/reference/quote-apply-giftcard.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/apply-giftcard/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/apply-giftcard/
 layout: migrated
 ---
 

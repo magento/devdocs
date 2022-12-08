@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: deleteCustomerAddress mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/delete-address/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/delete-address/
 layout: migrated
 ---
 

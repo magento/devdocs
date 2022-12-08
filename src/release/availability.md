@@ -1,7 +1,7 @@
 ---
 title: Availability
 group: release
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/availability.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/availability.html
 layout: migrated
 ---
 

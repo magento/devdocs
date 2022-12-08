@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Paging component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/paging/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/paging/
 layout: migrated
 ---
 

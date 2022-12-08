@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Data Provider Annotation
-migrated_to: https://developer.adobe.com/commerce/testing/guide/unit/annotations/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/unit/annotations/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ title: moveCartItemsToGiftRegistry mutation
 ee_only: true
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/move-cart-items/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/move-cart-items/
 layout: migrated
 ---
 

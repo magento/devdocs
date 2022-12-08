@@ -4,7 +4,7 @@ title: UI library
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/ui-library/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/ui-library/
 layout: migrated
 ---
 

@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
 redirect_from:
   - /cloud/trouble/message-queues.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-deploy.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-deploy.html
 layout: migrated
 ---
 

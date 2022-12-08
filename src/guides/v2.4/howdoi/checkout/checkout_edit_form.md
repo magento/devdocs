@@ -8,7 +8,7 @@ menu_order: 8
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-template/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-template/
 layout: migrated
 ---
 

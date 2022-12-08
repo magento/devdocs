@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 {:.bs-callout-info}
-If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions) in the _Cloud Guide_.
+If you are working on a {{site.data.var.ece}} project, see [Service versions](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html#service-versions) in the _Cloud Guide_.
 
 This table shows versions of third-party software dependencies that Adobe has tested with specific {{ site.data.var.ee }} and {{ site.data.var.ce }} releases. Adobe only supports the combination of system requirements described in the following table.
 

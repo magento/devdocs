@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Buttons
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/controls/buttons/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/controls/buttons/
 layout: migrated
 ---
 Buttons bring attention to actions on the screen. This article will cover the use of general buttons on Magento.

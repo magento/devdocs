@@ -1,7 +1,7 @@
 ---
 group: compliance
 title: General Data Protection Regulation
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/privacy/gdpr.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/privacy/gdpr.html
 layout: migrated
 ---
 

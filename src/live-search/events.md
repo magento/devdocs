@@ -2,7 +2,7 @@
 group: live-search
 title: Events
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/services/shared-services/storefront-events/
+redirect_to: https://developer.adobe.com/commerce/services/shared-services/storefront-events/
 layout: migrated
 ---
 

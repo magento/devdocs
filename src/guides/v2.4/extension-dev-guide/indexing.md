@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Indexing overview
-migrated_to: https://developer.adobe.com/commerce/php/development/components/indexing/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/indexing/
 layout: migrated
 ---
 

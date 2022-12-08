@@ -1,7 +1,7 @@
 ---
 group: soap
 title: SOAP Reference
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/soap-web-api-calls/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/soap-web-api-calls/
 layout: migrated
 functional_areas:
   - Integration

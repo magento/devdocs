@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Select From List
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/getting-user-input/select-from-list/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/getting-user-input/select-from-list/
 layout: migrated
 ---
 In the Admin, user will often times need to select item(s) from a list of items. This pattern address the variations of list pattern.

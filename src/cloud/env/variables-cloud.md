@@ -4,7 +4,7 @@ title: Cloud variables
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-cloud.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-cloud.html
 layout: migrated
 ---
 

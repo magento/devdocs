@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: createPaypalExpressToken mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-paypal-express-token/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-paypal-express-token/
 layout: migrated
 ---
 

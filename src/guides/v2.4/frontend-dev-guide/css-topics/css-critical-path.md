@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: CSS critical path
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/critical-path/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/critical-path/
 layout: migrated
 ---
 

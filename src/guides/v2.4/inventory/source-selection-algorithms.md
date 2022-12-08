@@ -1,7 +1,7 @@
 ---
 group: inventory
 title: Source selection algorithms
-migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/basics/selection-reservations.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/basics/selection-reservations.html
 layout: migrated
 ---
 

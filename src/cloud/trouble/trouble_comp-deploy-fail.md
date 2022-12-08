@@ -4,7 +4,7 @@ title: Component deployment failure
 functional_areas:
   - Cloud
   - Deploy
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/recover-failed-deployment.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/recover-failed-deployment.html
 layout: migrated
 ---
 

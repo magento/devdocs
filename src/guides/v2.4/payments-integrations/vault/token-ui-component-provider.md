@@ -6,7 +6,7 @@ menu_title: Token UI component provider
 menu_order: 15
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/token-ui-component-provider/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/token-ui-component-provider/
 layout: migrated
 ---
 

@@ -5,7 +5,7 @@ title: Build
 menu_title: Build
 menu_order: 1
 menu_node: parent
-migrated_to: https://developer.adobe.com/commerce/php/development/build/
+redirect_to: https://developer.adobe.com/commerce/php/development/build/
 layout: migrated
 ---
 

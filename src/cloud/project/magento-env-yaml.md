@@ -4,7 +4,7 @@ title: Deployment configuration
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/configure-env-yaml.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/configure-env-yaml.html
 layout: migrated
 ---
 

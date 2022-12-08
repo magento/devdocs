@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: GraphQL requests
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/usage/headers/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/headers/
 layout: migrated
 ---
 

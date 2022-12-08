@@ -3,7 +3,7 @@ group: graphql
 title: ProductInterface attributes
 redirect_from:
   - /guides/v2.4/graphql/product/product-interface.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/attributes/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/attributes/
 layout: migrated
 ---
 

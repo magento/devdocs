@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Magento 2.4 backward incompatible changes
-migrated_to: https://developer.adobe.com/commerce/php/development/backward-incompatible-changes/highlights/
+redirect_to: https://developer.adobe.com/commerce/php/development/backward-incompatible-changes/highlights/
 layout: migrated
 ---
 

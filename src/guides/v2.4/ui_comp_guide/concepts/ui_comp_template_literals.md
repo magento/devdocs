@@ -3,7 +3,7 @@ group: ui-components-guide
 title: Template Literals in UI Components
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/literals/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/literals/
 layout: migrated
 ---
 

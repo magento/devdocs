@@ -8,7 +8,7 @@ menu_node:
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/best-practices.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/best-practices.html
 layout: migrated
 ---
 

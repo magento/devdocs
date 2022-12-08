@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Text component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/text/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/text/
 layout: migrated
 ---
 

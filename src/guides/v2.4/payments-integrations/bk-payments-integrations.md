@@ -7,7 +7,7 @@ menu_order: 2
 menu_node: parent
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/
 layout: migrated
 ---
 

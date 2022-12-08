@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Selling Subscription-based Extensions
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/subscriptions/selling-subscriptions/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/subscriptions/selling-subscriptions/
 layout: migrated
 ---
 

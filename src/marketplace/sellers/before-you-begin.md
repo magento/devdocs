@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Before You Begin
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/before-you-begin/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/before-you-begin/
 layout: migrated
 ---
 

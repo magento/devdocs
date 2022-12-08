@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Compile LESS using Grunt
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/debug/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/debug/
 layout: migrated
 ---
 

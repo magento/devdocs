@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: updateCustomerV2 mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/update-v2/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/update-v2/
 layout: migrated
 ---
 

@@ -5,7 +5,7 @@ functional_areas:
 - Cloud
 - Setup
 - Configuration
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/blackfire/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/blackfire/
 layout: migrated
 ---
 

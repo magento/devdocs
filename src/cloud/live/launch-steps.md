@@ -8,7 +8,7 @@ menu_node:
 functional_areas:
   - Cloud
   - Testing
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/launch/steps.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/launch/steps.html
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Tabs
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/containers/tabs/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/containers/tabs/
 layout: migrated
 ---
 Tabs should be used when the user needs to alternate between views within the same context.

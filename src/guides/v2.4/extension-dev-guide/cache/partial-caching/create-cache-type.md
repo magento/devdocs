@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Create a cache type
-migrated_to: https://developer.adobe.com/commerce/php/development/cache/partial/cache-type/
+redirect_to: https://developer.adobe.com/commerce/php/development/cache/partial/cache-type/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: php-developer-guide
 subgroup: 99_Module Development
 title: Plugins (Interceptors)
-migrated_to: https://developer.adobe.com/commerce/php/development/components/plugins/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/plugins/
 layout: migrated
 ---
 

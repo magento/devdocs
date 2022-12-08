@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Overview of responsive web design in Magento
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/
 layout: migrated
 ---
 

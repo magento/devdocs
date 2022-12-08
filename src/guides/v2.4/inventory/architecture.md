@@ -1,7 +1,7 @@
 ---
 group: inventory
 title: Inventory management architecture
-migrated_to: https://developer.adobe.com/commerce/php/architecture/modules/inventory-management/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/modules/inventory-management/
 layout: migrated
 ---
 

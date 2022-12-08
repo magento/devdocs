@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Create a new layout
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/create/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/create/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Create a configurable product tutorial
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/configurable-product/
 layout: migrated
 menu_title: Initial tasks
 menu_order: 0

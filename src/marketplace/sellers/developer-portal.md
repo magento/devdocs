@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Marketplace Developer Portal
 redirect_from: /marketplace/sellers/marketplace-developer-dashboard.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/developer-portal/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/developer-portal/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: sendEmailToFriend mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/send-email-to-friend/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/send-email-to-friend/
 layout: migrated
 ---
 

@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_from: /guides/v2.3/install-gde/continue-to-verify.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/verify.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/verify.html
 layout: migrated
 ---
 

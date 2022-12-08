@@ -1,7 +1,7 @@
 ---
 group: web-api
 title: Construct a request
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request/
 layout: migrated
 ---
 

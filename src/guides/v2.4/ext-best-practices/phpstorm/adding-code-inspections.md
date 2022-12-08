@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Adding code inspections
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/add-code-inspections/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/add-code-inspections/
 layout: migrated
 ---
 

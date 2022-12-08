@@ -7,7 +7,7 @@ redirect_to: https://support.magento.com/hc/en-us/articles/4411647469965
 functional_areas:
   - Cloud
   - Deploy
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/recover-failed-deployment.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/recover-failed-deployment.html
 layout: migrated
 ---
 

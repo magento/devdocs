@@ -6,7 +6,7 @@ menu_title: Security, performance, and data handling
 menu_order: 3
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/extensions/security/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/extensions/security/
 layout: migrated
 ---
 

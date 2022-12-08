@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: ImageUploader component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/image-uploader/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/image-uploader/
 layout: migrated
 ---
 

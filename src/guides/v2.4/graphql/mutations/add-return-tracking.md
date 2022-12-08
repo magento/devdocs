@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: addReturnTracking mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/add-return-tracking/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/add-return-tracking/
 layout: migrated
 ---
 

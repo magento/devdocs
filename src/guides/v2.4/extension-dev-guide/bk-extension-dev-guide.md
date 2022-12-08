@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: PHP Developer Guide
-migrated_to: https://developer.adobe.com/commerce/php/development/
+redirect_to: https://developer.adobe.com/commerce/php/development/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: compliance
 title: California Consumer Privacy Act
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/privacy/ccpa.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/privacy/ccpa.html
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Component types
-migrated_to: https://developer.adobe.com/commerce/php/development/prepare/component-types/
+redirect_to: https://developer.adobe.com/commerce/php/development/prepare/component-types/
 layout: migrated
 ---
 

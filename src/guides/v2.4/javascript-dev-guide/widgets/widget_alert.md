@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Alert widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/alert/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/alert/
 layout: migrated
 ---
 

@@ -8,7 +8,7 @@ functional_areas:
 redirect_from:
   - /cloud/before/before-project-owner.html
   - /cloud/onboarding/onboarding-portal.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/start/onboarding.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/start/onboarding.html
 layout: migrated
 ---
 

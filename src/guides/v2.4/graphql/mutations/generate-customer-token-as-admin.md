@@ -2,7 +2,7 @@
 group: graphql
 title: generateCustomerTokenAsAdmin mutation
 contributor_name: EY
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/generate-token-as-admin/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/generate-token-as-admin/
 layout: migrated
 ---
 

@@ -5,7 +5,7 @@ title: Upload your component to the Commerce Marketplace
 menu_title: Upload your component to the Commerce Marketplace
 menu_order: 100
 menu_node:
-migrated_to: https://developer.adobe.com/commerce/php/development/package/distribute-component/
+redirect_to: https://developer.adobe.com/commerce/php/development/package/distribute-component/
 layout: migrated
 ---
 

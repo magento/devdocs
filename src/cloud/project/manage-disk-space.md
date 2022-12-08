@@ -4,7 +4,7 @@ title: Manage disk space
 functional_areas:
   - Cloud
   - Storage
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/storage/manage-disk-space.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/storage/manage-disk-space.html
 layout: migrated
 ---
 

@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
   - Security
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/fastly.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/fastly.html
 layout: migrated
 ---
 

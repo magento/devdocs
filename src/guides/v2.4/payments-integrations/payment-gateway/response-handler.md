@@ -5,7 +5,7 @@ title: Response Handler
 menu_title: Response Handler
 menu_node:
 menu_order: 7
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/response-handler/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/response-handler/
 layout: migrated
 ---
 

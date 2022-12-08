@@ -6,7 +6,7 @@ menu_title: Configuration importers
 menu_order: 2000
 functional_areas:
   - Configuration
-migrated_to: https://developer.adobe.com/commerce/php/development/configuration/importers/
+redirect_to: https://developer.adobe.com/commerce/php/development/configuration/importers/
 layout: migrated
 ---
 

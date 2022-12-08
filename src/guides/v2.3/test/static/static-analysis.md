@@ -25,7 +25,7 @@ For all of the static configuration installations below involving the PHPStorm P
 ### ESLint
 
 {:.bs-callout-info}
-Javascript code analysis is done through [ESLint]({{site.baseurl}}/guides/v2.4/coding-standards/code-standard-javascript.html#eslint-code-analysis).
+Javascript code analysis is done through [ESLint](https://developer.adobe.com/commerce/php/coding-standards/js/#eslint-code-analysis).
 The ESLint rules are set up in `magento-coding-standard`, which is installed on Magento2 via `composer` since it's a development dependency.
 
 1. Go to PHPStorm preferences > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint.

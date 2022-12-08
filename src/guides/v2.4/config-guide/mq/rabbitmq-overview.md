@@ -1,7 +1,7 @@
 ---
 group: configuration-guide
 title: Message Queues Overview
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html
 layout: migrated
 ---
 

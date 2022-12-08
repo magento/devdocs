@@ -8,7 +8,7 @@ menu_order: 11
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-address-renderer/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-address-renderer/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ title: Custom VCL to bypass Fastly cache
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-bypass-to-origin.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-bypass-to-origin.html
 layout: migrated
 ---
 

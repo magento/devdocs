@@ -5,7 +5,7 @@ title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
 menu_node: parent
 menu_order: 8
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/technical-specification.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/technical-specification.html
 layout: migrated
 ---
 

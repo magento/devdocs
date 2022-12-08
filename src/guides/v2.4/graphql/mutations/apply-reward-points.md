@@ -2,7 +2,7 @@
 group: graphql
 title: applyRewardPointsToCart mutation
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/apply-reward-points/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/apply-reward-points/
 layout: migrated
 ---
 

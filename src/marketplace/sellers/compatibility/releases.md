@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Release Compatibility
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/releases/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/releases/
 layout: migrated
 ---
 

@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Configuration
   - Website
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/configure/multiple-sites/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/configure/multiple-sites/
 layout: migrated
 ---
 

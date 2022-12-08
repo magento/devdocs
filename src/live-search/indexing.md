@@ -2,7 +2,7 @@
 group: live-search
 title: Indexing
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/indexing.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/indexing.html
 layout: migrated
 ---
 

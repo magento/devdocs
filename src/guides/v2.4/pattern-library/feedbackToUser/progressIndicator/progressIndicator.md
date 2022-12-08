@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Progress Indicator
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/feedback-to-user/progress-indicator/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/feedback-to-user/progress-indicator/
 layout: migrated
 ---
 Within the Magento application, users sometimes need to wait for a process to be completed by the system. In such case, it is best to communicate that to the user that the system is working the process that the user requested. There are two types of progress indicator: 1.) a progress bar and 2.) a spinner.

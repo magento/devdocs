@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Shared Packages
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/shared-packages/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/shared-packages/
 layout: migrated
 ---
 

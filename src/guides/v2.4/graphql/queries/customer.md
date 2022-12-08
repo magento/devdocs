@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: customer query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/customer/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/customer/
 layout: migrated
 ---
 

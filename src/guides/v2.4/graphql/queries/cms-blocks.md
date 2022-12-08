@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: cmsBlocks query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/cms-blocks/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/cms-blocks/
 layout: migrated
 ---
 

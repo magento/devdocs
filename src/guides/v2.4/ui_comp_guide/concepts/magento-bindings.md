@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Binding syntax
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/binding-syntax/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/binding-syntax/
 layout: migrated
 ---
 

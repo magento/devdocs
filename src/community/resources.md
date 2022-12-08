@@ -3,7 +3,7 @@ group: community
 title: Community Resources
 redirect_from:
   - /community/resources/resources.html
-migrated_to: https://developer.adobe.com/commerce/contributor/community/
+redirect_to: https://developer.adobe.com/commerce/contributor/community/
 layout: migrated
 ---
 

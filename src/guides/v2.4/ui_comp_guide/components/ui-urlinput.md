@@ -3,7 +3,7 @@ group: ui-components-guide
 subgroup: components
 title: urlInput component
 menu_title: urlInput component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/url-input/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/url-input/
 layout: migrated
 ---
 

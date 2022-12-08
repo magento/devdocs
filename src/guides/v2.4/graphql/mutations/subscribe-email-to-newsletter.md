@@ -3,7 +3,7 @@ group: graphql
 title: subscribeEmailToNewsletter mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/subscribe-email-to-newsletter/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/subscribe-email-to-newsletter/
 layout: migrated
 ---
 

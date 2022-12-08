@@ -6,7 +6,7 @@ functional_areas:
   - Integration
   - Setup
   - Services
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/monitor/new-relic.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/monitor/new-relic.html
 layout: migrated
 ---
 

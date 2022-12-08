@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Personal Profile
 redirect_from: /marketplace/sellers/personal-profile.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-personal/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-personal/
 layout: migrated
 ---
 

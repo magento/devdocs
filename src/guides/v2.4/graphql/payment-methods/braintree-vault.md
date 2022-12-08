@@ -3,7 +3,7 @@ group: graphql
 title: Braintree Vault payment method
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/braintree-vault/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/braintree-vault/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ title: Prepare Commerce for Docker
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/setup/initialize-docker/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/setup/initialize-docker/
 layout: migrated
 ---
 

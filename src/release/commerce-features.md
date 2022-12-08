@@ -1,7 +1,7 @@
 ---
 title: Commerce features
 group: release
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/features.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/features.html
 layout: migrated
 ---
 

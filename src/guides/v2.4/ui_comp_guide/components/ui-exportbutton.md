@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: ExportButton component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/export-button/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/export-button/
 layout: migrated
 ---
 

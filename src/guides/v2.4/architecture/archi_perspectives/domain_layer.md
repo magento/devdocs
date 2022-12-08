@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Domain layer
 menu_title: Domain layer
-migrated_to: https://developer.adobe.com/commerce/php/architecture/layers/domain/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/layers/domain/
 layout: migrated
 ---
 

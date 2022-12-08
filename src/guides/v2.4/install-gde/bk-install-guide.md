@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 redirect_from:
   - /guides/v2.4/install-gde/continue-to-install.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/overview.html
 layout: migrated
 ---
 

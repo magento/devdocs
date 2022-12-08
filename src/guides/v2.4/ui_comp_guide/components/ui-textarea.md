@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Textarea component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/text-area/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/text-area/
 layout: migrated
 ---
 

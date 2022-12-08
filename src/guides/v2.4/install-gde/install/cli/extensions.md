@@ -1,7 +1,7 @@
 ---
 group: installation-guide
 title: Install an extension
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/extensions.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/extensions.html
 layout: migrated
 ---
 

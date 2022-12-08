@@ -4,7 +4,7 @@ title: Architecture Guide
 landing-page: Architecture
 menu_title: Get Started
 menu_node: parent
-migrated_to: https://developer.adobe.com/commerce/php/architecture/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/
 layout: migrated
 ---
 

@@ -5,7 +5,7 @@ title: Add CLI commands
 menu_title: Add CLI commands
 menu_node: parent
 menu_order: 1
-migrated_to: https://developer.adobe.com/commerce/php/development/cli-commands/
+redirect_to: https://developer.adobe.com/commerce/php/development/cli-commands/
 layout: migrated
 ---
 

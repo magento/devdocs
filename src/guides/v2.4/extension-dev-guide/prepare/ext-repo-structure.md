@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Extension Repository Structure
-migrated_to: https://developer.adobe.com/commerce/php/development/prepare/extension-repository-structure/
+redirect_to: https://developer.adobe.com/commerce/php/development/prepare/extension-repository-structure/
 layout: migrated
 ---
 

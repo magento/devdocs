@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Application isolation annotation
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-app-isolation/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-app-isolation/
 layout: migrated
 ---
 

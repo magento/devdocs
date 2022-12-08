@@ -2,7 +2,7 @@
 group: graphql
 title: recaptchaV3Config query
 pwa_only: True
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/recaptcha-v3-config/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/recaptcha-v3-config/
 layout: migrated
 ---
 

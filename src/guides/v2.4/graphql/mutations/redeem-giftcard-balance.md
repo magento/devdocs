@@ -2,7 +2,7 @@
 group: graphql
 title: redeemGiftCardBalanceAsStoreCredit mutation
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/redeem-giftcard-balance/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/redeem-giftcard-balance/
 layout: migrated
 ---
 

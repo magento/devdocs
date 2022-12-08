@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Column component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/column/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/column/
 layout: migrated
 ---
 

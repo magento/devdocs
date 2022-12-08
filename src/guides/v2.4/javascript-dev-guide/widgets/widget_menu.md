@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Menu widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/menu/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/menu/
 layout: migrated
 ---
 

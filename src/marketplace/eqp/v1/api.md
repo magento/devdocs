@@ -1,7 +1,7 @@
 ---
 group: marketplace-api
 title: Marketplace EQP API
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/
 layout: migrated
 ---
 

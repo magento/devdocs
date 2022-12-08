@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: View Controller
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/controls/view-controller/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/controls/view-controller/
 layout: migrated
 ---
 Within the Magento application, user may need to view a set of data in more than one way. The view controller is used to switch between the views of data set.

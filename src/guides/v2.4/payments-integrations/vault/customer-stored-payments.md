@@ -6,7 +6,7 @@ menu_title: Display the stored information
 menu_order: 20
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/customer-stored-payments/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/customer-stored-payments/
 layout: migrated
 ---
 

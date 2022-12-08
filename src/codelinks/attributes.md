@@ -2,7 +2,7 @@
 layout: full-width
 title: Retrieving detailed attributes
 group: rest-api
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/attributes
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/attributes
 layout: migrated
 ---
 

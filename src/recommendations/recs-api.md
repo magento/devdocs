@@ -2,7 +2,7 @@
 group: product-recommendations
 title: SDK
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/services/product-recommendations/
+redirect_to: https://developer.adobe.com/commerce/services/product-recommendations/
 layout: migrated
 ---
 

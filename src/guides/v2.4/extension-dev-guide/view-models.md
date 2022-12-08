@@ -3,7 +3,7 @@ title: View models
 contributor_name: Space 48
 contributor_link: https://www.space48.com/
 group: php-developer-guide
-migrated_to: https://developer.adobe.com/commerce/php/development/components/view-models/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/view-models/
 layout: migrated
 ---
 

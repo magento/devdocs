@@ -4,7 +4,7 @@ functional_areas:
   - Install
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Using custom fonts
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/fonts/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/fonts/
 layout: migrated
 ---
 

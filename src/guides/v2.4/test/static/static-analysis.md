@@ -4,7 +4,7 @@ title: Setting up static analysis
 functional_areas:
   - Testing
   - test
-migrated_to: https://developer.adobe.com/commerce/testing/guide/static/analysis/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/static/analysis/
 layout: migrated
 ---
 

@@ -8,7 +8,7 @@ functional_areas:
 redirect_from:
    - /cloud/configure/fastly-vcl-whitelist.html
    - /cloud/cdn/fastly-vcl-whitelist.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-allowlist.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-allowlist.html
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ title: Project structure
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/file-structure.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/file-structure.html
 layout: migrated
 ---
 

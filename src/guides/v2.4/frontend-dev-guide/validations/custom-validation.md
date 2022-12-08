@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Custom validation rules
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/custom-rules/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/custom-rules/
 layout: migrated
 ---
 

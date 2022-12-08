@@ -3,7 +3,7 @@ group: configuration-guide
 title: Google reCAPTCHA
 functional_areas:
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/systems/security/captcha/security-google-recaptcha.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/systems/security/captcha/security-google-recaptcha.html
 layout: migrated
 ---
 

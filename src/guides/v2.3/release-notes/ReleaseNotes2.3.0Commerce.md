@@ -13,7 +13,7 @@ The patch addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/
 
 ## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
 
-An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of {{site.data.var.ee}} open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Admin and subsequently launch malicious code in a store user’s browser.   **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**.
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of {{site.data.var.ee}} open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Admin and subsequently launch malicious code in a store user's browser.   **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**.
 
 This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
 blog post. You can directly access patch code through your Magento account for {{site.data.var.ee}}. Locate the patch by the name. We provide both Git-based and Composer-based patches.
@@ -296,7 +296,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-71061 -->
 
-*  We’ve removed `Zend_Json` from `Setup/Migration.php`. [GitHub-10341](https://github.com/magento/magento2/issues/10341)
+*  We've removed `Zend_Json` from `Setup/Migration.php`. [GitHub-10341](https://github.com/magento/magento2/issues/10341)
 
 <!--- ENGCOM-2610 -->
 
@@ -572,7 +572,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-91465 -->
 
-*  Customers can now change an existing  value in the checkout page’s  **State/Province** field to an alphanumeric value. Previously, when a customer tried to edit this field in this way, Magento did not place the order, and displayed a descriptive error message.
+*  Customers can now change an existing  value in the checkout page's  **State/Province** field to an alphanumeric value. Previously, when a customer tried to edit this field in this way, Magento did not place the order, and displayed a descriptive error message.
 
 <!--- MAGETWO-90971 -->
 
@@ -636,7 +636,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-93963 -->
 
-*  Magento now successfully processes an order even when the customer quickly double-clicks on the minicart’s **Proceed to checkout** button. Previously, if a customer double-clicked this button while the page was loading, Magento emptied the shopping cart.
+*  Magento now successfully processes an order even when the customer quickly double-clicks on the minicart's **Proceed to checkout** button. Previously, if a customer double-clicked this button while the page was loading, Magento emptied the shopping cart.
 
 <!--- ENGCOM-1474 -->
 
@@ -760,7 +760,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- ENGCOM-2116-->
 
-*  Magento now maintains the default products sort order of “newest first” when you upgrade your Magento deployment. Previously, after upgrade, the default products order in categories changed from “newest first” to “oldest first”. [GitHub-15627](https://github.com/magento/magento2/issues/15627)
+*  Magento now maintains the default products sort order of "newest first" when you upgrade your Magento deployment. Previously, after upgrade, the default products order in categories changed from "newest first" to "oldest first". [GitHub-15627](https://github.com/magento/magento2/issues/15627)
 
 <!--- ENGCOM-2612-->
 
@@ -916,7 +916,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-91435 -->
 
-*  Category smart rules now work as expected for partial values when conditions include using a dropdown attribute and "contains”.
+*  Category smart rules now work as expected for partial values when conditions include using a dropdown attribute and "contains".
 
 <!--- MAGETWO-91434 -->
 
@@ -932,7 +932,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-62310 -->
 
-*  A product’s **Use Default Value** check box for attributes is now unchecked by default when you add a new website to a product’s scope.
+*  A product's **Use Default Value** check box for attributes is now unchecked by default when you add a new website to a product's scope.
 
 <!--- MAGETWO-90332 -->
 
@@ -1144,7 +1144,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-75328-->
 
-*  We’ve fixed the display of calculated tax for a logged-in customer when billing and shipping address differed.
+*  We've fixed the display of calculated tax for a logged-in customer when billing and shipping address differed.
 
 ### CMS content
 
@@ -1316,11 +1316,11 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-82633 -->
 
-*  Magento no longer displays the  `Too many password reset requests` message when an administrator attempts to change a customer’s password from the Admin and the **max wait time between password resets** setting has been disabled in the store configuration settings. [GitHub-11409](https://github.com/magento/magento2/issues/11409)
+*  Magento no longer displays the  `Too many password reset requests` message when an administrator attempts to change a customer's password from the Admin and the **max wait time between password resets** setting has been disabled in the store configuration settings. [GitHub-11409](https://github.com/magento/magento2/issues/11409)
 
 <!--- MAGETWO-84237 -->
 
-*  We’ve added methods to support setting text values for data pulled from the `customer_grid_flat` table during CSV export. [GitHub-10765](https://github.com/magento/magento2/issues/10765)
+*  We've added methods to support setting text values for data pulled from the `customer_grid_flat` table during CSV export. [GitHub-10765](https://github.com/magento/magento2/issues/10765)
 
 <!--- MAGETWO-84374 -->
 
@@ -1332,7 +1332,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- ENGCOM-980 -->
 
-*  We’ve improved the error message that Magento displays when an administrator is redirected to a forced password change from the Admin user account page. *Fix submitted by dimonovp in pull request [14199](https://github.com/magento/magento2/pull/14199)*. [GitHub-13768](https://github.com/magento/magento2/issues/13768)
+*  We've improved the error message that Magento displays when an administrator is redirected to a forced password change from the Admin user account page. *Fix submitted by dimonovp in pull request [14199](https://github.com/magento/magento2/pull/14199)*. [GitHub-13768](https://github.com/magento/magento2/issues/13768)
 
 <!-- MAGETWO-93714 -->
 
@@ -1348,11 +1348,11 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-71432 -->
 
-*  We’ve added cast to string for `GroupInterface::CUST_GROUP_ALL` in the customer group source model. [GitHub-10436](https://github.com/magento/magento2/issues/10436)
+*  We've added cast to string for `GroupInterface::CUST_GROUP_ALL` in the customer group source model. [GitHub-10436](https://github.com/magento/magento2/issues/10436)
 
 <!--- ENGCOM-1268 -->
 
-*  Magento now always returns the user data for the current logged user. Previously, you could get another customer’s session information from sections controller without a timestamp. *Fix submitted by rostyslav-hymon in pull request  [14661](https://github.com/magento/magento2/pull/14661)*. [GitHub-14049](https://github.com/magento/magento2/issues/14049)
+*  Magento now always returns the user data for the current logged user. Previously, you could get another customer's session information from sections controller without a timestamp. *Fix submitted by rostyslav-hymon in pull request  [14661](https://github.com/magento/magento2/pull/14661)*. [GitHub-14049](https://github.com/magento/magento2/issues/14049)
 
 <!--- ENGCOM-1146 MAGETWO-85968 -->
 
@@ -1564,7 +1564,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-71034 -->
 
-*  We’ve replaced the usage of `Zend_Json::encode`  in the setup marketplace tests. [GitHub-9236](https://github.com/magento/magento2/issues/9236)
+*  We've replaced the usage of `Zend_Json::encode`  in the setup marketplace tests. [GitHub-9236](https://github.com/magento/magento2/issues/9236)
 
 <!---ENGCOM-1173 -->
 
@@ -1644,7 +1644,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---ENGCOM-2232 -->
 
-*  We’ve fixed backward-incompatible changes to transport variable event parameters that had previously resulted in neither the email or the `$transport` variable being changed as expected.  *Fix submitted by gwharton in pull request [16600](https://github.com/magento/magento2/pull/16600)*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
+*  We've fixed backward-incompatible changes to transport variable event parameters that had previously resulted in neither the email or the `$transport` variable being changed as expected.  *Fix submitted by gwharton in pull request [16600](https://github.com/magento/magento2/pull/16600)*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
 
 <!---ENGCOM-2088 -->
 
@@ -1682,7 +1682,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-71062 -->
 
-*  We’ve removed the usage of `Zend_Json` from the JSON controller. [GitHub-10342](https://github.com/magento/magento2/issues/10342)
+*  We've removed the usage of `Zend_Json` from the JSON controller. [GitHub-10342](https://github.com/magento/magento2/issues/10342)
 
 <!--- MAGETWO-71060-->
 
@@ -1694,7 +1694,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-93969 -->
 
-*  We’ve added a declarative mechanism to limit the HTTP methods that a controller can process by implementing one or more `Http<Method>ActionInterface`.
+*  We've added a declarative mechanism to limit the HTTP methods that a controller can process by implementing one or more `Http<Method>ActionInterface`.
 
 <!--- MAGETWO-71059  MAGETWO-71040-->
 
@@ -1786,7 +1786,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-88084 -->
 
-*  We’ve removed the 30-second timeout limit for the session locking mechanism when Redis is used for session storage.
+*  We've removed the 30-second timeout limit for the session locking mechanism when Redis is used for session storage.
 
 <!--- MAGETWO-87754 -->
 
@@ -2052,7 +2052,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-87153 -->
 
-*  The welcome message now displays the new customer’s first and last name after they have confirmed their account by clicking  the **Confirm Your Account** button in the confirmation email.  [GitHub-12719](https://github.com/magento/magento2/issues/12719)
+*  The welcome message now displays the new customer's first and last name after they have confirmed their account by clicking  the **Confirm Your Account** button in the confirmation email.  [GitHub-12719](https://github.com/magento/magento2/issues/12719)
 
 <!--- MAGETWO-87442 -->
 
@@ -2172,7 +2172,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-91594 -->
 
-*  Import now completes successfully when a product’s CSV entry is split over two import “bunches”.  Previously, Magento threw this error: `Cannot add or update a child row: a foreign key constraint fails`, and import failed.
+*  Import now completes successfully when a product's CSV entry is split over two import "bunches".  Previously, Magento threw this error: `Cannot add or update a child row: a foreign key constraint fails`, and import failed.
 
 <!--- MAGETWO-87974 -->
 
@@ -2312,7 +2312,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-71007 -->
 
-*  We’ve removed `Zend_Json` from the data object, test suite, and package information. [GitHub-10306](https://github.com/magento/magento2/issues/10306), [GitHub-10320](https://github.com/magento/magento2/issues/10320), [GitHub-10340](https://github.com/magento/magento2/issues/10340)
+*  We've removed `Zend_Json` from the data object, test suite, and package information. [GitHub-10306](https://github.com/magento/magento2/issues/10306), [GitHub-10320](https://github.com/magento/magento2/issues/10320), [GitHub-10340](https://github.com/magento/magento2/issues/10340)
 
 <!---ENGCOM-1904 -->
 
@@ -2408,7 +2408,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-87056 -->
 
-*  We’ve fixed an issue with `addCrumb()`. [GitHub-11275](https://github.com/magento/magento2/issues/11275)
+*  We've fixed an issue with `addCrumb()`. [GitHub-11275](https://github.com/magento/magento2/issues/11275)
 
 <!---MAGETWO-87056 -->
 
@@ -2534,7 +2534,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-91701 -->
 
-*  A customer subscription on one store no longer depends on  the customer’s subscription on another store.
+*  A customer subscription on one store no longer depends on  the customer's subscription on another store.
 
 <!--- MAGETWO-84686 -->
 
@@ -2756,7 +2756,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-91934 -->
 
-*  You can change store locale without the exporting and importing configuration data. While Magento is in production mode and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales]({{ site.baseurl }}/cloud/live/sens-data-over.html#change-locales).
+*  You can change store locale without the exporting and importing configuration data. While Magento is in production mode and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/store-settings.html#change-locales).
 
 <!-- MAGETWO-90564 -->
 
@@ -2970,7 +2970,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- ENGCOM-985 -->
 
-*  The invoice grid now shows the correct subtotal for a partial invoice. Previously, it showed the entire order’s subtotal. *Fix submitted by AlexWorking in pull request [14209](https://github.com/magento/magento2/pull/14209)*. [GitHub-13804](https://github.com/magento/magento2/issues/13804)
+*  The invoice grid now shows the correct subtotal for a partial invoice. Previously, it showed the entire order's subtotal. *Fix submitted by AlexWorking in pull request [14209](https://github.com/magento/magento2/pull/14209)*. [GitHub-13804](https://github.com/magento/magento2/issues/13804)
 
 <!--- ENGCOM-1110 -->
 
@@ -2990,7 +2990,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-87064 -->
 
-*  Magento now syncs an order’s shipping and billing addresses as expected when a customer edits the billing address. [GitHub-10856](https://github.com/magento/magento2/issues/10856)
+*  Magento now syncs an order's shipping and billing addresses as expected when a customer edits the billing address. [GitHub-10856](https://github.com/magento/magento2/issues/10856)
 
 <!---ENGCOM-1466 -->
 
@@ -3008,7 +3008,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---ENGCOM-1201 -->
 
-*  We’ve fixed an error in discount calculations that prevented merchants from creating a rule that set a tex rate and 100% discount. Previously, when a tax rule was applied, and a  100% discount was also applied during check out, the shopping cart displayed a negative grand total. *Fix submitted by Stanislav Ilnytskyi in pull request [14468](https://github.com/magento/magento2/pull/14468)*. [GitHub-10790](https://github.com/magento/magento2/issues/10790)
+*  We've fixed an error in discount calculations that prevented merchants from creating a rule that set a tex rate and 100% discount. Previously, when a tax rule was applied, and a  100% discount was also applied during check out, the shopping cart displayed a negative grand total. *Fix submitted by Stanislav Ilnytskyi in pull request [14468](https://github.com/magento/magento2/pull/14468)*. [GitHub-10790](https://github.com/magento/magento2/issues/10790)
 
 ### Sample data
 
@@ -3578,7 +3578,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-72861 -->
 
-*  We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
+*  We've improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 ### Web API
 

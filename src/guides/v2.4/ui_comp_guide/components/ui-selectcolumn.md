@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: SelectColumn component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/select-column/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/select-column/
 layout: migrated
 ---
 

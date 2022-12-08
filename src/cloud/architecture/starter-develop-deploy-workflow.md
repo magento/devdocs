@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 redirect_from:
   - /cloud/basic-information/starter-develop-deploy-workflow.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/starter-develop-deploy-workflow.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/starter-develop-deploy-workflow.html
 layout: migrated
 ---
 

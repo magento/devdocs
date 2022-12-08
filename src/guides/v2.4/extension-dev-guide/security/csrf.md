@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Cross-site request forgery (CSRF)
-migrated_to: https://developer.adobe.com/commerce/php/development/security/cross-site-request-forgery/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/cross-site-request-forgery/
 layout: migrated
 ---
 

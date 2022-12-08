@@ -2,7 +2,7 @@
 subgroup: howtos
 group: ui-components-guide
 title: Configure the TinyMCE editor
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/wysiwyg/configure-tinymce-editor/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/wysiwyg/configure-tinymce-editor/
 layout: migrated
 ---
 

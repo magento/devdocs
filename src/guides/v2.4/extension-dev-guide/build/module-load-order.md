@@ -4,7 +4,7 @@ subgroup: 03_Build
 title: Component load order
 menu_title: Component load order
 menu_order: 7000
-migrated_to: https://developer.adobe.com/commerce/php/development/build/component-load-order/
+redirect_to: https://developer.adobe.com/commerce/php/development/build/component-load-order/
 layout: migrated
 ---
 

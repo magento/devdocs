@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: Identity class
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/develop/identity-class/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/develop/identity-class/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: cloud-guide
 title: Git
 redirect_from:
    - /cloud/project/admin-git-push.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/overview.html
 layout: migrated
 ---
 

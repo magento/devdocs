@@ -3,7 +3,7 @@ group: graphql
 title: resetPassword mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/reset-password/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/reset-password/
 layout: migrated
 ---
 

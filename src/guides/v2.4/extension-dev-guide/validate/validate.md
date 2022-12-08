@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Validate
-migrated_to: https://developer.adobe.com/commerce/php/development/validate/
+redirect_to: https://developer.adobe.com/commerce/php/development/validate/
 layout: migrated
 ---
 

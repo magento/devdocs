@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Commerce B2B Release Notes
-migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/b2b/release-notes.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/b2b/release-notes.html
 layout: migrated
 ---
 

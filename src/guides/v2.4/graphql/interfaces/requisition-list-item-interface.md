@@ -2,7 +2,7 @@
 group: graphql
 title: RequisitionListItemInterface attributes and implementations
 b2b_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/interfaces/item/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/interfaces/item/
 layout: migrated
 ---
 

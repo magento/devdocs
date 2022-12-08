@@ -5,7 +5,7 @@ menu_title: Feedback for Admin Panel Placement and Design
 menu_order: 1
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/admin/placement-and-design/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/admin/placement-and-design/
 layout: migrated
 ---
 

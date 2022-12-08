@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Denial-of-Service (DoS) attacks
-migrated_to: https://developer.adobe.com/commerce/php/development/security/denial-of-service-attacks/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/denial-of-service-attacks/
 layout: migrated
 ---
 

@@ -6,7 +6,7 @@ menu_title: Session-based authentication
 menu_order: 4
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-session/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-session/
 layout: migrated
 ---
 

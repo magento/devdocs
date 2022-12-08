@@ -7,7 +7,7 @@ functional_areas:
   - Search
 redirect_from:
   - /cloud/project/project-conf-files_services-elastic.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/elasticsearch.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/elasticsearch.html
 layout: migrated
 ---
 

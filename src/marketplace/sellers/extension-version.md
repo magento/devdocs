@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Specify the Version
 redirect_from: /marketplace/sellers/creating-a-new-version.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-version/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-version/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ functional_areas:
   - Install
   - System
   - Setup
-migrated_to: https://developer.adobe.com/commerce/contributor/guides/install/change-version/
+redirect_to: https://developer.adobe.com/commerce/contributor/guides/install/change-version/
 layout: migrated
 ---
 

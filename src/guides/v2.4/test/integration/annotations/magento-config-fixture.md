@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Configuration fixture annotation
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-config-fixture/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-config-fixture/
 layout: migrated
 ---
 

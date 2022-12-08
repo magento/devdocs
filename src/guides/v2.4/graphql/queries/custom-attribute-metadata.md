@@ -3,7 +3,7 @@ group: graphql
 title: customAttributeMetadata query
 redirect_from:
   - /guides/v2.3/graphql/reference/custom-attribute-metadata.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/custom-attribute-metadata/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/custom-attribute-metadata/
 layout: migrated
 ---
 

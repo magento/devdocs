@@ -4,7 +4,7 @@ title: Apply and configure a storefront theme
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/apply-storefront/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/apply-storefront/
 layout: migrated
 ---
 

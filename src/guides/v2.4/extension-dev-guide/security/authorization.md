@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Authorization
-migrated_to: https://developer.adobe.com/commerce/php/development/security/authorization/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/authorization/
 layout: migrated
 ---
 

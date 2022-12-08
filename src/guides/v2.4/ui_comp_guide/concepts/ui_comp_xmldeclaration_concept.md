@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: About XML configuration of UI components
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/xml-declaration/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/xml-declaration/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Component registration attribute
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/components-dir/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/components-dir/
 layout: migrated
 ---
 

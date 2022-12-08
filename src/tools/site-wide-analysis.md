@@ -2,7 +2,7 @@
 title: Site-Wide Analysis Tool
 group: tools
 ee_only: true
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/site-wide-analysis-tool/installation.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/site-wide-analysis-tool/installation.html
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Iconography in Admin Pattern Library
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/graphics/iconography/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/graphics/iconography/
 layout: migrated
 ---
 Icons are used throughout the [Admin](https://glossary.magento.com/magento-admin) interface, often as a controls to initiate a function (such as "Filter"), or to direct the user to section (such as "Account").

@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Templates overview
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/
 layout: migrated
 ---
 

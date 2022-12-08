@@ -3,7 +3,7 @@ group: php-developer-guide
 title: Searching with Repositories
 functional_areas:
   - Search
-migrated_to: https://developer.adobe.com/commerce/php/development/components/searching-with-repositories/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/searching-with-repositories/
 layout: migrated
 ---
 

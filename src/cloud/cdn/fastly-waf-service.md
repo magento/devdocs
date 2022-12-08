@@ -6,7 +6,7 @@ functional_areas:
   - Install
   - Security
   - Compliance
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/fastly-waf-service.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/fastly-waf-service.html
 layout: migrated
 ---
 

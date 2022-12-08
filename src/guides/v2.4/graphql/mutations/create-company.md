@@ -2,7 +2,7 @@
 group: graphql
 title: createCompany mutation
 b2b_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/mutations/create/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/mutations/create/
 layout: migrated
 ---
 

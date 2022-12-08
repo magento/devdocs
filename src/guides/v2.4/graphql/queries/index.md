@@ -4,7 +4,7 @@ title: Using queries
 redirect_from:
   - /guides/v2.3/graphql/search-pagination.html
   - /guides/v2.3/graphql/queries.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/usage/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: product-recommendations
 title: Handle Cookie Restrictions
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/setting-cookie.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/setting-cookie.html
 layout: migrated
 ---
 

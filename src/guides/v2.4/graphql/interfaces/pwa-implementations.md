@@ -2,7 +2,7 @@
 group: graphql
 title: PWA implementations and attributes
 pwa_only: True
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/pwa-implementations/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/pwa-implementations/
 layout: migrated
 ---
 

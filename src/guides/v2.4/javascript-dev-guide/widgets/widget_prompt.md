@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Prompt widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/prompt/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/prompt/
 layout: migrated
 ---
 

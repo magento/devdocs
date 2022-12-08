@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: deletePaymentToken mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/delete-payment-token/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/delete-payment-token/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 1_Javascript
 title: JavaScript
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/
 layout: migrated
 ---
 

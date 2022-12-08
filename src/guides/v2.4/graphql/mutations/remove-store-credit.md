@@ -2,7 +2,7 @@
 group: graphql
 title: removeStoreCreditFromCart mutation
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/remove-store-credit/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/remove-store-credit/
 layout: migrated
 ---
 

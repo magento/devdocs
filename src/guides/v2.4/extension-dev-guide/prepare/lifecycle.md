@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Extension Lifecycle
 menu_title: Extension lifecycle
-migrated_to: https://developer.adobe.com/commerce/php/development/prepare/extension-lifecycle/
+redirect_to: https://developer.adobe.com/commerce/php/development/prepare/extension-lifecycle/
 layout: migrated
 ---
 

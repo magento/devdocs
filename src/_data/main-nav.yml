@@ -256,7 +256,7 @@
           versionless: true
 
         - label: Commerce Reporting API
-          url: https://devdocs.magento.com/mbi/docs/getting-started.html
+          url: /mbi/docs/getting-started.html
           versionless: true
 
 - label: Testing
@@ -332,7 +332,7 @@
       include_versions: ["2.3"]
 
     - label: Catalog Service
-      url: /catalog-service/index.html
+      url: https://experienceleague.adobe.com/docs/commerce-merchant-services/catalog-service/overview.html
       versionless: true
 
     - label: Checkout
@@ -352,7 +352,7 @@
       include_versions: ["2.3"]
 
     - label: Live Search
-      url: /live-search/overview.html
+      url: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/guide-overview.html
       versionless: true
 
     - label: Commerce Marketplace
@@ -367,7 +367,7 @@
       url: https://omsdocs.magento.com/en/
 
     - label: Page Builder
-      url: /page-builder/docs/index.html
+      url: https://developer.adobe.com/commerce/frontend-core/page-builder/
       versionless: true
 
     - label: Payment Integrations
@@ -375,7 +375,7 @@
       include_versions: ["2.4"]
 
     - label: Product Recommendations Developer Guide
-      url: /recommendations/product-recs.html
+      url: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/development-overview.html
       versionless: true
 
     - label: Security and Compliance
@@ -383,7 +383,7 @@
       versionless: true
 
     - label: Shared Services
-      url: https://developer-stage.adobe.com/commerce/services/shared-services/
+      url: https://developer.adobe.com/commerce/services/shared-services/
       versionless: true
 
     - label: Staging

@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Module dependencies
 menu_title: Module dependencies
-migrated_to: https://developer.adobe.com/commerce/php/architecture/modules/dependencies/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/modules/dependencies/
 layout: migrated
 ---
 

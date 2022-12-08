@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: CreditMemoItemInterface attributes and implementations
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/credit-memo-item/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/credit-memo-item/
 layout: migrated
 ---
 

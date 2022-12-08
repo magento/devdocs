@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Message Queues
-migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/
 layout: migrated
 ---
 

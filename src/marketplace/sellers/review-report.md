@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Review Report
 redirect_from: /marketplace/sellers/test-reports.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/review-report/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/review-report/
 layout: migrated
 ---
 

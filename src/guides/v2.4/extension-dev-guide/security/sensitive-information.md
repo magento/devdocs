@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Sensitive Information
-migrated_to: https://developer.adobe.com/commerce/php/development/security/sensitive-information/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/sensitive-information/
 layout: migrated
 ---
 

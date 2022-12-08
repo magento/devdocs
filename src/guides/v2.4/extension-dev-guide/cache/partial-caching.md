@@ -5,7 +5,7 @@ title: Partial caching
 menu_title: Partial caching
 menu_order: 1
 menu_node: parent
-migrated_to: https://developer.adobe.com/commerce/php/development/cache/partial/
+redirect_to: https://developer.adobe.com/commerce/php/development/cache/partial/
 layout: migrated
 ---
 

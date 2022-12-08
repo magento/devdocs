@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: MultiselectColumn component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/multiselect-column/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/multiselect-column/
 layout: migrated
 ---
 

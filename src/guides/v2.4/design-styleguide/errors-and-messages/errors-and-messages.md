@@ -2,7 +2,7 @@
 group: admin-style-guide
 subgroup: Writing and Content
 title: Admin Errors and Messages Writing
-migrated_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/errors-and-messages/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/errors-and-messages/
 layout: migrated
 ---
 Magento uses different types of dynamic messaging to alert users when:

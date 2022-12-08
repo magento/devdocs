@@ -4,7 +4,7 @@ title: Configure image resizing for remote storage
 functional_areas:
   - Configuration
   - System
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/remote-storage/remote-storage-image-resize.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/remote-storage/remote-storage-image-resize.html
 layout: migrated
 ---
 

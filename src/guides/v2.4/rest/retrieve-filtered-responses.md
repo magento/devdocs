@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Retrieve filtered responses for REST endpoints
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/retrieve-filtered-responses/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/retrieve-filtered-responses/
 layout: migrated
 ---
 

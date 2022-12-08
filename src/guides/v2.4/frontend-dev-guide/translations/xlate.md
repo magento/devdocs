@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Translations overview
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/
 layout: migrated
 ---
 

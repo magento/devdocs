@@ -5,7 +5,7 @@ contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/
 layout: migrated
 ---
 

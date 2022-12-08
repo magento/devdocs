@@ -4,7 +4,7 @@ title: Monitor performance
 functional_areas:
   - Cloud
   - Storage
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/monitor/performance.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/monitor/performance.html
 layout: migrated
 ---
 

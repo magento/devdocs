@@ -6,7 +6,7 @@ menu_title: Service contracts
 menu_order: 2
 functional_areas:
   - Services
-migrated_to: https://developer.adobe.com/commerce/php/development/components/service-contracts/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/service-contracts/
 layout: migrated
 ---
 

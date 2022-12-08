@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: Exception handling
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/develop/exceptions/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/develop/exceptions/
 layout: migrated
 ---
 

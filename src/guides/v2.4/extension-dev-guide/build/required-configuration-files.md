@@ -2,7 +2,7 @@
 group: php-developer-guide
 subgroup: 03_Build
 title: Define your configuration files
-migrated_to: https://developer.adobe.com/commerce/php/development/build/required-configuration-files/
+redirect_to: https://developer.adobe.com/commerce/php/development/build/required-configuration-files/
 layout: migrated
 ---
 

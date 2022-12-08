@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: ThumbnailColumn component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/thumbnail-column/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/thumbnail-column/
 layout: migrated
 ---
 

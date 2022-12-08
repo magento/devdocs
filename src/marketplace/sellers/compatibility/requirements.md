@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Compatibility Requirements
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/requirements/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/requirements/
 layout: migrated
 ---
 

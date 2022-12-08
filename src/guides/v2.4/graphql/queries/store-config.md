@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: storeConfig query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/store-config/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/store-config/
 layout: migrated
 ---
 

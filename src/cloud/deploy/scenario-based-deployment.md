@@ -4,7 +4,7 @@ title: Scenario-based deployment
 functional_areas:
   - Cloud
   - Deploy
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/scenario-based.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/scenario-based.html
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: removeProductsFromWishlist mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/remove-products/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/remove-products/
 layout: migrated
 ---
 

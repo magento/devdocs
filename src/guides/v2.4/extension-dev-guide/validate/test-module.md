@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Test your component
-migrated_to: https://developer.adobe.com/commerce/php/development/validate/test-component/
+redirect_to: https://developer.adobe.com/commerce/php/development/validate/test-component/
 layout: migrated
 ---
 

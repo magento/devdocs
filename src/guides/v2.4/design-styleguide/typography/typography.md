@@ -5,7 +5,7 @@ title: Admin Typography
 menu_title: Typography
 menu_order: 4
 menu_node:
-migrated_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/typography/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/typography/
 layout: migrated
 ---
 

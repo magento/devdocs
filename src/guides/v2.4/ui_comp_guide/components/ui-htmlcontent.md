@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: HtmlContent component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/html-content/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/html-content/
 layout: migrated
 ---
 

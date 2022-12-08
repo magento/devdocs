@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Layout overview
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/
 layout: migrated
 ---
 

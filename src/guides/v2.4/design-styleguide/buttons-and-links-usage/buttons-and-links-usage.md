@@ -5,7 +5,7 @@ title: Admin Buttons and Links Usage
 menu_title: Buttons and Links Usage
 menu_order: 3
 menu_node:
-migrated_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/buttons-and-links/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/buttons-and-links/
 layout: migrated
 ---
 Buttons are primarily used for task-based navigation, and links are primarily used for site navigation.

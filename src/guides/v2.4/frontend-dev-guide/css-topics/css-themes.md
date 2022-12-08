@@ -4,7 +4,7 @@ title: Include CSS
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/themes/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/themes/
 layout: migrated
 ---
 

@@ -113,7 +113,7 @@ Reindexing all indexers can take a long time for stores with large numbers of pr
 
 ### Reindexing in parallel mode
 
-Indexers are scoped and multi-threaded to support reindexing in parallel mode. It parallelizes by the indexer’s dimension and executes across multiple threads, reducing processing time.
+Indexers are scoped and multi-threaded to support reindexing in parallel mode. It parallelizes by the indexer's dimension and executes across multiple threads, reducing processing time.
 
 In this context, `dimension` is the scope of the reindexing, for instance a `website` or just a specific `customer_group`.
 
@@ -233,7 +233,7 @@ Catalog Search:                                    Update on Save
 ### Configure indexers
 
 {:.bs-callout-info}
-Before switching indexer modes, we recommend putting your website to [maintenance]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html) mode and [disable cron]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html#disable-cron-jobs). This will ensure you do not suffer database locks.
+Before switching indexer modes, we recommend putting your website to [maintenance]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html) mode and [disable cron](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/crons-property.html#disable-cron-jobs). This will ensure you do not suffer database locks.
 
 To specify the indexer configuration:
 

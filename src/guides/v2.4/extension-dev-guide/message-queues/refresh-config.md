@@ -4,7 +4,7 @@ title: Handling outdated in-memory object states
 functional_areas:
   - Configuration
   - System
-migrated_to: https://developer.adobe.com/commerce/php/development/components/message-queues/object-states/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/object-states/
 layout: migrated
 ---
 

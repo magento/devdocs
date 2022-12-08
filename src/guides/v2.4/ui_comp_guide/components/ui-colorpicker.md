@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: ColorPicker component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/color-picker/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/color-picker/
 layout: migrated
 ---
 

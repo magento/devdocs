@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: routes query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/route/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/route/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: graphql
 title: addProductsToCart mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/add-products/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/add-products/
 layout: migrated
 ---
 

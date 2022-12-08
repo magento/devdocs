@@ -5,7 +5,7 @@ title: Package
 menu_title: Package
 menu_order: 1
 menu_node: parent
-migrated_to: https://developer.adobe.com/commerce/php/development/package/
+redirect_to: https://developer.adobe.com/commerce/php/development/package/
 layout: migrated
 ---
 

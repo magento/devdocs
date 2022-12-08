@@ -2,7 +2,7 @@
 group: catalog-service
 title: Catalog Service for Adobe Commerce
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/catalog-service/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/catalog-service/overview.html
 layout: migrated
 ---
 

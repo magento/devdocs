@@ -558,7 +558,7 @@ entries:
   - Major Update
   - Automation
   - 2.4.5
-- description: Updated the [Backward incompatible changes reference](https://devdocs.magedevteam.com/710/guides/v2.4/release-notes/backward-incompatible-changes/reference.html).
+- description: Updated the [Backward incompatible changes reference](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html).
   versions: 2.4.5
   type: Major Update
   date: August 9, 2022
@@ -812,7 +812,7 @@ entries:
   labels:
   - Technical
 - description: The [B2B Developer Guide](https://devdocs.magento.com/guides/v2.4/b2b/bk-b2b.html)
-    has moved to the [Adobe Developer documentation](https://developer-stage.adobe.com/commerce/webapi/rest/b2b/)
+    has moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/webapi/rest/b2b/)
     and will be redirected soon.
   versions: 2.4.x
   type: Major Update
@@ -826,7 +826,7 @@ entries:
   - 2.4.x
   - migration
 - description: The [Inventory Management overview](https://devdocs.magento.com/guides/v2.4/inventory/index.html)
-    topic moved to the [Adobe Developer documentation](https://developer-stage.adobe.com/commerce/webapi/rest/modules/inventory/)
+    topic moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/)
     and will be redirected soon.
   versions: 2.4.x
   type: Major Update

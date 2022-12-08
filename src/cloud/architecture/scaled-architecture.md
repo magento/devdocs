@@ -3,7 +3,7 @@ group: cloud-guide
 title: Scaled architecture
 functional_areas:
   - Cloud
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/scaled-architecture.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/scaled-architecture.html
 layout: migrated
 ---
 

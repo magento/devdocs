@@ -4,7 +4,7 @@ subgroup: 01_Coding standards
 title: DocBlock standard
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/coding-standards/docblock/
+redirect_to: https://developer.adobe.com/commerce/php/coding-standards/docblock/
 layout: migrated
 ---
 

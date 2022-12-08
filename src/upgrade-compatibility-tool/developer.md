@@ -6,7 +6,7 @@ redirect_from:
   - /safe-upgrade-tool/developer.html
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html
 layout: migrated
 ---
 

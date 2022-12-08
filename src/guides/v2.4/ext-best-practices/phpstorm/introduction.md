@@ -3,7 +3,7 @@ group: extension-best-practices
 title: PHPStorm plugin
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/
 layout: migrated
 ---
 

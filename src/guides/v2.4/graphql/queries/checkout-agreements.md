@@ -3,7 +3,7 @@ group: graphql
 title: checkoutAgreements query
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/agreements/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/agreements/
 layout: migrated
 ---
 

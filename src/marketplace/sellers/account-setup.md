@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Set Up Your Developer Account
 redirect_from: /marketplace/sellers/account-setup-overview.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/account-setup/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/account-setup/
 layout: migrated
 ---
 

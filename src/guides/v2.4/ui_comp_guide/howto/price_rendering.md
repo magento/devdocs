@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Render prices on the frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/price-rendering/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/price-rendering/
 layout: migrated
 ---
 

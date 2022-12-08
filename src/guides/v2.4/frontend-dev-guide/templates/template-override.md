@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Templates basic concepts
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/override/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/override/
 layout: migrated
 ---
 

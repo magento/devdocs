@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Enable or disable your component
-migrated_to: https://developer.adobe.com/commerce/php/development/build/component-management/
+redirect_to: https://developer.adobe.com/commerce/php/development/build/component-management/
 layout: migrated
 ---
 

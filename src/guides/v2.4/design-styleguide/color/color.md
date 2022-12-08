@@ -5,7 +5,7 @@ title: Admin Color
 menu_title: Color
 menu_order: 1
 menu_node:
-migrated_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/color/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/color/
 layout: migrated
 ---
 

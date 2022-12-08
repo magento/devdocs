@@ -6,7 +6,7 @@ menu_title: Proxies
 menu_order: 7
 contributor_name: Classy Llama
 contributor_link: https://www.classyllama.com/
-migrated_to: https://developer.adobe.com/commerce/php/development/components/proxies/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/proxies/
 layout: migrated
 ---
 

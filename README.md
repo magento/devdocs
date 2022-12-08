@@ -10,7 +10,7 @@ Welcome! This site contains the latest Adobe Commerce and Magento Open Source de
 >
 >[Adobe Commerce Documentation](https://experienceleague.adobe.com/docs/commerce.html) (Adobe Experience League)—Plan, implement, operate, upgrade, and maintain your Commerce projects
 >
-> Some content was consolidated or moved to different guides. If you can't find a topic, check the [Migrated Topics](https://devdocs.magento.com/migrated.html) list for the new link.
+> Some content was consolidated or moved to different guides.
 >
 > We welcome contributions to migrated content! You can find similar links to GitHub on the Adobe sites.
 

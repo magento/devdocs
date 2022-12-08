@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Extend a layout
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/extend/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/extend/
 layout: migrated
 ---
 

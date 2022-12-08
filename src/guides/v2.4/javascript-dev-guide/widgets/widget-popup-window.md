@@ -4,7 +4,7 @@ subgroup: 3_Widgets
 title: PopupWindow widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/popup-window/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/popup-window/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: marketplace-api
 title: Getting started
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/getting-started/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/getting-started/
 layout: migrated
 ---
 

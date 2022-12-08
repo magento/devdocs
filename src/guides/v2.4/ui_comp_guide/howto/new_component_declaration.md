@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Declare a custom UI component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/new-component-declaration/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/new-component-declaration/
 layout: migrated
 ---
 

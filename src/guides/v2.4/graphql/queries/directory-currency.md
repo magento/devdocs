@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: currency query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/currency/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/currency/
 layout: migrated
 ---
 

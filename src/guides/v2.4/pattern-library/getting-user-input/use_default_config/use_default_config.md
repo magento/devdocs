@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Use Default Config
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/getting-user-input/use-default-config/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/getting-user-input/use-default-config/
 layout: migrated
 ---
 In the [Admin](https://glossary.magento.com/magento-admin) some textfields can inherit default values (which have been set in config by the Merchant). A user has the ability to overwrite these default values at the page level. The "Use Default Value" or "Use Configuration Value" controls allow the user to revert an overwritten textfield value to the original default value.

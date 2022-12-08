@@ -3,7 +3,7 @@ group: graphql
 title: Debugging GraphQL queries
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/develop/debugging/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/develop/debugging/
 layout: migrated
 ---
 

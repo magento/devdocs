@@ -7,7 +7,7 @@ menu_node:
 menu_order: 1
 functional_areas:
   - Tools
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/best-practices.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/best-practices.html
 layout: migrated
 ---
 

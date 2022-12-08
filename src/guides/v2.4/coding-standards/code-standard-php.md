@@ -7,7 +7,7 @@ menu_title: PHP coding standard
 menu_order: 2
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/coding-standards/php/
+redirect_to: https://developer.adobe.com/commerce/php/coding-standards/php/
 layout: migrated
 ---
 

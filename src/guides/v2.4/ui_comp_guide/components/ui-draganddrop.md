@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: DragAndDrop component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/drag-and-drop/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/drag-and-drop/
 layout: migrated
 ---
 

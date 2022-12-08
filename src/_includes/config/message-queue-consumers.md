@@ -23,4 +23,4 @@ bin/magento queue:consumers:start <consumer_name> &
 See [queue:consumers:start]({{ page.baseurl }}/reference/cli/magento-commerce.html#queueconsumersstart) in the _Magento command-line reference_ for details about the command options, parameters, and values.
 
 {:.bs-callout-info}
-The `--multi-process` option is present in the `queue:consumers:start` command, but to run consumers with parallel processes, configure the [`multiple_processes`]({{ site.baseurl }}/guides/v2.4/config-guide/mq/manage-message-queues.html#configuration) option in `/app/etc/env.php`. Otherwise, if `queue:consumers:start` is called with the `--multi-process` option, it will only work on a single thread.
+The `--multi-process` option is present in the `queue:consumers:start` command, but to run consumers with parallel processes, configure the [`multiple_processes`](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/manage-message-queues.html#configuration) option in `/app/etc/env.php`. Otherwise, if `queue:consumers:start` is called with the `--multi-process` option, it will only work on a single thread.

@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Admin
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/admin/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/admin/
 layout: migrated
 ---
 

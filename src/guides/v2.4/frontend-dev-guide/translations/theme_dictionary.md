@@ -4,7 +4,7 @@ title: Use translation dictionary to customize strings
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/dictionary/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/dictionary/
 layout: migrated
 ---
 

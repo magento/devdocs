@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: PayPal Payflow Link payment method
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-link/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-link/
 layout: migrated
 ---
 

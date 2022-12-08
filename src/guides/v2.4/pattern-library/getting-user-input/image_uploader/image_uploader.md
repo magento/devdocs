@@ -1,7 +1,7 @@
 ---
 group: admin-pattern-library
 title: Image Uploader
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/getting-user-input/image-uploader/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/getting-user-input/image-uploader/
 layout: migrated
 ---
 The Image uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These images may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.

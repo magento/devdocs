@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: revokeCustomerToken mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/revoke-token/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/revoke-token/
 layout: migrated
 ---
 

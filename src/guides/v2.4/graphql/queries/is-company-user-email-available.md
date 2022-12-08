@@ -2,7 +2,7 @@
 group: graphql
 title: isCompanyUserEmailAvailable query
 b2b_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/queries/is-company-user-email-available/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/queries/is-company-user-email-available/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ title: giftRegistryTypes query
 ee_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/types/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/types/
 layout: migrated
 ---
 

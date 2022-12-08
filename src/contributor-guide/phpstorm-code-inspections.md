@@ -1,7 +1,7 @@
 ---
 group: contributor-guide
 title: PHPStorm plugin code inspections
-migrated_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/phpstorm-code-inspections/
+redirect_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/phpstorm-code-inspections/
 layout: migrated
 ---
 

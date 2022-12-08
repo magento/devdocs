@@ -3,7 +3,7 @@ group: php-developer-guide
 title: List of events
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com
-migrated_to: https://developer.adobe.com/commerce/php/development/components/events-and-observers/event-list/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/events-and-observers/event-list/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Templates customization walkthrough
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/walkthrough/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/walkthrough/
 layout: migrated
 ---
 

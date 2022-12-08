@@ -4,7 +4,7 @@ title: Additional tools for frontend developers
 functional_areas:
   - Frontend
   - Tools
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/tools/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/tools/
 layout: migrated
 ---
 
