@@ -3,7 +3,7 @@ group: payments-integrations
 title: Payment Token
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/payment-token/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/payment-token/
 layout: migrated
 ---
 

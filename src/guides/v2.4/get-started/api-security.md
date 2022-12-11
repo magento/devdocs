@@ -3,7 +3,7 @@ group: web-api
 title: API security
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/api-security/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/api-security/
 layout: migrated
 ---
 

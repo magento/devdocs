@@ -4,7 +4,7 @@ title: Install a third-party storefront theme
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/install/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/install/
 layout: migrated
 ---
 

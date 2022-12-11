@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Register your component
-migrated_to: https://developer.adobe.com/commerce/php/development/build/component-registration/
+redirect_to: https://developer.adobe.com/commerce/php/development/build/component-registration/
 layout: migrated
 ---
 

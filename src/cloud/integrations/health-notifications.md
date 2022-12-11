@@ -4,7 +4,7 @@ title: Health notifications
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/health-notifications.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/health-notifications.html
 layout: migrated
 ---
 

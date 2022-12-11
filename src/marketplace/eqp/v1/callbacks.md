@@ -1,7 +1,7 @@
 ---
 group: marketplace-api
 title: API callbacks
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/callbacks/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/callbacks/
 layout: migrated
 ---
 

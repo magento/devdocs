@@ -4,7 +4,7 @@ subgroup: 3_Widgets
 title: QuickSearch widget
 functional_areas:
   - Search
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/quick-search/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/quick-search/
 layout: migrated
 ---
 

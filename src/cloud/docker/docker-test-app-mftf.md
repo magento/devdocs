@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 redirect_from:
   - /cloud/docker/docker-mftf.html
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/
 layout: migrated
 ---
 

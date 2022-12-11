@@ -4,7 +4,7 @@ title: Theme structure
 functional_areas:
   - Frontend
   - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/structure/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/structure/
 layout: migrated
 ---
 

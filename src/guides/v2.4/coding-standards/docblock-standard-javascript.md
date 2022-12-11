@@ -7,7 +7,7 @@ menu_title: JavaScript DocBlock standard
 menu_order: 6
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/coding-standards/js/
+redirect_to: https://developer.adobe.com/commerce/php/coding-standards/js/
 layout: migrated
 ---
 

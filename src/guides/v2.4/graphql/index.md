@@ -2,7 +2,7 @@
 group: graphql
 title: GraphQL Overview
 landing-page: GraphQL Developer's Guide
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/
 layout: migrated
 ---
 

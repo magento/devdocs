@@ -3,7 +3,7 @@ group: software-update-guide
 title: Upgrade best practices
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/best-practices.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/best-practices.html
 layout: migrated
 ---
 

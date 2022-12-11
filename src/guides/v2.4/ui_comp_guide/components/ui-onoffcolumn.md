@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: OnOffColumn component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/on-off-column/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/on-off-column/
 layout: migrated
 ---
 

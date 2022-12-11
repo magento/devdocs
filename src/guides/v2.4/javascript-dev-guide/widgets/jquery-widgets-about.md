@@ -1,7 +1,7 @@
 ---
 group: javascript-developer-guide
 title: jQuery widgets
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/
 layout: migrated
 ---
 

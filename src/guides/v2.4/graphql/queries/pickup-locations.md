@@ -3,7 +3,7 @@ group: graphql
 title: pickupLocations query
 contributor_name: Oleksandr Kravchuk
 contributor_link: https://github.com/swnsma
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/queries/pickup-locations/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/queries/pickup-locations/
 layout: migrated
 ---
 

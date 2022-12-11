@@ -2,7 +2,7 @@
 group: graphql
 title: removeGiftRegistryItems mutation
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/remove-items/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/remove-items/
 layout: migrated
 ---
 

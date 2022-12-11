@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/secure-cron-php.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/secure-cron-php.html
 layout: migrated
 ---
 

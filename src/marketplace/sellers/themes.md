@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Themes
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/themes/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/themes/
 layout: migrated
 ---
 

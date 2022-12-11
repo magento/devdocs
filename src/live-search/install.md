@@ -2,7 +2,7 @@
 group: live-search
 title: Install Live Search
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/onboard/install.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/onboard/install.html
 layout: migrated
 ---
 

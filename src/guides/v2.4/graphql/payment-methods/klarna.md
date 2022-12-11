@@ -3,7 +3,7 @@ group: graphql
 title: Klarna payment method
 contributor_name: Klarna
 contributor_link: https://www.klarna.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/klarna/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/klarna/
 layout: migrated
 ---
 

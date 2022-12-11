@@ -6,7 +6,7 @@ functional_areas:
   - Search
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/search/search-stopwords.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/search/search-stopwords.html
 layout: migrated
 ---
 

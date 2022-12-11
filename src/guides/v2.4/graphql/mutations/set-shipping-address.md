@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: setShippingAddressesOnCart mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-shipping-address/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-shipping-address/
 layout: migrated
 ---
 

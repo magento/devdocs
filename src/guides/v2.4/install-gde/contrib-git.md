@@ -4,7 +4,7 @@ functional_areas:
   - Install
   - System
   - Setup
-migrated_to: https://developer.adobe.com/commerce/contributor/guides/install/
+redirect_to: https://developer.adobe.com/commerce/contributor/guides/install/
 layout: migrated
 ---
 

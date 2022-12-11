@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Custom import entity
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/backend/create-custom-import-entity/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/backend/create-custom-import-entity/
 layout: migrated
 ---
 

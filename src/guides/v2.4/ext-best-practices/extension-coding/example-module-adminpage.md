@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Creating an admin page
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/create-admin-page/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/create-admin-page/
 layout: migrated
 ---
 

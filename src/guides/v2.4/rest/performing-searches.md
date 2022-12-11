@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Search using REST endpoints
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches/
 layout: migrated
 ---
 

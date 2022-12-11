@@ -1,7 +1,7 @@
 ---
 group: release
 title: Adobe Commerce Beta program
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/beta-program.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/beta-program.html
 layout: migrated
 ---
 

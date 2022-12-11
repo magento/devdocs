@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
   - Search
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/opensearch.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/opensearch.html
 layout: migrated
 ---
 

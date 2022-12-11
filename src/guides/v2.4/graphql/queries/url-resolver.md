@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: urlResolver query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/url-resolver/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/url-resolver/
 layout: migrated
 ---
 

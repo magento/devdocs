@@ -6,7 +6,7 @@ menu_title: Get payment information from frontend to backend
 menu_order: 6
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/get-payment-info/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/get-payment-info/
 layout: migrated
 ---
 

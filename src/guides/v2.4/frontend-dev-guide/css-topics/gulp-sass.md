@@ -4,7 +4,7 @@ title: Use Sass preprocessor and Gulp task runner
 functional_areas:
   - Frontend
   - Tools
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/custom-preprocessor/gulp-sass/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/custom-preprocessor/gulp-sass/
 layout: migrated
 ---
 

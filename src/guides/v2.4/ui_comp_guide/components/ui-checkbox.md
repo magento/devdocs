@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Checkbox component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/checkbox/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/checkbox/
 layout: migrated
 ---
 

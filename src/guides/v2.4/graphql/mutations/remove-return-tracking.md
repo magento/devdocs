@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: removeReturnTracking mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/remove-return-tracking/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/remove-return-tracking/
 layout: migrated
 ---
 

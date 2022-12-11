@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Timeline Dashboard
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/staging-patterns/timeline-dashboard/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/staging-patterns/timeline-dashboard/
 layout: migrated
 ---
 This dashboard provides a page where events and processes can be viewed and managed in one place.

@@ -1,7 +1,7 @@
 ---
 group: how-do-i
 title: Customize the design
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-admin-design/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-admin-design/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Loader widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/loader/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/loader/
 layout: migrated
 ---
 

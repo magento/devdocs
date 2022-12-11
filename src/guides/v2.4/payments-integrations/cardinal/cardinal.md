@@ -1,7 +1,7 @@
 ---
 group: payments-integrations
 title: CardinalCommerce 3-D Secure
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/cardinal/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/cardinal/
 layout: migrated
 ---
 

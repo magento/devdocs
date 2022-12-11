@@ -1,7 +1,7 @@
 ---
 group: extensions
 title: Introduction
-migrated_to: https://experienceleague.adobe.com/docs/commerce-admin/start/resources/extensions.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/start/resources/extensions.html
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Common layout customization tasks
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/xml-manage/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/xml-manage/
 layout: migrated
 ---
 

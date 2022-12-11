@@ -6,7 +6,7 @@ functional_areas:
   - Setup
 redirect_from:
   - /cloud/project/project-conf-files_services-mysql.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/mysql.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/mysql.html
 layout: migrated
 ---
 

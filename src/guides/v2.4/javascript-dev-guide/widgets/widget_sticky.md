@@ -5,7 +5,7 @@ title: Sticky widget
 functional_areas:
  - Frontend
  - Theme
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/sticky/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/sticky/
 layout: migrated
 ---
 

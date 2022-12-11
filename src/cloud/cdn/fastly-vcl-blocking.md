@@ -7,7 +7,7 @@ redirect_from:
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-blocking.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-blocking.html
 layout: migrated
 ---
 

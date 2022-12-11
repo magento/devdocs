@@ -1,7 +1,7 @@
 ---
 group: compliance
 title: Personal Information Reference (Magento 1.x)
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/reference/data-m1.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/reference/data-m1.html
 layout: migrated
 ---
 

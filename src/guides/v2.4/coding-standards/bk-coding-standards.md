@@ -8,7 +8,7 @@ menu_order: 1
 menu_node: parent
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/coding-standards/
+redirect_to: https://developer.adobe.com/commerce/php/coding-standards/
 layout: migrated
 ---
 <!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/url) without informing engineering! -->

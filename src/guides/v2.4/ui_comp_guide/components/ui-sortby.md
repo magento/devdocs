@@ -3,7 +3,7 @@ group: ui-components-guide
 title: Sortby component
 contributor_name: Shankar Konar
 contributor_link: https://github.com/konarshankar07
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/sortby/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/sortby/
 layout: migrated
 ---
 

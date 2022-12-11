@@ -5,7 +5,7 @@ title: Admin Page Grids
 menu_title: Page Grids
 menu_order: 3
 menu_node:
-migrated_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/page-grids/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/page-grids/
 layout: migrated
 ---
 In the [Admin](https://glossary.magento.com/magento-admin), a grid is used on all pages to establish global layouts for page templates. The grid assigns a set number of columns and rows for a page, and designers can create a layout by dividing the columns into sections, where design patterns and content can be placed.

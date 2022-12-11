@@ -2,7 +2,7 @@
 group: graphql
 title: attributesMetadata query
 pwa_only: True
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/attributes-metadata/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/attributes-metadata/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: customerOrders query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/orders/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/orders/
 layout: migrated
 ---
 {:.bs-callout-warning}

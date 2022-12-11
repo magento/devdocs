@@ -3,7 +3,7 @@ group: graphql
 title: Grouped product data types
 redirect_from:
   - /guides/v2.4/graphql/product/grouped-product.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/grouped/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/grouped/
 layout: migrated
 ---
 

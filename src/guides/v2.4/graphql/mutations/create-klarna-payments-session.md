@@ -3,7 +3,7 @@ group: graphql
 title: createKlarnaPaymentsSession mutation
 contributor_name: Klarna
 contributor_link: https://www.klarna.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-klarna-payments-session/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-klarna-payments-session/
 layout: migrated
 ---
 

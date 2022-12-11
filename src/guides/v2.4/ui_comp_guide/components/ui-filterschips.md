@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: FiltersChips component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/filters-chips/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/filters-chips/
 layout: migrated
 ---
 

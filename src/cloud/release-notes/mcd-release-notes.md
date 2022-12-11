@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-docker.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-docker.html
 layout: migrated
 ---
 

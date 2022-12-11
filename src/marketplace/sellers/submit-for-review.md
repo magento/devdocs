@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Review Process
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-review/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-review/
 layout: migrated
 ---
 

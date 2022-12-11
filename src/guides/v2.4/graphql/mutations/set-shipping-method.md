@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: setShippingMethodsOnCart mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-shipping-method/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-shipping-method/
 layout: migrated
 ---
 

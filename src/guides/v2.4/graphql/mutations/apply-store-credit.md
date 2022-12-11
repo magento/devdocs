@@ -2,7 +2,7 @@
 group: graphql
 title: applyStoreCreditToCart mutation
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/apply-store-credit/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/apply-store-credit/
 layout: migrated
 ---
 

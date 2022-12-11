@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 redirect from:
   - /cloud/docker/docker-development-testing.html
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/
 layout: migrated
 ---
 

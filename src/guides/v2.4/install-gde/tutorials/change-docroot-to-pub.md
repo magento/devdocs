@@ -1,6 +1,6 @@
 ---
 title: Modify docroot to improve security
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/docroot.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/docroot.html
 layout: migrated
 ---
 

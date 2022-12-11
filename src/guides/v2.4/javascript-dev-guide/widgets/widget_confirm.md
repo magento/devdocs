@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Confirmation widget
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/confirm/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/confirm/
 layout: migrated
 ---
 

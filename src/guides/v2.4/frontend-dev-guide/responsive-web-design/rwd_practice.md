@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Customizing RWD illustration
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/practice/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/practice/
 layout: migrated
 ---
 ## What's in this topic

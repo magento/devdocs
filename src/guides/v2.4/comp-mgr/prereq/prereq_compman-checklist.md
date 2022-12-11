@@ -3,7 +3,7 @@ group: software-update-guide
 title: Update and upgrade checklist
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
 layout: migrated
 ---
 

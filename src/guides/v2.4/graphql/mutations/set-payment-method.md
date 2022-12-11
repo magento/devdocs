@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: setPaymentMethodOnCart mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-payment-method/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-payment-method/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Restricting access to anonymous web APIs
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/anonymous-api-security/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/anonymous-api-security/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: PayPal Payflow Pro payment method
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-pro/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-pro/
 layout: migrated
 ---
 

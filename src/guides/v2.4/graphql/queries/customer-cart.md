@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: customerCart query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/cart/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/cart/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ subgroup: 1_Javascript
 title: Locate JavaScript components
 functional_areas:
   - Testing
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/debug/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/debug/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: marketplace-api
 title: Filtering
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/filtering/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/filtering/
 layout: migrated
 ---
 

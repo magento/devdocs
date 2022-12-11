@@ -2,7 +2,7 @@
 group: live-search
 title: Live Search
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/guide-overview.html?lang=en
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/guide-overview.html?lang=en
 layout: migrated
 ---
 

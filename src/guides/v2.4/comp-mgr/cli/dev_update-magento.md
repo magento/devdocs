@@ -5,7 +5,7 @@ functional_areas:
   - Upgrade
 redirect_from:
   - guides/v2.4/install-gde/install/cli/dev_update-magento.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/git-installs.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/git-installs.html
 layout: migrated
 ---
 

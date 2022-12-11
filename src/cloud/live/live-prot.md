@@ -8,7 +8,7 @@ menu_node:
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/protective-block.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/protective-block.html
 layout: migrated
 ---
 

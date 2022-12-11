@@ -2,7 +2,7 @@
 group: graphql
 title: deleteWishlist mutation
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/delete/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/delete/
 layout: migrated
 ---
 

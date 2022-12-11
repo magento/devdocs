@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Data fixture annotation
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-data-fixture/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-data-fixture/
 layout: migrated
 ---
 

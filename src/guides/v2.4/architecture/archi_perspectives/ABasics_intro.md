@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Architectural basics overview
 menu_title: Architectural basics
-migrated_to: https://developer.adobe.com/commerce/php/architecture/basics/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/basics/
 layout: migrated
 ---
 

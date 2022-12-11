@@ -4,7 +4,7 @@ title: Troubleshooting
 functional_areas:
   - Cloud
   - Help
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/best-practices.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/best-practices.html
 layout: migrated
 ---
 

@@ -7,7 +7,7 @@ menu_title: Initial Tasks
 menu_node:
 level3_subgroup: product-creation-form
 menu_order: 1
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-product-creation-form/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-product-creation-form/
 layout: migrated
 ---
 

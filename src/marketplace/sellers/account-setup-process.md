@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Account Setup Process
 redirect_from: /marketplace/sellers/set-up-your-account.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/account-setup-process/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/account-setup-process/
 layout: migrated
 ---
 

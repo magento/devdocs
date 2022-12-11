@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/logs/custom-log-files.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/logs/custom-log-files.html
 layout: migrated
 ---
 

@@ -6,7 +6,7 @@ functional_areas:
   - Setup
 redirect_from:
   - /cloud/project/project-conf-files_magento-app.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/configure-app-yaml.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/configure-app-yaml.html
 layout: migrated
 ---
 

@@ -6,7 +6,7 @@ redirect_from:
   - /live-search/graphql-playground.html
   - /live-search/live-search-api-reference.html
   - /live-search/live-search-sdk.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/live-search/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/live-search/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Listing (grid) component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/listing-grid/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/listing-grid/
 layout: migrated
 ---
 

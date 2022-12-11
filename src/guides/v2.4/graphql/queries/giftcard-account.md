@@ -4,7 +4,7 @@ title: giftCardAccount query
 ee_only: True
 redirect from:
   - /guides/v2.3/graphql/reference/quote-giftcard-account.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/giftcard-account/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/giftcard-account/
 layout: migrated
 ---
 

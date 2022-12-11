@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Develop data and schema patches
-migrated_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/patches/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/patches/
 layout: migrated
 ---
 

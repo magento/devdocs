@@ -4,7 +4,7 @@ layout: migrated-videos
 permalink: "videos/fundamentals/"
 title: "Fundamentals of Magento 2 Development"
 menu_order: 0
-migrated_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-learn/tutorials/overview.html
 ---
 
 <div style="float:right; margin: 0 0 20px 40px;">

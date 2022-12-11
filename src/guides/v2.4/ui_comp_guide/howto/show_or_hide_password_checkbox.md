@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Show or Hide Password Checkbox
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/show-hide-password-checkbox/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/show-hide-password-checkbox/
 layout: migrated
 ---
 

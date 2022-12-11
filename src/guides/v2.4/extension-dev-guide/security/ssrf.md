@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Server-side Request Forgery
-migrated_to: https://developer.adobe.com/commerce/php/development/security/server-side-request-forgery/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/server-side-request-forgery/
 layout: migrated
 ---
 

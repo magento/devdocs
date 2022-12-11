@@ -3,7 +3,7 @@ group: cloud-guide
 title: ece-tools package
 functional_areas:
   - Cloud
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/package-overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/package-overview.html
 layout: migrated
 ---
 

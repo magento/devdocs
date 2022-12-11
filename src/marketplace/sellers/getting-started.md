@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Getting Started
 redirect_from: /marketplace/sellers/faq-sellers.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/
 layout: migrated
 ---
 

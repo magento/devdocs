@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Marketing Review Guidelines
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/marketing-review-guidelines/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/marketing-review-guidelines/
 layout: migrated
 ---
 

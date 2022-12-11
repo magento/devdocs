@@ -5,7 +5,7 @@ title: Gateway Command
 menu_title: Gateway Command
 menu_node:
 menu_order: 2
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/gateway-command/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/gateway-command/
 layout: migrated
 ---
 

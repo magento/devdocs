@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Setup
   - Deploy
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/launch/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/launch/overview.html
 layout: migrated
 ---
 

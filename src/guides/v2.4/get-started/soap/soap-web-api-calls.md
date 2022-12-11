@@ -5,7 +5,7 @@ title: Use SOAP Services
 menu_title: Use SOAP Services
 menu_order: 1
 menu_node: parent
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/soap-web-api-calls/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/soap-web-api-calls/
 layout: migrated
 ---
 

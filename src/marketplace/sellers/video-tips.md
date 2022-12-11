@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Video Tips
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/video-tips/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/video-tips/
 layout: migrated
 ---
 

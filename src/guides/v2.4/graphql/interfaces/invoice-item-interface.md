@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: InvoiceItemInterface attributes and implementations
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/invoice-item/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/invoice-item/
 layout: migrated
 ---
 

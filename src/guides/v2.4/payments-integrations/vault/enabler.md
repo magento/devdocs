@@ -6,7 +6,7 @@ menu_title: Enable vault
 menu_order: 5
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/enabler/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/enabler/
 layout: migrated
 ---
 

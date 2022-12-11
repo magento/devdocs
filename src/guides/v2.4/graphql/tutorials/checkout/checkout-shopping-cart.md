@@ -12,7 +12,7 @@ functional_areas:
   - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/tutorials/checkout/create-cart/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/tutorials/checkout/create-cart/
 layout: migrated
 ---
 The procedure for creating a cart varies for logged-in customers and guests.

@@ -6,7 +6,7 @@ menu_title: Vault implementation for Admin
 menu_order: 25
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/admin-integration/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/admin-integration/
 layout: migrated
 ---
 

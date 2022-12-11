@@ -3,7 +3,7 @@ group: graphql
 title: giftRegistry query
 ee_only: true   
 contributor_name: EY
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/gift-registry/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/gift-registry/
 layout: migrated
 ---
 

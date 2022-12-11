@@ -3,7 +3,7 @@ group: graphql
 title: copyItemsBetweenRequisitionLists mutation
 b2b_only: true
 contributor_name: EY
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/copy-items/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/copy-items/
 layout: migrated
 ---
 The `copyItemsBetweenRequisitionLists` mutation copies items from one requisition list to another.

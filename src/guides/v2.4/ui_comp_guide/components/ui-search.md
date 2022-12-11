@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Search component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/search/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/search/
 layout: migrated
 ---
 

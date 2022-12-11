@@ -2,7 +2,7 @@
 group: graphql
 title: updateWishlist mutation
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/update/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/update/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: ui-components-guide
 subgroup: components
 title: WYSIWYG component
 menu_title: WYSIWYG component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/wysiwyg/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/wysiwyg/
 layout: migrated
 ---
 

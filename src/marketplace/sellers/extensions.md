@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Extensions
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extensions/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extensions/
 layout: migrated
 ---
 

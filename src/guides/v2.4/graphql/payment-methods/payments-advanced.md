@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: PayPal Payments Advanced payment method
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payments-advanced/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payments-advanced/
 layout: migrated
 ---
 

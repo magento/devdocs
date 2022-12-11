@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: About the uiElement class
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/element/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/element/
 layout: migrated
 ---
 

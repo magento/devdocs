@@ -1,7 +1,7 @@
 ---
 group: architecture-guide
 title: Presentation Layer
-migrated_to: https://developer.adobe.com/commerce/php/architecture/layers/presentation/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/layers/presentation/
 layout: migrated
 ---
 

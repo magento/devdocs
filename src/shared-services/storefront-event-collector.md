@@ -2,7 +2,7 @@
 group: shared-services
 title: Adobe Commerce Event Collector
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/services/shared-services/storefront-events/collector/
+redirect_to: https://developer.adobe.com/commerce/services/shared-services/storefront-events/collector/
 layout: migrated
 ---
 

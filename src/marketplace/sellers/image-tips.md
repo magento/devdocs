@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Image Tips
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/image-tips/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/image-tips/
 layout: migrated
 ---
 

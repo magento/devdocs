@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 12. Create a shipment
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-shipment/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-shipment/
 layout: migrated
 menu_title: Step 12. Create a shipment
 subtitle: Order processing with Inventory Management

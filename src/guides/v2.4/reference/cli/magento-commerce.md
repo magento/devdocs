@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/reference/commerce-on-premises.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/reference/commerce-on-premises.html
 layout: migrated
 ---
 <!-- All the assigned and captured content is used in the included template -->

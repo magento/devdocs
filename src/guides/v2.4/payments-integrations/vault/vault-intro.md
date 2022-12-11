@@ -7,7 +7,7 @@ menu_order: 10
 menu_node: parent
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/
 layout: migrated
 ---
 

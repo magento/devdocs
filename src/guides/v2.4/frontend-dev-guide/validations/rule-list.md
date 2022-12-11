@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Validation Rule List
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/rule-list/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/rule-list/
 layout: migrated
 ---
 

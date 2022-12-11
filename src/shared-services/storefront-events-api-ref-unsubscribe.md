@@ -2,7 +2,7 @@
 group: shared-services
 title: Unsubscribe - Adobe Commerce Event SDK Reference
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/services/shared-services/storefront-events/sdk/unsubscribe/
+redirect_to: https://developer.adobe.com/commerce/services/shared-services/storefront-events/sdk/unsubscribe/
 layout: migrated
 ---
 

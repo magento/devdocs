@@ -4,7 +4,7 @@ subgroup: 99_Module Development
 title: Public interfaces & APIs
 menu_title: Public interfaces & APIs
 menu_order: 3
-migrated_to: https://developer.adobe.com/commerce/php/development/components/api-concepts/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/api-concepts/
 layout: migrated
 ---
 

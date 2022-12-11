@@ -3,7 +3,7 @@ group: graphql
 title: customerPaymentTokens query
 redirect_from:
   - /guides/v2.3/graphql/reference/vault.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/customer-payment-tokens/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/customer-payment-tokens/
 layout: migrated
 ---
 

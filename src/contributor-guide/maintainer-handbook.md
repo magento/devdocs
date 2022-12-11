@@ -1,7 +1,7 @@
 ---
 group: contributor-guide
 title: Maintainer's Handbook
-migrated_to: https://developer.adobe.com/commerce/contributor/guides/maintainers/handbook/
+redirect_to: https://developer.adobe.com/commerce/contributor/guides/maintainers/handbook/
 layout: migrated
 ---
 

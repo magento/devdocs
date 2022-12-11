@@ -10,7 +10,7 @@ level3_subgroup: nq
 functional_areas:
   - B2B
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/negotiable-manage
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/negotiable-manage
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Service layer
 menu_title: Service layer
-migrated_to: https://developer.adobe.com/commerce/php/architecture/layers/service/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/layers/service/
 layout: migrated
 ---
 

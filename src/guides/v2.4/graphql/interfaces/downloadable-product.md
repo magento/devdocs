@@ -3,7 +3,7 @@ group: graphql
 title: Downloadable product data types
 redirect_from:
   - /guides/v2.4/graphql/product/downloadable-product.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/downloadable/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/downloadable/
 layout: migrated
 ---
 

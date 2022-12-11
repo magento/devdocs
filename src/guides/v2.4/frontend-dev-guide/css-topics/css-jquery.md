@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Using jQuery UI styles
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/css/jquery/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/jquery/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: productReviewRatingsMetadata query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/product-review-ratings-metadata/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/product-review-ratings-metadata/
 layout: migrated
 ---
 

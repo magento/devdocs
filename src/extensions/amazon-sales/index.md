@@ -1,7 +1,7 @@
 ---
 group: extensions
 title: Install Amazon Sales Channel
-migrated_to: https://experienceleague.adobe.com/docs/commerce-channels/amazon/getting-started/install.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-channels/amazon/getting-started/install.html
 layout: migrated
 ---
 

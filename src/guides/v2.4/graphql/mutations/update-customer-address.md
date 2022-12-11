@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: updateCustomerAddress mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/update-address/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/update-address/
 layout: migrated
 ---
 

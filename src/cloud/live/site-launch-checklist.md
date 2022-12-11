@@ -7,7 +7,7 @@ functional_areas:
 redirect_from:
   - /common/pdf/magento-commerce-cloud-prelaunch-checklist.pdf
   - /cloud/live/go-live-checklist.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/launch/checklist.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/launch/checklist.html
 layout: migrated
 ---
 

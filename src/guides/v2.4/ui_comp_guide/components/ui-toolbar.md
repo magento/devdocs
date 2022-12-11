@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: ListingToolbar component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/toolbar/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/toolbar/
 layout: migrated
 ---
 

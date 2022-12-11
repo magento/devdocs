@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: Protected mutations
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/usage/protected-mutations/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/protected-mutations/
 layout: migrated
 ---
 

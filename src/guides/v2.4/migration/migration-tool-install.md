@@ -5,7 +5,7 @@ title: Install Data Migration Tool
 menu_title: Install Data Migration Tool
 menu_node:
 menu_order: 2
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/install.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/install.html
 layout: migrated
 ---
 

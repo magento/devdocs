@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Third-party libraries
 menu_title: Third-party libraries
-migrated_to: https://developer.adobe.com/commerce/php/architecture/modules/libraries/
+redirect_to: https://developer.adobe.com/commerce/php/architecture/modules/libraries/
 layout: migrated
 ---
 

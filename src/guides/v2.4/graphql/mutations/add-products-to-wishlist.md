@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: addProductsToWishlist mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/add-products/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/add-products/
 layout: migrated
 ---
 

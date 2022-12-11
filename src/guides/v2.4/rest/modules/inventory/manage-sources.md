@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Manage sources
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-sources/
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-sources/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Complete the Extension Information
 redirect_from: /marketplace/sellers/creating-a-new-extension.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-information/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-information/
 layout: migrated
 ---
 

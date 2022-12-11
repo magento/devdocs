@@ -14,7 +14,7 @@ redirect_from:
   - /guides/v2.4/install-gde/install/web/install-web_5-create-admin.html
   - /guides/v2.4/install-gde/install/web/install-web_6-install.html
   - /guides/v2.4/install-gde/install/cli/install-cli-install.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/advanced.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/advanced.html
 layout: migrated
 ---
 

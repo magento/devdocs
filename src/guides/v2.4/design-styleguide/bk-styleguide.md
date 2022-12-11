@@ -6,7 +6,7 @@ landing-page: Admin Style Guide
 menu_title: Introduction
 menu_order: 1
 menu_node:
-migrated_to: https://developer.adobe.com/commerce/admin-developer/style-guide/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/
 layout: migrated
 ---
 The Admin guide sets our foundational design, writing, and content standards for the [Admin](https://glossary.magento.com/magento-admin) software. For more specific user-interface standards, see the [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html).

@@ -6,7 +6,7 @@ menu_title: Creating a dynamic row system config
 menu_order: 1010
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/admin/create-dynamic-row-configuration/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/admin/create-dynamic-row-configuration/
 layout: migrated
 ---
 

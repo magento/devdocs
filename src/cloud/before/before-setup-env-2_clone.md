@@ -6,7 +6,7 @@ redirect_from:
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/cli-branches.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/cli-branches.html
 layout: migrated
 ---
 

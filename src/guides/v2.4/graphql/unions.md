@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: Unions
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/unions/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/unions/
 layout: migrated
 ---
 

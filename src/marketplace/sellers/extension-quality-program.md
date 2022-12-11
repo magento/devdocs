@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Extension Quality Program
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-quality-program/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-quality-program/
 layout: migrated
 ---
 

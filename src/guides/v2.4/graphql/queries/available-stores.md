@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: availableStores query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/available-stores/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/available-stores/
 layout: migrated
 ---
 

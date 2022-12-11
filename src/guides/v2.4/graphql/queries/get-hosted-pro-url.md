@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: getHostedProUrl query
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/get-hosted-pro-url/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/get-hosted-pro-url/
 layout: migrated
 ---
 

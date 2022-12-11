@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_from: /guides/v2.4/install-gde/install/web/install-web-sample-data-clone.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/sample-data/git-repositories.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/sample-data/git-repositories.html
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: handlePayflowProResponse mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/handle-payflow-pro-response/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/handle-payflow-pro-response/
 layout: migrated
 ---
 

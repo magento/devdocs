@@ -2,7 +2,7 @@
 group: graphql
 title: copyProductsBetweenWishlists mutation
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/copy-products/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/copy-products/
 layout: migrated
 ---
 

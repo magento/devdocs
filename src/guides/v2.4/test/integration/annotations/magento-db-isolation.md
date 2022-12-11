@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Database isolation annotation
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-db-isolation/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-db-isolation/
 layout: migrated
 ---
 

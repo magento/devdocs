@@ -5,7 +5,7 @@ title: Request Builder
 menu_title: Request Builder
 menu_node:
 menu_order: 4
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/request-builder/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/request-builder/
 layout: migrated
 ---
 

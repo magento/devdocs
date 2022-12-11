@@ -3,7 +3,7 @@ group: software-update-guide
 title: Check the catalog search engine
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
 layout: migrated
 ---
 

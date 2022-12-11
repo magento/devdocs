@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Configuration fixture attribute
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/config-fixture/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/config-fixture/
 layout: migrated
 ---
 

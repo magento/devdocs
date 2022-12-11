@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Product Descriptions
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/product-descriptions/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/product-descriptions/
 layout: migrated
 ---
 

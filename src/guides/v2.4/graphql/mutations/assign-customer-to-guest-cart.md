@@ -3,7 +3,7 @@ group: graphql
 title: assignCustomerToGuestCart mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/assign-customer-to-guest-cart/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/assign-customer-to-guest-cart/
 layout: migrated
 ---
 

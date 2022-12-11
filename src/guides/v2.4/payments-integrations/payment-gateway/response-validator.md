@@ -1,7 +1,7 @@
 ---
 group: payments-integrations
 title: Response Validator
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/response-validator/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/response-validator/
 layout: migrated
 ---
 

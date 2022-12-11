@@ -1,7 +1,7 @@
 ---
 group: testing
 title: Component registration annotation
-migrated_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-components-dir/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-components-dir/
 layout: migrated
 ---
 

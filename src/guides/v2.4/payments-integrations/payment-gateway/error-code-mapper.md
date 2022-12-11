@@ -1,7 +1,7 @@
 ---
 group: payments-integrations
 title: Error Code Mapping
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/error-code-mapper/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/error-code-mapper/
 layout: migrated
 ---
 

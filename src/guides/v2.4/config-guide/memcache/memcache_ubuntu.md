@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/session-storage/memcache-ubuntu.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/session-storage/memcache-ubuntu.html
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Mass assignment
-migrated_to: https://developer.adobe.com/commerce/php/development/security/mass-assignment/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/mass-assignment/
 layout: migrated
 ---
 

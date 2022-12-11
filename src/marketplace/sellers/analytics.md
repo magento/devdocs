@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Analytics
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/analytics/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/analytics/
 layout: migrated
 ---
 

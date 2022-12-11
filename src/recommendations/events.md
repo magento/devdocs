@@ -2,7 +2,7 @@
 group: product-recommendations
 title: Collect Data
 ee_only: True
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/events.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/events.html
 layout: migrated
 ---
 

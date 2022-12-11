@@ -3,6 +3,8 @@ group: configuration-guide
 title: Google reCAPTCHA
 functional_areas:
   - Configuration
+redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/systems/security/captcha/security-google-recaptcha.html
+layout: migrated
 ---
 
 Google reCAPTCHA provides a greater level of security for both the storefront and Admin UI than is available with standard CAPTCHA, and gives you the ability to:

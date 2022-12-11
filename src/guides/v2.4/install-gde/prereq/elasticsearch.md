@@ -5,7 +5,7 @@ functional_areas:
   - Search
   - System
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/search-engine/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/search-engine/overview.html
 layout: migrated
 ---
 

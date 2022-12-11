@@ -2,7 +2,7 @@
 group: graphql
 title: giftRegistryEmailSearch query
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/email-search/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/email-search/
 layout: migrated
 ---
 

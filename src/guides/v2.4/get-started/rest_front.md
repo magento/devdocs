@@ -4,7 +4,7 @@ subgroup: 20_REST
 title: Use REST APIs
 menu_order: 1
 menu_node: parent
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/rest_front/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/rest_front/
 layout: migrated
 ---
 

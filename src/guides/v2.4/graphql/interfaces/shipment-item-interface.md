@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: ShipmentItemInterface attributes and implementations
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/shipment-item/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/shipment-item/
 layout: migrated
 ---
 

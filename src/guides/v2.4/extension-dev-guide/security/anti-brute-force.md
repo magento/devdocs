@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Protecting against brute force attacks
-migrated_to: https://developer.adobe.com/commerce/php/development/security/brute-force/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/brute-force/
 layout: migrated
 ---
 

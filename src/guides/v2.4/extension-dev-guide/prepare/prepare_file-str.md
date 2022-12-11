@@ -2,7 +2,7 @@
 group: php-developer-guide
 subgroup: 02_Prepare
 title: About component file structure
-migrated_to: https://developer.adobe.com/commerce/php/development/prepare/component-file-structure/
+redirect_to: https://developer.adobe.com/commerce/php/development/prepare/component-file-structure/
 layout: migrated
 ---
 

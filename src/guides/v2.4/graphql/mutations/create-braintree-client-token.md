@@ -3,7 +3,7 @@ group: graphql
 title: createBraintreeClientToken mutation
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-braintree-client-token/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-braintree-client-token/
 layout: migrated
 ---
 

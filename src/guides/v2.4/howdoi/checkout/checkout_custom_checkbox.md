@@ -8,7 +8,7 @@ menu_order: 90
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-checkbox/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-checkbox/
 layout: migrated
 ---
 

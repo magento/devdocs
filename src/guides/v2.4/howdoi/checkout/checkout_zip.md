@@ -8,7 +8,7 @@ menu_order: 7
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-input-mask/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-input-mask/
 layout: migrated
 ---
 

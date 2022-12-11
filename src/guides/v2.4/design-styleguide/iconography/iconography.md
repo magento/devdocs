@@ -5,7 +5,7 @@ title: Admin Iconography
 menu_title: Iconography
 menu_order: 2
 menu_node:
-migrated_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/iconography/
+redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/iconography/
 layout: migrated
 ---
 

@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
   - Upgrade
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/upgrade-docker-package/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/upgrade-docker-package/
 layout: migrated
 ---
 

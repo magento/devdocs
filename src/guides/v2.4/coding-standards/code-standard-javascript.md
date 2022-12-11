@@ -4,7 +4,7 @@ title: JavaScript coding standard
 landing-page: Coding standards
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/coding-standards/js/
+redirect_to: https://developer.adobe.com/commerce/php/coding-standards/js/
 layout: migrated
 ---
 

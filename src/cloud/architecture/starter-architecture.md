@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 redirect_from:
   - /cloud/basic-information/starter-architecture.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/starter-architecture.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/starter-architecture.html
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Extension Coding
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/extensions/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/extensions/
 layout: migrated
 ---
 

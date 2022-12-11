@@ -6,7 +6,7 @@ functional_areas:
   - Extensions
   - Module
   - B2B
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/b2b-module.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/b2b-module.html
 layout: migrated
 ---
 

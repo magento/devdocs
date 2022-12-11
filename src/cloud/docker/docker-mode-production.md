@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
   - Docker
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/deploy/production-mode/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/deploy/production-mode/
 layout: migrated
 ---
 

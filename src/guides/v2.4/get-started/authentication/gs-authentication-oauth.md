@@ -3,7 +3,7 @@ group: web-api
 title: OAuth-based authentication
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-oauth/
+redirect_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-oauth/
 layout: migrated
 ---
 
@@ -88,7 +88,7 @@ The response contains these fields:
 
 A valid response looks like this:
 
-`oauth_token=4cqw0r7vo0s5goyyqnjb72sqj3vxwr0h&oauth_token_secret=rig3x3j5a9z5j6d4ubjwyf9f1l21itrr`
+`oauth_token=4cqw0r7vo0s5goyyqnjb72sqj3vxwr0h&oauth_token_secret=rig3x3j5a9z5j6d4ubjwyf9f1l21itrr` #gitleaks:allow
 
 ### Get an access token {#get-access-token}
 
@@ -110,7 +110,7 @@ Parameter | Description
 `oauth_verifier` | The verification code that is tied to the consumer and request token. It is sent as part of the initial POST operation when the integration is activated.
 
 A valid response looks like this:
-`oauth_token=0lnuajnuzeei2o8xcddii5us77xnb6v0&oauth_token_secret=1c6d2hycnir5ygf39fycs6zhtaagx8pd`
+`oauth_token=0lnuajnuzeei2o8xcddii5us77xnb6v0&oauth_token_secret=1c6d2hycnir5ygf39fycs6zhtaagx8pd` #gitleaks:allow
 
 The response contains these fields:
 

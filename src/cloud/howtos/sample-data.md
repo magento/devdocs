@@ -8,7 +8,7 @@ menu_node:
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/sample-data.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/sample-data.html
 layout: migrated
 ---
 

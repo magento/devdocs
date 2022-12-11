@@ -4,7 +4,7 @@ title: Using Grunt
 functional_areas:
   - Frontend
   - Tools
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/tools/grunt/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/tools/grunt/
 layout: migrated
 ---
 

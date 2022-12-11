@@ -1,7 +1,7 @@
 ---
 group: contributor-guide
 title: GitHub issue processing workflow
-migrated_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/processing-workflow/
+redirect_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/processing-workflow/
 layout: migrated
 ---
 

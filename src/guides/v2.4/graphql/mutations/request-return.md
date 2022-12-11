@@ -2,7 +2,7 @@
 group: graphql
 title: requestReturn mutation
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/request-return/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/request-return/
 layout: migrated
 ---
 

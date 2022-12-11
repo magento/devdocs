@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Resubmit an Extension
 redirect_from: /marketplace/sellers/resubmitting-an-extension.html
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-resubmit/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-resubmit/
 layout: migrated
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: createProductReview mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/mutations/create-review/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/mutations/create-review/
 layout: migrated
 ---
 

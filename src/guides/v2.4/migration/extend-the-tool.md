@@ -3,7 +3,7 @@ group: migration-guide
 title: Extend the migration tool
 functional_areas:
   - Tools
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/customize.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/customize.html
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: graphql
 title: moveItemsBetweenRequisitionLists mutation
 b2b_only: true
 contributor_name: EY
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/move-items/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/move-items/
 layout: migrated
 ---
 The `moveItemsBetweenRequisitionLists` mutation moves items from one requisition list to another.

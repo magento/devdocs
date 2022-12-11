@@ -3,7 +3,7 @@ group: cloud-guide
 title: Release notes archive for ece-tools
 functional_areas:
   - Cloud
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-release-archive.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-release-archive.html
 layout: migrated
 ---
 
@@ -396,7 +396,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -  {:.new}<!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a command—`docker:build`—to generate a [Docker Compose]({{ site.baseurl }}/cloud/docker/docker-config.html) configuration from the Cloud `{{site.data.var.ct}}` repository.
 
--  {:.new}<!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{ site.baseurl }}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While the application is in Production and the SCD_ON_DEMAND is enabled, the store and admin locale options are available.
+-  {:.new}<!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/store-settings.html#change-locales) without the exporting and importing configuration process. While the application is in Production and the SCD_ON_DEMAND is enabled, the store and admin locale options are available.
 
 -  {:.new}<!-- MAGECLOU-1998 -->**Site map and Robots**—Created a [workflow]({{ site.baseurl }}/cloud/trouble/robots-sitemap.html) to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
 

@@ -5,7 +5,7 @@ contributor_name: Classy Llama
 contributor_link: https://www.classyllama.com/
 functional_areas:
   - Services
-migrated_to: https://developer.adobe.com/commerce/php/development/components/web-api/services/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/web-api/services/
 layout: migrated
 ---
 

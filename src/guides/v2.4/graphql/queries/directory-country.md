@@ -3,7 +3,7 @@ group: graphql
 title: country query
 redirect_from:
   - /guides/v2.3/graphql/reference/directory.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/country/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/country/
 layout: migrated
 ---
 

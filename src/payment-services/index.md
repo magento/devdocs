@@ -1,7 +1,7 @@
 ---
 group: payment-services
 title: Payment Services
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/overview.html
 layout: migrated
 ---
 

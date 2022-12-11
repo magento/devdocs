@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Content Security Policies
-migrated_to: https://developer.adobe.com/commerce/php/development/security/content-security-policies/
+redirect_to: https://developer.adobe.com/commerce/php/development/security/content-security-policies/
 layout: migrated
 ---
 

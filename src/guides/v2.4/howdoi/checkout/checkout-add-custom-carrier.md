@@ -10,7 +10,7 @@ menu_order: 5
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-shipping-carrier/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-shipping-carrier/
 layout: migrated
 ---
 

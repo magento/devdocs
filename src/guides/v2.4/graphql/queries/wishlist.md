@@ -3,7 +3,7 @@ group: graphql
 title: wishlist query
 redirect_from:
   - /guides/v2.3/graphql/reference/wishlist.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/queries/wishlist/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/queries/wishlist/
 layout: migrated
 ---
 

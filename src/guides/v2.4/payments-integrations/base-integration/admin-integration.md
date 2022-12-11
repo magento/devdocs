@@ -6,7 +6,7 @@ menu_title: Configure payment method by area
 menu_order: 10
 functional_areas:
   - Integration
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/admin-integration/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/admin-integration/
 layout: migrated
 ---
 

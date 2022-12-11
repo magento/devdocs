@@ -4,7 +4,7 @@ title: Get support for Magento Cloud Docker
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://developer.adobe.com/commerce/cloud-tools/docker/get-support/
+redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/get-support/
 layout: migrated
 ---
 

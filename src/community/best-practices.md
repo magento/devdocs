@@ -3,7 +3,7 @@ group: community
 title: Community contributed best practices
 redirect_from: 
   - /community/resources/best-practices.html
-migrated_to: https://developer.adobe.com/commerce/contributor/community/best-practices/
+redirect_to: https://developer.adobe.com/commerce/contributor/community/best-practices/
 layout: migrated
 ---
 

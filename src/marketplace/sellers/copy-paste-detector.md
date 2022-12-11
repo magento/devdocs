@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Copy Paste Detector
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/copy-paste-detector/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/copy-paste-detector/
 layout: migrated
 ---
 

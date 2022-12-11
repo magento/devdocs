@@ -4,7 +4,7 @@ title: Frontend Developer Guide
 landing-page: Frontend Developer Guide
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/
 layout: migrated
 ---
 

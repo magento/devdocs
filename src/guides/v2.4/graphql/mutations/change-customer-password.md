@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: changeCustomerPassword mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/change-password/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/change-password/
 layout: migrated
 ---
 

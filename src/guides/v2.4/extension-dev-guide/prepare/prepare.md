@@ -5,7 +5,7 @@ title: Prepare (development quick start)
 menu_title: Prepare (development quick start)
 menu_order: 1
 menu_node: parent
-migrated_to: https://developer.adobe.com/commerce/php/development/prepare/
+redirect_to: https://developer.adobe.com/commerce/php/development/prepare/
 layout: migrated
 ---
 

@@ -4,7 +4,7 @@ title: Configure your project
 functional_areas:
   - Cloud
   - Configuration
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: graphql
 title: setGiftOptionsOnCart mutation
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-gift-options/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-gift-options/
 layout: migrated
 ---
 

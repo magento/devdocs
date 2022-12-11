@@ -4,7 +4,7 @@ subgroup: 99_Module Development
 title: Adding extension attributes to entity
 menu_title: Adding extension attributes to entity
 menu_order: 20
-migrated_to: https://developer.adobe.com/commerce/php/development/components/add-attributes/
+redirect_to: https://developer.adobe.com/commerce/php/development/components/add-attributes/
 layout: migrated
 ---
 

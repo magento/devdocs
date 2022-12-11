@@ -3,7 +3,7 @@ group: javascript-developer-guide
 title: Sortable widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/sortable/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/sortable/
 layout: migrated
 ---
 

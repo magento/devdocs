@@ -4,7 +4,7 @@ subgroup: A_gateway
 title: Payment provider gateway structure
 menu_title: Payment provider gateway structure
 menu_order: 1
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/payment-gateway-structure/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/payment-gateway-structure/
 layout: migrated
 ---
 

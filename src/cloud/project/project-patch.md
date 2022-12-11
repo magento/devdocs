@@ -4,7 +4,7 @@ title: Apply patches
 functional_areas:
   - Cloud
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/upgrade/apply-patches.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/upgrade/apply-patches.html
 layout: migrated
 ---
 

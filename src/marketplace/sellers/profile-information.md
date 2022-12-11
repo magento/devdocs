@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Profile Information
-migrated_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-information/
+redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/profile-information/
 layout: migrated
 ---
 

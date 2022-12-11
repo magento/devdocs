@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Deploy
   - SCD
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/process.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/process.html
 layout: migrated
 ---
 

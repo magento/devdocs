@@ -2,7 +2,7 @@
 group: catalog-service
 title: products query
 ee_only: True
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/catalog-service/queries/products/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/catalog-service/queries/products/
 layout: migrated
 ---
 

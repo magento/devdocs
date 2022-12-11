@@ -2,7 +2,7 @@
 group: testing
 title: Application Testing Guide
 landing-page: Application Testing Guide
-migrated_to: https://developer.adobe.com/commerce/testing/guide/
+redirect_to: https://developer.adobe.com/commerce/testing/guide/
 layout: migrated
 ---
 

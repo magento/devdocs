@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
   - Application
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/properties.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/properties.html
 layout: migrated
 ---
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.

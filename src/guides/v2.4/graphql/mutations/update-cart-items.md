@@ -1,7 +1,7 @@
 ---
 group: graphql
 title: updateCartItems mutation
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/update-items/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/update-items/
 layout: migrated
 ---
 

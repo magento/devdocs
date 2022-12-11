@@ -5,7 +5,7 @@ title: Configure migration
 menu_title: Configure migration
 menu_node:
 menu_order: 4
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/configure.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/configure.html
 layout: migrated
 ---
 

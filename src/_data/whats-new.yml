@@ -4,8 +4,24 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Nov 28 16:00:55 2022
+updated: Mon Dec 5 15:46:52 2022
 entries:
+- description: The [Cloud User Guide](https://devdocs.magento.com/cloud/bk-cloud.html)
+    topics moved to [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/overview.html)
+    and the [Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html)
+    topics moved to [Adobe Developer documentation](https://developer.adobe.com/commerce/cloud-tools/docker/get-support/).
+    All topics will be redirected soon.
+  versions: 2.4.x
+  type: Major Update
+  date: December 1, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3221
+  merge_commit: 8e07b3212f385c8aa3f30c6320860840e24d3616
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: The [GraphQL Developer Guide](https://devdocs.magento.com/guides/v2.4/graphql/index.html)
     topics moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/webapi/graphql/)
     and will be redirected soon.
@@ -542,7 +558,7 @@ entries:
   - Major Update
   - Automation
   - 2.4.5
-- description: Updated the [Backward incompatible changes reference](https://devdocs.magedevteam.com/710/guides/v2.4/release-notes/backward-incompatible-changes/reference.html).
+- description: Updated the [Backward incompatible changes reference](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html).
   versions: 2.4.5
   type: Major Update
   date: August 9, 2022
@@ -796,7 +812,7 @@ entries:
   labels:
   - Technical
 - description: The [B2B Developer Guide](https://devdocs.magento.com/guides/v2.4/b2b/bk-b2b.html)
-    has moved to the [Adobe Developer documentation](https://developer-stage.adobe.com/commerce/webapi/rest/b2b/)
+    has moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/webapi/rest/b2b/)
     and will be redirected soon.
   versions: 2.4.x
   type: Major Update
@@ -810,7 +826,7 @@ entries:
   - 2.4.x
   - migration
 - description: The [Inventory Management overview](https://devdocs.magento.com/guides/v2.4/inventory/index.html)
-    topic moved to the [Adobe Developer documentation](https://developer-stage.adobe.com/commerce/webapi/rest/modules/inventory/)
+    topic moved to the [Adobe Developer documentation](https://developer.adobe.com/commerce/webapi/rest/modules/inventory/)
     and will be redirected soon.
   versions: 2.4.x
   type: Major Update

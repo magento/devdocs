@@ -4,7 +4,7 @@ title: deleteRequisitionList mutation
 b2b_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/delete/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/delete/
 layout: migrated
 ---
 

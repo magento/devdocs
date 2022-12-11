@@ -1,7 +1,7 @@
 ---
 group: payment-services
 title: Install Payment Services
-migrated_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/get-started/install.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/get-started/install.html
 layout: migrated
 ---
 

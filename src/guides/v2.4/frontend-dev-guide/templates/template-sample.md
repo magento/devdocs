@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Templates customization sample
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/sample/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/sample/
 layout: migrated
 ---
 

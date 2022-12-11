@@ -4,11 +4,15 @@ Welcome! This site contains the latest Adobe Commerce and Magento Open Source de
 
 > **Important update**
 >
-> The developer documentation for Adobe Commerce and Magento Open Source is moving to the [Adobe Developer](https://developer.adobe.com/commerce) and [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce.html) sites. After a topic is moved, use the link in the topic header to find the new location.
+> Adobe Commerce and Magento Open Source 2.4.x documentation has been migrated to Adobe sites. See our new landing pages to access the most current information.
 >
->![Example of a topic header](https://user-images.githubusercontent.com/6391769/166058975-15c288d6-b266-4f1d-8b52-08ada3ca026f.png)
+>[Adobe Commerce Developer Documentation](https://developer.adobe.com/commerce/docs) (Adobe Developer site)—Develop, customize, integrate, extend, and use advanced capabilities
 >
-> To track relocated topics by guide, see [Migrated Topics](https://devdocs.magento.com/migrated.html).
+>[Adobe Commerce Documentation](https://experienceleague.adobe.com/docs/commerce.html) (Adobe Experience League)—Plan, implement, operate, upgrade, and maintain your Commerce projects
+>
+> Some content was consolidated or moved to different guides.
+>
+> We welcome contributions to migrated content! You can find similar links to GitHub on the Adobe sites.
 
 ## Contributors
 

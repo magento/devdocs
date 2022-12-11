@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Bookmarks component
-migrated_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/bookmarks/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/bookmarks/
 layout: migrated
 ---
 

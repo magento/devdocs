@@ -1,7 +1,7 @@
 ---
 group: javascript-developer-guide
 title: Customizing JavaScript illustration
-migrated_to: https://developer.adobe.com/commerce/frontend-core/javascript/practice/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/practice/
 layout: migrated
 ---
 

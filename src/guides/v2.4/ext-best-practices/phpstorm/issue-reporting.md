@@ -3,7 +3,7 @@ group: extension-best-practices
 title: Issue reporting
 functional_areas:
   - Standards
-migrated_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/issue-reporting/
+redirect_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/issue-reporting/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: advanced-reporting
 title: Report XML
 functional_areas:
     - Reports
-migrated_to: https://developer.adobe.com/commerce/php/development/advanced-reporting/report-xml/
+redirect_to: https://developer.adobe.com/commerce/php/development/advanced-reporting/report-xml/
 layout: migrated
 ---
 

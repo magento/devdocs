@@ -4,7 +4,7 @@ title: Upgrade project to use ece-tools
 functional_areas:
   - Cloud
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/install-package.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/install-package.html
 layout: migrated
 ---
 

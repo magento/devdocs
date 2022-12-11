@@ -8,7 +8,7 @@ menu_order: 6
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
-migrated_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-carrier-validation/
+redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-carrier-validation/
 layout: migrated
 ---
 

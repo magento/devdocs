@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Cloud packages for Adobe Commerce
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/packages/cloud.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/packages/cloud.html
 layout: migrated
 ---
 

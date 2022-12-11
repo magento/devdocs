@@ -6,7 +6,7 @@ redirect_from:
 functional_areas:
   - Cloud
   - Deploy
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/best-practices.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/best-practices.html
 layout: migrated
 ---
 

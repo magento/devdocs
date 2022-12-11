@@ -3,7 +3,7 @@ group: graphql
 title: updateRequisitionListItems mutation
 b2b_only: true
 contributor_name: EY
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/update-items/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/update-items/
 layout: migrated
 ---
 The `updateRequisitionListItems` mutation updates products in a requisition list.

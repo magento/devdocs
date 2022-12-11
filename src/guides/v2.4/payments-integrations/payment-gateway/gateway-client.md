@@ -4,7 +4,7 @@ subgroup: A_gateway
 title: Gateway Client
 menu_title: Gateway Client
 menu_order: 5
-migrated_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/gateway-client/
+redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/gateway-client/
 layout: migrated
 ---
 

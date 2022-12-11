@@ -3,7 +3,7 @@ group: frontend-developer-guide
 title: Add a custom breakpoint
 functional_areas:
   - Frontend
-migrated_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/breakpoints/
+redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/breakpoints/
 layout: migrated
 ---
 

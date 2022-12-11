@@ -3,7 +3,7 @@ group: graphql
 title: Configurable product data types
 redirect_from:
   - /guides/v2.4/graphql/product/configurable-product.html
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/configurable/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/configurable/
 layout: migrated
 ---
 

@@ -3,7 +3,7 @@ group: software-update-guide
 title: Apply patches using Composer
 functional_areas:
   - Upgrade
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/apply.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/apply.html
 layout: migrated
 ---
 

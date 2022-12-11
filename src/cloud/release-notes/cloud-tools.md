@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 redirect_from:
   - /cloud/release-notes/CloudReleaseNotes.html
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-tools-suite.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-tools-suite.html
 layout: migrated
 ---
 

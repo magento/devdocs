@@ -4,7 +4,7 @@ title: GitLab integration
 functional_areas:
   - Cloud
   - Setup
-migrated_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/gitlab.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/gitlab.html
 layout: migrated
 ---
 

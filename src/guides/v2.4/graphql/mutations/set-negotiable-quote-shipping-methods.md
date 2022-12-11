@@ -2,7 +2,7 @@
 group: graphql
 title: setNegotiableQuoteShippingMethods mutation
 b2b_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/set-shipping-methods/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/set-shipping-methods/
 layout: migrated
 ---
 

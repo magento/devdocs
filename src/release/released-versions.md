@@ -1,7 +1,7 @@
 ---
 title: Released versions
 group: release
-migrated_to: https://experienceleague.adobe.com/docs/commerce-operations/release/versions.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/versions.html
 layout: migrated
 ---
 

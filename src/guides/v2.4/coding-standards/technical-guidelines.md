@@ -3,7 +3,7 @@ group: coding-standards
 functional_areas:
     - Standards
 title: Technical Guidelines
-migrated_to: https://developer.adobe.com/commerce/php/coding-standards/technical-guidelines/
+redirect_to: https://developer.adobe.com/commerce/php/coding-standards/technical-guidelines/
 layout: migrated
 ---
 

@@ -2,7 +2,7 @@
 group: b2b-developer-guide
 title: Place a negotiable quote order
 ee_only: true
-migrated_to: https://developer.adobe.com/commerce/webapi/rest/b2b/negotiable-order-workflow
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/negotiable-order-workflow
 layout: migrated
 ---
 

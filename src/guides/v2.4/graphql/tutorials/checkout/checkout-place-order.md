@@ -12,7 +12,7 @@ functional_areas:
   - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
-migrated_to: https://developer.adobe.com/commerce/webapi/graphql/tutorials/checkout/place-order/
+redirect_to: https://developer.adobe.com/commerce/webapi/graphql/tutorials/checkout/place-order/
 layout: migrated
 ---
 
