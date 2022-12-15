@@ -7,7 +7,7 @@ menu_order: 3
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/facade-configuration/
-layout: migrated
+status: migrated
 ---
 
 Payment facade it is an instance of [Payment Adapter]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Model/Method/Adapter.php) configured with virtual types and allows to

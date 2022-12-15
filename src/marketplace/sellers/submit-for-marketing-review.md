@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Submit for Marketing Review
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-marketing-review/
-layout: migrated
+status: migrated
 ---
 
 When you have completed the code, you can submit your extension for marketing review. You can submit your product for both technical and marketing review at the same time. The review process is the same for both extensions and themes.

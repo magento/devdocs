@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 10. Issue a partial refund
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-issue-refund/
-layout: migrated
+status: migrated
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials

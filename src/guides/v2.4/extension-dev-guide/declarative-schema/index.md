@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Declarative Schema Overview
 redirect_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/
-layout: migrated
+status: migrated
 ---
 
 Declarative Schema aims to simplify the Magento installation and upgrade processes. Previously, developers had to write database scripts in PHP for each new version of Magento. Various scripts were required for

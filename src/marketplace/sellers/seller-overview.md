@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Seller Overview
 redirect_from: /marketplace/sellers/overview.html
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/seller-overview/
-layout: migrated
+status: migrated
 ---
 
 As an extension seller, your process starts with the extension development and testing. During this phase, be sure to follow the [Best Practices for Extension Developers][1].

@@ -2,7 +2,7 @@
 group: marketplace-api
 title: Filtering
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/filtering/
-layout: migrated
+status: migrated
 ---
 
 Some GET batch request endpoints support sorting, filtering, and pagination.

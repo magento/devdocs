@@ -5,7 +5,7 @@ title: Status codes and responses
 menu_title: Status codes and responses
 menu_order: 3
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-response/
-layout: migrated
+status: migrated
 ---
 
 ## REST responses {#rest-responses}

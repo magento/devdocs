@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/config-reference-sens.html
-layout: migrated
+status: migrated
 ---
 
 This topic lists configuration paths for system-specific and sensitive settings:

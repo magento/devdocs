@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Slide-out Panels, Modal Windows, and Overlays
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/containers/slideouts-modals-overlays/
-layout: migrated
+status: migrated
 ---
 Within the Magento application it is often necessary to focus the user’s attention on some particular bit of content or isolated action, process or sub-process. A "Slide-out Panel", "Modal Window" or "Overlay" is an effective way to achieve this. These are triggered by a particular user action causing their current task to be interrupted. The user must then take some required action to be returned to their primary task and continue (in most cases). The active state of any of overlays should occupy the topmost level of the z-index.
 

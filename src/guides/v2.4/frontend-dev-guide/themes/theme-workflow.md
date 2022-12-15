@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
   - Theme
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/workflow/
-layout: migrated
+status: migrated
 ---
 
 Continue From:

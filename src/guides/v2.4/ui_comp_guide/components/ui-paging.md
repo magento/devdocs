@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Paging component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/paging/
-layout: migrated
+status: migrated
 ---
 
 The Paging component implements pagination in grids implemented using [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html). It also creates an instance of the child Sizes component which allows to define the number of records displayed in the associated table.

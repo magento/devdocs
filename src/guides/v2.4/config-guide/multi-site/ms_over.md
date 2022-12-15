@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-overview.html
-layout: migrated
+status: migrated
 ---
 
 A single instance of the {{site.data.var.ee}} software enables you to start multiple websites or store views that use different attributes and content, such as:

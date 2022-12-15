@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: DynamicRows component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/dynamic-rows/
-layout: migrated
+status: migrated
 ---
 
 The DynamicRows component is a dynamic collection of records. The user can edit the records, change their position, and navigate through the collection.

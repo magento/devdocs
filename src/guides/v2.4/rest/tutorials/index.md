@@ -2,7 +2,7 @@
 group: rest-api
 title: REST tutorials
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/
-layout: migrated
+status: migrated
 functional_areas:
   - Integration
   - Orders

@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
   - Deploy
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/best-practices.html
-layout: migrated
+status: migrated
 ---
 
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.

@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Input component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/input/
-layout: migrated
+status: migrated
 ---
 
 The Input component implements the [HTML](https://glossary.magento.com/html) `<input type="text">` field.

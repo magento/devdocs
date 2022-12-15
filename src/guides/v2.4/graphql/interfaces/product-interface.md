@@ -4,7 +4,7 @@ title: ProductInterface attributes
 redirect_from:
   - /guides/v2.4/graphql/product/product-interface.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/attributes/
-layout: migrated
+status: migrated
 ---
 
 Any type that implements `ProductInterface` contains all the base attributes necessary for the frontend of the product model.

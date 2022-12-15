@@ -2,7 +2,7 @@
 group: compliance
 title: Industry Compliance
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/overview.html
-layout: migrated
+status: migrated
 ---
 
 Merchants are obligated to meet industry guidelines for maintaining a secure environment, legal requirements in their jurisdiction, and best practices for online commerce. To learn more from a business perspective, see the [Industry Compliance](https://docs.magento.com/m2/ee/user_guide/stores/compliance-industry.html) section in the _{{site.data.var.ee}} User Guide_.

@@ -2,7 +2,7 @@
 group: graphql
 title: ShipmentItemInterface attributes and implementations
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/shipment-item/
-layout: migrated
+status: migrated
 ---
 
 `ShipmentItemInterface` provides details about items in a customer's order history that were shipped. It has the following implementations:

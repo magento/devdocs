@@ -4,7 +4,7 @@ title: createEmptyCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-create-cart.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/create-empty-cart/
-layout: migrated
+status: migrated
 ---
 
 The `createEmptyCart` mutation creates an empty shopping cart for a guest or logged in customer. You can allow the system to generate a cart ID, or assign a specific ID.

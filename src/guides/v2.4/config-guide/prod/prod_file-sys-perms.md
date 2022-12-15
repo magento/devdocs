@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/file-system-permissions.html
-layout: migrated
+status: migrated
 ---
 
 This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).

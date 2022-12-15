@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/use-varnish-cache.html
-layout: migrated
+status: migrated
 ---
 
 This topic discusses the basics of using Varnish as a web caching accelerator for Magento.

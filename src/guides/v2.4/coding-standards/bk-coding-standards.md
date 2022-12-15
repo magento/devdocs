@@ -9,7 +9,7 @@ menu_node: parent
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/coding-standards/
-layout: migrated
+status: migrated
 ---
 <!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/url) without informing engineering! -->
 <!-- Referring file: contributing.md owned by core -->

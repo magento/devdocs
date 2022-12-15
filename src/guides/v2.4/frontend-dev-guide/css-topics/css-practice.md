@@ -4,7 +4,7 @@ title: Customizing styles illustration
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/practice/
-layout: migrated
+status: migrated
 ---
 
 ## What is in this topic   {#practice_over}

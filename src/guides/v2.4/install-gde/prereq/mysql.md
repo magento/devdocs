@@ -1,7 +1,7 @@
 ---
 title: MySQL
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/database-server/mysql.html
-layout: migrated
+status: migrated
 ---
 
 ## General guidelines {#instgde-prereq-mysql-intro}

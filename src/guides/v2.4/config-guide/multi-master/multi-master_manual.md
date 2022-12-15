@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/split-db/multi-master-manual.html
-layout: migrated
+status: migrated
 ---
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}

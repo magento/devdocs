@@ -4,7 +4,7 @@ title: Snapshots and backup management
 functional_areas:
   - Cloud
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/storage/snapshots.html
-layout: migrated
+status: migrated
 ---
 
 You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Starter environments and Pro Integration environments. The snapshot feature does not apply to the Pro Staging and Production environments.

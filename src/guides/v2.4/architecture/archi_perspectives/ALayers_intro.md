@@ -3,7 +3,7 @@ group: architecture-guide
 title: Architectural layers overview
 menu_title: Architectural layers
 redirect_to: https://developer.adobe.com/commerce/php/architecture/layers/
-layout: migrated
+status: migrated
 ---
 
 ## Magento as layered software

@@ -4,7 +4,7 @@ title: Upgrade Data Migration Tool
 functional_areas:
   - Tools
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/upgrade.html
-layout: migrated
+status: migrated
 ---
 
 ## Why do I need to upgrade?

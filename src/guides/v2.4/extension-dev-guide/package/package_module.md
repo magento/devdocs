@@ -5,7 +5,7 @@ title: Package a component
 menu_title: Package a component
 menu_order: 2
 redirect_to: https://developer.adobe.com/commerce/php/development/package/component/
-layout: migrated
+status: migrated
 ---
 
 ## Overview of packaging {#package-over}

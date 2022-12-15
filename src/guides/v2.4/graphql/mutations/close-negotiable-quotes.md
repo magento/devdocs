@@ -3,7 +3,7 @@ group: graphql
 title: closeNegotiableQuotes mutation
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/close/
-layout: migrated
+status: migrated
 ---
 
 The `closeNegotiableQuotes` mutation closes an active negotiable quote. Once a quote is closed, it cannot be re-opened. Closed negotiable quotes can be viewed by the merchant and company users.

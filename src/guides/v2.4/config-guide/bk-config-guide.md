@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/overview.html
-layout: migrated
+status: migrated
 ---
 
 ## Configure the Magento application {#configuration}

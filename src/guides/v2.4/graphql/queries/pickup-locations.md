@@ -4,7 +4,7 @@ title: pickupLocations query
 contributor_name: Oleksandr Kravchuk
 contributor_link: https://github.com/swnsma
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/queries/pickup-locations/
-layout: migrated
+status: migrated
 ---
 
 Use the `pickupLocations` query to retrieve a list of available pickup locations.

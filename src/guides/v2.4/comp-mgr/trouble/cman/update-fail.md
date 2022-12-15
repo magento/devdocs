@@ -8,7 +8,7 @@ menu_order: 110
 functional_areas:
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/roll-back-after-update-failure.html
-layout: migrated
+status: migrated
 ---
 
 If your component update fails, messages similar to the following display in the Console Log:

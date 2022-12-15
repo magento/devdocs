@@ -2,7 +2,7 @@
 group: installation-guide
 title: Install an extension
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/extensions.html
-layout: migrated
+status: migrated
 ---
 
 Code that extends or customizes {{site.data.var.ee}} and {{site.data.var.ce}} behavior is called an extension. You can optionally package and distribute extensions on the [Commerce Marketplace](https://marketplace.magento.com) or another extension distribution system.

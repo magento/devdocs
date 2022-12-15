@@ -9,7 +9,7 @@ menu_node: parent
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/
-layout: migrated
+status: migrated
 ---
 
 ## What are the Magento web APIs? {#whatare}

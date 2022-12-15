@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/setup/initialize-docker/
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.mcd-prod}} is one of the {{site.data.var.csuite}} packages designed to deploy and manage local {{site.data.var.ee}} Docker environments for both cloud and on-premises projects.

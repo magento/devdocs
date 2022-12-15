@@ -3,7 +3,7 @@ group: architecture-guide
 title: Storefront customization strategies
 menu_title: Storefront customization strategies
 redirect_to: https://developer.adobe.com/commerce/php/architecture/basics/frontend-customization/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

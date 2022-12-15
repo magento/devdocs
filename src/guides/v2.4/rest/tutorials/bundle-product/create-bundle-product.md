@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 3. Create the bundle product 
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bundle-product/create-bundle-product/
-layout: migrated
+status: migrated
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---

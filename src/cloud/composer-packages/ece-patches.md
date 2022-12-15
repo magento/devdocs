@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/ece-tools-package.html
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

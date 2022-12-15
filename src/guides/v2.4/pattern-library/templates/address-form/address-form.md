@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Address Form
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/templates/address-form/
-layout: migrated
+status: migrated
 ---
 This article discusses standards and rules for an address entry forms.
 

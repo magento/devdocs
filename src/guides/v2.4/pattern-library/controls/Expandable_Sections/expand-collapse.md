@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Expandable sections
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/controls/expand-collapse/
-layout: migrated
+status: migrated
 ---
 
 (AKA Expand-Collapse, Collapsible panels)

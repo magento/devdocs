@@ -2,7 +2,7 @@
 group: marketplace-api
 title: Getting help
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/help/
-layout: migrated
+status: migrated
 ---
 
 Use these resources if you need additional help.

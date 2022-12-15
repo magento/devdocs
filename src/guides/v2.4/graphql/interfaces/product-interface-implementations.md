@@ -4,7 +4,7 @@ title: Product interface implementations
 redirect_from:
   - /guides/v2.4/graphql/product/product-interface-implementations.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/
-layout: migrated
+status: migrated
 ---
 
 Magento provides multiple product types, and most of these product types have specialized attributes that are not defined in the `ProductInterface`.

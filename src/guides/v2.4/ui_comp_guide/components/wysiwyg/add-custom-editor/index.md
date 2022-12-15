@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Add Custom Editor
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/wysiwyg/add-custom-editor/
-layout: migrated
+status: migrated
 ---
 
 ## Before you begin...

@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-apache.html
-layout: migrated
+status: migrated
 ---
 
 ## Set values in an entry point script {#ms-entry-script}

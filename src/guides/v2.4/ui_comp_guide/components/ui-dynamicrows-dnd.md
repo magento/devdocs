@@ -4,7 +4,7 @@ title: DynamicRowsDragAndDrop component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/dynamic-rows-drag-drop/
-layout: migrated
+status: migrated
 ---
 
 The DynamicRowsDragAndDrop component is an [extension](https://glossary.magento.com/extension) for [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html), allowing users to change column position in the table.

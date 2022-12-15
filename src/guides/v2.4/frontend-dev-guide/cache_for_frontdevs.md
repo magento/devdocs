@@ -4,7 +4,7 @@ title: Cache overview
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/caching/
-layout: migrated
+status: migrated
 ---
 
 {% include cache/page-cache-overview.md%}

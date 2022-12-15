@@ -2,7 +2,7 @@
 group: graphql
 title: customer query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/customer/
-layout: migrated
+status: migrated
 ---
 
 The `customer` query returns information about the logged-in customer, store credit history and customer's wishlist.

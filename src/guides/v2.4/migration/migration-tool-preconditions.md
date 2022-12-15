@@ -8,7 +8,7 @@ menu_order: 1
 functional_areas:
   - Tools
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/prerequisites.html
-layout: migrated
+status: migrated
 ---
 
 Before starting migration, make sure the following requirements are met.

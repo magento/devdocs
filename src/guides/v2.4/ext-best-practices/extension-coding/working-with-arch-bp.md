@@ -7,7 +7,7 @@ menu_order: 2
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/extensions/architecture/
-layout: migrated
+status: migrated
 ---
 
 In addition to understanding fundamental programming designs/concepts, you are encouraged to learn how the MVC architecture works in our code and how to work with Magento's generated code and factories.

@@ -2,7 +2,7 @@
 group: payment-services
 title: Install Payment Services
 redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/get-started/install.html
-layout: migrated
+status: migrated
 ---
 
 The Payment Services extension for Adobe Commerce and Magento Open Source can be installed with Composer keys, which are linked to the Magento ID ([mageid]({{ page.baseurl }}/marketplace/sellers/profile-personal.html#field-descriptions)) provided in the signup process. Composer uses these keys during the initial installation of {{site.data.var.ee}}, or in situations in which the Composer keys were not previously saved to the `auth.json` file.

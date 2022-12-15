@@ -3,7 +3,7 @@ group: catalog-service
 title: products query
 ee_only: True
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/catalog-service/queries/products/
-layout: migrated
+status: migrated
 ---
 
 The Catalog Service for Adobe Commerce `products` query returns details about the SKUs specified as input. Although this query has the same name as  the [`products` query]({{site.baseurl}}/guides/v2.4/graphql/queries/products.html) that is provided with core Adobe Commerce and Magento Open Source, there are some differences.

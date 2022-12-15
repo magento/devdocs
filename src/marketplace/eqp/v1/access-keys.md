@@ -2,7 +2,7 @@
 group: marketplace-api
 title: API access keys
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/access-keys/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-info}

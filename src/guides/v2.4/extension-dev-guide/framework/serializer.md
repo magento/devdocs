@@ -5,7 +5,7 @@ subgroup: Framework
 menu_title: Serialize Library
 menu_order: 1000
 redirect_to: https://developer.adobe.com/commerce/php/development/framework/serialize-library/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

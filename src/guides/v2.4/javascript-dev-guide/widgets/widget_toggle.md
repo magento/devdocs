@@ -4,7 +4,7 @@ title: ToggleAdvanced widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/toggle/
-layout: migrated
+status: migrated
 ---
 
 Use the ToggleAdvanced [widget](https://glossary.magento.com/widget/) to toggle the HTML class for selectors by clicking on a toggle element.

@@ -3,7 +3,7 @@ group: graphql
 title: createWishlist mutation
 ee_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/create/
-layout: migrated
+status: migrated
 ---
 
 The `createWishlist` mutation creates a wish list for the logged in customer. {{site.data.var.ee}} allows customers to have multiple wish lists.

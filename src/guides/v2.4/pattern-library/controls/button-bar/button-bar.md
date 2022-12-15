@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Button Bar
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/controls/button-bar/
-layout: migrated
+status: migrated
 ---
 Within Magento application, it is often necessary to provide users with page level actions. These actions should be contain in a button bar as described in this guideline.
 

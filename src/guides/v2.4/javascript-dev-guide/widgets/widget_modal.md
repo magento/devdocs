@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Modal widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/modal/
-layout: migrated
+status: migrated
 ---
 
 The Magento modal widget implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:

@@ -4,7 +4,7 @@ title: Override a layout
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/override/
-layout: migrated
+status: migrated
 ---
 
 ## What's in this topic {#fedg_layout_override_overview}

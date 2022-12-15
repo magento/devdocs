@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Name your component
 redirect_to: https://developer.adobe.com/commerce/php/development/build/component-name/
-layout: migrated
+status: migrated
 ---
 
 You give a name to your component in its `composer.json` and `module.xml` files. These files also contain other required configuration parameters, such as the module's schema version.

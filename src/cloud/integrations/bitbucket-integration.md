@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/bitbucket.html
-layout: migrated
+status: migrated
 ---
 
 You can configure your Bitbucket repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your Bitbucket repository with your {{site.data.var.ece}} account.

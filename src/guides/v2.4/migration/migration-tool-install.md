@@ -6,7 +6,7 @@ menu_title: Install Data Migration Tool
 menu_node:
 menu_order: 2
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/install.html
-layout: migrated
+status: migrated
 ---
 
 ## Prerequisite: Versions of Magento and Data Migration Tool must match {#data-migrate-prereq}

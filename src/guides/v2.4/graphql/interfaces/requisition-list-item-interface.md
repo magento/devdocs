@@ -3,7 +3,7 @@ group: graphql
 title: RequisitionListItemInterface attributes and implementations
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/interfaces/item/
-layout: migrated
+status: migrated
 ---
 
 `RequisitionListItemInterface` provides details about items in a requisition list. It has the following implementations:

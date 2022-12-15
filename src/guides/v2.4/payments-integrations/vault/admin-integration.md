@@ -7,7 +7,7 @@ menu_order: 25
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/admin-integration/
-layout: migrated
+status: migrated
 ---
 
 To be able to use vault in [Admin](https://glossary.magento.com/admin) order creation, you need to take at least the following steps:

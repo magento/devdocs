@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Confirmation widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/confirm/
-layout: migrated
+status: migrated
 ---
 
 The Magento confirmation widget implements a modal pop-up window with the cancel and confirmation button.It is an [extension](https://glossary.magento.com/extension) of the [Magento modal widget].

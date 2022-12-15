@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Specify the Version
 redirect_from: /marketplace/sellers/creating-a-new-version.html
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-version/
-layout: migrated
+status: migrated
 ---
 
 After you [create the extension entry]({{ site.baseurl }}/marketplace/sellers/extension-create.html), the next step is to specify and submit a new version. Extensions can have multiple versions, including the first version submitted.

@@ -9,7 +9,7 @@ level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-address-field/
-layout: migrated
+status: migrated
 ---
 
 You can add new fields to default [checkout](https://glossary.magento.com/checkout) forms, such as shipping address or billing address forms. To illustrate this ability, this topic describes adding a field to the shipping address form.

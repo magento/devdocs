@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: About the uiCollection class
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/collection/
-layout: migrated
+status: migrated
 ---
 
 ## What is `uiCollection`

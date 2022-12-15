@@ -4,7 +4,7 @@ contributor_name: Ziffity
 contributor_link: https://www.ziffity.com/
 group: php-developer-guide
 redirect_to: https://developer.adobe.com/commerce/php/development/components/catalog-rules/
-layout: migrated
+status: migrated
 ---
 
 Catalog price rules can be used to offer products to buyers at a discounted price, based on a set of defined conditions. Catalog price rules do not use coupon codes. The discounts are applied to the final product price in the product listing and the product description page even before adding the product to the shopping cart.

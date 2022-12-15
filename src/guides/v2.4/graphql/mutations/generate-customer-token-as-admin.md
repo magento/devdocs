@@ -3,7 +3,7 @@ group: graphql
 title: generateCustomerTokenAsAdmin mutation
 contributor_name: EY
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/generate-token-as-admin/
-layout: migrated
+status: migrated
 ---
 
 The `generateCustomerTokenAsAdmin` mutation generates a new customer token as an admin so that an administrator can perform remote shopping assistance on behalf of the customer. For example, if a customer has asked for help adding a product into their cart, you would specify the token returned by the `generateCustomerTokenAsAdmin` mutation in the header of your [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html).

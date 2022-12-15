@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: InsertListing component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/insert-listing/
-layout: migrated
+status: migrated
 ---
 
 The InsertListing component inserts [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) into other components.

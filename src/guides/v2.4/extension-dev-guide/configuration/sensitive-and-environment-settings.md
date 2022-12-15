@@ -7,7 +7,7 @@ menu_order: 1000
 functional_areas:
   - Configuration
 redirect_to: https://developer.adobe.com/commerce/php/development/configuration/sensitive-environment-settings/
-layout: migrated
+status: migrated
 ---
 
 This topic discusses how third-party developers can create Magento components that designate configuration settings as being sensitive, system-specific, or both.

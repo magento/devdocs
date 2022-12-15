@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: ImageUploader component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/image-uploader/
-layout: migrated
+status: migrated
 ---
 
 The ImageUploader UI component gives users the ability to upload images to the Magento Media Gallery.

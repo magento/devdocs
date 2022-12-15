@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/logs/custom-logging.html
-layout: migrated
+status: migrated
 ---
 
 ## Logging overview {#config-log-over}

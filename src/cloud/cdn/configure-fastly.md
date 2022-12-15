@@ -8,7 +8,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/setup-fastly/fastly-configuration.html
-layout: migrated
+status: migrated
 ---
 
 [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a [Content Delivery Network](https://glossary.magento.com/content-delivery-network) (CDN) for static assets. Fastly also provides a Web Application Firewall (WAF) to secure your site and Cloud infrastructure. You must route all incoming site traffic through Fastly to protect your site and Cloud infrastructure from malicious traffic and attacks.

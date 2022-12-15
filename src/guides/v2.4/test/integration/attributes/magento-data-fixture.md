@@ -5,7 +5,7 @@ redirect_from:
   - /guides/v2.4/test/integration/annotations/magento-data-fixture-data-provider.html
   - /guides/v2.4/test/integration/parameterized_data_fixture.html
 redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/data-fixture/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

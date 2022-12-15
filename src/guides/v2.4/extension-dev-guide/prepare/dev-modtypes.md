@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Component types
 redirect_to: https://developer.adobe.com/commerce/php/development/prepare/component-types/
-layout: migrated
+status: migrated
 ---
 
 Each component type has a different [directory structure][directory-structure] and different contents for [`composer.json`][composer].

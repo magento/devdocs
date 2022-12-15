@@ -4,7 +4,7 @@ title: createBraintreeClientToken mutation
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/create-braintree-client-token/
-layout: migrated
+status: migrated
 ---
 
 The `createBraintreeClientToken` mutation creates the client token for Braintree Javascript SDK initialization.

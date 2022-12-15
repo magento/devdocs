@@ -7,7 +7,7 @@ menu_order: 1
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/module-configuration/
-layout: migrated
+status: migrated
 ---
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate [module](https://glossary.magento.com/module).

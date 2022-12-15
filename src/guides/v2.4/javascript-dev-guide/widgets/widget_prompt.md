@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Prompt widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/prompt/
-layout: migrated
+status: migrated
 ---
 
 The Magento prompt [widget](https://glossary.magento.com/widget) implements a modal pop-up window with an input field, and a cancel and a confirmation button.

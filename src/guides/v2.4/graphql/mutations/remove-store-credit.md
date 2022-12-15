@@ -3,7 +3,7 @@ group: graphql
 title: removeStoreCreditFromCart mutation
 ee_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/remove-store-credit/
-layout: migrated
+status: migrated
 ---
 
 The `removeStoreCreditFromCart` mutation removes store credit previously applied to the specified cart with the [`applyStoreCreditToCart`]({{page.baseurl}}/graphql/mutations/apply-store-credit.html) mutation. Magento restores the customer's available store credit to its original amount and recalculates all cart totals.

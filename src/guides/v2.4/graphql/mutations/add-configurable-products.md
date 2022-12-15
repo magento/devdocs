@@ -2,7 +2,7 @@
 group: graphql
 title: addConfigurableProductsToCart mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/add-configurable-products/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

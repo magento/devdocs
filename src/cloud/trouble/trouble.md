@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Help
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/best-practices.html
-layout: migrated
+status: migrated
 ---
 
 The troubleshooting topics help to resolve specific issues with your {{site.data.var.ece}} project. Before submitting a Support ticket, check the following:

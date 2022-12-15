@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Tabs widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/tabs/
-layout: migrated
+status: migrated
 ---
 
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the [Magento collapsible widget].

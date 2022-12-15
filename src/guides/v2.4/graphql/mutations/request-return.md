@@ -3,7 +3,7 @@ group: graphql
 title: requestReturn mutation
 ee_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/request-return/
-layout: migrated
+status: migrated
 ---
 
 The `requestReturn` mutation initiates a buyer's request to return an item for replacement or refund. The merchant subsequently decides whether to accept or reject the request.

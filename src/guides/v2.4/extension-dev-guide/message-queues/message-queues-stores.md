@@ -6,7 +6,7 @@ contributor_link: https://www.comwrap.com
 functional_areas:
   - Services
 redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/stores/
-layout: migrated
+status: migrated
 ---
 
 The `Magento_AmqpStore` module provides the ability for message queues to process asynchronous requests for specific stores.

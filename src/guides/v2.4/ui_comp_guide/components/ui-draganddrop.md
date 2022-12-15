@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: DragAndDrop component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/drag-and-drop/
-layout: migrated
+status: migrated
 ---
 
 The DragAndDrop component is an [extension](https://glossary.magento.com/extension) for [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html), allowing users to change columns position in the table.

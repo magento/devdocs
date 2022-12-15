@@ -13,7 +13,7 @@ functional_areas:
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/tutorials/checkout/create-customer/
-layout: migrated
+status: migrated
 ---
 
 This step creates a customer account and generates an authentication token for that customer. You can skip this step if you want to perform this tutorial as a guest user.

@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/staging-production.html
-layout: migrated
+status: migrated
 ---
 
 You can create a {{site.data.var.ece}} project from a blank template or by importing existing code. We recommend starting with a blank template first, and then importing existing code on top of it.

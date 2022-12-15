@@ -9,7 +9,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/composer.html
-layout: migrated
+status: migrated
 ---
 
 ## Before you start your installation {#instgde-install-cli-prereq}

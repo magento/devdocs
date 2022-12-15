@@ -6,7 +6,7 @@ functional_areas:
 redirect_from:
   - /cloud/basic-information/starter-architecture.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/starter-architecture.html
-layout: migrated
+status: migrated
 ---
 
 Your {{site.data.var.ece}} Starter architecture supports up to **four** environments, including a Master environment that contains the initial project code, the Staging environment, and up to two Integration environments.

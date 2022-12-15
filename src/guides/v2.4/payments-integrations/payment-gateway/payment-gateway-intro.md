@@ -2,7 +2,7 @@
 group: payments-integrations
 title: Commerce payment provider gateway
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/
-layout: migrated
+status: migrated
 ---
 
 ### What is Magento payment provider gateway

@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
   - Theme
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/ui-library/
-layout: migrated
+status: migrated
 ---
 
 The Magento UI [library](https://glossary.magento.com/library) is a flexible [Less]-based [frontend](https://glossary.magento.com/frontend) library designed to assist Magento [theme](https://glossary.magento.com/theme) developers.

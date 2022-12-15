@@ -3,7 +3,7 @@ group: admin-pattern-library
 title: Admin Design Pattern Library
 landing-page: Pattern Library
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/
-layout: migrated
+status: migrated
 ---
 ## What is a design pattern?
 

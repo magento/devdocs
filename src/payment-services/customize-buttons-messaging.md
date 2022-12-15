@@ -2,7 +2,7 @@
 group: payment-services
 title: Customize buttons and messaging
 redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/configure/settings.html
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

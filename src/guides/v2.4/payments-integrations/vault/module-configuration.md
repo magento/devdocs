@@ -7,7 +7,7 @@ menu_order: 1
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/module-configuration/
-layout: migrated
+status: migrated
 ---
 
 You need to add dependencies on the Magento_Vault module in the payment method's `composer.json` and `module.xml` files.

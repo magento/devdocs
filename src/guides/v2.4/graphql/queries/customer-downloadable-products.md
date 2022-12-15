@@ -2,7 +2,7 @@
 group: graphql
 title: customerDownloadableProducts query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/downloadable-products/
-layout: migrated
+status: migrated
 ---
 
 Use the `customerDownloadableProducts` query to retrieve the list of purchased downloadable products for the logged-in customer.

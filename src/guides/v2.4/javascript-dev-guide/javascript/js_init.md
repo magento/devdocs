@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Calling and initializing JavaScript
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/init/
-layout: migrated
+status: migrated
 ---
 
 ## Overview {#js_init_overview}

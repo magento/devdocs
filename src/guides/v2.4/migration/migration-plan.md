@@ -8,7 +8,7 @@ menu_order: 2
 functional_areas:
   - Tools
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/create-plan.html
-layout: migrated
+status: migrated
 ---
 
 To migrate successfully and avoid issues, you need to thoroughly plan and test your migration. We hope the guidelines below will prove helpful.

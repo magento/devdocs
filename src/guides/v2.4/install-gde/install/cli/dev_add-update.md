@@ -7,7 +7,7 @@ menu_node:
 functional_areas:
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/manage-modules.html
-layout: migrated
+status: migrated
 ---
 
 A contributing developer updates components by specifying components and their versions in Magento's `composer.json`.

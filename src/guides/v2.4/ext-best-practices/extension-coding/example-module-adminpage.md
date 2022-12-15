@@ -4,7 +4,7 @@ title: Creating an admin page
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/tutorials/create-admin-page/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

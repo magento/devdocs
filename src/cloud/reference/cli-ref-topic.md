@@ -4,7 +4,7 @@ title: Magento Cloud CLI
 functional_areas:
   - Cloud
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/cloud-cli.html
-layout: migrated
+status: migrated
 ---
 The `magento-cloud` CLI tool enables developers and system administrators the ability to manage Cloud projects and environments, perform routines and run automation tasks. The `magento-cloud` CLI extends the features and functionality of the Project Web Interface. After you install the `magento-cloud` CLI on your local workstation, you can use it to manage your {{site.data.var.ece}} Starter and Pro Integration environments.
 

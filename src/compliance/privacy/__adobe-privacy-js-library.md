@@ -2,7 +2,7 @@
 group: compliance
 title: Adobe Privacy JavaScript Library
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/privacy/adobe-javascript-library.html
-layout: migrated
+status: migrated
 ---
 
 <!-- TODO: Rename this topic without the `__` prefix to publish it when the library integration is ready -->

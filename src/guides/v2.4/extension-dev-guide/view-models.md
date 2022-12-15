@@ -4,7 +4,7 @@ contributor_name: Space 48
 contributor_link: https://www.space48.com/
 group: php-developer-guide
 redirect_to: https://developer.adobe.com/commerce/php/development/components/view-models/
-layout: migrated
+status: migrated
 ---
 
 A view model is an abstraction of the view exposing public properties and commands. It allows developers to offload features and business logic from block classes into separate classes that are easier to maintain, test, and reuse.

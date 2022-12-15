@@ -9,7 +9,7 @@ menu_order: 1
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-text-field-attribute/
-layout: migrated
+status: migrated
 ---
 
 The tutorials under this section guide Magento developers on setting up and configuring custom attributes.

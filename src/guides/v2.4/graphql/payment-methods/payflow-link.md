@@ -2,7 +2,7 @@
 group: graphql
 title: PayPal Payflow Link payment method
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-link/
-layout: migrated
+status: migrated
 ---
 
 PayPal [PayFlow Link](https://developer.paypal.com/docs/classic/payflow/integration-guide/) is available for merchants in the United States and Canada only. Customers are not required to have a personal PayPal account. Instead, customers enter their credit card information in a form that is hosted by PayPal.

@@ -3,7 +3,7 @@ group: graphql
 title: updateGiftRegistryItems mutation
 ee_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/update-items/
-layout: migrated
+status: migrated
 ---
 
 The `updateGiftRegistryItems` mutation modifies the requested quantity of an item in the specified gift registry. It can also change the description of the item.

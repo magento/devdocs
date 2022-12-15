@@ -6,7 +6,7 @@ menu_title: Capitalization
 menu_order: 4
 menu_node:
 redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/capitalization/
-layout: migrated
+status: migrated
 ---
 Magento uses three different cases for content – sentence case, title case, and all-caps.
 

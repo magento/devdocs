@@ -6,7 +6,7 @@ menu_title: Partial caching
 menu_order: 1
 menu_node: parent
 redirect_to: https://developer.adobe.com/commerce/php/development/cache/partial/
-layout: migrated
+status: migrated
 ---
 
 Magento uses [Zend_Cache](https://framework.zend.com/manual/1.12/en/zend.cache.html) to interact with the cache storage. However, Magento also has the [Magento\Cache]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache) [library](https://glossary.magento.com/library) for implementing Magento-specific caching. These topics discuss how to configure caching and [cache](https://glossary.magento.com/cache) types.

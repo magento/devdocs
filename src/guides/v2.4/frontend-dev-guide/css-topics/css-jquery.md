@@ -4,7 +4,7 @@ title: Using jQuery UI styles
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/jquery/
-layout: migrated
+status: migrated
 ---
 
 ## What's in this topic

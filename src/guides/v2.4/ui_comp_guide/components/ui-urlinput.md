@@ -4,7 +4,7 @@ subgroup: components
 title: urlInput component
 menu_title: urlInput component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/url-input/
-layout: migrated
+status: migrated
 ---
 
 The urlInput component implements the `<urlInput>` form field.

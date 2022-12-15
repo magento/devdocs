@@ -3,7 +3,7 @@ group: architecture-guide
 title: Magento Components
 menu_title: Components
 redirect_to: https://developer.adobe.com/commerce/php/architecture/modules/
-layout: migrated
+status: migrated
 ---
 
 ## Magento components

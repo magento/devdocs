@@ -4,7 +4,7 @@ title: Two-Factor Authentication
 functional_areas:
   - Configuration
 redirect_to: https://developer.adobe.com/commerce/testing/functional-testing-framework/two-factor-authentication/
-layout: migrated
+status: migrated
 ---
 
 Magento Two-Factor Authentication (2FA) improves security by requiring two-step authentication to access the Magento _Admin_ UI from all devices. The extension supports multiple authenticators including Google Authenticator, Authy, Duo, and U2F keys. 2FA applies to Magento _Admin_ users only. It is not available for storefront customer accounts.

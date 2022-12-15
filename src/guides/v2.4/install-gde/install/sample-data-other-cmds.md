@@ -9,7 +9,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/sample-data/remove-or-update.html
-layout: migrated
+status: migrated
 ---
 
 {% include install/sampledata/sample-data-other-cmds.md %}

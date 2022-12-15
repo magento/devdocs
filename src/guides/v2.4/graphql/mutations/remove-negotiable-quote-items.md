@@ -3,7 +3,7 @@ group: graphql
 title: removeNegotiableQuoteItems mutation
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/remove-items/
-layout: migrated
+status: migrated
 ---
 
 The `removeNegotiableQuoteItems` mutation removes the specified products from a negotiable quote.

@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/web-server/nginx.html
-layout: migrated
+status: migrated
 ---
 
 Magento supports nginx 1.18 (or the [latest mainline version](https://nginx.org/en/linux_packages.html#mainline)). You must also install the latest version of `php-fpm`.

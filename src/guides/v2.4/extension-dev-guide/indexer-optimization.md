@@ -4,7 +4,7 @@ title: Indexer optimization
 redirect_from:
   - /guides/v2.4/extension-dev-guide/indexer-batch.html
 redirect_to: https://developer.adobe.com/commerce/php/development/components/indexing/optimization/
-layout: migrated
+status: migrated
 ---
 
 ## Indexer Batching

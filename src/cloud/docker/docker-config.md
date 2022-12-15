@@ -8,7 +8,7 @@ functional_areas:
 redirect_from:
   - /cloud/reference/docker-config.html
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/configure/
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.mcd-prod}} uses Docker Compose to build and deploy {{site.data.var.ee}} to a multi-container Docker application. You can generate the Docker Compose configuration to build and deploy Docker from the following sources:

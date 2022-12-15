@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 13. Bulk transfer products
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/bulk-transfer-products/
-layout: migrated
+status: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 13. Bulk transfer products
 menu_order: 130

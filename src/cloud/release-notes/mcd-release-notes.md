@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-docker.html
-layout: migrated
+status: migrated
 ---
 
 The [`{{site.data.var.mcd-package}}`](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).

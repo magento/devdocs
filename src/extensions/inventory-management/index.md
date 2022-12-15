@@ -3,7 +3,7 @@ group: extensions
 title: Install Inventory Management
 redirect_from: guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/get-started/install-update.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.im}} modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in 2.3.x {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.

@@ -2,7 +2,7 @@
 group: marketplace-api
 title: Authentication
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/auth/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-info}

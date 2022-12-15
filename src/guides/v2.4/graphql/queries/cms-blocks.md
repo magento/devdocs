@@ -2,7 +2,7 @@
 group: graphql
 title: cmsBlocks query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/cms-blocks/
-layout: migrated
+status: migrated
 ---
 
 The `cmsBlocks` query returns information about blocks that were developed with the Magento Content Management System (CMS).

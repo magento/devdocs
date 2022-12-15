@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Column component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/column/
-layout: migrated
+status: migrated
 ---
 
 The Column component implements a basic column in [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).

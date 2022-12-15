@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/backup.html
-layout: migrated
+status: migrated
 ---
 
 ## Overview of backup {#instgde-cli-uninst-back-over}

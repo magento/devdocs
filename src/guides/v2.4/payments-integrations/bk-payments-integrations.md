@@ -8,7 +8,7 @@ menu_node: parent
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/
-layout: migrated
+status: migrated
 ---
 
 Magento payment provider gateway is a mechanism that allows you to integrate your stores with payment service providers. As a result, you can create and handle transactions based on order details.

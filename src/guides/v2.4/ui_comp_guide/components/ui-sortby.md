@@ -4,7 +4,7 @@ title: Sortby component
 contributor_name: Shankar Konar
 contributor_link: https://github.com/konarshankar07
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/sortby/
-layout: migrated
+status: migrated
 ---
 
 The Sortby component allows you to sort the column in ascending or descending order.

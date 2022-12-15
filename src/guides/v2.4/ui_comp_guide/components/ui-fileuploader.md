@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: FileUploader component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/file-uploader/
-layout: migrated
+status: migrated
 ---
 
 The File Uploader component is an [adapter](https://glossary.magento.com/adapter) for the [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload/wiki) plugin used in Magento. This component integrates file upload functionality with UI components.

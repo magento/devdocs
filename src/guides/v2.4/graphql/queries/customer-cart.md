@@ -2,7 +2,7 @@
 group: graphql
 title: customerCart query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/queries/cart/
-layout: migrated
+status: migrated
 ---
 
 The `customerCart` query returns the active cart for the logged-in customer. If the cart does not exist, the query creates one. The customer's authorization token must be specified in the headers.

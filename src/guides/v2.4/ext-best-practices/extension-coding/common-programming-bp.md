@@ -4,7 +4,7 @@ title: Programming Best Practices
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/extensions/
-layout: migrated
+status: migrated
 ---
 
 You should follow common programming best practices to reduce bugs and improve the quality and maintainability of your extensions.

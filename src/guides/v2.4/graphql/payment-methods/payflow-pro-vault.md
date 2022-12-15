@@ -2,7 +2,7 @@
 group: graphql
 title: PayPal Payflow Pro Vault payment method
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-pro-vault/
-layout: migrated
+status: migrated
 ---
 
 PayPal Payflow Pro Vault payment method processes credit and debit card payments using information stored in the Magento vault. This payment method is available for customers of the United States, Canada, Australia, and New Zealand.

@@ -2,7 +2,7 @@
 group: migration-guide
 title: How migration works
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/how-migration-works.html
-layout: migrated
+status: migrated
 ---
 
 This topic provides a high-level overview of how data is migrated from Magento 1 to Magento 2 using the Data Migration Tool.

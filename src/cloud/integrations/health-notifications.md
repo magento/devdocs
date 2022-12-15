@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/health-notifications.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.ece}} monitors disk space usage on all applications and services in your Starter environment or your Pro Integration environment. A database disk that runs out of space could cause data corruption. The health status check occurs every 5 minutes and can notify you by email or other external service. There are three low-disk warnings for health notifications:

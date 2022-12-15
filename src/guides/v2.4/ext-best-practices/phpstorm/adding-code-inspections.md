@@ -4,7 +4,7 @@ title: Adding code inspections
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/add-code-inspections/
-layout: migrated
+status: migrated
 ---
 
 The IntelliJ Platform provides tools designed for static code analysis called code inspections, which help you maintain and clean up code without actually executing it.

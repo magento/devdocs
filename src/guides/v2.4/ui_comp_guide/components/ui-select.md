@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Select component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/select/
-layout: migrated
+status: migrated
 ---
 
 The Select component provides the interface for a list or a data set. With this component, the user can select only one item.

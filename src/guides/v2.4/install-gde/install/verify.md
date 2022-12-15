@@ -9,7 +9,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/verify.html
-layout: migrated
+status: migrated
 ---
 
 ## Verify the storefront (with optional sample data) {#instgde-verify-front-sample}

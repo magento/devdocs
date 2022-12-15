@@ -2,7 +2,7 @@
 group: graphql
 title: changeCustomerPassword mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/change-password/
-layout: migrated
+status: migrated
 ---
 
 Use the `changeCustomerPassword` mutation to change the password for the logged-in customer.

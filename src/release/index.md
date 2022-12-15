@@ -2,7 +2,7 @@
 title: Upcoming releases
 group: release
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/schedule.html
-layout: migrated
+status: migrated
 ---
 
 Adobe continually strives to find the right balance between making product upgrades simple and predictable and delivering improvements and new features to early adopters faster. Over the last year, we have refined how we deliver software to support this balance. For additional information, refer to our [release policy]({{site.baseurl}}/release/policy/).

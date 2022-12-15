@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/setup-fastly/fastly-custom-cache-configuration.html
-layout: migrated
+status: migrated
 ---
 
 After you enable and verify the Fastly service in your Staging and Production environments, you can review and customize cache configuration settings like enabling force TLS to redirect HTTP requests to Fastly, updating purge settings, enabling basic authentication to password-protect your site during development, and setting up GeoIP support.

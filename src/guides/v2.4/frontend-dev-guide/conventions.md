@@ -4,7 +4,7 @@ title: Conventional notations used in this Guide
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/conventions/
-layout: migrated
+status: migrated
 ---
 
 ## Conventional notations for paths to modules and themes

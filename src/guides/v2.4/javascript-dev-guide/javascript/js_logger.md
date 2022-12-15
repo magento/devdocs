@@ -5,7 +5,7 @@ title: JavaScript Logger
 menu_title: JavaScript Logger
 menu_order: 20
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/logger/
-layout: migrated
+status: migrated
 ---
 
 ## Logger overview

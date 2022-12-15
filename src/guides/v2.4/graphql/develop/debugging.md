@@ -4,7 +4,7 @@ title: Debugging GraphQL queries
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/develop/debugging/
-layout: migrated
+status: migrated
 ---
 
 This topic provides recommendations on how to debug GraphQL requests.

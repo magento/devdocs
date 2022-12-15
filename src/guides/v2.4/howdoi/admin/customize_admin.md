@@ -2,7 +2,7 @@
 group: how-do-i
 title: Customize the design
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-admin-design/
-layout: migrated
+status: migrated
 ---
 
 Learn how to customize (add, delete, change) the configuration options available in the Admin. These options define the various aspects of storefront design.

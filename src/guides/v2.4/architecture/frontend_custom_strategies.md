@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Ease of frontend customization
 redirect_to: https://developer.adobe.com/commerce/php/architecture/basics/frontend-customization/
-layout: migrated
+status: migrated
 ---
 
 ## Overview {#m2arch-whatis-overview}

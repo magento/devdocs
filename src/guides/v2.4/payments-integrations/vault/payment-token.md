@@ -4,7 +4,7 @@ title: Payment Token
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/payment-token/
-layout: migrated
+status: migrated
 ---
 
 Magento does not store any private credit card details. It only stores the data received from the payment provider: payment processor token and credit card details without sensitive data.

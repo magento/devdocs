@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 5. Add items to the cart
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-add-items/
-layout: migrated
+status: migrated
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials

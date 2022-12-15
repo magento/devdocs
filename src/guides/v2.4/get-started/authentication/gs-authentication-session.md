@@ -7,7 +7,7 @@ menu_order: 4
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-session/
-layout: migrated
+status: migrated
 ---
 
 As a customer, you log in to the Magento [storefront](https://glossary.magento.com/storefront) with your customer credentials. As an admin, you log in to the [Admin](https://glossary.magento.com/magento-admin) with your [admin](https://glossary.magento.com/admin) credentials.

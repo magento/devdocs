@@ -4,7 +4,7 @@ title: OAuth error codes
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/oauth-errors/
-layout: migrated
+status: migrated
 ---
 
 When the third-party application makes an invalid request to Magento, the following OAuth-related errors can occur:

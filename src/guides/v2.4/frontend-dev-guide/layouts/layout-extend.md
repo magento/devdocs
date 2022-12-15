@@ -4,7 +4,7 @@ title: Extend a layout
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/extend/
-layout: migrated
+status: migrated
 ---
 
 ## Create a theme extending file {#fedg_layout_extend_merge}

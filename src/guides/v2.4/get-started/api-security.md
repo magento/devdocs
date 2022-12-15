@@ -4,7 +4,7 @@ title: API security
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/api-security/
-layout: migrated
+status: migrated
 ---
 
 This topic describes best practices for [API security](https://owasp.org/www-project-api-security/).

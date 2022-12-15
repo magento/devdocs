@@ -3,7 +3,7 @@ group: graphql
 title: removeGiftRegistryRegistrants mutation
 ee_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/remove-registrants/
-layout: migrated
+status: migrated
 ---
 
 The `removeGiftRegistryRegistrants` mutation removes one or more registrants from the specified gift registry.

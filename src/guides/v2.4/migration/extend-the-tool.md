@@ -4,7 +4,7 @@ title: Extend the migration tool
 functional_areas:
   - Tools
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/basics/customize.html
-layout: migrated
+status: migrated
 ---
 
 Sometimes the data format and structure created by [extensions](https://marketplace.magento.com/extensions.html) or custom code is different between Magento 1 and Magento 2. Use extension points within the Data Migration Tool to migrate this data. If the data format and structure are the same, the tool can automatically migrate the data without user intervention.

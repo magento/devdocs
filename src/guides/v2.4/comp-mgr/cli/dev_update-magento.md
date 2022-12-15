@@ -6,7 +6,7 @@ functional_areas:
 redirect_from:
   - guides/v2.4/install-gde/install/cli/dev_update-magento.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/git-installs.html
-layout: migrated
+status: migrated
 ---
 
 This topic discusses how a contributing developer can update Magento without reinstalling it. To perform an upgrade if you are *not* a contributing developer, see [Updating the Magento application and components](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).

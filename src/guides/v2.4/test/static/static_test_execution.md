@@ -5,7 +5,7 @@ functional_areas:
   - Testing
   - test
 redirect_to: https://developer.adobe.com/commerce/testing/guide/static/
-layout: migrated
+status: migrated
 ---
 
 Executing Magento 2 static tests is straightforward. They can be executed in several ways.

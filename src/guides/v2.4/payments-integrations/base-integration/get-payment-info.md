@@ -7,7 +7,7 @@ menu_order: 6
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/get-payment-info/
-layout: migrated
+status: migrated
 ---
 
 To implement transaction [authorization](https://glossary.magento.com/authorization) our payment should receive some payment details from payment form, like credit card details,

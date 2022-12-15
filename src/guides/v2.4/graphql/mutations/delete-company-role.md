@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/mutations/delete-role/
-layout: migrated
+status: migrated
 ---
 
 Use the `deleteCompanyRole` mutation to delete a company role by ID.

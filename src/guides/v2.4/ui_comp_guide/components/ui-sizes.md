@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Sizes component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/sizes/
-layout: migrated
+status: migrated
 ---
 
 The Sizes component defines the maximum number of displayed records in a table (grid).

@@ -2,7 +2,7 @@
 group: release-notes
 title: Commerce B2B Release Notes
 redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/b2b/release-notes.html
-layout: migrated
+status: migrated
 ---
 
 The release notes for the B2B extension captures additions and bug fixes that {{ site.data.var.ee }} has added during a release cycle.

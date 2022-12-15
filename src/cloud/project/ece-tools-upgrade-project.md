@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/install-package.html
-layout: migrated
+status: migrated
 ---
 
 Adobe deprecated the `magento/magento-cloud-configuration` and `magento/ece-patches` packages in favor of the `{{site.data.var.ct}}` package, which simplifies many cloud processes. If you use an older {{site.data.var.ece}} project that does _not_ contain the `{{site.data.var.ct}}` package, then you must perform a one-time, manual _upgrade_ process to your project.

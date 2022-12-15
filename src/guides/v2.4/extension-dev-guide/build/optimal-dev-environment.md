@@ -5,7 +5,7 @@ subgroup: 03_Build
 menu_title: Optimal development environment
 menu_order: 1
 redirect_to: https://developer.adobe.com/commerce/php/development/build/development-environment/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

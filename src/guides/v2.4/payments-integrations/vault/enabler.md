@@ -7,7 +7,7 @@ menu_order: 5
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/enabler/
-layout: migrated
+status: migrated
 ---
 
 Store customers must have the ability to enable and disable credit cards details storing.

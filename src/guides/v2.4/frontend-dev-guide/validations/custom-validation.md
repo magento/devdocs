@@ -4,7 +4,7 @@ title: Custom validation rules
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/validations/custom-rules/
-layout: migrated
+status: migrated
 ---
 
 Custom validation rules can be added by creating a Javascript mixin for the `mage/validation` module and calling the `$.validator.addMethod` function with the custom validation rule parameters as described below:

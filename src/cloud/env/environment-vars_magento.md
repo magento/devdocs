@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-admin.html
-layout: migrated
+status: migrated
 ---
 
 Users that have administrative access to the {{site.data.var.ece}} project can use the following project environment variables to override the configuration settings for the administrative user account to access the Admin UI. See [Change the ADMIN variables]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html).

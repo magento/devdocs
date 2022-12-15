@@ -6,7 +6,7 @@ contributor_link: https://www.comwrap.com
 functional_areas:
   - Services
 redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/async-topics/
-layout: migrated
+status: migrated
 ---
 
 The Magento Queuing system uses 'topic exchange' for managing messages. More information about topics can be found [here](https://www.rabbitmq.com/tutorials/tutorial-five-python.html).

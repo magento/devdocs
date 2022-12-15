@@ -8,7 +8,7 @@ menu_node: parent
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/
-layout: migrated
+status: migrated
 ---
 
 Vault as a [payment method](https://glossary.magento.com/payment-method) provides store customers with ability to use the previously saved credit card information for [checkout](https://glossary.magento.com/checkout). This information is stored safely on the side of trusted payments gateways (Braintree, PayPal). Not storing the sensitive credit card information is one of the [PCI compliance](https://www.pcisecuritystandards.org/)  requirements.

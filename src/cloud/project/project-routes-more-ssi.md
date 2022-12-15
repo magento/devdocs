@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/routes/server-side-includes.html
-layout: migrated
+status: migrated
 ---
 
 [Server side includes](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) are directives in [HTML](https://glossary.magento.com/html) pages that get evaluated on the server while the pages are being rendered. Use of [server side](https://glossary.magento.com/server-side) includes enables you to add dynamically generated content to an existing HTML page without having to serve the entire page.

@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Server-side Request Forgery
 redirect_to: https://developer.adobe.com/commerce/php/development/security/server-side-request-forgery/
-layout: migrated
+status: migrated
 ---
 
 Server-side Request Forgery (SSRF) is a type of attack in which a server is tricked into sending a request to an

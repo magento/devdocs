@@ -4,7 +4,7 @@ title: Cascading style sheets (CSS)
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

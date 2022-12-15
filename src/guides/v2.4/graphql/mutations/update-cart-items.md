@@ -2,7 +2,7 @@
 group: graphql
 title: updateCartItems mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/update-items/
-layout: migrated
+status: migrated
 ---
 
 The `updateCartItems` mutation allows you to modify items in the specified cart. You can also replace the current quantity of one or more cart items with the specified quantities. The mutation does not perform calculations to determine the quantity of cart items.

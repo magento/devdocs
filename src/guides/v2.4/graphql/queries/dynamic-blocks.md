@@ -2,7 +2,7 @@
 group: graphql
 title: dynamicBlocks query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/dynamic-blocks/
-layout: migrated
+status: migrated
 ---
 
 The `dynamicBlocks` query returns a list of dynamic blocks that have been placed in a Dynamic Blocks Rotator inline widget and meet the specified criteria.

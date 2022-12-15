@@ -8,7 +8,7 @@ menu_order: 1
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/coding-standards/code-demarcation/
-layout: migrated
+status: migrated
 ---
 
 Magento core developers must follow the Magento code demarcation standard.

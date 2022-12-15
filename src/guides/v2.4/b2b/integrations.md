@@ -10,7 +10,7 @@ functional_areas:
   - B2B
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/integrations
-layout: migrated
+status: migrated
 ---
 
 This topic lists the REST endpoints and services that are provided with {{site.data.var.b2b}}.

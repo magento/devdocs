@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/staging-production.html
-layout: migrated
+status: migrated
 ---
 
 Use the following instructions to import your {{site.data.var.ee}} code into a current {{ site.data.var.ece }} environment.

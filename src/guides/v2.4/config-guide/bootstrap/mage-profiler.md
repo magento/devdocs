@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/setup/mage-profiler.html
-layout: migrated
+status: migrated
 ---
 
 Magento profiling enables you to:

@@ -4,7 +4,7 @@ title: setGuestEmailOnCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-set-guest-email.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-guest-email/
-layout: migrated
+status: migrated
 ---
 
 For guest customers, you must assign an email to the cart before you place the order.

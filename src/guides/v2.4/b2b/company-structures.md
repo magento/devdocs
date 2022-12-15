@@ -6,7 +6,7 @@ functional_areas:
   - B2B
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/company-structures
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.b2b}} allows company users to be assigned to company teams and hierarchies.

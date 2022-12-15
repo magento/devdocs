@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Application
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/workers-property.html
-layout: migrated
+status: migrated
 ---
 You can define zero or multiple work instances for each application. A worker
 instance runs as a container, independent from the web instance and without

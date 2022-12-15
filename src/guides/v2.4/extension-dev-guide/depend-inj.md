@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Dependency injection
 redirect_to: https://developer.adobe.com/commerce/php/development/components/dependency-injection/
-layout: migrated
+status: migrated
 ---
 
 Magento 2 uses [Dependency Injection] to replace functionality provided by the `Mage` class in Magento 1.x.

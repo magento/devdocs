@@ -4,7 +4,7 @@ title: removeItemFromCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-remove-item.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/remove-item/
-layout: migrated
+status: migrated
 ---
 
 The `removeItemFromCart` mutation deletes the entire quantity of a specified item from the cart. If you remove all items from the cart, the cart continues to exist.

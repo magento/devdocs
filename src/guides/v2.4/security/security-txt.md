@@ -6,7 +6,7 @@ contributor_link: https://partners.magento.com/portal/details/partner/id/70/
 functional_areas:
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/security-txt.html
-layout: migrated
+status: migrated
 ---
 
 When security vulnerabilities are discovered by researchers, proper reporting channels are often lacking. As a result, some vulnerabilities are not reported. The purpose of the `security.txt` [file format](https://tools.ietf.org/html/draft-foudil-securitytxt-09) is to give security researchers the information they need to report their findings.

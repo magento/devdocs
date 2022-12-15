@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/config-create-types.html
-layout: migrated
+status: migrated
 ---
 
 ## Extend configuration types {#config-files-extend-create}

@@ -2,7 +2,7 @@
 group: release-notes
 title: Magento Open Source 2.4.4 Release Notes
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-4.html
-layout: migrated
+status: migrated
 ---
 
 {{ site.data.var.ce }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.

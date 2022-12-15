@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/split-db/revert-split-database.html
-layout: migrated
+status: migrated
 ---
 
 For {{ site.data.var.ee }} customers who have implemented [Split Database]({{ page.baseurl }}/config-guide/multi-master/multi-master.html), the following topic describes how to revert or migrate back to a single database. We recommend that {{ site.data.var.ee }} merchants currently using Split Database who are upgrading to 2.4.2 and above review these steps, as well as our [announcement](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Split-Database-in-Magento-Commerce/ba-p/465187) on the planned deprecation of Split Database.

@@ -8,7 +8,7 @@ functional_areas:
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/logs/custom-log-files.html
-layout: migrated
+status: migrated
 ---
 
 The `Magento\Framework\Logger` module contains the following handler classes:

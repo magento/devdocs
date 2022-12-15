@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Semantic Version Check
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/semantic-version-check/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

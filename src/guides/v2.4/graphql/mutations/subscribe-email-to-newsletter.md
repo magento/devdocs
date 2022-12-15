@@ -4,7 +4,7 @@ title: subscribeEmailToNewsletter mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/subscribe-email-to-newsletter/
-layout: migrated
+status: migrated
 ---
 
 The `subscribeEmailToNewsletter` mutation allows guests and registered customers to sign up to receive newsletters.

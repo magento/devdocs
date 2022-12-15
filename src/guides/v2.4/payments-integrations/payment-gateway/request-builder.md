@@ -6,7 +6,7 @@ menu_title: Request Builder
 menu_node:
 menu_order: 4
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/request-builder/
-layout: migrated
+status: migrated
 ---
 
 Request Builder is a component of the Magento [payment gateway](https://glossary.magento.com/payment-gateway) responsible for building a request from several parts. It allows implementing complex, yet atomic and testable, building strategies. Each builder can have simple logic or contain builder composites.

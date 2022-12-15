@@ -2,7 +2,7 @@
 group: rest-api
 title: Manage prices for multiple products
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/modules/catalog/catalog-pricing/
-layout: migrated
+status: migrated
 functional_areas:
   - Integration
 ---

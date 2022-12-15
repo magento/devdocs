@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 8. Create an invoice
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-create-invoice/
-layout: migrated
+status: migrated
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials

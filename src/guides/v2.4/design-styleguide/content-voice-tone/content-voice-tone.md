@@ -8,7 +8,7 @@ menu_node:
 functional_areas:
   - Content
 redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/voice-and-tone/
-layout: migrated
+status: migrated
 ---
 
 Our priority is to help users perform administrative tasks with ease and manage their stores effectively.

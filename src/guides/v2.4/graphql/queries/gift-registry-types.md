@@ -5,7 +5,7 @@ ee_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/types/
-layout: migrated
+status: migrated
 ---
 
 The `giftRegistryTypes` query returns a list of available gift registry types.

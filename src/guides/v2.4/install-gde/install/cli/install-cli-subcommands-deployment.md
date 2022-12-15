@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Deploy
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/deployment.html
-layout: migrated
+status: migrated
 ---
 
 ## First steps {#instgde-cli-before}

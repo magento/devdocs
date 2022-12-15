@@ -4,7 +4,7 @@ title: Migrating custom email templates
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/email-migration/
-layout: migrated
+status: migrated
 ---
 
 {% raw %}

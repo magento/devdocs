@@ -6,7 +6,7 @@ redirect_from:
 - guides/v2.3/contributor-guide/contributors.html
 - guides/v2.4/contributor-guide/contributors.html
 redirect_to: https://developer.adobe.com/commerce/contributor/guides/contributors/
-layout: migrated
+status: migrated
 ---
 
 Many thanks to our community members, partners, and Magento fans who contribute to our open source projects.

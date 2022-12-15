@@ -2,7 +2,7 @@
 group: graphql
 title: updateCustomerEmail mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/update-email/
-layout: migrated
+status: migrated
 ---
 
 Use the `updateCustomerEmail` mutation to change the email address for the logged-in customer.

@@ -8,7 +8,7 @@ menu_order: 7
 functional_areas:
   - Tools
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/migrate-data/post-migration.html
-layout: migrated
+status: migrated
 ---
 
 After you have completed your migration and thoroughly tested your new Magento 2 site, perform the following tasks:

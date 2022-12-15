@@ -5,7 +5,7 @@ redirect_from:
 - guides/v2.3/contributor-guide/maintainers.html
 - guides/v2.4/contributor-guide/maintainers.html
 redirect_to: https://developer.adobe.com/commerce/contributor/guides/maintainers/
-layout: migrated
+status: migrated
 ---
 
 Magento trusts our active community members to review pull requests and accept or reject proposed code changes. [Community Maintainers](https://magento.com/magento-contributors#maintainers) take part in discussions, reviews, and help process pull requests.

@@ -7,7 +7,7 @@ menu_order: 20
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/customer-stored-payments/
-layout: migrated
+status: migrated
 ---
 
 This topic describes how to display stored tokens in the customer account and give customers ability to remove the tokens.

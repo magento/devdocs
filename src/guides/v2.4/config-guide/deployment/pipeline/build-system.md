@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/build-system.html
-layout: migrated
+status: migrated
 ---
 
 You can have one build system that meets the following requirements:

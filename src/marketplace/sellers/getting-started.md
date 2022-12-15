@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Getting Started
 redirect_from: /marketplace/sellers/faq-sellers.html
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/
-layout: migrated
+status: migrated
 ---
 
 This next generation application store offers merchants a curated selection of solutions, and provides qualified developers the tools, platform, and prime location to build a thriving business.

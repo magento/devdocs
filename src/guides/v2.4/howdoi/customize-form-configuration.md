@@ -8,7 +8,7 @@ menu_node:
 level3_subgroup: product-creation-form
 menu_order: 2
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-product-creation-form/configuration/
-layout: migrated
+status: migrated
 ---
 
 Customizing the form config file (that is, declarative customization) is preferable for changes like introducing new fields, field sets and modals.

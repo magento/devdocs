@@ -2,7 +2,7 @@
 group: release-notes
 title: Magento Open Source 2.4.2 Release Notes
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-2.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.ce}} 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. Elasticsearch 7.9.x and Redis 6.x are now supported.

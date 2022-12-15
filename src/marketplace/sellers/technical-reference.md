@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Technical Reference
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/technical-reference/
-layout: migrated
+status: migrated
 ---
 
 ## Guides

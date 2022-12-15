@@ -7,7 +7,7 @@ functional_areas:
   - Setup
   - Stores
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/multiple-sites.html
-layout: migrated
+status: migrated
 ---
 
 You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ site.baseurl }}/cloud/configure/configure-best-practices.html#sites).

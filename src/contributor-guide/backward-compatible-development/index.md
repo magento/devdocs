@@ -5,7 +5,7 @@ redirect_from:
 - guides/v2.3/contributor-guide/backward-compatible-development/index.html
 - guides/v2.4/contributor-guide/backward-compatible-development/index.html
 redirect_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/backward-compatibility-policy/
-layout: migrated
+status: migrated
 ---
 This page describes rules and best practices for backward compatible development.
 

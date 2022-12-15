@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/get-support/
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.mcd-prod}} is a Magento Community Engineering project supported by the Magento developer community. You have several options to get support and learn more about {{site.data.var.mcd-prod}} and local development.

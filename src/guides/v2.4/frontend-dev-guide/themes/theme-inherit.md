@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
   - Theme
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/inheritance/
-layout: migrated
+status: migrated
 ---
 
 ## What's in this topic {#theme-inherit-over}

@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
   - Tools
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/tools/
-layout: migrated
+status: migrated
 ---
 
 This chapter describes how to install and use additional tools that can make your Magento frontend development tasks easier.

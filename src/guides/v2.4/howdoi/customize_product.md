@@ -8,7 +8,7 @@ menu_node:
 level3_subgroup: product-creation-form
 menu_order: 1
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/admin/custom-product-creation-form/
-layout: migrated
+status: migrated
 ---
 
 This tutorial describes how developers can customize the product creation form used on the product creation and product edit pages in [Admin](https://glossary.magento.com/admin). The product creation form is implemented using the [form UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html).

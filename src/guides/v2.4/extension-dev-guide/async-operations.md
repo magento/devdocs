@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Asynchronous and deferred operations
 redirect_to: https://developer.adobe.com/commerce/php/development/components/async-operations/
-layout: migrated
+status: migrated
 ---
 
 Asynchronous operations are not native to PHP but it is still possible to execute heavy

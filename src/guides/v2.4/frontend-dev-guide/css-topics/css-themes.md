@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
   - Theme
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/themes/
-layout: migrated
+status: migrated
 ---
 
 ## In this topic {#fedg_css-in-themes_overview}

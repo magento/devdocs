@@ -2,7 +2,7 @@
 group: graphql
 title: GraphQL security configuration
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/security-configuration/
-layout: migrated
+status: migrated
 ---
 
 The Framework and `GraphQl` module `di.xml` files define several security-related configuration values that you should review to ensure they align with types of mutations and queries that you run.

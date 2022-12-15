@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Submit for Technical Review
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/submit-for-technical-review/
-layout: migrated
+status: migrated
 ---
 
 All extensions submitted to Commerce Marketplace must pass the automated technical review as part of the extension submission workflow. Technical review helps to improve the quality of products on Commerce Marketplace by checking for indications of plagiarism, malware, and adherence to Magento coding standards. Developers whose extensions do not pass technical review receive a report of the results. After the issues are resolved, you are welcome to resubmit the extension. Extensions must pass technical review to receive a listing on Commerce Marketplace.

@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-bypass-to-origin.html
-layout: migrated
+status: migrated
 ---
 
 You can create a custom VCL snippet to bypass the Fastly cache so you can troubleshoot request traffic to the origin server, for example to determine whether site issues are caused by caching, or to troubleshoot headers.

@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Introduction to Composer
 redirect_to: https://developer.adobe.com/commerce/php/development/composer/
-layout: migrated
+status: migrated
 ---
 
 {% include install/composer-overview.md %}

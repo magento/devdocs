@@ -5,7 +5,7 @@ title: Serialized to JSON data upgrade
 menu_title: Serialized to JSON data upgrade
 menu_order: 1000
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/backend/convert-serialized-data/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

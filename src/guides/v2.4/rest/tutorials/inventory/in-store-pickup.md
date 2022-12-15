@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 14. Create an order for in-store pickup (optional)
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/in-store-pickup/
-layout: migrated
+status: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 14. Bulk transfer products
 menu_order: 140

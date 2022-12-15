@@ -4,7 +4,7 @@ title: Float Comparator
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 redirect_to: https://developer.adobe.com/commerce/php/development/framework/float-comparator/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

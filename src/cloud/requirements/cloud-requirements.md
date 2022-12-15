@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Install
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/overview.html
-layout: migrated
+status: migrated
 ---
 
 This topic describes technologies, knowledge, accounts, and steps to complete when working with your {{site.data.var.ece}} code, environments, stores, and sites. If you are not experienced with a technology, links to information and resources are provided below to help get you started.

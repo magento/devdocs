@@ -4,7 +4,7 @@ title: GridDataProvider component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/grid-data-provider/
-layout: migrated
+status: migrated
 ---
 
 The GridDataProvider [UI component](https://glossary.magento.com/ui-component) is a data provider for the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component. It provides data in specific format which is shared among all UI components in the scope of the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component.

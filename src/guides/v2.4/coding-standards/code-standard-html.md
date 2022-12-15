@@ -8,7 +8,7 @@ menu_order: 9
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/coding-standards/html-style-guide/
-layout: migrated
+status: migrated
 ---
 
 This style guide defines Magento internal requirements for [HTML](https://glossary.magento.com/html) code style for teams that develop Less and [CSS](https://glossary.magento.com/css) code. We recommend that developers who create extensions and customizations also use these standards.

@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Branding
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/branding/
-layout: migrated
+status: migrated
 ---
 
 The Magento name and its related logos are trademarks owned by Magento, Inc. Your extension and listing must not violate the trademarks and copyrights of Adobe, Inc., or those of any other party. To learn more, see [Magento License / Trademark][1].

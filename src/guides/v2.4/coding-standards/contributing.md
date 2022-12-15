@@ -8,7 +8,7 @@ menu_order: 10
 functional_areas:
 - Standards
 redirect_to: https://developer.adobe.com/commerce/php/coding-standards/contributing/
-layout: migrated
+status: migrated
 ---
 
 Like many large projects, Magento has coding standards.

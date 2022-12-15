@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Deploy
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/store-settings.html
-layout: migrated
+status: migrated
 ---
 
 Configuration management exports your configurations to a file for pushing across your environments. This file, `config.php`, keeps your configurations consistent across all environments, decreases downtime by moving static deploy to build, and much more. This information details an example for configuring your settings, exporting the file, and deploying it.

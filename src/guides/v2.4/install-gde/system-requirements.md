@@ -9,7 +9,7 @@ redirect_from:
   - /guides/v2.4/architecture/tech-stack.html
   - /system-requirements.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html
-layout: migrated
+status: migrated
 ---
 
 This table shows versions of third-party software dependencies that Adobe has tested with specific {{ site.data.var.ee }} and {{ site.data.var.ce }} releases. Adobe only supports the combination of system requirements described in the following table.

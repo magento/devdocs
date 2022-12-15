@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: The uiLayout service object
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/layout/
-layout: migrated
+status: migrated
 ---
 
 The `uiLayout` service object is a JavaScript function object used for initializing and configuring UI components.

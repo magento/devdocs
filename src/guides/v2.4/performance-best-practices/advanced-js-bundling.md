@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/performance-best-practices/advanced-js-bundling.html
-layout: migrated
+status: migrated
 ---
 
 ## Introduction

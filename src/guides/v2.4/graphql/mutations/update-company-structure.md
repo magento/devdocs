@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/mutations/update-structure/
-layout: migrated
+status: migrated
 ---
 
 Use the `updateCompanyStructure` mutation to change the parent node of a company team.

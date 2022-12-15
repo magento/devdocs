@@ -5,7 +5,7 @@ title: Public interfaces & APIs
 menu_title: Public interfaces & APIs
 menu_order: 3
 redirect_to: https://developer.adobe.com/commerce/php/development/components/api-concepts/
-layout: migrated
+status: migrated
 ---
 
 ## What is a public interface? {#public-interface}

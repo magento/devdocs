@@ -6,7 +6,7 @@ functional_areas:
  - Frontend
  - Theme
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/sticky/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

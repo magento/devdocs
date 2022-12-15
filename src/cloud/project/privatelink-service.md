@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/privatelink-service.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.ece}} supports integration with the [AWS PrivateLink][] or [Azure Private Link][] service to allow Cloud customers to establish secure, private communication between {{site.data.var.ece}} environments and services and applications hosted on external systems. Both the {{site.data.var.ee}} application and external systems must be accessible through private VPC endpoints configured within the same Cloud region (AWS or Azure).

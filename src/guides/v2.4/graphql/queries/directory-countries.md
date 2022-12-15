@@ -2,7 +2,7 @@
 group: graphql
 title: countries query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/countries/
-layout: migrated
+status: migrated
 ---
 
 The `countries` query returns all countries in which the entity can do business.

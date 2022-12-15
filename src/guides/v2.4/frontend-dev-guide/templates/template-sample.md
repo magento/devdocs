@@ -4,7 +4,7 @@ title: Templates customization sample
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/sample/
-layout: migrated
+status: migrated
 ---
 
 This topic contains a step-by-step guide to solving a typical design customization task using templates.

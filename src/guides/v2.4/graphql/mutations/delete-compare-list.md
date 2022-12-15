@@ -4,7 +4,7 @@ title: deleteCompareList mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/mutations/delete-compare-list/
-layout: migrated
+status: migrated
 ---
 
 The `deleteCompareList` mutation deletes the specified comparison list. Run this mutation in the following circumstances:

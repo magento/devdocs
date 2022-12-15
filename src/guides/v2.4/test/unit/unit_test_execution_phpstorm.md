@@ -7,7 +7,7 @@ functional_areas:
   - Testing
   - test
 redirect_to: https://developer.adobe.com/commerce/testing/guide/unit/phpstorm/
-layout: migrated
+status: migrated
 ---
 
 Running tests in PhpStorm requires following steps to setup the system.

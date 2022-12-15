@@ -2,7 +2,7 @@
 group: rest-api
 title: Manage stocks
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-stocks/
-layout: migrated
+status: migrated
 ---
 
 Stocks map your sources to sales channels, providing a direct link to salable quantities and inventories.
