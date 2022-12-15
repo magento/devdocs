@@ -4,12 +4,14 @@
 # See COPYING.txt for license details.
 
 # This plugin generates the page that contains a list of migrated topics: https://devdocs.magento.com/migrated.html
-# Also, it adds global data:
+# It adds global data:
 #   - site.data.migration.migrated_pages
 #   - site.data.migration.deprecated_pages
 #   - site.data.migration.all_migrating_pages
 #   - site.data.migration.remained_migrating_pages
 #
+# And generates the `tmp/migrated-from-to.csv` file with the list of links "from" and "to" for the migrated pages.
+# 
 
 module Jekyll
   # Custom generator for MRG pages
@@ -19,13 +21,18 @@ module Jekyll
     def generate(site)
       @site = site
       pages = @site.pages
-      migrated_pages = pages.select { |page| page.data['layout']&.include? 'migrated' }
+      migrated_pages = pages.select { |page| page.data['status']&.include? 'migrated' }
       v2_3_pages = pages.select { |page| page.data['guide_version'] == '2.3' }
       remained_pages = pages - v2_3_pages
       deprecated_pages = remained_pages.select { |page| page.data['group'].nil? || page.data['redirect_to'] }
       all_migrating_pages = remained_pages - deprecated_pages
       remained_migrating_pages = all_migrating_pages - migrated_pages
       migrated_pages_data = []
+
+      # Create a CSV file that contains links 'from' and 'to' for migrated pages
+      migrated_pages = pages.select {|pages| pages.data['status']&.include? 'migrated' }
+      redirects = migrated_pages.map {|page| "https://devdocs.magento.com#{page.data['redirect']['from']},#{page.data['redirect']['to']}"}
+      File.write('tmp/migrated-from-to.csv', redirects.join("\n"))
 
       # Create an array of JSON objects that contain metadata for migrated pages
       migrated_pages.each do |page|
@@ -39,13 +46,13 @@ module Jekyll
                                   'label') || abort("Error in '#{page.path}'.\n Check 'group' in the file's frontmatter or 'label' in the corresponding TOC.".red)
                  end,
           migrated_from: site.baseurl + page.url,
-          migrated_to: page.data['migrated_to'] || abort("Error in '#{page.path}'.\n Check 'migrated_to' in the file's frontmatter.".red),
-          migrated_to_source: if page.data['migrated_to'].start_with?('https://experienceleague.adobe.com')
+          redirected_to: page.data['redirect_to'] || abort("Error in '#{page.path}'.\n Check 'redirect_to' in the file's frontmatter.".red),
+          redirected_to_source: if page.data['redirect_to'].start_with?('https://experienceleague.adobe.com')
                                 'Adobe Experience League'
-                              elsif page.data['migrated_to'].start_with?('https://developer.adobe.com')
+                              elsif page.data['redirect_to'].start_with?('https://developer.adobe.com')
                                 'Adobe Developer'
                               else
-                                abort "Error in '#{page.path}'.\nThe 'migrated_to' parameter in the front matter points to the wrong domain: #{page.data['migrated_to']}.\nShould be 'https://experienceleague.adobe.com' or 'https://developer.adobe.com'".red
+                                abort "Error in '#{page.path}'.\nThe 'redirected_to' parameter in the front matter points to the wrong domain: #{page.data['redirect_to']}.\nShould be 'https://experienceleague.adobe.com' or 'https://developer.adobe.com'".red
                               end
         }
         migrated_pages_data << migrated_page
@@ -59,7 +66,7 @@ module Jekyll
         content += "\n## #{guide}\n\n\n"
         topics.sort_by { |topic| topic[:title] }
               .each do |topic|
-          content += "1. [#{topic[:title]}](#{topic[:migrated_from]}) has moved to [#{topic[:migrated_to_source]}](#{topic[:migrated_to]})\n"
+          content += "1. [#{topic[:title]}](#{topic[:migrated_from]}) has moved to [#{topic[:redirected_to_source]}](#{topic[:redirected_to]})\n"
         end
       end
 
@@ -103,7 +110,7 @@ module Jekyll
           'all_migrating_pages' => all_migrating_pages.map(&:path),
           'remained_migrating_pages' => remained_migrating_pages.map(&:path)
         }
-
+      
       migrated_pages_data
     end
   end
