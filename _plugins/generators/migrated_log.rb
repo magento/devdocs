@@ -11,7 +11,8 @@
 #   - site.data.migration.remained_migrating_pages
 #
 # And generates the `tmp/migrated-from-to.csv` file with the list of links "from" and "to" for the migrated pages.
-# 
+# To enable the file generation, add 'migrated_log: generate_file' to _config.local.yml.
+#
 
 module Jekyll
   # Custom generator for MRG pages
@@ -29,10 +30,12 @@ module Jekyll
       remained_migrating_pages = all_migrating_pages - migrated_pages
       migrated_pages_data = []
 
-      # Create a CSV file that contains links 'from' and 'to' for migrated pages
-      migrated_pages = pages.select {|pages| pages.data['status']&.include? 'migrated' }
-      redirects = migrated_pages.map {|page| "https://devdocs.magento.com#{page.data['redirect']['from']},#{page.data['redirect']['to']}"}
-      File.write('tmp/migrated-from-to.csv', redirects.join("\n"))
+      if (site.config['migrated_log']&.include? 'generate_file')
+        # Create a CSV file that contains links 'from' and 'to' for migrated pages
+        migrated_pages = pages.select { |pages| pages.data['status']&.include? 'migrated' }
+        redirects = migrated_pages.map { |page| "https://devdocs.magento.com#{page.data['redirect']['from']},#{page.data['redirect']['to']}" }
+        File.write('tmp/migrated-from-to.csv', redirects.join("\n"))
+      end
 
       # Create an array of JSON objects that contain metadata for migrated pages
       migrated_pages.each do |page|
@@ -48,12 +51,12 @@ module Jekyll
           migrated_from: site.baseurl + page.url,
           redirected_to: page.data['redirect_to'] || abort("Error in '#{page.path}'.\n Check 'redirect_to' in the file's frontmatter.".red),
           redirected_to_source: if page.data['redirect_to'].start_with?('https://experienceleague.adobe.com')
-                                'Adobe Experience League'
-                              elsif page.data['redirect_to'].start_with?('https://developer.adobe.com')
-                                'Adobe Developer'
-                              else
-                                abort "Error in '#{page.path}'.\nThe 'redirected_to' parameter in the front matter points to the wrong domain: #{page.data['redirect_to']}.\nShould be 'https://experienceleague.adobe.com' or 'https://developer.adobe.com'".red
-                              end
+                                  'Adobe Experience League'
+                                elsif page.data['redirect_to'].start_with?('https://developer.adobe.com')
+                                  'Adobe Developer'
+                                else
+                                  abort "Error in '#{page.path}'.\nThe 'redirected_to' parameter in the front matter points to the wrong domain: #{page.data['redirect_to']}.\nShould be 'https://experienceleague.adobe.com' or 'https://developer.adobe.com'".red
+                                end
         }
         migrated_pages_data << migrated_page
       end
@@ -110,7 +113,7 @@ module Jekyll
           'all_migrating_pages' => all_migrating_pages.map(&:path),
           'remained_migrating_pages' => remained_migrating_pages.map(&:path)
         }
-      
+
       migrated_pages_data
     end
   end
