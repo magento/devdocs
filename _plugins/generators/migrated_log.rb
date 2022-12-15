@@ -25,7 +25,7 @@ module Jekyll
       migrated_pages = pages.select { |page| page.data['status']&.include? 'migrated' }
       v2_3_pages = pages.select { |page| page.data['guide_version'] == '2.3' }
       remained_pages = pages - v2_3_pages
-      deprecated_pages = remained_pages.select { |page| page.data['group'].nil? || (page.data['redirect_to'] && !page.data['status'])}
+      deprecated_pages = remained_pages.select { |page| page.data['group'].nil? || (page.data['redirect_to'] && !page.data['status']) }
       all_migrating_pages = remained_pages - deprecated_pages
       remained_migrating_pages = all_migrating_pages - migrated_pages
       migrated_pages_data = []
