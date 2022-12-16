@@ -48,6 +48,40 @@ namespace :update do
       update_dir subrepo['directory']
     end
   end
+  desc 'Find and replace links from "tmp/migrated-from-to.csv" in files at the provided directory. Example: rake update:migrated_links dir=path/to/codebase'
+  task :migrated_links do
+    # 
+    # check if 'tmp/migrated-from-to.csv' exists
+    links_file = 'tmp/migrated-from-to.csv'
+    abort 'FAILED. Missing "tmp/migrated-from-to.csv" file. Make sure that your _config.local.yml file contains the "migrated_log: generate_file" parameter.' unless File.exist? links_file
+    # check if the provided directory ('dir') exist
+    dir = ENV['dir']
+    abort 'FAILED. Missing argument "dir". Provide a directory to check the links. Example: rake update:migrated_links dir=path/to/codebase' unless dir
+    abort "FAILED. Check the path provided through the 'dir' argument. The provide directory does not exist: #{dir}" unless Dir.exist?(dir)
+    # parse 'tmp/migrated-from-to.csv'
+    links = CSV.read links_file
+    # for each file in dir, find and replace all links
+    Dir[File.join(dir, '**', '*')].each do |file|
+      # ignore directory paths
+      next if File.directory? file
+      # ignore symlinks
+      next if File.symlink? file
+      # ignore empty files
+      next if File.zero? file
+      # ignore binary files
+      next if RDoc::Parser.binary? file
+
+      # read the file
+      content = File.read file
+      # iterate through the array of links
+      links.each do |redirect|
+        # replace first link from the array with the second links 
+        content.gsub!(redirect[0], redirect[1]) 
+      end
+      # write the update content back to the file
+      File.write(file, content)
+    end
+  end
 end
 
 def update_dir(dir)
