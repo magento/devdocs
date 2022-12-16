@@ -12,7 +12,7 @@ functional_areas:
   - Catalog
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/shared-catalog
-layout: migrated
+status: migrated
 ---
 
 A shared catalog is an entity that allows a seller to set special rules for the products that company users (buyers) can purchase. By using shared catalogs, a seller can apply different pricing levels for different companies. Also, shared catalogs allow a seller to configure the visibility of categories and products specifically for different companies.

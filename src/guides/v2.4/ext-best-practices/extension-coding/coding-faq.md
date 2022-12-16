@@ -7,7 +7,7 @@ menu_order: 1000
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/extensions/faq/
-layout: migrated
+status: migrated
 ---
 
 This page is a compilation of frequently asked coding questions by the Magento Community.

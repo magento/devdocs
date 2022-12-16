@@ -3,7 +3,7 @@ group: live-search
 title: Install Live Search
 ee_only: True
 redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/onboard/install.html
-layout: migrated
+status: migrated
 ---
 
 Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ce}} and {{site.data.var.ee}} search capabilities. This topic provides instructions to do the following:

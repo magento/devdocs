@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Authorization
 redirect_to: https://developer.adobe.com/commerce/php/development/security/authorization/
-layout: migrated
+status: migrated
 ---
 
 ## Configuration based authorization

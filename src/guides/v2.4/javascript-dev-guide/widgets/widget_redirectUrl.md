@@ -5,7 +5,7 @@ title: RedirectUrl widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/redirect-url/
-layout: migrated
+status: migrated
 ---
 
 The RedirectUrl [widget](https://glossary.magento.com/widget) allows redirecting to an URL when an event triggers.

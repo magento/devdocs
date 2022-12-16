@@ -4,7 +4,7 @@ title: Customizing layout illustration
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/practice/
-layout: migrated
+status: migrated
 ---
 
 ## What's in this topic

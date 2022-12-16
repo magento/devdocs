@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/protective-block.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.ece}} has a protective blocking feature that, under certain circumstances, restricts access to websites with security vulnerabilities. We use this partial blocking method to prevent exploitation of known security vulnerabilities.

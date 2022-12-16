@@ -8,7 +8,7 @@ menu_node: parent
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/
-layout: migrated
+status: migrated
 ---
 
 Out-of-the-box Magento implements integration with PayPal, Braintree, and Authorize.Net payment service providers. These integrations allow you to create and handle transactions based on order details.

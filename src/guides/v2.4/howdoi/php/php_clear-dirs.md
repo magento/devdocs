@@ -6,7 +6,7 @@ menu_title: Clear directories during development
 menu_node:
 menu_order: 200
 redirect_to: https://developer.adobe.com/commerce/php/development/components/clear-directories/
-layout: migrated
+status: migrated
 ---
 
 #### Contents

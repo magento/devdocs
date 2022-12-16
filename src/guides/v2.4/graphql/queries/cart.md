@@ -2,7 +2,7 @@
 group: graphql
 title: cart query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/queries/cart/
-layout: migrated
+status: migrated
 ---
 
 Use the `cart` query to retrieve information about a particular cart.

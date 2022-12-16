@@ -9,7 +9,7 @@ level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-address-renderer/
-layout: migrated
+status: migrated
 ---
 
 This topic describes how to implement a custom shipping address renderer.

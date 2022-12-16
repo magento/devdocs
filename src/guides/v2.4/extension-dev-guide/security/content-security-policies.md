@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Content Security Policies
 redirect_to: https://developer.adobe.com/commerce/php/development/security/content-security-policies/
-layout: migrated
+status: migrated
 ---
 
 Content Security Policies (CSP) are a powerful tool to mitigate against Cross Site Scripting (XSS)

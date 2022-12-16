@@ -4,7 +4,7 @@ title: Example bulk operations implementation
 functional_areas:
   - Services
 redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/bulk-operations-example/
-layout: migrated
+status: migrated
 ---
 
 This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:

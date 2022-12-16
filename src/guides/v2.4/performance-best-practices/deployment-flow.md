@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/deployment-flow.html
-layout: migrated
+status: migrated
 ---
 
 The Magento production deployment flow helps a store reach maximum performance.

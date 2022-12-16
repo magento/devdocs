@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-cloud.html
-layout: migrated
+status: migrated
 ---
 
 Environment variables that are specific to {{site.data.var.ece}} use the `MAGENTO_CLOUD_*` prefix:

@@ -4,7 +4,7 @@ title: Overview of responsive web design in Magento
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/
-layout: migrated
+status: migrated
 ---
 
 Responsive web design (RWD, also referred as *responsive design*) crafts websites to provide an optimal viewing experience across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).

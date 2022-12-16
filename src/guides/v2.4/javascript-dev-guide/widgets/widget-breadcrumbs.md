@@ -4,7 +4,7 @@ title: Breadcrumbs widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/breadcrumbs/
-layout: migrated
+status: migrated
 ---
 
 The Breadcrumbs [widget](https://glossary.magento.com/widget/) builds a list of links that show users where they are on the site relative to other pages.

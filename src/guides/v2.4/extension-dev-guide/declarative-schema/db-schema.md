@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Configure declarative schema
 redirect_to: https://developer.adobe.com/commerce/php/development/components/declarative-schema/configuration/
-layout: migrated
+status: migrated
 ---
 
 Before Magento 2.3, extension developers were required to write code (PHP scripts) to change the database schema. The following types of scripts existed before Magento 2.3:

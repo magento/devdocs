@@ -4,7 +4,7 @@ title: Bundle product data types
 redirect_from:
   - /guides/v2.4/graphql/product/bundle-product.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/bundle/
-layout: migrated
+status: migrated
 ---
 
 The `BundleProduct` data type implements the following interfaces:

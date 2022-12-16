@@ -4,7 +4,7 @@ title: Email templates layout handle
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/email-layout-handle/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

@@ -2,7 +2,7 @@
 group: testing
 title: Application isolation annotation
 redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-app-isolation/
-layout: migrated
+status: migrated
 ---
 
 An application state can be changed during test execution.

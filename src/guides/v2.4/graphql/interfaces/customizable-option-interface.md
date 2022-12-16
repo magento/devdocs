@@ -4,7 +4,7 @@ title: CustomizableOptionInterface
 redirect_from:
   - /guides/v2.4/graphql/product/customizable-option-interface.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/customizable-option/
-layout: migrated
+status: migrated
 ---
 
 Customizable options for a product provide a way to offer customers a selection of options with a variety of text, selection, and date input types. All product types can contain customizable options.

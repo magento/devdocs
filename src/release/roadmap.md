@@ -3,7 +3,7 @@ title: Roadmap
 group: release
 description: See what we have planned for Adobe Commerce and Magento Open Source.
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/roadmap.html
-layout: migrated
+status: migrated
 ---
 
 The following table contains the status of items on the {{ site.data.var.ce }} roadmap (items are subject to change):

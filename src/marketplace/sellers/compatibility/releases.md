@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Release Compatibility
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/releases/
-layout: migrated
+status: migrated
 ---
 
 A key factor for merchants' Total Cost of Ownership (TCO) is having their extension suite up-to-date and available for seamless upgrades to the latest version of {{ site.data.var.ce }} or {{ site.data.var.ee }}. To best serve this need, our goal is to proactively monitor and eliminate extensions that are out-of-date, out of compatibility with supported release lines, or have been otherwise abandoned. Therefore, we are updating our policies to clearly state certain requirements for version compatibility and frequency of updates:

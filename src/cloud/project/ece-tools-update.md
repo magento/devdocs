@@ -8,7 +8,7 @@ functional_areas:
   - Cloud
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/ece-tools/update-package.html
-layout: migrated
+status: migrated
 ---
 
 An update to the `{{site.data.var.ct}}` package also updates the other [{{site.data.var.csuite}} packages][], which are dependencies for `{{site.data.var.ct}}`. Therefore, you must use a version of {{site.data.var.ece}} that supports the `{{site.data.var.ct}}` package.

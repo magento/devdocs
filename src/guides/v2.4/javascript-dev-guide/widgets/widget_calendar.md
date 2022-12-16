@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Calendar widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/calendar/
-layout: migrated
+status: migrated
 ---
 
 The Calendar widget is a customized jQuery [Datepicker Widget] that enables selecting a data using a pop-up or an in-line calendar. Calendar is also responsible for:

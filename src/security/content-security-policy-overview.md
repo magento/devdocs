@@ -2,7 +2,7 @@
 group: compliance
 title: Content Security Policy Overview
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/content-security-policy.html
-layout: migrated
+status: migrated
 ---
 
 A Content Security Policy (CSP) can provide additional layers of defense for Magento installations by helping to detect and mitigate Cross-Site Scripting (XSS) and related data injection attacks. This common attack vector works by injecting malicious content that falsely claims to originate from the website. After the malicious content is loaded and executed, it can initiate the unauthorized transfer of data.

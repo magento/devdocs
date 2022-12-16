@@ -3,7 +3,7 @@ group: architecture-guide
 title: Domain layer
 menu_title: Domain layer
 redirect_to: https://developer.adobe.com/commerce/php/architecture/layers/domain/
-layout: migrated
+status: migrated
 ---
 
 ## The Magento Domain layer

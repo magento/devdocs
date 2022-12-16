@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Marketplace Developer Portal
 redirect_from: /marketplace/sellers/marketplace-developer-dashboard.html
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/developer-portal/
-layout: migrated
+status: migrated
 ---
 
 From the Marketplace Developer Portal you can access your product submissions and reports, as well as Marketplace support information and extension guidelines.

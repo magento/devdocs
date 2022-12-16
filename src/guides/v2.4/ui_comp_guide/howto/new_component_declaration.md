@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Declare a custom UI component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/new-component-declaration/
-layout: migrated
+status: migrated
 ---
 
 Declaring a custom [UI component](https://glossary.magento.com/ui-component) refers to creating the [XML](https://glossary.magento.com/xml) configuration of your custom component, and is a part of a bigger task of creating a custom UI component.

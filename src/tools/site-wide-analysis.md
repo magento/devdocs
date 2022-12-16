@@ -3,7 +3,7 @@ title: Site-Wide Analysis Tool
 group: tools
 ee_only: true
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/site-wide-analysis-tool/installation.html
-layout: migrated
+status: migrated
 ---
 
 The Site-Wide Analysis Tool provides 24/7 real-time performance monitoring, reports, and recommendations to ensure the security and operability of {{ site.data.var.ece }} installations. It also provides detailed information about available and installed patches, third-party extensions, and your {{ site.data.var.ee }} installation.

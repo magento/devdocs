@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/disable-module-output.html
-layout: migrated
+status: migrated
 ---
 
 By default, all modules are configured so that a module's output can be written to a view. Turning off output offers a way to essentially disable a module that can not be disabled due to hard dependencies.

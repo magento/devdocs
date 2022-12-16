@@ -14,7 +14,7 @@ functional_areas:
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com/en.html
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/define-config-product-options/
-layout: migrated
+status: migrated
 ---
 
  Now that we've created all the Champ Tee products, we need to assign `size` as the configurable attribute and link the simple products to the configurable product.

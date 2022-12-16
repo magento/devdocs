@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html
-layout: migrated
+status: migrated
 ---
 
 For all {{site.data.var.ece}} projects, you can use the [Project Web Interface](https://account.magento.com/customer/account/login/) to perform the following tasks:

@@ -3,7 +3,7 @@ group: php-developer-guide
 title: Extension Lifecycle
 menu_title: Extension lifecycle
 redirect_to: https://developer.adobe.com/commerce/php/development/prepare/extension-lifecycle/
-layout: migrated
+status: migrated
 ---
 
 This topic describes a module's lifecycle and how to create classes that execute code when your module is initialized, upgraded, or uninstalled.

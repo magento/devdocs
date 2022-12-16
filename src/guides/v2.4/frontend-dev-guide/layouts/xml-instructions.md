@@ -4,7 +4,7 @@ title: Layout instructions
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/xml-instructions/
-layout: migrated
+status: migrated
 ---
 
 ## What's in this topic {#fedg_layout_xml-instruc_overview}

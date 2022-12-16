@@ -7,7 +7,7 @@ functional_areas:
   - Extensions
   - Module
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/extensions.html
-layout: migrated
+status: migrated
 ---
 
 You can extend your {{site.data.var.ee}} application capabilities by adding an extension from the [Commerce Marketplace][]. For example, you can add a theme to change the look and feel of your storefront, or you can add a language package to localize your storefront and Admin panel.

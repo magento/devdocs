@@ -2,7 +2,7 @@
 group: graphql
 title: handlePayflowProResponse mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/handle-payflow-pro-response/
-layout: migrated
+status: migrated
 ---
 
 The `handlePayflowProResponse` mutation sends the silent post data that the client received from the Payflow Pro gateway to the Magento server. The content of this payload varies based on factors such as the merchant's location, the items purchased, and the billing/shipping addresses. The following is an example payload:

@@ -4,7 +4,7 @@ title: Admin
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/admin/
-layout: migrated
+status: migrated
 ---
 
 This section of the Best Practices Guide discusses the Admin, the UI panel used by Magento administrators. It is where Magento system and [storefront](https://glossary.magento.com/storefront) parameters can be modified and configured. Third-party extensions installed by the system [admin](https://glossary.magento.com/admin) or merchant are also found in this area, along with any of their configuration settings.

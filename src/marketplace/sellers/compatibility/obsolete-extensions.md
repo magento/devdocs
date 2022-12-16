@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Obsolete Extensions
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/obsolete-extensions/
-layout: migrated
+status: migrated
 ---
 
 As the {{ site.data.var.ce }} and {{ site.data.var.ee }} technology moves forward, release lines get marked as End of Life (EOL) and deprecated.

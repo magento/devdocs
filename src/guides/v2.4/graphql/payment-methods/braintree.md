@@ -4,7 +4,7 @@ title: Braintree payment method
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/braintree/
-layout: migrated
+status: migrated
 ---
 
 Braintree is a payment gateway that processes debit and credit card payments.

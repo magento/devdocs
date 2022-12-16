@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/file-structure.html
-layout: migrated
+status: migrated
 ---
 
 All {{site.data.var.ece}} projects include essential files for credentials and application configuration:

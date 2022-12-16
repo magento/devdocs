@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: FiltersChips component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/filters-chips/
-layout: migrated
+status: migrated
 ---
 
 The FiltersChips component provides UI controls that allows users to remove the previously-applied values of the [Filters]({{ page.baseurl }}/ui_comp_guide/components/ui-filters.html) and [Search]({{ page.baseurl }}/ui_comp_guide/components/ui-search.html) components.

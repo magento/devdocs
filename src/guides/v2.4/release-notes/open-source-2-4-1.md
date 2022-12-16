@@ -2,7 +2,7 @@
 group: release-notes
 title: Magento Open Source 2.4.1 Release Notes
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-1.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.ce}} 2.4.1 introduces enhancements to performance and security. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page.

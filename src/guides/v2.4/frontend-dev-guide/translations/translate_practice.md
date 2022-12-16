@@ -4,7 +4,7 @@ title: Example theme translation dictionary
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/translations/practice/
-layout: migrated
+status: migrated
 ---
 
 This topic is a step-by-step tutorial to create a default en_US [locale](https://glossary.magento.com/locale) [dictionary] for a custom [theme](https://glossary.magento.com/theme).

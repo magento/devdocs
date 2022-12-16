@@ -6,7 +6,7 @@ functional_areas:
 - Setup
 - Configuration
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/blackfire/
-layout: migrated
+status: migrated
 ---
 
 You can add Blackfire.io to your {{site.data.var.mcd-prod}} environment to fully automate performance testing.

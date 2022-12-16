@@ -5,7 +5,7 @@ functional_areas:
   - Testing
   - test
 redirect_to: https://developer.adobe.com/commerce/testing/guide/static/analysis/
-layout: migrated
+status: migrated
 ---
 
 ## Introduction

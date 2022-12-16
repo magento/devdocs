@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: UI components XML configuration structure
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/xml-configuration/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

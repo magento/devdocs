@@ -4,7 +4,7 @@ title: Advanced Reporting
 functional_areas:
     - Reports
 redirect_to: https://developer.adobe.com/commerce/php/development/advanced-reporting/
-layout: migrated
+status: migrated
 ---
 
 [Advanced reporting functionality] is free to {{site.data.var.ee}} and {{site.data.var.ce}} customers and is provided through an integration of a Magento instance with [{{site.data.var.ee}} Reporting]. Magento collects data and sends this information to Commerce Reporting for analytics. You do not need to have an Commerce Reporting account to use Advanced Reporting.

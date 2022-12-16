@@ -3,7 +3,7 @@ group: architecture-guide
 title: Architectural basics overview
 menu_title: Architectural basics
 redirect_to: https://developer.adobe.com/commerce/php/architecture/basics/
-layout: migrated
+status: migrated
 ---
 
 Magento incorporates the core architectural principles of object-oriented, PHP-based applications. Comprehensive discussions of these general principles exist both on-line and in printed form.

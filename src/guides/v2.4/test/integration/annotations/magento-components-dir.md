@@ -2,7 +2,7 @@
 group: testing
 title: Component registration annotation
 redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-components-dir/
-layout: migrated
+status: migrated
 ---
 
 When your test design requires to register fixture components and unregister them after the test execution, use the `@magentoComponentsDir` annotation.

@@ -6,7 +6,7 @@ menu_title: Iconography
 menu_order: 2
 menu_node:
 redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/iconography/
-layout: migrated
+status: migrated
 ---
 
 Icons are used throughout the [Admin](https://glossary.magento.com/magento-admin) interface, often as controls to initiate a function (such as a "Filter") or to direct a user to a section (such as "Account").

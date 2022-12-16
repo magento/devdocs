@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Filters component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/filters/
-layout: migrated
+status: migrated
 ---
 
 The Filters component renders UI controls for filtering and applies filtering. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).

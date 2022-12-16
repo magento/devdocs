@@ -5,7 +5,7 @@ title: Adapters
 menu_title: Adapters
 menu_order: 1000
 redirect_to: https://developer.adobe.com/commerce/php/development/components/adapters/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

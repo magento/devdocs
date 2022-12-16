@@ -4,7 +4,7 @@ title: Templates customization walkthrough
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/walkthrough/
-layout: migrated
+status: migrated
 ---
 
 ## What's in this topic

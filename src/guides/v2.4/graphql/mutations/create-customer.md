@@ -2,7 +2,7 @@
 group: graphql
 title: createCustomer mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/create/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

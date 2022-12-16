@@ -2,7 +2,7 @@
 group: graphql
 title: sendEmailToFriend mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/send-email-to-friend/
-layout: migrated
+status: migrated
 ---
 
 Use the `sendEmailToFriend` mutation to allow Magento to send a message on behalf of a customer to the specified email addresses.

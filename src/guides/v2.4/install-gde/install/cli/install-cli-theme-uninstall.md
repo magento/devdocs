@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/themes.html
-layout: migrated
+status: migrated
 ---
 
 ## Prerequisite {#instgde-install-uninst-theme-prereq}

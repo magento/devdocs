@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: About the uiClass library
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/class/
-layout: migrated
+status: migrated
 ---
 
 ## What is `uiClass`?

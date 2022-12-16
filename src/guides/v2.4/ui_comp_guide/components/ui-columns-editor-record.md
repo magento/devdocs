@@ -4,7 +4,7 @@ title: ColumnsEditorRecord component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/columns-editor-record/
-layout: migrated
+status: migrated
 ---
 
 The ColumnsEditorRecord [UI component](https://glossary.magento.com/ui-component) is a container of record fields. The ColumnsEditorRecord should be used as a child of the [ColumnsEditor]({{ page.baseurl }}/ui_comp_guide/components/ui-columns-editor.html) component.

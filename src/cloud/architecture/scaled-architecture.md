@@ -4,7 +4,7 @@ title: Scaled architecture
 functional_areas:
   - Cloud
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/architecture/scaled-architecture.html
-layout: migrated
+status: migrated
 ---
 
 The Cloud infrastructure scales according to your resource needs to achieve greater efficiency. The {{site.data.var.ece}} monitors your applications and can adjust capacity to maintain steady, predictable performance. Converting to this architecture helps to mitigate problems, such as latency or large spikes in traffic.

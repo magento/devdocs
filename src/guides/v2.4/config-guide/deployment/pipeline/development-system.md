@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/development-system.html
-layout: migrated
+status: migrated
 ---
 
 You can have any number of development systems, provided the following is true of all of them:

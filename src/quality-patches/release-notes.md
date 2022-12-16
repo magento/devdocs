@@ -9,7 +9,7 @@ redirect_from:
   - /quality-patches/release-notes-commerce.html
   - /quality-patches/release-notes-open-source.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/quality-patches-tool/release-notes.html
-layout: migrated
+status: migrated
 ---
 
 {% include install/patch/quality-patch-intro.md %}

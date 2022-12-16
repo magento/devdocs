@@ -5,7 +5,7 @@ title: Locate JavaScript components
 functional_areas:
   - Testing
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/debug/
-layout: migrated
+status: migrated
 ---
 
 ## Overview {#js_debug_overview}

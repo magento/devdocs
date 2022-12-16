@@ -4,7 +4,7 @@ title: Git
 redirect_from:
    - /cloud/project/admin-git-push.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/dev-tools/integrations/overview.html
-layout: migrated
+status: migrated
 ---
 
 Git is the center of all code management, build, and deployment for your {{site.data.var.ece}} stores and sites. We use Git to provide source control for your code:

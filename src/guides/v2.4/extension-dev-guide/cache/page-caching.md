@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Page caching
 redirect_to: https://developer.adobe.com/commerce/php/development/cache/page/
-layout: migrated
+status: migrated
 ---
 
 {% include cache/page-cache-overview.md%}

@@ -4,7 +4,7 @@ title: Create a new layout
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/layouts/create/
-layout: migrated
+status: migrated
 ---
 
 ## Create a new page layout in custom theme

@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: About PHP modifiers in UI components
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/modifier/
-layout: migrated
+status: migrated
 ---
 
 ## What's in this topic

@@ -7,7 +7,7 @@ functional_areas:
 redirect_from:
   - /cloud/trouble/environments-logs.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/test/log-locations.html
-layout: migrated
+status: migrated
 ---
 
 Logs for {{site.data.var.ece}} projects are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook], cloud services, and the {{site.data.var.ee}} application.

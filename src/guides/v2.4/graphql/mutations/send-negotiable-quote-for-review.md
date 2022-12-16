@@ -3,7 +3,7 @@ group: graphql
 title: sendNegotiableQuoteForReview mutation
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/send-for-review/
-layout: migrated
+status: migrated
 ---
 
 The `sendNegotiableQuoteForReview` mutation sends the negotiable quote to the seller for review. If the mutation is successful, the buyer cannot modify the quote until the merchant accepts the request.

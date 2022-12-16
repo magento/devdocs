@@ -5,7 +5,7 @@ title: RemainingCharacters widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/remaining-characters/
-layout: migrated
+status: migrated
 ---
 
 The RemainingCharacters [widget](https://glossary.magento.com/widget/) allows you to display the remaining characters count for a text field.

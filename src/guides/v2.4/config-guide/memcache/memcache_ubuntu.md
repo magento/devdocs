@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/session-storage/memcache-ubuntu.html
-layout: migrated
+status: migrated
 ---
 
 {% include config/php-memcache.md %}

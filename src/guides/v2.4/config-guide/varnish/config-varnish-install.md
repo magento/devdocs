@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/varnish/config-varnish-install.html
-layout: migrated
+status: migrated
 ---
 
 ## Install Varnish {#config-varnish-install}

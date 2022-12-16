@@ -8,7 +8,7 @@ menu_order: 7
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/coding-standards/jquery-widgets/
-layout: migrated
+status: migrated
 ---
 
 In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base---the [jQuery UI Widget Factory][jquery-ui-widget-factory].

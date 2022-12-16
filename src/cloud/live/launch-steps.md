@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
   - Testing
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/launch/steps.html
-layout: migrated
+status: migrated
 ---
 
 {:.ref-header}

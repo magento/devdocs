@@ -2,7 +2,7 @@
 group: graphql
 title: Release Notes
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/release-notes/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-info}

@@ -4,7 +4,7 @@ title: Report XML
 functional_areas:
     - Reports
 redirect_to: https://developer.adobe.com/commerce/php/development/advanced-reporting/report-xml/
-layout: migrated
+status: migrated
 ---
 
 **Report XML** is a markup language created to build advanced reports.

@@ -4,7 +4,7 @@ title: TimelineColumns component
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/timeline-columns/
-layout: migrated
+status: migrated
 ---
 
 The TimelineColumns [UI component](https://glossary.magento.com/ui-component) is a collection of columns represented as the timeline.

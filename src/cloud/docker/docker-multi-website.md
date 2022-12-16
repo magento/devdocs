@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
   - Website
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/configure/multiple-sites/
-layout: migrated
+status: migrated
 ---
 
 Cloud Docker supports multiple websites or stores by adding subdomains to your configuration. See [Understanding websites, stores, and store views][].

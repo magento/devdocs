@@ -5,7 +5,7 @@ title: Use REST APIs
 menu_order: 1
 menu_node: parent
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/rest_front/
-layout: migrated
+status: migrated
 ---
 
 The Magento REST [API](https://glossary.magento.com/api) defines a set of functions that a developer can use to perform requests and receive responses. These interactions are performed using the HTTP protocol.

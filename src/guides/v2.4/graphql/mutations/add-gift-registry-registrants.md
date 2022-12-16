@@ -3,7 +3,7 @@ group: graphql
 title: addGiftRegistryRegistrants mutation
 ee_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/add-registrants/
-layout: migrated
+status: migrated
 ---
 
 The `addGiftRegistryRegistrants` mutation adds a registrant to the specified gift registry.

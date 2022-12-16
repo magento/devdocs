@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Debug UI components JavaScript
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/debug/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

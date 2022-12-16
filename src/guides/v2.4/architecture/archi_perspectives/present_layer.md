@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Presentation Layer
 redirect_to: https://developer.adobe.com/commerce/php/architecture/layers/presentation/
-layout: migrated
+status: migrated
 ---
 
 ## What is the Magento Presentation layer?

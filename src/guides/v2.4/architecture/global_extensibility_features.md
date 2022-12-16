@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Global features that support extensibility
 redirect_to: https://developer.adobe.com/commerce/php/architecture/modules/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

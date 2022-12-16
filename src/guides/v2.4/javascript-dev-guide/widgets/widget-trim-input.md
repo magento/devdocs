@@ -5,7 +5,7 @@ title: TrimInput widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/trim-input/
-layout: migrated
+status: migrated
 ---
 
 The TrimInput [widget](https://glossary.magento.com/widget) trims  whitespace in an input field.

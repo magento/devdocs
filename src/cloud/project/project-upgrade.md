@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/upgrade/commerce-version.html
-layout: migrated
+status: migrated
 ---
 
 You can upgrade the core {{site.data.var.ee}} code base to a newer version. Before upgrading your project, review the [service versions][System requirements] information for the latest software version requirements. If you must upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches] for upgrade path details.

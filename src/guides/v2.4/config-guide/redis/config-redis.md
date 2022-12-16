@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/config-redis.html
-layout: migrated
+status: migrated
 ---
 
 Redis features include:

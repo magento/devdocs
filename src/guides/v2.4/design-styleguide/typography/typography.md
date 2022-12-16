@@ -6,7 +6,7 @@ menu_title: Typography
 menu_order: 4
 menu_node:
 redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/design/typography/
-layout: migrated
+status: migrated
 ---
 
 Typography is used to establish page hierarchy.

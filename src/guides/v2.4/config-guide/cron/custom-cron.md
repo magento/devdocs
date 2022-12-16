@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/crons/custom-cron.html
-layout: migrated
+status: migrated
 ---
 
 These topics discuss how to set up a custom cron job and optionally a custom cron group. If your Magento [extension](https://glossary.magento.com/extension) requires scheduled tasks to run periodically, you can use these topics to set up a cron *job* (the scheduled task) and optionally a cron *group* (which runs custom tasks at the same time).

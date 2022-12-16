@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/overview.html
-layout: migrated
+status: migrated
 ---
 
 The following diagram provides a high-level overview of installing the Magento software:

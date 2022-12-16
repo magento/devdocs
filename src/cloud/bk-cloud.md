@@ -4,7 +4,7 @@ title: Cloud guide for Commerce
 functional_areas:
   - Cloud
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/overview.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.ece}} is a managed, automated hosting platform for the {{site.data.var.ee}} software. {{site.data.var.ece}} comes with additional features that set it apart from the on-premises {{site.data.var.ee}} and {{site.data.var.ce}} platforms:

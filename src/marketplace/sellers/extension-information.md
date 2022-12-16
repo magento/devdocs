@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Complete the Extension Information
 redirect_from: /marketplace/sellers/creating-a-new-extension.html
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-information/
-layout: migrated
+status: migrated
 ---
 
 When your extension code is complete, the next step is to add an entry for your extension to Commerce Marketplace. This creates an entry on your Extensions page in the Commerce Marketplace Developer portal, but does not submit the extension.

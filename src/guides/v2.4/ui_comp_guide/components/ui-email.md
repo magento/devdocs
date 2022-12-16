@@ -2,7 +2,7 @@
 group: ui-components-guide
 title:  Email component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/email/
-layout: migrated
+status: migrated
 ---
 
 The Email component implements the [HTML](https://glossary.magento.com/html) `<input type="email">` form field.

@@ -5,7 +5,7 @@ title: URN schema validation
 menu_title: URN schema validation
 menu_order: 5000
 redirect_to: https://developer.adobe.com/commerce/php/development/build/schema-validation/
-layout: migrated
+status: migrated
 ---
 
 Each Magento [module](https://glossary.magento.com/module) can contain XSD files for [XML](https://glossary.magento.com/xml) validation.

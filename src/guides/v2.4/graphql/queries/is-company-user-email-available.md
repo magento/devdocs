@@ -3,7 +3,7 @@ group: graphql
 title: isCompanyUserEmailAvailable query
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/queries/is-company-user-email-available/
-layout: migrated
+status: migrated
 ---
 
 The `isCompanyUserEmailAvailable` query checks whether an email is valid for registering a company user. The query returns a `false` value if the specified email matches the email of an existing customer or a company administrator.

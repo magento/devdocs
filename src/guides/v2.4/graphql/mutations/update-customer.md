@@ -2,7 +2,7 @@
 group: graphql
 title: updateCustomer mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/update/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

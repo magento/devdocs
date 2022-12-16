@@ -4,7 +4,7 @@ title: removeCouponFromCart mutation
 redirect from:
   - /guides/v2.3/graphql/reference/quote-remove-coupon.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/remove-coupon/
-layout: migrated
+status: migrated
 ---
 
 The `removeCouponFromCart` mutation removes a previously-applied coupon from the cart. The cart must contain at least one item in order to remove the coupon.

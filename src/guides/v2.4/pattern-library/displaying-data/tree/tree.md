@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Tree Pattern
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/displaying-data/tree/
-layout: migrated
+status: migrated
 ---
 This topic contains various types of Tree structures used in [Admin](https://glossary.magento.com/admin) with functions for navigating, multi-selecting, adding nodes, editing inline, and dragging items.
 

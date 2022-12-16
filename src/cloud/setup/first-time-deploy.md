@@ -8,7 +8,7 @@ functional_areas:
   - Setup
   - Deploy
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/launch/overview.html
-layout: migrated
+status: migrated
 ---
 
 {:.ref-header}

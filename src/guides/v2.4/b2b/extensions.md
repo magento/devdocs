@@ -9,7 +9,7 @@ ee_only: True
 functional_areas:
   - B2B
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/extensions
-layout: migrated
+status: migrated
 ---
 
 See [Module Reference Guide]({{ page.baseurl }}/mrg/intro.html) for information about each {{site.data.var.b2b}} module.

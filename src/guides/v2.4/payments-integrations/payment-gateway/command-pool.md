@@ -6,7 +6,7 @@ menu_title:  Gateway Command Pool
 menu_node:
 menu_order: 3
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/command-pool/
-layout: migrated
+status: migrated
 ---
 
 ## Gateway command pool

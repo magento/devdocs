@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/upgrade/apply-patches.html
-layout: migrated
+status: migrated
 ---
 
 [{{ site.data.var.mcp-prod }}](https://github.com/magento/magento-cloud-patches) and the [Quality Patches Tool](https://github.com/magento/quality-patches) deliver patches to your installed {{site.data.var.ee}} application.

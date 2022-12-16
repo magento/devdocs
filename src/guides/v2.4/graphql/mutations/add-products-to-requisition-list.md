@@ -4,7 +4,7 @@ title: addProductsToRequisitionList mutation
 b2b_only: true
 contributor_name: EY
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/add-products/
-layout: migrated
+status: migrated
 ---
 The `addProductsToRequisitionList` mutation adds products to a requisition list.
 

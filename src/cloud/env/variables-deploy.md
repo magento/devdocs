@@ -7,7 +7,7 @@ functional_areas:
 redirect_from:
   - /cloud/trouble/message-queues.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-deploy.html
-layout: migrated
+status: migrated
 ---
 
 The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ site.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:

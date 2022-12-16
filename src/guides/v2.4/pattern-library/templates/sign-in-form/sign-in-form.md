@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Sign-in form
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/templates/sign-in-form/
-layout: migrated
+status: migrated
 ---
 "Sign in" is used to log into the system, or to recover a lost password.
 

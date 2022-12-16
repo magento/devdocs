@@ -4,7 +4,7 @@ title: Email templates
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/templates/email/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

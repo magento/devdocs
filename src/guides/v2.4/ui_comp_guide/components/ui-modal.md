@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Modal component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/modal/
-layout: migrated
+status: migrated
 ---
 
 The Modal [UI component](https://glossary.magento.com/ui-component) implements a secondary window that opens on top of the main window. It uses the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).

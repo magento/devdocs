@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Deploy
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/best-practices.html
-layout: migrated
+status: migrated
 ---
 
 Build and deploy scripts activate when you merge code to a remote environment.  These scripts use the environment configuration files and application code to prepare data and configurations to provision Cloud infrastructure and services, and to install or update the {{ site.var.data.ee }} application and third-party and custom extensions in the Cloud environment.

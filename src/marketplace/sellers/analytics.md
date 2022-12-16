@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Analytics
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/analytics/
-layout: migrated
+status: migrated
 ---
 
 You can view data about the performance of your extension in the marketplace.

@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Links
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/navigation/links/
-layout: migrated
+status: migrated
 ---
 Within the Magento application, users often need to navigate through information inside or outside of the application by using links. These links should follow this guideline.
 

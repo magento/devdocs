@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Business Value
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/business-value/
-layout: migrated
+status: migrated
 ---
 
 Extensions with a clearly stated business value are easy for us to promote, and easy for customers to find.

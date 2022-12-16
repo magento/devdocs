@@ -7,7 +7,7 @@ menu_order: 2
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/vault-payment-configuration/
-layout: migrated
+status: migrated
 ---
 
 You need to configure the main parameters of the vault implementation in the `config.xml` file of your [payment method](https://glossary.magento.com/payment-method) module:

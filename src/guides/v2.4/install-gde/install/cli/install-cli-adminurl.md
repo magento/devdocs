@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin-uri.html
-layout: migrated
+status: migrated
 ---
 
 ## First steps {#instgde-cli-before}

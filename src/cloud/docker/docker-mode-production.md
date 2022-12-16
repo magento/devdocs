@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Docker
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/deploy/production-mode/
-layout: migrated
+status: migrated
 ---
 
 Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.

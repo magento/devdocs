@@ -2,7 +2,7 @@
 group: graphql
 title: deletePaymentToken mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/mutations/delete-payment-token/
-layout: migrated
+status: migrated
 ---
 
 The `deletePaymentToken` mutation deletes a payment token from the system. Use the [customerPaymentTokens query]({{page.baseurl}}/graphql/queries/customer-payment-tokens.html) to retrieve all stored payment methods associated with a particular customer.

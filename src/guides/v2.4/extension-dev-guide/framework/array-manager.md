@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Array Manager
 redirect_to: https://developer.adobe.com/commerce/php/development/framework/array-manager/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

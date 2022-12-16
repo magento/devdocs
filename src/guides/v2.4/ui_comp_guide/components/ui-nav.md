@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Nav component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/navigation/
-layout: migrated
+status: migrated
 ---
 
 The Nav component implements tabs navigation.

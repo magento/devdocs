@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Code generation
 redirect_to: https://developer.adobe.com/commerce/php/development/components/code-generation/
-layout: migrated
+status: migrated
 ---
 
 ## Overview of code generation {#codegen-over}

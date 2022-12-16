@@ -4,7 +4,7 @@ title: addRequisitionListItemsToCart mutation
 b2b_only: true
 contributor_name: EY
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/add-items-to-cart/
-layout: migrated
+status: migrated
 ---
 The `addRequisitionListItemsToCart` mutation adds requisition list items to the cart. The requisition list does not change after adding items to the cart.
 

@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Menu widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/menu/
-layout: migrated
+status: migrated
 ---
 
 The Magento menu widget is a customized [jQuery UI Menu widget](https://api.jqueryui.com/menu/). Magento menu extends the default functionality with the following:

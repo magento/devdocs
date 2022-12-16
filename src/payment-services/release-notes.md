@@ -2,7 +2,7 @@
 group: release-notes
 title: Payment Services Release Notes
 redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/release-notes.html
-layout: migrated
+status: migrated
 ---
 
 These release notes describe the initial release of Payment Services and include:

@@ -2,7 +2,7 @@
 group: testing
 title: Depends Annotation
 redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-depends/
-layout: migrated
+status: migrated
 ---
 
 The `@depends` annotation helps you to define some dependencies between methods.

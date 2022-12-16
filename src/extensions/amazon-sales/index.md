@@ -2,7 +2,7 @@
 group: extensions
 title: Install Amazon Sales Channel
 redirect_to: https://experienceleague.adobe.com/docs/commerce-channels/amazon/getting-started/install.html
-layout: migrated
+status: migrated
 ---
 
 {: .bs-callout-warning }

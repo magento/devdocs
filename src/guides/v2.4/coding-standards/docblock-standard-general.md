@@ -5,7 +5,7 @@ title: DocBlock standard
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/coding-standards/docblock/
-layout: migrated
+status: migrated
 ---
 
 This standard defines Magento requirements and conventions for adding inline code documentation, known as *DocBlock*s.

@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/module-files.html
-layout: migrated
+status: migrated
 ---
 
 ## Overview of module configuration files {#config-files-overview}

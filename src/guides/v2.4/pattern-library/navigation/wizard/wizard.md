@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Wizard
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/navigation/wizard/
-layout: migrated
+status: migrated
 ---
 Within the Magento application, it is often necessary to guide a user step-by-step through completing a process. By using a wizard, user can complete a task easier because the user can just follow a preplanned, step-by-step path to accomplish his/her goal. It also increases the chances that the task gets completed successfully.
 

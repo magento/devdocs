@@ -4,7 +4,7 @@ title: Static Content Container
 functional_areas:
   - Content
 redirect_to: https://developer.adobe.com/commerce/admin-developer/pattern-library/containers/static-content/
-layout: migrated
+status: migrated
 ---
 Within the Magento application, it is often necessary to display static information to the users. These [static content](https://glossary.magento.com/static-content) are considered Content Container and should follow the guideline in this article. For solutions not described in this article or for further information, please contact the Magento UX Design Team.
 

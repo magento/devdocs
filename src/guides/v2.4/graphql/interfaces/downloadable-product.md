@@ -4,7 +4,7 @@ title: Downloadable product data types
 redirect_from:
   - /guides/v2.4/graphql/product/downloadable-product.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/downloadable/
-layout: migrated
+status: migrated
 ---
 
 The `DownloadableProduct` data type implements `ProductInterface` and `CustomizableProductInterface`. As a result, attributes that are specific to downloadable products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query. It also implements [RoutableInterface]({{page.baseurl}}/graphql/interfaces/routable-interface.html).

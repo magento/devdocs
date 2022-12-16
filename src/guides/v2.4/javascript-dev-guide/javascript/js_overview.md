@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 1_Javascript
 title: JavaScript
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/
-layout: migrated
+status: migrated
 ---
 
 By default, the Magento application uses the [RequireJS file and module loader] to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.

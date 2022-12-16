@@ -4,7 +4,7 @@ title: Community contributed best practices
 redirect_from: 
   - /community/resources/best-practices.html
 redirect_to: https://developer.adobe.com/commerce/contributor/community/best-practices/
-layout: migrated
+status: migrated
 ---
 
 This section covers a broad scope of Community contributed best and leading practices, common solutions, and recommendations for Magento.

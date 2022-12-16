@@ -2,7 +2,7 @@
 group: architecture-guide
 title: Persistence layer
 redirect_to: https://developer.adobe.com/commerce/php/architecture/layers/persistence/
-layout: migrated
+status: migrated
 ---
 
 Magento uses an active record pattern strategy for persistence. In this system, the model object contains a *resource model* that maps an object to one or more database rows. A resource model is responsible for performing functions such as:

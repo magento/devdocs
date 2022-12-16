@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/examples/example-using-cli.html
-layout: migrated
+status: migrated
 ---
 
 This example shows how to set shared, system-specific, and sensitive values in your development system, then deploy those values to your production system.

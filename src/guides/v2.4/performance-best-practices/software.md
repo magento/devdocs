@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/software.html
-layout: migrated
+status: migrated
 ---
 
 We require the following software for production instances of Magento:

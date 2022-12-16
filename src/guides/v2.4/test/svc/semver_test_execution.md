@@ -5,7 +5,7 @@ functional_areas:
   - Testing
   - test
 redirect_to: https://developer.adobe.com/commerce/testing/guide/svc/
-layout: migrated
+status: migrated
 ---
 
 Executing the Magento 2 Semantic Version Checker is a simple process, but it requires an external tool.

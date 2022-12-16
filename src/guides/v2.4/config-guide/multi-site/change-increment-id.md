@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/change-increment-id.html
-layout: migrated
+status: migrated
 ---
 
 This article discusses how to change the increment ID for a Magento database (DB) entity (order, invoice, credit memo, etc.) on a particular Magento store using the `ALTER TABLE` SQL statement.

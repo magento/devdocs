@@ -4,7 +4,7 @@ functional_areas:
     - Standards
 title: Technical Guidelines
 redirect_to: https://developer.adobe.com/commerce/php/coding-standards/technical-guidelines/
-layout: migrated
+status: migrated
 ---
 
 ## About this document

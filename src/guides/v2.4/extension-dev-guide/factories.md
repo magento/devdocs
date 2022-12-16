@@ -7,7 +7,7 @@ menu_order: 6
 contributor_name: Classy Llama
 contributor_link: https://www.classyllama.com/
 redirect_to: https://developer.adobe.com/commerce/php/development/components/factories/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

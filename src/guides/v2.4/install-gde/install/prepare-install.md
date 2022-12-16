@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://developer.adobe.com/commerce/contributor/guides/install/update-dependencies/
-layout: migrated
+status: migrated
 ---
 
 ## Introduction to Magento installation dependencies {#install-update-depend}

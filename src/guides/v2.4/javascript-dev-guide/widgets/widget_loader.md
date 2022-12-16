@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Loader widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/loader/
-layout: migrated
+status: migrated
 ---
 
 The Loader [widget](https://glossary.magento.com/widget) blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent, but it can be initialized for non-Ajax tasks as well.

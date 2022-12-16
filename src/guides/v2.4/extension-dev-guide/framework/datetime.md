@@ -4,7 +4,7 @@ title: DateTime library
 contributor_name: Rakesh Jesadiya
 contributor_link: https://github.com/RakeshJesadiya
 redirect_to: https://developer.adobe.com/commerce/php/development/framework/datetime-library/
-layout: migrated
+status: migrated
 ---
 
 The DateTime library provides utilities to work with date and time formatting. Provided methods in this library are described below.

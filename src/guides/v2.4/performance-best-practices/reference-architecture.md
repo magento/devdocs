@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/reference-architecture.html
-layout: migrated
+status: migrated
 ---
 
 This topic describes a generic recommended setup for {{site.data.var.ee}} and {{site.data.var.ce}} instances using plain servers hosted physically in a data center (not virtualized) in which resources are not shared with other users. Your hosting provider, especially if it specializes in Magento high performance hosting, might recommend a different setup that is equally or more effective for your requirements.

@@ -7,7 +7,7 @@ menu_order: 4
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/formblocktype/
-layout: migrated
+status: migrated
 ---
 
 The payment information form rendering in [Admin](https://glossary.magento.com/admin) order creation is defined by the block class, its template and [layout](https://glossary.magento.com/layout).

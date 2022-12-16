@@ -7,7 +7,7 @@ menu_order: 3
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/vault-di/
-layout: migrated
+status: migrated
 ---
 
 This section describes how to configure vault [payment method](https://glossary.magento.com/payment-method) and create payment actions, like authorize, sale (authorize & capture), capture and so on.

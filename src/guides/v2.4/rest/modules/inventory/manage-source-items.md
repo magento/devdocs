@@ -2,7 +2,7 @@
 group: rest-api
 title: Manage source items
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-source-items/
-layout: migrated
+status: migrated
 ---
 
 If Magento is configured to manage inventory, Magento assigns all existing products to the default source. Currently, Magento also assigns newly-created products to the default source. Single Source merchants do not need to manage source items, but Multi Source merchants may need to move products from the default source to a custom source, or move products from one custom source to another.

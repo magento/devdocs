@@ -3,7 +3,7 @@ group: graphql
 title: placeNegotiableQuoteOrder mutation
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/place-order/
-layout: migrated
+status: migrated
 ---
 
 The `placeNegotiableQuoteOrder` mutation converts a negotiable quote into an order and returns an order ID.

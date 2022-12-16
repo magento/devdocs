@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Docker
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/quick-reference/
-layout: migrated
+status: migrated
 ---
 
 This Quick Reference provides information about using Docker Compose commands, the Docker Compose configuration generator, and the {{site.data.var.mcd-prod}} CLI to configure, deploy, and use your Docker environment for application development. See the following topics for more detailed instructions:

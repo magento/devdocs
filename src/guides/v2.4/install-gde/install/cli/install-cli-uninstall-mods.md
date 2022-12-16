@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/uninstall-modules.html
-layout: migrated
+status: migrated
 ---
 
 ## Prerequisites {#instgde-cli-uninst-prereq}

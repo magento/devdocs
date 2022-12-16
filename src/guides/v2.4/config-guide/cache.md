@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/caching-overview.html
-layout: migrated
+status: migrated
 ---
 
 Magento enables you to configure alternatives to the default file system caching. This guide discusses some of those alternatives; namely,

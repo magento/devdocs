@@ -2,7 +2,7 @@
 group: graphql
 title: getHostedProUrl query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/get-hosted-pro-url/
-layout: migrated
+status: migrated
 ---
 
 The `getHostedProUrl` query is required to complete a transaction when the [PayPal Website Payments Pro Hosted Solution payment method]({{page.baseurl}}/graphql/payment-methods/hosted-pro.html) is selected. The query retrieves a PayPal-generated URL that the PWA client connects to, enabling the customer to enter their PayPal credentials and complete the transaction. Run this query after you [set the payment method]({{ page.baseurl}}/graphql/mutations/set-payment-method.html) and [place the order]({{ page.baseurl}}/graphql/mutations/place-order.html).

@@ -2,7 +2,7 @@
 group: rest-api
 title: Search using REST endpoints
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/performing-searches/
-layout: migrated
+status: migrated
 ---
 
 POST, PUT, and DELETE requests to the REST Web [API](https://glossary.magento.com/api) require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or [XML](https://glossary.magento.com/xml) structure) in the body of the message.

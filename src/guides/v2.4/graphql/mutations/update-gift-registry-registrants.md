@@ -3,7 +3,7 @@ group: graphql
 title: updateGiftRegistryRegistrants mutation
 ee_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/mutations/update-registrants/
-layout: migrated
+status: migrated
 ---
 
 The `updateGiftRegistryRegistrants` mutation updates properties of one or more registrants of the specified gify registry.

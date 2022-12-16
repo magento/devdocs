@@ -7,7 +7,7 @@ redirect_from:
   - /live-search/live-search-api-reference.html
   - /live-search/live-search-sdk.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/live-search/
-layout: migrated
+status: migrated
 ---
 
 GraphQL is a data query language that allows the caller to specify exactly what data to return. When a customer searches for products, the overhead of returning all possible product information and removing unnecessary data leads to longer processing times and unfavorable user experiences.

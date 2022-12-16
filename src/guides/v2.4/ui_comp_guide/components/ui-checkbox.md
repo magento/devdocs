@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Checkbox component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/checkbox/
-layout: migrated
+status: migrated
 ---
 
 The Checkbox component implements a form field that is an [HTML](https://glossary.magento.com/html) `<input type="checkbox">` element. It can also be displayed as a "toggle" handler or a radio button element.

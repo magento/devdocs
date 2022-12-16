@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Before You Begin
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/before-you-begin/
-layout: migrated
+status: migrated
 ---
 
 Before you begin the extension submission process, you need to have the following items ready:

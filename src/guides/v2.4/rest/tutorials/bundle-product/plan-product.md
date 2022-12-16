@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 1. Plan the product
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bundle-product/plan-product/
-layout: migrated
+status: migrated
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com/magento-optimization-service
 ---

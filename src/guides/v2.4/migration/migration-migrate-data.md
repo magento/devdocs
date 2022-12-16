@@ -6,7 +6,7 @@ menu_title: Migrate data
 menu_node:
 menu_order: 2
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/migrate-data/data.html
-layout: migrated
+status: migrated
 ---
 
 ## Before you start: routine preparation

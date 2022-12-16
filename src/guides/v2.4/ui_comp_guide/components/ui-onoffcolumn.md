@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: OnOffColumn component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/on-off-column/
-layout: migrated
+status: migrated
 ---
 
 The OnOffColumn component is a decorator for [MultiselectColumn]({{ page.baseurl }}/ui_comp_guide/components/ui-multiselectcolumn.html). It displays toggle switch elements instead of checkboxes.

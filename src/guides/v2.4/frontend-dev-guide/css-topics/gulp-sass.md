@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
   - Tools
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/custom-preprocessor/gulp-sass/
-layout: migrated
+status: migrated
 ---
 
 By default, Magento uses [Less](https://lesscss.org/) for themes styling. But you can use other stylesheet languages that can be compiled (processed) to CSS. For example, Sass is a popular alternative.

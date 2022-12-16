@@ -6,7 +6,7 @@ contributor_link: https://www.comwrap.com/en.html
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/asynchronous-web-endpoints/
-layout: migrated
+status: migrated
 ---
 
 An asynchronous web endpoint intercepts messages to a Web API and writes them to the message queue. Each time the system accepts such an API request, it generates a UUID identifier. Magento includes this UUID when it adds the message to the queue. Then, a consumer reads the messages from the queue and executes them one-by-one.

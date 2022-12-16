@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Application
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/variables-property.html
-layout: migrated
+status: migrated
 ---
 The following environment variables are included in the `.magento.app.yaml` file.
 

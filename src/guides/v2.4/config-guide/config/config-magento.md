@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/deployment-files.html
-layout: migrated
+status: migrated
 ---
 
 Magento provides configuration files that enable you to easily customize a component. We also enable you to create new configuration types to extend default functionality.

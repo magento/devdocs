@@ -5,7 +5,7 @@ title: Component load order
 menu_title: Component load order
 menu_order: 7000
 redirect_to: https://developer.adobe.com/commerce/php/development/build/component-load-order/
-layout: migrated
+status: migrated
 ---
 
 You may need to specify your component's dependency on other components or files from other components using your component's [composer.json]({{ page.baseurl }}/extension-dev-guide/build/create_component.html#add-composer-json). Further, you can specify a load order in your component's `module.xml` file using the `<sequence>` tag to ensure that needed files from other components are already loaded when your component loads.

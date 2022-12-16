@@ -4,7 +4,7 @@ title: Form component
 redirect_from:
    - /guides/v2.3/ui-components/ui-form.html
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/form/
-layout: migrated
+status: migrated
 ---
 
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.

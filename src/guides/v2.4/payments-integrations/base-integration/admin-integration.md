@@ -7,7 +7,7 @@ menu_order: 10
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/admin-integration/
-layout: migrated
+status: migrated
 ---
 
 You can define whether the payment method is available for the [storefront](https://glossary.magento.com/storefront) and [checkout](https://glossary.magento.com/checkout) in the [payment method configuration in `config.xml`]({{ page.baseurl }}/payments-integrations/base-integration/payment-option-config.html):

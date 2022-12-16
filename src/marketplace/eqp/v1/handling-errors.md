@@ -2,7 +2,7 @@
 group: marketplace-api
 title: Handling errors
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/handling-errors/
-layout: migrated
+status: migrated
 ---
 
 Consider these tips when handling errors.

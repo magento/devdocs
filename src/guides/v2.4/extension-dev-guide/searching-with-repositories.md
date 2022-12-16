@@ -4,7 +4,7 @@ title: Searching with Repositories
 functional_areas:
   - Search
 redirect_to: https://developer.adobe.com/commerce/php/development/components/searching-with-repositories/
-layout: migrated
+status: migrated
 ---
 
 ## What is a repository? {#m2devgde-repository-intro}

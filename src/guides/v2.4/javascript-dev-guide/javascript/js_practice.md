@@ -2,7 +2,7 @@
 group: javascript-developer-guide
 title: Customizing JavaScript illustration
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/practice/
-layout: migrated
+status: migrated
 ---
 
 This topic features a step-by-step illustration of how to customize a [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget) and how to use a custom widget instead the default Magento one.

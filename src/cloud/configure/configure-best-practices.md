@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/best-practices.html
-layout: migrated
+status: migrated
 ---
 
 For detailed information for configuring your store, sites, and websites, you may want to review the [{{site.data.var.ee}} 2.2.x User Guide]({{ site.user_guide_url }}/getting-started.html). This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with additional content to post over time and across versions.

@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/cli.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.im}} provides commands to manage inventory data and configuration settings.

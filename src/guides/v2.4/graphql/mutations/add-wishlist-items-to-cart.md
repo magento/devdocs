@@ -2,7 +2,7 @@
 group: graphql
 title: addWishlistItemsToCart mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/add-items-to-cart/
-layout: migrated
+status: migrated
 ---
 The `addWishlistItemsToCart` mutation moves items from the specified wish list to the customer's cart.
 

@@ -2,7 +2,7 @@
 group: rest-api
 title: REST usage notes
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/notes/
-layout: migrated
+status: migrated
 functional_areas:
   - Integration
 ---

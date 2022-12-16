@@ -2,7 +2,7 @@
 group: community
 title: Contribution programs
 redirect_to: https://developer.adobe.com/commerce/contributor/community/contribution-programs/
-layout: migrated
+status: migrated
 ---
 
 Adobe is pleased to provide a Solution Partners program for partners.

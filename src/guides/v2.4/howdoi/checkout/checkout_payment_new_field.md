@@ -11,7 +11,7 @@ level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-payment-field/
-layout: migrated
+status: migrated
 ---
 
 This topic describes how to add a custom field to an offline payment method in the payment step of the checkout. The custom field allows the buyer to enter a comment about a purchase order.

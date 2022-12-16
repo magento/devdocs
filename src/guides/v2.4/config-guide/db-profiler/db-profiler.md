@@ -8,7 +8,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/db-profiler.html
-layout: migrated
+status: migrated
 ---
 
 ## About the database profiler

@@ -7,7 +7,7 @@ functional_areas:
 redirect_from:
   - /cloud/project/project-conf-files_services.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html
-layout: migrated
+status: migrated
 ---
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and Elasticsearch or OpenSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.

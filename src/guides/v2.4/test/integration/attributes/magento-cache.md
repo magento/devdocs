@@ -2,7 +2,7 @@
 group: testing
 title: Cache attribute
 redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/cache/
-layout: migrated
+status: migrated
 ---
 
 Enable or disable a [cache type][] using the `Cache` attribute.

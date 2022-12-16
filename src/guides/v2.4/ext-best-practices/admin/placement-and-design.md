@@ -7,7 +7,7 @@ menu_order: 1
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/admin/placement-and-design/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

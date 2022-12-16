@@ -3,7 +3,7 @@ group: shared-services
 title: Adobe Commerce Event SDK Reference
 ee_only: True
 redirect_to: https://developer.adobe.com/commerce/services/shared-services/storefront-events/sdk/
-layout: migrated
+status: migrated
 ---
 
 The Adobe Commerce Event SDK functions are organized into the following sections:

@@ -7,7 +7,7 @@ menu_order: 2
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/payment-option-config/
-layout: migrated
+status: migrated
 ---
 
 In the `config.xml` file in your `%Vendor_Module%/etc` directory, configure the options of your [payment method](https://glossary.magento.com/payment-method). The following table contains the default options available for any payment method.

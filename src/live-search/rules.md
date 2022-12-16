@@ -3,7 +3,7 @@ group: live-search
 title: Rules
 ee_only: True
 redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-admin/rules/rules.html
-layout: migrated
+status: migrated
 ---
 
 Live Search rules trigger actions based on a variety of query conditions and give merchants the ability to shape the search experience for various scenarios.

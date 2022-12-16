@@ -8,7 +8,7 @@ menu_order: 6
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/coding-standards/js/
-layout: migrated
+status: migrated
 ---
 
 ## Introduction {#frontend-dev-guide-javascript-js-coding-docblock-overview}

@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Deploy
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/scenario-based.html
-layout: migrated
+status: migrated
 ---
 
 With `{{site.data.var.ct}}` 2002.1.0 and later, you can use the scenario-based deployment feature to customize the default deployment behavior.

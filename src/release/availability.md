@@ -2,7 +2,7 @@
 title: Availability
 group: release
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/availability.html
-layout: migrated
+status: migrated
 ---
 
 The following table describes the status of Adobe Commerce software availability and where to get it, particularly for software that is available outside the conventional {{site.data.var.ee}} Composer package.

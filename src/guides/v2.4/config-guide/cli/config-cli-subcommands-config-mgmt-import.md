@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/configuration-management/import-configuration.html
-layout: migrated
+status: migrated
 ---
 
 {% include config/cli-intro.md %}

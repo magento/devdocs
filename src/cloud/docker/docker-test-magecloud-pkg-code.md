@@ -8,7 +8,7 @@ functional_areas:
 redirect from:
   - /cloud/docker/docker-development-testing.html
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/
-layout: migrated
+status: migrated
 ---
 
 In a {{site.data.var.mcd-prod}} development environment, you can use the integrated test suite in each [{{site.data.var.csuite}}] package for Magento code testing. The test suites, which use the [Codeception testing framework for PHP], provide acceptance tests to validate code intended for contribution to Magento Cloud package repositories.

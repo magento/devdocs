@@ -6,7 +6,7 @@ functional_areas:
 redirect_from:
   - /cloud/docker/docker-mftf.html
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/
-layout: migrated
+status: migrated
 ---
 
 In a Cloud Docker development environment, you can use the [Magento Functional Testing Framework (MFTF)][MFTF docs] for Magento application testing. In this environment, you run MFTF commands using the `mftf-command` ([CLI container command]). For example, the following command generates the MFTF tests:

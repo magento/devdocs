@@ -2,7 +2,7 @@
 group: rest-api
 title: Generate a local REST reference
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/quick-reference/generate-local/
-layout: migrated
+status: migrated
 functional_areas:
   - Integration
 ---

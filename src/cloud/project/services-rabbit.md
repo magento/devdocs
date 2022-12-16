@@ -7,7 +7,7 @@ functional_areas:
 redirect_from:
   - /cloud/project/project-conf-files_services-rabbit.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/rabbitmq.html
-layout: migrated
+status: migrated
 ---
 
 The [Message Queue Framework (MQF)]({{ site.baseurl }}/guides/v2.3/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.

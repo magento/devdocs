@@ -4,7 +4,7 @@ title: Creating an integration with an external API
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/backend/create-api-integration/
-layout: migrated
+status: migrated
 ---
 
 This tutorial shows you how to create an integration with an external API using [GuzzleHttp](https://docs.guzzlephp.org/en/stable/quickstart.html) library, that is included into Magento package.

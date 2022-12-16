@@ -6,7 +6,7 @@ menu_title: Prepare (development quick start)
 menu_order: 1
 menu_node: parent
 redirect_to: https://developer.adobe.com/commerce/php/development/prepare/
-layout: migrated
+status: migrated
 ---
 
 Before you start building Magento modules, we suggest you use the following checklist:

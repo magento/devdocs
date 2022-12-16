@@ -4,7 +4,7 @@ title: Installation
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/install/
-layout: migrated
+status: migrated
 ---
 
 To install the Magento PHPStorm plugin:

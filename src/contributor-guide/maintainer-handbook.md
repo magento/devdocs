@@ -2,7 +2,7 @@
 group: contributor-guide
 title: Maintainer's Handbook
 redirect_to: https://developer.adobe.com/commerce/contributor/guides/maintainers/handbook/
-layout: migrated
+status: migrated
 ---
 
 This document describes activities performed by a community maintainer, provides some insight and description of the tools integrated within GitHub to assist our maintainers.

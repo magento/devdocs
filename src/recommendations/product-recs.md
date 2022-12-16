@@ -5,7 +5,7 @@ redirect_from:
   - /recommendations/install.html
 ee_only: True
 redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/product-recommendations/developer/development-overview.html
-layout: migrated
+status: migrated
 ---
 
 Product Recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”, “Customers who bought this product also bought", "Recommended for you", and so on. Adobe Commerce Product Recommendations are powered by [Adobe Sensei](https://www.adobe.com/sensei.html), which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Commerce catalog, results in highly engaging, relevant, and personalized experiences for the shopper.

@@ -2,7 +2,7 @@
 group: testing
 title: Configuration fixture attribute
 redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/config-fixture/
-layout: migrated
+status: migrated
 ---
 
 To set configuration values for individual tests and revert them after the test execution, use the `Config` attribute.

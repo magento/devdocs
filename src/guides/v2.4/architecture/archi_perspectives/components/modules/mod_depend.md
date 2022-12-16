@@ -3,7 +3,7 @@ group: architecture-guide
 title: Module dependencies
 menu_title: Module dependencies
 redirect_to: https://developer.adobe.com/commerce/php/architecture/modules/dependencies/
-layout: migrated
+status: migrated
 ---
 
 ## Overview {#m2devgde-moddep-intro}
