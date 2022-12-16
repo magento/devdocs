@@ -53,11 +53,17 @@ namespace :update do
   task :migrated_links do
     # check if 'tmp/migrated-from-to.csv' exists
     links_file = 'tmp/migrated-from-to.csv'
-    abort 'FAILED. Missing "tmp/migrated-from-to.csv" file. Make sure that your _config.local.yml file contains the "migrated_log: generate_file" parameter.' unless File.exist? links_file
+    unless File.exist? links_file
+      abort 'FAILED. Missing "tmp/migrated-from-to.csv" file. Make sure that your _config.local.yml file contains the "migrated_log: generate_file" parameter.'
+    end
     # check if the provided directory ('dir') exist
     dir = ENV['dir']
-    abort 'FAILED. Missing argument "dir". Provide a directory to check the links. Example: rake update:migrated_links dir=path/to/codebase' unless dir
-    abort "FAILED. Check the path provided through the 'dir' argument. The provide directory does not exist: #{dir}" unless Dir.exist?(dir)
+    unless dir
+      abort 'FAILED. Missing argument "dir". Provide a directory to check the links. Example: rake update:migrated_links dir=path/to/codebase'
+    end
+    unless Dir.exist?(dir)
+      abort "FAILED. Check the path provided through the 'dir' argument. The provide directory does not exist: #{dir}"
+    end
     # parse 'tmp/migrated-from-to.csv'
     links = CSV.read links_file
     # for each file in dir, find and replace all links
@@ -76,8 +82,8 @@ namespace :update do
       content = File.read file
       # iterate through the array of links
       links.each do |redirect|
-        # replace first link from the array with the second links 
-        content.gsub!(redirect[0], redirect[1]) 
+        # replace first link from the array with the second links
+        content.gsub!(redirect[0], redirect[1])
       end
       # write the update content back to the file
       File.write(file, content)
