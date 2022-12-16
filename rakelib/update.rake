@@ -48,9 +48,9 @@ namespace :update do
       update_dir subrepo['directory']
     end
   end
+
   desc 'Find and replace links from "tmp/migrated-from-to.csv" in files at the provided directory. Example: rake update:migrated_links dir=path/to/codebase'
   task :migrated_links do
-    # 
     # check if 'tmp/migrated-from-to.csv' exists
     links_file = 'tmp/migrated-from-to.csv'
     abort 'FAILED. Missing "tmp/migrated-from-to.csv" file. Make sure that your _config.local.yml file contains the "migrated_log: generate_file" parameter.' unless File.exist? links_file
@@ -61,6 +61,7 @@ namespace :update do
     # parse 'tmp/migrated-from-to.csv'
     links = CSV.read links_file
     # for each file in dir, find and replace all links
+    puts 'Work in progress...'.magenta
     Dir[File.join(dir, '**', '*')].each do |file|
       # ignore directory paths
       next if File.directory? file
@@ -81,6 +82,7 @@ namespace :update do
       # write the update content back to the file
       File.write(file, content)
     end
+    puts 'Done!'.green
   end
 end
 
