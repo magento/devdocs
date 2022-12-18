@@ -4,7 +4,7 @@ title: Use cURL to run the request
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/gs-curl/
-layout: migrated
+status: migrated
 ---
 
 ['cURL'](https://curl.haxx.se/) is a command-line tool that lets you transmit HTTP requests and receive responses from the command line or a shell script. It is available for Linux distributions, Mac OS X, and Windows.

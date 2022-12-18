@@ -2,7 +2,7 @@
 group: release-notes
 title: Magento Open Source packages
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/packages/magento-open-source.html
-layout: migrated
+status: migrated
 ---
 
 <!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/v2_4/open-source/composer_lock.json' file

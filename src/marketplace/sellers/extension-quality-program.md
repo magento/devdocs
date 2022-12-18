@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Extension Quality Program
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/extension-quality-program/
-layout: migrated
+status: migrated
 ---
 
 The Extension Quality Program (EQP) combines Adobe Commerce and Magento Open Source expertise, development guidelines, and verification tools to ensure that all extensions on Commerce Marketplace meet our coding standards and best practices.

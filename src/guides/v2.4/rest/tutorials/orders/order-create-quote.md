@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 4. Create a quote
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-create-quote/
-layout: migrated
+status: migrated
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials

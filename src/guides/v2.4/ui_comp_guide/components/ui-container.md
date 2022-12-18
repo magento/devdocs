@@ -4,7 +4,7 @@ title: Container component
 contributor_name: Jehangir Wahid
 contributor_link: https://github.com/Jehangir-Wahid
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/container/
-layout: migrated
+status: migrated
 ---
 
 The Container [UI component](https://glossary.magento.com/ui-component) is used for wrapping fields or other ui-components with descriptive text. It may be used without a field to display a notice or description of a fieldset.

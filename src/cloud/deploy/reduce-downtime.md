@@ -6,7 +6,7 @@ functional_areas:
   - Deploy
   - SCD
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/reduce-downtime.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.ece}} runs the application in [_maintenance_ mode]({{site.baseurl}}/guides/v2.3/config-guide/bootstrap/magento-modes.html#maintenance-mode) during the deploy phase, which takes your site offline until the deployment is complete. The length of time your Production site is in maintenance mode depends on the size of the site, the number of changes applied during the deployment, and the configuration for static content deployment. It is possible to configure your project so that it deploys with a **zero** downtime effect.

@@ -4,7 +4,7 @@ title: clearCustomerCart mutation
 b2b_only: true
 contributor_name: EY
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/clear-customer-cart/
-layout: migrated
+status: migrated
 ---
 The `clearCustomerCart` mutation clears the customer's cart.
 

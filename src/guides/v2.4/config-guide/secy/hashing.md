@@ -2,7 +2,7 @@
 group: configuration-guide
 title: Password hashing
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/password-hashing.html
-layout: migrated
+status: migrated
 ---
 
 Currently Magento uses its own strategy for password hashing, based on different native PHP hashing algorithms. Magento supports multiple algorithms like `MD5`, `SHA256`, or `Argon 2ID13`. If the Sodium extension is installed (installed by default in PHP 7.3), then `Argon 2ID13` will be chosen as the default hashing algorithm. Otherwise, `SHA256` will be as default. Magento can use the native PHP `password_hash` function with Argon 2i algorithm support.

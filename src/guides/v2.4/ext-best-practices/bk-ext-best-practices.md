@@ -4,7 +4,7 @@ title: Best Practices for Extension Developers
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-info}

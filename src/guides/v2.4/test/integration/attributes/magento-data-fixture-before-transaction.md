@@ -2,7 +2,7 @@
 group: testing
 title: Data fixture before transaction attribute
 redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/attributes/data-fixture-before-transaction/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

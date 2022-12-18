@@ -7,7 +7,7 @@ menu_order: 5
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/base-integration/payment-action/
-layout: migrated
+status: migrated
 ---
 
 For each payment action available for the payment method, you must implement the following:

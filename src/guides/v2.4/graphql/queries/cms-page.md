@@ -4,7 +4,7 @@ title: cmsPage query
 redirect_from:
   - /guides/v2.3/graphql/reference/cms.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/cms-page/
-layout: migrated
+status: migrated
 ---
 
 The `cmsPage` query returns information about content pages that were developed with the Magento Content Management System (CMS).

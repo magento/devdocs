@@ -4,7 +4,7 @@ title: CSS in responsive design
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/responsive-design/css/
-layout: migrated
+status: migrated
 ---
 
 ## In this topic

@@ -4,7 +4,7 @@ title: Add a category attribute
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/add-category-attribute/
-layout: migrated
+status: migrated
 ---
 
 Category attributes were automatically displayed in the [admin](https://glossary.magento.com/admin) panel of Magento 1. In Magento 2, it is necessary to explicitly render it with a [UI Component](https://glossary.magento.com/ui-component). This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace `attribute_id` and `Your Category Attribute Name` with your own values.

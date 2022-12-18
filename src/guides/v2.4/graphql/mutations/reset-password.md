@@ -4,7 +4,7 @@ title: resetPassword mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/reset-password/
-layout: migrated
+status: migrated
 ---
 
 The `resetPassword` mutation resets customer password using a reset password token and the customer's email address. Use it to set a new password for the registered customer after calling the [requestPasswordResetEmail]({{page.baseurl}}/graphql/mutations/request-password-reset-email.html) mutation.

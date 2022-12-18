@@ -3,7 +3,7 @@ group: testing
 title: Application Testing Guide
 landing-page: Application Testing Guide
 redirect_to: https://developer.adobe.com/commerce/testing/guide/
-layout: migrated
+status: migrated
 ---
 
 Magento actively leverages various testing strategies to ensure product and code quality.

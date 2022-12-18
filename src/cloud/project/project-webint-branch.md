@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/cli-branches.html
-layout: migrated
+status: migrated
 ---
 
 Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the `magento-cloud` CLI, or Git commands. For more information on Git branches, see [Git documentation](https://git-scm.com/doc).

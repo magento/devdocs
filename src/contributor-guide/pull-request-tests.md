@@ -2,7 +2,7 @@
 group: contributor-guide
 title: Pull Request Tests
 redirect_to: https://developer.adobe.com/commerce/contributor/guides/code-contributions/pull-request-tests/
-layout: migrated
+status: migrated
 ---
 
 ## Magento Automated Testing

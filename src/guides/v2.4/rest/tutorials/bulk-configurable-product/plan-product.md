@@ -14,7 +14,7 @@ functional_areas:
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com/en.html
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/bulk-configurable-product/plan-product/
-layout: migrated
+status: migrated
 ---
 
  To create a configurable product programmatically, you'll need to know the following:

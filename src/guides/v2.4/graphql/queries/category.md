@@ -2,7 +2,7 @@
 group: graphql
 title: category query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/category/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

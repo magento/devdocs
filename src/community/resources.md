@@ -4,7 +4,7 @@ title: Community Resources
 redirect_from:
   - /community/resources/resources.html
 redirect_to: https://developer.adobe.com/commerce/contributor/community/
-layout: migrated
+status: migrated
 ---
 
 ## Magento DevBlog

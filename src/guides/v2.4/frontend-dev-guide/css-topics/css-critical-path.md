@@ -4,7 +4,7 @@ title: CSS critical path
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/critical-path/
-layout: migrated
+status: migrated
 ---
 
 All CSS styles loaded from external files are considered as render-blocking. This means that a web page will not be displayed until these files are loaded.

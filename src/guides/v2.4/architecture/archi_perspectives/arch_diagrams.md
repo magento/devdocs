@@ -3,7 +3,7 @@ group: architecture-guide
 title: Architectural diagrams
 menu_title: Architectural diagrams
 redirect_to: https://developer.adobe.com/commerce/php/architecture/basics/diagrams/
-layout: migrated
+status: migrated
 ---
 
 ## Magento architecture from different perspectives  {#m2arch-whatis-overview}

@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Extension content
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/content/
-layout: migrated
+status: migrated
 ---
 
 The content that accompanies your extension listing is derived from the profile of the extension or theme, and information in the developer\'s company profile.

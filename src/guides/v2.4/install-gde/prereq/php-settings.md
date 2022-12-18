@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html
-layout: migrated
+status: migrated
 ---
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.

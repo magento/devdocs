@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Linking properties of UI components
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/linking/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

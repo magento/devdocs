@@ -4,7 +4,7 @@ title: setPaymentMethodAndPlaceOrder mutation
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/set-payment-place-order/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

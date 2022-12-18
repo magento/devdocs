@@ -2,7 +2,7 @@
 group: release-notes
 title: Adobe Commerce 2.4.3 Release Notes
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/adobe-commerce/2-4-3.html
-layout: migrated
+status: migrated
 ---
 
 {{ site.data.var.ee }} 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.

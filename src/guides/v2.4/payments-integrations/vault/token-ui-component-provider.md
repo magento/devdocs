@@ -7,7 +7,7 @@ menu_order: 15
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/vault/token-ui-component-provider/
-layout: migrated
+status: migrated
 ---
 
 This topic describes how to create custom vault payments UI components, that are used to  display stored tokens on [checkout](https://glossary.magento.com/checkout) page and order placing using vault.

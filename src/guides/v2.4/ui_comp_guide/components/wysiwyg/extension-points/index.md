@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: WYSIWYG Extension Points
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/wysiwyg/extension-points/
-layout: migrated
+status: migrated
 ---
 
 This topic goes over the extension points for Magento entities.

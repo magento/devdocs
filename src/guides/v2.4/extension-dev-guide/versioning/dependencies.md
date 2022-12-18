@@ -7,7 +7,7 @@ menu_order: 1200
 redirect_from:
   - /guides/v2.3/extension-dev-guide/backward-compatibility.html
 redirect_to: https://developer.adobe.com/commerce/php/development/versioning/dependencies/
-layout: migrated
+status: migrated
 ---
 
 Magento platform clients need notifications about breaking changes for their installed extensions and customizations when they upgrade their Magento installation.

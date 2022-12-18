@@ -8,7 +8,7 @@ menu_order: 8
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/coding-standards/less/
-layout: migrated
+status: migrated
 ---
 
 This standard defines Magento internal requirements for code formatting and style for teams that develop Less and [CSS](https://glossary.magento.com/css) code.

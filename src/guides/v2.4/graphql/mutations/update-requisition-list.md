@@ -5,7 +5,7 @@ b2b_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/requisition-list/mutations/update/
-layout: migrated
+status: migrated
 ---
 The `updateRequisitionList` mutation updates the name and, optionally, the description of a requisition list.
 

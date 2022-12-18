@@ -4,7 +4,7 @@ title: Overview of UI components
 redirect_from:
   - /guides/v2.3/ui-components/ui-listing-grid.html
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/
-layout: migrated
+status: migrated
 ---
 
 ## Overview of UI components

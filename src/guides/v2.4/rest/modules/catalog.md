@@ -2,7 +2,7 @@
 group: rest-api
 title: Catalog module
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/modules/catalog/
-layout: migrated
+status: migrated
 functional_areas:
   - Integration
   - Catalog

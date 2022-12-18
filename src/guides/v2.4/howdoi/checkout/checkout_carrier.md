@@ -9,7 +9,7 @@ level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/add-carrier-validation/
-layout: migrated
+status: migrated
 ---
 
 This topic describes how to add shipping address validations for a custom [shipping carrier](https://glossary.magento.com/shipping-carrier) to the Magento [checkout](https://glossary.magento.com/checkout). This is an essential part of the bigger task of adding a custom shipping method to your Magento store.

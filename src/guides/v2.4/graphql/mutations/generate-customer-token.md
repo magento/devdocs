@@ -2,7 +2,7 @@
 group: graphql
 title: generateCustomerToken mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/generate-token/
-layout: migrated
+status: migrated
 ---
 
 Use the `generateCustomerToken` mutation to create a new customer token.

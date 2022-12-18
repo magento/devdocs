@@ -5,7 +5,7 @@ title: Payment provider gateway structure
 menu_title: Payment provider gateway structure
 menu_order: 1
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/payment-gateway-structure/
-layout: migrated
+status: migrated
 ---
 
 The following diagram shows the basic components of the Magento payment provider gateway:

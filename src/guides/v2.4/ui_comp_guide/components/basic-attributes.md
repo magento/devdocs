@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Basic attributes
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/concepts/basic-attributes/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

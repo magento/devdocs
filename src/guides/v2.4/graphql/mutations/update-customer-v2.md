@@ -2,7 +2,7 @@
 group: graphql
 title: updateCustomerV2 mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/update-v2/
-layout: migrated
+status: migrated
 ---
 
 The `updateCustomerV2` mutation updates the personal information in an existing customer account. Use the [`updateCustomerEmail` mutation]({{page.baseurl}}/graphql/mutations/update-customer-email.html) to update the customer's email address.

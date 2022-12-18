@@ -4,7 +4,7 @@ title: Custom widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/create-custom-widget/
-layout: migrated
+status: migrated
 ---
 
 Widgets provide powerful features in Magento 2, that are used to add dynamic or static content to store's pages.

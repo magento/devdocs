@@ -3,7 +3,7 @@ group: architecture-guide
 title: Third-party libraries
 menu_title: Third-party libraries
 redirect_to: https://developer.adobe.com/commerce/php/architecture/modules/libraries/
-layout: migrated
+status: migrated
 ---
 
 Magento depends on a set of external libraries. You can use [Composer](https://glossary.magento.com/composer) to manage these dependencies. Composer downloads all of the external libraries that are included in its main configuration file and installs them under its default installation directory (`vendor/`). Third-party libraries include the Zend framework files and the Symfony libraries.

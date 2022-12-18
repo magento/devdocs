@@ -1,7 +1,7 @@
 ---
 title: Modify docroot to improve security
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/docroot.html
-layout: migrated
+status: migrated
 ---
 
 In a standard installation with an Apache web server, Magento is installed to the default web root: `/var/www/html/magento2`.

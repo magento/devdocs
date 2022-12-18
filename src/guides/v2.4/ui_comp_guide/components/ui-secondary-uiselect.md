@@ -5,7 +5,7 @@ title: UI-select component
 menu_title: UI-select component
 menu_node:
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/secondary-ui-select/
-layout: migrated
+status: migrated
 ---
 
 The UI-select component is a single select/multiple select component that enables the selection of a collection of items. It extends all `abstract` configuration and can be configured in two modes:

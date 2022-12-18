@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: MFTF Vendor-supplied Tests
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/mftf-vendor/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-info}

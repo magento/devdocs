@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/configure-cron-jobs.html
-layout: migrated
+status: migrated
 ---
 
 ## Overview of cron {#config-cli-cron-overview}

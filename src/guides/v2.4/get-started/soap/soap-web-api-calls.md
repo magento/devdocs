@@ -6,7 +6,7 @@ menu_title: Use SOAP Services
 menu_order: 1
 menu_node: parent
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/soap-web-api-calls/
-layout: migrated
+status: migrated
 ---
 
 ## WSDL File {#wsdl}

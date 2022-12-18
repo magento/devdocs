@@ -3,7 +3,7 @@ group: architecture-guide
 title: Modules and areas
 menu_title: Modules and areas
 redirect_to: https://developer.adobe.com/commerce/php/architecture/modules/areas/
-layout: migrated
+status: migrated
 ---
 
 ## Overview {#m2arch-module-areas-overview}

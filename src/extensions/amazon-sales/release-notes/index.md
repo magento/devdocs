@@ -2,7 +2,7 @@
 group: extensions
 title: Amazon Sales Channel Release Notes
 redirect_to: https://experienceleague.adobe.com/docs/commerce-channels/amazon/release-notes.html
-layout: migrated
+status: migrated
 ---
 {: .bs-callout-warning }
 Amazon Sales Channel versions 4.0.0 and 4.1.0 are only supported for {{site.data.var.ee}} 2.3.x versions.<br/>Amazon Sales Channel version 4.2.0 is compatible with {{site.data.var.ee}} 2.3.x versions but is only supported for {{site.data.var.ee}} 2.4.x versions.

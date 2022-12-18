@@ -5,7 +5,7 @@ ee_only: True
 redirect from:
   - /guides/v2.3/graphql/reference/quote-apply-giftcard.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/apply-giftcard/
-layout: migrated
+status: migrated
 ---
 
 The `applyGiftCardToCart` mutation applies a pre-defined gift card code to the specified cart.

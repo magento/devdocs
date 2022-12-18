@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: MultiselectColumn component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/multiselect-column/
-layout: migrated
+status: migrated
 ---
 
 The MultiselectColumn component implements a column with checkboxes for selecting records. It also provides controls for selecting multiple records.

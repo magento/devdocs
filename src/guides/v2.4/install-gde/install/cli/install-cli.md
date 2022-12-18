@@ -15,7 +15,7 @@ redirect_from:
   - /guides/v2.4/install-gde/install/web/install-web_6-install.html
   - /guides/v2.4/install-gde/install/cli/install-cli-install.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/advanced.html
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-tip}

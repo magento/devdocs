@@ -4,7 +4,7 @@ title: Braintree Vault payment method
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/braintree-vault/
-layout: migrated
+status: migrated
 ---
 
 Braintree Vault is a payment gateway that processes debit and credit card payments from the Magento_Vault.

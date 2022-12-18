@@ -2,7 +2,7 @@
 group: marketplace-api
 title: Reports
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/reports/
-layout: migrated
+status: migrated
 ---
 
 ## User Reports

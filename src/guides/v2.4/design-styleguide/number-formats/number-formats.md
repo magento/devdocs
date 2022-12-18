@@ -6,7 +6,7 @@ menu_title: Number Formats
 menu_order: 8
 menu_node:
 redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/number-formats/
-layout: migrated
+status: migrated
 ---
 For more number formats, use the Associated Press (AP) Stylebook on first reference, and the Microsoft Manual of Style on second reference.
 

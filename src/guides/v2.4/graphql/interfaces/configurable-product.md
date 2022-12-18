@@ -4,7 +4,7 @@ title: Configurable product data types
 redirect_from:
   - /guides/v2.4/graphql/product/configurable-product.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/types/configurable/
-layout: migrated
+status: migrated
 ---
 
 The `ConfigurableProduct` data type implements the following interfaces:

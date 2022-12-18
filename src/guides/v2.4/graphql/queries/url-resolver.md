@@ -2,7 +2,7 @@
 group: graphql
 title: urlResolver query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/queries/url-resolver/
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

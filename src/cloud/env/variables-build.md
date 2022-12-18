@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-build.html
-layout: migrated
+status: migrated
 ---
 
 The following _build_ variables control actions in the build phase and can inherit and override values from the [Global variables]({{ site.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `build` stage of the `.magento.env.yaml` file:

@@ -2,7 +2,7 @@
 group: graphql
 title: Filtering with custom attributes
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/custom-filters/
-layout: migrated
+status: migrated
 ---
 
 As of Magento 2.3.4, the `filter` attribute of the [`products`]({{page.baseurl}}/graphql/queries/products.html) query accepts the `ProductAttributeFilterInput` object. (In previous versions, the `filter` attribute required a `ProductFilterInput` object. This object contained a hard-coded list of filterable attributes, and you could not filter on a custom attribute or any other attribute that was not on the list.)

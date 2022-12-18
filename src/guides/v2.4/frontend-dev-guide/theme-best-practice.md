@@ -6,7 +6,7 @@ functional_areas:
   - Theme
   - Standards
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/best-practices/
-layout: migrated
+status: migrated
 ---
 
 Utilizing best practices for theme development give you a better chance of avoiding conflicts and issues with your theme after you update or upgrade your Magento instance or install a custom extension.

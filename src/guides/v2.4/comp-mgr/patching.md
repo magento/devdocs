@@ -4,7 +4,7 @@ title: Apply patches
 functional_areas:
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/overview.html
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

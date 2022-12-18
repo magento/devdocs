@@ -4,7 +4,7 @@ title: giftRegistry query
 ee_only: true   
 contributor_name: EY
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/gift-registry/queries/gift-registry/
-layout: migrated
+status: migrated
 ---
 
 The `giftRegistry` query retrieves details about the specified gift registry. Use the [`customer` query]({{page.baseurl}}/graphql/queries/customer.html) to return a list of valid `uid` values.

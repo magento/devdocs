@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/deployment/production-system.html
-layout: migrated
+status: migrated
 ---
 
 You can have one production system. All of the following must be true:

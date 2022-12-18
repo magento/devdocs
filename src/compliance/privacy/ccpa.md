@@ -2,7 +2,7 @@
 group: compliance
 title: California Consumer Privacy Act
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/privacy/ccpa.html
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-info}

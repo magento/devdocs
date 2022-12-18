@@ -4,7 +4,7 @@ title: Apply patches using Command Line tools
 functional_areas:
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/apply.html
-layout: migrated
+status: migrated
 ---
 
 {:.procedure}

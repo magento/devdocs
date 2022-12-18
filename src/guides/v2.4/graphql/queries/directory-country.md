@@ -4,7 +4,7 @@ title: country query
 redirect_from:
   - /guides/v2.3/graphql/reference/directory.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/country/
-layout: migrated
+status: migrated
 ---
 
 Use the `country` query to retrieve information about a specific country.

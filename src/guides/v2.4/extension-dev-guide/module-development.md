@@ -6,7 +6,7 @@ menu_title: Component development
 menu_order: 1
 menu_node: parent
 redirect_to: https://developer.adobe.com/commerce/php/development/components/
-layout: migrated
+status: migrated
 ---
 
 Magento 2 is flexible and as a result has varied functionality, so developing a component in Magento takes into account a number of different of the following topics. Please read the information on compatibility &#8212; [Service Contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html), [Design Patterns]({{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html), and the information on [Dependency Injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html), [Routing]({{ page.baseurl }}/extension-dev-guide/routing.html), and [Working With Public Interfaces and APIs]({{ page.baseurl }}/extension-dev-guide/api-concepts.html) closely; they are essential to creating a good Magento 2 component.

@@ -2,7 +2,7 @@
 group: inventory
 title: Reservations
 redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/inventory/basics/selection-reservations.html
-layout: migrated
+status: migrated
 ---
 
 Adobe Commerce and Magento Open Source use _reservations_ to calculate and keep track of the salable quantity of each product assigned to a stock. When a customer places an order, the system checks whether the quantity requested for each item is available for sale. If yes, the system creates a reservation as an inventory request for each item, thereby reducing the salable quantity available for purchase. As items are shipped, cancelled or refunded, the system issues additional reservations that compensate the original. A cron job removes the original reservation and all compensatory reservations from the database when all ordered items have been shipped, cancelled, or refunded.

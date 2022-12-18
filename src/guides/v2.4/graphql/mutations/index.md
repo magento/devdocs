@@ -4,7 +4,7 @@ title: Using mutations
 redirect_from:
   - /guides/v2.3/graphql/mutations.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/
-layout: migrated
+status: migrated
 ---
 
 While GraphQL queries perform read operations, mutations change the data. A mutation can create, update, or delete objects and fields. In REST terminology, queries operate like `GET` requests, while mutations are similar to `POST`, `PUT`, and `DELETE`.

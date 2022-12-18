@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/config-varnish-final.html
-layout: migrated
+status: migrated
 ---
 
 Now that you are using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.

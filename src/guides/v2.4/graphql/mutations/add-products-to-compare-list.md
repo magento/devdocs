@@ -4,7 +4,7 @@ title: addProductsToCompareList mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/mutations/add-products-to-compare-list/
-layout: migrated
+status: migrated
 ---
 
 The `addProductsToCompareList` mutation adds products to the comparison list.

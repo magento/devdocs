@@ -2,7 +2,7 @@
 group: graphql
 title: mergeCarts mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/merge/
-layout: migrated
+status: migrated
 ---
 
 The `mergeCarts` mutation transfers the contents of a guest cart into the cart of a logged-in customer. This mutation must be run on behalf of a logged-in customer.

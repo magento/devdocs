@@ -5,7 +5,7 @@ title: Migration overview
 functional_areas:
   - Tools
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/how-migration-works.html
-layout: migrated
+status: migrated
 ---
 
 ## Welcome! {#migrate-overview}

@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
   - Theme
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/themes/create-storefront/
-layout: migrated
+status: migrated
 ---
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.

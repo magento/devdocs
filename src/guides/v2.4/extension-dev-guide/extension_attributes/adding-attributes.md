@@ -5,7 +5,7 @@ title: Adding extension attributes to entity
 menu_title: Adding extension attributes to entity
 menu_order: 20
 redirect_to: https://developer.adobe.com/commerce/php/development/components/add-attributes/
-layout: migrated
+status: migrated
 ---
 
 Third-party developers cannot change the [API](https://glossary.magento.com/api) Data interfaces defined in the Magento Core code.  However, most of these entities have a feature called [extension attributes](https://glossary.magento.com/extension-attribute).  Check the interface for the methods `getExtensionAttributes()` and `setExtensionAttributes()` to determine if they are available for the entity.

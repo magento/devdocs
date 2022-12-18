@@ -2,7 +2,7 @@
 group: testing
 title: Data fixture annotation
 redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/magento-data-fixture/
-layout: migrated
+status: migrated
 ---
 
 A data fixture is a PHP script that sets data you want to reuse in your test.

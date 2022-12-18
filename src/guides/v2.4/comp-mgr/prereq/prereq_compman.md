@@ -4,7 +4,7 @@ title: Prerequisites
 functional_areas:
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
-layout: migrated
+status: migrated
 ---
 
 Complete the following tasks before upgrading Magento:

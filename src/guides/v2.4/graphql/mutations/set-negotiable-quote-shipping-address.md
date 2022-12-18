@@ -3,7 +3,7 @@ group: graphql
 title: setNegotiableQuoteShippingAddress mutation
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/set-shipping-address/
-layout: migrated
+status: migrated
 ---
 
 The `setNegotiableQuoteShippingAddress` mutation assigns the shipping address for the specified negotiable quote. You can assign an address from the company user's address book, or define a new one. The negotiable quote must be in the UPDATED state to successfully set a shipping address.

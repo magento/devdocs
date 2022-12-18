@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/split-db/multi-master-replication.html
-layout: migrated
+status: migrated
 ---
 
 Setting up database replication provides the following benefits:

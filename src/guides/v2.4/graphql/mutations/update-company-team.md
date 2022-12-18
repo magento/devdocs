@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/mutations/update-team/
-layout: migrated
+status: migrated
 ---
 
 Use the `updateCompanyTeam` mutation to update the company team data.

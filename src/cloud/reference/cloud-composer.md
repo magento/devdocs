@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Upgrade
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/overview.html
-layout: migrated
+status: migrated
 ---
 
 We use [Composer](https://getcomposer.org/doc) to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.

@@ -2,7 +2,7 @@
 group: graphql
 title: Express Checkout for other PayPal solutions
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/payflow-express/
-layout: migrated
+status: migrated
 ---
 
 Set the payment method code to `payflow_express` to process Express Checkout transactions when the payment method is set to any of the following:

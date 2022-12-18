@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/storage/session-storage/memcached.html
-layout: migrated
+status: migrated
 ---
 
 To configure Magento to use memcached:

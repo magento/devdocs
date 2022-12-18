@@ -2,7 +2,7 @@
 group: marketplace-api
 title: Users
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/users/
-layout: migrated
+status: migrated
 ---
 
 The `users` resource accesses and updates your user profile. You can also access your sales reports.

@@ -4,7 +4,7 @@ title: Admin Grids
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com
 redirect_to: https://developer.adobe.com/commerce/php/development/components/add-admin-grid/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

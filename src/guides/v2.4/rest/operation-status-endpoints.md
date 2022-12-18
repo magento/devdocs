@@ -2,7 +2,7 @@
 group: rest-api
 title: Bulk operation status endpoints
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/operation-status-endpoints/
-layout: migrated
+status: migrated
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com/
 functional_areas:

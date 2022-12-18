@@ -2,7 +2,7 @@
 group: rest-api
 title: Search for products with the /search endpoint
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/use-rest/search-endpoint/
-layout: migrated
+status: migrated
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com/
 ---

@@ -2,7 +2,7 @@
 group: graphql
 title: InvoiceItemInterface attributes and implementations
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/interfaces/invoice-item/
-layout: migrated
+status: migrated
 ---
 
 `InvoiceItemInterface` provides details about items in a customer's order history that were invoiced. It has the following implementations:

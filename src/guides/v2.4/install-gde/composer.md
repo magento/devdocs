@@ -7,7 +7,7 @@ functional_areas:
 redirect_from:
   - guides/v2.4/install-gde/prereq/zip_install.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/composer.html
-layout: migrated
+status: migrated
 ---
 
 {% include install/composer-overview.md %}

@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: ThumbnailColumn component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/thumbnail-column/
-layout: migrated
+status: migrated
 ---
 
 The ThumbnailColumn component implements a column containing images associated with records of the table. Each field of this column contains an image preview. When a user click on the preview, a pop up window with the detailed view opens.

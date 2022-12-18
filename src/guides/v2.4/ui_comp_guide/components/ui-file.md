@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: File component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/file/
-layout: migrated
+status: migrated
 ---
 
 The File component implements the [HTML](https://glossary.magento.com/html) `<input type="file">` form field.

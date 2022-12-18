@@ -9,7 +9,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/next-steps/sample-data/overview.html
-layout: migrated
+status: migrated
 ---
 
 The following topics discuss how to install optional sample data after you have already installed the Magento software. There is one additional step compared to pre-installation, which is to update the Magento [database schema](https://glossary.magento.com/database-schema) and data.

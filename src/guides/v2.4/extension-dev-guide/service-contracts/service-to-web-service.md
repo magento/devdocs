@@ -6,7 +6,7 @@ contributor_link: https://www.classyllama.com/
 functional_areas:
   - Services
 redirect_to: https://developer.adobe.com/commerce/php/development/components/web-api/services/
-layout: migrated
+status: migrated
 ---
 
 You can configure a Magento or third-party service as a web [API](https://glossary.magento.com/api).

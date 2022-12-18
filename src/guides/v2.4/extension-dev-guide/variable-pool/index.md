@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Variable Pool
 redirect_to: https://developer.adobe.com/commerce/php/development/components/variable-pool/
-layout: migrated
+status: migrated
 ---
 
 The variable pool contains pre-defined values you can use inside CMS content.

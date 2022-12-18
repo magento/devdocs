@@ -3,7 +3,7 @@ group: graphql
 title: updateNegotiableQuoteQuantities mutation
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/update-quantities/
-layout: migrated
+status: migrated
 ---
 
 The `updateNegotiableQuoteQuantities` mutation changes the quantity of one or more products in an active negotiable quote.

@@ -2,7 +2,7 @@
 group: payments-integrations
 title: Response Validator
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/response-validator/
-layout: migrated
+status: migrated
 ---
 
 Response Validator is a component of the Magento payment provider gateway that performs gateway response verification. This may include low level data formatting, security verification, and even execution of some business logic required by the store configuration.

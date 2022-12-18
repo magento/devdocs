@@ -4,7 +4,7 @@ title: CategoryInterface attributes
 redirect_from:
   - /guides/v2.4/graphql/product/category-interface.html
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/category/
-layout: migrated
+status: migrated
 ---
 
 `CategoryInterface` defines attributes that can be returned in the [`categoryList` query]({{page.baseurl}}/graphql/queries/category-list.html), [`categories` query]({{page.baseurl}}/graphql/queries/categories.html), and the [`products` query]({{page.baseurl}}/graphql/queries/products.html).

@@ -3,7 +3,7 @@ subgroup: howtos
 group: ui-components-guide
 title: Update the page URL type
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/howto/update-url-type/
-layout: migrated
+status: migrated
 ---
 ## What's in this topic
 

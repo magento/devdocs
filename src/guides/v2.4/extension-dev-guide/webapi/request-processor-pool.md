@@ -6,7 +6,7 @@ contributor_link: https://www.comwrap.com
 functional_areas:
   - Configuration
 redirect_to: https://developer.adobe.com/commerce/php/development/components/web-api/request-processor-pool/
-layout: migrated
+status: migrated
 ---
 
 The request processors pool routes WebApi requests. It is located in the Magento_WebApi module: `Magento\Webapi\Controller\Rest\RequestProcessorPool`

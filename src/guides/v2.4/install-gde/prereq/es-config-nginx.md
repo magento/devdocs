@@ -8,7 +8,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/search-engine/configure-nginx.html
-layout: migrated
+status: migrated
 ---
 
 {% include config/es-webserver-overview.md %}

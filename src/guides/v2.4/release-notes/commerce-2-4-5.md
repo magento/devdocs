@@ -2,7 +2,7 @@
 group: release-notes
 title: Adobe Commerce 2.4.5 Release Notes
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/adobe-commerce/2-4-5.html
-layout: migrated
+status: migrated
 ---
 
 {{ site.data.var.ee }} introduces improvements to platform quality, payment methods, GraphQL caching performance, and accessibility. It includes updates to integrated Google modules and the Upgrade Compatibility Tool and introduces Live Search B2B support.

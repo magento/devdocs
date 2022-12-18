@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: ActionDelete component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/action-delete/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

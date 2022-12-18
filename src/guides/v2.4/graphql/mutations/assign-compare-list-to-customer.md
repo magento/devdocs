@@ -4,7 +4,7 @@ title: assignCompareListToCustomer mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/assign-compare-list/
-layout: migrated
+status: migrated
 ---
 
 The `assignCompareListToCustomer` mutation assigns the specified comparison list to the logged-in customer. Use this mutation when a customer creates a comparison list as a guest, but subsequently logs in.

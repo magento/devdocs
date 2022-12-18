@@ -4,7 +4,7 @@ title: OAuth-based authentication
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-oauth/
-layout: migrated
+status: migrated
 ---
 
 Magento OAuth authentication is based on [OAuth 1.0a](https://tools.ietf.org/html/rfc5849), an open standard for secure [API](https://glossary.magento.com/api) authentication. OAuth is a token-passing mechanism that allows a system to control which third-party applications have access to internal data without revealing or storing any user IDs or passwords.

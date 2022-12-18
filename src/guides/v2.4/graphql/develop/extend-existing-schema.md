@@ -4,7 +4,7 @@ title: Extend an existing GraphQL schema
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/develop/extend-existing-schema/
-layout: migrated
+status: migrated
 ---
 
 You can extend the default Magento GraphQL schema to add attributes and data types, modify existing resolver behavior, and add features using other extension points. GraphQL uses _stitching_ to assemble a single unified schema out of the many schemas defined in individual modules. All `schema.graphqls` files are stitched together to a single schema. In this process, all nodes with the same type (such as type, interface, and enum) and name are stitched together and recursively extended/overridden. This process is similar to how XML merging works.

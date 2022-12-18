@@ -2,7 +2,7 @@
 group: graphql
 title: currency query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/currency/
-layout: migrated
+status: migrated
 ---
 
 Use the `currency` query to return information about the store's currency configuration.

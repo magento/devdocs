@@ -2,7 +2,7 @@
 group: payment-services
 title: Payment Services
 redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/payment-services/overview.html
-layout: migrated
+status: migrated
 ---
 
 Payment Services for Adobe Commerce and Magento Open Source is your turnkey self-service solution, including sandbox testing and a simple setup, for providing robust and secure payment processing for your Magento websites.

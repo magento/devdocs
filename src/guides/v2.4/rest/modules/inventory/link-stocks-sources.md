@@ -2,7 +2,7 @@
 group: rest-api
 title: Link and unlink stocks and sources
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/inventory/link-stocks-sources/
-layout: migrated
+status: migrated
 ---
 
 In Admin, you can assign (link) sources to a stock when you create the stock. In REST, creating a stock and assigning sources to it are separate steps.

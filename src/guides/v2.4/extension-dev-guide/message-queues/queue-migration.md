@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/migration/
-layout: migrated
+status: migrated
 ---
 
 ### Migrate from Magento 2.1 to 2.2

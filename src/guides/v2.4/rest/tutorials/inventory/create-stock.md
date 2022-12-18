@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 3. Create stocks
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/inventory/create-stock/
-layout: migrated
+status: migrated
 subtitle: Order processing with Inventory Management
 menu_title: Step 3. Create stocks
 menu_order: 30

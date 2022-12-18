@@ -5,7 +5,7 @@ title: Writing secure code
 menu_title: Writing secure code
 menu_order: 2100
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/security/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

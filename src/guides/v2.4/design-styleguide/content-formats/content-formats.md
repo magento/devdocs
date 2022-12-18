@@ -8,7 +8,7 @@ menu_node:
 functional_areas:
   - Content
 redirect_to: https://developer.adobe.com/commerce/admin-developer/style-guide/content/content-formats/
-layout: migrated
+status: migrated
 ---
 For more specifics, use the [Magento Glossary](https://glossary.magento.com/). If an item is not found, refer to the Associated Press (AP) Stylebook on first reference, and the Microsoft Manual of Style on second reference.
 

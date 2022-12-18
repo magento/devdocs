@@ -4,7 +4,7 @@ title: Release notes archive for ece-tools
 functional_areas:
   - Cloud
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/release-notes/cloud-release-archive.html
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-info}

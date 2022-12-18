@@ -2,7 +2,7 @@
 group: graphql
 title: PayPal Website Payments Pro Hosted Solution payment method
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/hosted-pro/
-layout: migrated
+status: migrated
 ---
 
 PayPal's [Website Payments Pro Hosted Solution](https://developer.paypal.com/docs/classic/paypal-payments-pro/integration-guide/) allows merchants to accept credit cards, debit cards, and PayPal payments directly on their websites. The merchant must be based in the United Kingdom to create a new integration with this payment method. PayPal continues to support merchants with existing integrations outside the UK.

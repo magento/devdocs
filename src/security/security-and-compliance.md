@@ -2,7 +2,7 @@
 group: compliance
 title: Security and Compliance
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/overview.html
-layout: migrated
+status: migrated
 ---
 
 This page is where to find information about security, privacy, and regulation compliance, with links to technical resources.

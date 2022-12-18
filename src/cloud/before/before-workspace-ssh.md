@@ -9,7 +9,7 @@ functional_areas:
   - Security
   - Config
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/secure-connections.html
-layout: migrated
+status: migrated
 ---
 
 {:.ref-header}

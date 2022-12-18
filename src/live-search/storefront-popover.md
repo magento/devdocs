@@ -3,7 +3,7 @@ group: live-search
 title: Storefront Popover
 ee_only: True
 redirect_to: https://experienceleague.adobe.com/docs/commerce-merchant-services/live-search/live-search-storefront/storefront-popover.html
-layout: migrated
+status: migrated
 ---
 When Live Search is [installed]({{ site.user_guide_url }}/live-search/install.html), a popover appears in the storefront as shoppers type in the [Search]({{ site.user_guide_url }}/catalog/search-quick.html) box. With each character typed, the popover is updated with suggested products and thumbnail images of the top search results.
 

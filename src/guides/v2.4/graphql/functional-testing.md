@@ -4,7 +4,7 @@ title: GraphQL functional testing
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/develop/functional-testing/
-layout: migrated
+status: migrated
 ---
 
 Magento provides API functional tests that can verify extension points in GraphQL. These tests serve as an example for exposing new queries via GraphQL.

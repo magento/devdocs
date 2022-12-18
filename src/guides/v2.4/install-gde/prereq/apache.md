@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/web-server/apache.html
-layout: migrated
+status: migrated
 ---
 
 ## Apache versions supported {#apache-support}

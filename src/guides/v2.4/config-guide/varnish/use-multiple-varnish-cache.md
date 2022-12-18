@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/use-multiple-varnish-cache.html
-layout: migrated
+status: migrated
 ---
 Magento supports multiple Varnish instances out of the box.
 

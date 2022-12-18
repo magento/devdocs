@@ -7,7 +7,7 @@ functional_areas:
   - Catalog
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/shared-cat-company
-layout: migrated
+status: migrated
 ---
 
 A shared catalog must be assigned to one or more companies before it can be accessed by the company users.

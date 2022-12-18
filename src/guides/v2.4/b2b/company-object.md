@@ -11,7 +11,7 @@ functional_areas:
   - B2B
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/company-object
-layout: migrated
+status: migrated
 ---
 
 ## Manage company objects

@@ -3,7 +3,7 @@ group: php-developer-guide
 subgroup: 03_Build
 title: Define your configuration files
 redirect_to: https://developer.adobe.com/commerce/php/development/build/required-configuration-files/
-layout: migrated
+status: migrated
 ---
 
 Each Magento 2 [module](https://glossary.magento.com/module) has its own set of configuration files, gathered into the module's `etc` directory.

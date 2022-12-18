@@ -2,7 +2,7 @@
 group: graphql
 title: updateProductsInWishlist mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/update-products/
-layout: migrated
+status: migrated
 ---
 
 The `updateProductsInWishlist` mutation changes the quantity, description and option information for the specified items in the customer's wish list.

@@ -2,7 +2,7 @@
 group: graphql
 title: availableStores query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/store/queries/available-stores/
-layout: migrated
+status: migrated
 ---
 
 The `availableStores` query returns configuration information about multiple store views. Use this query to implement a store switcher.

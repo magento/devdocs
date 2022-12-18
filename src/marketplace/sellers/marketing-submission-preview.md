@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Marketing Submission Preview
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/marketing-submission-preview/
-layout: migrated
+status: migrated
 ---
 
 At any time before you submit your extension for marketing review, you can preview how your extension will appear in Commerce Marketplace.

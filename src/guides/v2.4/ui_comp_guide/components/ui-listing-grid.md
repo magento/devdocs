@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Listing (grid) component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/listing-grid/
-layout: migrated
+status: migrated
 ---
 
 Listing is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) that implements grids, lists, and tiles with filtering, pagination, sorting, and other features.

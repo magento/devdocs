@@ -2,7 +2,7 @@
 group: graphql
 title: Identity class
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/develop/identity-class/
-layout: migrated
+status: migrated
 ---
 
 If you create a cacheable query (similar to those for product, category, and CMS data), then you must create an `Identity` class for the module. The class must return unique identifiers for cache tags that can be invalidated when an entity changes. Place this class in your module's `Model/Resolver` directory.

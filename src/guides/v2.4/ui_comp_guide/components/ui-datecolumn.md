@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: DateColumn component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/date-column/
-layout: migrated
+status: migrated
 ---
 
 The DateColumn component implements a table column that displays dates.

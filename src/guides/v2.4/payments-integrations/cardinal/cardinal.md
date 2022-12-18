@@ -2,7 +2,7 @@
 group: payments-integrations
 title: CardinalCommerce 3-D Secure
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/cardinal/
-layout: migrated
+status: migrated
 ---
 
 This document provides additional technical details for integrating Magento payment modules with the [CardinalCommerce][]. CardinalCommerce (a wholly owned subsidiary of Visa) offers a rules-based 3-D Secure (3DS) solution called [Cardinal Consumer Authentication][]. Protect your web store from fraud, reduce false declines, reduce manual review of orders, and improve your authorizations.

@@ -3,7 +3,7 @@ group: live-search
 title: productSearch query
 ee_only: True
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/live-search/queries/product-search/
-layout: migrated
+status: migrated
 ---
 
 Live Search uses the `productSearch` query to search for products instead of the `products` query, which is provided with {{site.data.var.ce}}. Although the two queries are functionally similar, they have different input requirements. The `products` query returns information that is relevant for layered navigation, while the `productSearch` query returns faceting data and other features that are specific to Live Search.

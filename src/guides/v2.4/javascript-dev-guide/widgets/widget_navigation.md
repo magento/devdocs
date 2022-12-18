@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Navigation widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/navigation/
-layout: migrated
+status: migrated
 ---
 
 Magento navigation widget is an [extension](https://glossary.magento.com/extension) of the [Magento Menu widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html) with the following funcitonalities:

@@ -2,7 +2,7 @@
 group: graphql
 title: addReturnTracking mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/orders/mutations/add-return-tracking/
-layout: migrated
+status: migrated
 ---
 
 The `addReturnTracking` mutation adds customer-entered shipping tracking information to the specified return request. Use the `available_shipping_carriers` object in the [`customer` query]({{page.baseurl}}/graphql/queries/customer.html) to retrieve valid `carrier_uid` values.

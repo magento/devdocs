@@ -4,7 +4,7 @@ title: checkoutAgreements query
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/checkout/queries/agreements/
-layout: migrated
+status: migrated
 ---
 
 The `checkoutAgreements` query retrieves checkout agreements. The query will always return an empty array when the

@@ -5,7 +5,7 @@ title: Non-secure functions
 menu_title: Non-secure functions
 menu_order: 2100
 redirect_to: https://developer.adobe.com/commerce/php/development/security/non-secure-functions/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

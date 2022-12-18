@@ -4,7 +4,7 @@ title: Bulk Operations
 functional_areas:
   - Services
 redirect_to: https://developer.adobe.com/commerce/php/development/components/message-queues/bulk-operations/
-layout: migrated
+status: migrated
 ---
 
 Bulk operations are actions that are performed on a large scale. Example bulk operations tasks include importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.

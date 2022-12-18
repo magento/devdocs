@@ -2,7 +2,7 @@
 group: graphql
 title: isEmailAvailable query
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/company/queries/is-company-email-available/
-layout: migrated
+status: migrated
 ---
 
 The `isEmailAvailable` query checks whether the specified email has already been used to create a customer account. A value of `true` indicates the email address is available, and the customer can use the email address to create an account.

@@ -4,7 +4,7 @@ title: Add custom CSS preprocessor
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/custom-preprocessor/add/
-layout: migrated
+status: migrated
 ---
 
 ## What's in this topic

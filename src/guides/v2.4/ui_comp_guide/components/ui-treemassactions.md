@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: TreeMassActions component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/tree-mass-actions/
-layout: migrated
+status: migrated
 ---
 
 The TreeMassActions component is a decorator for [MassActions]({{ page.baseurl }}/ui_comp_guide/components/ui-massactions.html) that adds the support of nested actions.

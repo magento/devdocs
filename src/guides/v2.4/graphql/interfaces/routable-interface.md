@@ -2,7 +2,7 @@
 group: graphql
 title: RoutableInterface attributes
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/interfaces/routable/
-layout: migrated
+status: migrated
 ---
 
 Some Magento entities are "routable", meaning that they have URLs and can serve as the model for a rendered page. The following implementations of the `RoutableInterface` allow you to return details in the [`route` query]({{page.baseurl}}/graphql/queries/route.html).

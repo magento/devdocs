@@ -2,7 +2,7 @@
 group: compliance
 title: Personal Information Reference (Magento 2.x)
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/reference/data-m2.html
-layout: migrated
+status: migrated
 ---
 
 {: .bs-callout-info}

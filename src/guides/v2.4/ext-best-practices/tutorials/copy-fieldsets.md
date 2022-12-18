@@ -7,7 +7,7 @@ menu_order: 1000
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/backend/copy-fieldsets/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

@@ -4,7 +4,7 @@ title: New features
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/features/
-layout: migrated
+status: migrated
 ---
 
 The following sections describe best practices for using the PHPStorm plugin.

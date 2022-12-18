@@ -3,7 +3,7 @@ group: graphql
 title: applyRewardPointsToCart mutation
 ee_only: True
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/cart/mutations/apply-reward-points/
-layout: migrated
+status: migrated
 ---
 
 The `applyRewardPointsToCart` mutation applies reward points to the customer's cart. You cannot specify a quantity of reward points. If the reward points balance is less than the cart total, Magento applies the entire reward points balance. Otherwise, Magento applies as many reward points needed to bring the total to 0. Fractional reward points are discarded.

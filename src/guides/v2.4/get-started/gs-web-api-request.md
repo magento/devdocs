@@ -2,7 +2,7 @@
 group: web-api
 title: Construct a request
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/gs-web-api-request/
-layout: migrated
+status: migrated
 ---
 
 To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<magento_root>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the [API](https://glossary.magento.com/api) calls.

@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Manage Sales
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/sales/
-layout: migrated
+status: migrated
 ---
 
 Commerce Marketplace is a full-featured digital commerce site with integrated payments, where you can offer your products for free, or for sale. Purchases can be paid by credit card or PayPal.

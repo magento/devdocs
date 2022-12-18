@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-intro.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.ece}} enables you to assign environment variables to override configuration options. The `ece-tools` package sets values in the `env.php` file based on values from [Cloud variables]({{site.baseurl}}/cloud/env/variables-cloud.html), variables set in the Project Web interface, and the `.magento.env.yaml` configuration file. The types of environment variables include:

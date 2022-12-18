@@ -3,7 +3,7 @@ layout: tutorial
 group: rest-api
 title: Step 7. Create an order
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/tutorials/orders/order-create-order/
-layout: migrated
+status: migrated
 subtitle: Order processing tutorial
 return_to:
   title: REST tutorials

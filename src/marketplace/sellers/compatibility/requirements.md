@@ -2,7 +2,7 @@
 group: marketplace-sellers
 title: Compatibility Requirements
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/compatibility/requirements/
-layout: migrated
+status: migrated
 ---
 
 The {{ site.data.var.ee}} Marketplace requires extensions to adhere to standards of quality and maintenance. Merchants that install extensions that are not well maintained suffer from an inability to upgrade. This inability exposes merchants to security risks and prevents them from accessing the latest features in other extensions and services.

@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/search/overview-search.html
-layout: migrated
+status: migrated
 ---
 
 As of version 2.4.4, {{ site.data.var.ee }} and {{ site.data.var.ce }} requires either [Elasticsearch][] or [OpenSearch][] to be the catalog search engine. (Previous versions of 2.4.x required Elasticsearch.) Refer to the following topics for details about installing a search engine and initial configuration:

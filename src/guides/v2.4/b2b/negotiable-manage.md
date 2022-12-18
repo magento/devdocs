@@ -11,7 +11,7 @@ functional_areas:
   - B2B
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/negotiable-manage
-layout: migrated
+status: migrated
 ---
 
 This topic describes the calls required to initiate a negotiable quote and to prepare it to be converted to an order.

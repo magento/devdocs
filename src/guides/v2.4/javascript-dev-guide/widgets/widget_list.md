@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: List widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/list/
-layout: migrated
+status: migrated
 ---
 
 {%

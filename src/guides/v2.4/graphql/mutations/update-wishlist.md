@@ -3,7 +3,7 @@ group: graphql
 title: updateWishlist mutation
 ee_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/wishlist/mutations/update/
-layout: migrated
+status: migrated
 ---
 
 The `updateWishlist` mutation updates the properties of a wish list. {{site.data.var.ee}} allows customers to change the name and visibility of wish lists.

@@ -3,7 +3,7 @@ group: graphql
 title: redeemGiftCardBalanceAsStoreCredit mutation
 ee_only: True
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/redeem-giftcard-balance/
-layout: migrated
+status: migrated
 ---
 
 The `redeemGiftCardBalanceAsStoreCredit` mutation converts the entire balance of a gift card to store credit. The gift card must be redeemable and cannot have a balance of 0 at the time you run the mutation. After successfully running the mutation, the value of the gift card changes to 0.

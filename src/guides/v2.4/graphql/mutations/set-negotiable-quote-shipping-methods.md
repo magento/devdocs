@@ -3,7 +3,7 @@ group: graphql
 title: setNegotiableQuoteShippingMethods mutation
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/set-shipping-methods/
-layout: migrated
+status: migrated
 ---
 
 The `setNegotiableQuoteShippingMethods` mutation sets one or more delivery methods on a negotiable quote. By default, the following delivery methods are supported:

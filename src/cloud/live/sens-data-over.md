@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Deploy
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure-store/store-settings.html
-layout: migrated
+status: migrated
 ---
 
 Configuration management provides a way to deploy across your environments with minimal downtime using [Pipeline deployment][]. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments.

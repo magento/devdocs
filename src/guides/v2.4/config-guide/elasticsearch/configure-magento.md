@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/search/configure-search-engine.html
-layout: migrated
+status: migrated
 ---
 
 {% include config/es-elasticsearch-magento-24.md %}

@@ -4,7 +4,7 @@ title: removeProductsFromCompareList mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/products/mutations/remove-from-compare-list/
-layout: migrated
+status: migrated
 ---
 
 The `removeProductsFromCompareList` mutation removes products from a comparison list.

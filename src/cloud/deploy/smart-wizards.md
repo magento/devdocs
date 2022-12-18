@@ -8,7 +8,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/deploy/smart-wizards.html
-layout: migrated
+status: migrated
 ---
 
 The smart wizards can help you determine whether your Cloud configuration follows best practices. The available wizards assist with the following configurations:

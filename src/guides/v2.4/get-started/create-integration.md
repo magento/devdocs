@@ -5,7 +5,7 @@ title: Create an integration
 menu_title: Create an integration
 menu_order: 1
 redirect_to: https://developer.adobe.com/commerce/webapi/get-started/create-integration/
-layout: migrated
+status: migrated
 ---
 
 An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.

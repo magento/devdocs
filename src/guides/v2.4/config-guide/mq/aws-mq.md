@@ -2,7 +2,7 @@
 group: configuration-guide
 title: Using Amazon Message Queue
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/aws-mq.html
-layout: migrated
+status: migrated
 ---
 
 As of Magento 2.4.3, Amazon Message Queue (MQ) is available as a cloud-ready replacement for on-premises message queue instances.

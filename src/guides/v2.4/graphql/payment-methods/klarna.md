@@ -4,7 +4,7 @@ title: Klarna payment method
 contributor_name: Klarna
 contributor_link: https://www.klarna.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/klarna/
-layout: migrated
+status: migrated
 ---
 
 Klarna Payments enables your consumers to try before they buy, finance purchases on your store with Klarna, or let them pay directly. Klarna offers these payment methods through a widget that you can add inline on your checkout page.

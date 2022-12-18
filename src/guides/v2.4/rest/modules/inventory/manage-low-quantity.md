@@ -2,7 +2,7 @@
 group: rest-api
 title: Manage low-quantity notifications
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/inventory/manage-low-quantity/
-layout: migrated
+status: migrated
 ---
 
 Low stock notification alert the merchant that the salable quantity of a stock has reached a critical threshold. The Admin allows the merchant to configure low-quantity notifications from several locations:

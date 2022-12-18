@@ -4,7 +4,7 @@ title: Modules providing advanced reporting
 functional_areas:
     - Reports
 redirect_to: https://developer.adobe.com/commerce/php/development/advanced-reporting/modules/
-layout: migrated
+status: migrated
 ---
 
 Advanced reporting functionality is implemented in the following Commerce modules.

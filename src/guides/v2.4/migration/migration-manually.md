@@ -8,7 +8,7 @@ menu_order: 5
 functional_areas:
   - Tool
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/data-migration/migrate-data/manual.html
-layout: migrated
+status: migrated
 ---
 
 ## Data types

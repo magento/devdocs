@@ -13,7 +13,7 @@ functional_areas:
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/tutorials/checkout/add-product-to-cart/
-layout: migrated
+status: migrated
 ---
 
 GraphQL supports all product types, but this tutorial only demonstrates how to add a simple product and a virtual product to the shopping cart. You can find more details and examples in the following topics:

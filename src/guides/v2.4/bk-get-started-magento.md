@@ -7,7 +7,7 @@ menu_node:
 functional_areas:
   - Integration
 redirect_to: https://developer.adobe.com/commerce/docs
-layout: migrated
+status: migrated
 ---
 
 ## Getting started with Magento {#highlights}

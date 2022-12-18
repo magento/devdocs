@@ -2,7 +2,7 @@
 group: release-notes
 title: Magento Open Source 2.4.5 Release Notes
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/notes/magento-open-source/2-4-5.html
-layout: migrated
+status: migrated
 ---
 
 {{ site.data.var.ce }} introduces improvements to platform quality, payment methods, GraphQL caching performance, and accessibility. It includes updates to integrated Google modules.

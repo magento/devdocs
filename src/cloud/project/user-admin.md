@@ -12,7 +12,7 @@ redirect_from:
   - /cloud/project/user-admin.html#cloud-role-env
   - /cloud/project/user-admin.html#cloud-role-project
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/user-access.html
-layout: migrated
+status: migrated
 ---
 
 You manage access to {{site.data.var.ece}} projects and certain environment types by adding users and assigning roles. Project level roles provide access to the entire project.

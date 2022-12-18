@@ -4,7 +4,7 @@ title: Code generation
 functional_areas:
   - Standards
 redirect_to: https://developer.adobe.com/commerce/php/best-practices/phpstorm/code-generation/
-layout: migrated
+status: migrated
 ---
 
 The PHPStorm plugin enables features and functionality to help you create custom extensions.

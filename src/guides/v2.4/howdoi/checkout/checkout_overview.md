@@ -10,7 +10,7 @@ menu_order: 0
 functional_areas:
   - Checkout
 redirect_to: https://developer.adobe.com/commerce/php/tutorials/frontend/custom-checkout/
-layout: migrated
+status: migrated
 ---
 
 Magento [checkout](https://glossary.magento.com/checkout) is implemented using the [UI components]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html).

@@ -2,7 +2,7 @@
 group: compliance
 title: Privacy JavaScript Library
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/security-and-compliance/privacy/javascript-library.html
-layout: migrated
+status: migrated
 ---
 
 <!-- TODO: Unpublish this topic and create a topic redirect to the adobe privacy js topic when the adobe privacy library is integrated with Magento -->

@@ -6,7 +6,7 @@ menu_title: How to add CLI commands
 menu_node:
 menu_order: 3
 redirect_to: https://developer.adobe.com/commerce/php/development/cli-commands/custom/
-layout: migrated
+status: migrated
 ---
 
 ## Overview of adding CLI commands {#cli-add-over}

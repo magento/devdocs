@@ -11,7 +11,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/overview.html
-layout: migrated
+status: migrated
 ---
 
 The _Performance Best Practices_ guide provides recommendations and instructions for optimizing the performance of your production deployment. Technical users who are responsible for maintaining stores in production mode should use the best practices described in this guide to help ensure their stores run at peak efficiency at all times.

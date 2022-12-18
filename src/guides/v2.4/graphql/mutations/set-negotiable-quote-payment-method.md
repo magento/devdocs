@@ -3,7 +3,7 @@ group: graphql
 title: setNegotiableQuotePaymentMethod mutation
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/set-payment-method/
-layout: migrated
+status: migrated
 ---
 
 The `setNegotiableQuotePaymentMethod` mutation defines which payment method to apply to the cart. The negotiable quote must be in the UPDATED state to successfully apply the payment method.

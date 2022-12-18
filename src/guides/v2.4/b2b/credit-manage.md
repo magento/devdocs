@@ -6,7 +6,7 @@ functional_areas:
   - B2B
   - Integration
 redirect_to: https://developer.adobe.com/commerce/webapi/rest/b2b/credit-manage
-layout: migrated
+status: migrated
 ---
 
 The company credit entity operates with the following attributes:

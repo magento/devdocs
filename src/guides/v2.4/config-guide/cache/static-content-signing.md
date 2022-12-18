@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/static-content-signing.html
-layout: migrated
+status: migrated
 ---
 
 ### Static content cache

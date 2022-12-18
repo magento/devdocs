@@ -4,7 +4,7 @@ title: Module overview
 menu_title: Module overview
 redirect_from: guides/v2.4/install-gde/basics/basics_module.html
 redirect_to: https://developer.adobe.com/commerce/php/architecture/modules/overview/
-layout: migrated
+status: migrated
 ---
 
 ## What is a Magento module? {#arch-modules-overview}

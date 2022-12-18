@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Roadmap for developing and packaging components
 redirect_to: https://developer.adobe.com/commerce/php/development/prepare/development-roadmap/
-layout: migrated
+status: migrated
 ---
 
 To develop your component, use the following steps:

@@ -5,7 +5,7 @@ ee_only: true
 redirect_from:
  - guides/v2.3/comp-mgr/install-extensions/b2b-installation.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-admin/b2b/install.html
-layout: migrated
+status: migrated
 ---
 
 {:.bs-callout-warning}

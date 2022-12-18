@@ -7,7 +7,7 @@ redirect_from:
    - guides/v2.4/comp-mgr/patching/mqp.html
    - guides/v2.3/comp-mgr/patching/mqp.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/tools/quality-patches-tool/usage.html
-layout: migrated
+status: migrated
 ---
 
 {% include install/patch/quality-patch-intro.md %}

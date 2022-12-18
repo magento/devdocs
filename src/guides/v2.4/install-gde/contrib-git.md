@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://developer.adobe.com/commerce/contributor/guides/install/
-layout: migrated
+status: migrated
 ---
 
 If you are a code or documentation contributor, this install guide is for you! Use Composer to install Magento, then switch over to a released version and update any installation dependencies.

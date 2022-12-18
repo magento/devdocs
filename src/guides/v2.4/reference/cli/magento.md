@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/reference/magento-open-source.html
-layout: migrated
+status: migrated
 ---
 <!-- All the assigned and captured content is used in the included template -->
 {% assign tool = 'bin/magento' %}

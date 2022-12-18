@@ -13,7 +13,7 @@ functional_areas:
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/tutorials/checkout/
-layout: migrated
+status: migrated
 ---
 
 This tutorial describes how to place an order through GraphQl. Customers can make purchases in two ways:

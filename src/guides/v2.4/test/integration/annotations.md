@@ -2,7 +2,7 @@
 group: testing
 title: Using DocBlock Annotations
 redirect_to: https://developer.adobe.com/commerce/testing/guide/integration/annotations/
-layout: migrated
+status: migrated
 ---
 
 DocBlock annotations help to declare context in your code. In addition to built-in [PHPUnit annotations][]

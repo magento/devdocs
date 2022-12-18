@@ -4,8 +4,22 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Dec 5 15:46:52 2022
+updated: Mon Dec 12 15:45:55 2022
 entries:
+- description: Added redirects for all 2.4.x and unversioned topics that were migrated
+    to [Adobe Developer documentation](https://developer.adobe.com/commerce/docs)
+    and [Experience League](https://experienceleague.adobe.com/docs/commerce.html).
+  versions: 2.4.x
+  type: Major Update
+  date: December 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/3225
+  merge_commit: a647efe55c72995967a1382db5dd46d00cf0db80
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+  - migration
 - description: The [Cloud User Guide](https://devdocs.magento.com/cloud/bk-cloud.html)
     topics moved to [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/overview.html)
     and the [Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html)

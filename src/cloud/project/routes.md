@@ -7,7 +7,7 @@ functional_areas:
 redirect_from:
  - /cloud/project/project-conf-files_routes.html
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/routes/routes-yaml.html
-layout: migrated
+status: migrated
 ---
 
 The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes for your {{ site.data.var.ece }} Integration, Staging, and Production environments. Routes determine how the application processes incoming HTTP and HTTPS requests.

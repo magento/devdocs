@@ -2,7 +2,7 @@
 title: Lifecycle policy
 group: release
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/lifecycle-policy.html
-layout: migrated
+status: migrated
 ---
 
 For {{ site.data.var.ee }} 2.4 and subsequent releases:

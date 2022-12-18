@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Set Up Your Developer Account
 redirect_from: /marketplace/sellers/account-setup-overview.html
 redirect_to: https://developer.adobe.com/commerce/marketplace/guides/sellers/account-setup/
-layout: migrated
+status: migrated
 ---
 
 Create a new Marketplace account, or use your existing Magento account. Then, use the Marketplace Developer Portal to manage your profile information, product submissions, and the monthly payments you receive from sales on Commerce Marketplace.

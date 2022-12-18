@@ -6,7 +6,7 @@ functional_areas:
   - Docker
   - Configuration
 redirect_to: https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/
-layout: migrated
+status: migrated
 ---
 
 The following containers provide the services required to build, deploy and run {{site.data.var.ee}} sites.

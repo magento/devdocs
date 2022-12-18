@@ -2,7 +2,7 @@
 group: graphql
 title: GraphQL requests
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/usage/headers/
-layout: migrated
+status: migrated
 ---
 
 Magento GraphQL supports the HTTP GET and POST methods. You can send a query as a GET or POST request. Mutations must be POST requests. You can optionally send a GET query request in a URL. In these requests, you must specify `query` as the query string. You might need to encode the query, as shown below:

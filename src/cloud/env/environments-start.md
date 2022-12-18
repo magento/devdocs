@@ -8,7 +8,7 @@ redirect_from:
 functional_areas:
   - Cloud
 redirect_to: https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/cli-branches.html
-layout: migrated
+status: migrated
 ---
 
 To install the `magento-cloud` CLI, see the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html). After you install the `magento-cloud` CLI and set up SSH keys for remote access to your cloud infrastructure, you can use `magento-cloud` CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) or [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).

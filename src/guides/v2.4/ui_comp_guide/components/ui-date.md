@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Date component
 redirect_to: https://developer.adobe.com/commerce/frontend-core/ui-components/components/date/
-layout: migrated
+status: migrated
 ---
 
 The Date component implements a custom date input field. It uses a date picker implementation provided by the [calendar widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html).

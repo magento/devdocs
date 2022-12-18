@@ -2,7 +2,7 @@
 group: graphql
 title: createCustomerV2 mutation
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/create-v2/
-layout: migrated
+status: migrated
 ---
 
 The `createCustomerV2` mutation creates a customer account. Use the [`createCustomerAddress` mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html) to complete the customer profile and define billing and shipping addresses.

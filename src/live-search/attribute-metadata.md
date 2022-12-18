@@ -3,7 +3,7 @@ group: live-search
 title: attributeMetadata query
 ee_only: True
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/live-search/queries/attribute-metadata/
-layout: migrated
+status: migrated
 ---
 
 The `attributeMetadata` query returns a list of product attribute codes that can be used for sorting or filtering in a `productSearch` query. The query response can include the attribute name, display label, and a Boolean value that indicates if the attribute has a numeric value.

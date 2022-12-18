@@ -4,7 +4,7 @@ title: Math Random
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 redirect_to: https://developer.adobe.com/commerce/php/development/framework/math-random/
-layout: migrated
+status: migrated
 ---
 
 ## Overview

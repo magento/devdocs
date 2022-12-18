@@ -4,7 +4,7 @@ title: Using custom fonts
 functional_areas:
   - Frontend
 redirect_to: https://developer.adobe.com/commerce/frontend-core/guide/css/fonts/
-layout: migrated
+status: migrated
 ---
 
 The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento [theme](https://glossary.magento.com/theme).

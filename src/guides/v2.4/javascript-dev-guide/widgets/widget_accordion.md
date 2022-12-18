@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Accordion widget
 redirect_to: https://developer.adobe.com/commerce/frontend-core/javascript/jquery-widgets/accordion/
-layout: migrated
+status: migrated
 ---
 
 Magento accordion widget is an [extension](https://glossary.magento.com/extension) of the [Magento Tabs widget].

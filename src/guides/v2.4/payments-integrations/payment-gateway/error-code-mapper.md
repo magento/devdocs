@@ -2,7 +2,7 @@
 group: payments-integrations
 title: Error Code Mapping
 redirect_to: https://developer.adobe.com/commerce/php/development/payments-integrations/payment-gateway/error-code-mapper/
-layout: migrated
+status: migrated
 ---
 
 A payment gateway has error codes or messages that need to be transformed to user-friendly messages. When an error occurs, Magento  delivers the message to the appropriate audience so that the customer or merchant can resolve any problems. You can set up each payment integration to map the native error codes and messages into sets of text strings. As a result, you can ensure that only the proper audience (merchants only, customers only, or all) sees each error message. By default, the standard error message (`An error occurred on the server. Please try to place the order again.`) displays if a payment operation fails and a specific mapped message cannot be found.

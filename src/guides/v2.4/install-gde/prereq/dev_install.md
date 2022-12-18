@@ -5,7 +5,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://developer.adobe.com/commerce/contributor/guides/install/clone-repository/
-layout: migrated
+status: migrated
 ---
 
 You can clone the latest code from the [Magento GitHub repository][gh-repo], and use code from a release branch or a development branch.

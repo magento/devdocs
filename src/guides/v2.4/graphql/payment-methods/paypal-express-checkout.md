@@ -2,7 +2,7 @@
 group: graphql
 title: PayPal Express Checkout payment method
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/payment-methods/paypal-express-checkout/
-layout: migrated
+status: migrated
 ---
 
 The PayPal Express Checkout payment method enables customers to pay by credit card or from the security of their personal PayPal accounts. During checkout, the customer is redirected to the secure PayPal site to complete the payment information. The customer is then returned to the store to complete the remainder of the checkout process.

@@ -2,7 +2,7 @@
 title: Release policy
 group: release
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/release/policy.html
-layout: migrated
+status: migrated
 ---
 
 {{site.data.var.ee}} and {{site.data.var.ce}} use [semantic versioning](https://semver.org/) on the individual module level (for example `magento/framework 101.1.1`), but not for the marketing version number. For example:

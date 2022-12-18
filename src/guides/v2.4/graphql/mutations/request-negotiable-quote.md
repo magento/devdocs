@@ -3,7 +3,7 @@ group: graphql
 title: requestNegotiableQuote mutation
 b2b_only: true
 redirect_to: https://developer.adobe.com/commerce/webapi/graphql/schema/b2b/negotiable-quote/mutations/request/
-layout: migrated
+status: migrated
 ---
 
 The `requestNegotiableQuote` mutation initiates a negotiable quote on behalf of a company user. The company user must add all products to the cart before requesting a negotiable quote. Once the request is submitted, company users cannot add new products to the quote.

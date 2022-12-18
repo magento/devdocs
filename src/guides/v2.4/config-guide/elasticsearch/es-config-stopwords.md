@@ -7,7 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/search/search-stopwords.html
-layout: migrated
+status: migrated
 ---
 
 ## What are stopwords? {#stopword-overview}
