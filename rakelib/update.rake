@@ -49,7 +49,13 @@ namespace :update do
     end
   end
 
-  desc 'Find and replace links from "tmp/migrated-from-to.csv" in files at the provided directory. Example: rake update:migrated_links_at dir=path/to/codebase'
+  desc "Find and replace links from 'tmp/migrated-from-to.csv' in files at the provided directory.
+  Arguments:
+  - 'dir' is an absolute path to the directory to process the links. Required.
+  - 'exclude' is an fnmatch pattern for paths to exclude from processing. For fnmatch format, see https://ruby-doc.org/core-2.7.5/Dir.html#method-c-glob. Optional.
+  Examples:
+    rake update:migrated_links_at dir=path/to/codebase.
+    rake update:migrated_links_at dir=path/to/codebase exclude='**/Test/**'"
   task :migrated_links_at do
     # check if 'tmp/migrated-from-to.csv' exists
     links_file = 'tmp/migrated-from-to.csv'
@@ -64,13 +70,23 @@ namespace :update do
     unless Dir.exist?(dir)
       abort "FAILED. Check the path provided through the 'dir' argument. The provide directory does not exist: #{dir}"
     end
+    exclude = ENV['exclude']
     # parse 'tmp/migrated-from-to.csv'
     links = CSV.read links_file
     # for each file in dir, find and replace all links
     puts 'Work in progress...'.magenta
     dir_glob_pattern = File.join(dir, '**', '*')
+    full_file_list = Dir[dir_glob_pattern]
 
-    Dir[dir_glob_pattern].each do |file|
+    if exclude
+      exclude_glob_pattern = File.join(dir, exclude)
+      excluded_file_list = Dir[exclude_glob_pattern]
+      final_file_list = full_file_list - excluded_file_list
+    else
+      final_file_list = full_file_list
+    end
+
+    final_file_list.each do |file|
       # ignore directory paths
       next if File.directory? file
       # ignore symlinks
