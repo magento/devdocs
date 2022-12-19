@@ -77,7 +77,7 @@ namespace :update do
     puts 'Work in progress...'.magenta
     dir_glob_pattern = File.join(dir, '**', '*')
     full_file_list = Dir[dir_glob_pattern]
-
+    # exclude paths by pattern from the file list if the 'exclude' argument was added
     if exclude
       exclude_glob_pattern = File.join(dir, exclude)
       excluded_file_list = Dir[exclude_glob_pattern]
