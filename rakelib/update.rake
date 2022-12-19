@@ -49,17 +49,17 @@ namespace :update do
     end
   end
 
-  desc 'Find and replace links from "tmp/migrated-from-to.csv" in files at the provided directory. Example: rake update:migrated_links dir=path/to/codebase'
-  task :migrated_links do
+  desc 'Find and replace links from "tmp/migrated-from-to.csv" in files at the provided directory. Example: rake update:migrated_links_at dir=path/to/codebase'
+  task :migrated_links_at do
     # check if 'tmp/migrated-from-to.csv' exists
     links_file = 'tmp/migrated-from-to.csv'
     unless File.exist? links_file
       abort 'FAILED. Missing "tmp/migrated-from-to.csv" file. Make sure that your _config.local.yml file contains the "migrated_log: generate_file" parameter.'
     end
     # check if the provided directory ('dir') exist
-    dir = ENV['dir']
+    dir = File.expand_path(ENV['dir'])
     unless dir
-      abort 'FAILED. Missing argument "dir". Provide a directory to check the links. Example: rake update:migrated_links dir=path/to/codebase'
+      abort 'FAILED. Missing argument "dir". Provide a directory to check the links. Example: rake update:migrated_links_at dir=path/to/codebase'
     end
     unless Dir.exist?(dir)
       abort "FAILED. Check the path provided through the 'dir' argument. The provide directory does not exist: #{dir}"
@@ -68,7 +68,9 @@ namespace :update do
     links = CSV.read links_file
     # for each file in dir, find and replace all links
     puts 'Work in progress...'.magenta
-    Dir[File.join(dir, '**', '*')].each do |file|
+    dir_glob_pattern = File.join(dir, '**', '*')
+
+    Dir[dir_glob_pattern].each do |file|
       # ignore directory paths
       next if File.directory? file
       # ignore symlinks
