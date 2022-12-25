@@ -13,6 +13,8 @@ require 'html-proofer'
 require 'kramdown'
 require 'launchy'
 require 'colorator'
+require 'csv'
+require 'rdoc'
 
 # Require helper methods from the 'lib' directory
 Dir.glob('lib/**/*.rb') { |file| require_relative(file) }
