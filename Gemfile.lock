@@ -1,8 +1,9 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: 3f1ef03f46ca3489289f72f102b2f556d401d1d1
+  revision: 03ce55a3b980aea11af63bdda9bc7ad33cb94db1
+  branch: decom-search
   specs:
-    devdocs (18)
+    devdocs (19)
       jekyll (>= 4.0)
 
 GEM
