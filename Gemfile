@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git', branch: 'decom-search'
+gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git', branch: 'comdox-452-updates'
 gem 'jekyll'
 gem 'rake'
 gem 'whatsup_github'
