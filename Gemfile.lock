@@ -185,7 +185,7 @@ DEPENDENCIES
   html-proofer
   image_optim
   image_optim_pack
-  jekyll (= 4.2.2)
+  jekyll
   jekyll-algolia (~> 1.0)
   jekyll-optional-front-matter
   jekyll-redirect-from
