@@ -19,7 +19,7 @@ GEM
     chef-utils (18.0.185)
       concurrent-ruby
     colorator (1.1.0)
-    concurrent-ruby (1.1.10)
+    concurrent-ruby (1.2.0)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -62,22 +62,21 @@ GEM
       image_optim (~> 0.19)
     image_size (3.2.0)
     in_threads (1.6.0)
-    jekyll (4.3.1)
+    jekyll (4.2.2)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
       i18n (~> 1.0)
-      jekyll-sass-converter (>= 2.0, < 4.0)
+      jekyll-sass-converter (~> 2.0)
       jekyll-watch (~> 2.0)
-      kramdown (~> 2.3, >= 2.3.1)
+      kramdown (~> 2.3)
       kramdown-parser-gfm (~> 1.0)
       liquid (~> 4.0)
-      mercenary (>= 0.3.6, < 0.5)
+      mercenary (~> 0.4.0)
       pathutil (~> 0.9)
-      rouge (>= 3.0, < 5.0)
+      rouge (~> 3.0)
       safe_yaml (~> 1.0)
-      terminal-table (>= 1.8, < 4.0)
-      webrick (~> 1.7)
+      terminal-table (~> 2.0)
     jekyll-algolia (1.7.1)
       algolia_html_extractor (~> 2.6)
       algoliasearch (~> 1.26)
@@ -108,8 +107,8 @@ GEM
       kramdown (~> 2.0)
     launchy (2.5.0)
       addressable (~> 2.7)
-    liquid (4.0.3)
-    listen (3.7.1)
+    liquid (4.0.4)
+    listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mdl (0.12.0)
@@ -149,7 +148,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.5)
-    rouge (4.0.0)
+    rouge (3.30.0)
     ruby2_keywords (0.0.5)
     safe_yaml (1.0.5)
     sassc (2.4.0)
@@ -157,16 +156,15 @@ GEM
     sawyer (0.9.2)
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
-    terminal-table (3.0.2)
-      unicode-display_width (>= 1.1.1, < 3)
+    terminal-table (2.0.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
     thor (1.2.1)
     tomlrb (2.0.3)
     typhoeus (1.4.0)
       ethon (>= 0.9.0)
-    unicode-display_width (2.3.0)
+    unicode-display_width (1.8.0)
     verbal_expressions (0.1.5)
     wdm (0.1.1)
-    webrick (1.7.0)
     whatsup_github (0.5.0)
       netrc (~> 0.11)
       octokit (~> 6.0)
@@ -180,13 +178,14 @@ PLATFORMS
   x86-mswin32
   x86_64-darwin-19
   x86_64-darwin-21
+  x86_64-darwin-22
 
 DEPENDENCIES
   devdocs!
   html-proofer
   image_optim
   image_optim_pack
-  jekyll
+  jekyll (= 4.2.2)
   jekyll-algolia (~> 1.0)
   jekyll-optional-front-matter
   jekyll-redirect-from
