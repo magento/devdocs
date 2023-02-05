@@ -26,9 +26,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav-actions">
       {% include layout/version-switcher.html %}
 
-      {% include layout/app-switcher.html %}
-
-      {% include layout/quick-search.html %}
+      {% if page.guide_version != "2.4" %}
+        {% include layout/quick-search.html %}
+      {% endif %}
 
     </div>
 

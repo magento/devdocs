@@ -7,7 +7,7 @@
   };
 
   var indices = [{
-      label: "DevDocs",
+      label: "Results",
       name: "devdocs",
       facetFilters: [
         ["guide_version: {% if page.guide_version == nil %}{{ site.version }}{% else %}{{ page.guide_version }}{% endif %}",
@@ -19,26 +19,6 @@
         attribute: "functional_areas"
       }],
       baseUrl: "{{ site.baseurl }}"
-    },
-    {
-      label: "User Guide",
-      name: "merchdocs",
-      baseUrl: "{{ site.user_guide_url }}"
-    },
-    {
-      label: "Commerce Reporting User Guide",
-      name: "merchdocs-mbi",
-      baseUrl: "https://docs.magento.com/mbi"
-    },
-    {
-      label: "PWA",
-      name: "pwa-devdocs",
-      baseUrl: "https://developer.adobe.com"
-    },
-    {
-      label: "Order Management",
-      name: "oms-en",
-      baseUrl: "https://omsdocs.magento.com"
     }
   ];
 
