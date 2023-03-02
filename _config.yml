@@ -9,7 +9,7 @@ description: Adobe Commerce Developer Guide
 # the base protocol and domain
 url: https://devdocs.magento.com
 
-# Site theme: https://github.com/magento-devdocs/devdocs-theme
+# Site theme: https://github.com/commerce-docs/devdocs-theme
 # About themes in Jekyll: https://jekyllrb.com/docs/themes/
 theme: devdocs
 
