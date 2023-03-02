@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/magento-devdocs/devdocs-theme.git
+  remote: https://github.com/commerce-docs/devdocs-theme.git
   revision: ec880cfbf9f79abe5628be4eab95db30a58839fa
   specs:
     devdocs (20)

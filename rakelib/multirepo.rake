@@ -34,7 +34,7 @@ namespace :multirepo do
     abort 'Provide a directory name for the multirepo docs. Example: dir=src/mftf' unless dir
     abort "'#{dir}' directory already exists" if Dir.exist? dir
     unless repo
-      abort 'Provide a repository cloning URL (SSH).Example: repo=git@github.com:magento-devdocs/magento2-functional-testing-framework.git'
+      abort 'Provide a repository cloning URL (SSH).Example: repo=git@github.com:commerce-docs/magento2-functional-testing-framework.git'
     end
     abort 'Provide a branch name for the multirepo docs. Example: branch=master' unless branch
 
