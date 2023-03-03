@@ -50,9 +50,9 @@ defaults:
       github_repo: https://github.com/magento/devdocs/
       github_files: https://github.com/magento/devdocs/blob/master/
       # Enables the 'Edit this page on GitHub' appearances on pages
-      github_link: true
+      github_link: false
       # Enables the 'Give us feedback' appearances on pages
-      feedback_link: true
+      feedback_link: false
 
   -
     scope:

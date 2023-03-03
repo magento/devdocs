@@ -1,23 +1,6 @@
 <!-- page-header -->
 <section class="page-intro">
 
-  {% if page.url contains "guides/v2.4/payments-integrations/" %}
-  {% unless page.url contains "guides/v2.4/payments-integrations/cardinal" %}
-  <div class="bs-callout-warning">
-    The Payment Provider Gateway documentation uses the Magento 2.3 (now {{site.data.var.ee}} and {{site.data.var.ce}}) of the Braintree module as a
-    reference application. The Braintree module was removed in version 2.4.0. The concepts described in this guide are
-    still applicable to version 2.4.0, but the code samples are not supported.
-  </div>
-  {% endunless %}
-  {% endif %}
-
-  {% if page.url contains "guides/v2.4/install-gde/" %}
-  <div class="message-banner">
-    You must install Elasticsearch or OpenSearch before installing {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a
-      href="{{ page.baseurl }}/install-gde/prereq/elasticsearch.html">Search engine prerequisites</a> for details.
-  </div>
-  {% endif %}
-
   {% if page.url contains "config-guide/multi-master/" or page.url contains "cloud/docker/docker-split-db" %}
   <div class="message-banner">
     The split database feature was <a
@@ -28,15 +11,9 @@
   </div>
   {% endif %}
 
-  {% unless page.github_link %}
-  <div class="message-banner">
-    Contributions through pull requests are not supported for this topic. Open a GitHub issue to provide feedback.
-  </div>
-  {% endunless %}
-
   {% if page.url contains "guides/v2.3/" %}
-  <div class="bs-callout-warning">
-    PHP 7.3 reached end of support in December 2021 and {{site.data.var.ee}} 2.3.x reaches end of support in September 2022. You may want to consider planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance.
+  <div class="message-banner">
+    <center>{{site.data.var.ee}} 2.3 reached end of support in September 2022.</center>
   </div>
   {% endif %}
 
