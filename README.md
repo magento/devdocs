@@ -1,6 +1,6 @@
 # Adobe Commerce Developer Documentation
 
-Welcome! This site contains the latest Adobe Commerce and Magento Open Source developer documentation for ongoing releases of both products. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
+This project contains the source code of the Adobe Commerce and Magento Open Source developer documentation website for the latest 2.3 release of both products.
 
 > **Important update**
 >
@@ -13,12 +13,8 @@ Welcome! This site contains the latest Adobe Commerce and Magento Open Source de
 > Some content was consolidated or moved to different guides. If you have trouble finding a topic, see the [Migrated topics](https://devdocs.magento.com/migrated.html).
 >
 > We welcome contributions to migrated content! You can find similar links to GitHub on the Adobe sites.
-
-## Contributors
-
-Our goal is to provide the Commerce and Open Source communities with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving the documentation.
-
-![](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
+>
+> The content at https://devdocs.magento.com is no longer supported since the (2.3 support has expired)[https://experienceleague.adobe.com/docs/commerce-operations/release/versions.html#2.3].
 
 ## Building this site
 
@@ -133,30 +129,9 @@ Once you have completed preparing your environment, you can build locally and pr
 > ***TIP***
 > Leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. Changing the `_config.yml` file or other YAML file with data or configuration requires a fresh build (stop and start the server again with `rake preview`).
 
-### Exclude private repositories
-
-If you do not have access to the private repositories required by Docfile, you can exclude them in `_config.local.yml` to avoid the link checking report about missing pages.
-
-Create a `_config.local.yml` file at the root of the project directory and exclude the paths you do not want to generate:
-
-```yaml
-exclude:
-  - page-builder
-```
-
->**TIP**
->You can override any other configuration options using this file.
-
->**TIP**
->To ignore the `_config.local.yml` file and preview the site with default configuration, use the `preview:all` option :
->
->```bash
->rake preview:all
->```
-
 ## Building old versions
 
-The published website contains documentation for the most current Adobe Commerce and Magento Open Source releases only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
+The published website contains documentation for the latest 2.3.x Adobe Commerce and Magento Open Source release only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
 
 To view the list of available tags:
 
@@ -177,12 +152,11 @@ Find guidelines for building the site locally in the checked out README.
 
 ## Archived docs
 
-To view the archived documentation, see <http://magento.github.io/devdocs/>.
+To view the archived documentation, see <https://commerce-docs.github.io/devdocs-archive/>.
 
 ***
 
-If you have questions, open an issue and ask us. We're looking forward to hearing from you!
+Our public channels:
 
 -  [Slack](https://magentocommeng.slack.com/archives/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
--  [Visit our wiki](https://github.com/magento/devdocs/wiki)
 -  <a href="https://twitter.com/AdobeCommrcDocs" class="twitter-follow-button" data-show-count="false">Twitter @AdobeCommrcDocs</a>
