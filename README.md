@@ -1,6 +1,6 @@
 # Adobe Commerce Developer Documentation
 
-This project contains the source code of the Adobe Commerce and Magento Open Source developer documentation website for the latest 2.3 release of both products.
+This project contains the source code of the Adobe Commerce and Magento Open Source developer documentation website for the latest 2.3 release.
 
 > **Important update**
 >
