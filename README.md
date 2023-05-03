@@ -14,7 +14,7 @@ This project contains the source code of the Adobe Commerce and Magento Open Sou
 >
 > We welcome contributions to migrated content! You can find similar links to GitHub on the Adobe sites.
 >
-> The content at https://devdocs.magento.com is no longer supported since the (2.3 support has expired)[https://experienceleague.adobe.com/docs/commerce-operations/release/versions.html#2.3].
+> The content at https://devdocs.magento.com is no longer supported since (the 2.3 release line has reached end of support)[https://experienceleague.adobe.com/docs/commerce-operations/release/versions.html#2.3].
 
 ## Building this site
 
