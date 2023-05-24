@@ -56,6 +56,25 @@ stage:
             database: 11
 ```
 
+
+[Redis preload feature]({{ site.baseurl }}/docs/commerce-operations/configuration-guide/cache/redis/redis-pg-cache.html#redis-preload-feature)
+
+```yaml
+stage:
+  deploy:
+    CACHE_CONFIGURATION:
+      _merge: true
+      frontend:
+        default:
+          id_prefix: '061_'
+          backend_options:
+            preload_keys:
+              - '061_EAV_ENTITY_TYPES:hash'
+              - '061_GLOBAL_PLUGIN_LIST:hash'
+              - '061_DB_IS_UP_TO_DATE:hash'
+              - '061_SYSTEM_DEFAULT:hash'
+```
+
 ### `CLEAN_STATIC_FILES`
 
 -  **Default**—`true`
