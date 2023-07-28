@@ -1,6 +1,12 @@
 <!-- page-header -->
 <section class="page-intro">
 
+  {% if page.url contains "mftf/v2" %}
+  <div class="message-banner">
+    This documentation is for version 2.0 of the framework, which supports Adobe Commerce and Magento Open Source 2.3.x. You can find documentation for version 3.0 <a href="https://developer.adobe.com/commerce/testing/functional-testing-framework/">here</a>. See <a href="https://developer.adobe.com/commerce/testing/functional-testing-framework/#find-your-framework-version">find your version</a> if you are unsure about which version you are using.
+  </div>
+  {% endif %}
+
   {% if page.url contains "config-guide/multi-master/" or page.url contains "cloud/docker/docker-split-db" %}
   <div class="message-banner">
     The split database feature was <a
