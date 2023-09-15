@@ -35,7 +35,7 @@ Jekyll::Hooks.register :pages, :post_init do |page|
   path_24 = path_23.sub('/v2.3/', '/v2.4/')
 
   page_24 = pages.find { |page| page.path == path_24 }
-  
+
   if page_24.nil?
     page.data['redirect_to'] = 'https://developer.adobe.com/commerce/docs/'
   else
