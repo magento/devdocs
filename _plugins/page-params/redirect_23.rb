@@ -1,6 +1,6 @@
 # Copyright 2023 Adobe
 # All Rights Reserved.
-# 
+#
 # NOTICE: All information contained herein is, and remains
 # the property of Adobe and its suppliers, if any. The intellectual
 # and technical concepts contained herein are proprietary to Adobe
@@ -12,6 +12,8 @@
 # This plugin redirects 2.3 pages to the DevSite.
 # It uses redirect metadata from the 2.4 version of the page.
 # If there is no 2.4 version of the page, then it redirects to https://developer.adobe.com/commerce/docs/
+
+# frozen_string_literal: true
 
 Jekyll::Hooks.register :pages, :post_init do |page|
   # Skip pages where the parameter is already set
