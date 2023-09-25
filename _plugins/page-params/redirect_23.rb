@@ -15,30 +15,33 @@
 
 # frozen_string_literal: true
 
-Jekyll::Hooks.register :pages, :post_init do |page|
-  # Skip pages where the parameter is already set
-  next unless page.path.start_with? 'guides/v2.3/'
+Jekyll::Hooks.register :site, :post_read do |site|
+  pages = site.pages
 
-  # Process only files with 'md' and 'html' extensions
-  next unless File.extname(page.path).match?(/md|html/)
+  pages.each do |page|
+    # Skip pages where the parameter is already set
+    next unless page.path.start_with? 'guides/v2.3/'
 
-  # Skip redirects
-  next if page.name == 'redirect.html'
+    # Process only files with 'md' and 'html' extensions
+    next unless File.extname(page.path).match?(/md|html/)
 
-  # Skip pages where the parameter is already set
-  next if page.data['redirect_to']
+    # Skip redirects
+    next if page.name == 'redirect.html'
 
-  pages = page.site.pages
+    # Skip pages where the parameter is already set
+    next if page.data['redirect_to']
 
-  path_23 = page.path
+    path_23 = page.path
 
-  path_24 = path_23.sub('/v2.3/', '/v2.4/')
+    path_24 = path_23.sub('v2.3', 'v2.4')
+    puts 'path_24: ' + path_24
 
-  page_24 = pages.find { |page| page.path == path_24 }
+    page_24 = pages.find { |page| page.path == path_24 }
 
-  if page_24.nil?
-    page.data['redirect_to'] = 'https://developer.adobe.com/commerce/docs/'
-  else
-    page.data['redirect_to'] = page_24.data['redirect_to']
+    if page_24.nil?
+      page.data['redirect_to'] = 'https://developer.adobe.com/commerce/docs/'
+    else
+      page.data['redirect_to'] = page_24.data['redirect_to']
+    end
   end
 end
