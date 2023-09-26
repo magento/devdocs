@@ -34,7 +34,6 @@ Jekyll::Hooks.register :site, :post_read do |site|
     path_23 = page.path
 
     path_24 = path_23.sub('v2.3', 'v2.4')
-    puts 'path_24: ' + path_24
 
     page_24 = pages.find { |page| page.path == path_24 }
 
