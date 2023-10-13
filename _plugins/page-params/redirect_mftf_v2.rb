@@ -9,9 +9,7 @@
 # Dissemination of this information or reproduction of this material
 # is strictly forbidden
 
-# This plugin redirects 2.3 pages to the DevSite.
-# It uses redirect metadata from the 2.4 version of the page.
-# If there is no 2.4 version of the page, then it redirects to https://developer.adobe.com/commerce/docs/
+# This plugin redirects MFTF v2 pages to the MFTF repo.
 
 # frozen_string_literal: true
 
