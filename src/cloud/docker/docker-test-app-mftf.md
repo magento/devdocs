@@ -58,7 +58,7 @@ To set up and run MFTF tests in a Cloud Docker environment:
    MAGENTO_BACKEND_NAME=admin
    MAGENTO_ADMIN_USERNAME=admin
    MAGENTO_ADMIN_PASSWORD=123123q
-   MODULE_WHITELIST=Magento_Framework,Magento_ConfigurableProductWishlist,Magento_ConfigurableProductCatalogSearch
+   MODULE_ALLOWLIST=Magento_Framework,Magento_ConfigurableProductWishlist,Magento_ConfigurableProductCatalogSearch
    SELENIUM_HOST=selenium"
    ```
 
