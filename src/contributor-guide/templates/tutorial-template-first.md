@@ -10,6 +10,7 @@ return_to:
 redirect_from:
 - guides/v2.3/contributor-guide/templates/tutorial-template-first.html
 - guides/v2.4/contributor-guide/templates/tutorial-template-first.html
+redirect_to: https://developer.adobe.com/commerce/contributor/guides/doc-contributions/
 ---
 
 A tutorial provides procedural information spread across multiple pages. It contains several design elements that differ from standard topics:

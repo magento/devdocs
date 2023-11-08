@@ -1,6 +1,7 @@
 ---
 layout: full-width
 title: What's new on DevDocs
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/operational-guides/home.html 
 ---
 
 {% assign whatsnew = site.data.whats-new %}

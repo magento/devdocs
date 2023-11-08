@@ -3,6 +3,7 @@ layout: default
 group: rest-api
 title: REST API reference
 guide_version: '2.3'
+redirect_to: https://developer.adobe.com/commerce/webapi/rest/
 ---
 
 Magento exposes different REST endpoints depending on the type of user making the requests.
