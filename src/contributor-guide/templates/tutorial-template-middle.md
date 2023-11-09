@@ -10,6 +10,7 @@ return_to:
 redirect_from:
 - guides/v2.3/contributor-guide/templates/tutorial-template-middle.html
 - guides/v2.4/contributor-guide/templates/tutorial-template-middle.html
+redirect_to: https://developer.adobe.com/commerce/contributor/guides/doc-contributions/
 ---
 
 Add the content for each step as you see fit.

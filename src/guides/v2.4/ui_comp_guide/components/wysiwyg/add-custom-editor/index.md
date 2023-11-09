@@ -95,10 +95,6 @@ If you are integrating Magento entities such as variable and widget as plugins, 
 
 **Example:** CKEditor/CKEditor4/view/base/web/ckeditor4Adapter.js
 
-{% collapsible Show file content %}
-{% include_relative code-samples/ckeditor4Adapter.md %}
-{% endcollapsible %}
-
 ## Step 4. Load editor library
 
 After loading, modifying, and merging all configurations, Magento serializes the result into a JSON object and passes it to the UI component.

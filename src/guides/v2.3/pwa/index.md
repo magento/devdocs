@@ -1,6 +1,7 @@
 ---
 layout: full-width
 title: Magento Progressive Web Applications (PWA)
+redirect_to: https://developer.adobe.com/commerce/pwa-studio/
 ---
 
 ## What is a Progressive Web App

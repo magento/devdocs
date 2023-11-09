@@ -10,6 +10,7 @@ return_to:
 redirect_from:
 - guides/v2.3/contributor-guide/templates/tutorial-template-last.html
 - guides/v2.4/contributor-guide/templates/tutorial-template-last.html
+redirect_to: https://developer.adobe.com/commerce/contributor/guides/doc-contributions/
 ---
 
 The last page of a tutorial should acknowledge the reader has completed the tutorial and provide links to related information. Otherwise, add the content as you see fit.
