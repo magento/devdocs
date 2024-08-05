@@ -16,9 +16,10 @@ namespace :test do
 
   desc 'Check the existing _site for broken INTERNAL links'
   task :html do
-    puts 'Checking HTML ...'.magenta
+    # puts 'Checking HTML ...'.magenta
 
-    LinkChecker.check_site
+    # LinkChecker.check_site
+    puts 'Link checking has been disabled since the project is no longer supported'.magenta
   end
 
   desc 'Check the existing _site for broken links and report to a separate file'
@@ -48,19 +49,20 @@ namespace :test do
 
   desc 'Test Markdown style with mdl'
   task :md do
-    puts 'Testing Markdown style with mdl ...'.magenta
-    print 'List the rules: $ '.magenta
-    sh 'bin/mdl -l --style=_checks/styles/style-rules-prod'
-    puts 'Linting ...'.magenta
-    output =
-      `bin/mdl \
-      --style=_checks/styles/style-rules-prod \
-      --ignore-front-matter \
-      --git-recurse \
-      -- .`
-    puts output.yellow
-    abort 'Fix the reported issues'.red unless output.empty?
-    puts 'No issues found'.green
+    # puts 'Testing Markdown style with mdl ...'.magenta
+    # print 'List the rules: $ '.magenta
+    # sh 'bin/mdl -l --style=_checks/styles/style-rules-prod'
+    # puts 'Linting ...'.magenta
+    # output =
+    #   `bin/mdl \
+    #   --style=_checks/styles/style-rules-prod \
+    #   --ignore-front-matter \
+    #   --git-recurse \
+    #   -- .`
+    # puts output.yellow
+    # abort 'Fix the reported issues'.red unless output.empty?
+    # puts 'No issues found'.green
+    puts 'Markdown testing has been disabled since the project is no longer supported'.magenta
   end
 
   desc 'Find unused images. To exclude by regex pattern, use the "exclude_img" argument. Example of excluding a "layout" directory: "rake test:unused_includes exclude_img=/layout/"'
