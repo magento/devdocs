@@ -502,6 +502,48 @@ Plugins for the Preference:
 +-----------------------------------------------------+---------+--------+
 ```
 
+By default, the information is output for the GLOBAL area, but you can specify any of the available ones. For example:
+
+```bash
+bin/magento dev:di:info "Magento\Framework\App\RouterList" adminhtml
+```
+
+```terminal
+DI configuration for the class Magento\Framework\App\RouterList in the ADMINHTML area
+
+Preference: Magento\Framework\App\RouterList
+
+Constructor Parameters:
++---------------+------------------------------------------+---------------------------------------------------------------------------+
+| Name          | Requested Type                           | Configured Value                                                          |
++---------------+------------------------------------------+---------------------------------------------------------------------------+
+| objectManager | Magento\Framework\ObjectManagerInterface |                                                                           |
+| routerList    |                                          | {                                                                         |
+|               |                                          |     "admin": {                                                            |
+|               |                                          |         "class": "string Magento\\Backend\\App\\Router",                  |
+|               |                                          |         "disable": "string ",                                             |
+|               |                                          |         "sortOrder": "string 10"                                          |
+|               |                                          |     },                                                                    |
+|               |                                          |     "default": {                                                          |
+|               |                                          |         "class": "string Magento\\Framework\\App\\Router\\DefaultRouter", |
+|               |                                          |         "disable": "string ",                                             |
+|               |                                          |         "sortOrder": "string 100"                                         |
+|               |                                          |     }                                                                     |
+|               |                                          | }                                                                         |
++---------------+------------------------------------------+---------------------------------------------------------------------------+
+
+Plugins:
++--------+--------+------+
+| Plugin | Method | Type |
++--------+--------+------+
+
+Plugins for the Preference:
++--------+--------+------+
+| Plugin | Method | Type |
++--------+--------+------+
+```
+
+
 {:.ref-header}
 Related topics
 
