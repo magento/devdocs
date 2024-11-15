@@ -10,7 +10,7 @@ This project contains the source code of the Adobe Commerce and Magento Open Sou
 >
 >[Adobe Commerce Documentation](https://experienceleague.adobe.com/docs/commerce.html) (Adobe Experience League)—Plan, implement, operate, upgrade, and maintain your Commerce projects
 >
-> Some content was consolidated or moved to different guides. If you have trouble finding a topic, see the [Migrated topics](https://devdocs.magento.com/migrated.html).
+> Some content was consolidated or moved to different guides. If you have trouble finding a topic, see the [Migrated topics](https://commerce-docs.github.io/devdocs-archive/migrated-topics.html).
 >
 > We welcome contributions to migrated content! You can find similar links to GitHub on the Adobe sites.
 >
